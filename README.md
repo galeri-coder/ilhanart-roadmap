@@ -169,7 +169,7 @@ From this point forward, all layers represent **institutional orientation**, not
 
 - Supra-institutional cultural structure
 - Speed-regulated resource redirection model  
-  (Every 18-month acceleration cycle reallocates twice the value toward art, science, philosophy, and ethics)
+  (Every 18-month acceleration cycle of technological and economic production reallocates a significantly increased share of the newly generated net value toward art, science, philosophy, and ethics. This mechanism ensures that exponential efficiency gains do not concentrate power or meaninglessness, but instead reinforce long-term cultural balance, scientific continuity, and ethical oversight as civilization accelerates.)
 - Planetary-scale culture–science–life protocols
 - Collapse-resistant digital civilization memory
 - Ethical preparation for post-human conditions
