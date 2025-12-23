@@ -264,6 +264,74 @@ It remains only as:
 
 ---
 
+The Proof of Art (PoA) Protocol: The 5-Standard
+Proof of Art (PoA) is the "Trust Layer" of the İlhan Art ecosystem. It ensures that every phase of the roadmap is not just a digital narrative, but a verifiable production system in physical reality.
+
+1. Live Identity Proof (Antidote to 'Ghost Devs')
+Action: The Artist/Developer is at the absolute center. Live streaming is not a "show"; it is a continuous ID verification.
+
+Result: It dismantles the "ghost developer" model. The artist is present with their work and face; the project owner proves their physical existence in every brushstroke and decision.
+
+2. Labor & Process Proof (Human vs. Synthetic)
+Action: Distinguishes between "generating" and "producing." PoA rejects 5-second AI outputs. It showcases the "agony of creation"—the friction of the brush, the density of the paint, and the hours of manual labor.
+
+Result: Uses technology to make the "slow and deep" production process visible. Technical proof that the project is not a "cheap copy."
+
+3. Aesthetic Value Proof (Anti 'Low-Effort')
+Action: Indexes the token economy to artistic achievement. The goal is not just a chart, but a physical masterpiece.
+
+Result: A stand against the "low-effort" trend in platforms like Pump.fun. Artistic discipline serves as a collateral of trust.
+
+4. Conceptual Novelty (The Unmade Bridge)
+Rule: "Imagine what hasn't been done."
+
+Action: PoA requires more than repetition. It demands a new thesis—like placing Michelangelo’s David in a historical Hamam to observe digital markets. PoA validates the originality of the concept.
+
+5. Non-Algorithmic Agency (The Protest of Will)
+Rule: "Prove Will, not Automation."
+
+Action: A protest against the ease of bots. PoA requires a human taking risks, sweating, and being present. It validates a vision and a person, not an algorithm.
+
+🛡️ PoA Governance & Anti-Fraud System
+PoA Verified™ Status
+The PoA Verified badge is the only official status granted when all five components are met simultaneously. It is not a mere label; it is a dynamic evidence package that requires periodic renewal.
+
+Note: Ambiguous terms like "PoA approved" or "certified" are not recognized. Only PoA Verified with a valid ID is official.
+
+The Community Veto Rule
+Verification is managed by İlhan Art (Founder) but locked by Community Audit.
+
+Veto Power: If 40% of the community objects with evidence, the PoA Verified status cannot be granted, even if the founder approves.
+
+Every verification has an "Objection Window" for transparent auditing.
+
+Evidence Pack & Sustainability
+While 7/24 streaming is the gold standard, the requirement is Efficient, Regular, and Sustainable Broadcasts. Each PoA Verified project must provide:
+
+Live & Archive Links: Direct access to production streams.
+
+Process Archive: Timelapses and creation records.
+
+Production Logs: Timestamped logs of work duration and titles. Failure to update the Evidence Pack leads to immediate suspension of the PoA status.
+
+The 360-Day Renewal Rule
+PoA Verified status expires every 360 days.
+
+Projects that maintain this cycle are recorded permanently in the İlhan Art "Eternal Registry."
+
+History of verification is kept transparently to show long-term commitment.
+
+Verification Checklist (Public Audit)
+To verify a PoA project, one must check:
+
+[ ] Does it have a Verification ID?
+
+[ ] Are the Evidence Pack links (Stream/Logs) accessible?
+
+[ ] Is the Renewal date still valid?
+
+[ ] Has the Community Objection Window been cleared?
+
 ## Final Statement
 
 Stars may change.  
