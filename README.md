@@ -1,11 +1,15 @@
-# Ilhan Art Roadmap & Protocol Repository
+# Ilhan Art Roadmap (Archive)
 
-> **Culture > Capital**
+> **"We do not build for the next bull run. We build for the next century."**
 
-This repository houses the constitution, technical infrastructure, and strategic roadmap of the Founding Patrons Protocol (FPP).
+This repository serves as the immutable data archive and strategic timeline for the Ilhan Art Protocol. It contains no execution code, only the architectural blueprints, historical proofs, and philosophical axioms.
 
 ## Structure
-* **Protocols:** The immutable rules of governance.
-* **Registry:** The cryptographic proof of history.
-* **UI:** The [PoArt] Terminal and visual interfaces.
-* **Roadmap:** The Le Corbusier Masterplan.
+* **Timeline:** The chronological progression of the mission.
+* **Registry:** Cryptographic proofs of history and contribution.
+* **Ecosystem:** Physical infrastructure standards and social contracts.
+* **Initiatives:** Active cultural missions.
+
+## Status
+* **Current Epoch:** Phase 2 (The Renaissance)
+* **Philosophy:** Culture > Capital

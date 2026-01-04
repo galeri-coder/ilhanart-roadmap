@@ -1,3 +1,6 @@
-# Digital Notary Schema
+# Digital Notary Standard
 
-JSON schemas for verifying contributions on-chain.
+Schema:
+```json
+{ "id": "REG-YYYY-NNN", "proof_hash": "SHA-256" }
+```
