@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Sadece Pollock'a özel görselleştirme stilleri */
+        .visualizer-container {
+            background: #000; border: 1px solid #222; border-radius: 8px;
+            padding: 20px; height: 200px; overflow: hidden; position: relative;
+        }
+        .node-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(12px, 1fr));
+            gap: 8px; height: 100%;
+        }
+        .node { width: 10px; height: 10px; background: #222; border-radius: 50%; transition: all 0.5s ease; }
+        .node.active { background: var(--accent); box-shadow: 0 0 12px var(--accent); transform: scale(1.1); }
+        .node.busy { background: var(--warning); box-shadow: 0 0 8px var(--warning); }
+        .overlay-text { position: absolute; bottom: 10px; right: 15px; font-size: 9px; color: #444; font-family: var(--font-mono); }
+    </style>
+</head>
+<body>
+    <h2>🎨 Jackson Pollock <span style="color:#666; font-size:14px;">// Network State</span></h2>
+
+    <div class="hero-grid">
+        <div class="info-box">
+            <div class="info-title">
+                <span class="tag green">● LIVE SYSTEM</span>
+                Purpose & Mechanics
+            </div>
+            <p class="info-text">
+                Welcome to the <strong>[PoArt] Network Visualizer</strong>. This dashboard provides a real-time heartbeat of the Founding Patrons Protocol. Unlike a static list, "Pollock" visualizes the chaotic yet synchronized activity of every active wallet (node) in the ecosystem.
+            </p>
+            <div class="rule-box">
+                <strong style="color:var(--warning); font-size:11px; font-family:var(--font-mono);">PROTOCOL RULE v1.1:</strong>
+                <p style="font-size:12px; color:#ccc; margin-top:5px; line-height:1.5;">
+                    "Active Presence" requires interacting with the contract at least once per epoch (90 days). Silent nodes lose governance weight.
+                </p>
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <div class="info-title">Legend</div>
+            <ul class="legend-list">
+                <li>
+                    <div class="legend-dot" style="background:var(--accent); box-shadow:0 0 8px var(--accent)"></div>
+                    <div><strong>Active Node</strong><br><span style="font-size:10px; color:#666;">Validating / Voting</span></div>
+                </li>
+                <li>
+                    <div class="legend-dot" style="background:var(--warning)"></div>
+                    <div><strong>Busy / Syncing</strong><br><span style="font-size:10px; color:#666;">Processing Tx</span></div>
+                </li>
+                <li>
+                    <div class="legend-dot" style="background:#333"></div>
+                    <div><strong>Dormant</strong><br><span style="font-size:10px; color:#666;">Offline > 24h</span></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="kpi-row">
+        <div class="kpi-card">
+            <div class="kpi-val" style="color:var(--accent)">84</div>
+            <div class="kpi-lbl">Total Patrons</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-val">42</div>
+            <div class="kpi-lbl">Online Now</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-val">99.9%</div>
+            <div class="kpi-lbl">Network Uptime</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-val" style="font-size:20px;">#249,102</div>
+            <div class="kpi-lbl">Block Height</div>
+        </div>
+    </div>
+
+    <div class="info-box" style="padding:15px;">
+        <div class="info-title" style="margin-bottom:10px;">Global Node Map (Visualizer)</div>
+        <div class="visualizer-container">
+            <div class="node-grid" id="grid"></div>
+            <div class="overlay-text">RENDERING: CANVAS_MODE_V2 | NODES: 150</div>
+        </div>
+    </div>
+
+    <script>
+        const grid = document.getElementById('grid');
+        const totalNodes = 150;
+        for(let i=0; i<totalNodes; i++) {
+            const div = document.createElement('div');
+            div.className = 'node';
+            if(Math.random() > 0.75) div.classList.add('active');
+            else if(Math.random() > 0.85) div.classList.add('busy');
+            grid.appendChild(div);
+        }
+        setInterval(() => {
+            const nodes = document.querySelectorAll('.node');
+            const target = nodes[Math.floor(Math.random() * nodes.length)];
+            if(target.classList.contains('active')) {
+                target.classList.remove('active');
+                target.style.background = '#222';
+            } else {
+                target.classList.add('active');
+            }
+        }, 200);
+    </script>
+</body>
+</html>
