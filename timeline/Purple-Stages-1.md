@@ -217,3 +217,8 @@ The goal is to prevent the dissolution of meaning and the fragmentation of ident
   İlhanArt positions this not as an emergency button, but as a final layer embedded into culture centuries in advance: if civilization cannot be stopped, then at least it stops not by blind optimization, but with awareness of what it is losing.)
 
 ---
+
+> ### ⏩ **[Go Further into the Future →](https://github.com/galeri-coder/ilhanart-roadmap/blob/main/timeline/Purple-Stages-2.md)**
+> Continue to the next chapter of the İlhanArt Millennium Roadmap — exploring the evolution of civilizational culture beyond the post-human horizon.
+
+---
