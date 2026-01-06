@@ -1,87 +1,87 @@
 # 🏛️ [PoArt] Research Synthesis & Protocol Logic
 > **Document ID:** `REF-LOGIC-2026-V1.0`  
-> **Status:** `SEALED & VERIFIED`  
+> **Status:** `VERIFIED`  
 > **Encryption:** `SHA-512 SECURED`  
 > **Researcher:** `[G-C_RESEARCH]`
 
 ---
 
-### 📊 Executive Overview
-This archive serves as the foundational intellectual pillar of the [PoArt] Ecosystem. It categorizes the 10 core academic sources that justify our architectural decisions regarding time perception, attention economics, and market mechanics.
-
-| Pillar | Focus Area | Protocol Implementation |
-| :--- | :--- | :--- |
-| **P-01 to 03** | Time Perception | *Time Dilation UI & Slow Logic* |
-| **P-04 to 06** | Cognitive Capacity | *Digital Noise Filter & Deep Work* |
-| **P-07 to 10** | Market Psychology | *The Veto Doctrine & Anti-Hype* |
+## 🧬 Giriş: Protokolün Entelektüel Sütunları
+Bu döküman, [PoArt] ekosisteminin mimari kararlarını dayandırdığı 10 temel akademik çalışmanın detaylı analizini içerir. Her madde, araştırmanın özünü ve bu özün protokol koduna (Sol Ate Engine, Veto Doctrine, Michelangelo Audit) nasıl dönüştüğünü açıklar.
 
 ---
 
-### 🧬 Phase I: Time Perception & Cognitive Load
+### 🧪 Faz I: Zaman Algısı ve Bilişsel Yük
 
 #### 1. Zakay, D., & Block, R. A. (1995)
-* **Title:** *Prospective and Retrospective Duration Judgments: An Attentional-Gate Model.*
-* **Synthesis:** This research proves that when attention is focused on the passage of time, the "gate" opens wider, making time feel slower.
-* **[PoArt] Logic:** Used as the base for the **Sol Ate Engine**, where terminal focus "slows down" the perceived volatility of the market.
+* **Makale:** *Prospective and Retrospective Duration Judgments: An Attentional-Gate Model.*
+* **Kaynak:** [Springer Link - Psychonomic Bulletin & Review](https://link.springer.com/article/10.3758/BF03210971)
+* **Detaylı Analiz:** Bu çalışma, dikkat-kapısı modelini (Attentional-Gate Model) tanıtır. Eğer bir birey zamanın geçişine ne kadar çok odaklanırsa, "bilişsel kapı" o kadar açılır ve zaman o kadar yavaş akar.
+* **[PoArt] Uygulaması:** **Sol Ate Engine** içinde kullanılır. Terminal arayüzü, kullanıcıyı zamanın akışına ve işlem yoğunluğuna odaklayarak piyasadaki kaotik hızı "yavaşlatılmış" bir algıya dönüştürür.
 
 #### 2. Kahneman, D. (2011)
-* **Title:** *Thinking, Fast and Slow.*
-* **Synthesis:** Distinguishes between System 1 (Intuitive/Fast) and System 2 (Rational/Slow/Analytical).
-* **[PoArt] Logic:** The Protocol UI intentionally disrupts System 1 (emotional trading) to force System 2 (architectural research) engagement.
+* **Kitap:** *Thinking, Fast and Slow (Hızlı ve Yavaş Düşünme).*
+* **Kaynak:** [Google Books Detail](https://www.google.com/books/edition/Thinking_Fast_and_Slow/Zu9_H0996S0C)
+* **Detaylı Analiz:** Kahneman, zihnin iki modunu tanımlar: Sistem 1 (Hızlı, sezgisel, duygusal) ve Sistem 2 (Yavaş, analitik, mantıklı).
+* **[PoArt] Uygulaması:** Protokol UI, kullanıcıyı Sistem 1'den (FOMO ile hızlı trade) koparıp Sistem 2'ye (mimari araştırma ve derin analiz) zorlamak için kasıtlı "sürtünme noktaları" ve analiz bariyerleri içerir.
 
 #### 3. Flaherty, M. G. (1999)
-* **Title:** *A Watched Pot: How We Experience Time.*
-* **Synthesis:** Explores "protracted duration"—the experience of time expanding during periods of high cognitive density.
-* **[PoArt] Logic:** Foundation for the **Contribution Power (CP)** metric, where labor density dictates governance status.
+* **Kitap:** *A Watched Pot: How We Experience Time.*
+* **Kaynak:** [NYU Press Archive](https://nyupress.org/9780814726878/a-watched-pot/)
+* **Detaylı Analiz:** "Protracted Duration" kavramını inceler. Bilişsel yoğunluğun (öğrenme, yaratım, derin odak) yüksek olduğu anlarda zamanın genişlediğini kanıtlar.
+* **[PoArt] Uygulaması:** **Contribution Power (CP)** metriğinin temelidir. Bir kullanıcının platformda geçirdiği "boş zaman" değil, ürettiği "bilişsel yoğunluk" ödüllendirilir.
 
 ---
 
-### 📱 Phase II: Digital Attention & Brain Drain
+### 📱 Faz II: Dijital Dikkat ve Bilişsel Kapasite
 
 #### 4. Ward, A. F., et al. (2017)
-* **Title:** *Brain Drain: The Mere Presence of One’s Own Smartphone Reduces Available Cognitive Capacity.*
-* **Synthesis:** Evidence that simply having a smartphone nearby—even if unused—drains mental energy and reduces IQ performance.
-* **[PoArt] Logic:** Justifies the "Minimalist Terminal" approach, removing secondary digital noise to restore the researcher's cognitive capacity.
+* **Makale:** *Brain Drain: The Mere Presence of One’s Own Smartphone Reduces Available Cognitive Capacity.*
+* **Kaynak:** [University of Chicago Press](https://www.journals.uchicago.edu/doi/10.1086/691462)
+* **Detaylı Analiz:** Akıllı telefonların sadece ortamda bulunmasının bile (kapalı olsalar dahi) insanın kullanılabilir IQ ve odaklanma kapasitesini düşürdüğünü kanıtlar.
+* **[PoArt] Uygulaması:** **Minimalist Terminal** yaklaşımı. [PoArt] arayüzü, kullanıcının bilişsel enerjisini emen tüm dış bildirimleri ve "parlak" dikkat dağıtıcıları elimine eder.
 
 #### 5. Carr, N. (2010)
-* **Title:** *The Shallows: What the Internet Is Doing to Our Brains.*
-* **Synthesis:** Analysis of how constant digital "scrolling" and "hyperlinking" destroys the neurological ability for deep-form focus.
-* **[PoArt] Logic:** We eliminate infinite scrolls within the [PoArt] dashboard to protect long-term focus states.
+* **Kitap:** *The Shallows: What the Internet Is Doing to Our Brains.*
+* **Kaynak:** [W.W. Norton & Company](https://www.google.com/books/edition/The_Shallows_What_the_Internet_Is_Doing/iF_0AgAAQBAJ)
+* **Detaylı Analiz:** İnternetteki "kaydırma" (scrolling) ve "hiperlink" kültürünün derin düşünme yeteneğimizi nasıl fiziksel olarak körelttiğini nörolojik verilerle açıklar.
+* **[PoArt] Uygulaması:** Protokol içinde "sonsuz kaydırma" (infinite scroll) yasaktır. Bilgi, derinlemesine incelenmesi gereken statik ve katmanlı dökümanlar halinde sunulur.
 
 #### 6. Newport, C. (2016)
-* **Title:** *Deep Work: Rules for Focused Success in a Distracted World.*
-* **Synthesis:** Defines "Deep Work" as the elite ability to focus without distraction on cognitively demanding tasks.
-* **[PoArt] Logic:** The **365-Day Lock Logic** is a direct implementation of rewarding long-term "Deep Work" over short-term "Shallow Activity."
+* **Kitap:** *Deep Work: Rules for Focused Success in a Distracted World.*
+* **Kaynak:** [Cal Newport Official](https://www.calnewport.com/books/deep-work/)
+* **Detaylı Analiz:** "Derin Çalışma"yı, dikkati dağıtmadan bilişsel olarak zorlayıcı bir göreve odaklanma yeteneği olarak tanımlar ve bunun yeni ekonominin "süper gücü" olduğunu savunur.
+* **[PoArt] Uygulaması:** **365-Day Lock Logic.** Protokol, kısa vadeli spekülatörleri dışlar; sadece bir yıl boyunca "derin odak" ile ekosistemde kalan "inşacıları" (builders) ana paydaş kabul eder.
 
 ---
 
-### 📈 Phase III: Behavioral Market Mechanics
+### 📈 Faz III: Davranışsal Piyasa Mekanikleri
 
 #### 7. Barber, B. M., & Odean, T. (2008)
-* **Title:** *All That Glitters: Individual Investors and Attention-Grabbing Stocks.*
-* **Synthesis:** Retail capital is irrationally attracted to "Attention-Grabbing" assets, regardless of their fundamental value.
-* **[PoArt] Logic:** The **Anti-Hype Filter** neutralizes social media noise, prioritizing verified "Proof of Contribution."
+* **Makale:** *All That Glitters: Individual Investors and Attention-Grabbing Stocks.*
+* **Kaynak:** [Oxford Academic - RFS](https://academic.oup.com/rfs/article/21/2/785/1581404)
+* **Detaylı Analiz:** Bireysel yatırımcıların rasyonel değerden ziyade "dikkat çekici" (haberlerde çok çıkan, çok yükselen) varlıklara mantıksız şekilde yöneldiğini gösterir.
+* **[PoArt] Uygulaması:** **Anti-Hype Filter.** [PoArt] dashboard'u, sosyal medya etkileşimi yerine sadece teknik ve sanatsal "Proof of Contribution" verilerini filtreler.
 
 #### 8. Thaler, R. H. (1985)
-* **Title:** *Mental Accounting and Consumer Choice.*
-* **Synthesis:** Humans categorize money/assets into "mental boxes" (accounts), which changes their risk-taking behavior.
-* **[PoArt] Logic:** Reframes the token as **"Cultural Labor"** rather than "Disposable Currency" to foster a "Heritage Mindset."
+* **Makale:** *Mental Accounting and Consumer Choice.*
+* **Kaynak:** [JSTOR / Marketing Science](https://pubsonline.informs.org/doi/10.1287/mksc.4.3.199)
+* **Detaylı Analiz:** İnsanların parayı harcama şekillerinin, parayı hangi "zihinsel hesaba" (eğlence, yatırım, miras) koyduklarına göre değiştiğini açıklar.
+* **[PoArt] Uygulaması:** Token tasarımı. Varlık, "harcanabilir nakit" olarak değil, bir "Kültürel Emek Tapusu" (Heritage Asset) olarak çerçevelenir.
 
 #### 9. Shiller, R. J. (2000)
-* **Title:** *Irrational Exuberance.*
-* **Synthesis:** A seminal study on the psychological feedback loops that create and burst market bubbles.
-* **[PoArt] Logic:** Implementation of **Deterministic Scarcity** curves that resist irrational "pump-and-dump" psychological cycles.
+* **Kitap:** *Irrational Exuberance (Mantıksız Coşku).*
+* **Kaynak:** [Princeton University Press](https://press.princeton.edu/books/paperback/9780691173351/irrational-exuberance)
+* **Detaylı Analiz:** Piyasa balonlarının psikolojik geri besleme döngüleri (feedback loops) ile nasıl oluştuğunu analiz eder.
+* **[PoArt] Uygulaması:** **Deterministic Scarcity Curves.** Fiyat ve arz mekanizması, Shiller’ın tanımladığı "mantıksız coşku" dalgalanmalarını sönümleyecek şekilde matematiksel olarak sabitlenmiştir.
 
 #### 10. Wu, T. (2016)
-* **Title:** *The Attention Merchants: The Epic Scramble to Get Inside Our Heads.*
-* **Synthesis:** The history of how attention was commodified and sold to advertisers, bypassing human intent.
-* **[PoArt] Logic:** Reclaims the "Value of Attention" from third-party platforms and returns it to the builder via the **Michelangelo Audit**.
+* **Kitap:** *The Attention Merchants.*
+* **Kaynak:** [Penguin Random House](https://www.google.com/books/edition/The_Attention_Merchants/NqE5DAAAQBAJ)
+* **Detaylı Analiz:** Dikkatin nasıl ticari bir meta haline getirildiğini ve insanın en değerli kaynağının reklamcılar tarafından nasıl sömürüldüğünü anlatır.
+* **[PoArt] Uygulaması:** **Michelangelo Audit.** Kullanıcının dikkati platform tarafından satılmaz; aksine, bu dikkat doğrudan sanat eserinin veya yazılımın kalitesini artırmak için bir "audit" gücüne dönüştürülür.
 
 ---
-
-### 🛡️ Verification & Notary
 ```diff
-+ PROTOCOL_STATUS: VERIFIED
-+ RESEARCH_LOGIC: 10/10 PILLARS ACTIVE
-+ INTEGRITY_SEAL: SHA-512_AUTHENTICATED
-```
++ RESEARCH_LOGIC: 10/10 PILLARS INTEGRATED
++ SYSTEM_INTEGRITY: SECURED
