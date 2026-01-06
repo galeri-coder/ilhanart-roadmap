@@ -117,4 +117,103 @@
 * **Örnek Senaryo:** Bir kullanıcı, yapay zeka ile ürettiği bir görseli "kendi emeğim" diyerek [PoArt] için başvuruda bulundu. Ancak topluluk, sunulan "Evidence Pack" içinde tutarsızlıklar fark etti. Elinde [FPP] tutan gerçek sanat destekçileri (Patrons), oylama güçlerini kullanarak %40 barajını geçerlerse, o görsel sisteme asla "Sanat Eseri" olarak mühürlenemez. Logaritmik skorlama (log10) sayesinde, bir balinanın bu %40'lık barajı tek başına parayla aşması matematiksel olarak imkansız hale getirilmiştir.
 
 ---
+## 🏛️ 7. The Michelangelo Framework (Meritocracy Engine)
+
+### **Michelangelo // The Meritocracy Philosophy**
+* **Tanım:** İlhan Art ekosisteminin sıralama ve itibar motorudur. Sistemin bir "Zenginler Listesi" (Rich List) olmasını engelleyen, liyakat tabanlı bir hiyerarşi modelidir.
+* **Çözdüğü Sorun:** Geleneksel kripto projelerinde cüzdanında en çok para olanın en tepede yer alması adaletsizliği.
+* **Cevap:** Michelangelo motoru şu sloganla çalışır: *"You cannot buy your way to the top."* (Zirveyi satın alamazsın; inşa etmeli, çevirmeli ve küratörlük yapmalısın).
+* **Örnek:** Milyonlarca dolarlık bir balina, sisteme sadece para koyduğu için asla 1 numaralı "Patron" olamaz. Zirve, yıllarca sisteme kültürel katkı sunan (Translation, Curation, Building) ve zamanını veren kişilere aittir.
+
+### **Status Formula: Time x Contribution**
+* **Tanım:** Bir "Patron"un nihai skorunu (Final Score) belirleyen temel çarpan mekanizmasıdır.
+* **Matematiksel Model:**
+  $$\text{Status} = \text{Holding Time} \times \text{Cultural Contribution}$$
+* **Bileşenler:**
+    1. **Holding Time:** Varlığın soğuk cüzdanda (Cold Wallet) bozulmadan durduğu toplam gün sayısı. (Örn: Görseldeki gibi 1,420 Gün).
+    2. **Cultural Contribution:** Sanatçının veya hamisinin ekosisteme kattığı somut değer (Çeviriler, teknik geliştirmeler, sergi destekleri).
+* **Çözdüğü Sorun:** Sadece cüzdanda para tutmanın "pasif" bir eylem olması. Sistem, "hem tutan hem de üreten" kişiyi ödüllendirir.
+
+---
+
+## 📊 8. Cultural Multipliers & Ranking Levels
+
+### **Cultural Multiplier (Kültürel Çarpanlar)**
+* **Tanım:** Patronların final skoruna eklenen, belirli görevlerin tamamlanmasıyla kazanılan bonus puan sistemidir.
+* **Uygulama Alanları:**
+    - **Translation (JP/TR/EN):** Bilimsel, felsefi veya sanatsal metinlerin İlhan Art standartlarında çevrilmesi (Örn: +4,500 Pts).
+    - **Curation:** Registry üzerindeki eserlerin kalite kontrolü ve veto süreçlerine aktif katılım.
+    - **Infrastructure:** Ekosistemin teknik dökümantasyonuna veya kod altyapısına yapılan katkılar.
+* **Örnek:** Bir Patron 1000 gün boyunca varlık tuttuysa (Base Score), buna ek olarak yaptığı bir çeviriyle +4,500 Pts "Kültürel Çarpan" alarak sıralamada binlerce kişinin önüne geçebilir.
+
+### **Tier Classifications (Rütbe Seviyeleri)**
+Sistem, topluluk içindeki ağırlığı 3 ana elit seviyeye ayırır:
+1. **Legendary (Top 10):** Ekosistemin en üst düzey kurucu iradesi. Sadece en yüksek puanlı 10 cüzdan bu unvana ve en yüksek "Veto" gücüne sahiptir.
+2. **Senior (Top 50):** Sistemin ana taşıyıcı kolonları (Pillars). Karar alma mekanizmalarında kritik söz hakkına sahiptirler.
+3. **Veteran (Top 100):** Ekosistemin uzun vadeli ve güvenilir doğrulayıcıları.
+* **Önemli Kural:** Bu rütbeler statik değildir; bir Patron katkıyı bırakırsa veya varlığını cüzdandan çıkarırsa, alttan gelen aktif Patronlar tarafından rütbesi elinden alınır.
+
+---
+
+## 🛡️ 9. Cut-off Thresholds (Eşik Bariyerleri)
+
+### **Entry Thresholds (Giriş Barajları)**
+* **Tanım:** Belirli bir rütbeye veya Global Registry listesine girebilmek için aşılması gereken matematiksel puan sınırlarıdır.
+    - **Legendary Threshold:** 92,500 Pts (Bu puanın altındakiler ne kadar parası olursa olsun Top 10'a giremez).
+    - **Top 100 Entry:** 45,000 Pts (Global listeye adını yazdırmak için gereken minimum liyakat puanı).
+* **Çözdüğü Sorun:** Sistemin "kalabalıklaşmasını" ve kalitesizleşmesini engeller. Zirveye giden yol, her geçen gün zorlaşan bir matematiksel bariyerle korunur.
+
+### **Network TWAB (Global Zaman Ağırlığı)**
+* **Tanım:** Tüm ekosistemin toplam zaman-ağırlıklı bakiyesidir (Örn: 4.2M Network TWAB).
+* **Fonksiyonu:** Sistemin toplam "güven hacmini" gösterir. Bu rakam ne kadar yüksekse, [PoArt] protokolü o kadar saldırılamaz ve manipüle edilemez hale gelir.
+* **24h New Entries:** Sisteme son 24 saatte dahil edilen yeni [PoArt] kayıtlarını gösteren canlı veri akışıdır.
+---
+
+## 🏛️ 10. Intellectual Framework (Entelektüel Yapı)
+
+### **IPOW: Intellectual Proof of Work (Emek Stake Etme)**
+* **Tanım:** Sadece maddi varlık tutmanın ötesinde, sisteme "yüksek nitelikli insan emeği" (çeviri, sanat üretimi, teknik dökümantasyon, eğitim) katmayı zorunlu kılan itibar motorudur.
+* **Çözdüğü Sorun:** "Pasif Stake" sorunu. Diğer projelerde kullanıcılar sadece token tutarak (passive holding) ödül kazanırken, [FPP] ekosisteminde pasiflik bir dezavantajdır.
+* **Nasıl Çalışır?** Kullanıcının temel skoru (TWAB), yaptığı somut kültürel katkılarla çarpılır. Sisteme "emek" enjekte edilmediği sürece, sadece para tutarak "Legendary" statüsüne ulaşmak matematiksel olarak imkansız hale getirilir.
+* **Örnek:** Bir kullanıcı 1 milyon token tutsa bile, eğer tek bir çeviri yapmamış veya sanatsal kanıt (PoArt) sunmamışsa; 100 token tutan ama aktif olarak döküman çeviren bir "Emekçi" (Worker) tarafından yönetimde saf dışı bırakılabilir.
+
+### **Intellectual Honesty Filter (Entelektüel Dürüstlük ve Quiz Mekanizması)**
+* **Tanım:** Herhangi bir hak talebinde (claim) veya yönetim oylamasında, kullanıcının konuyu gerçekten anlayıp anlamadığını ölçen "Zorunlu Entelektüel Emek Kanıtı" aşamasıdır.
+* **Çözdüğü Sorun:** 1. **Copy-Paste Kültürü:** Kullanıcıların neyi oyladığını bilmeden sadece "Evet" veya "Hayır" demesi.
+    2. **AI Spam:** Yapay zekanın otomatik olarak claim işlemlerini gerçekleştirmesi.
+* **Nasıl Çalışır?** Sistem, claim öncesi kullanıcıya dökümantasyon veya protokol kuralları hakkında rastgele, dinamik sorular yöneltir. Bu soruları doğru yanıtlayamayan kullanıcı, oylama veya ödül haklarını o dönem için kaybeder. Amaç "kopyalamayı" değil, "anlamayı" ödüllendirmektir.
+
+---
+
+## 🛡️ 11. Advanced Sybil Resistance (Gelişmiş Saldırı Koruması)
+
+### **The Turnstile Mechanism (Turnike Sistemi)**
+* **Tanım:** Ekosisteme giriş için belirlenen "Minimum Katılım Eşiği"dir (Örn: 250 ILHAN Token).
+* **Felsefesi:** *"Duvar değil, turnike."* Bu sistem, gerçek kullanıcıların içeri girmesini engellemek için değil, sıfır maliyetli bot saldırılarını (Sybil Attack) ekonomik olarak verimsiz hale getirmek için kurulmuştur.
+* **Çözdüğü Sorun:** Bir saldırganın milyonlarca boş cüzdan açarak sistemi "zombi cüzdanlarla" doldurması ve oylamaları manipüle etmesi.
+* **Örnek:** 10,000 sahte hesap açmak isteyen bir bot operatörü, her hesap için 250 token tutmak zorunda kaldığında, bu saldırının maliyeti saldırganın elde edeceği faydadan çok daha yüksek bir seviyeye çıkar ve saldırı matematiksel olarak durur.
+
+### **Zombie Wallet Filter (Aktif Claim Zorunluluğu)**
+* **Tanım:** Belirli periyotlarla (aylık/yıllık) cüzdanın "hayatta ve aktif" olduğunu kanıtlamasını gerektiren filtreleme sistemidir.
+* **Çözdüğü Sorun:** Arşivin ve yönetim listelerinin (Top 100), anahtarı kaybolmuş veya terk edilmiş "ölü" adreslerle dolması.
+* **Cevap:** Aktif claim yapmayan adresler, skorları ne kadar yüksek olursa olsun "Global Registry" listesinden otomatik olarak düşürülür. Bu sayede sistem, sadece "yaşayan ve üreten" bireylerden oluşan dinamik bir yapı olarak kalır.
+
+---
+
+## 🧬 12. Generational Legacy & Governance (Nesiller Arası Miras ve Yönetim)
+
+### **Generational Inheritance (Nesiller Arası Miras/Varis Belirleme)**
+* **Tanım:** 4 yıl (1460 gün) boyunca kesintisiz "Legendary" statüsünü koruyan üyelerin, kazandıkları itibar skorunu ve haklarını bir sonraki nesle (varise) devretme yetkisidir.
+* **Vizyon:** İlhanArt'ın "Bin Yıllık Vizyon" (2026-3000) hedefini gerçekleştiren köprüdür.
+* **Çözdüğü Sorun:** Bir kişinin ölümü veya aktifliğini yitirmesiyle, on yıllar boyunca biriktirdiği "kültürel değerin" ekosistemden silinip gitmesi.
+* **Uygulama:** Sadece 4 yıllık sadakatini kanıtlamış olanlar "Varis Belirleme" ekranına erişebilir. Bu işlem on-chain olarak mühürlenir ve bir "itibar mirası" oluşturulur.
+
+### **Parliamentary Governance Rights (Parlamenter Söz Hakkı)**
+* **Tanım:** Skor seviyesine göre (Legendary, Patron, Member) cüzdanlara atanan kademeli yönetim ve denetim yetkileridir.
+* **Hiyerarşi Detayları:**
+    1. **Legendary (100k+ Skor):** "Tam Parlamenter Söz Hakkı". Sistemin anayasası, fee yapıları ve stratejik vizyon üzerinde doğrudan "Kurucu İrade" yetkisine sahiptirler.
+    2. **Patron (50k-99k Skor):** "Küratör ve Denetçi". Eser listeleme onayları, oylamalar ve topluluk önerileri üzerinde aktif rol oynarlar.
+    3. **Member (<50k Skor):** Topluluk önerileri sunma ve küçük ölçekli kararlara katılım hakkı.
+* **Çözdüğü Sorun:** Kaotik ve kontrolsüz oylamalar yerine, ekosisteme en çok emek vermiş olanların en kritik kararları aldığı "Liyakate Dayalı Demokrasi" modelini getirir.
+
 
