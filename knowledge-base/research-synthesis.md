@@ -69,11 +69,10 @@ This document outlines the 10 academic pillars of the [PoArt] Ecosystem. Each st
 * **Analysis:** Nobel Laureate Richard Thaler explains how humans categorize money into different "mental buckets," which affects their risk-taking behavior.
 * **[PoArt] Implementation:** The token is framed as **"Heritage Capital"** rather than "Liquidity." By shifting the mental bucket from "Spending" to "Endowment," the protocol encourages multi-generational holding.
 
-#### 9. Shiller, R. J. (2000)
-* **Title:** *Irrational Exuberance.*
-* **Verified Link:** [Princeton University Press (Official 3rd Ed.)](https://press.princeton.edu/books/paperback/9780691173351/irrational-exuberance)
-* **Data Source:** [Yale University - Shiller Online Data](http://www.econ.yale.edu/~shiller/data.htm)
-* **Logic:** This seminal work analyzes how "psychological contagion" creates feedback loops that drive asset prices far beyond their fundamental value, leading to unsustainable bubbles. In the [PoArt] ecosystem, **Deterministic Scarcity Curves (DSC)** are implemented as a mathematical "reality anchor" to neutralize this contagion. By hardcoding the relationship between issuance, time, and demand into an immutable algorithm, DSC prevents "irrational exuberance" and social hype from decoupling the protocol's mechanical scarcity from its architectural integrity.
+#### 9. Minsky, H. P. (1992)
+* **Title:** *The Financial Instability Hypothesis.*
+* **Verified Link:** [Levy Economics Institute - Official PDF Archive](https://www.levyinstitute.org/publications/the-financial-instability-hypothesis)
+* **PoArt Logic:** Minsky describes how stability breeds the transition from **Hedge** to **Ponzi** finance. [PoArt] prevents this "Minsky Moment" by using **Deterministic Scarcity Curves** that mathematically enforce a perpetual "Hedge Finance" regime, where every token is collateralized by validated **Cultural Labor**.
 
 #### 10. Wu, T. (2016)
 * **Title:** *The Attention Merchants.*
