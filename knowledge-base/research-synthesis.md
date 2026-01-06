@@ -71,9 +71,9 @@ This document outlines the 10 academic pillars of the [PoArt] Ecosystem. Each st
 
 #### 9. Shiller, R. J. (2000)
 * **Title:** *Irrational Exuberance.*
-* **Verified Link:** [Google Books (Stable Version)](https://books.google.com/books/about/Irrational_Exuberance.html?id=f_YhCwAAQBAJ)
-* **Alternative Link:** [IrrationalExuberance.com (Official)](http://www.irrationalexuberance.com/)
-* **Logic:** Analyzes psychological bubbles. Implementation of **Deterministic Scarcity Curves** to resist social contagion.
+* **Verified Link:** [Princeton University Press (Official 3rd Ed.)](https://press.princeton.edu/books/paperback/9780691173351/irrational-exuberance)
+* **Data Source:** [Yale University - Shiller Online Data](http://www.econ.yale.edu/~shiller/data.htm)
+* **Logic:** This seminal work analyzes how "psychological contagion" creates feedback loops that drive asset prices far beyond their fundamental value, leading to unsustainable bubbles. In the [PoArt] ecosystem, **Deterministic Scarcity Curves (DSC)** are implemented as a mathematical "reality anchor" to neutralize this contagion. By hardcoding the relationship between issuance, time, and demand into an immutable algorithm, DSC prevents "irrational exuberance" and social hype from decoupling the protocol's mechanical scarcity from its architectural integrity.
 
 #### 10. Wu, T. (2016)
 * **Title:** *The Attention Merchants.*
