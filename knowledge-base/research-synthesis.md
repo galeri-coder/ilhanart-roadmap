@@ -82,7 +82,7 @@ If a system rewards verified effort and sustained attention, it can cultivate cu
 
 ### 1) Zakay & Block (1995) — Attentional-Gate Model (Framework)
 **Category:** Framework (widely used to interpret empirical timing results)  
-**DOI:** *(not available / not reliably assigned for this proceedings chapter; DOI-first policy falls back to an institutional archive anchor)*
+**DOI:** *(not available / not reliably assigned for this proceedings chapter; no DOI resolvable as of Last Link Check 2026-01-06; DOI-first policy falls back to an institutional archive anchor)*  
 
 **Canonical citation (anchor-matching):**  
 Zakay, D., & Block, R. A. (1995). *An attentional-gate model of prospective time estimation.*  
@@ -245,8 +245,8 @@ Barber, B. M., & Odean, T. (2008). *All That Glitters: Individual Investors and 
 
 ---
 
-### 8) Thaler (1985) — Mental Accounting (Framework + Evidence)
-**Category:** Framework (behavioral economics) with empirical grounding  
+### 8) Thaler (1985) — Mental Accounting (Framework)
+**Category:** Framework (behavioral economics; empirically grounded in the broader literature)  
 **DOI:** https://doi.org/10.1287/mksc.4.3.199
 
 Thaler, R. H. (1985). *Mental Accounting and Consumer Choice.* Marketing Science.
@@ -310,11 +310,13 @@ Interaction with the protocol should feel less like “trading” and more like:
 - verifying provenance,
 - signing a ledger.
 
-## 3.4 Implementation Mapping Matrix
+## 3.4 Implementation Mapping Matrix (excerpt)
+> Note: This matrix is an **excerpt** for quick orientation.  
+> The full mapping can be expanded to cover all 10 pillars if maintainers want a complete one-to-one table.
 
 | Research Pillar | PoArt Mechanism | Design Rule |
 | :--- | :--- | :--- |
-| **Attentional-Gate Model** (Zakay) | **Sol Ate Engine** | Attention must be transformed into a conscious, lived experience. |
+| **Attentional-Gate Model** (Zakay & Block) | **Sol Ate Engine** | Attention must be transformed into a conscious, lived experience. |
 | **System 2** (Kahneman) | **Minimalist Terminal** | Impulsive actions must be deterred via intentional analytical friction. |
 | **Deep Work** (Newport) | **365-Day Rule** | Cultural value is measured by continuity and sustained deep focus. |
 | **Mental Accounting** (Thaler) | **Heritage Capital** | Assets must be encoded as "cultural heritage" rather than "disposable cash." |
@@ -350,4 +352,4 @@ If a DOI is unavailable (common for older proceedings or book chapters), [PoArt]
 + Aligned Zakay & Block (1995) citation to match institutional anchor metadata (symposium/proceedings)
 + Standardized heading levels for a clean GitHub TOC (no mixed # vs ## jumps)
 + Confirmed updated publisher links (NYU Press / Norton / Cal Newport / Levy Institute)
-+ Ensured final diff block is properly closed (GitHub rendering)
++ Ensured final diff code block is properly closed (GitHub rendering)
