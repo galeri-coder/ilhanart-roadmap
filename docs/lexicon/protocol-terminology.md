@@ -216,4 +216,38 @@ Sistem, topluluk içindeki ağırlığı 3 ana elit seviyeye ayırır:
     3. **Member (<50k Skor):** Topluluk önerileri sunma ve küçük ölçekli kararlara katılım hakkı.
 * **Çözdüğü Sorun:** Kaotik ve kontrolsüz oylamalar yerine, ekosisteme en çok emek vermiş olanların en kritik kararları aldığı "Liyakate Dayalı Demokrasi" modelini getirir.
 
+## 🌍 13. Cultural Privilege Layers & Real-World Integration
+> **Not:** Bu bölümde belirtilen ayrıcalıklar, 2026-2030 yol haritası kapsamında kademeli olarak hayata geçirilecek olan "Gelecek Vizyonu" (Future Roadmap) bileşenleridir.
 
+### **The Annual Exhibition Right (Yıllık Galeri Hakkı)**
+* **Tanım:** [PoArt] üzerinden doğrulanmış yüksek skorlu sanatçıların ve patronların, fiziksel **İlhan Art Gallery** mekanında yılda bir kez, bir hafta süreyle kendi kürasyonlarını veya eserlerini sergileme hakkıdır.
+* **Çözdüğü Sorun:** Bağımsız sanatçıların fiziksel galeri alanlarına erişim zorluğu ve yüksek sergileme maliyetleri.
+* **Nasıl Çalışır?** Skor bazlı sıralamada belirli bir eşiği (Threshold) geçen kullanıcılar, takvim üzerinden rezervasyon yaparak galeri alanını "itibar puanları" ile kullanabilirler. Bu, sanatın demokratikleşmesidir.
+
+### **Dynamic Art Pricing (JSON-Linked Discounts)**
+* **Tanım:** Fiziksel veya dijital sanat eserlerinin satın alım sürecinde, cüzdanınızdaki [FPP] statüsünün bir indirim anahtarı (JSON Metadata) olarak çalışmasıdır.
+* **Teknik Detay:** Eserlerin satış kontratı, alıcının cüzdanındaki "Status" verisini JSON kodu üzerinden okur.
+* **Uygulama:** - **Legendary:** %50+ indirim.
+    - **Patron:** %30 indirim.
+    - **Member:** %10 indirim.
+* **Önemli Felsefe:** Bu sistemde bir eseri ucuza almanın yolu "pazarlık" değil, ekosisteme sunulan "kanıtlanmış emek"tir.
+
+### **Physical Ecosystem Integration (Mağaza ve Partner Entegrasyonu)**
+* **Tanım:** Sıralamadaki statünün, fiziksel dünyadaki anlaşmalı işletmelerle (Kitabevleri, Kafeler, Kültür Merkezleri) dijital olarak entegre edilmesidir.
+* **Örnek Ortaklıklar:**
+    - **Kitabevleri:** FPP dökümantasyonunu ve felsefesini destekleyen yayınevlerinden, statüye göre özel indirim kodları (Claimable Codes).
+    - **Kafeler & Sosyal Alanlar:** Anlaşmalı mekanlarda QR kod okutularak statüye özel "Patron Kahvesi" veya indirimli hizmet erişimi.
+* **Çözdüğü Sorun:** Dijital itibarın gerçek hayatta bir karşılığının olmaması. Bu sistemle, İlhan Art kartvizitiniz değil, cüzdanınızdaki emeğinizdir.
+
+### **Labor Over Capital: Meritocratic Access (Emek > Sermaye)**
+* **Tanım:** Sistemin ana adalet formülüdür. Maddi imkanları kısıtlı olan ancak "Kültürel Katkı" (Translation, Code, Art, Education) üreten bireylerin, çok fazla token tutan pasif balinalardan daha fazla avantaja sahip olmasıdır.
+* **Matematiksel Mantık:** $$\text{Hak Talebi (Claim Right)} \propto \text{Kültürel Puan} + \log_{10}(\text{Bakiye})$$
+* **Sonuç:** Bu sistemde, 250 token (Turnstile limit) tutup yoğun çeviri ve sanat katkısı sağlayan bir öğrenci, 100.000 token tutup hiçbir şey üretmeyen birinden çok daha fazla indirim, sergi hakkı ve ücretsiz kahve/kitap erişimine sahip olacaktır.
+* **Felsefe:** *"Emek, en büyük sermayedir."*
+
+---
+
+## 📅 14. Roadmap & Future Notes
+Bu dökümantasyonda yer alan tüm maddeler, İlhan Art ekosisteminin 2026'dan 3000 yılına doğru uzanan vizyonunun birer yapı taşıdır. Her sürüm güncellemesi (v1.1, v1.2 vb.) bu ayrıcalıkların teknik entegrasyon süreçlerini (API bağlantıları, fiziksel POS entegrasyonları vb.) içerecektir.
+
+---
