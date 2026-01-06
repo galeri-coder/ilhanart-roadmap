@@ -25,22 +25,26 @@
 ## 📊 2. Economic & Governance Metrics (Ekonomik Metrikler)
 
 ### **TWAB (Time-Weighted Average Balance)**
-* **Tanım:** Zaman-Ağırlıklı Ortalama Bakiye. Bir cüzdanın ekosistem içindeki gerçek "ağırlığını" hesaplayan matematiksel formüldür.
+* **Tanım:** Zaman-Ağırlıklı Ortalama Bakiye. Bir cüzdanın ekosistem içindeki gerçek "ağırlığını" ve sadakatini hesaplayan en temel matematiksel formüldür. Bu değer, sadece "ne kadar" varlığınız olduğunu değil, bu varlığa "ne kadar süredir" sahip çıktığınızı ölçer.
 * **Matematiksel Model:**
-    $$TWAB = \sum (Bakiye \times Zaman)$$
-* **Çözdüğü Sorun:** "Whale Manipulation" (Balina Manipülasyonu). Varlıklı birinin kritik bir oylamadan hemen önce borsadan yüklü miktarda alım yaparak kararı kendi lehine manipüle etmesini engeller.
-* **Örnek Hesaplama:** * **A Şahsı:** 1.000.000 tokenı oylamadan 1 saat önce aldı. ($Zaman \approx 0$). Gücü: **Düşük.**
-    * **B Şahsı:** 100 tokenı 365 gündür cüzdanında tutuyor. ($Zaman = 365$). Gücü: **Yüksek.**
-    * **Sonuç:** Sistem, B şahsının sadakatini A şahsının parasına tercih eder.
+$$\text{TWAB} = \sum_{i=1}^{n} (\text{Bakiye}_i \times \Delta t_i)$$
+* **Çözdüğü Sorun:** **"Whale Manipulation" (Balina Manipülasyonu).** Geleneksel sistemlerde varlıklı birinin kritik bir oylamadan hemen önce borsadan yüklü miktarda alım yaparak kararı kendi lehine manipüle etmesini ve oylama biter bitmez varlığı satıp çıkmasını (pump-dump) teknik olarak engeller.
+* **TWAB Filtresi (İradeyi Korumak):** Seçimden veya kritik bir "claim" sürecinden hemen önce, düşük işlem ücretleri ödeyerek veya ani sermaye transferleri ile "Vatandaşlık/Oy Hakkı" satın alarak iradeyi sakatlamayı engeller. Zaman satın alınamaz bir meta olduğu için, anlık hamlelerin çarpanı sıfıra yaklaşır:
+$$\text{Oy Gücü} = \lim_{\Delta t \to 0} (\text{Bakiye} \times \Delta t) = 0$$
+* **Örnek Hesaplama:** * **A Şahsı:** 1.000.000 tokenı oylamadan sadece 1 saat önce satın aldı ($Zaman \approx 0$). Gücü: **Düşük.**
+    * **B Şahsı:** Sadece 100 tokenı var ama bu varlığı tam 365 gündür soğuk cüzdanında muhafaza ediyor ($Zaman = 365$). Gücü: **Yüksek.**
+* **Sonuç:** Sistem, B şahsının 1 yıllık sadakatini, A şahsının son dakika getirdiği parasına tercih eder. Gerçek güç, zamanla inşa edilir.
+
+---
 
 ### **Logarithmic Power Scoring (Logaritmik Skor)**
-* **Tanım:** Güç artışını doğrusal (lineer) değil, logaritmik olarak hesaplayan matematiksel adalet mekanizmasıdır.
+* **Tanım:** Güç artışını doğrusal (lineer) değil, **logaritmik** olarak hesaplayan, ekosistemin adalet mekanizmasıdır. Bu formül, sermayenin sınırsızca büyümesini ve küçük sesleri boğmasını engellemek için tasarlanmıştır.
 * **Matematiksel Model:**
-    $$Score = \log_{10}(TWAB + 1)$$
-* **Çözdüğü Sorun:** Kapitalist güç yoğunlaşması. Çok büyük varlık sahiplerinin topluluğun sesini tamamen bastırmasını engeller.
-* **Örnek Hesaplama:** * 10 tokenı olanın gücü $log_{10}(10) = \mathbf{1}$ ise,
-    * 1.000.000 tokenı olanın gücü $log_{10}(1,000,000) = \mathbf{6}$ olur.
-    * **Adalet Notu:** Bir kişi diğerinden 100.000 kat daha zengin olsa bile, yönetimde sadece 6 kat daha güçlü olabilir. Bu, küçük yatırımcıların birleşerek devleri dengelemesini sağlar.
+$$\text{Score} = \log_{10}(\text{TWAB} + 1)$$
+* **Çözdüğü Sorun:** **Kapitalist Güç Yoğunlaşması (Plotokrasi).** Çok büyük varlık sahiplerinin (balinaların) topluluğun sesini tamamen bastırmasını ve demokratik süreçleri "paranın gücüyle" domine etmesini engeller.
+* **Örnek Hesaplama:** * 10 birim TWAB gücü olan bir kullanıcının yönetim skoru: $\log_{10}(10) = \mathbf{1}$
+    * 1.000.000 birim TWAB gücü olan bir devasa varlığın yönetim skoru: $\log_{10}(1,000,000) = \mathbf{6}$
+* **Adalet Notu:** Bir kişi diğerinden tam **100.000 kat** daha zengin olsa bile, yönetimde sadece **6 kat** daha güçlü olabilir. Bu matematiksel baraj, binlerce küçük sanatseverin ve emekçinin birleşerek devasa sermaye gruplarını dengelemesini ve demokratik parlamenter sistemin sağlıklı kalmasını sağlar.
 
 ---
 
@@ -49,7 +53,7 @@
 ### **Millennium Vault (10-Year Epochs)**
 * **Tanım:** Varlıkların 10 yıllık periyotlarla (Epoch) kilitlendiği, ekosistemin en üst düzey "itibar kasası"dır.
 * **Çözdüğü Sorun:** Kısa vadeli kâr maksimizasyonu hedefleyen spekülatörlerin, projenin 2025-3000 arasındaki uzun vadeli vizyonuna zarar verecek kararlar alması.
-* **Cevap:** Projenin geleceğine dair en kritik kararları ancak varlığını 10 yıl boyunca kilitleyen ve "Founding Patron" statüsü kazanan kişiler verebilir. Bu, projenin kurucu iradesini yüzyıllar boyunca korur.
+* **Cevap:** Projenin geleceğine dair en kritik kararları ancak varlığını 10 yıl boyunca kilitleyen ve "Foundational Pillar Protocol" statüsü kazanan kişiler verebilir. Bu, projenin kurucu iradesini yüzyıllar boyunca korur.
 
 ### **Evidence Pack (Kanıt Paketi)**
 * **Tanım:** Bir sanat eserinin [PoArt] protokolü tarafından onaylanması için gereken zorunlu teknik veri setidir.
@@ -66,17 +70,18 @@
 
 ---
 
-## 🗳️ 4. Governance (Yönetim)
-
-### **Veto Threshold (%40)**
-* **Tanım:** Bir sanat eserinin veya protokol değişikliğinin reddedilmesi için gereken minimum topluluk "Hayır" oyu oranıdır.
-* **Çözdüğü Sorun:** Çoğunluğun diktatörlüğü ve sisteme düşük kaliteli veya şüpheli içeriklerin sızması.
-* **Cevap:** Topluluğun %40'ı bir kayıt için "Bu [PoArt] standartlarına uymuyor" derse, o kayıt mühürlenmez. Bu, kalitenin ve şeffaflığın topluluk tarafından korunmasıdır.
-
-### **Digital Notary (Dijital Noter)**
-* **Tanım:** [PoArt] verilerini süzgeçten geçiren, doğruluğunu onaylayan ve Public Registry'ye (Kamu Arşivi) mühürleyen akıllı kontrat mekanizmasıdır.
-* **Çözdüğü Sorun:** Onay sürecinde "insan" faktöründen kaynaklanan taraflılık, rüşvet veya hata riskini ortadan kaldırır.
-* **Sonuç:** Bir sanat eseri Dijital Noter tarafından onaylandığı an, 3000 yılına kadar silinmeyecek ve değiştirilemeyecek olan evrensel sanat arşivindeki yerini alır.
+### 💾  4. **Digital Notary (Dijital Noter: Protokolün Sarsılmaz Mührü)**
+* **Tanım:** [PoArt] ve [Foundational Pillar Protocol] verilerini teknik süzgeçten geçiren, doğruluğunu matematiksel olarak onaylayan ve nihai veriyi **Public Registry** (Kamu Arşivi) üzerine geri dönülemez şekilde mühürleyen, kendi kendine çalışan (self-executing) akıllı kontrat mekanizmasıdır.
+* **Çözdüğü Sorunlar:** 1.  **Merkezi Otorite ve Bias:** Geleneksel sanat dünyasında bir eserin "gerçek" olup olmadığına karar veren subjektif "otorite" gruplarının yarattığı rüşvet, taraflılık ve kişisel zevk risklerini ortadan kaldırır.
+    2.  **Veri Manipülasyonu:** Onaylanmış bir kaydın geriye dönük olarak değiştirilmesi, silinmesi veya sansürlenmesi riskini teknik olarak imkansız kılar.
+    3.  **Gatekeeping (Erişim Engeli):** Nitelikli sanatçıların, belirli "elit" grupların onayına ihtiyaç duymadan, sadece emeklerini kanıtlayarak küresel arşive girmesini sağlar.
+* **Nasıl Çalışır? (Doğrulama Döngüsü):** Dijital Noter, deterministik bir "Kara Kutu" (Black Box) mantığıyla çalışır. Sisteme giren her kayıt şu üçlü filtreden geçmek zorundadır:
+    - **Evidence Pack (Trinity of Proof):** Canlı yayın, timelapse ve teknik log verilerinin eksiksiz sunulması.
+    - **Demokratik Denetim:** Topluluğun %40 Veto eşiğini aşmamış olması.
+    - **Kriptografik İmza:** Sanatçının 512-bit (SHA-512) dijital imzasının geçerliliği.
+* **Matematiksel Onay Mührü:**
+$$\text{NotarySeal} = \text{Hash}(\text{EvidencePack} + \text{VoterConsensus} + \text{TimeStamp})$$
+* **Sonuç (2026-3000 Vizyonu):** Bir eser Dijital Noter mührünü aldığı an, artık bir kişinin veya kurumun malı olmaktan çıkar; insanlığın **3000 yıllık evsel sanat mirasının** sarsılmaz bir parçası haline gelir. Bu mühür; eserin yüzyıllar sonra bile kim tarafından, ne zaman ve hangi somut emekle (IPOW) inşa edildiğinin evrensel kanıtıdır.
 
 ## 🏛️ 5. Validation & Persistence (Doğrulama ve Süreklilik)
 
@@ -86,7 +91,7 @@
     2. **Spekülatif Baskı:** Sanatın bir yatırım aracından ziyade "kültürel bir miras" olarak konumlanmasını sağlamak.
     3. **Güvenlik Zafiyeti:** Sıcak cüzdanların (Hot Wallet) hacklenme riskine karşı ekosistemi korumak.
 * **Nasıl Çalışır? (Teknik İşleyiş):** Akıllı kontrat (Smart Contract), varlığın cüzdana girdiği blok numarasını ve zaman damgasını mühürler. Sistem 7/24 zincir üstü (on-chain) izleme yapar. Eğer varlık 365 gün dolmadan tek bir transfer işlemi dahi görürse, bağlı olduğu [PoArt] doğrulama statüsü anında "Verified" (Doğrulanmış) durumundan "Revoked" (İptal) durumuna çekilir.
-* **Örnek Senaryo:** Bir koleksiyoner, "Founding Patron" ünvanını korumak istiyorsa, varlığını Ledger veya Trezor gibi bir donanım cüzdana çeker. Eğer 200. günde nakit paraya sıkışıp varlığın bir kısmını satarsa, o güne kadar biriktirdiği tüm "Zaman Ağırlıklı Ortalama Bakiye" (TWAB) puanları sıfırlanır ve "yeşil ışığı" söner.
+* **Örnek Senaryo:** Bir koleksiyoner, "Foundational Pillar Protocol" ünvanını korumak istiyorsa, varlığını Ledger veya Trezor gibi bir donanım cüzdana çeker. Eğer 200. günde nakit paraya sıkışıp varlığın bir kısmını satarsa, o güne kadar biriktirdiği tüm "Zaman Ağırlıklı Ortalama Bakiye" (TWAB) puanları sıfırlanır ve "yeşil ışığı" söner.
 
 ### **Evidence Pack: Trinity of Proof (Üçlü Kanıt Mekanizması)**
 * **Tanım:** [PoArt] v1.0 standartları çerçevesinde, bir eserin yapay zeka tarafından değil, bir insan tarafından, belirli bir zaman diliminde ve fiziksel/dijital bir emekle üretildiğini kanıtlayan sarsılmaz veri kümesidir.
@@ -117,7 +122,7 @@
 * **Örnek Senaryo:** Bir kullanıcı, yapay zeka ile ürettiği bir görseli "kendi emeğim" diyerek [PoArt] için başvuruda bulundu. Ancak topluluk, sunulan "Evidence Pack" içinde tutarsızlıklar fark etti. Elinde [FPP] tutan gerçek sanat destekçileri (Patrons), oylama güçlerini kullanarak %40 barajını geçerlerse, o görsel sisteme asla "Sanat Eseri" olarak mühürlenemez. Logaritmik skorlama (log10) sayesinde, bir balinanın bu %40'lık barajı tek başına parayla aşması matematiksel olarak imkansız hale getirilmiştir.
 
 ---
-## 🏛️ 7. The Michelangelo Framework (Meritocracy Engine)
+## ⚙️ 7. The Michelangelo Framework (Meritocracy Engine)
 
 ### **Michelangelo // The Meritocracy Philosophy**
 * **Tanım:** İlhan Art ekosisteminin sıralama ve itibar motorudur. Sistemin bir "Zenginler Listesi" (Rich List) olmasını engelleyen, liyakat tabanlı bir hiyerarşi modelidir.
@@ -155,7 +160,7 @@ Sistem, topluluk içindeki ağırlığı 3 ana elit seviyeye ayırır:
 
 ---
 
-## 🛡️ 9. Cut-off Thresholds (Eşik Bariyerleri)
+## 📈 9. Cut-off Thresholds (Eşik Bariyerleri)
 
 ### **Entry Thresholds (Giriş Barajları)**
 * **Tanım:** Belirli bir rütbeye veya Global Registry listesine girebilmek için aşılması gereken matematiksel puan sınırlarıdır.
@@ -169,7 +174,7 @@ Sistem, topluluk içindeki ağırlığı 3 ana elit seviyeye ayırır:
 * **24h New Entries:** Sisteme son 24 saatte dahil edilen yeni [PoArt] kayıtlarını gösteren canlı veri akışıdır.
 ---
 
-## 🏛️ 10. Intellectual Framework (Entelektüel Yapı)
+## 🎨 10. Intellectual Framework (Entelektüel Yapı)
 
 ### **IPOW: Intellectual Proof of Work (Emek Stake Etme)**
 * **Tanım:** Sadece maddi varlık tutmanın ötesinde, sisteme "yüksek nitelikli insan emeği" (çeviri, sanat üretimi, teknik dökümantasyon, eğitim) katmayı zorunlu kılan itibar motorudur.
@@ -246,8 +251,29 @@ Sistem, topluluk içindeki ağırlığı 3 ana elit seviyeye ayırır:
 * **Felsefe:** *"Emek, en büyük sermayedir."*
 
 ---
+## ⚖️ 14. Final Word: A Blueprint for Global Governance (Manifesto)
+> **Vizyon Notu:** [FPP] ve [PoArt] tarafından inşa edilen bu matematiksel zırh, sadece bir sanat galerisini değil; yozlaşmış parlamenter sistemleri ve manipüle edilen seçimleri kurtarabilecek bir "Yönetim Modeli" sunar.
 
-## 📅 14. Roadmap & Future Notes
+### **The End of Plotokrasi (Sermaye Despotizminin Sonu)**
+* **Tanım:** Plütokrasi, yönetimin ve karar alma yetkisinin sadece en zengin azınlığın elinde olduğu, paranın liyakati ezdiği sistemdir.
+* **Protokolün Yanıtı:** Mevcut küresel düzen bir Plotokrasi'dir. [FPP] v1.0, bu düzeni **Logaritmik Skorlama** ($Score = \log_{10}(TWAB + 1)$) ile yıkar. Paranın gücü matematiksel bir sınıra çekilirken, "Zaman" ve "Emek" tek gerçek otorite haline getirilir.
+* **Gerekçe:** Bir ülkenin veya ekosistemin geleceği, cüzdanı en şişkin olanın değil, o topluma en çok entelektüel değer katanın elinde olmalıdır.
+
+### **The Meritocratic Parliament (Liyakate Dayalı Parlamento)**
+* **Gelecek Projeksiyonu:** Popülizm ve sermaye odaklı siyasetin yerine, İlhan Art dökümantasyonunu özümsemiş, "Entelektüel Emek Kanıtı" (IPOW) sunmuş liyakat sahiplerinin söz hakkı kazandığı bir yapı öngörülmektedir.
+* **Sonuç:** Bu model, bir topluluğun geleceğini; manipülatörlerin değil, o topluluğun inşasında bizzat ter dökmüş "Legendary" statüsündeki gerçek sahiplerinin yönetmesini sağlar.
+
+### **Security Against Vote Rigging (SHA-512 Seçim Güvencesi)**
+* **Oy Hırsızlığına Karşı Barikat:** SHA512-bit kriptografik doğrulamalar (SHA-512 veya Güvenli Karma Algoritması 512, herhangi bir uzunluktaki metni sabit boyutlu bir dizeye dönüştürmek için kullanılan bir karma algoritmasıdır. Her çıktı, 512 bit (64 bayt) uzunluğunda bir SHA-512 değeri üretir) ve **Multi-Verification** (Çoklu Doğrulama) protokolleri, seçimlerdeki "sahte oy" sorununu teknik olarak imkansız kılar.
+* **Teknik Bariyerler:**
+    - **Turnstile (Turnike):** Bot hesaplarla seçim manipülasyonunu ekonomik olarak imkansız kılar.
+    - **TWAB Filtresi:** Seçimden hemen önce düşük fee ödeyerek vatandaşlık/oy satın alarak iradeyi sakatlamayı engeller.
+    - **%40 Veto:** Azınlığın sesinin ezilmesini engelleyerek toplumsal denetimi sağlar.
+
+### **The Conclusion: Saving the Future (Geleceği Kurtarmak)**
+Bu sistem; Plotokrasi'nin değil liyakatin, hilenin değil kanıtlanmış emeğin, anlık heveslerin değil bin yıllık vizyonun (2025-3000) kazandığı bir "Yeni Dünya Düzeni" tasarımıdır. Yanlış yönetilmeye mahkum edilmiş bir toplumu kurtarmanın yolu, insan hatalarından arındırılmış, matematiksel olarak "Adil" olduğu ispatlanmış bu **Protokolü** hayata geçirmektir.
+
+## 📅 15. Roadmap & Future Notes
 Bu dökümantasyonda yer alan tüm maddeler, İlhan Art ekosisteminin 2026'dan 3000 yılına doğru uzanan vizyonunun birer yapı taşıdır. Her sürüm güncellemesi (v1.1, v1.2 vb.) bu ayrıcalıkların teknik entegrasyon süreçlerini (API bağlantıları, fiziksel POS entegrasyonları vb.) içerecektir.
 
 ---
