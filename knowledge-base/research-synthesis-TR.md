@@ -4,7 +4,7 @@
 **Durum:** `ARŞİVLENDİ & GÜVENLİ`  
 **Depo:** `galeri-coder/ilhanart-roadmap`  
 **Son Bağlantı Kontrolü:** `2026-01-06`  
-**Özet (SHA-512):** `<BU_DOSYANIN_SHA512_DEĞERİNİ_BURAYA_EKLE>`
+
 
 ---
 
