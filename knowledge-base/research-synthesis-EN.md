@@ -3,7 +3,7 @@
 > **Status:** `ARCHIVED & SECURE`  
 > **Repository:** `galeri-coder/ilhanart-roadmap`  
 > **Last Link Check:** `2026-01-06`  
-> **Hash (SHA-512):** `<INSERT_SHA512_OF_THIS_FILE>`  
+ 
 
 ---
 
