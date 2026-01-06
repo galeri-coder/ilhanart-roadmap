@@ -1,357 +1,361 @@
-# 🏛️ [PoArt] Research Synthesis & Protocol Logic (EN)
-> **Document ID:** `REF-LOGIC-2026-V2.3`  
-> **Status:** `ARCHIVED & SECURE`  
-> **Repository:** `galeri-coder/ilhanart-roadmap`  
-> **Last Link Check:** `2026-01-06`  
-> **Hash (SHA-512):** `<INSERT_SHA512_OF_THIS_FILE>`
 
 ---
 
-## 0) Why this document exists
-[PoArt] is an art-first protocol: it treats **attention** as the scarce substrate of cultural value.
+```markdown
+# 🏛️ [PoArt] Araştırma Sentezi & Protokol Mantığı (TR)
+> **Doküman Kimliği:** `REF-LOGIC-2026-V2.3`  
+> **Durum:** `ARŞİVLENDİ & GÜVENLİ`  
+> **Depo:** `galeri-coder/ilhanart-roadmap`  
+> **Son Bağlantı Kontrolü:** `2026-01-06`  
+> **Özet (SHA-512):** `<BU_DOSYANIN_SHA512_DEĞERİNİ_BURAYA_EKLE>`
 
-This research synthesis is not a “look-how-smart” bibliography.  
-It is a **design logic ledger** connecting:
+---
 
-- **Human cognition** (time perception, cognitive load, attention control)
-- **Digital attention economics** (anti-scroll architecture, deep-work incentives)
-- **Behavioral market mechanics** (attention-grabbing assets, mental accounting, instability dynamics)
+## 0) Bu doküman neden var?
+[PoArt], sanat-merkezli (art-first) bir protokoldür: kültürel değerin kıt altyapısı olarak **dikkati** (attention) ele alır.
 
-to specific [PoArt] mechanisms:
+Bu araştırma sentezi “bakın ne kadar zekiyiz” türü bir bibliyografya değildir.  
+Bu metin; aşağıdaki üç alanı:
+
+- **İnsan bilişi** (zaman algısı, bilişsel yük, dikkat kontrolü)
+- **Dijital dikkat ekonomisi** (anti-scroll mimarisi, derin çalışma teşvikleri)
+- **Davranışsal piyasa mekanikleri** (dikkat-çeken varlıklar, zihinsel muhasebe, istikrarsızlık dinamikleri)
+
+[PoArt] içindeki belirli mekanizmalara bağlayan bir **tasarım mantığı defteri** (design logic ledger) niteliğindedir:
 
 - **Minimalist Terminal**
-- **Contribution Power (CP)**
-- **365-Day Rule**
-- **Anti-Hype Filter**
-- **Deterministic Scarcity Curves**
-- **Michelangelo Audit**
-- **Digital Notary / Evidence Packs**
+- **Katkı Gücü (CP)**
+- **365 Gün Kuralı**
+- **Anti-Hype Filtresi**
+- **Deterministik Kıtlık Eğrileri**
+- **Michelangelo Denetimi**
+- **Dijital Noter / Kanıt Paketleri**
 
 ---
 
-## 1) Link Integrity Policy (DOI-first)
+## 1) Bağlantı Bütünlüğü Politikası (DOI-öncelikli)
 
-### 1.1 Stability rules
-We use the following hierarchy:
+### 1.1 İstikrar kuralları
+Aşağıdaki öncelik hiyerarşisi kullanılır:
 
-1) **DOI** (preferred, permanent resolver)  
-2) **Official institutional repository** (university, government, recognized archive)  
-3) **Publisher record page** (official book page if DOI is not available)  
-4) **Secondary indexes** (only if the above do not exist)
+1) **DOI** (tercih edilir, kalıcı çözücü)  
+2) **Resmî kurumsal arşiv** (üniversite, devlet, tanınmış arşiv)  
+3) **Yayınevi kayıt sayfası** (DOI yoksa resmî kitap/sayfa kaydı)  
+4) **İkincil indeksler** (yalnızca üsttekiler yoksa)
 
-### 1.2 Claim taxonomy (important)
-Each source is labeled as one of:
+### 1.2 İddia sınıflandırması (kritik)
+Her kaynak aşağıdaki üç etiketten biriyle işaretlenir:
 
-- **Evidence (Peer-Reviewed / Empirical):** directly tests measurable effects
-- **Framework (Conceptual / Explanatory):** explains mechanisms, not UI prescriptions
-- **Design Rationale (Book / Synthesis):** supports threat modeling and intent, not “proof”
+- **Kanıt (Hakemli / Ampirik):** ölçülebilir etkileri doğrudan test eder  
+- **Çerçeve (Kavramsal / Açıklayıcı):** mekanizmaları açıklar; UI reçetesi değildir  
+- **Tasarım Gerekçesi (Kitap / Sentez):** niyet ve tehdit modellemesini destekler; “ispat” değildir  
 
-This prevents a common failure mode in protocol writing:
-> treating good ideas as if they were experimental proofs.
+Bu sınıflandırma, protokol yazımındaki yaygın bir hatayı önler:
+> iyi fikirleri, deneysel kanıt varmış gibi sunmak.
 
 ---
 
-## 2) Changelog
+## 2) Değişiklik Kaydı (Changelog)
 
 ### 2.1 V2.1 → V2.2
-- Fixed broken NYU Press record link for Flaherty (1999).
-- Fixed incorrect W. W. Norton ISBN link for Carr (2010).
-- Replaced Cal Newport “/books/” redirect with a stable, direct Deep Work page.
+- Flaherty (1999) için kırık NYU Press kayıt bağlantısı düzeltildi.
+- Carr (2010) için hatalı W. W. Norton ISBN bağlantısı düzeltildi.
+- Cal Newport “/books/” yönlendirmesi yerine daha stabil, doğrudan Deep Work sayfasına geçildi.
 
-### 2.2 V2.2 → V2.3 (consistency & traceability)
-- Aligned Zakay & Block (1995) canonical citation to match the institutional PDF anchor metadata (symposium/proceedings context).
-- Renumbered post-source sections and standardized heading levels for clearer GitHub TOC rendering.
-- Ensured the final diff code block is properly closed (GitHub rendering fix).
-
----
-
-## 🧬 Executive Summary
-These 10 pillars support one unified thesis:
-
-**If a system rewards speed and novelty, it will manufacture shallow behavior.  
-If a system rewards verified effort and sustained attention, it can cultivate cultural labor.**
-
-[PoArt] is designed to be a *slow protocol*:
-- slow enough to resist hype and bots,
-- structured enough to measure contribution,
-- aesthetic enough to feel like an artwork in interaction.
+### 2.2 V2.2 → V2.3 (tutarlılık & izlenebilirlik)
+- Zakay & Block (1995) “kanonik atfı”, kurumsal PDF dayanak metaverisiyle (sempozyum/proceedings bağlamı) eşleştirildi.
+- Kaynak listesinden sonraki bölümler yeniden numaralandırıldı ve başlık seviyeleri GitHub TOC için standartlaştırıldı.
+- Son diff kod bloğu GitHub render’ı bozmayacak şekilde doğru kapatıldı.
 
 ---
 
-## 🧪 Phase I: Time Perception & Cognitive Load
+## 🧬 Yürütücü Özet
+Bu 10 sütun tek bir birleşik tezi destekler:
 
-### 1) Zakay & Block (1995) - Attentional-Gate Model (Framework)
-**Category:** Framework (widely used to interpret empirical timing results)  
-**DOI:** *(not available / not reliably assigned for this proceedings chapter; no DOI resolvable as of Last Link Check 2026-01-06; DOI-first policy falls back to an institutional archive anchor)*
+**Bir sistem hızı ve yeniliği ödüllendirirse, yüzeysel davranışı üretir.  
+Bir sistem doğrulanmış emeği ve sürdürülebilir dikkati ödüllendirirse, kültürel emeği geliştirebilir.**
 
-**Canonical citation (anchor-matching):**  
+[PoArt], “yavaş protokol” olarak tasarlanmıştır:
+- hype ve botlara direnebilecek kadar yavaş,  
+- katkıyı ölçebilecek kadar yapısal,  
+- etkileşimde bir sanat eseri hissi yaratacak kadar estetik.
+
+---
+
+## 🧪 Faz I: Zaman Algısı & Bilişsel Yük
+
+### 1) Zakay & Block (1995) - Dikkat Kapısı Modeli (Çerçeve)
+**Kategori:** Çerçeve (ampirik zamanlama sonuçlarını yorumlamak için yaygın kullanılan yaklaşım)  
+**DOI:** *(mevcut değil / bu proceedings bölümü için güvenilir şekilde atanmış değil; Son Bağlantı Kontrolü 2026-01-06 itibarıyla çözümlenebilir DOI bulunamadı; DOI-öncelikli politika gereği kurumsal arşiv dayanağına düşülür)*  
+
+**Kanonik atıf (dayanakla eşleşen):**  
 Zakay, D., & Block, R. A. (1995). *An attentional-gate model of prospective time estimation.*  
-Proceedings, **I.P.A. Symposium (Liège, 7–8 November 1994)**, pp. 167–178.
+Proceedings, **I.P.A. Symposium (Liège, 7–8 November 1994)**, ss. 167–178.
 
-**Stable institutional PDF (recommended anchor):**  
+**Stabil kurumsal PDF (önerilen dayanak):**  
 https://www.montana.edu/rblock/documents/papers/ZakayBlock1995.pdf
 
-#### What this source says (plain language)
-- Prospective time estimation depends on **how attention is allocated**.
-- A cognitive “gate” modulates the flow of timing pulses into accumulation.
-- Shifts in attentional allocation change subjective duration judgments.
+#### Bu kaynak ne söylüyor? (açık dil)
+- Prospektif zaman tahmini, **dikkatin nasıl dağıtıldığına** bağlıdır.
+- Bilişsel bir “kapı”, zamanlama darbelerinin birikime girişini modüle eder.
+- Dikkat dağılımındaki kaymalar, öznel süre yargılarını değiştirir.
 
-#### [PoArt] Interpretation (Design Framework)
-**High-focus, task-defined interfaces can interrupt autopilot scrolling and convert time into a consciously registered experience.**  
-In the [PoArt] Terminal, attention is redirected from novelty-chasing toward deliberate inspection: users must read, verify, compare, and commit to evidence-linked steps. This increases **temporal granularity**: the session becomes “thicker,” more segmented, and more consciously tracked.
+#### [PoArt] yorumu (tasarım çerçevesi)
+**Yüksek odaklı, görev tanımlı arayüzler; otomatik pilot kaydırmayı kesebilir ve zamanı bilinçli olarak “hissedilen” bir deneyime çevirebilir.**  
+[PoArt] Terminalinde dikkat, yenilik kovalamaktan bilinçli incelemeye yönlendirilir: kullanıcı okur, doğrular, karşılaştırır ve kanıt bağlantılı adımlarla taahhütte bulunur. Bu, **zamansal ayrıştırmayı** artırır: oturum “kalınlaşır”, daha bölümlü ve daha bilinçli takip edilir.
 
-This is not a claim that the paper “proves” any single UI choice.  
-It is a framework-to-design translation: *attention allocation shapes felt duration; therefore high-friction verification flows can be used to resist low-friction impulse behavior.*
+Bu, makalenin tek bir UI seçimini “kanıtladığı” iddiası değildir.  
+Bu, çerçeveden tasarıma çeviri kuralıdır: *dikkat dağılımı hissedilen süreyi etkiler; bu nedenle yüksek sürtünmeli doğrulama akışları düşük sürtünmeli dürtü davranışını kırmak için kullanılabilir.*
 
-#### Implementation mapping
-- **Component:** `Sol Ate Engine` (UI density + task segmentation)
-- **Mechanism:** stepwise verification flow forces attention allocation
-- **Metrics (suggested):**
-  - time-on-task per verification step
-  - completion rate of evidence checks
-  - “return-to-step” behavior (re-reading as a proxy for deliberation)
+#### Uygulama eşlemesi
+- **Bileşen:** `Sol Ate Engine` (UI yoğunluğu + görev segmentasyonu)
+- **Mekanizma:** adım adım doğrulama akışı, dikkat tahsisini zorunlu kılar
+- **Metrikler (öneri):**
+  - doğrulama adımı başına görevde kalma süresi
+  - kanıt kontrolü tamamlanma oranı
+  - “adıma geri dönüş” davranışı (yeniden okuma = müzakere/tefekkür vekili)
 
 ---
 
-### 2) Kahneman (2011) - System 1 / System 2 (Framework)
-**Category:** Framework (dual-process cognition), not UI prescription  
-**Primary reference (Book):**  
+### 2) Kahneman (2011) - Sistem 1 / Sistem 2 (Çerçeve)
+**Kategori:** Çerçeve (ikili süreç bilişi); UI reçetesi değildir  
+**Birincil referans (Kitap):**  
 Kahneman, D. (2011). *Thinking, Fast and Slow.*
 
-**Official Nobel biography (stable):**  
+**Resmî Nobel biyografisi (stabil):**  
 https://www.nobelprize.org/prizes/economic-sciences/2002/kahneman/biographical/
 
-#### What this source says (plain language)
-- People operate in two broad modes:
-  - **System 1:** fast, intuitive, impulsive
-  - **System 2:** slow, reflective, effortful
-- Many errors occur when System 1 dominates and System 2 stays offline.
+#### Bu kaynak ne söylüyor? (açık dil)
+- İnsanlar iki genel modda çalışır:
+  - **Sistem 1:** hızlı, sezgisel, dürtüsel
+  - **Sistem 2:** yavaş, yansıtıcı, emek isteyen
+- Birçok hata, Sistem 1 baskınken Sistem 2 devreye girmediğinde ortaya çıkar.
 
-#### Methodological caution (framework, not proof)
-Kahneman is cited here as a **conceptual lens**, not as direct experimental proof that “[PoArt] UI causes X.”  
-[PoArt] translates the model into design intent: reduce reflexive impulse actions (common in hype trading) and increase deliberate evaluation via friction, clarity, and verification steps.
+#### Yöntemsel uyarı (çerçeve, ispat değil)
+Kahneman burada **kavramsal bir mercek** olarak kullanılır; “[PoArt] UI = X sonucu üretir” gibi doğrudan deneysel ispat olarak değil.  
+[PoArt] bu modeli tasarım niyetine çevirir: hype ticaretinde yaygın olan refleks eylemleri azaltmak ve sürtünme, netlik ve doğrulama adımlarıyla bilinçli değerlendirmeyi artırmak.
 
-**Translation rule:**  
-Kahneman explains the *failure mode*.  
-[PoArt] defines an *architecture designed to resist it*.
+**Çeviri kuralı:**  
+Kahneman *başarısızlık modunu* açıklar.  
+[PoArt], ona direnmek üzere *mimari bir karşı-tasarım* tanımlar.
 
-#### Implementation mapping
-- **Component:** `Anti-Hype Filter` + `Minimalist Terminal`
-- **Mechanism:** remove impulse triggers, require evidence-linked action
-- **Metrics (suggested):**
-  - ratio of “read-then-act” vs “act-without-reading” events
-  - evidence pack review completion before governance actions
+#### Uygulama eşlemesi
+- **Bileşen:** `Anti-Hype Filter` + `Minimalist Terminal`
+- **Mekanizma:** dürtü tetiklerini azalt, kanıt bağlantılı eylemi zorunlu kıl
+- **Metrikler (öneri):**
+  - “oku-sonra-eylem” / “okumadan-eylem” olay oranı
+  - yönetişim eyleminden önce kanıt paketi inceleme tamamlanması
 
 ---
 
-### 3) Flaherty (1999) - Lived Time & Meaning Density (Design Rationale / Phenomenology)
-**Category:** Design Rationale (sociology/experience; meaning-density grounding)  
-**Publisher record (stable):**  
+### 3) Flaherty (1999) - Yaşantılanan Zaman & Anlam Yoğunluğu (Tasarım Gerekçesi / Fenomenoloji)
+**Kategori:** Tasarım Gerekçesi (sosyoloji/deneyim; anlam-yoğunluğu temeli)  
+**Yayınevi kayıt sayfası (stabil):**  
 https://nyupress.org/9780814726877/a-watched-pot/
 
-**Reference:**  
+**Referans:**  
 Flaherty, M. G. (1999). *A Watched Pot: How We Experience Time.* NYU Press.
 
-#### What this source says (plain language)
-- Time is experienced as a lived phenomenon, not only as clock quantity.
-- Meaning, attention, and context shape the felt texture of duration.
+#### Bu kaynak ne söylüyor? (açık dil)
+- Zaman, yalnızca saat ölçümü değil, yaşantılanan bir fenomendir.
+- Anlam, dikkat ve bağlam, sürenin hissedilen dokusunu biçimlendirir.
 
-#### Why [PoArt] uses this source (CP positioning)
-Flaherty is positioned as **phenomenological grounding** for Contribution Power (CP), not as a mathematical foundation.  
-It supports the art-first stance: cultural value emerges from sustained conscious engagement, not speed metrics.
+#### [PoArt] bu kaynağı neden kullanır? (CP konumlandırması)
+Flaherty, Katkı Gücü’nün (CP) matematik temeli olarak değil, **fenomenolojik zemini** olarak konumlanır.  
+Sanat-merkezli duruşu destekler: kültürel değer, hız metriklerinden değil, sürdürülebilir bilinçli etkileşimden doğar.
 
-If CP is operationalized as a protocol variable, Flaherty must be paired with:
-- empirical measurement choices,
-- audit logic,
-- evidence pack verification,
-- renewal cycles.
+CP bir protokol değişkeni olarak işletilecekse, Flaherty mutlaka şu katmanlarla eşleşmelidir:
+- ampirik ölçüm seçimleri,
+- denetim mantığı,
+- kanıt paketi doğrulaması,
+- yenileme döngüleri.
 
-In the [PoArt] stack:
-- Flaherty explains **why** meaning-density matters for cultural labor.
-- [PoArt] audits specify **how** that density is verified and rewarded.
+[PoArt] yığınında:
+- Flaherty, anlam-yoğunluğunun **neden** önemli olduğunu açıklar.
+- [PoArt] denetimleri, bu yoğunluğun **nasıl** doğrulanıp ödüllendirileceğini tanımlar.
 
-#### Implementation mapping
-- **Component:** `Contribution Power (CP)`
-- **Mechanism:** CP weights evidence-backed contribution over raw time
-- **Metrics (suggested):**
-  - verified artifacts produced per cycle
-  - evidence pack completeness score
-  - renewal consistency across 365-day cycles
+#### Uygulama eşlemesi
+- **Bileşen:** `Katkı Gücü (CP)`
+- **Mekanizma:** CP, ham zamandan çok kanıtlanmış katkıyı ağırlıklar
+- **Metrikler (öneri):**
+  - döngü başına doğrulanmış üretim/artefakt sayısı
+  - kanıt paketi bütünlük puanı
+  - 365 günlük döngülerde yenileme tutarlılığı
 
 ---
 
-## 📱 Phase II: Digital Attention & Cognitive Capacity
+## 📱 Faz II: Dijital Dikkat & Bilişsel Kapasite
 
-### 4) Ward et al. (2017) - “Brain Drain” (Evidence)
-**Category:** Evidence (peer-reviewed empirical)  
+### 4) Ward ve ark. (2017) - “Brain Drain” (Kanıt)
+**Kategori:** Kanıt (hakemli ampirik)  
 **DOI:** https://doi.org/10.1086/691462
 
 Ward, A. F., Duke, K., Gneezy, A., & Bos, M. W. (2017). *Brain Drain: The Mere Presence of One’s Own Smartphone Reduces Available Cognitive Capacity.* Journal of the Association for Consumer Research.
 
-#### What this source says (plain language)
-- Even when not used, a phone’s presence can reduce available cognitive capacity.
+#### Bu kaynak ne söylüyor? (açık dil)
+- Telefon kullanılmasa bile, yalnızca varlığı bilişsel kapasiteyi azaltabilir.
 
-#### [PoArt] mapping
-- **Component:** `Minimalist Terminal`
-- **Mechanism:** reduce “attention parasites,” remove infinite-scroll affordances
-- **Language note (avoid overclaim):**
-  - say “cognitive capacity / performance,” not “restores IQ.”
+#### [PoArt] eşlemesi
+- **Bileşen:** `Minimalist Terminal`
+- **Mekanizma:** “dikkat parazitlerini” azalt; sonsuz kaydırma teşviklerini kaldır
+- **Dil notu (aşırı iddiadan kaçın):**
+  - “bilişsel kapasite / performans” de; “IQ geri getirir” deme.
 
 ---
 
-### 5) Carr (2010) - The Shallows (Design Rationale)
-**Category:** Design Rationale (synthesis book; threat modeling)  
-**Publisher record (stable):**  
+### 5) Carr (2010) - The Shallows (Tasarım Gerekçesi)
+**Kategori:** Tasarım Gerekçesi (sentez kitap; tehdit modelleme)  
+**Yayınevi kayıt sayfası (stabil):**  
 https://wwnorton.com/books/9780393357820
 
 Carr, N. (2010). *The Shallows: What the Internet Is Doing to Our Brains.* W. W. Norton.
 
-#### [PoArt] mapping
-- **Component:** `Static Block Architecture`
-- **Mechanism:** eliminate infinite scroll, maximize deliberate reading flow
-- **Protocol intent:** defend deep attention from novelty addiction loops
+#### [PoArt] eşlemesi
+- **Bileşen:** `Statik Blok Mimarisi`
+- **Mekanizma:** sonsuz kaydırmayı kaldır; bilinçli okuma akışını maksimize et
+- **Protokol niyeti:** yenilik bağımlılığı döngülerine karşı derin dikkati savun
 
 ---
 
-### 6) Newport (2016) - Deep Work (Design Rationale)
-**Category:** Design Rationale (strategy book; sustained focus incentives)  
-**Official page (stable):**  
+### 6) Newport (2016) - Deep Work (Tasarım Gerekçesi)
+**Kategori:** Tasarım Gerekçesi (strateji kitap; sürdürülebilir odak teşvikleri)  
+**Resmî sayfa (stabil):**  
 https://calnewport.com/deep-work-rules-for-focused-success-in-a-distracted-world/
 
 Newport, C. (2016). *Deep Work: Rules for Focused Success in a Distracted World.*
 
-#### [PoArt] mapping
-- **Component:** `365-Day Rule`
-- **Mechanism:** reward sustained depth, filter short-term tourists
-- **Audit behavior:** long-horizon cycles discourage shallow participation
+#### [PoArt] eşlemesi
+- **Bileşen:** `365 Gün Kuralı`
+- **Mekanizma:** sürdürülebilir derinliği ödüllendir; kısa vadeli “turistleri” filtrele
+- **Denetim davranışı:** uzun ufuklu döngüler yüzeyselliği caydırır
 
 ---
 
-## 📈 Phase III: Behavioral Market Mechanics
+## 📈 Faz III: Davranışsal Piyasa Mekanikleri
 
-### 7) Barber & Odean (2008) - Attention-Grabbing Assets (Evidence)
-**Category:** Evidence (peer-reviewed empirical)  
+### 7) Barber & Odean (2008) - Dikkat-Çeken Varlıklar (Kanıt)
+**Kategori:** Kanıt (hakemli ampirik)  
 **DOI:** https://doi.org/10.1093/rfs/hhm079
 
 Barber, B. M., & Odean, T. (2008). *All That Glitters: Individual Investors and Attention-Grabbing Stocks.* Review of Financial Studies.
 
-#### What this source says (plain language)
-- Retail investors are drawn to “attention-grabbing” assets (news, extreme moves, abnormal volume).
+#### Bu kaynak ne söylüyor? (açık dil)
+- Bireysel yatırımcılar “dikkat çeken” varlıklara çekilir (haber, aşırı hareket, anormal hacim).
 
-#### [PoArt] mapping
-- **Component:** `Anti-Hype Filter`
-- **Mechanism:** suppress attention noise; elevate verified contribution signals
-- **Design rule:** attention is an attack surface, not a value metric
+#### [PoArt] eşlemesi
+- **Bileşen:** `Anti-Hype Filtresi`
+- **Mekanizma:** dikkat gürültüsünü bastır; doğrulanmış katkı sinyallerini yükselt
+- **Tasarım kuralı:** dikkat bir değer metriği değil, saldırı yüzeyidir
 
 ---
 
-### 8) Thaler (1985) - Mental Accounting (Framework)
-**Category:** Framework (behavioral economics; empirically grounded in the broader literature)  
+### 8) Thaler (1985) - Zihinsel Muhasebe (Çerçeve)
+**Kategori:** Çerçeve (davranışsal iktisat; daha geniş literatürde ampirik olarak temellenmiş)  
 **DOI:** https://doi.org/10.1287/mksc.4.3.199
 
 Thaler, R. H. (1985). *Mental Accounting and Consumer Choice.* Marketing Science.
 
-#### [PoArt] mapping
-- **Component:** `Heritage Capital` framing
-- **Mechanism:** shift the mental bucket from “quick gain” to “cultural preservation”
-- **Design rule:** naming, UI rituals, and audit structure shape the active mental account
+#### [PoArt] eşlemesi
+- **Bileşen:** `Miras Sermayesi` çerçevesi
+- **Mekanizma:** zihinsel kovayı “hızlı kazanç”tan “kültürel koruma”ya kaydır
+- **Tasarım kuralı:** adlandırma, UI ritüelleri ve denetim yapısı aktif zihinsel hesabı şekillendirir
 
 ---
 
-### 9) Minsky (1992) - Financial Instability Hypothesis (Framework)
-**Category:** Framework (macroeconomic instability dynamics)  
-**Official institute archive (stable):**  
+### 9) Minsky (1992) - Finansal İstikrarsızlık Hipotezi (Çerçeve)
+**Kategori:** Çerçeve (makro istikrarsızlık dinamikleri)  
+**Resmî enstitü arşivi (stabil):**  
 https://www.levyinstitute.org/publications/the-financial-instability-hypothesis/
 
 Minsky, H. P. (1992). *The Financial Instability Hypothesis.* Levy Economics Institute (Working Paper No. 74).
 
-#### What this source says (plain language)
-- Stability can breed risk-taking and fragile structures (hedge → speculative → ponzi drift).
+#### Bu kaynak ne söylüyor? (açık dil)
+- İstikrar, risk almayı teşvik edebilir ve kırılgan yapılar doğurabilir (hedge → spekülatif → ponzi kayması).
 
-#### [PoArt] mapping (scope-limited claim)
-[PoArt] does not claim to “stabilize all markets.”  
-It claims to reduce ponzi-like drift **inside its own cultural economy** by enforcing:
-- verified cultural labor as the legitimacy substrate,
-- deterministic scarcity curves,
-- slow governance cycles and audit renewals.
+#### [PoArt] eşlemesi (kapsam sınırlı iddia)
+[PoArt], “tüm piyasaları stabilize eder” iddiasında değildir.  
+[PoArt], kendi kültürel ekonomisi içinde ponzi-benzeri kaymayı azaltmayı hedefler; bunu şu araçlarla yapar:
+- meşruiyet altyapısı olarak doğrulanmış kültürel emek,
+- deterministik kıtlık eğrileri,
+- yavaş yönetişim döngüleri ve denetim yenilemeleri.
 
 ---
 
-### 10) Wu (2016) - The Attention Merchants (Design Rationale)
-**Category:** Design Rationale (historical synthesis)  
-**Publisher record (stable):**  
+### 10) Wu (2016) - Dikkat Tacirleri (Tasarım Gerekçesi)
+**Kategori:** Tasarım Gerekçesi (tarihsel sentez)  
+**Yayınevi kayıt sayfası (stabil):**  
 https://www.penguinrandomhouse.com/books/234876/the-attention-merchants-by-tim-wu/
 
 Wu, T. (2016). *The Attention Merchants.* Penguin Random House.
 
-#### [PoArt] mapping
-- **Component:** `Michelangelo Audit` + `Digital Notary`
-- **Mechanism:** reclaim attention from platforms and re-anchor value in verified artifacts
-- **Design rule:** attention should be owned by creators and communities, not rented out
+#### [PoArt] eşlemesi
+- **Bileşen:** `Michelangelo Denetimi` + `Dijital Noter`
+- **Mekanizma:** dikkati platformlardan geri al; değeri doğrulanmış artefaktlara yeniden sabitle
+- **Tasarım kuralı:** dikkat, kiralanan değil; üreticiler ve topluluklarca “sahip olunan” olmalıdır
 
 ---
 
-## 3) [PoArt] Protocol Logic Summary (The “Why it Works” Sketch)
+## 3) [PoArt] Protokol Mantığı Özeti (Neden İşler? Taslak)
 
-### 3.1 The failure mode
-- Digital systems harvest attention using novelty loops.
-- Markets amplify attention into reflexive pricing behavior.
-- Governance collapses when authority can be rented (capital, bots, sybil).
+### 3.1 Başarısızlık modu
+- Dijital sistemler dikkati yenilik döngüleriyle hasatlar.
+- Piyasalar dikkati refleksif fiyat davranışına dönüştürür.
+- Otorite kiralanabilir olduğunda (sermaye, bot, sybil) yönetişim çöker.
 
-### 3.2 The [PoArt] counter-design
-- Replace novelty loops with **verification rituals**.
-- Replace fast metrics with **proof-bearing artifacts**.
-- Replace instant authority with **time + contribution**.
+### 3.2 [PoArt] karşı-tasarımı
+- Yenilik döngülerini **doğrulama ritüelleri** ile değiştir.
+- Hız metriklerini **kanıt taşıyan artefaktlar** ile değiştir.
+- Anlık otoriteyi **zaman + katkı** ile değiştir.
 
-### 3.3 The aesthetic layer (art-first)
-Interaction with the protocol should feel less like “trading” and more like:
-- entering a gallery,
-- reading a plaque,
-- verifying provenance,
-- signing a ledger.
+### 3.3 Estetik katman (sanat-merkezli)
+Protokolle etkileşim “trading” gibi değil, daha çok şuna benzemelidir:
+- bir galeriye girmek,
+- eser etiketini okumak,
+- provenance’ı doğrulamak,
+- bir deftere imza atmak.
 
-### 3.4 Implementation Mapping Matrix (excerpt)
-> Note: This matrix is an **excerpt** for quick orientation.  
-> The full mapping can be expanded to cover all 10 pillars if maintainers want a complete one-to-one table.
+### 3.4 Uygulama Eşleme Matrisi (alıntı)
+> Not: Bu matris hızlı yön bulma için **alıntıdır**.  
+> İstenirse 10 sütunun tamamını kapsayacak şekilde bire bir tablo genişletilebilir.
 
-| Research Pillar | PoArt Mechanism | Design Rule |
+| Araştırma Sütunu | PoArt Mekanizması | Tasarım Kuralı |
 | :--- | :--- | :--- |
-| **Attentional-Gate Model** (Zakay & Block) | **Sol Ate Engine** | Attention must be transformed into a conscious, lived experience. |
-| **System 2** (Kahneman) | **Minimalist Terminal** | Impulsive actions must be deterred via intentional analytical friction. |
-| **Deep Work** (Newport) | **365-Day Rule** | Cultural value is measured by continuity and sustained deep focus. |
-| **Mental Accounting** (Thaler) | **Heritage Capital** | Assets must be encoded as "cultural heritage" rather than "disposable cash." |
+| **Dikkat Kapısı Modeli** (Zakay & Block) | **Sol Ate Engine** | Dikkat, bilinçli ve yaşantılanan deneyime dönüştürülmelidir. |
+| **Sistem 2** (Kahneman) | **Minimalist Terminal** | Dürtüsel eylemler, kasıtlı analitik sürtünme ile caydırılmalıdır. |
+| **Deep Work** (Newport) | **365 Gün Kuralı** | Kültürel değer, süreklilik ve sürdürülebilir derin odakla ölçülür. |
+| **Zihinsel Muhasebe** (Thaler) | **Miras Sermayesi** | Varlıklar “harcanabilir nakit” değil “kültürel miras” olarak kodlanmalıdır. |
 
-That is the cultural stance:  
-**the user’s attention is not consumed, it is curated.**
-
----
-
-## 4) Copy-paste modules (for reuse in other docs)
-
-### 4.1 “Framework, not proof” disclaimer
-Kahneman and other cognitive models are used as explanatory frameworks. They define failure modes [PoArt] resists. They do not by themselves prove that any specific UI choice causes any specific outcome.
-
-### 4.2 “Phenomenology layer” disclaimer
-Flaherty grounds the lived-experience rationale for CP. Mathematical CP requires additional measurement and audit logic; phenomenology explains why the variable matters, not how it is computed.
-
-### 4.3 “No DOI available” policy line
-If a DOI is unavailable (common for older proceedings or book chapters), [PoArt] uses an official institutional repository link as the stability anchor and records the date of the last link check.
+Bu, kültürel duruştur:  
+**kullanıcının dikkati tüketilmez; kürate edilir.**
 
 ---
 
-## 5) ✅ Verification checklist (maintainers)
-- [ ] Every DOI resolves to the correct work.
-- [ ] If no DOI exists, an institutional or publisher record link is provided.
-- [ ] Each source is labeled: Evidence / Framework / Design Rationale.
-- [ ] Overclaims removed (no “proves UI causes X” without direct empirical support).
-- [ ] Last Link Check updated when changes occur.
+## 4) Kopyala-Yapıştır Modülleri (diğer dokümanlarda kullanım için)
+
+### 4.1 “Çerçeve, ispat değil” feragati
+Kahneman ve benzeri bilişsel modeller açıklayıcı çerçeveler olarak kullanılır. [PoArt]’ın direnç tasarladığı başarısızlık modlarını tanımlarlar. Tek başlarına herhangi bir spesifik UI seçiminin spesifik bir sonucu doğurduğunu ispatlamazlar.
+
+### 4.2 “Fenomenoloji katmanı” feragati
+Flaherty, CP için yaşantı-temelli gerekçeyi kurar. Matematiksel CP, ek ölçüm ve denetim mantığı gerektirir; fenomenoloji değişkenin neden önemli olduğunu açıklar, nasıl hesaplandığını değil.
+
+### 4.3 “DOI yok” politika satırı
+DOI yoksa (özellikle eski proceedings veya kitap bölümlerinde yaygın), [PoArt] stabil dayanak olarak resmî kurumsal arşiv bağlantısını kullanır ve son bağlantı kontrol tarihini kaydeder.
+
+---
+
+## 5) ✅ Doğrulama Kontrol Listesi (bakımcılar)
+- [ ] Her DOI doğru işe çözülüyor.
+- [ ] DOI yoksa kurumsal arşiv veya yayınevi kayıt bağlantısı veriliyor.
+- [ ] Her kaynak etiketlendi: Kanıt / Çerçeve / Tasarım Gerekçesi.
+- [ ] Aşırı iddialar ayıklandı (“UI X’i ispatlar” gibi, doğrudan ampirik destek yoksa).
+- [ ] Değişiklik olduğunda Son Bağlantı Kontrolü güncelleniyor.
 
 ---
 
 ```diff
-+ Aligned Zakay & Block (1995) citation to match institutional anchor metadata (symposium/proceedings)
-+ Standardized heading levels for a clean GitHub TOC (no mixed # vs ## jumps)
-+ Confirmed updated publisher links (NYU Press / Norton / Cal Newport / Levy Institute)
-+ Ensured final diff block is properly closed (GitHub rendering)
++ Zakay & Block (1995) atfı, kurumsal dayanak metaverisiyle (sempozyum/proceedings) eşleştirildi
++ GitHub TOC için başlık seviyeleri standartlaştırıldı (karışık # / ## sıçraması yok)
++ Yayınevi bağlantıları güncellendi ve teyit edildi (NYU Press / Norton / Cal Newport / Levy Institute)
++ Son diff bloğu doğru kapatıldı (GitHub render düzeltmesi)
 
 ---
