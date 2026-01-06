@@ -1,4 +1,4 @@
-# 🏛️ [PoArt] Research Synthesis & Protocol Logic
+# 🏛️ [PoArt] Research Synthesis & Protocol Logic (EN)
 > **Document ID:** `REF-LOGIC-2026-V2.3`  
 > **Status:** `ARCHIVED & SECURE`  
 > **Repository:** `galeri-coder/ilhanart-roadmap`  
@@ -352,4 +352,6 @@ If a DOI is unavailable (common for older proceedings or book chapters), [PoArt]
 + Aligned Zakay & Block (1995) citation to match institutional anchor metadata (symposium/proceedings)
 + Standardized heading levels for a clean GitHub TOC (no mixed # vs ## jumps)
 + Confirmed updated publisher links (NYU Press / Norton / Cal Newport / Levy Institute)
-+ Ensured final diff code block is properly closed (GitHub rendering)
++ Ensured the final diff code block is properly closed (GitHub rendering)
+
+---
