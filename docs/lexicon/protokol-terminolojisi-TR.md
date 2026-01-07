@@ -133,7 +133,7 @@ Oy gücü, TWAB tabanlı bir fonksiyondur:
 ## 🛡️ 4) Security & Validation (Güvenlik ve Doğrulama)
 
 ### 4.1) Millennium Vault (10-Year Epochs)
-* **Tanım:** Varlıkların 10 yıllık periyotlarla (Epoch) kilitlendiği, ekosistemin en üst düzey “itibar kasası”.  
+* **Tanım:** Varlıkların 1 yıllık periyotlarla (Epoch) kilitlendiği, ekosistemin en üst düzey “itibar kasası”.  
 * **Çözdüğü Sorun:** Kısa vadeli kâr hedefleyen spekülatörlerin 2025–3000 vizyona zarar vermesi.  
 * **Cevap:** En kritik kararları yalnızca varlığını 10 yıl kilitleyen ve [FPP] içinde “Foundational Pillar” statüsü kazanan kişiler verebilir.
 
