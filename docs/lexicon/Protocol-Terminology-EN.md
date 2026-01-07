@@ -300,30 +300,28 @@ $FinalScore = BaseScore \times (1 + CulturalMultiplier)$
 
 ---
 
-### 8.2) Rank Tiers
+### 8.2) Tier Classifications (Rütbe Sınıfları)
 
-| Tier | Range | Privileges |
+| Tier | Range / Puan | Role & Privileges |
 |:--|:--|:--|
-| **Legendary** | Top 10 | Highest veto + strategic voting |
-| **Senior** | Top 50 | Council participation |
-| **Veteran** | Top 100 | Validation + proposal creation |
-| **Member** | Below 100 | Basic participation rights |
+| **Impasto (≥100k)** | Constitutional Level | Defines core governance strategy, fee model, and long-term direction |
+| **Texture (50k–99k)** | Curatorial Level | Oversees audits, curations, and voting coordination |
+| **Primer (<50k)** | Member Level | Can submit proposals and participate in minor decisions |
 
-> Ranks adjust dynamically with decay and contribution flow.
+> Ranks adjust dynamically with contribution flow and decay rate recalculations under [FPP].
+
 
 ---
-
 ## 📈 9) Cut-off Thresholds & Network Metrics
 
 ### 9.1) Entry Thresholds
-
-| Category | Points Required | Description |
+ Tier | Required Points | Description |
 |:--|:--|:--|
-| Legendary | ≥ 100,000 | Full authority |
-| Top 100 | ≥ 45,000 | Active governance participant |
-| Entry | ≥ 250 | Base turnstile threshold |
+| **Impasto (≥100,000)** | Full constitutional authority | Defines governance, strategy, and system parameters |
+| **Texture (50,000–99,999)** | Senior curator level | Participates in audits, curation, and high-level voting |
+| **Primer (<50,000)** | General member level | May submit proposals and vote on minor issues |
 
-**Goal:** Maintain proportional influence regardless of network growth.
+**Goal:** Ensure proportional influence and governance balance as the network expands.
 
 ---
 
@@ -377,7 +375,7 @@ $FinalScore = BaseScore \times (1 + CulturalMultiplier)$
 ## 🧬 12) Generational Legacy & Governance
 
 ### 12.1) Generational Inheritance
-* **Definition:** Legendary-tier members (≥100k points) maintaining active status for 4 consecutive years (1460 days) can assign a verified heir.  
+* **Definition:** impasto-tier members (≥100k points) maintaining active status for 4 consecutive years (1460 days) can assign a verified heir.  
 * **Purpose:** Prevents cultural and governance value from dying with inactive or deceased members.  
 * **Implementation:**  
   - Heir activation possible only after 4-year proof of continuity.  
@@ -413,12 +411,15 @@ $FinalScore = BaseScore \times (1 + CulturalMultiplier)$
 ---
 
 ### 13.2) Dynamic Art Pricing (JSON-Linked Discounts)
-* **Definition:** Dynamic pricing API where cultural status = discount factor.  
+
+* **Definition:** Dynamic pricing API where cultural status determines the discount factor.  
 * **Structure:**  
-  - Legendary → 50%+  
-  - Patron → 30%  
-  - Member → 10%  
-* **Philosophy:** “No bargaining, only proven merit.”
+  - **Impasto (≥100k)** → 50%+ discount  
+  - **Texture (50k–99k)** → 30% discount  
+  - **Primer (<50k)** → 10% discount  
+* **Philosophy:** “No bargaining — only verified merit determines value.”  
+* **Goal:** Encourage cultural contribution while maintaining transparent, algorithmic fairness.
+
 
 ---
 
