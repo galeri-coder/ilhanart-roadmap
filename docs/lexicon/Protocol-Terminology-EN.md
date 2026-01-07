@@ -1,3 +1,12 @@
+---
+title: Ilhan Art Protocol
+version: 1.0 (Stable)
+status: HARD_LOCKED
+integrity: SHA-512
+ecosystem: [PoArt] + [FPP]
+last_updated: 2026-01-07
+---
+
 # 📜 Protocol Terminology & Technical Lexicon
 > **Protocol Version:** 1.0 (Stable)  
 > **Network Vision:** 2025 → 3000 Archive  
@@ -23,487 +32,578 @@
 13. Cultural Privilege Layers & Real-World Integration  
 14. State Machine (Record Lifecycle)  
 15. Minimal On-chain / Maximal Off-chain  
-16. Appeals / Authority & Objection Mechanism (Institutional Trust Layer)  
-17. Threat Model (Attack Catalog and Counter-Layers)  
-18. Final Word: A Blueprint for Global Governance (Manifesto)  
-19. Roadmap & Future Notes
+16. Appeals / Authority & Objection Mechanism  
+17. Threat Model  
+18. Final Word: A Blueprint for Global Governance  
+19. Roadmap & Future Notes  
 
 ---
 
 ## 🏛️ 1) Pillars of the Protocol
 
-### **[PoArt] Proof of Art (v1.0)**
-* **Definition:** The core protocol that verifies not only the final outcome of an artwork, but the entire **creation process** with technical data.  
-* **Problem It Solves:** With the rise of Generative AI tools, real human labor becomes hard to prove in digital space and art’s “meta” value erodes.  
-* **How It Works:** While creating the piece, the artist submits an **Evidence Pack** that covers every stage. The protocol seals this data with timestamps on-chain.  
-* **Example Scenario:** If an artist creates a 40-hour impasto painting, the broadcast logs of those 40 hours, timelapse recordings of brush strokes, and digital fingerprints pass through the [PoArt] filter. Not only the “finished painting”, but the “40 hours of human effort” behind it is registered.
+### [PoArt] Proof of Art (v1.0)
+* **Definition:** The core protocol that verifies not only the final outcome of an artwork but also the entire creative process through technical data.  
+* **Problem Solved:** With Generative AI’s rise, authentic human labor becomes unverifiable, degrading art’s intrinsic value.  
+* **How It Works:** Artists submit an **Evidence Pack** containing every stage of creation. The protocol seals it on-chain with timestamps.  
+* **Example:** A 40-hour painting includes video logs, timelapse, and digital fingerprints—proofing both *the result* and *the 40 hours of human effort*.
 
 ---
 
-### **[FPP] Foundational Pillar Protocol (v1.0)**
-* **Definition:** The main system that builds the ecosystem’s economic, governance, and social “load-bearing columns” (pillars) and rewards loyalty, continuity, and long-term participation.  
-* **Problem It Solves:** The unfair “whoever prints money controls the whistle” logic in crypto and the damage caused by speculators who abandon projects.  
-* **How It Works:** A user’s decision-making and governance weight is determined not by how much they hold, but by how solidly (pillar-like) and how long they hold it.  
-* **Example Scenario:** A “whale” who enters today with 1,000,000 tokens may have lower voting power than a loyal “patron” who has held 100 tokens for a year.
+### [FPP] Foundational Pillar Protocol (v1.0)
+* **Definition:** The system that builds economic and social “pillars” of the ecosystem—rewarding loyalty, continuity, and contribution.  
+* **Problem Solved:** Prevents speculative dominance where wealth dictates governance.  
+* **How It Works:** Governance weight depends not on wealth, but on *stability* and *duration* of holding.  
+* **Example:** A “whale” entering with 1,000,000 tokens today may have less voting power than a “patron” holding 100 tokens for a year.
 
 ---
 
 ## 👥 2) Roles & Entities
 
-This protocol clarifies “who does what, and who cannot do what” to reduce misunderstandings and abuse.
+Defines “who does what” to eliminate ambiguity and abuse.
 
-- **Artist:**  
-  Produces Evidence Packs for [PoArt], initiates records, and signs the annual validation (heartbeat).
-
-- **Patron (Supporter):**  
-  Gains status through continuity and contribution within [FPP]; carries weight in veto, supervision, and curation processes.
-
-- **Validator (Community Verifier):**  
-  Reviews Evidence Packs, flags inconsistencies, and participates in veto/objection processes.
-
-- **Digital Notary (Self-Executing Contract):**  
-  Deterministically verifies evidence + consensus + timestamp and seals it into the Public Registry.
-
-- **Public Registry:**  
-  The permanent identity layer for “approved records”. Record statuses are visible here (Verified/Legacy/Revoked, etc.).
-
-- **Evidence Storage (IPFS/Arweave/Archive):**  
-  The off-chain layer that stores raw data; only cryptographic roots are written on-chain.
+- **Artist:** Produces Evidence Packs for [PoArt]; initiates records and annual validations.  
+- **Patron:** Earns influence in [FPP] through loyalty and contribution; participates in veto and curation.  
+- **Validator:** Reviews Evidence Packs; flags inconsistencies; assists in objection processes.  
+- **Digital Notary:** Self-executing contract verifying consensus, hash, and timestamp, sealing data to the Public Registry.  
+- **Public Registry:** The permanent record layer showing Verified, Legacy, or Revoked statuses.  
+- **Evidence Storage:** Off-chain IPFS/Arweave archive storing raw data; only cryptographic roots go on-chain.
 
 ---
 
 ## 📊 3) Economic & Governance Metrics
 
-### 3.1) Epoch (Definition of the Time Window)
-* **Definition:** The window that determines “which time interval” governance and validation calculations measure.  
-* **Recommended Standard (v1.0):**
-  - **Default Epoch:** 7 days  
-  - **Critical Vote Guard Window:** 30 days (neutralizes short-term capital spikes before critical votes)
+### 3.1) Epoch & Time Windows
+Defines which time intervals determine validity and voting.
 
-> Note: Epoch length can be parameterized. But since this document is “stable”, v1.0 must define clear defaults.
+| Type | Duration | Purpose |
+|:--|:--|:--|
+| **Operational Epoch** | 7 Days | Routine updates, logs, scoring |
+| **Critical Guard Window** | 30 Days | Neutralizes last-minute capital influx |
+| **Integrity Cycle** | 365 Days | Annual validation through Evidence Pack |
 
 ---
 
 ### 3.2) TWAB (Time-Weighted Average Balance)
-* **Definition:** Time-Weighted Average Balance. The core metric that computes a wallet’s “loyalty” and “stability” coefficient in the ecosystem. It measures not only “how much” you have, but “how long” you have upheld it.
 
-#### Mathematical Model (Normalized Average)
-\[
-\text{TWAB}=\frac{\sum_{i=1}^{n}(\text{Balance}_i \times \Delta t_i)}{\sum_{i=1}^{n}\Delta t_i}
-\]
+**Mathematical Model:**  
+$TWAB = \dfrac{\sum_{i=1}^{n}(Balance_i \times \Delta t_i)}{\sum_{i=1}^{n}\Delta t_i}$
 
-#### Raw Area Metric (Optional, for Scoring)
-In some implementations, you need “area” instead of “average”. Then the naming must be explicit:
-\[
-\text{TWA}=\sum_{i=1}^{n}(\text{Balance}_i \times \Delta t_i)
-\]
+**Optional Raw Metric:**  
+$TWA = \sum_{i=1}^{n}(Balance_i \times \Delta t_i)$
 
-* **Problem It Solves:** **Whale Manipulation.** The pattern of buying a huge amount right before a vote and selling right after (pump-dump) is broken by “time friction”.  
-* **TWAB Guard Logic:** Time cannot be bought. In critical votes, capital entering at the last minute becomes negligible under the guard window.
-
-#### Voting Power Definition
-Voting power is a TWAB-based function:
-\[
-\text{VotingPower} = f(\text{TWAB}, \text{EpochRules}, \text{StatusTier})
-\]
-
-* **Example (Logical):**
-  - **Person A:** Bought 1,000,000 tokens 1 hour before a critical vote. Guard Window = 30 days. Impact is **very low**.  
-  - **Person B:** Holds only 100 tokens but has kept them in cold storage for 365 days. Impact is **high**.  
-* **Result:** The system prefers B’s 1-year loyalty over A’s last-minute money.  
+* **Purpose:** Measures not only *how much* but *how long* value remains in the system.  
+* **Effect:** Deters “flash” influence — last-minute token purchases have minimal effect on voting outcomes.
 
 ---
 
-### 3.3) Logarithmic Power Scoring
-* **Definition:** A fairness mechanism that calculates power growth not linearly, but **logarithmically**, placing a ceiling on governance domination by capital.
+### 3.3) Voting Power Function  
+$VotingPower = f(TWAB, EpochRules, StatusTier)$
 
-#### Mathematical Model
-\[
-\text{Score} = \log_{10}(\text{TWAB} + 1)
-\]
-
-* **Problem It Solves:** **Capital Concentration (Plutocracy).** Prevents giant holders from suffocating the community’s voice.  
-* **Example:**
-  - TWAB = 10 → Score = log10(11) ≈ 1.04  
-  - TWAB = 1,000,000 → Score = log10(1,000,001) ≈ 6.00  
-* **Fairness Note:** Even if one party appears 100,000x “richer”, they cannot become “infinitely” stronger in governance. Mathematics allows small voices to combine into a counter-balance.
+* **Guard Window Impact:** Votes look back 30 days for eligibility.  
+* **Result:** Time dominates over sudden wealth.
 
 ---
+
+### 3.4) Logarithmic Power Scoring  
+
+$Score = \log_{10}(TWAB + 1)$  
+$VotingPower = Score \times g(EpochRules, StatusTier)$
+
+| TWAB | Log Score | Governance Power |
+|:--|:--|:--|
+| 10 | 1.04 | Entry level |
+| 1,000 | 3.00 | Moderate influence |
+| 1,000,000 | 6.00 | Upper limit plateau |
+
+> **Simulation:**  
+> View real-time calculations or test scenarios via [PoArt Simulation Console](https://galeri-coder.github.io/ilhanart-protocol/[PoArt]/).
 
 ## 🛡️ 4) Security & Validation
 
-### 4.1) Millennium Vault (10-Year Epochs)
-* **Definition:** The highest-level “reputation vault” where assets are locked in 10-year periods (epochs).  
-* **Problem It Solves:** Speculators optimized for short-term profit harming the 2025–3000 vision.  
-* **Answer:** Only those who lock assets for 10 years and earn [FPP] “Foundational Pillar” status can shape the most critical decisions.
+### 4.1) Millennium Vault (1-Year Epochs)
+* **Definition:** Highest-tier reputation vault; assets locked for one year.  
+* **Purpose:** Protects the long-horizon (2025 → 3000) vision through verified stability.  
+* **Access:** Only holders locked ≥ 1 year with [FPP] “Foundational Pillar” status can shape critical votes.
 
 ---
 
-### 4.2) Evidence Pack
-* **Definition:** The mandatory technical dataset required for a work to be approved by [PoArt].
+### 4.2) Evidence Pack (Chain Integrity Layer)
+A mandatory technical data set for [PoArt] validation.
 
-#### Mandatory Content (Trinity of Proof)
-1) **Live Logs:** 24/7 live streams and server/platform logs during production  
-2) **Process Timelapse:** Accelerated process video from first stroke to final form  
-3) **Digital Fingerprint:** Hash signed by the artist’s wallet (proof of non-tampering)
+#### Required Components — The Trinity of Proof
+1. **Live Logs:** Real-time creation footage + server logs.  
+2. **Process Timelapse:** From first to last brush stroke.  
+3. **Digital Fingerprint:** Artist wallet–signed hash ensuring authenticity.  
 
-#### v1.0 Reinforcement (Chain Integrity Layer)
-Trinity alone is not enough; the binding between components must also be sealed:
-4) **Capture Manifest:**  
-   Device/camera info, resolution, frame counts, durations, file list, checksums.  
-5) **Merkle Root / Hash Chain:**  
-\[
-\text{EvidenceRoot} = \text{MerkleRoot}(\text{AllFiles})
-\]
-   One cryptographic root for all evidence files, the “single truth” written to chain.  
-6) **Random Challenge Frames (Optional but Powerful):**  
-   Low-friction “human proof” prompts triggered at random moments during the stream  
-   (e.g., show a specific card, write a specific word, place a specific object in frame).  
-   This dramatically increases the cost of AI reenact/deepfake forgery.
+#### Additional Proof Layers
+4. **Capture Manifest:** Device, resolution, frame rate, checksums.  
+5. **Merkle Root / Hash Chain:**  
+   $EvidenceRoot = MerkleRoot(AllFiles)$  
+   All files collapse into a single root — *the one truth* sealed on-chain.  
+6. **Random Challenge Frames:** Random “human verification” prompts preventing deepfakes.  
 
-* **Problem It Solves:** A technically undeniable answer to “Was this truly made by a human hand with real effort?”
+* **Outcome:** Offers irrefutable technical proof that the artwork was human-made.
 
 ---
 
-### 4.3) Sybil & Flash-loan Protection
-* **Definition:** A mathematical barrier against bot-account (Sybil) and instant-loan (Flash-loan) attacks.  
-* **Answer:** TWAB + Guard Window makes instant capital movement negligible in governance impact.
+### 4.3) Sybil & Flash-loan Defense
+* **Function:** Combines TWAB + Guard Window to make short-term capital irrelevant.  
+* **Result:** Flash loans and bot swarms lose governance influence.
 
 ---
 
-## 💾 4.4) Digital Notary (The Unshakeable Seal of the Protocol)
-* **Definition:** A self-executing mechanism that filters [PoArt] and [FPP] data through technical checks, mathematically validates it, and irreversibly seals the final record into the **Public Registry**.
+### 4.4) Digital Notary (Immutable Protocol Seal)  
+$NotarySeal = Hash(EvidenceRoot + VoterConsensus + TimeStamp)$  
 
-### Problems It Solves
-1) **Central Authority and Bias:** Reduces subjective “elite approval” risk.  
-2) **Data Manipulation:** Makes retroactive alteration of approved records technically impossible.  
-3) **Gatekeeping:** Entry into a global archive is earned through proof, not taste.
-
-### Verification Cycle (Triple Filter)
-- **Evidence Pack Completeness:** Trinity + Manifest + EvidenceRoot  
-- **Democratic Oversight:** Must not cross veto/quorum rules  
-- **Cryptographic Signature:** SHA-512 signature verification
-
-### Mathematical Approval Seal
-\[
-\text{NotarySeal} = \text{Hash}(\text{EvidenceRoot} + \text{VoterConsensus} + \text{TimeStamp})
-\]
-
-### Outcome (2026–3000)
-Once a work receives the Digital Notary seal, it stops being merely the property of a single institution and becomes part of humanity’s long-horizon cultural heritage. The seal preserves the “who, when, and what labor” proof for centuries.
+* Verifies [PoArt] & [FPP] integrity.  
+* Seals verified data to **Public Registry**.  
+* Removes reliance on centralized or subjective gatekeeping.  
+* **Legacy Effect (2026 – 3000):** Each notarized piece becomes part of a verifiable cultural archive.
 
 ---
 
 ## 🏛️ 5) Validation & Persistence
 
-### 5.1) 365-Day Continuous Cold Wallet Validation
-* **Definition:** Holding an asset in cold storage (Ledger/Trezor, etc.) for 365 days with **stability**.
+### 5.1) 365-Day Continuous Cold-Wallet Verification
+**Definition:** Assets must remain in verified cold storage (Ledger, Trezor, etc.) for 365 consecutive days.
 
-* **Problems It Solves:**
-  1) Wash Trading  
-  2) Speculative pressure  
-  3) Hot wallet security vulnerabilities
+**Problems Solved**
+1. Wash Trading  
+2. Speculative pressure  
+3. Hot-wallet security vulnerabilities  
 
-#### v1.0 Update: “Penalty Ladder” instead of a single “Hard Reset”
-A single transfer instantly zeroing everything is powerful but can punish genuine human error. v1.0 should be both strict and livable:
+#### v1.0 Update — “Penalty Ladder” (instead of Hard Reset)  
+Gradual penalty system ensures strict but humane enforcement.
 
-- **1st Violation (transfer before 365 days):**  
-  TWAB is not fully deleted, but governance impact drops with a penalty multiplier:  
-\[
-\text{EffectiveTWAB} = \text{TWAB} \times 0.20
-\]
+**1st Violation (before 365 days):**  
+$EffectiveTWAB = TWAB \times 0.20$
 
-- **2nd Violation:**  
-\[
-\text{EffectiveTWAB} = \text{TWAB} \times 0.05
-\]
+**2nd Violation:**  
+$EffectiveTWAB = TWAB \times 0.05$
 
-- **3rd Violation:**  
-  Status becomes **Revoked**.
+**3rd Violation:** Status = **Revoked**
 
-> This ladder keeps the system economically hostile to “fast-in fast-out” manipulation without fully burning genuine users on first mistakes.
+> Prevents “quick in/out” manipulations while preserving honest users’ progress.
 
-#### Safe Migration Exception (Move Permit, Time-Lock)
-For wallet migration or security upgrades:
-- Open a **Move Permit** request  
-- Apply a short **time-lock**  
-- Community oversight (veto/quorum) remains active  
-- Only the permit record and new address binding are written on-chain
+#### Safe-Transfer Exception (Move Permit / Time-Lock)
+For legitimate transfers:  
+- Submit **Move Permit** request  
+- Apply short **time-lock**  
+- Community oversight remains active  
+- Only the permit and new address link are written on-chain  
 
 ---
 
-### 5.2) Evidence Pack: Trinity of Proof
-* **Components and Technical Detail:**
-  1) **Live Stream Logs:** raw recordings + platform server log alignment  
-  2) **Process Timelapse:** technical summary of layered construction  
-  3) **Technical Logs:** metadata, coordinates, tool timeline  
-  4) **EvidenceRoot:** single cryptographic root for all files (Merkle Root)
+### 5.2) Evidence Pack — Trinity of Proof
+Components:  
+1. **Live Stream Logs** (raw + server sync)  
+2. **Process Timelapse**  
+3. **Technical Logs** (metadata, tool usage)  
+4. **EvidenceRoot** (single Merkle Root)  
 
-* **Problem It Solves:** Against AI producing “results” in seconds, it protects the “process proof” of human labor.
+> Protects *process authenticity* over product appearance.
 
 ---
 
 ### 5.3) Annual Renewal Requirement (365-Day Heartbeat)
-* **Definition:** A yearly signature that proves each Public Registry entry remains active and owned.  
-* **Problems It Solves:** Dead data, abandoned wallets, passive collecting.
-
-* **How It Works:**
-  - Each record has a **Valid Until** date.  
-  - System warns **30 days before** expiration.  
-  - Owner signs again: “Still mine and still compliant.”  
-  - If not renewed, status becomes **Legacy Archive**.
-
-> Optional acceleration: If the project has annual archives plus frequent auditing, heartbeat can be reduced (e.g., 30 days). v1.0 default is 365 days.
+* Each verified record must renew annually via signature.  
+* **Reminders:** Issued 30 days before expiration.  
+* **Failure to renew:** Downgrades to *Legacy Archive*.  
+* **Goal:** Avoid dead data and ghost ownerships.
 
 ---
 
 ## 🗳️ 6) Decentralized Supervision
 
 ### 6.1) Community Veto Mechanism (40% Threshold)
-* **Definition:** A democratic safety barrier allowing a qualified minority to halt new entries or protocol changes.
+* **Definition:** Democratic safeguard allowing a qualified minority to halt proposals.  
+* **Dual-Lock Condition (v1.0):**
+  - **Quorum:** ≥ 25% participation required  
+  - **Veto Trigger:** ≥ 40% of total active weight  
 
-#### v1.0 Update: Dual Lock with “Quorum + Veto”
-A pure 40% veto can be distorted under low participation. Therefore:
+**Protection Against**
+1. Sybil Attacks  
+2. Collusion  
+3. Vote Bribery  
 
-- **Quorum (Minimum Participation):**  
-  At least **25%** of total active voting weight must participate.  
-- **Veto Threshold:**  
-  Veto should ideally trigger not at 40% of participants, but at **40% of total active weight**.  
-  (This fits the protocol’s “armor” intention.)
-
-* **Problems It Solves:**
-  1) Sybil Attacks  
-  2) Collusion (coordinated approvals)  
-  3) Bribery (buying votes)
-
-* **Example Scenario:** An AI-generated image applies as “my labor”. Evidence Pack shows inconsistencies. If the community crosses the veto threshold under log scoring and TWAB, the record can never be sealed.
+> Example: AI-generated art flagged by validators cannot pass if 40% of active TWAB weight vetoes it.
 
 ---
 
+### 6.2) Emergency Governance / Fallback Council  
+Prevents deadlocks when participation drops too low.
+
+$Deadlock = (ParticipationRate < 25\%) \land (ProposalTimeout > 7\,days)$
+
+If `Deadlock = TRUE`:  
+1. Top 10% of Impasto members form **Fallback Council**.  
+2. Decisions require ≥ ⅔ consensus.  
+3. Must be ratified within 30 days by community referendum.  
+4. All actions recorded in the **Emergency Ledger (SHA-512)**.
+
 ## ⚙️ 7) The Michelangelo Framework (Meritocracy Engine)
 
-### 7.1) Michelangelo: The Meritocracy Philosophy
-* **Definition:** The ranking and reputation engine. Prevents the system from becoming a “rich list” by enforcing merit-based hierarchy.  
+### 7.1) Michelangelo Philosophy
+* **Definition:** Ranking and reputation system ensuring cultural contribution outweighs wealth.  
 * **Slogan:** *“You cannot buy your way to the top.”*  
-* **Example:** A whale cannot be #1 just by depositing capital. The top belongs to those who contribute cultural value over years.
+* **Purpose:** Replaces “rich lists” with effort-based legitimacy.
 
-### 7.2) Status Formula: Time × Contribution
-\[
-\text{Status} = \text{HoldingTime} \times \text{CulturalContribution}
-\]
+---
 
-* **HoldingTime:** days held intact in cold storage (e.g., 1420 days)  
-* **CulturalContribution:** translations, curation, infrastructure, exhibition support, etc.
+### 7.2) Status Formula
+$Status = HoldingTime \times CulturalContribution$
 
-* **Problem It Solves:** Holding alone is passive. The system rewards those who both hold and build.
+- **HoldingTime:** Duration (days) of uninterrupted holding.  
+- **CulturalContribution:** Translation, curation, infrastructure, education, etc.
+
+**Problem Solved:** Encourages hybrid participation — economic + intellectual labor.
+
+---
+
+### 7.3) Cultural Contribution Domains
+
+| Domain | Description | Example Points |
+|:--|:--|:--|
+| Translation | Art, philosophy, science texts | +4,500 |
+| Curation | Archive QA, registry supervision | +2,000 |
+| Infrastructure | Code, docs, maintenance | +3,000 |
+| Education | Public lectures, media | +1,500 |
+
+> Combined weight recalculates quarterly through [FPP] to sustain fairness.
+
+---
+
+### 7.4) Status Decay  
+Inactive users lose a fraction of reputation over time.  
+
+$StatusDecay = e^{-\lambda t}$  
+
+Where `λ` is the decay rate (v1.0 = 0.0005 per day).  
+
+> Keeps ranking dynamic and self-cleaning.
 
 ---
 
 ## 📊 8) Cultural Multipliers & Ranking Levels
 
 ### 8.1) Cultural Multiplier
-* **Definition:** Bonus system added to final score.  
-* **Application Areas:**
-  - **Translation (JP/TR/EN):** science/philosophy/art texts (e.g., +4,500 Pts)  
-  - **Curation:** registry quality control + veto participation  
-  - **Infrastructure:** code, documentation, indexer contributions
+* **Definition:** Final scoring bonus for contributors impacting ecosystem growth.  
+* **Domains:**  
+  - Translation  
+  - Curation  
+  - Infrastructure  
+  - Education  
+  - Governance participation  
 
-* **Example:** 1000 days holding + 1 major translation can surpass thousands of passive holders.
+$FinalScore = BaseScore \times (1 + CulturalMultiplier)$
 
-### 8.2) Tier Classifications
-1) **Legendary (Top 10):** highest veto and strategic authority  
-2) **Senior (Top 50):** primary pillars, critical voice  
-3) **Veteran (Top 100):** long-term verifiers
+---
 
-* **Rule:** Not static. If contribution stops or stability breaks, tier drops.
+### 8.2) Rank Tiers
+
+| Tier | Range | Privileges |
+|:--|:--|:--|
+| **Legendary** | Top 10 | Highest veto + strategic voting |
+| **Senior** | Top 50 | Council participation |
+| **Veteran** | Top 100 | Validation + proposal creation |
+| **Member** | Below 100 | Basic participation rights |
+
+> Ranks adjust dynamically with decay and contribution flow.
 
 ---
 
 ## 📈 9) Cut-off Thresholds & Network Metrics
 
 ### 9.1) Entry Thresholds
-Thresholds must be single-source-of-truth in a stable spec:
 
-- **Legendary Threshold:** **≥ 100,000 Pts**  
-- **Top 100 Entry:** **≥ 45,000 Pts**
+| Category | Points Required | Description |
+|:--|:--|:--|
+| Legendary | ≥ 100,000 | Full authority |
+| Top 100 | ≥ 45,000 | Active governance participant |
+| Entry | ≥ 250 | Base turnstile threshold |
 
-* **Problem It Solves:** Prevents overcrowding and quality collapse. The path to the top is protected by a mathematical barrier.
+**Goal:** Maintain proportional influence regardless of network growth.
 
-### 9.2) Network TWAB
-* **Definition:** The ecosystem’s total TWAB capacity (e.g., 4.2M Network TWAB).  
-* **Function:** As it increases, the system becomes harder to manipulate.  
-* **24h New Entries:** Live feed of new [PoArt] entries in the last 24 hours.
+---
+
+### 9.2) Network TWAB (Global Stability Index)
+* **Definition:** Aggregate of all participant TWABs.  
+* **Interpretation:** The higher the network TWAB, the harder to manipulate governance.  
+* **Live Metric:** Displays new [PoArt] entries every 24 hours.
 
 ---
 
 ## 🎨 10) Intellectual Framework
 
-### 10.1) IPOW: Intellectual Proof of Work
-* **Definition:** A reputation engine that requires high-quality human labor (translation, art, education, technical work) beyond holding capital.  
-* **Problem It Solves:** “Passive stake” culture.  
-* **Example:** A wallet holding 1M tokens with zero contribution can fall behind a wallet holding 100 tokens that actively translates documentation.
-
-### 10.2) Intellectual Honesty Filter
-* **Definition:** A stage that measures whether a user truly understands the subject during claims or critical votes.  
-* **Problems It Solves:** copy-paste voting, AI spam, voting without understanding.
-
-#### v1.0 Update: “Understanding Proof” instead of classic quizzes (Accessible)
-Classic quizzes can punish users via language/accessibility barriers. Therefore:
-
-**Option A (Short Summary):** summarize the proposal in 100 words  
-**Option B (Risk Selection):** select 2 risks + write 1 justification  
-**Option C (Objection Input):** submit 1 objection rationale if applicable
-
-These modules measure understanding rather than memorization and raise automation costs.
+### 10.1) IPOW — Intellectual Proof of Work
+* **Definition:** Validation of high-value human labor beyond financial staking.  
+* **Mechanics:** Rewards intellectual, creative, and infrastructural outputs.  
+* **Example:**  
+  - 1 M tokens + no contribution → Low rank  
+  - 100 tokens + consistent translation work → High rank  
 
 ---
 
+### 10.2) Intellectual Honesty Filter
+* **Definition:** Measures whether a voter comprehends the subject before voting.  
+* **v1.0 Accessible Modes:**  
+  - **A)** Summarize proposal ≤ 100 words  
+  - **B)** Select 2 risks + add 1 justification  
+  - **C)** Submit 1 counterargument  
+
+> Evaluates understanding instead of memorization; resists AI spam and blind voting.
+
+
 ## 🛡️ 11) Advanced Sybil Resistance
 
-### 11.1) The Turnstile Mechanism
-* **Definition:** A minimum participation threshold to enter the ecosystem (e.g., 250 ILHAN Token).  
-* **Philosophy:** “Not a wall, a turnstile.”  
-* **Problem It Solves:** Filling governance with zero-cost zombie wallets.  
-* **Example:** A bot operator attempting 10,000 fake accounts must hold 250 tokens in each, making the attack economically irrational.
+### 11.1) Turnstile Mechanism
+* **Definition:** Minimum entry threshold to deter zero-cost bot creation.  
+* **Standard (v1.0):** 250 ILHAN tokens.  
+* **Philosophy:** “A turnstile, not a wall.”  
+* **Purpose:** Creates economic friction against Sybil attacks.  
+* **Example:** A botnet of 10,000 wallets now costs 2.5 M tokens — attack becomes irrational.
+
+---
 
 ### 11.2) Zombie Wallet Filter (Active Claim Requirement)
-* **Definition:** A filter requiring periodic proof that a wallet is “alive and active.”  
-* **Rule:** Wallets that do not submit active claims are automatically removed from the Global Registry even if their score is high.  
-* **Goal:** Keep the system composed of “living and producing” participants.
+* **Definition:** Requires wallets to periodically confirm activity through simple heartbeat signatures.  
+* **Rule:** Inactive wallets are delisted from the Global Registry, regardless of score.  
+* **Purpose:** Keeps the network composed of *living participants*.  
+* **Frequency:** Default = 365 days, adjustable per epoch rules.
 
 ---
 
 ## 🧬 12) Generational Legacy & Governance
 
-### 12.1) Generational Inheritance (Heir Designation)
-* **Definition:** Members who maintain continuous Legendary status for 4 years (1460 days) can transfer reputation and rights to an heir.  
-* **Problem It Solves:** Cultural value disappearing when a person dies or becomes inactive.  
-* **Implementation:** Heir designation is accessible only after proving 4-year loyalty and is sealed on-chain.
+### 12.1) Generational Inheritance
+* **Definition:** Legendary-tier members (≥100k points) maintaining active status for 4 consecutive years (1460 days) can assign a verified heir.  
+* **Purpose:** Prevents cultural and governance value from dying with inactive or deceased members.  
+* **Implementation:**  
+  - Heir activation possible only after 4-year proof of continuity.  
+  - Heir verification sealed on-chain with multi-signature authentication.
+
+---
 
 ### 12.2) Parliamentary Governance Rights
-1) **Legendary (≥ 100k):** constitution, fee structures, strategy  
-2) **Patron (50k–99k):** curation, supervision, votes  
-3) **Member (< 50k):** proposals and small-scale decisions
 
-* **Problem It Solves:** Replaces chaotic voting with “meritocratic democracy”.
+| Tier | Role | Powers |
+|:--|:--|:--|
+| **Impasto (≥100k)** | Founders / Constitutional Council | Defines protocol-level strategy |
+| **Texture (50k–99k)** | Senior Curators | Manage curation + auditing |
+| **Primer (<50k)** | General Members | Proposal input + minor votes |
+
+> Replaces chaotic populism with structured, meritocratic democracy.
 
 ---
 
 ## 🌍 13) Cultural Privilege Layers & Real-World Integration
 
-> Note: Privileges in this section are “Future Roadmap” components, implemented gradually during 2026–2030.
-
-### 13.1) The Annual Exhibition Right
-* **Definition:** High-scoring verified artists/patrons can exhibit in a physical İlhan Art Gallery once per year for one week.  
-* **Problem It Solves:** Independent artists’ difficulty accessing physical gallery space and high exhibition costs.  
-* **How It Works:** Eligible users reserve time via calendar and use “reputation points” rather than money. This is the democratization of art.
-
-### 13.2) Dynamic Art Pricing (JSON-Linked Discounts)
-* **Definition:** Status functions as a discount key during physical/digital purchases.  
-* **Implementation:**
-  - Legendary: 50%+  
-  - Patron: 30%  
-  - Member: 10%  
-* **Philosophy:** Not bargaining, but proven labor.
-
-### 13.3) Physical Ecosystem Integration (Partner Integration)
-- bookstores, cafes, cultural centers  
-- QR-based status reading and claimable codes
-
-### 13.4) Labor Over Capital: Meritocratic Access
-\[
-\text{ClaimRight} \propto \text{CulturalScore} + \log_{10}(\text{Balance})
-\]
-A student holding 250 tokens (turnstile limit) and contributing translations/art can gain more discounts, exhibition rights, and benefits than someone holding 100,000 tokens with zero contribution.
+> **Note:** These privileges are part of the 2026–2030 roadmap for hybrid physical–digital implementation.
 
 ---
 
-## 🧩 14) State Machine (Record Lifecycle)
+### 13.1) Annual Exhibition Right
+* **Definition:** Verified high-score artists/patrons gain one annual 7-day slot at Ilhan Art Gallery.  
+* **Purpose:** Democratizes exhibition access; eliminates cost barriers.  
+* **Mechanism:**  
+  - Booking via on-chain calendar.  
+  - Slots allocated by reputation, not capital.  
 
-A [PoArt] record and [FPP] status follow this deterministic flow:
+---
 
-1) **Draft**  
-2) **Submitted**  
-3) **Under Review**  
-4) **Challenged** (objection opened)  
-5) **Verified** (NotarySeal applied)  
-6) **Renew Due** (heartbeat window approaching)  
-7) **Legacy Archive** (not renewed, passive archive)  
-8) **Revoked** (violation, evidence collapse, veto, multiple violations)
+### 13.2) Dynamic Art Pricing (JSON-Linked Discounts)
+* **Definition:** Dynamic pricing API where cultural status = discount factor.  
+* **Structure:**  
+  - Legendary → 50%+  
+  - Patron → 30%  
+  - Member → 10%  
+* **Philosophy:** “No bargaining, only proven merit.”
 
-> This flow answers “what state am I in, and what happens next?” at a glance.
+---
+
+### 13.3) Physical Ecosystem Integration
+* Partner network: bookstores, cafés, cultural centers.  
+* QR-based scanning for verifying status and claiming real-world privileges.  
+* Connected via lightweight JSON API for instant validation.
+
+---
+
+### 13.4) Labor Over Capital — Meritocratic Access
+* **Principle:** Cultural effort outweighs raw capital in privilege allocation.  
+* **Mathematical Model:**  
+  $ClaimRight \propto CulturalScore + \log_{10}(Balance)$  
+* **Example:**  
+  - Contributor A → 250 tokens + consistent creation = high ClaimRight  
+  - Holder B → 100,000 tokens + inactivity = lower ClaimRight  
+
+> Shifts the system from plutocracy to *laborocracy.*
+
+---
+
+## 🧩 14) State Machine (Lifecycle of a Record)
+
+### Process Flow  
+A [PoArt] record + [FPP] status follows an irreversible sequence:
+
+1. **Draft** → created locally  
+2. **Submitted** → uploaded for validation  
+3. **Under Review** → validators audit evidence  
+4. **Challenged** → objection raised  
+5. **Verified** → [Digital Notary] seal applied  
+6. **Renew Due** → heartbeat reminder (annual)  
+7. **Legacy Archive** → expired, archived  
+8. **Revoked** → violation or multi-infraction  
+
+---
+
+### State Transition Rules  
+
+| From | To | Condition |
+|:--|:--|:--|
+| Draft | Submitted | Artist upload complete |
+| Submitted | Under Review | Validator acceptance |
+| Under Review | Verified | Consensus ≥ 66% |
+| Under Review | Challenged | Objection raised |
+| Challenged | Revoked | Objection upheld |
+| Challenged | Verified | Community overturns veto |
+| Verified | Legacy | Heartbeat expired |
+| Legacy | Revoked | Manual audit failure |
+
+> Enables transparent “where am I now?” tracking for every on-chain record.
 
 ---
 
 ## 🔗 15) Minimal On-chain / Maximal Off-chain
 
-### Written On-chain
+### On-chain Data
 - `EvidenceRoot` (Merkle Root)  
 - `NotarySeal`  
 - `TimeStamp`  
-- `Signer` (artist/owner)  
-- `Status` (Verified/Legacy/Revoked)  
-- `Permit Records` (exceptions such as Move Permit)
+- `Signer` (Artist/Owner)  
+- `Status` (Verified / Legacy / Revoked)  
+- `Permit` records (Move Permits / Heir links)
 
-### Stored Off-chain
-- raw video files  
-- timelapse  
-- technical log files  
-- manifest details  
-- large archive sets (IPFS/Arweave)
+### Off-chain Data
+- Raw videos  
+- Timelapse sequences  
+- Technical logs  
+- Manifests and metadata  
+- Large archive bundles (IPFS / Arweave)
 
-**Goal:** Maximize verifiability without bloating the chain.
-
----
-
-## 🏛️ 16) Appeals / Authority & Objection Mechanism (Institutional Trust Layer)
-
-The objection mechanism is the institutional guarantee of trust.
-
-- **Strategic Filter:** Objections must be evidence-based (not pure emotion/defamation).  
-- **Community Veto:** 40% veto + quorum dual lock.  
-- **Anti-Bot / Anti-Sybil:** (application layer) Solana-gated / stake-gated verification to choke bot flows.  
-- **Evidence Pack Freezing:** When an objection opens, the relevant evidence pack is frozen (time-lock).  
-- **Transparency / Time-Lock:** Every objection event is visible on a public timeline; sudden censorship or manipulation is blocked.
+**Goal:** Ensure verifiability without blockchain bloat.  
+**Integrity:** SHA-512 verification cross-checks on request.
 
 ---
 
-## 🧨 17) Threat Model (Attack Catalog and Counter-Layers)
+## 🏛️ 16) Appeals / Authority & Objection Mechanism
 
-- **Sybil Attack:** Turnstile + Zombie Filter + Quorum  
-- **Flash-loan:** TWAB + Guard Window + Log Scoring  
-- **Whale Domination:** Logarithmic Power Scoring + TWAB  
-- **Wash Trading:** Cold Wallet Validation + Penalty Ladder  
-- **Collusion:** Veto + Evidence Pack scrutiny + transparency  
-- **Data Tampering:** EvidenceRoot + SHA-512 signatures + NotarySeal  
-- **Bribery / Vote Buying:** Time-lock + quorum + contribution-weighted legitimacy  
-- **Deepfake Process Forgery:** Random Challenge Frames + manifest + hash chain
+**Purpose:** Institutional layer guaranteeing fairness, transparency, and procedural justice.
 
 ---
 
-## ⚖️ 18) Final Word: A Blueprint for Global Governance (Manifesto)
+### 16.1) Core Principles
+- **Evidence-Based:** Appeals must include verifiable data.  
+- **No Emotional Bias:** Subjective or defamatory claims auto-dismissed.  
+- **Transparency:** All appeal events are timestamped and publicly visible.  
+- **Freeze Protocol:** Evidence Packs involved in disputes are time-locked during investigation.
 
-> Vision Note: The mathematical armor built by [FPP] and [PoArt] proposes a governance model that can improve not only an art gallery ecosystem, but also corrupted parliamentary systems and manipulated elections.
+---
 
-### 18.1) The End of Plutocracy
-* **Definition:** Plutocracy is governance where decision power belongs solely to the richest minority.  
-* **Protocol Response:** Logarithmic scoring places a ceiling on capital power, while “time” and “labor” become the true authority.  
-* **Rationale:** The future of a society should belong not to the fattest wallet, but to those who contribute the most intellectual value.
+### 16.2) Community Safeguards
+- **Veto Threshold:** 40% active TWAB weight.  
+- **Quorum Requirement:** 25% minimum participation.  
+- **Anti-Sybil Gate:** Turnstile + Stake Verification.  
+- **AI Prevention:** Natural-language justification filters eliminate spam appeals.
 
-### 18.2) The Meritocratic Parliament
-Instead of populism and capital-centric politics, the model aims for a structure where those who internalize documentation and submit IPOW gain meaningful decision rights.
+---
 
-### 18.3) Security Against Vote Rigging (SHA-512 Election Security)
-- Turnstile: makes bot manipulation economically irrational  
-- TWAB: neutralizes last-minute “citizenship/vote purchase” via cheap transfers  
-- 40% Veto + Quorum: ensures minority oversight without being crushed
+### 16.3) Appeal Lifecycle
+1. **Appeal Initiated** → validator or member submits claim.  
+2. **Evidence Freeze** → related files locked.  
+3. **Community Review** → Veto / Quorum triggered.  
+4. **Resolution Vote** → 7-day window.  
+5. **Decision Execution** → SHA-512 sealed.  
 
-### 18.4) The Conclusion: Saving the Future
-This system is a design for a “new order” where proven labor defeats fraud, and a millennial vision defeats short-term impulses. The path to saving a society destined for misgovernance is to implement a protocol architecture proven mathematically fair and engineered to reduce human error.
+> Protects the system from hidden censorship and arbitrary power.
+
+---
+
+## 🧨 17) Threat Model (Attack Catalog & Countermeasures)
+
+| Threat | Countermeasure |
+|:--|:--|
+| **Sybil Attack** | Turnstile + Zombie Filter + Quorum |
+| **Flash-loan** | TWAB + Guard Window + Log Scoring |
+| **Whale Domination** | Logarithmic Power Scoring + TWAB |
+| **Wash Trading** | Cold Wallet Verification + Penalty Ladder |
+| **Collusion** | Veto + Transparency Ledger |
+| **Data Tampering** | EvidenceRoot + SHA-512 + NotarySeal |
+| **Vote Bribery** | Time-lock + Quorum-weighted legitimacy |
+| **Deepfake Forgery** | Random Challenge Frames + Hash Chain |
+
+> Each mitigation method is mathematically defined and version-controlled under [FPP].
+
+---
+
+## ⚖️ 18) Final Word — A Blueprint for Global Governance
+
+> *“Art is the prototype. Governance is the canvas.”*
+
+Built by [PoArt] and [FPP], this framework proves that the same  
+mathematical architecture safeguarding cultural truth can also repair broken democracies.
+
+---
+
+### 18.1) End of Plutocracy
+* **Definition:** A system ruled by wealth, not merit.  
+* **Protocol Response:**  
+  - Logarithmic scoring limits money’s dominance.  
+  - Time and labor become the core legitimacy metrics.  
+* **Principle:** Ownership ≠ authorship — contribution defines legitimacy.
+
+---
+
+### 18.2) Meritocratic Parliament
+* Replaces populism and capital-driven politics.  
+* Empowers those who internalize documentation and contribute IPOW.  
+* Turns governance into a *craft*, not a popularity contest.
+
+---
+
+### 18.3) Electoral Integrity (SHA-512 Security)
+* **Turnstile:** Prevents bot-based citizen inflation.  
+* **TWAB:** Nullifies last-minute transfers and vote buying.  
+* **Veto + Quorum:** Guarantees minority oversight.  
+
+> A new digital constitution, immune to manipulation.
+
+---
+
+### 18.4) Manifesto — Saving the Future
+This protocol is not only a design for art,  
+but a **governance archetype** for the next millennium.
+
+It aims to build societies where:
+- Verified effort > empty wealth  
+- Long-term vision > instant gratification  
+- Mathematical fairness > political bias  
+
+> **“In the age of automation, humanity’s proof of worth is its willingness to create.”**
 
 ---
 
 ## 📅 19) Roadmap & Future Notes
-All items in this documentation are building blocks of the İlhan Art ecosystem’s long-horizon vision from 2026 to 3000. Each version update (v1.1, v1.2, etc.) will include technical integration processes for these privileges (API links, physical POS integrations, etc.).
+
+| Phase | Year | Focus |
+|:--|:--|:--|
+| **v1.0** | 2026 | Core Proof & Validation (current spec) |
+| **v1.1** | 2027 | Public Registry API & Simulation Console |
+| **v1.2** | 2028 | Partner Integrations (POS / QR Systems) |
+| **v2.0** | 2030 | Governance Automation + Cross-protocol Indexing |
+
+> Timeline from 2026 → 3000 forms the *Ilhan Art Millennium Vision*:  
+> a cultural, economic, and ethical system engineered for centuries of continuity.
 
 ---
+
+## 🔐 Hash Signature (v1.0 Hard-Locked)
