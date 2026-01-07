@@ -1,11 +1,12 @@
 ---
-title: Ilhan Art Protocol
-version: 1.0 (Stable)
-status: HARD_LOCKED
-integrity: SHA-512
-ecosystem: [PoArt] + [FPP]
-last_updated: 2026-01-07
+title: "Ilhan Art Protocol"
+version: "1.0 (Stable)"
+status: "HARD_LOCKED"
+integrity: "SHA-512"
+ecosystem: "[PoArt] + [FPP]"
+last_updated: "2026-01-07"
 ---
+
 
 # 📜 Protocol Terminology & Technical Lexicon
 > **Protocol Version:** 1.0 (Stable)  
