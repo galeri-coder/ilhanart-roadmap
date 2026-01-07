@@ -412,10 +412,16 @@ $$
 
 * **Örnek:** 1000 gün holding + 1 büyük çeviri = sıralamada binlerce kişiyi geçebilir.
 
-### 8.2) Tier Classifications (Rütbe Seviyeleri)
-1) **Legendary (Top 10):** en yüksek veto/stratejik söz  
-2) **Senior (Top 50):** ana kolonlar, kritik söz  
-3) **Primer (Top 100):** uzun vadeli doğrulayıcılar  
+### 8.2) Rütbe Sınıfları
+
+| Rütbe | Aralık / Puan | Rol & Yetkiler |
+|:--|:--|:--|
+| **Impasto (≥100k)** | Anayasal Düzey | Strateji, fee, ve uzun vadeli yön belirleme |
+| **Texture (50k–99k)** | Küratoryal Düzey | Denetim, kürasyon, oylama koordinasyonu |
+| **Primer (<50k)** | Üye Düzeyi | Öneri sunma ve küçük karar süreçlerine katılım |
+
+> Rütbeler, [FPP] çerçevesinde katkı akışı ve zamansal düşüş oranına göre dinamik biçimde güncellenir.
+
 
 * **Kural:** Statik değil. Katkı bırakılırsa veya istikrar bozulursa rütbe düşer.
 
@@ -426,7 +432,7 @@ $$
 ### 9.1) Entry Thresholds (Giriş Barajları)
 Eşikler “stable” olduğunda tek olmalı:
 
-- **Legendary Threshold:** **≥ 100,000 Pts**  
+- **impasto Threshold:** **≥ 100,000 Pts**  
 - **Top 100 Entry:** **≥ 45,000 Pts**
 
 * **Çözdüğü Sorun:** Sistem kalabalıklaşıp kalitesizleşmesin. Zirveye giden yol matematiksel bariyerle korunur.
@@ -473,10 +479,7 @@ Bu modüller, “ezberi” değil “anlamayı” ölçer ve bot otomasyonunu zo
 
 ---
 
-## 🧬 12) Generational Legacy & Governance (Nesiller Arası Miras ve Yönetim)
-
-### 12.1) Generational Inheritance (Varis Belirleme)
-* **Tanım:** 4 yıl (1460 gün) boyunca kesintisiz Legendary statüsünü koruyanların itibar ve haklarını varise devredebilmesi.  
+## 🧬 12) Generational Legacy & Governance (Nesiller Arası Impasto statüsünü koruyanların itibar ve haklarını varise devredebilmesi.  
 * **Çözdüğü Sorun:** Bir kişinin ölümü/aktifliği yitirmesiyle kültürel değerin kaybolması.  
 * **Uygulama:** Varis ekranı yalnızca 4 yıllık sadakati kanıtlayanlara açılır ve on-chain mühürlenir.
 
@@ -498,13 +501,16 @@ Bu modüller, “ezberi” değil “anlamayı” ölçer ve bot otomasyonunu zo
 * **Çözdüğü Sorun:** Bağımsız sanatçının fiziksel alana erişim maliyeti.  
 * **Nasıl Çalışır?** Threshold geçenler takvim üzerinden rezervasyon yapar; galeri “itibar puanları” ile kullanılır.
 
-### 13.2) Dynamic Art Pricing (JSON-Linked Discounts)
-* **Tanım:** Statünün indirim anahtarı olarak çalışması.  
-* **Uygulama:**  
-  - Legendary: %50+  
-  - Patron: %30  
-  - Member: %10  
-* **Felsefe:** Pazarlık değil, kanıtlanmış emek.
+### 13.2) Dinamik Sanat Fiyatlandırması (JSON Bağlantılı İndirimler)
+
+* **Tanım:** Kültürel statüye göre indirim oranını belirleyen dinamik fiyatlandırma API’si.  
+* **Yapı:**  
+  - **Impasto (≥100k)** → %50+ indirim  
+  - **Texture (50k–99k)** → %30 indirim  
+  - **Primer (<50k)** → %10 indirim  
+* **Felsefe:** “Pazarlık yok — yalnızca doğrulanmış emek değer belirler.”  
+* **Amaç:** Kültürel katkıyı ödüllendirirken, algoritmik şeffaflık ve adalet sağlamak.
+
 
 ### 13.3) Physical Ecosystem Integration (Partner Entegrasyonu)
 - Kitabevleri, kafeler, kültür merkezleri  
