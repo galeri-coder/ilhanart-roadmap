@@ -74,61 +74,152 @@ Bu protokol, “kim ne yapar, ne yapamaz?” sorusunu netleştirerek yanlış an
 
 ## 📊 3) Economic & Governance Metrics (Ekonomik & Yönetişim Metrikleri)
 
-### 3.1) Epoch (Zaman Penceresi Tanımı)
-* **Tanım:** Yönetim ve doğrulama hesaplarının “hangi zaman diliminde” ölçüleceğini belirleyen penceredir.  
-* **Önerilen Standart (v1.0):**
-  - **Default Epoch:** 7 gün  
-  - **Critical Vote Guard Window:** 30 gün (kritik oylamalar öncesi kısa vadeli sermaye şişirmeyi etkisizleştirir)
+Bu bölüm, ekosistemin sürdürülebilirliği ve yönetimde adaleti sağlamak için kullanılan temel matematiksel modelleri ve zaman tabanlı kısıtlamaları tanımlar. Amaç; sermaye ile anlık güç satın alma girişimlerini (**whale / flash-in / pump-dump / oy satın alma**) zaman sürtünmesi ile etkisizleştirirken, uzun vadeli sadakati ölçülebilir ve denetlenebilir hale getirmektir.
 
-> Not: Epoch uzunluğu parametrelenebilir. Ama doküman “stable” olduğu için v1.0’da varsayılan net olmalıdır.
+---
+
+### 3.1) Time Windows (Zaman Pencereleri) ve Epoch Tanımı
+
+Bu protokolde zaman, tek bir “epoch” kelimesiyle değil; farklı amaçlara hizmet eden **üç ayrı pencere** ile tanımlanır. Böylece operasyonel ölçüm ile kritik oylama güvenliği birbirine karışmaz.
+
+#### 3.1.1) Operational Epoch (Standart Operasyonel Döngü)
+
+Yönetim raporlarının, doğrulama loglarının ve rutin skor güncellemelerinin çalıştığı temel periyottur.
+
+- **Default Operational Epoch:** **7 Gün** (standart operasyonel döngü)
+- **Fonksiyon:** Rutin metrik güncellemeleri, kayıt/log akışları, periyodik raporlama.
+
+#### 3.1.2) Critical Vote Guard Window (Kritik Oylama Koruma Penceresi)
+
+Kritik oylamalarda, oylama gücünün hangi geçmiş zaman aralığına bakılarak hesaplanacağını belirleyen güvenlik penceresidir.
+
+- **Critical Vote Guard Window (Lookback):** **30 Gün**
+- **Fonksiyon:** Oylama öncesi yapılan yüklü ve kısa vadeli sermaye girişlerini (oy satın alma girişimlerini) etkisizleştirir.
+
+> **Kural Netliği (Önemli):**  
+> Kritik oylamalarda oy gücü hesaplanırken **Operational Epoch (7 gün)** yerine **Guard Window (30 gün)** “lookback window” olarak baz alınır.  
+> Yani kritik oylamada ölçüm penceresi **30 gündür**; **7 gün** sadece operasyonel raporlama döngüsüdür.
+
+#### 3.1.3) Integrity Cycle (365-Day Renewal) ile İlişki
+
+- **Integrity Cycle:** **365 Gün**
+- **Fonksiyon:** Her yıllık yenileme döneminde (365-Day Renewal) metriklerin kanıtları (Evidence Pack) üzerinden doğrulanması zorunludur. Bu bir “hesaplama penceresi” değil; doğrulama ve denetim döngüsüdür.
+
+> **⚠️ v1.0 Değişmezlik Notu (Hard-Coded / Parametreleme)**  
+> - v1.0’da **Operational Epoch = 7 gün** ve **Guard Window = 30 gün** **hard-coded** kabul edilir (v1.0 içinde değişmez).  
+> - Gelecekte “parametrelenebilir” ifadesi, v1.0 içinde anlık ayarlanabilirlik anlamına gelmez; yalnızca protokol sürüm yükseltmesi (ör. v1.1+) ve buna bağlı yönetişim onayı ile mümkün olacak bir değişiklik sınıfını ifade eder.
 
 ---
 
 ### 3.2) TWAB (Time-Weighted Average Balance)
-* **Tanım:** Zaman-Ağırlıklı Ortalama Bakiye. Bir cüzdanın ekosistem içindeki “sadakat” ve “istikrar” katsayısını hesaplayan temel metrik. Bu değer sadece “ne kadar” varlığınız olduğunu değil, bu varlığa “ne kadar süredir” sahip çıktığınızı ölçer.
 
-#### Matematiksel Model (Normalize Edilmiş Ortalama)
-\[
-\text{TWAB}=\frac{\sum_{i=1}^{n}(\text{Bakiye}_i \times \Delta t_i)}{\sum_{i=1}^{n}\Delta t_i}
-\]
+TWAB, bir cüzdanın ekosistem içindeki **"sadakat"** ve **"istikrar"** katsayısını hesaplayan temel metriktir. Sadece bakiye miktarını değil, bu varlığa ne kadar süre sahip çıkıldığını ölçer.
 
-#### Ham Alan Metrik (Opsiyonel, Skorlama İçin)
-Bazı uygulamalarda “average” yerine “alan” gerekir. Bu durumda isim net olmalı:
-\[
-\text{TWA}=\sum_{i=1}^{n}(\text{Bakiye}_i \times \Delta t_i)
-\]
+**Hangi pencerede hesaplanır?**
+- Rutin raporlarda TWAB, **Operational Epoch (7 gün)** boyunca hesaplanabilir.
+- Kritik oylamalarda TWAB, **Critical Vote Guard Window (30 gün)** boyunca hesaplanır (lookback).
 
-* **Çözdüğü Sorun:** **Whale Manipulation (Balina Manipülasyonu).** Oylama öncesi yüklü alım yapıp oylama biter bitmez satma (pump-dump) modelini “zaman sürtünmesi” ile bozar.  
-* **TWAB Guard Mantığı:** Zaman satın alınamaz. Kritik oylamalarda “guard window” içinde sisteme son dakika giren sermayenin etkisi ihmal edilebilir düzeye iner.
+#### 3.2.1) Matematiksel Model (Normalize Edilmiş Ortalama)
 
-#### Voting Power (Oy Gücü) Tanımı
-Oy gücü, TWAB tabanlı bir fonksiyondur:
-\[
+Bir zaman penceresi içindeki ortalama sadakat puanı şu formülle hesaplanır:
+
+$$
+\text{TWAB} = \frac{\sum_{i=1}^{n} (\text{Bakiye}_i \times \Delta t_i)}{\sum_{i=1}^{n} \Delta t_i}
+$$
+
+- Burada $\Delta t_i$ ilgili bakiyenin taşındığı süreyi temsil eder.
+- Bu formül, “anlık bakiye” yerine “zaman ağırlıklı denge” üretir.
+
+#### 3.2.2) Ham Alan Metrik (TWA - Opsiyonel)
+
+Bazı özel skorlama motorlarında "ortalama" yerine kümülatif bakiye-zaman alanı (integral) kullanılır:
+
+$$
+\text{TWA} = \sum_{i=1}^{n} (\text{Bakiye}_i \times \Delta t_i)
+$$
+
+- **Not:** TWA, normalize edilmemiş “alan” metriğidir. Aynı pencere için TWAB ile birlikte ya da alternatif motorlarda tek başına kullanılabilir.
+
+**Çözülen Sorun:** **Whale Manipulation (Balina Manipülasyonu).**  
+Oylama duyurulduğu an yüklü alım yapıp, oylama biter bitmez satış yapan (*pump-dump*) aktörlerin gücü, zaman sürtünmesi ile nötralize edilir.
+
+---
+
+### 3.3) Voting Power (Oy Gücü) Tanımı
+
+Sistemde oy gücü, sadece cüzdan bakiyesine değil; zamana, kurallara ve kullanıcı statüsüne bağlı bir fonksiyondur:
+
+$$
 \text{VotingPower} = f(\text{TWAB}, \text{EpochRules}, \text{StatusTier})
-\]
+$$
 
-* **Örnek Hesaplama (Mantıksal):**
-  - **A Şahsı:** 1.000.000 tokenı kritik oylamadan 1 saat önce aldı. Guard Window = 30 gün. Etkisi **çok düşük**.  
-  - **B Şahsı:** 100 tokenı var ama 365 gündür cold wallet’ta. Etkisi **yüksek**.  
-* **Sonuç:** Sistem, B şahsının 1 yıllık sadakatini, A şahsının son dakika parasına tercih eder.
+Bu dokümanın amacı, $f(\cdot)$ fonksiyonunun en kritik iki bileşenini standartlaştırmaktır:
+
+1. **Zaman tabanlı ölçüm (TWAB + Guard Window)**
+2. **Gücün yoğunlaşmasını engelleme (logaritmik skorlama)**
+
+#### 3.3.1) Guard Window Etkisi (Kural Netliği)
+
+Kritik oylamalarda:
+- $\text{TWAB}$ hesaplaması **30 günlük Guard Window** üzerinden yapılır.
+- Böylece oylamadan hemen önce yapılan alımlar, pencerenin çok küçük bir kısmını temsil ettiği için oy gücüne etkisi yakınsayan şekilde azalır.
+
+**Örnek Senaryo (Mantıksal Kıyas):**
+- **A Kullanıcısı:** 1.000.000 tokenı oylamadan 1 saat önce aldı.  
+  (Kritik oylama ölçümü 30 gün lookback ile yapıldığı için, 1 saatlik katkı toplam pencerenin çok küçük kısmıdır; etkisi ihmal edilebilir düzeye iner.)
+- **B Kullanıcısı:** 100 tokenı 365 gündür soğuk cüzdanda (Cold Wallet) tutuyor.  
+  (Kritik oylamada son 30 günün TWAB’ı istikrarlı ve tam taşındığı için etkisi yüksek olur. Ayrıca yıllık Integrity Cycle doğrulamasında B’nin sürekliliği Evidence Pack ile desteklenir.)
+
+**Sonuç:** Matematiksel model, B kullanıcısının uzun vadeli sadakatini, A kullanıcısının son dakika sermaye üstünlüğüne tercih eder.
 
 ---
 
-### 3.3) Logarithmic Power Scoring (Logaritmik Skor)
-* **Tanım:** Güç artışını doğrusal (lineer) değil, **logaritmik** olarak hesaplayan adalet mekanizması. Sermayenin “sonsuz büyümesini” yönetimde sınıra çeker.
+### 3.4) Logarithmic Power Scoring (Logaritmik Skorlama)
 
-#### Matematiksel Model
-\[
+Sermayenin yönetimde doğrusal (lineer) bir güç kazanmasını engelleyen adalet mekanizmasıdır. Güç artışını azalarak artan (logaritmik) bir eğriye oturtarak topluluğun sesini korur.
+
+#### 3.4.1) Matematiksel Model
+
+Kullanıcının yönetim ağırlığına temel olan skor şu formülle hesaplanır:
+
+$$
 \text{Score} = \log_{10}(\text{TWAB} + 1)
-\]
+$$
 
-* **Çözdüğü Sorun:** **Kapitalist Güç Yoğunlaşması (Plotokrasi).** Dev varlıkların topluluğun sesini boğmasını engeller.  
-* **Örnek:**
-  - TWAB = 10 → Score = log10(11) ≈ 1.04  
-  - TWAB = 1,000,000 → Score = log10(1,000,001) ≈ 6.00  
-* **Adalet Notu:** Bir kişi diğerinden 100.000 kat “varlıklı” görünse bile yönetimde “sonsuz” güçlü olamaz. Matematik, küçük seslerin birleşerek denge kurmasına izin verir.
+> **Bağlayıcı Not (Tutarlılık):**  
+> Bu dokümanda $\text{Score}$, 3.3’teki $\text{VotingPower}$ fonksiyonunun çekirdek bileşeni olarak kabul edilir.  
+> Pratikte tipik bir birleşim şu mantığa oturur:
+
+$$
+\text{VotingPower} = \text{Score} \times g(\text{EpochRules}, \text{StatusTier})
+$$
+
+Burada $g(\cdot)$; statü tier çarpanları, oylama türüne özel filtreler ve guard kuralları gibi protokol kurallarını temsil eder.
+
+#### 3.4.2) Adalet Notu (Neden Logaritmik?)
+
+Bu model, **Kapitalist Güç Yoğunlaşmasını (Plutokrasi)** engellemek için tasarlanmıştır. Dev varlıkların topluluğun sesini boğmasını sınırlar ve küçük seslerin birleşerek denge kurmasına izin verir.
+
+| Bakiye (TWAB) | Skor ($\log_{10}$) | Güç Analizi |
+| :--- | :--- | :--- |
+| 10 | 1.04 | Başlangıç seviyesi etki. |
+| 1,000 | 3.00 | 100 kat varlık artışına karşılık ~3 seviyelik skor. |
+| 1,000,000 | 6.00 | 100.000 kat varlık artışına karşılık ~6 seviyelik skor. |
+
+**Özet:** Bir kişi diğerinden 100.000 kat daha zengin olsa bile, yönetimde 100.000 kat daha güçlü olamaz.
 
 ---
+
+### 3.5) FPP v1.0 Uyumluluğu
+
+Bu metrikler, **Foundational Pillar Protocol (FPP)** v1.0 standartlarına göre v1.0 içinde **“değişmez”** kabul edilir:
+
+- **Operational Epoch:** 7 Gün
+- **Critical Vote Guard Window:** 30 Gün
+- **Integrity Cycle / 365-Day Renewal:** her yıl kanıt bazlı doğrulama
+
+Her yıllık yenileme (365-Day Renewal) döneminde bu metriklerin kanıtları (Evidence Pack) üzerinden doğrulama yapılması zorunludur. Bu doğrulama; manipülasyon risklerini azaltır, metriklerin tutarlılığını korur ve sistemin uzun vadeli güvenilirliğini kurumsallaştırır.
+
 
 ## 🛡️ 4) Security & Validation (Güvenlik ve Doğrulama)
 
