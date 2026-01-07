@@ -1,4 +1,4 @@
-# 📜 Protokol Terminolojisi ve Teknik Sözlük
+# 📜 Protokol Terminolojisi ve Teknik Sözlük 🇹🇷
 > **Protocol Version:** 1.0 (Stable)  
 > **Network Vision:** 2025 → 3000 Archive  
 > **Ecosystem:** [PoArt] + [FPP] + [Michelangelo] + [Cultural Layers]  
