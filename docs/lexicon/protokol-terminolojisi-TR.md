@@ -406,8 +406,8 @@ $$
 ### 8.1) Cultural Multiplier (Kültürel Çarpanlar)
 * **Tanım:** Final skora eklenen bonus sistem.  
 * **Uygulama Alanları:**
-  - **Translation (JP/TR/EN):** bilim/felsefe/sanat metinleri (+4,500 Pts örnek)  
-  - **Curation:** registry kalite kontrol + veto katılımı  
+  - **İmpasto (JP/TR/EN):** bilim/felsefe/sanat metinleri (+4,500 Pts örnek)  
+  - **Texture:** registry kalite kontrol + veto katılımı  
   - **Infrastructure:** kod, dokümantasyon, indexer katkısı  
 
 * **Örnek:** 1000 gün holding + 1 büyük çeviri = sıralamada binlerce kişiyi geçebilir.
@@ -415,7 +415,7 @@ $$
 ### 8.2) Tier Classifications (Rütbe Seviyeleri)
 1) **Legendary (Top 10):** en yüksek veto/stratejik söz  
 2) **Senior (Top 50):** ana kolonlar, kritik söz  
-3) **Veteran (Top 100):** uzun vadeli doğrulayıcılar  
+3) **Primer (Top 100):** uzun vadeli doğrulayıcılar  
 
 * **Kural:** Statik değil. Katkı bırakılırsa veya istikrar bozulursa rütbe düşer.
 
