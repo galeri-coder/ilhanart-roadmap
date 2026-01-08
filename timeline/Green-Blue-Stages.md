@@ -6,7 +6,7 @@ In an era of 15-second loops and "swipe-to-skip" culture, this ecosystem serves 
 ---
 
 ## 🟢 Phase 1: Foundations & The [PoArt] Standard (2026)
-* **Protocol Deployment**: Establishment of the `[PoArt]` (Proof of Art) and `[F.P.P.]` (Foundational Pillar Protocol) technical frameworks on GitHub.
+* **Protocol Deployment**: Establishment of the `[PoArt]` (Proof of Art) on GitHub.
 * **Open Source Transparency**: Publishing standards including developmental errors to ensure a truly transparent protocol.
 * **Physical Presence**: Launch of the Ortaköy studio with 24/7 live performance broadcasting and initial solo/mixed exhibitions.
 * **Validation**: Completion of social media verification processes and preparation for the Kethüda Hamamı transition.
