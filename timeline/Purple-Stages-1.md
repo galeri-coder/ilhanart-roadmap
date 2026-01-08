@@ -1,7 +1,7 @@
 # ⏳ The Millennium Roadmap: Civilizational Archiving & Protocol Evolution (2050 – 2500+)
 
 ### **Institutional Status:** `PERMANENT ARCHIVE`
-### **Framework:** `İlhan Art Protocol [F.P.P. & PoArt]`
+### **Framework:** `İlhan Art Protocol [PoArt]`
 ### **Logic:** `Deep Time Resilience // Evidence-Based Aesthetic`
 
 ## 2050–2075 🟣 Completing the Cultural Backbone
