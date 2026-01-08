@@ -910,9 +910,7 @@ Her sürüm güncellemesi (v1.1, v1.2 vb.) bu ayrıcalıkların teknik entegrasy
     - `EvidenceRoot` = 64-byte raw (length prefix yok)
     - `VoterConsensusRoot` = 64-byte raw (length prefix yok)
     - `TimeStamp` = `u64be` (8 byte, UTC Unix seconds)
-  - Matematiksel tanım:
-    $$
-    \text{NotarySeal}=\text{SHA-512}\!\left(\text{EvidenceRoot}\,\|\,\text{VoterConsensusRoot}\,\|\,\text{TimeStamp}\right)
-    $$
+
+DEMO*
 
 
