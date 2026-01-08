@@ -78,9 +78,6 @@ $$\text{NotarySeal} = \text{SHA-512}(\text{EvidenceRoot} \mid \text{SignerSignat
 
 > **"Kültür, sermayeden büyüktür. Eserlerinizi bugünden koruyun, yarına taşıyın."**
 
-# [PoArt] Dijital Noter & Adli Kanıt Protokolü (v1.0 Beta)
-
-> **"Kültür, sermayeden büyüktür. Eserlerinizi bugünden koruyun, yarına taşıyın."**
 
 ![Version](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Security](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Platform](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
 
@@ -179,6 +176,8 @@ PoArt, mevcut çözümlerin eksiklerini tamamlayan "Sweet Spot" (En ideal nokta)
 | **Gizlilik** | **✅ Client-Side Hash** | ✅ Client-Side Hash | ⚠️ Server Upload | ⚠️ Server Upload |
 
 ---
+
+
 
 ## 📜 Lisans
 
