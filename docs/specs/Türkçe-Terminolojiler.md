@@ -509,18 +509,6 @@ PoArt, mevcut çözümlerin eksiklerini tamamlayan "Sweet Spot" (En ideal nokta)
 
 ---
 
-## 📜 Lisans
-
-![Version](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Security](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Platform](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
-
-**Bu proje [İlhan Art Gallery] inisiyatifi ile geliştirilmiş olup, kaynak kodları şeffaflık adına halka açıktır.**
-
-**PROTOKOL V1.0 // SHA-512 İLE MÜHÜRLENMİŞTİR.**
-
-*© 2025 İLHAN ART | ESERLERİN, GÖRSELLERİN VE FİKİRLERİN TÜM HAKLARI SAKLIDIR.*
-
----
-
 ## 🧬 Protokol Veri Yapısı (JSON Schema)
 
 **Her [PoArt] sertifikası, aşağıdaki standartta üretilen, taşınabilir ve doğrulanabilir bir JSON kimlik kartına sahiptir.**
@@ -643,6 +631,21 @@ PoArt protokolü, açık kaynak topluluğunun katkılarıyla gelişmeye devam ed
 **[PoArt] Proof of Art Protocol v1.0**  
 *"Culture > Capital" // Kültür, Sermayeden Büyüktür*
 
+## 🧾 License
+
+MIT License © 2026 İlhan Art Gallery Initiative  
+See [LICENSE](LICENSE) for full terms.
+
 ---
 
-**END OF WHITEPAPER v1.1**
+## 💬 Credits
+
+
+![Version](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Security](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Platform](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
+
+**Bu proje [İlhan Art Gallery] inisiyatifi ile geliştirilmiş olup, kaynak kodları şeffaflık adına halka açıktır.**
+
+**PROTOKOL V1.0 // SHA-512 İLE MÜHÜRLENMİŞTİR.**
+
+*© 2026 İLHAN ART | ESERLERİN, GÖRSELLERİN VE FİKİRLERİN TÜM HAKLARI SAKLIDIR.*
+---
