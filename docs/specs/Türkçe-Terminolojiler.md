@@ -608,10 +608,10 @@ if (userFileHash === originalHash) {
 
 ## 🌍 Topluluk & Destek
 
-- **GitHub:** [github.com/galeri-coder/ilhanart-core](https://github.com/galeri-coder/ilhanart-core)
+
 - **Twitter:** [@Galerilhan](https://twitter.com/Galerilhan)
 - **Web:** [ilhanart.org](https://ilhanart.org)
-- **Email:** info@ilhanart.org
+- **Email:** galeri@ilhanart.org
 
 ---
 
@@ -625,6 +625,16 @@ PoArt protokolü, açık kaynak topluluğunun katkılarıyla gelişmeye devam ed
 3. Commit atın (`git commit -m 'Add amazing feature'`)
 4. Push yapın (`git push origin feature/amazing-feature`)
 5. Pull Request açın
+
+### 🛠️ Şu an Neye İhtiyacımız Var? (Yardım Çağrısı)
+
+PoArt Protokolü **Faz 2** geliştirmeleri için aşağıdaki konularda deneyimli geliştiricilerin katkılarını bekliyoruz:
+
+* **Supabase Edge Functions:** Spam korumasını sunucu tarafına taşıma.
+* **Solana Web3.js:** Cüzdan imzalama (Wallet Signing) entegrasyonu.
+* **IPFS / Arweave:** Arşivleme ve pinning servisleri entegrasyonu.
+
+> Bir özellik eklemeden önce lütfen "Issues" sekmesinde tartışma başlatın.
 
 ---
 
