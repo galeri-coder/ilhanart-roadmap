@@ -29,6 +29,77 @@ Sol Ate Engine, karmaşık finansal modeller yerine şu 3 ana sütun üzerine in
 
 ---
 
+### 🧮 Sol Ate Değer Teoremi (The Value Theorem)
+
+PoArt protokolü, bir dijital varlığın değerini ($V$) sübjektif piyasa algısıyla değil; **üretim sürecinin fiziksel gerçekliğiyle** hesaplar.
+
+Yapay Zeka (AI), sonucu anında ($t \to 0$) vererek süreci yok eder. [PoArt] ise değeri, zaman ve irade fonksiyonunun bir türevi olarak kabul eder.
+
+$$
+V_{PoArt} = \int_{t_{start}}^{t_{end}} \left( P_{labor}(t) \cdot I_{agency}(t) \right) \, dt + U_{irreversible}
+$$
+
+#### Değişkenlerin Tanımı:
+
+* **$\int dt$ (Süreç Birikimi):**
+    Değer anlık bir "çıktı" (output) değildir; $t_{start}$ ve $t_{end}$ arasında biriken bir **süreçtir**. Süre azaldıkça (AI üretimi), entegralin sonucu 0'a yakınsar.
+
+* **$P_{labor}(t)$ (Anlık Emek Gücü):**
+    Fizikteki "Güç" ($P = W/t$) tanımıdır. Sanatçının üretim anında harcadığı zihinsel ve fiziksel enerjinin (Joule/saniye) yoğunluğudur. Kanıtlanabilir efor ne kadar yüksekse, çarpan o kadar büyür.
+
+* **$I_{agency}(t)$ (İrade Katsayısı):**
+    Üreticinin risk alma ve karar verme kapasitesidir. $0$ ile $1$ arasında bir değer alır.
+    * **AI ($I \approx 0$):** Komutları uygular, risk almaz, bedel ödemez.
+    * **İnsan ($I \to 1$):** Karar değiştirir, tereddüt eder, risk alır.
+
+* **$U_{irreversible}$ (Geri Döndürülemez Tekillik):**
+    Eskiden "hata" denilen, aslında eseri benzersiz kılan **kaotik imza**dır.
+    * Dijitalde `Ctrl+Z` vardır.
+    * PoArt'ta ise tuvale sürülen boya, yontulan mermer veya canlı yayındaki bir jest geri alınamaz. Bu **entropik kesinlik**, eseri kopyalanamaz (Non-Fungible) kılar.
+
+### 🔎 Vaka Analizi: AI "Anlık Çıktı" vs. İnsan "Kanıtlı Süreç"
+
+Aşağıdaki senaryo, **Sol Ate Değer Teoremi**'nin pratikte nasıl işlediğini ve neden AI üretimlerinin [PoArt] standardında düşük skor aldığını kanıtlar.
+
+#### Senaryo A: AI ile 10 Saniyede Görsel Üretimi
+* **Süre ($\Delta t$):** $10$ saniye (Süreç yok denecek kadar az).
+* **Emek Gücü ($P_{labor}$):** $1$ birim (Sadece komut yazma).
+* **İrade Katsayısı ($I_{agency}$):** $0.01$ (Risk yok, bedel yok, sadece komut).
+* **Geri Döndürülemezlik ($U_{irreversible}$):** $0$ (Ctrl+Z mümkün, sonsuz kopyalanabilir).
+
+**Sonuç:**
+$$V_{AI} \approx \int_{0}^{10} (1 \cdot 0.01) \, dt + 0 = 0.1$$
+> **Yorum:** Çıktı kusursuz olsa bile; süreç yaşanmadığı ve irade/risk barındırmadığı için [PoArt] değeri $0$'a yakınsar.
+
+#### Senaryo B: Canlı Yayında 6 Saatlik Fiziksel Üretim
+* **Süre ($\Delta t$):** $6$ saat ($21,600$ saniye).
+* **Emek Gücü ($P_{labor}$):** $0.5$ birim (Fiziksel ve zihinsel eforun sürekliliği).
+* **İrade Katsayısı ($I_{agency}$):** $0.9$ (Karar değiştirme, risk alma, geri dönüşsüz seçimler).
+* **Geri Döndürülemezlik ($U_{irreversible}$):** $>0$ (Tuvale sürülen boya, yontulan mermer, canlı yayındaki jest geri alınamaz).
+
+**Sonuç:**
+$$V_{Human} \approx \int_{0}^{21600} (0.5 \cdot 0.9) \, dt + U_{irreversible} \approx 9,720 + U_{irreversible}$$
+> **Yorum:** Süreç uzadıkça ve irade (risk) arttıkça değer kümülatif olarak artar. $U_{irreversible}$ terimi ise eseri **"Kopyalanamaz" (Non-Fungible)** kılarak ontolojik bir tekillik sağlar.
+
+---
+
+### ✅ Sonuç: Değerin İspatla Kilitlenmesi (Proof-Bound Value)
+
+Bu teorem, [PoArt]'ın değer iddiasını bir "beğeni" veya "piyasa anlatısı" olmaktan çıkarıp **ispatlanabilir bir üretim gerçeğine** bağlar.
+
+1.  **Süreç Olmadan Değer Oluşmaz:**
+    AI anlık çıktıda ($t \to 0$) süreci yok eder. Süreç penceresi daraldıkça entegralin sonucu matematiksel bir zorunlulukla küçülür:
+    $$\Delta t \downarrow \implies \int (P \cdot I) \, dt \to 0$$
+
+2.  **İrade ve Risk Çarpandır:**
+    [PoArt], sadece "harcanan süreyi" değil, o süredeki gerçek karar, risk ve bedel katmanını ölçer. Risk almayan (AI) bir üretimin değeri düşüktür.
+    $$V_{PoArt} \propto \int (P_{labor} \cdot I_{agency}) \, dt$$
+
+3.  **Tekillik, Pazarlama Değil Fiziksel Bir Kanıttır:**
+    Fiziksel üretimde geri alınamaz izler (tuval darbesi, mermer kırığı), dijitaldeki `Ctrl+Z` mantığının dışındadır. Bu geri döndürülemezlik ($U_{irreversible}$), eseri ontolojik olarak tekilleştirir.
+
+> **🔐 ÖZET:** Değer teoremi ölçüm olarak belirsiz gözüksede bu formülün amacı yapmaya çalıştığımız amacın temellerinin değişkenlerinin kurgularını gösterebilmektir. AI çağında nadir olan şey "görüntü" değil; **kanıtlanabilir emek, zaman ve iradedir.** [PoArt], bu kıtlığı ölçer ve **Evidence Pack** ile tesciller.
+
 ### 🏛️ "Engine" (Motor) Kavramının Önemi
 
 Pump.fun veya benzeri platformlardan çıkan token'lar sadece birer **"erişim bileti"** niteliğindedir. **Sol Ate Engine** ise o biletin hangi hakları koruduğunu, emeğin nasıl tescilleneceğini ve sanatın nasıl ebedileşeceğini belirleyen **anayasal mantık katmanıdır.**
@@ -80,7 +151,7 @@ Bu 5 madde, bir projenin [PoArt] mührünü alabilmesi için geçmesi gereken, m
 * **[PoArt] Çözümü:** Proje, sanat; bilim, felsefe veya teknolojiyi bir şekilde fazla yapıda birleştiren yeni bir köprü kurmalıdır. (Örn: Klasik Davud heykeli ile Kripto Piyasa verilerini birleştirmek bunun üzerinden insan algısının taşa dönüşmesine dem vurmak ve bunları bilimsel kaynaklar ile delillendirebilmek). Eser, sadece görsel bir şölen değil, aynı zamanda **Bilim, Felsefe veya Teknoloji** üzerine düşündüren bir entelektüel meydan okuma olmalıdır.
 
 > [!IMPORTANT]
->**Referans Örnek (Las Palmitas Etkisi): Meksika'nın suçla boğuşan Las Palmitas mahallesinde, 200'den fazla ev devasa bir "Gökkuşağı Muralı"na dönüştürülmüştür. Bu >estetik müdahale sonucunda mahalledeki suç oranları %35 düşmüş, gençler çeteler yerine sanatla ilgilenmeye başlamıştır. Estetik değişim, insanların çevrelerine ve >birbirlerine olan saygısını (Social Cohesion) yeniden kodlamıştır.**
+>**Referans Örnek (Las Palmitas Etkisi): Meksika'nın suçla boğuşan Las Palmitas mahallesinde, 200'den fazla ev devasa bir "Gökkuşağı Muralı"na dönüştürülmüştür. Bu >estetik müdahale sonucunda mahalledeki suç oranları belirli ölçüde düşmüş, gençler çeteler yerine sanatla ilgilenmeye başlamıştır. Estetik değişim, insanların çevrelerine ve >birbirlerine olan saygısını (Social Cohesion) yeniden kodlamıştır.**
 >
 >**Beklenti: [PoArt] listesine girecek bir proje; tıpkı yukarıdaki örnekte olduğu gibi, salt görsel estetikten öte sosyolojik, bilimsel veya felsefi bir neden-sonuç >ilişkisi barındırmalıdır.
 >Para ile satın alınamayacak yegâne varlık "Zaman" olduğu için, bu protokolde zaman bir teminat olarak stake edilerek kanıtlanmalıdır. Projenin fikirsel temeli o >kadar güçlü ve evrensel olmalıdır ki; seneler sonra olası bir CTO (Community Take Over) senaryosunda bile, topluluk bu mirası devralarak projenin yenilikçi >potansiyelini otonom bir şekilde sürdürebilmelidir.**
@@ -166,12 +237,6 @@ $$\text{NotarySeal} = \text{SHA-512}(\text{EvidenceRoot} \mid \text{SignerSignat
 
 ---
 
-## 📖 Proje Hakkında ve Vizyon
-
-**[PoArt] Dijital Noter**, dijital varlıkların (sanat eseri, belge, tasarım, kod vb.) mülkiyetini ve varoluş anını kanıtlamak için geliştirilmiş, **Adli Bilişim (Forensic)** prensiplerine dayalı çalışan, merkeziyetsizliğe geçiş sürecindeki bir kanıt protokolüdür.
-
-Bu sistem, "Gizlilik üzerinden güvenlik" (Security through obscurity) ilkesini reddeder. Bunun yerine, şeffaflık ve kriptografik matematiğin gücüne inanır. 
-
 **Neden Halka Açık?**
 Gerçek güvenlik şeffaflıktan gelir. **Public Registry (Halka Açık Kayıt)** sistemimiz sayesinde, dünyanın herhangi bir yerindeki bir kişi, elindeki dosyanın orijinal olup olmadığını, herhangi bir otoriteye ihtiyaç duymadan saniyeler içinde doğrulayabilir.
 
@@ -189,10 +254,7 @@ Sıradan bir zaman damgasından (Timestamp) çok daha fazlasıdır. Sistem şu v
 * **Dijital DNA (SHA-512):** Eserin tek bir pikseli değişse bile bozulacak askeri standartta kriptografik imza.
 * **Konum & Zaman:** İşlemin yapıldığı milisaniye hassasiyetinde tarih, ülke, şehir ve ilçe verisi.
 * **Cihaz Kimliği:** İşletim sistemi, tarayıcı ve cihaz tipi (User-Agent analizi).
-* **IP Adresi:** Hukuki süreçler için saklanan (ancak halka açık alanda maskelenen) bağlantı noktası.
 
-### 3. Privacy Guard (Şeffaflık Dengesi)
-Halka açık kayıtlarda kişisel verileri (IP gibi) maskeleyerek (Örn: `46.1.***.***`) gösterirken, arka planda ham veriyi (Raw Data) hukuki delil niteliği taşıması için şifreli olarak saklayan hibrit bir yapı kullanır.
 
 ---
 
@@ -263,7 +325,7 @@ PoArt, mevcut çözümlerin eksiklerini tamamlayan "Sweet Spot" (En ideal nokta)
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json](https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json)",
+  "$schema": "https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json]"https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json",
   "manifest": {
     "protocol": "[PoArt] Proof of Art",
     "version": "1.0",
