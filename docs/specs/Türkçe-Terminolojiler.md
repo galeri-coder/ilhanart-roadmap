@@ -1,8 +1,9 @@
-# ⚙️ Sol Ate Engine v1.0: Core Infrastructure
+# 📚 TERMINOLOJİ & KAVRAMLAR SÖZLÜĞÜ
+> **"Bu protokolün dilini anlamak, vizyonunu anlamaktır."**
+
+## ⚙️ Sol Ate Engine v1.0: Core Infrastructure
 
 **Sol Ate Engine**, [PoArt] protokolünün arkasında yatan çekirdek mantığı ve teknik işleyişi temsil eden ana katmandır. Sanat eserinin ham üretim verisini alıp, onu sarsılmaz bir dijital kanıta dönüştüren "akıl" burasıdır.
-
----
 
 ### 🧩 Neden "Sol Ate"?
 
@@ -11,14 +12,13 @@
     * **Teknik Tanım:** Sanatsal Güven Motoru. Üretim sürecine ait verilerin (fırça darbeleri, timelapse, loglar) sahte olmadığını doğrulayan algoritma seti.
     * **Felsefi Derinlik (Atē):** Yunan mitolojisinde *Atē*, insanın içine düşebildiği "hata" veya "anlık dürtü" anlamına gelir. Bu isim, yapay zekanın ruhsuz ve hesaplanmış kusursuzluğuna karşı; **insanın hata yapabilen, ter döken ve gerçek olan iradesini** kutsayan bir ironidir.
 
----
-
-### 🛠️ v1.0 Teknik Kapsamı (Fonksiyonel Görevler)
+### 🛠️ v1.0 Teknik Kapsamı
 
 Sol Ate Engine, karmaşık finansal modeller yerine şu 3 ana sütun üzerine inşa edilmiştir:
 
 1.  **Hashing & Sealing (Mühürleme):**
     Evidence Pack içindeki tüm dosyaları (video, JSON, imza) işleyerek dökümantasyonda tanımlanan tekil **NotarySeal** değerini üretir.
+    
     $$\text{Sol Ate Output} = \text{SHA-512}(\text{Input Data})$$
 
 2.  **Indexing (Arşivleme):**
@@ -157,7 +157,7 @@ $$\text{NotarySeal} = \text{SHA-512}(\text{EvidenceRoot} \mid \text{SignerSignat
 ## 📑 İçindekiler
 
 1. [Proje Hakkında ve Vizyon](#-proje-hakkında-ve-vizyon)
-2. [Neyi İcat Ettik? (Teknolojik İnovasyon)](#-neyi-icat-ettik-teknolojik-inovasyon)
+2. [(Teknolojik İnovasyon)](#-neyi-icat-ettik-teknolojik-inovasyon)
 3. [Kullanım Alanları ve Fayda](#-kullanım-alanları-ve-fayda)
 4. [Sistem Mimarisi ve Teknik Özellikler](#-sistem-mimarisi-ve-teknik-özellikler)
 5. [Yol Haritası: "Trustless" Gelecek](#-yol-haritası-trustless-gelecek)
@@ -177,7 +177,7 @@ Gerçek güvenlik şeffaflıktan gelir. **Public Registry (Halka Açık Kayıt)*
 
 ---
 
-## 💡 Neyi İcat Ettik? (Teknolojik İnovasyon)
+## 💡 (Teknolojik İnovasyon)
 
 PoArt, sadece bir dosya yükleme sistemi değildir. Üç farklı teknoloji katmanını tek bir potada eriterek yeni bir standart getiren bir **"Adli Kanıt Zinciri" (Forensic Chain of Custody)** motorudur.
 
@@ -255,15 +255,15 @@ PoArt, mevcut çözümlerin eksiklerini tamamlayan "Sweet Spot" (En ideal nokta)
 **Bu proje **[İlhan Art Gallery]** inisiyatifi ile geliştirilmiş olup, kaynak kodları şeffaflık adına halka açıktır.**
 
 
-**PROTOKOL V1.0 // SHA-512 İLE MÜHÜRLENMİŞTİR.** *© 2025 İLHAN ART | ESERLERİN, GÖRSELLERİN VE FİKİRLERİN TÜM HAKLARI SAKLIDIR.*
+**PROTOKOL V1.0 // SHA-512 İLE MÜHÜRLENMİŞTİR.** *© 2025 İLHAN ART | ESERLERİN, GÖRSELLERİN VE FİKİRLERİN TÜM HAKLARI SAKLIDIR.
 
 ## 🧬 Protokol Veri Yapısı (JSON Schema)
 
-Her [PoArt] sertifikası, aşağıdaki standartta üretilen, taşınabilir ve doğrulanabilir bir JSON kimlik kartına sahiptir.
+**Her [PoArt] sertifikası, aşağıdaki standartta üretilen, taşınabilir ve doğrulanabilir bir JSON kimlik kartına sahiptir.**
 
 ```json
 {
-  "$schema": "(https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json)",
+  "$schema": "https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json](https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json)",
   "manifest": {
     "protocol": "[PoArt] Proof of Art",
     "version": "1.0",
