@@ -32,7 +32,19 @@
    
    $$\text{NotarySeal} = \text{SHA-512}(\text{EvidenceRoot} \mid \text{SignerSignature} \mid \text{TimeStamp})$$
    
-   > Not: PFE çıktısı olarak kastedilen değer **NotarySeal**'dir. (Önceki isimlendirmedeki "Sol Ate Output" burada **NotarySeal** ile eşlenmiştir.)
+   **Canonical Payload Tanımları (v1.0):**
+   
+   - **EvidenceRootPayload:**
+```
+   file_sha512:{sha512}\nforensics:{canonicalForensics(forensics)}
+```
+   
+   - **NotarySealPayload:**
+```
+   evidence_root:{evidence_root}\nsigner_sig:{signer_sig}\ntimestamp:{timestamp}
+```
+   
+   > Not: PFE çıktısı olarak kastedilen değer **NotarySeal**'dir. **SignerSignature** mekanizması Faz 2'de (Solana Wallet Adapter ile) devreye alınacaktır; mevcut v1.0'da sistemin kendi attestation imzası kullanılır. Attestation public key registry'de `issuer.attestation_pubkey` alanında yayınlanır.
 
 2. **Indexing (Arşivleme):**  
    Hangi cüzdanın, hangi tarihte, hangi eser için **Labor Proof (Emek Kanıtı)** sunduğunu; şeffaf ve sorgulanabilir bir kayıt katmanına işler.  
@@ -67,7 +79,6 @@ $$V_{\text{PoArt}} = \int_{t_{\text{start}}}^{t_{\text{end}}} \left(P_{\text{lab
 
 - **$U_{\text{irreversible}}$ (Geri Döndürülemez Tekillik):**  
   Dijital üretimde geri alma (`Ctrl+Z`) mümkünken; fiziksel üretimde (tuvale sürülen boya, yontulan mermer, canlı yayındaki jest) geri dönüş yoktur. Bu **geri döndürülemezlik**, eserde "tekillik" (non-fungible karakter) yaratan ek bir terimdir.
-
 
 ### 🔎 Vaka Analizi: AI "Anlık Çıktı" vs. İnsan "Kanıtlı Süreç"
 
@@ -176,10 +187,10 @@ Bu 5 madde, bir projenin [PoArt] mührünü alabilmesi için geçmesi gereken, m
   (Örn: Klasik Davud heykeli ile kripto piyasa verilerini birleştirmek; bunun üzerinden insan algısının "taşa dönüşmesi" fikrini işlemek ve bunu bilimsel kaynaklarla temellendirebilmek.)  
   Eser, sadece görsel bir şölen değil; aynı zamanda **Bilim, Felsefe veya Teknoloji** üzerine düşündüren entelektüel bir meydan okuma olmalıdır.
 
-> [!ÖNEMLİ]
-> **Referans Örnek (Las Palmitas Etkisi):** Meksika'nın suçla boğuşan Las Palmitas mahallesinde, 200'den fazla ev devasa bir gökkuşağı şölenine dönüştürülmüştür. Bu estetik müdahale sonucunda mahalledeki suç oranları belirli ölçüde düşmüş, gençler çeteler yerine sanatla ilgilenmeye başlamıştır. Estetik değişim, insanların çevrelerine ve birbirlerine olan saygısını (Social Cohesion) yeniden kodlamıştır.
+> [!IMPORTANT]
+> **Referans Örnek (Las Palmitas Etkisi):**  Meksika'nın suçla boğuşan Las Palmitas mahallesinde, 200'den fazla ev devasa bir gökkuşağı şölenine dönüştürülmüştür. Bu >estetik müdahale sonucunda mahalledeki suç oranları belirli ölçüde düşmüş, gençler çeteler yerine sanatla ilgilenmeye başlamıştır. Estetik değişim, insanların >çevrelerine ve birbirlerine olan saygısını (Social Cohesion) yeniden kodlamıştır.
 >
-> **Beklenti:** [PoArt] listesine girecek bir proje; tıpkı yukarıdaki örnekte olduğu gibi, salt görsel estetikten öte sosyolojik, bilimsel veya felsefi bir neden-sonuç ilişkisi barındırmalıdır. Para ile satın alınamayacak yegâne varlık "Zaman" olduğu için, bu protokolde zaman bir teminat olarak stake edilerek kanıtlanmalıdır. Projenin fikirsel temeli o kadar güçlü ve evrensel olmalıdır ki; seneler sonra olası bir CTO (Community Take Over) senaryosunda bile, topluluk bu mirası devralarak projenin yenilikçi potansiyelini otonom bir şekilde sürdürebilmelidir.
+> **Beklenti:** [PoArt] listesine girecek bir proje; tıpkı yukarıdaki örnekte olduğu gibi, salt görsel estetikten öte sosyolojik, bilimsel veya felsefi bir neden->sonuç ilişkisi barındırmalıdır. Para ile satın alınamayacak yegâne varlık "Zaman" olduğu için, bu protokolde zaman bir teminat olarak stake edilerek >kanıtlanmalıdır. Projenin fikirsel temeli o kadar güçlü ve evrensel olmalıdır ki; seneler sonra olası bir CTO (Community Take Over) senaryosunda bile, topluluk bu >mirası devralarak projenin yenilikçi potansiyelini otonom bir şekilde sürdürebilmelidir.
 
 ### 5) Algoritmik Olmayan İrade (Non-Algorithmic Agency)
 
@@ -243,19 +254,47 @@ Her [PoArt] sertifikalı eserin arkasında, yatırımcıların indirebileceği �
 
 - **Public Registry:** Tüm onaylı veriler `ilhanart.org/registry` (veya GitHub Registry) adresinde kaydedilir.
 
-**Kayıt mantığı (önerilen standart):**
-- Sicile giren her kayıt, minimum şu doğrulanabilir çekirdek alanları taşır:
+**Kayıt mantığı (önerilen standart - JSON path formatında):**
+
+Sicile giren her kayıt, minimum şu doğrulanabilir çekirdek alanları taşır:
+
+- **Kimlik & Statü:**
   - `certificate_id` (okunabilir referans)
-  - `notary_seal` (nihai mühür; PFE çıktısı)
-  - `evidence_root` (kanıt paketi kökü)
-  - `file_sha256` / `file_sha512` (eser dosyası parmak izi)
-  - `creator` (metin adı) + mümkünse `creator_wallet` (token-gated kimlik için)
-  - `created_at` (zaman damgası)
-  - `status` (active / void) + `void_reason` (varsa)
+  - `status` (active / void)
+  - `void_reason` (varsa)
   - `visibility` (private / masked / public)
-- Sicilin iki katmanı bulunabilir:
-  - **1)** İnsan-okur indeks (web listeleme / arama / filtre)
-  - **2)** Makine-okur manifest (JSON kayıtları; PFE doğrulaması için)
+  - `created_at` (zaman damgası)
+
+- **Veren Kurum:**
+  - `issuer.name`
+  - `issuer.location`
+  - `issuer.attestation_pubkey`
+
+- **Eser Bilgisi:**
+  - `asset.title`
+  - `asset.creator`
+  - `asset.creator_wallet` (mümkünse; token-gated kimlik için)
+  - `asset.fingerprints.sha256`
+  - `asset.fingerprints.sha512`
+
+- **Adli Veriler:**
+  - `forensics.ip_masked`
+  - `forensics.location`
+  - `forensics.device`
+  - `forensics.timestamp`
+
+- **Kriptografik Kanıtlar:**
+  - `proof.evidence_root`
+  - `proof.signer_sig`
+  - `proof.notary_seal`
+
+- **Yönetişim:**
+  - `governance.decision`
+  - `governance.veto_threshold`
+
+Sicilin iki katmanı bulunabilir:
+- **1)** İnsan-okur indeks (web listeleme / arama / filtre)
+- **2)** Makine-okur manifest (JSON kayıtları; PFE doğrulaması için)
 
 **Buradaki "kayıt", PFE'nin Evidence Pack → EvidenceRoot → NotarySeal zinciriyle doğrulanabilir hale gelir. Sicil, "iddia" değil doğrulama hedefi sunar.**
 
@@ -280,8 +319,8 @@ Her [PoArt] sertifikalı eserin arkasında, yatırımcıların indirebileceği �
 
 **"%100 eşleşme"yi teknik olarak tanımlamak (önerilen açıklık):**
 - **Minimum eşleşme (zorunlu):**
-  - Sicildeki `file_sha256/sha512` ile eldeki dosyanın hash'i **birebir aynı** olmalıdır.
-  - Sicildeki `notary_seal` yeniden üretildiğinde (Evidence Pack varsa) **birebir aynı** olmalıdır.
+  - Sicildeki `asset.fingerprints.sha256/sha512` ile eldeki dosyanın hash'i **birebir aynı** olmalıdır.
+  - Sicildeki `proof.notary_seal` yeniden üretildiğinde (Evidence Pack varsa) **birebir aynı** olmalıdır.
 - **Fiziksel referans eşleşmesi (kanıt türü):**
   - Canlı yayında gösterilen fiziksel eser + tarih/blok referansı gibi kanıtlar, Evidence Pack ile tutarlı olmalıdır.
 - **Gizlilik uyumu:**
@@ -305,22 +344,35 @@ Sicil, yalnızca "onay" mekanizması değil; **sahteciliğe karşı yaşayan bir
 ---
 
 ### 6.5 Örnek Sicil Kaydı (Makine-okur)
-
 ```json
 {
   "certificate_id": "POART-AB12CD34",
   "status": "active",
   "visibility": "masked",
   "created_at": "2026-01-09T12:34:56.000Z",
+  "issuer": {
+    "name": "Ilhan Art Gallery",
+    "location": "Istanbul / Besiktas",
+    "attestation_pubkey": "PFE_ATTEST_PUBKEY_BASE58..."
+  },
   "asset": {
     "title": "Untitled",
     "creator": "Anonymous",
-    "file_sha256": "e4123f83b44a409d7a43f0897837876dfabb3320db63dadbb34c54281f38a6ba",
-    "file_sha512": "41e5e0d007a2a77b6e0e3ebc548fbaa2788ea265193434f58d23e8c0f5bb20a0..."
+    "fingerprints": {
+      "sha256": "e4123f83b44a409d7a43f0897837876dfabb3320db63dadbb34c54281f38a6ba",
+      "sha512": "41e5e0d007a2a77b6e0e3ebc548fbaa2788ea265193434f58d23e8c0f5bb20a0835aa850edbadbd8341969cf743fc69fa951f7ed275901fefe0fe7eb1fb83099"
+    }
+  },
+  "forensics": {
+    "ip_masked": "46.1.***.***",
+    "device": "Brave (Windows;Monster,Tulpar)...",
+    "location": "***/TR",
+    "timestamp": "2026-01-09T12:34:56.000Z"
   },
   "proof": {
-    "evidence_root": "7f8a9b2c...",
-    "notary_seal": "9d3e5a1f..."
+    "evidence_root": "7f8a9b2c3d4e5f6a7b8c9d0e1f2a3b4c...",
+    "signer_sig": "PFE_ATTEST_SIG_BASE64...",
+    "notary_seal": "9d3e5a1f2b3c4d5e6f7a8b9c0d1e2f3a..."
   },
   "governance": {
     "decision": "approved",
@@ -328,6 +380,7 @@ Sicil, yalnızca "onay" mekanizması değil; **sahteciliğe karşı yaşayan bir
   }
 }
 ```
+> *Not: `asset.fingerprints.sha512` ve diğer hash değerleri gösterim amacıyla kısaltılmıştır; gerçek uygulamada tam uzunlukta hexadecimal karakter dizisi kullanılır.*
 
 ---
 
@@ -363,8 +416,9 @@ Kodun en kritik kısmı burası (visibility select menüsü). Bu seçenekler, ku
 ### 🕶️ Maskeli (Masked)
 
 - **Senaryo:** Sanatçı şeffaflık istiyor ama ev adresinin (IP konumu) bulunmasından korkuyor.
-- **Kodun Yaptığı:** JavaScript tarafında `maskIP` ve `maskLoc` fonksiyonları çalışır. IP adresini `88.241.***.***` şekline, konumu `***/Turkey` şekline çevirir ve veritabanına sansürlenmiş halini gönderir.
-- **Güvenlik:** Bu çok zekice, çünkü sansür sunucuda değil, kullanıcının tarayıcısında yapılır. Yani Supabase bile gerçek konumu göremez.
+- **Kodun Yaptığı:** JavaScript tarafında `maskIP` ve `maskLoc` fonksiyonları çalışır. IP adresini `88.241.***.***` şekline, konumu `***/TR` şekline çevirir ve veritabanına sansürlenmiş halini gönderir.
+- **Gizlilik Notu:** Maskeleme tarayıcıda yapılır, Supabase gerçek konumu görmez. **Ancak:** Konum verisi için ipapi.co gibi üçüncü taraf API'ler kullanılıyorsa, bu sağlayıcılar istek anında IP adresini görür.
+- **Masked Modda Mühürleme:** EvidenceRoot ve NotarySeal hesaplaması, maskelenmiş forensics verisi ile yapılır; böylece doğrulama deterministik kalır.
 
 ### 🌍 Herkese Açık (Public)
 
@@ -380,15 +434,15 @@ PoArt, sadece bir dosya yükleme sistemi değildir. Üç farklı teknoloji katma
 
 ### 1) Client-Side Hashing (Maksimum Gizlilik)
 
-Dosyalarınız asla sunucuya yüklenmez. Tarayıcı tabanlı (Client-side) çalışan motorumuz, dosyanın hash'ini (dijital özetini) kendi bilgisayarınızda hesaplar. Sunucuya sadece bu parmak izi ve meta veriler gönderilir. **Gizliliğiniz %100 korunur.**
+Eser dosyalarınız asla sunucuya yüklenmez. Tarayıcı tabanlı (Client-side) çalışan motorumuz, dosyanın hash'ini (dijital özetini) kendi bilgisayarınızda hesaplar. Sunucuya sadece bu parmak izi ve meta veriler gönderilir.
 
-> **"asla sunucuya yüklenmez" ifadesi, eser dosyası için geçerlidir; sistemin doğrulama/registry ihtiyacı olan alanlar (hash + metadata) ayrı değerlendirilir.**
+> **Gizlilik Notu:** Eser dosyası sunucuya yüklenmez ve bu şekilde korunur. Ancak forensics verileri (IP/konum) seçilen görünürlük moduna göre (private/masked/public) paylaşılır.
 
 ### 2) Forensic Data Fusion (Adli Güç)
 
 Sıradan bir zaman damgasından (Timestamp) çok daha fazlasıdır. Sistem şu verileri tek bir "Genesis Mühür" içinde birleştirir:
 
-- **Dijital DNA (SHA-512):** Eserin tek bir pikseli değişse bile bozulacak askeri standartta kriptografik imza.
+- **Dijital Özet (SHA-512):** Kriptografik özet (SHA-512) standardı kullanılarak eserin tek bir pikseli değişse bile bozulacak dijital parmak izi.
 - **Konum & Zaman:** İşlemin yapıldığı milisaniye hassasiyetinde tarih, ülke, şehir ve ilçe verisi.
 - **Cihaz Kimliği:** İşletim sistemi, tarayıcı ve cihaz tipi (User-Agent analizi).
 
@@ -412,12 +466,12 @@ Sistem, "Serverless" (Sunucusuz) bir mimari üzerinde, yüksek performans ve öl
 
 | Katman | Teknoloji | Açıklama |
 |--------|-----------|----------|
-| **Kriptografi** | SHA-256 & SHA-512 | Çift katmanlı özetleme - askeri standart |
+| **Kriptografi** | SHA-256 & SHA-512 | Çift katmanlı kriptografik özet |
 | **Veri Tabanı** | Supabase (PostgreSQL) | JSONB veri yapısı, RLS policies |
 | **Adli Veri** | ipapi.co API | IP/Konum/Zaman üçlemesi |
 | **Rendering** | html2canvas + jsPDF | Client-side PNG/PDF üretimi |
 | **Frontend** | Vanilla JavaScript | Sıfır framework dependency |
-| **Güvenlik** | Client-side hashing | Dosya asla sunucuya yüklenm ez |
+| **Güvenlik** | Client-side hashing | Dosya asla sunucuya yüklenmez |
 
 ### Öne Çıkan Özellikler
 
@@ -513,6 +567,7 @@ PoArt, mevcut çözümlerin eksiklerini tamamlayan "Sweet Spot" (En ideal nokta)
 
 **Her [PoArt] sertifikası, aşağıdaki standartta üretilen, taşınabilir ve doğrulanabilir bir JSON kimlik kartına sahiptir.**
 
+> **Not:** Bu Identity JSON formatı, kullanıcıya sunulan sertifika formatıdır. Registry kayıtlarında ise `identity.asset_data` yerine `registry.asset` kullanılır (mapping: `identity.asset_data` == `registry.asset`).
 ```json
 {
   "$schema": "https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json",
@@ -538,9 +593,10 @@ PoArt, mevcut çözümlerin eksiklerini tamamlayan "Sweet Spot" (En ideal nokta)
     "evidence": "https://www.ilhanart.org/identity"
   },
   "forensics": {
-    "origin_ip_masked": "46.1.***.***",
-    "device_signature": "Brave (Windows;Monster,Tulpar)...",
-    "location": "Istanbul, TR"
+    "ip_masked": "46.1.***.***",
+    "device": "Brave (Windows;Monster,Tulpar)...",
+    "location": "***/TR",
+    "timestamp": "2026-01-09T12:34:56.000Z"
   }
 }
 ```
@@ -549,48 +605,170 @@ PoArt, mevcut çözümlerin eksiklerini tamamlayan "Sweet Spot" (En ideal nokta)
 
 ## 🔬 Teknik Derinlik: Mühür Algoritması
 
-### NotarySeal Üretim Süreci
-
+### Deterministik Hash Fonksiyonları
 ```javascript
-// 1. FileHash hesaplama (client-side)
-const fileBuffer = await file.arrayBuffer();
-const sha256 = await crypto.subtle.digest('SHA-256', fileBuffer);
-const sha512 = await crypto.subtle.digest('SHA-512', fileBuffer);
+// Yardımcı Fonksiyonlar: Digest'i hex string'e çevir
+async function digestToHex(algorithm, dataBytes) {
+  const hashBuffer = await crypto.subtle.digest(algorithm, dataBytes);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
 
-// 2. Forensic data toplama
-const forensics = {
-  ip: await fetch('https://ipapi.co/json/').then(r => r.json()),
-  device: navigator.userAgent,
-  timestamp: new Date().toISOString()
-};
+// String'i byte array'e çevir
+function stringToBytes(text) {
+  return new TextEncoder().encode(text);
+}
 
-// 3. EvidenceRoot oluşturma
-const evidenceRoot = sha512(
-  fileHash + forensics.ip + forensics.timestamp
-);
-
-// 4. NotarySeal üretimi
-const notarySeal = sha512(
-  evidenceRoot + signerSignature + timestamp
-);
-```
-
-### Doğrulama Akışı
-
-```javascript
-// 1. Kullanıcı dosyayı yeniden hash'ler
-const userFileHash = sha512(file);
-
-// 2. Sistemden orijinal hash çekilir
-const { sha512: originalHash } = await fetchFromRegistry(certId);
-
-// 3. Matematiksel karşılaştırma
-if (userFileHash === originalHash) {
-  return "✅ Orijinal - Değiştirilmemiş";
-} else {
-  return "❌ Sahte - Dosya manipüle edilmiş";
+// Canonical forensics string üretimi (v1.0: sabit alan sırası + UTF-8 + \n delimiter)
+// Faz 2 notu: RFC 8785 (JCS) ile canonical JSON'a geçilecek
+function canonicalForensics(forensicsData) {
+  return JSON.stringify({
+    ip_masked: forensicsData.ip_masked,
+    location: forensicsData.location,
+    device: forensicsData.device,
+    timestamp: forensicsData.timestamp
+  });
 }
 ```
+
+### NotarySeal Üretim Süreci (Tam Deterministik)
+```javascript
+// 1. FileHash hesaplama (client-side)
+async function computeFileHash(file) {
+  const fileBuffer = await file.arrayBuffer();
+  const fileBytes = new Uint8Array(fileBuffer);
+  
+  const sha256 = await digestToHex('SHA-256', fileBytes);
+  const sha512 = await digestToHex('SHA-512', fileBytes);
+  
+  return { sha256, sha512 };
+}
+
+// 2. Forensic data toplama (tek timestamp kullanımı)
+async function collectForensics(visibilityMode) {
+  const timestamp = new Date().toISOString(); // Tek timestamp üretimi
+  const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
+  
+  let forensics = {
+    ip_masked: visibilityMode === 'masked' ? maskIP(ipData.ip) : ipData.ip,
+    location: visibilityMode === 'masked' 
+      ? `***/${ipData.country}` 
+      : `${ipData.city}, ${ipData.country_name || ipData.country}`,
+    device: navigator.userAgent,
+    timestamp: timestamp // Aynı timestamp
+  };
+  
+  return { forensics, timestamp };
+}
+
+// 3. EvidenceRoot oluşturma (canonical encoding ile)
+async function computeEvidenceRoot(fileHash512, forensicsData) {
+  const canonicalPayload = `file_sha512:${fileHash512}\nforensics:${canonicalForensics(forensicsData)}`;
+  return await digestToHex('SHA-512', stringToBytes(canonicalPayload));
+}
+
+// 4. NotarySeal üretimi (aynı timestamp kullanımı)
+async function computeNotarySeal(evidenceRoot, signerSignature, timestamp) {
+  const sealPayload = `evidence_root:${evidenceRoot}\nsigner_sig:${signerSignature}\ntimestamp:${timestamp}`;
+  return await digestToHex('SHA-512', stringToBytes(sealPayload));
+}
+
+// Maskeleme yardımcı fonksiyonları (IPv4 ve IPv6 desteği)
+function maskIP(ip) {
+  if (!ip) return "***";
+  
+  // IPv4 kontrolü
+  if (ip.includes(".")) {
+    const parts = ip.split(".");
+    if (parts.length === 4) {
+      return `${parts[0]}.${parts[1]}.***.***`;
+    }
+  }
+  
+  // IPv6 veya bilinmeyen format
+  return "***";
+}
+```
+
+### Doğrulama Akışı (İki Seviye)
+
+#### Quick Verify (Hızlı Doğrulama)
+```javascript
+// Sadece dosya hash'i kontrol eder (hızlı kırmızı bayrak)
+async function verifyQuick(file, certificateId) {
+  const { sha512: userFileHash } = await computeFileHash(file);
+  
+  // Registry'den çek
+  const cert = await fetchFromRegistry(certificateId);
+  const { sha512: originalHash } = cert.asset.fingerprints;
+  
+  // Hash karşılaştırması
+  if (userFileHash === originalHash) {
+    return {
+      valid: true,
+      message: "✅ Orijinal - Dosya hash'i eşleşiyor"
+    };
+  } else {
+    return {
+      valid: false,
+      message: "❌ Sahte - Dosya manipüle edilmiş"
+    };
+  }
+}
+```
+
+#### Full Verify (Tam Doğrulama)
+```javascript
+// EvidenceRoot ve NotarySeal'ı yeniden üretip doğrular
+async function verifyFull(file, certificateId) {
+  const { sha512: userFileHash } = await computeFileHash(file);
+
+  // Registry'den çek
+  const cert = await fetchFromRegistry(certificateId);
+
+  // 1) FileHash kontrolü (hızlı kırmızı bayrak)
+  const originalHash = cert.asset.fingerprints.sha512;
+  if (userFileHash !== originalHash) {
+    return { valid: false, message: "❌ Sahte - Dosya hash eşleşmiyor" };
+  }
+
+  // 2) EvidenceRoot yeniden üret (registry'de saklanan forensics ile)
+  const evidenceRoot = await computeEvidenceRoot(userFileHash, cert.forensics);
+  if (evidenceRoot !== cert.proof.evidence_root) {
+    return { valid: false, message: "❌ Uyuşmuyor - EvidenceRoot tutmuyor" };
+  }
+
+  // 3) NotarySeal yeniden üret (aynı timestamp + signer_sig ile)
+  const seal = await computeNotarySeal(
+    evidenceRoot,
+    cert.proof.signer_sig,
+    cert.forensics.timestamp
+  );
+
+  if (seal !== cert.proof.notary_seal) {
+    return { valid: false, message: "❌ Uyuşmuyor - NotarySeal tutmuyor" };
+  }
+
+  // İsteğe bağlı: Faz 2'de signer_sig'i attestation_pubkey ile de doğrula
+  // const sigValid = await verifySig(cert.issuer.attestation_pubkey, cert.proof.signer_sig, evidenceRoot);
+  // if (!sigValid) return { valid: false, message: "❌ İmza geçersiz" };
+
+  return { valid: true, message: "✅ Orijinal - Full Verify geçti" };
+}
+```
+
+> **Önemli Notlar:**
+> - **Quick Verify:** Hızlı kullanım için sadece dosya hash'ini kontrol eder.
+> - **Full Verify:** Protokolün tüm katmanlarını (EvidenceRoot + NotarySeal) doğrular.
+> - Tüm hash işlemleri deterministik olarak, sabit encoding ve delimiter'lar ile yapılır.
+> - **v1.0 canonicalization standardı:** Sabit alan sırası + UTF-8 encoding + `\n` delimiter.
+> - **Faz 2 planı:** RFC 8785 (JCS - JSON Canonicalization Scheme) ile canonical JSON'a geçiş.
+> - Masked modda, EvidenceRoot ve NotarySeal hesaplaması maskelenmiş forensics ile yapılır.
+> - Tek timestamp tüm süreçte (forensics + NotarySeal) kullanılır; deterministiklik garanti edilir.
+> - **Forensics alan adları:** `ip_masked`, `location`, `device`, `timestamp` (kod ve registry tam uyumlu).
+> - **Registry path:** `certificate.asset.fingerprints` (verify kodu ile tam uyumlu).
+> - **Registry'de signer_sig:** `proof.signer_sig` alanı Full Verify için gereklidir.
+> - SignerSignature mekanizması Faz 2'de Solana Wallet Adapter ile devreye alınacaktır; v1.0'da `attestation_pubkey` ile doğrulama yapılabilir.
 
 ---
 
@@ -607,7 +785,6 @@ if (userFileHash === originalHash) {
 ---
 
 ## 🌍 Topluluk & Destek
-
 
 - **Twitter:** [@Galerilhan](https://twitter.com/Galerilhan)
 - **Web:** [ilhanart.org](https://ilhanart.org)
@@ -651,7 +828,6 @@ See [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the
 
 ## 💬 Credits
 
-
 ![Version](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Security](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Platform](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
 
 **Bu proje [İlhan Art Gallery] inisiyatifi ile geliştirilmiş olup, kaynak kodları şeffaflık adına halka açıktır.**
@@ -659,4 +835,5 @@ See [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the
 **PROTOKOL V1.0 // SHA-512 İLE MÜHÜRLENMİŞTİR.**
 
 *© 2026 İLHAN ART | ESERLERİN, GÖRSELLERİN VE FİKİRLERİN TÜM HAKLARI SAKLIDIR.*
+
 ---
