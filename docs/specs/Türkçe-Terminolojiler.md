@@ -643,8 +643,9 @@ PoArt Protokolü **Faz 2** geliştirmeleri için aşağıdaki konularda deneyiml
 
 ## 🧾 License
 
-MIT License © 2026 İlhan Art Gallery Initiative  
-See [LICENSE](LICENSE) for full terms.
+MIT License © 2026 İlhan Art Gallery Initiative
+
+See [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) for full terms.
 
 ---
 
