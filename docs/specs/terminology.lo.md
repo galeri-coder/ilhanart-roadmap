@@ -404,4 +404,448 @@ $$\text{NotarySeal} = \text{SHA-512}\left(\text{EvidenceRoot} \mid \text{SignerS
 
 ---
 
+# ໂປຣໂຕຄອນ [PoArt] ໂນທາຣີດິຈິຕອນແລະຫຼັກຖານທາງວິທະຍາສາດ (ເບຕ້າ v1.0)
 
+> **"ວັດທະນະທຳໃຫຍ່ກວ່າທຶນ. ປົກປ້ອງວຽກງານຂອງເຈົ້າມື້ນີ້, ໂອນຍ້າຍມື້ອື່ນ."**
+
+---
+
+## ເປັນຫຍັງຈຶ່ງສາທາລະນະ?
+
+ຄວາມປອດໄພທີ່ແທ້ຈິງມາຈາກຄວາມໂປ່ງໃສ. ດ້ວຍລະບົບ**ທະບຽນສາທາລະນະ**ຂອງພວກເຮົາ, ຄົນໃດກໍຕາມທີ່ໃດກໍຕາມໃນໂລກສາມາດກວດສອບພາຍໃນສອງສາມວິນາທີວ່າໄຟລ໌ເປັນຂອງແທ້ຫຼືບໍ່ໂດຍບໍ່ຕ້ອງການສິດອຳນາດ.
+
+---
+
+## 🧩 ເປັນຫຍັງຈຶ່ງມີ "ໂມດູນການເບິ່ງເຫັນ" ຫຼາຍໂມດູນ?
+
+ນີ້ແມ່ນສ່ວນທີ່ສຳຄັນທີ່ສຸດຂອງລະຫັດ (ເມນູເລືອກການເບິ່ງເຫັນ). ທາງເລືອກເຫຼົ່ານີ້ອະນຸຍາດໃຫ້ຜູ້ໃຊ້ສ້າງຄວາມສົມດຸນໃນ**"ຄວາມເປັນສ່ວນຕົວ vs ຄວາມໂປ່ງໃສ"**:
+
+### 🔒 ສ່ວນຕົວ (Private)
+
+- **ສະຖານະການ:** ສິນລະປິນຍັງບໍ່ຕ້ອງການເຜີຍແຜ່ວຽກງານ ແຕ່ຕ້ອງການປະທັບເວລາເພື່ອພິສູດວ່າ "ຂ້ອຍເຮັດສິ່ງນີ້ໃນວັນນີ້".
+- **ລະຫັດເຮັດຫຍັງ:** ຂຽນຂໍ້ມູນໄປຫາຖານຂໍ້ມູນແຕ່ປະທັບ `visibility: "private"`. ຕໍ່ມາເມື່ອທ່ານຂຽນນະໂຍບາຍ "ອ່ານສາທາລະນະ" ທ່ານສາມາດເຊື່ອງບັນທຶກເຫຼົ່ານີ້ຈາກສາທາລະນະດ້ວຍ `WHERE visibility = 'public'`.
+
+### 🕶️ ປົກປິດ (Masked)
+
+- **ສະຖານະການ:** ສິນລະປິນຕ້ອງການຄວາມໂປ່ງໃສແຕ່ກັງວົນວ່າທີ່ຢູ່ເຮືອນຂອງພວກເຂົາ (ສະຖານທີ່ IP) ຈະຖືກຮູ້.
+- **ລະຫັດເຮັດຫຍັງ:** ຟັງຊັນ `maskIP` ແລະ `maskLoc` ເຮັດວຽກຢູ່ຝັ່ງ JavaScript. ນີ້ປ່ຽນທີ່ຢູ່ IP ເປັນຮູບແບບ `88.241.***.***`, ສະຖານທີ່ເປັນຮູບແບບ `***/TR` ແລະສົ່ງເວີຊັນທີ່ກວດກາໄປຫາຖານຂໍ້ມູນ.
+- **ຄວາມຈິງກ່ຽວກັບຄວາມເປັນສ່ວນຕົວ:** ການປົກປິດເຮັດໃນເບຣົາເຊີ, Supabase ບໍ່ເຫັນສະຖານທີ່ຈິງ. **ແຕ່:** ຖ້າ API ຂອງພາກສ່ວນທີສາມເຊັ່ນ ipapi.co ຖືກໃຊ້ສຳລັບຂໍ້ມູນສະຖານທີ່, ຜູ້ໃຫ້ບໍລິການເຫຼົ່ານີ້ເຫັນທີ່ຢູ່ IP ໃນເວລາຂໍຮ້ອງຂໍ.
+- **ການປິດຜະນຶກໃນໂໝດປົກປິດ:** ການຄຳນວນ EvidenceRoot ແລະ NotarySeal ເຮັດດ້ວຍຂໍ້ມູນນິຕິວິທະຍາສາດທີ່ປົກປິດ; ດັ່ງນັ້ນການກວດສອບຍັງຄົງເປັນການກຳນົດ.
+
+### 🌍 ສາທາລະນະ (Public)
+
+- **ສະຖານະການ:** ຄວາມໂປ່ງໃສເຕັມທີ່. ຕາມມາດຕະຖານ [PoArt], ທີ່ໃດ, ເມື່ອໃດ, ຈາກເຄືອຂ່າຍໃດວຽກງານຖືກສ້າງແມ່ນຖືກປະກາດສາທາລະນະ.
+
+---
+
+## 💡 ນະວັດຕະກຳທາງເຕັກນິກ
+
+PoArt ບໍ່ແມ່ນພຽງແຕ່ລະບົບອັບໂຫຼດໄຟລ໌. ນີ້ແມ່ນເຄື່ອງຈັກ**"ຫ່ວງໂສ້ການດູແລທາງວິທະຍາສາດ"**ທີ່ປະສົມສາມລະດັບເຕັກນິກທີ່ແຕກຕ່າງກັນໃນຫມໍ້ດຽວເພື່ອນຳມາມາດຕະຖານໃໝ່.
+
+**ຊັ້ນທີ່ອະທິບາຍເປັນ "ເຄື່ອງຈັກ" ໃນພາກນີ້ສອດຄ່ອງກັບແກນຂອງ PoArt Forensic Engine (PFE) ໃນຄຳສັບກ່ອນໜ້າ.**
+
+### 1) Hashing ຝັ່ງລູກຄ້າ (ຄວາມເປັນສ່ວນຕົວສູງສຸດ)
+
+ໄຟລ໌ຊິ້ນສ່ວນສິລະປະຂອງທ່ານບໍ່ຖືກອັບໂຫຼດໄປຫາເຊີບເວີ. ເຄື່ອງຈັກທີ່ອີງໃສ່ເບຣົາເຊີ (ຝັ່ງລູກຄ້າ) ຂອງພວກເຮົາຄຳນວນ hash ຂອງໄຟລ໌ (ບົດສະຫຼຸບດິຈິຕອນ) ຢູ່ໃນຄອມພິວເຕີຂອງທ່ານເອງ. ພຽງແຕ່ລາຍນິ້ວມືດິຈິຕອນນີ້ແລະຂໍ້ມູນເມຕາຖືກສົ່ງໄປຫາເຊີບເວີ.
+
+> **ຄວາມຈິງກ່ຽວກັບຄວາມເປັນສ່ວນຕົວ:** ໄຟລ໌ວຽກງານບໍ່ຖືກອັບໂຫຼດໄປຫາເຊີບເວີແລະດັ່ງນັ້ນຈຶ່ງປອດໄພ. ແນວໃດກໍຕາມ, ຂໍ້ມູນນິຕິວິທະຍາສາດ (IP/ສະຖານທີ່) ຖືກແບ່ງປັນຕາມໂໝດການເບິ່ງເຫັນທີ່ເລືອກ (ສ່ວນຕົວ/ປົກປິດ/ສາທາລະນະ).
+
+### 2) ການລວມຂໍ້ມູນນິຕິວິທະຍາສາດ (ພະລັງທາງວິທະຍາສາດ)
+
+ຫຼາຍກວ່າປະທັບເວລາທຳມະດາ. ລະບົບເຊື່ອມຕໍ່ຂໍ້ມູນເຫຼົ່ານີ້ໃນ "ຕາປະທັບຮາກ":
+
+- **ບົດສະຫຼຸບດິຈິຕອນ (SHA-512):** ລາຍນິ້ວມືດິຈິຕອນທີ່ໃຊ້ມາດຕະຖານບົດສະຫຼຸບການເຂົ້າລະຫັດ (SHA-512) ທີ່ແຕກຖ້າພິກເຊລໜຶ່ງຂອງວຽກງານປ່ຽນ.
+- **ສະຖານທີ່ແລະເວລາ:** ເຂົ້າລະຫັດຂໍ້ມູນວັນທີ, ປະເທດ, ເມືອງ ແລະພາກພື້ນດ້ວຍຄວາມຖືກຕ້ອງມິນລິວິນາທີ.
+- **ການລະບຸອຸປະກອນ:** ລະບົບປະຕິບັດການ, ເບຣົາເຊີ ແລະປະເພດອຸປະກອນ (ການວິເຄາະ User-Agent).
+
+---
+
+## 🛡️ ກໍລະນີການໃຊ້ງານແລະຜົນປະໂຫຍດ
+
+ຖ້າທ່ານເປັນສິນລະປິນ, ນັກຂຽນ ຫຼືນັກອອກແບບ, ການເວົ້າວ່າ "ຂ້ອຍເຮັດສິ່ງນີ້ກ່ອນ" ບໍ່ພຽງພໍ; ທ່ານຕ້ອງພິສູດ.
+
+**ວຽກງານຂອງທ່ານທີ່ປິດຜະນຶກດ້ວຍ PoArt:**
+
+- **ຫຼັກຖານທາງຄະນິດສາດ:** ຖ້າແມ້ແຕ່ພິກເຊລດຽວຂອງໄຟລ໌ຂອງທ່ານປ່ຽນ, ລະບົບຮູ້. ການຈັດການເປັນໄປບໍ່ໄດ້.
+- **ພື້ນຖານທາງກົດໝາຍ:** ຂຽນວ່າວັນໃດ, ທີ່ເມືອງໃດ, ຈາກອຸປະກອນໃດວຽກງານຖືກປິດຜະນຶກ.
+- **ໃບຮັບຮອງທັນທີ:** ສ້າງ**"ໃບຮັບຮອງຕົວຕົນຊັບສິນ"**ພິເສດ, ລະຫັດ QR ແລະຕາປະທັບສຳລັບທ່ານໃນສອງສາມວິນາທີ.
+
+---
+
+## ⚙️ ສະຖາປັດຕະຍະກຳລະບົບແລະຄຸນສົມບັດທາງເຕັກນິກ
+
+ລະບົບຖືກອອກແບບຢູ່ໃນສະຖາປັດຕະຍະກຳ "serverless", ມຸ່ງເນັ້ນໃສ່ປະສິດທິພາບສູງແລະຄວາມສາມາດໃນການຂະຫຍາຍ.
+
+| ຊັ້ນ | ເຕັກໂນໂລຢີ | ຄຳອະທິບາຍ |
+|--------|-----------|-------------|
+| **ການເຂົ້າລະຫັດ** | SHA-256 & SHA-512 | ບົດສະຫຼຸບການເຂົ້າລະຫັດສອງຊັ້ນ |
+| **ຖານຂໍ້ມູນ** | Supabase (PostgreSQL) | ໂຄງສ້າງຂໍ້ມູນ JSONB, ນະໂຍບາຍ RLS |
+| **ຂໍ້ມູນນິຕິວິທະຍາສາດ** | ipapi.co API | ສາມຫຼ່ຽມ IP/ສະຖານທີ່/ເວລາ |
+| **ການນຳສະເໜີ** | html2canvas + jsPDF | ການສ້າງ PNG/PDF ຝັ່ງລູກຄ້າ |
+| **Frontend** | Vanilla JavaScript | ການເພິ່ງພາເຟຣມເວີກສູນ |
+| **ຄວາມປອດໄພ** | Hashing ຝັ່ງລູກຄ້າ | ໄຟລ໌ບໍ່ເຄີຍໄປຫາເຊີບເວີ |
+
+### ຄຸນສົມບັດທີ່ໂດດເດັ່ນ
+
+| ຄຸນສົມບັດ | ລາຍລະອຽດ | ໃນຄູ່ແຂ່ງ? |
+|---------|-------|-----------------|
+| **UI ລາກ & ວາງ** | ລາກແລະວາງໄຟລ໌, ເບິ່ງຕົວຢ່າງທັນທີ | ❌ ໃນສ່ວນໃຫຍ່ບໍ່ມີ |
+| **ການສົ່ງອອກຫຼາຍຮູບແບບ** | PNG, JSON, PDF - ດ້ວຍການຄລິກດຽວ | ⚠️ ຈຳກັດ |
+| **ເບິ່ງຕົວຢ່າງເວລາຈິງ** | ເບິ່ງຕົວຢ່າງໃບຮັບຮອງສົດ | ❌ ບໍ່ມີ |
+| **ການຄວບຄຸມຄວາມເປັນສ່ວນຕົວ** | ທາງເລືອກສ່ວນຕົວ/ປົກປິດ/ສາທາລະນະ | ❌ ບໍ່ມີ |
+| **Hash ຝັ່ງລູກຄ້າ** | ໄຟລ໌ບໍ່ເຄີຍໄປຫາເຊີບເວີ | ✅ ພຽງແຕ່ບາງໜ່ວຍ |
+| **ຂໍ້ມູນເມຕານິຕິວິທະຍາສາດ** | IP, ສະຖານທີ່, ອຸປະກອນ, ເວລາ - ທັງໝົດຮ່ວມກັນ | ❌ ແຍກ |
+| **ການກວດສອບ QR** | ການກວດສອບທັນທີລະຫັດ QR | ⚠️ ຈຳກັດ |
+| **ການຈຳກັດອັດຕາ** | ການປ້ອງກັນສະແປມ (RLS + ລູກຄ້າ) | ❌ ໃນສ່ວນໃຫຍ່ບໍ່ມີ |
+
+---
+
+## 🗺️ ແຜນວຽກ: ອະນາຄົດ "ບໍ່ຕ້ອງໄວ້ວາງໃຈ"
+
+ເວີຊັນປັດຈຸບັນ **(ເບຕ້າ v1.0)** ຖືກອອກແບບເພື່ອໃຫ້ຜູ້ໃຊ້ປາຍທາງໄດ້ຮັບຄວາມໄວສູງສຸດ, ອິນເຕີເຟສງ່າຍ ແລະການເຂົ້າເຖິງຟຣີ. ວິໄສທັດສຸດທ້າຍຂອງພວກເຮົາ, ແນວໃດກໍຕາມ, ແມ່ນການປ່ຽນແປງໄປສູ່ໂຄງສ້າງທີ່ຜູ້ຈັດການຖານຂໍ້ມູນ (ພວກເຮົາ) ບໍ່ສາມາດແຊກແຊງໄດ້.
+
+### ຂັ້ນຕອນທີ 1: ເບຕ້າ (ດຽວນີ້ສົດ)
+
+- **ໂຄງສ້າງພື້ນຖານ:** ຖານຂໍ້ມູນຄລາວ (Supabase).
+- **ຈຸດປະສົງ:** ຄວາມໄວ, ການກຳຈັດອຸປະສັກ UX (ປະສົບການຜູ້ໃຊ້) ແລະການປະຕິບັດຕາມ. ໃຫ້ຄວາມປອດໄພ "ບໍ່ມີແຮງເສຍດທານ".
+
+### 🚀 ຂັ້ນຕອນທີ 2: (ຄວາມຕ້ອງການ Backend / Edge Function)
+
+ຂັ້ນຕອນນີ້ກ່ຽວຂ້ອງກັບການປ່ຽນແປງຈາກໂຄງສ້າງການຈັດການເຕັມ "ຝັ່ງລູກຄ້າ" ໄປສູ່ໂຄງສ້າງ "ສິດອຳນາດຝັ່ງເຊີບເວີ" ທີ່ປອດໄພແລະຄວບຄຸມໄດ້ຫຼາຍຂຶ້ນ.
+
+| ລາຍການ | ນຳມາຫຍັງ? | Tech Stack | ລຳດັບຄວາມສຳຄັນ |
+|-------|---------------|------------|---------|
+| **`INSERT` → Edge Function** | ການປ້ອງກັນສະແປມ + ຄວາມປອດໄພກະແຈ API | Supabase Edge (Deno) | 🔴 ສູງ |
+| **ລາຍເຊັນກະເປົາເງິນ** | ການກວດສອບການເຂົ້າລະຫັດ | Solana Wallet Adapter | 🟡 ປານກາງ |
+| **ການສຳຮອງ IPFS/Arweave** | ຄວາມບໍ່ປ່ຽນແປງແບບກະຈາຍອຳນາດ | IPFS SDK + Pinata | 🟢 ຕ່ຳ |
+| **ກົນໄກການຍົກເລີກ** | ຍົກເລີກໃບຮັບຮອງປອມ | ອັບເດດ Schema DB | 🔴 ສູງ |
+| **ບັນທຶກການກວດສອບ** | ບັນທຶກການສອບສວນນິຕິວິທະຍາສາດ | ຕາຕະລາງບັນທຶກກຳນົດເອງ | 🟡 ປານກາງ |
+| **OpenTimestamps** | ການຍຶດ Bitcoin | OTS JavaScript | 🟢 ຕ່ຳ |
+| **ການລວມ DID** | ຕົວຕົນແບບກະຈາຍອຳນາດ | ION/Ceramic | 🟢 ຕ່ຳ |
+
+### ຂັ້ນຕອນທີ 3: ການກະຈາຍອຳນາດເຕັມ (ໄລຍະຍາວ)
+
+| ຄຸນລັກສະນະ | ເປົ້າໝາຍ | ETA |
+|---------|------|-----|
+| **ທະບຽນ Blockchain** | ການລົງທະບຽນ on-chain Ethereum/Solana | Q4 2026 |
+| **ການກຳກັບດູແລ DAO** | ການກຳກັບດູແລຊຸມຊົນ | Q1 2027 |
+| **ການສະໜັບສະໜູນຫຼາຍໂຊ່** | Polygon, Arbitrum, Base | Q2 2027 |
+| **ການຮັບຮູ້ທາງກົດໝາຍ** | ຄວາມຖືກຕ້ອງໃນສານຕຸລະກີ | 2027-2028 |
+| **API ສຳລັບນັກພັດທະນາ** | ຈຸດສິ້ນສຸດ API ສາທາລະນະ | Q3 2026 |
+
+---
+
+## 📊 ການວິເຄາະຄູ່ແຂ່ງ (ອັບເດດແລ້ວ)
+
+PoArt ຢືນຢູ່ທີ່ "Sweet Spot" ໃນຂະນະທີ່ເຕີມຊ່ອງວ່າງຂອງວິທີແກ້ໄຂປັດຈຸບັນ.
+
+| ຄຸນລັກສະນະ | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 證 Proof | Trust-Stamp |
+|---------|:---------:|:---------------:|:-----------------:|:------------:|:----:|:-----------:|:--------:|:-----------:|
+| **ຕົ້ນທຶນ** | 🆓 ຟຣີ | 🆓 | 💰 ເສຍຄ່າ | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
+| **UI ລາກ & ວາງ** | ✅ ງ່າຍຫຼາຍ | ❌ CLI | ⚠️ ປານກາງ | ⚠️ ປານກາງ | ⚠️ | ⚠️ | ❌ | ⚠️ |
+| **ການສົ່ງອອກຫຼາຍຮູບແບບ** | ✅ PNG/PDF/JSON | ❌ | ⚠️ PDF | ⚠️ PDF | ❌ | ❌ | ❌ | ⚠️ |
+| **ເບິ່ງຕົວຢ່າງເວລາຈິງ** | ✅ ສົດ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **ການຄວບຄຸມຄວາມເປັນສ່ວນຕົວ** | ✅ 3 ໂໝດ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
+| **Hash ຝັ່ງລູກຄ້າ** | ✅ ຄວາມເປັນສ່ວນຕົວ | ✅ | ❌ ອັບໂຫຼດ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
+| **ຂໍ້ມູນເມຕານິຕິວິທະຍາສາດ** | ✅ ເຕັມ | ❌ | ❌ | ⚠️ ຈຳກັດ | ❌ | ⚠️ | ❌ | ⚠️ |
+| **ການກວດສອບ QR** | ✅ ທັນທີ | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
+| **ການຈຳກັດອັດຕາ** | ✅ RLS+ລູກຄ້າ | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
+| **ການຍຶດ Blockchain** | 🔄 ແຜນວຽກ | ✅ Bitcoin | ✅ Ethereum | ✅ ຫຼາຍ | ✅ | ✅ | ✅ | ✅ |
+| **Open Source** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
+| **ການສະໜັບສະໜູນພາສາລາວ** | ✅ Native | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
+
+**ຄຳອະທິບາຍ:**
+- ✅ : ການສະໜັບສະໜູນເຕັມ / ມີໃຫ້ບໍລິການ
+- ⚠️ : ຈຳກັດ / ໃນແພັກເກດເສຍຄ່າ
+- ❌ : ບໍ່ມີ / ບໍ່ຮອງຮັບ
+- 🔄 : ໃນແຜນວຽກ (ກຳລັງພັດທະນາ)
+- 🆓 : ຟຣີທັງໝົດ
+- 💰 : ເສຍຄ່າ / ຕ້ອງລົງທະບຽນ
+
+### ຈຸດອ່ອນຂອງຄູ່ແຂ່ງ, ຈຸດແຂງຂອງ PoArt
+
+| ຂໍ້ບົກພ່ອງ | ຄູ່ແຂ່ງ | PoArt |
+|------|----------|-------|
+| **ຄວາມຍາກໃນການໃຊ້** | CLI, ຄວາມຮູ້ API, ຕ້ອງການກະເປົາເງິນ | ລາກ-ວາງ, 3 ຄລິກສຳເລັດ |
+| **ອຸປະສັກຕົ້ນທຶນ** | $50-500/ເດືອນສະໝັກສະມາຊິກ | 100% ຟຣີ |
+| **ຄວາມເປັນສ່ວນຕົວ** | ໄຟລ໌ຖືກອັບໂຫຼດໄປຫາເຊີບເວີ | ຝັ່ງລູກຄ້າ, ໄຟລ໌ບໍ່ເຄີຍໄປ |
+| **ຂໍ້ມູນນິຕິວິທະຍາສາດ** | ພຽງແຕ່ປະທັບເວລາ | IP, ສະຖານທີ່, ອຸປະກອນ, ເວລາ - ທັງໝົດ |
+| **ການສະໜັບສະໜູນພາສາລາວ** | ບໍ່ມີຫຼືຈຳກັດຫຼາຍ | ການສະໜັບສະໜູນພາສາ Native |
+| **Open Source** | ກ່ອງປິດ | ລະຫັດທັງໝົດເປີດໃນ GitHub |
+
+---
+
+## 🧬 ໂຄງສ້າງຂໍ້ມູນໂປຣໂຕຄອນ (JSON Schema)
+
+**ທຸກໃບຮັບຮອງ [PoArt] ມີບັດປະຈຳຕົວ JSON ທີ່ສາມາດເຄື່ອນຍ້າຍແລະກວດສອບໄດ້ທີ່ຖືກຜະລິດຕາມມາດຕະຖານຕໍ່ໄປນີ້.**
+
+> **ໝາຍເຫດ:** ຮູບແບບ Identity JSON ນີ້ແມ່ນຮູບແບບໃບຮັບຮອງທີ່ສະເໜີໃຫ້ຜູ້ໃຊ້. ໃນບັນທຶກທະບຽນ, `identity.asset_data` ຖືກໃຊ້ແທນ `registry.asset` (ການແມັບ: `identity.asset_data` == `registry.asset`).
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json",
+  "manifest": {
+    "protocol": "[PoArt] Proof of Art",
+    "version": "1.0",
+    "status": "Production-Ready"
+  },
+  "identity": {
+    "issuer": "Ilhan Art Gallery",
+    "location": "Istanbul / Besiktas",
+    "archive_vision": "2025 - 3000"
+  },
+  "asset_data": {
+    "title": "Official Whitepaper",
+    "fingerprints": {
+      "sha256": "e4123f83b44a409d7a43f0897837876dfabb3320db63dadbb34c54281f38a6ba",
+      "sha512": "41e5e0d007a2a77b6e0e3ebc548fbaa2788ea265193434f58d23e8c0f5bb20a0835aa850edbadbd8341969cf743fc69fa951f7ed275901fefe0fe7eb1fb83099"
+    }
+  },
+  "official_links": {
+    "registry": "https://www.ilhanart.org/public-registry",
+    "evidence": "https://www.ilhanart.org/identity"
+  },
+  "forensics": {
+    "ip_masked": "46.1.***.***",
+    "device": "Brave (Windows;Monster,Tulpar)...",
+    "location": "***/TR",
+    "timestamp": "2026-01-09T12:34:56.000Z"
+  }
+}
+```
+
+---
+
+## 🔬 ຄວາມເລິກທາງເຕັກນິກ: ອັລກໍຣິທຶມຕາປະທັບ
+
+### ຟັງຊັນ Hash ທີ່ກຳນົດໄດ້
+```javascript
+// ຟັງຊັນຊ່ວຍ: ປ່ຽນ digest ເປັນສະຕຣິງ hex
+async function digestToHex(algorithm, dataBytes) {
+  const hashBuffer = await crypto.subtle.digest(algorithm, dataBytes);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+// ປ່ຽນສະຕຣິງເປັນ byte array
+function stringToBytes(text) {
+  return new TextEncoder().encode(text);
+}
+
+// ການຜະລິດສະຕຣິງ forensics canonical (v1.0: ລຳດັບຟິວຄົງທີ່ + UTF-8 + \n delimiter)
+// ໝາຍເຫດ Faz 2: ຈະປ່ຽນໄປໃຊ້ canonical JSON ດ້ວຍ RFC 8785 (JCS)
+function canonicalForensics(forensicsData) {
+  return JSON.stringify({
+    ip_masked: forensicsData.ip_masked,
+    location: forensicsData.location,
+    device: forensicsData.device,
+    timestamp: forensicsData.timestamp
+  });
+}
+```
+
+### ຂະບວນການສ້າງ NotarySeal (ເຕັມທີ່ກຳນົດ)
+```javascript
+// 1. ການຄຳນວນ FileHash (ຝັ່ງລູກຄ້າ)
+async function computeFileHash(file) {
+  const fileBuffer = await file.arrayBuffer();
+  const fileBytes = new Uint8Array(fileBuffer);
+  
+  const sha256 = await digestToHex('SHA-256', fileBytes);
+  const sha512 = await digestToHex('SHA-512', fileBytes);
+  
+  return { sha256, sha512 };
+}
+
+// 2. ການເກັບກຳຂໍ້ມູນ forensic (ການໃຊ້ timestamp ດຽວ)
+async function collectForensics(visibilityMode) {
+  const timestamp = new Date().toISOString(); // ການຜະລິດ timestamp ດຽວ
+  const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
+  
+  let forensics = {
+    ip_masked: visibilityMode === 'masked' ? maskIP(ipData.ip) : ipData.ip,
+    location: visibilityMode === 'masked' 
+      ? `***/${ipData.country}` 
+      : `${ipData.city}, ${ipData.country_name || ipData.country}`,
+    device: navigator.userAgent,
+    timestamp: timestamp // timestamp ດຽວກັນ
+  };
+  
+  return { forensics, timestamp };
+}
+
+// 3. ການສ້າງ EvidenceRoot (ດ້ວຍ canonical encoding)
+async function computeEvidenceRoot(fileHash512, forensicsData) {
+  const canonicalPayload = `file_sha512:${fileHash512}\nforensics:${canonicalForensics(forensicsData)}`;
+  return await digestToHex('SHA-512', stringToBytes(canonicalPayload));
+}
+
+// 4. ການຜະລິດ NotarySeal (ການໃຊ້ timestamp ດຽວກັນ)
+async function computeNotarySeal(evidenceRoot, signerSignature, timestamp) {
+  const sealPayload = `evidence_root:${evidenceRoot}\nsigner_sig:${signerSignature}\ntimestamp:${timestamp}`;
+  return await digestToHex('SHA-512', stringToBytes(sealPayload));
+}
+
+// ຟັງຊັນຊ່ວຍການປົກປິດ (ການສະໜັບສະໜູນ IPv4 ແລະ IPv6)
+function maskIP(ip) {
+  if (!ip) return "***";
+  
+  // ການກວດສອບ IPv4
+  if (ip.includes(".")) {
+    const parts = ip.split(".");
+    if (parts.length === 4) {
+      return `${parts[0]}.${parts[1]}.***.***`;
+    }
+  }
+  
+  // IPv6 ຫຼືຮູບແບບທີ່ບໍ່ຮູ້ຈັກ
+  return "***";
+}
+```
+
+### ການໄຫຼວຽນການກວດສອບ (ສອງລະດັບ)
+
+#### Quick Verify (ການກວດສອບດ່ວນ)
+```javascript
+// ກວດສອບພຽງແຕ່ hash ຂອງໄຟລ໌ (ທຸງແດງດ່ວນ)
+async function verifyQuick(file, certificateId) {
+  const { sha512: userFileHash } = await computeFileHash(file);
+  
+  // ດຶງຈາກທະບຽນ
+  const cert = await fetchFromRegistry(certificateId);
+  const { sha512: originalHash } = cert.asset.fingerprints;
+  
+  // ການປຽບທຽບ hash
+  if (userFileHash === originalHash) {
+    return {
+      valid: true,
+      message: "✅ ແທ້ - Hash ໄຟລ໌ກົງກັນ"
+    };
+  } else {
+    return {
+      valid: false,
+      message: "❌ ປອມ - ໄຟລ໌ຖືກດັດແປງ"
+    };
+  }
+}
+```
+
+#### Full Verify (ການກວດສອບເຕັມ)
+```javascript
+// ສ້າງ EvidenceRoot ແລະ NotarySeal ຄືນໃໝ່ແລະກວດສອບ
+async function verifyFull(file, certificateId) {
+  const { sha512: userFileHash } = await computeFileHash(file);
+
+  // ດຶງຈາກທະບຽນ
+  const cert = await fetchFromRegistry(certificateId);
+
+  // 1) ການກວດສອບ FileHash (ທຸງແດງດ່ວນ)
+  const originalHash = cert.asset.fingerprints.sha512;
+  if (userFileHash !== originalHash) {
+    return { valid: false, message: "❌ ປອມ - Hash ໄຟລ໌ບໍ່ກົງກັນ" };
+  }
+
+  // 2) ສ້າງ EvidenceRoot ຄືນໃໝ່ (ດ້ວຍ forensics ທີ່ເກັບໄວ້ໃນທະບຽນ)
+  const evidenceRoot = await computeEvidenceRoot(userFileHash, cert.forensics);
+  if (evidenceRoot !== cert.proof.evidence_root) {
+    return { valid: false, message: "❌ ບໍ່ກົງກັນ - EvidenceRoot ບໍ່ຖືກ" };
+  }
+
+  // 3) ສ້າງ NotarySeal ຄືນໃໝ່ (ດ້ວຍ timestamp + signer_sig ດຽວກັນ)
+  const seal = await computeNotarySeal(
+    evidenceRoot,
+    cert.proof.signer_sig,
+    cert.forensics.timestamp
+  );
+
+  if (seal !== cert.proof.notary_seal) {
+    return { valid: false, message: "❌ ບໍ່ກົງກັນ - NotarySeal ບໍ່ຖືກ" };
+  }
+
+  // ທາງເລືອກ: ໃນ Faz 2 ກວດສອບ signer_sig ດ້ວຍ attestation_pubkey ນຳ
+  // const sigValid = await verifySig(cert.issuer.attestation_pubkey, cert.proof.signer_sig, evidenceRoot);
+  // if (!sigValid) return { valid: false, message: "❌ ລາຍເຊັນບໍ່ຖືກຕ້ອງ" };
+
+  return { valid: true, message: "✅ ແທ້ - Full Verify ຜ່ານ" };
+}
+```
+
+> **ໝາຍເຫດສຳຄັນ:**
+> - **Quick Verify:** ກວດສອບພຽງແຕ່ hash ຂອງໄຟລ໌ສຳລັບການໃຊ້ດ່ວນ.
+> - **Full Verify:** ກວດສອບທຸກຊັ້ນຂອງໂປຣໂຕຄອນ (EvidenceRoot + NotarySeal).
+> - ການປຸງແຕ່ງ hash ທັງໝົດເຮັດແບບກຳນົດ, ດ້ວຍການເຂົ້າລະຫັດແລະຕົວແບ່ງຄົງທີ່.
+> - **ມາດຕະຖານ canonicalization v1.0:** ລຳດັບຟິວຄົງທີ່ + ການເຂົ້າລະຫັດ UTF-8 + delimiter `\n`.
+> - **ແຜນ Faz 2:** ການປ່ຽນໄປໃຊ້ canonical JSON ດ້ວຍ RFC 8785 (JCS - JSON Canonicalization Scheme).
+> - ໃນໂໝດປົກປິດ, ການຄຳນວນ EvidenceRoot ແລະ NotarySeal ເຮັດດ້ວຍ forensics ທີ່ປົກປິດ.
+> - timestamp ດຽວຖືກໃຊ້ໃນທົ່ວຂະບວນການ (forensics + NotarySeal); ຮັບປະກັນການກຳນົດ.
+> - **ຊື່ຟິວ forensics:** `ip_masked`, `location`, `device`, `timestamp` (ລະຫັດແລະທະບຽນສອດຄ່ອງເຕັມທີ່).
+> - **ເສັ້ນທາງທະບຽນ:** `certificate.asset.fingerprints` (ສອດຄ່ອງເຕັມທີ່ກັບລະຫັດ verify).
+> - **signer_sig ໃນທະບຽນ:** ຟິວ `proof.signer_sig` ແມ່ນຈຳເປັນສຳລັບ Full Verify.
+> - ກົນໄກ SignerSignature ຈະຖືກເປີດໃຊ້ງານໃນ Faz 2 ດ້ວຍ Solana Wallet Adapter; ໃນ v1.0 ສາມາດກວດສອບດ້ວຍ `attestation_pubkey`.
+
+---
+
+## 📈 ສະຖິຕິການໃຊ້ງານ (ເປົ້າໝາຍ Q1 2026)
+
+| ເມຕຣິກ | ເປົ້າໝາຍ | ສະຖານະ |
+|--------|-------|-------|
+| **ໃບຮັບຮອງທັງໝົດ** | 1,000 | 🔄 ກຳລັງດຳເນີນ |
+| **ຜູ້ໃຊ້ທີ່ໃຊ້ງານຢູ່** | 500 | 🔄 ກຳລັງດຳເນີນ |
+| **ຈຳນວນການກວດສອບ** | 5,000 | 🔄 ກຳລັງດຳເນີນ |
+| **Uptime** | %99.9 | ✅ ໃຊ້ງານຢູ່ |
+| **Avg Response Time** | <200ms | ✅ ເໝາະສົມ |
+
+---
+
+## 🌍 ຊຸມຊົນ & ການສະໜັບສະໜູນ
+
+- **Twitter:** [@Galerilhan](https://twitter.com/Galerilhan)
+- **Web:** [ilhanart.org](https://ilhanart.org)
+- **Email:** galeri@ilhanart.org
+
+---
+
+## 🙏 ຜູ້ປະກອບສ່ວນ
+
+ໂປຣໂຕຄອນ PoArt ສືບຕໍ່ພັດທະນາດ້ວຍການປະກອບສ່ວນຂອງຊຸມຊົນ open source.
+
+**ສຳລັບການປະກອບສ່ວນ:**
+1. Fork
+2. ສ້າງ feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit (`git commit -m 'Add amazing feature'`)
+4. Push (`git push origin feature/amazing-feature`)
+5. ເປີດ Pull Request
+
+### 🛠️ ພວກເຮົາຕ້ອງການຫຍັງໃນຂະນະນີ້? (ການຮ້ອງຂໍຄວາມຊ່ວຍເຫຼືອ)
+
+ໂປຣໂຕຄອນ PoArt ກຳລັງລໍຖ້າການປະກອບສ່ວນຈາກນັກພັດທະນາທີ່ມີປະສົບການໃນດ້ານຕໍ່ໄປນີ້ສຳລັບການພັດທະນາ **Faz 2**:
+
+* **Supabase Edge Functions:** ການຍ້າຍການປ້ອງກັນສະແປມໄປຝັ່ງເຊີບເວີ.
+* **Solana Web3.js:** ການລວມການເຊັນກະເປົາເງິນ (Wallet Signing).
+* **IPFS / Arweave:** ການລວມບໍລິການການເກັບຮັກສາແລະການປັກໝຸດ.
+
+> ກະລຸນາເລີ່ມການສົນທະນາໃນແຖບ "Issues" ກ່ອນເພີ່ມຄຸນລັກສະນະ.
+
+---
+
+**ໂປຣໂຕຄອນ [PoArt] Proof of Art v1.0**  
+*"Culture > Capital" // ວັດທະນະທຳ, ໃຫຍ່ກວ່າທຶນ*
+
+## 🧾 ໃບອະນຸຍາດ
+
+ໃບອະນຸຍາດ MIT © 2026 Ilhan Art Gallery Initiative
+
+ເບິ່ງ [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) ສຳລັບເງື່ອນໄຂເຕັມ.
+
+---
+
+## 💬 ການຂອບໃຈ
+
+![Version](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Security](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Platform](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
+
+**ໂຄງການນີ້ພັດທະນາໂດຍຄວາມຄິດລິເລີ່ມຂອງ [Ilhan Art Gallery], ແລະລະຫັດແຫຼ່ງຂອງມັນເປີດສາທາລະນະເພື່ອຄວາມໂປ່ງໃສ.**
+
+**ໂປຣໂຕຄອນ V1.0 // ປິດຜະນຶກດ້ວຍ SHA-512.**
+
+*© 2026 İLHAN ART | ສົງວນລິຂະສິດທັງໝົດສຳລັບວຽກງານສິລະປະ, ຮູບພາບ ແລະແນວຄວາມຄິດ.*
+
+---
