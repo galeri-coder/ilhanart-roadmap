@@ -1,4 +1,3 @@
-# 🏛️ BİNYILLIK ANAYASA
 ### "Bugünün Emeği, Yarının Değişmez Mirası" 
 **WhitePaper V1.0 - Resmi Protokol ve Manifesto**
 
