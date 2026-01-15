@@ -639,7 +639,7 @@ $$\text{NotarySeal} = \text{SHA-512}\left(\text{EvidenceRoot} \mid \text{SignerS
 | **Multi-Chain Support** | Ethereum, Polygon, Base | Q2 2027 |
 | **DID Integration** | Decentralized Identity | Q3 2027 |
 | **Community Governance** | Ενισχυμένο σύστημα advisory | Q4 2027 |
-| **Legal Recognition** | Εγκυρότητα στα ελληνικά δικαστήρια | 2027-2028 |
+| **Legal Recognition** |τοπικά/διεθνή δικαστήρια| 2027-2028 |
 | **API for Developers** | Endpoint δημόσιου API | Q3 2027 |
 
 **Εξέλιξη Διακυβέρνησης:**
