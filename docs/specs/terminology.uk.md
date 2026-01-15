@@ -324,7 +324,6 @@ $$V_{\text{Human}} \approx \int_{0}^{21600} (0.5 \cdot 0.9) \, dt + U_{\text{irr
 
 **Консультація Спільноти:**
 - Evidence Pack публічно поширюється під час процесу подання заявки
-- Спільнота може надавати зворотній зв'язок через Discord та ilhanart.org/applications
 - Власники токенів (мінімум 10,000 $CULTURE) можуть висловлювати рекомендації
 - **Весь зворотній зв'язок враховується під час процесу розгляду**
 - **Однак остаточне рішення залежить від кураторської оцінки**
@@ -377,17 +376,13 @@ $$V_{\text{Human}} \approx \int_{0}^{21600} (0.5 \cdot 0.9) \, dt + U_{\text{irr
 - Повні версії Evidence Pack'ів
 - Інструменти криміналістичної перевірки
 
-**3. Пріоритет NFT Mint:**
-- Доступ до whitelist, коли твори PoArt Verified карбуються як NFT
-- Можливості раннього карбування
-- Спеціальні колекційні NFT
 
-**4. Advisory Voting:**
+**3. Advisory Voting:**
 - Консультативне право в заявках на PoArt Verified
 - Доступ до каналів зворотного зв'язку спільноти
 - Участь у обговореннях управління
 
-**5. Ексклюзивний Контент:**
+**4. Ексклюзивний Контент:**
 - Контент із-за лаштунків студії
 - Інтерв'ю з художниками та відео процесу
 - Доступ до технічної документації
@@ -618,7 +613,7 @@ PoArt — це не просто система завантаження фай�
 | **OpenTimestamps** | Bitcoin anchoring | OTS JavaScript | Q4 2026 |
 
 **Token Governance (v2.0):**
-- Off-chain voting (Discord/web) + wallet signature
+- Off-chain voting (x/web) + wallet signature
 - Вибір представників спільноти (перші 90 днів)
 - Контроль операційного гаманця з multi-sig
 - Weighted advisory voting (з whale cap)
@@ -635,7 +630,6 @@ PoArt — це не просто система завантаження фай�
 | Особливість | Мета | ETA |
 |---------|-------|-----|
 | **On-Chain Registry** | Запис on-chain у Solana | Q1 2027 |
-| **Enhanced Token Utility** | NFT mint, розширені функції | Q1 2027 |
 | **Multi-Chain Support** | Ethereum, Polygon, Base | Q2 2027 |
 | **DID Integration** | Децентралізована Ідентичність | Q3 2027 |
 | **Community Governance** | Посилена advisory система | Q4 2027 |
@@ -937,7 +931,7 @@ PoArt позиціонується на "Sweet Spot" (Найкраща точк�
 * **Supabase Edge Functions:** Перенесення захисту від спаму на сторону сервера.
 * **Solana Web3.js:** Інтеграція підписування гаманця (Wallet Signing).
 * **IPFS / Arweave:** Інтеграція архівування та pinning сервісів.
-* **Community Tools:** Discord bot, системи голосування, аналітична панель.
+* **Community Tools:** системи голосування, аналітична панель.
 
 > Перед додаванням функції, будь ласка, розпочніть обговорення у вкладці "Issues".
 
@@ -963,7 +957,6 @@ PoArt позиціонується на "Sweet Spot" (Найкраща точк�
 - Registry: Off-chain (PostgreSQL + IPFS backup)
 - Attestation: Gallery self-signed (централізована, але прозора)
 - Governance: Лише консультативна (кураторське остаточне рішення)
-- Token utility: Доступ до галереї + реєстр + пріоритет NFT
 
 **Бачення v2.0+ (2027+):**
 - Registry: On-chain (Solana)
