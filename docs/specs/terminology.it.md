@@ -323,7 +323,6 @@ Il registro può avere due livelli:
 
 **Consultazione della comunità:**
 - L'Evidence Pack viene condiviso pubblicamente durante il processo di candidatura
-- La comunità può fornire feedback tramite Discord e ilhanart.org/applications
 - I possessori di token (minimo 10.000 $CULTURE) possono fare proposte in particolare
 - **Tutto il feedback viene preso in considerazione nel processo di revisione**
 - **Tuttavia la decisione finale dipende dalla valutazione curatoriale**
@@ -376,17 +375,12 @@ Quando il progetto matura (2027+), il meccanismo di consultazione della comunit�
 - Versioni complete degli Evidence Pack
 - Strumenti di verifica forense
 
-**3. Priorità di conio NFT:**
-- Accesso alla whitelist quando le opere PoArt Verified vengono coniate come NFT
-- Opportunità di conio anticipato
-- NFT di collezioni speciali
-
-**4. Voto consultivo:**
+**3. Voto consultivo:**
 - Diritto di consultazione sulle candidature PoArt Verified
 - Accesso ai canali di feedback della comunità
 - Partecipazione alle discussioni di governance
 
-**5. Contenuti esclusivi:**
+**4. Contenuti esclusivi:**
 - Contenuti dietro le quinte dello studio
 - Interviste agli artisti e video del processo
 - Accesso alla documentazione tecnica
@@ -617,7 +611,7 @@ Questa fase copre la transizione del sistema da una struttura completamente funz
 | **OpenTimestamps** | Ancoraggio Bitcoin | OTS JavaScript | Q4 2026 |
 
 **Governance del token (v2.0):**
-- Voto off-chain (Discord/web) + firma del portafoglio
+- Voto off-chain (x/web) + firma del portafoglio
 - Selezione dei rappresentanti della comunità (primi 90 giorni)
 - Controllo del portafoglio delle operazioni multi-sig
 - Voto consultivo ponderato (con limite per le balene)
@@ -634,7 +628,6 @@ Questa fase copre la transizione del sistema da una struttura completamente funz
 | Caratteristica | Obiettivo | ETA |
 |----------------|-----------|-----|
 | **Registro on-chain** | Registrazione on-chain Solana | Q1 2027 |
-| **Utilità del token migliorata** | Conio NFT, funzionalità avanzate | Q1 2027 |
 | **Supporto multi-catena** | Ethereum, Polygon, Base | Q2 2027 |
 | **Integrazione DID** | Identità decentralizzata | Q3 2027 |
 | **Governance della comunità** | Sistema consultivo rafforzato | Q4 2027 |
@@ -936,7 +929,7 @@ Attendiamo i contributi di sviluppatori esperti nei seguenti argomenti per gli s
 * **Supabase Edge Functions:** Spostare la protezione spam lato server.
 * **Solana Web3.js:** Integrazione della firma del portafoglio (Wallet Signing).
 * **IPFS / Arweave:** Integrazione di servizi di archiviazione e pinning.
-* **Strumenti della comunità:** Bot Discord, sistemi di voto, dashboard di analisi.
+* **Strumenti della comunità:**  sistemi di voto, dashboard di analisi.
 
 > Si prega di avviare una discussione nella scheda "Issues" prima di aggiungere una funzionalità.
 
@@ -962,7 +955,6 @@ Tuttavia chiariamo questo:
 - Registro: Off-chain (PostgreSQL + backup IPFS)
 - Attestazione: Auto-firmata dalla galleria (centralizzata ma trasparente)
 - Governance: Solo consultiva (decisione finale curatoriale)
-- Utilità del token: Accesso alla galleria + registro + priorità NFT
 
 **Visione v2.0+ (2027+):**
 - Registro: On-chain (Solana)
