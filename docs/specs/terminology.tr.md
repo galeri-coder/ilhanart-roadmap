@@ -1,4 +1,4 @@
-# 📚 TERMINOLOJİ & KAVRAMLAR SÖZLÜĞÜ
+# 📚 TERMİNOLOJİ & KAVRAMLAR SÖZLÜĞÜ
 > **"Bu protokolün dilini anlamak, vizyonunu anlamaktır."**
 
 ## ⚙️ PoArt Forensic Engine (PFE) v1.0: Core Infrastructure
@@ -135,7 +135,7 @@ Bu teorem, [PoArt]'ın değer iddiasını bir "beğeni" veya "piyasa anlatısı"
 
 Pump.fun veya benzeri platformlardan çıkan token'lar, çoğu zaman yalnızca birer **"erişim bileti"** niteliğindedir. **PoArt Forensic Engine (PFE)** ise o biletin hangi hakları koruduğunu, emeğin nasıl kayıt altına alınacağını ve sanatın/bilimin/teknolojinin nasıl kalıcılaştırılacağını belirleyen **anayasal mantık katmanıdır.**
 
-> **Not:** Bizim bu projeyi Pumpfun'da başlatmamızın sebebi yeterli likidite ve yeterli takipçi sayısına sahip olamadığımız içindir. Mevcut datayı kullanmak stratejik olarak en kaliteli olmasa da en doğru hamleydi diyebiliriz. Bütçe ve imkanlardan bağımsız olarak bu motorun mantığını GitHub üzerinde tanımlamak, projenin sadece bir finansal spekülasyon değil, uzun vadeli bir **yazılım altyapısı** ve **dijital bir milli kütüphane** vizyonu olduğunu kanıtlar.
+> **Not:** Bizim bu projeyi Pump.fun'da başlatmamızın sebebi yeterli likidite ve yeterli takipçi sayısına sahip olamadığımız içindir. Mevcut datayı kullanmak stratejik olarak en kaliteli olmasa da en doğru hamleydi diyebiliriz. Bütçe ve imkanlardan bağımsız olarak bu motorun mantığını GitHub üzerinde tanımlamak, projenin sadece bir finansal spekülasyon değil, uzun vadeli bir **yazılım altyapısı** ve **dijital bir milli kütüphane** vizyonu olduğunu kanıtlar.
 
 ---
 
@@ -188,9 +188,10 @@ Bu 5 madde, bir projenin [PoArt] mührünü alabilmesi için geçmesi gereken, m
   Eser, sadece görsel bir şölen değil; aynı zamanda **Bilim, Felsefe veya Teknoloji** üzerine düşündüren entelektüel bir meydan okuma olmalıdır.
 
 > [!IMPORTANT]
-> **Referans Örnek (Las Palmitas Etkisi):**  Meksika'nın suçla boğuşan Las Palmitas mahallesinde, 200'den fazla ev devasa bir gökkuşağı şölenine dönüştürülmüştür. Bu >estetik müdahale sonucunda mahalledeki suç oranları belirli ölçüde düşmüş, gençler çeteler yerine sanatla ilgilenmeye başlamıştır. Estetik değişim, insanların >çevrelerine ve birbirlerine olan saygısını (Social Cohesion) yeniden kodlamıştır.
+> **Referans Örnek (Las Palmitas Etkisi):**  
+> Meksika'nın suçla boğuşan Las Palmitas mahallesinde, 200'den fazla ev devasa bir gökkuşağı şölenine dönüştürülmüştür. Bu estetik müdahale sonucunda mahalledeki suç oranları belirli ölçüde düşmüş, gençler çeteler yerine sanatla ilgilenmeye başlamıştır. Estetik değişim, insanların çevrelerine ve birbirlerine olan saygısını (Social Cohesion) yeniden kodlamıştır.
 >
-> **Beklenti:** [PoArt] listesine girecek bir proje; tıpkı yukarıdaki örnekte olduğu gibi, salt görsel estetikten öte sosyolojik, bilimsel veya felsefi bir neden->sonuç ilişkisi barındırmalıdır. Para ile satın alınamayacak yegâne varlık "Zaman" olduğu için, bu protokolde zaman bir teminat olarak stake edilerek >kanıtlanmalıdır. Projenin fikirsel temeli o kadar güçlü ve evrensel olmalıdır ki; seneler sonra olası bir CTO (Community Take Over) senaryosunda bile, topluluk bu >mirası devralarak projenin yenilikçi potansiyelini otonom bir şekilde sürdürebilmelidir.
+> **Beklenti:** [PoArt] listesine girecek bir proje; tıpkı yukarıdaki örnekte olduğu gibi, salt görsel estetikten öte sosyolojik, bilimsel veya felsefi bir neden-sonuç ilişkisi barındırmalıdır. Para ile satın alınamayacak yegâne varlık "Zaman" olduğu için, bu protokolde zaman bir teminat olarak stake edilerek kanıtlanmalıdır. Projenin fikirsel temeli o kadar güçlü ve evrensel olmalıdır ki; seneler sonra olası bir CTO (Community Take Over) senaryosunda bile, topluluk bu mirası devralarak projenin yenilikçi potansiyelini otonom bir şekilde sürdürebilmelidir.
 
 ### 5) Algoritmik Olmayan İrade (Non-Algorithmic Agency)
 
@@ -234,7 +235,7 @@ Her [PoArt] sertifikalı eserin arkasında, yatırımcıların indirebileceği �
 
 ## d) Sonuç: Kumarhane Değil, Müze
 
-**Pump.fun ve Merkeziyetsiz Borsalar (DEX) şu an malesef birer kumarhanedir; ışıklar yanıp söner, herkes hızlı kazanç peşindedir ve kasa (dolandırıcılar) her zaman kazanır. Projeyi burada başlatma sebebimiz yeterli bütçemizin olmaması ve canlı yayınlar ile mevcut kitleye ulaşacak çevremizin olmasından kaynaklıdır.**
+**Pump.fun ve Merkeziyetsiz Borsalar (DEX) şu an maalesef birer kumarhanedir; ışıklar yanıp söner, herkes hızlı kazanç peşindedir ve kasa (dolandırıcılar) her zaman kazanır. Projeyi burada başlatma sebebimiz yeterli bütçemizin olmaması ve canlı yayınlar ile mevcut kitleye ulaşacak çevremizin olmasından kaynaklıdır.**
 
 **[PoArt], bu kumarhanenin ortasına inşa edilmiş bir kaledir.**
 
@@ -273,7 +274,7 @@ Sicile giren her kayıt, minimum şu doğrulanabilir çekirdek alanları taşır
 - **Eser Bilgisi:**
   - `asset.title`
   - `asset.creator`
-  - `asset.creator_wallet` (mümkünse; token-gated kimlik için)
+  - `asset.creator_wallet` (mümkünse; token holder kimlik için)
   - `asset.fingerprints.sha256`
   - `asset.fingerprints.sha512`
 
@@ -290,7 +291,7 @@ Sicile giren her kayıt, minimum şu doğrulanabilir çekirdek alanları taşır
 
 - **Yönetişim:**
   - `governance.decision`
-  - `governance.veto_threshold`
+  - `governance.review_notes`
 
 Sicilin iki katmanı bulunabilir:
 - **1)** İnsan-okur indeks (web listeleme / arama / filtre)
@@ -300,35 +301,121 @@ Sicilin iki katmanı bulunabilir:
 
 ---
 
-### 6.2 %40 Topluluk Vetosu (Token-Gated Governance)
+### 6.2 PoArt Verified Başvuru Süreci
 
-- **%40 Topluluk Vetosu:** Statü kazanılmadan bir ay önce oylama başlar; **Token-Gated (Solana-Verified)** topluluğun %40 itirazı başvuruyu geçersiz kılar.
+**PoArt Verified başvuruları, İlhanArt Gallery tarafından 5 PoArt standardına göre değerlendirilir. Topluluk geri bildirimi dikkate alınır, ancak final karar kuratoryal ekibe bağlıdır. Kararlar şeffaf bir şekilde açıklanır ve ilhanart.org/registry'de kayıt altına alınır.**
 
-**Oylama akışı (önerilen net süreç):**
-- **Başvuru penceresi:** Aday proje "PoArt aday kaydı" açar (aday kayıtları "pending" statüsünde görünür).
-- **İnceleme süresi:** 30 gün boyunca topluluk delilleri inceler (Evidence Pack + canlı yayın kayıtları + metadata).
-- **Token-gated doğrulama:** Oy kullanımı, Solana üzerinde doğrulanmış cüzdanlar ile yapılır (ör. belirli token/NFT sahipliği + wallet signature).
-- **Veto kuralı:** Oyların %40'ı **itiraz (NO / VETO)** ise başvuru reddedilir.
-- **Şeffaflık:** Oylama sonucu sicilde "decision record" olarak saklanır (tarih, oran, snapshot kimliği).
+#### Başvuru Süreci
+
+**Başvuru:**
+- Sanatçı/proje PoArt Verified başvurusu yapar
+- Evidence Pack hazırlanır (video kayıtları, metadata, canlı yayın linkleri)
+- Başvuru İlhanArt Gallery'ye gönderilir
+
+**İnceleme (30 Gün):**
+- Galeri ekibi Evidence Pack'i detaylı inceler
+- Tüm 5 PoArt standardı kontrol edilir:
+  1. Live Identity Proof
+  2. Labor & Process Proof
+  3. Aesthetic Value Proof
+  4. Conceptual Novelty
+  5. Non-Algorithmic Agency
+- Sanatçı ile görüşme (opsiyonel)
+
+**Topluluk Danışma:**
+- Evidence Pack, başvuru sürecinde kamuya açık olarak paylaşılır
+- Topluluk, Discord ve ilhanart.org/applications üzerinden geri bildirim verebilir
+- Token holder'lar (minimum 10,000 $CULTURE) özellikle önerilerde bulunabilir
+- **Tüm geri bildirimler inceleme sürecinde dikkate alınır**
+- **Ancak final karar, kuratoryal değerlendirmeye bağlıdır**
+
+**Karar:**
+- Galeri, başvuruyu onaylar veya reddeder
+- Karar gerekçesi şeffaf bir şekilde açıklanır
+- Onaylanırsa → PoArt Verified badge
+- Reddedilirse → 6 ay sonra yeniden başvuru yapılabilir
+
+**Şeffaflık:**
+- Tüm başvurular ve kararlar ilhanart.org/registry'de kayıt altına alınır
+- Decision record public olarak yayınlanır:
+  - Başvuru tarihi
+  - İnceleme süreci özeti
+  - Karar (Approved / Rejected)
+  - Karar gerekçesi (kısa açıklama)
+  - Topluluk geri bildirimleri özeti (anonim)
+
+#### Neden Kuratoryal Karar?
+
+**Kalite Kontrol:**  
+PoArt Verified statüsü, yüksek standartlara sahip bir badge'dir. Kuratoryal değerlendirme, bu standartların korunmasını garantiler.
+
+**Spekülatif Manipülasyon Önleme:**  
+Pump.fun token'ları ile tam on-chain governance (örn: Realms, DAO voting) teknik olarak mümkün değildir. Off-chain voting sistemleri ise whale manipülasyonu ve koordineli saldırılara açıktır. Kuratoryal karar, bu riski ortadan kaldırır.
+
+**Operasyonel Verimlilik:**  
+Karmaşık voting mekanizmaları yerine, hızlı ve net karar süreci. Sanatçılar 30 gün içinde sonuç alır.
+
+**Topluluk Katılımı:**  
+Topluluk geri bildirimi tamamen dikkate alınır ve karar sürecini etkiler. Ancak final karar, manipülasyondan korunmuş kuratoryal ekibe bağlıdır.
+
+**Gelecek:**  
+Proje matured olunca (2027+), topluluk danışma mekanizması güçlendirilebilir. Ancak kuratoryal standart koruması kalıcıdır.
 
 ---
 
-### 6.3 Metadata Sync (Fiziksel Dünya ile Eşleşme)
+### 6.3 Token Utility (Token Kullanım Alanları)
+
+**$CULTURE token holder'larına sağlanan faydalar:**
+
+**1. Galeri Etkinlikleri Öncelikli Erişim:**
+- İlhanArt Gallery fiziksel sergi açılışları
+- Sanatçı buluşmaları ve atölye ziyaretleri
+- Özel koleksiyon görüntülemeleri
+
+**2. PoArt Registry Tam Erişim:**
+- Tüm authenticated artworks'lerin detaylı kayıtları
+- Evidence Pack'lerin tam versiyonları
+- Forensic verification araçları
+
+**3. NFT Mint Priority:**
+- PoArt Verified eserler NFT olarak mint edildiğinde whitelist erişimi
+- Erken mint fırsatları
+- Özel koleksiyon NFT'leri
+
+**4. Advisory Voting:**
+- PoArt Verified başvurularında danışma hakkı
+- Topluluk geri bildirim kanallarına erişim
+- Governance tartışmalarına katılım
+
+**5. Exclusive Content:**
+- Stüdyo behind-the-scenes içerikleri
+- Sanatçı röportajları ve süreç videoları
+- Teknik dokümantasyon erişimi
+
+**Not:**  
+Token holder'lar advisory vote (danışma oyu) verir. Final karar, kuratoryal ekipe aittir. Bu yapı, whale manipülasyonunu ve spekülatif saldırıları önlemek için tercih edilmiştir. Staking reward yoktur çünkü uzun vadeli kültürel katılımcılar arıyoruz, kısa vadeli mercenary capital değil.
+
+---
+
+### 6.4 Metadata Sync (Fiziksel Dünya ile Eşleşme)
 
 - **Metadata Sync:** Sicildeki teknik veriler fiziksel varlıkla %100 eşleşmek zorundadır.
 
 **"%100 eşleşme"yi teknik olarak tanımlamak (önerilen açıklık):**
+
 - **Minimum eşleşme (zorunlu):**
   - Sicildeki `asset.fingerprints.sha256/sha512` ile eldeki dosyanın hash'i **birebir aynı** olmalıdır.
   - Sicildeki `proof.notary_seal` yeniden üretildiğinde (Evidence Pack varsa) **birebir aynı** olmalıdır.
+
 - **Fiziksel referans eşleşmesi (kanıt türü):**
   - Canlı yayında gösterilen fiziksel eser + tarih/blok referansı gibi kanıtlar, Evidence Pack ile tutarlı olmalıdır.
+
 - **Gizlilik uyumu:**
   - `masked` görünürlükte IP/konum gibi alanlar **maskeleme standardına uygun** yayımlanır.
 
 ---
 
-### 6.4 İtiraz, İnceleme ve İptal (Dispute & Revocation)
+### 6.5 İtiraz, İnceleme ve İptal (Dispute & Revocation)
 
 Sicil, yalnızca "onay" mekanizması değil; **sahteciliğe karşı yaşayan bir denetim** mekanizmasıdır.
 
@@ -337,13 +424,13 @@ Sicil, yalnızca "onay" mekanizması değil; **sahteciliğe karşı yaşayan bir
   - `void_reason` (AI kullanımı / çalıntı / manipülasyon vb.)
   - `revoked_at` (iptal zamanı)
 - İptal kararının kaynağı sicilde açıkça görünür:
-  - topluluk oylaması / yetkili kurul / adli inceleme notu (hangisi uygulanıyorsa)
+  - kuratoryal inceleme / topluluk itirazı / adli analiz notu (hangisi uygulanıyorsa)
 
 > **Bu kısım, "Red Flag Protocol" bölümündeki VOID kavramının sicil üzerindeki karşılığıdır.**
 
 ---
 
-### 6.5 Örnek Sicil Kaydı (Makine-okur)
+### 6.6 Örnek Sicil Kaydı (Makine-okur)
 ```json
 {
   "certificate_id": "POART-AB12CD34",
@@ -376,10 +463,11 @@ Sicil, yalnızca "onay" mekanizması değil; **sahteciliğe karşı yaşayan bir
   },
   "governance": {
     "decision": "approved",
-    "veto_threshold": 0.40
+    "review_notes": "Met all 5 PoArt standards. Community feedback positive."
   }
 }
 ```
+
 > *Not: `asset.fingerprints.sha512` ve diğer hash değerleri gösterim amacıyla kısaltılmıştır; gerçek uygulamada tam uzunlukta hexadecimal karakter dizisi kullanılır.*
 
 ---
@@ -492,74 +580,72 @@ Sistem, "Serverless" (Sunucusuz) bir mimari üzerinde, yüksek performans ve öl
 
 Şu anki sürüm **(Beta v1.0)**, son kullanıcıya maksimum hız, kolay arayüz ve ücretsiz erişim sağlamak için optimize edilmiştir. Ancak nihai vizyonumuz, veritabanı yöneticisinin (bizim) bile müdahale edemeyeceği bir yapıya geçmektir.
 
-### Faz 1: Beta (Şu An Yayında)
+### Faz 1: Beta v1.0 (Şu An Yayında)
 
-- **Altyapı:** Cloud Database (Supabase).
-- **Amaç:** Hız, UX (Kullanıcı Deneyimi) bariyerlerini kaldırmak ve adaptasyon. "Sürtünmesiz" güvenlik sağlamak.
+**Altyapı:**
+- Cloud Database (Supabase)
+- Off-chain registry (PostgreSQL + IPFS backup)
+- Gallery self-attestation (merkezi ama şeffaf)
 
-### 🚀 Faz 2: (Backend / Edge Function Gerektirenler)
+**Token:**
+- Platform: Pump.fun
+- Liquidity: Raydium (automatic)
+- Governance: Advisory only (topluluk danışma)
 
-Bu faz, sistemin tamamen "Client-Side" çalışan yapısından, daha güvenli ve yönetilebilir bir "Server-Side Authority" yapısına geçişini kapsar.
+**Amaç:**
+- Hız, UX bariyerlerini kaldırmak
+- "Sürtünmesiz" güvenlik sağlamak
+- Topluluk oluşturma
 
-| Madde | Ne Kazandırır? | Tech Stack | Öncelik |
-|-------|---------------|------------|---------|
-| **`INSERT` → Edge Function** | Spam engeli + API Key güvenliği | Supabase Edge (Deno) | 🔴 Yüksek |
-| **Wallet İmzası** | Kriptografik kimlik doğrulama | Solana Wallet Adapter | 🟡 Orta |
-| **IPFS/Arweave Yedekleme** | Merkeziyetsiz değişmezlik | IPFS SDK + Pinata | 🟢 Düşük |
-| **Revocation Mekanizması** | Sahte sertifika iptali | DB Schema Update | 🔴 Yüksek |
-| **Audit Log** | Adli sorgulama kaydı | Custom logs tablosu | 🟡 Orta |
-| **OpenTimestamps** | Bitcoin anchoring | OTS JavaScript | 🟢 Düşük |
-| **DID Integration** | Decentralized Identity | ION/Ceramic | 🟢 Düşük |
-
-### Faz 3: Tam Merkeziyetsizlik (Uzun Vade)
-
-| Özellik | Hedef | ETA |
-|---------|-------|-----|
-| **Blockchain Registry** | Ethereum/Solana on-chain kayıt | Q4 2026 |
-| **DAO Governance** | Topluluk yönetimi | Q1 2027 |
-| **Multi-Chain Support** | Polygon, Arbitrum, Base | Q2 2027 |
-| **Legal Recognition** | Türk mahkemelerinde geçerlilik | 2027-2028 |
-| **API for Developers** | Public API endpoint | Q3 2026 |
+**Token Utility (v1.0):**
+- Galeri etkinlikleri öncelikli erişim
+- PoArt Registry görüntüleme
+- Advisory voting hakkı
 
 ---
 
-## 📊 Rakip Analizi (Güncellenmiş)
+### 🚀 Faz 2: Decentralized Authority (2026 Q2-Q4)
 
-PoArt, mevcut çözümlerin eksiklerini tamamlayan "Sweet Spot" (En ideal nokta) üzerine konumlanmıştır.
+Bu faz, sistemin tamamen "Client-Side" çalışan yapısından, daha güvenli ve merkeziyetsiz bir yapıya geçişini kapsar.
 
-| Özellik | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 證 Proof | Trust-Stamp |
-|---------|:---------:|:---------------:|:-----------------:|:------------:|:----:|:-----------:|:--------:|:-----------:|
-| **Maliyet** | 🆓 Ücretsiz | 🆓 | 💰 Ücretli | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
-| **Drag & Drop UI** | ✅ Çok Kolay | ❌ CLI | ⚠️ Orta | ⚠️ Orta | ⚠️ | ⚠️ | ❌ | ⚠️ |
-| **Multi-Format Export** | ✅ PNG/PDF/JSON | ❌ | ⚠️ PDF | ⚠️ PDF | ❌ | ❌ | ❌ | ⚠️ |
-| **Real-Time Preview** | ✅ Canlı | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| **Privacy Controls** | ✅ 3 Mod | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Client-Side Hash** | ✅ Gizlilik | ✅ | ❌ Upload | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
-| **Forensic Metadata** | ✅ Tam | ❌ | ❌ | ⚠️ Kısıtlı | ❌ | ⚠️ | ❌ | ⚠️ |
-| **QR Verification** | ✅ Anlık | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
-| **Rate Limiting** | ✅ RLS+Client | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Blockchain Anchor** | 🔄 Roadmap | ✅ Bitcoin | ✅ Ethereum | ✅ Multi | ✅ | ✅ | ✅ | ✅ |
-| **Open Source** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
-| **Turkish Support** | ✅ Native | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
+| Özellik | Ne Kazandırır? | Tech Stack | ETA |
+|---------|---------------|------------|-----|
+| **Edge Function INSERT** | Spam engeli + API Key güvenliği | Supabase Edge (Deno) | Q2 2026 |
+| **Wallet İmzası** | Decentralized identity | Solana Wallet Adapter | Q2 2026 |
+| **IPFS/Arweave Backup** | Merkeziyetsiz arşiv | IPFS SDK + Pinata | Q3 2026 |
+| **Revocation Mechanism** | Sahte sertifika iptali | DB Schema Update | Q2 2026 |
+| **Audit Log** | Adli sorgulama kaydı | Custom logs tablosu | Q3 2026 |
+| **OpenTimestamps** | Bitcoin anchoring | OTS JavaScript | Q4 2026 |
 
-**Açıklama:**
-- ✅ : Tam destek / mevcut
-- ⚠️ : Kısıtlı / ücretli planlarda
-- ❌ : Yok / desteklenmiyor
-- 🔄 : Roadmap'te (geliştirilmekte)
-- 🆓 : Tamamen ücretsiz
-- 💰 : Ücretli / abonelik gerekli
+**Token Governance (v2.0):**
+- Off-chain voting (Discord/web) + wallet signature
+- Community representatives seçimi (ilk 90 gün)
+- Multi-sig operations wallet kontrolü
+- Weighted advisory voting (whale cap ile)
 
-### Rakiplerin Eksikleri, PoArt'ın Güçlü Yönleri
+**Immutability:**
+- IPFS hash'leri ile registry backup
+- Bitcoin timestamp anchoring
+- Cross-chain verification hazırlığı
 
-| Eksi | Rakipler | PoArt |
-|------|----------|-------|
-| **Kullanım Zorluğu** | CLI, API bilgisi, cüzdan gerekli | Sürükle-bırak, 3 tıkla biter |
-| **Maliyet Bariyeri** | $50-500/ay abonelik | %100 ücretsiz |
-| **Gizlilik** | Dosya sunucuya yüklenir | Client-side, dosya asla gitmiyor |
-| **Forensic Veri** | Sadece timestamp | IP, konum, cihaz, zaman - hepsi |
-| **Türkçe Destek** | Yok veya çok kısıtlı | Native dil desteği |
-| **Açık Kaynak** | Kapalı kutu | GitHub'da tüm kod açık |
+---
+
+### Faz 3: Tam Merkeziyetsizlik (2027+)
+
+| Özellik | Hedef | ETA |
+|---------|-------|-----|
+| **On-Chain Registry** | Solana on-chain kayıt | Q1 2027 |
+| **Enhanced Token Utility** | NFT mint, advanced features | Q1 2027 |
+| **Multi-Chain Support** | Ethereum, Polygon, Base | Q2 2027 |
+| **DID Integration** | Decentralized Identity | Q3 2027 |
+| **Community Governance** | Güçlendirilmiş advisory system | Q4 2027 |
+| **Legal Recognition** | Türk mahkemelerinde geçerlilik | 2027-2028 |
+| **API for Developers** | Public API endpoint | Q3 2027 |
+
+**Governance Evolution:**
+- v3.0: Hybrid model (kuratoryal + community weighted)
+- 2028+: Full community governance (optional)
+- Kuratoryal quality control her zaman korunur
 
 ---
 
@@ -772,6 +858,46 @@ async function verifyFull(file, certificateId) {
 
 ---
 
+## 📊 Rakip Analizi (Güncellenmiş)
+
+PoArt, mevcut çözümlerin eksiklerini tamamlayan "Sweet Spot" (En ideal nokta) üzerine konumlanmıştır.
+
+| Özellik | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 證 Proof | Trust-Stamp |
+|---------|:---------:|:---------------:|:-----------------:|:------------:|:----:|:-----------:|:--------:|:-----------:|
+| **Maliyet** | 🆓 Ücretsiz | 🆓 | 💰 Ücretli | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
+| **Drag & Drop UI** | ✅ Çok Kolay | ❌ CLI | ⚠️ Orta | ⚠️ Orta | ⚠️ | ⚠️ | ❌ | ⚠️ |
+| **Multi-Format Export** | ✅ PNG/PDF/JSON | ❌ | ⚠️ PDF | ⚠️ PDF | ❌ | ❌ | ❌ | ⚠️ |
+| **Real-Time Preview** | ✅ Canlı | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Privacy Controls** | ✅ 3 Mod | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
+| **Client-Side Hash** | ✅ Gizlilik | ✅ | ❌ Upload | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
+| **Forensic Metadata** | ✅ Tam | ❌ | ❌ | ⚠️ Kısıtlı | ❌ | ⚠️ | ❌ | ⚠️ |
+| **QR Verification** | ✅ Anlık | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
+| **Rate Limiting** | ✅ RLS+Client | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
+| **Blockchain Anchor** | 🔄 Roadmap | ✅ Bitcoin | ✅ Ethereum | ✅ Multi | ✅ | ✅ | ✅ | ✅ |
+| **Open Source** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
+| **Turkish Support** | ✅ Native | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
+
+**Açıklama:**
+- ✅ : Tam destek / mevcut
+- ⚠️ : Kısıtlı / ücretli planlarda
+- ❌ : Yok / desteklenmiyor
+- 🔄 : Roadmap'te (geliştirilmekte)
+- 🆓 : Tamamen ücretsiz
+- 💰 : Ücretli / abonelik gerekli
+
+### Rakiplerin Eksikleri, PoArt'ın Güçlü Yönleri
+
+| Eksi | Rakipler | PoArt |
+|------|----------|-------|
+| **Kullanım Zorluğu** | CLI, API bilgisi, cüzdan gerekli | Sürükle-bırak, 3 tıkla biter |
+| **Maliyet Bariyeri** | $50-500/ay abonelik | %100 ücretsiz |
+| **Gizlilik** | Dosya sunucuya yüklenir | Client-side, dosya asla gitmiyor |
+| **Forensic Veri** | Sadece timestamp | IP, konum, cihaz, zaman - hepsi |
+| **Türkçe Destek** | Yok veya çok kısıtlı | Native dil desteği |
+| **Açık Kaynak** | Kapalı kutu | GitHub'da tüm kod açık |
+
+---
+
 ## 📈 Kullanım İstatistikleri (2026 Q1 Hedefleri)
 
 | Metrik | Hedef | Durum |
@@ -789,6 +915,7 @@ async function verifyFull(file, certificateId) {
 - **Twitter:** [@Galerilhan](https://twitter.com/Galerilhan)
 - **Web:** [ilhanart.org](https://ilhanart.org)
 - **Email:** galeri@ilhanart.org
+- **Instagram:** https://www.instagram.com/ilhanartgaleri
 
 ---
 
@@ -810,8 +937,41 @@ PoArt Protokolü **Faz 2** geliştirmeleri için aşağıdaki konularda deneyiml
 * **Supabase Edge Functions:** Spam korumasını sunucu tarafına taşıma.
 * **Solana Web3.js:** Cüzdan imzalama (Wallet Signing) entegrasyonu.
 * **IPFS / Arweave:** Arşivleme ve pinning servisleri entegrasyonu.
+* **Community Tools:** Discord bot, voting systems, analytics dashboard.
 
 > Bir özellik eklemeden önce lütfen "Issues" sekmesinde tartışma başlatın.
+
+---
+
+## 💬 Son Notlar
+
+### Pump.fun ve Gerçeklik
+
+Bu proje Pump.fun'da başlatılmıştır çünkü:
+- ✅ Likidite erişimi (Raydium automatic migration)
+- ✅ Mevcut topluluk erişimi
+- ✅ Düşük başlangıç maliyeti
+
+Ancak şunu netleştirelim:
+- **Token fiyatı**, sanatsal başarının göstergesi değildir
+- **Operasyonel bütçe** için token değeri önemlidir (galeri, sergiler, altyapı)
+- **Başarı metrikleri:** Authenticated artworks + community engagement + fiziksel ziyaretçi
+
+### Governance ve Merkeziyetsizlik
+
+**v1.0 Gerçekliği (2026):**
+- Registry: Off-chain (PostgreSQL + IPFS backup)
+- Attestation: Gallery self-signed (merkezi ama şeffaf)
+- Governance: Advisory only (kuratoryal final karar)
+- Token utility: Gallery access + registry + NFT priority
+
+**v2.0+ Vizyonu (2027+):**
+- Registry: On-chain (Solana)
+- Signatures: Wallet-based (decentralized)
+- Governance: Hybrid (community advisory + curatorial quality)
+- Token utility: Enhanced features + advanced access
+
+Bu yapı, erken aşamada **operasyonel verimlilik** ve **kalite kontrolü** sağlarken, gelecekte **topluluk katılımını** artırma yolunu açık tutar.
 
 ---
 
