@@ -1,32 +1,32 @@
-# 📚 TERMINOLOGIAN JA KÄSITTEIDEN SANASTO
-> **"Tämän protokollan kielen ymmärtäminen tarkoittaa sen vision ymmärtämistä."**
+# 📚 TERMINOLOGIA JA KÄSITTEET -SANASTO
+> **"Tämän protokollan kielen ymmärtäminen on sen vision ymmärtämistä."**
 
-## ⚙️ PoArt Forensic Engine (PFE) v1.0: Perusinfrastruktuuri
+## ⚙️ PoArt Forensic Engine (PFE) v1.0: Ydininfrastruktuuri
 
-**PoArt Forensic Engine (PFE)** on peruskerros, joka edustaa [PoArt]-protokollan taustalla olevaa peruslogiikkaa ja teknistä toimintaa. Se on "rikostekniikkamoottori", joka muuntaa taideteoksen tuotannon raakatiedot todennettavaksi ja muuttumattomaksi **digitaaliseksi todisteeksi**.
+**PoArt Forensic Engine (PFE)** edustaa [PoArt]-protokollan taustalla olevaa ydinlogiikkaa ja teknistä toimintaa. Tämä on "forensinen moottori", joka ottaa taideteoksen raakadatan ja muuntaa sen todennettavaksi ja muuttumattomaksi **digitaaliseksi todisteeksi**.
 
 ### 🧩 Miksi "PoArt Forensic"?
 
-- **PoArt (Proof of Art):** Moottorin painopiste on digitaalisen omaisuuden arvon sitominen ei spekulaatioon, vaan **todennettavaan tuotantoprosessiin**.
-- **Forensic (Rikostekniikka Todentaminen):**
-  - **Tekninen Määritelmä:** Algoritminen lähestymistapa ja todistusketju sen todentamiseksi, että tuotantoprosessin tietoja (siveltimenvedot, timelapse, lokit) ei ole manipuloitu.
-  - **Filosofinen Taso:** Tekoälyn "välitöntä tuotantoa" vastaan; väite inhimillisen tuotannon, joka sisältää **aikaa, vaivaa ja päätösten kustannuksia**, muuntamisesta mitattavaksi todellisuudeksi.
+- **PoArt (Proof of Art):** Moottorin keskiössä on digitaalisen omaisuuserän arvon sitominen spekulaation sijaan **todennettavissa olevaan tuotantoprosessiin**.
+- **Forensic (Oikeustieteellinen todentaminen):**
+  - **Tekninen määritelmä:** Algoritmi- ja kirjausketjulähestymistapa, jolla todennetaan, ettei tuotantoprosessin dataa (siveltimenvedot, timelapse, lokit) ole manipuloitu.
+  - **Filosofinen taso:** Väite, jolla tekoälyn "välitön tuotos" muunnetaan mitattavaksi todellisuudeksi; **ihmisen aikaa, vaivannäköä ja päätöksenteon hintaa** sisältävä tuotanto.
 
-> Huomautus: Blockchain-integraatio (esim. Solana) ei ole PFE:n ydin; se määritellään erikseen **Chain Anchor Layer**:ksi todentamista/rekisteriä varten.
+> Huom: Lohkoketjuintegraatio (esim. Solana) ei ole PFE:n ydin; se käsitellään erikseen **Chain Anchor Layer** -kerroksena todentamista/rekisteröintiä varten.
 
-### 🛠️ Tekninen Laajuus v1.0
+### 🛠️ v1.0 Tekninen laajuus
 
-**PoArt Forensic Engine (PFE) v1.0** on rakennettu **3 peruspilarille** monimutkaisten rahoitusmallien sijaan:
+**PoArt Forensic Engine (PFE) v1.0** on rakennettu monimutkaisten rahoitusmallien sijaan näiden **3 pääpilarin** varaan:
 
 1. **Hashing & Sealing (Sinetöinti):**  
-   PFE käsittelee deterministisesti kaikki Evidence Pack -paketin elementit (teosfiedosto, video, JSON/loki, allekirjoitus jne.) ja generoi ainutlaatuisen **NotarySeal**-arvon.
+   PFE käsittelee Evidence Pack -paketin kaikki elementit (teostiedosto, video, JSON/loki, allekirjoitus jne.) deterministisesti ja tuottaa yksilöllisen **NotarySeal**-arvon.
 
-   **Avainkäsitteet (v1.0):**
-   - **FileHash (teoksen sormenjälki):** Teosfiedoston tavuista generoitu hash.
-   - **EvidenceRoot (todistepaketin juuri):** Juuren digest, joka edustaa Evidence Pack -paketin eheyttä (Merkle-juuri tai kanonisen manifestin hash).
-   - **NotarySeal (lopullinen sinetti / PFE:n tuloste):** Lopullinen sinetti, joka on generoitu EvidenceRoot + aika + allekirjoitus -yhdistelmästä.
+   **Ydinkäsitteet (v1.0):**
+   - **FileHash (teoksen sormenjälki):** Teostiedoston tavuista tuotettu tiiviste.
+   - **EvidenceRoot (todistuspaketin juuri):** Evidence Pack -paketin eheyttä edustava juuriyhteenveto (Merkle root tai kanoninen manifest-tiiviste).
+   - **NotarySeal (lopullinen sinetti / PFE Output):** EvidenceRoot + aika + allekirjoitus -yhdistelmästä tuotettu lopullinen sinetti.
 
-   **Kaavat (sijoittajille ymmärrettävässä muodossa):**
+   **Kaavat (sijoittajalle selkeästi näkyvässä muodossa):**
    
    $$\text{FileHash}_{512} = \text{SHA-512}(\text{ArtworkFileBytes})$$
    
@@ -44,306 +44,389 @@
    evidence_root:{evidence_root}\nsigner_sig:{signer_sig}\ntimestamp:{timestamp}
 ```
    
-   > Huomautus: PFE:n tulosteena pidetty arvo on **NotarySeal**. **SignerSignature**-mekanismi aktivoidaan vaiheessa 2 (Solana Wallet Adapter -sovittimella); nykyisessä v1.0:ssa käytetään järjestelmän omaa todennusallekirjoitusta. Todennuksen julkinen avain julkaistaan rekisterissä `issuer.attestation_pubkey`-kentässä.
+   > Huom: PFE-tuotoksena tarkoitettu arvo on **NotarySeal**. **SignerSignature**-mekanismi otetaan käyttöön vaiheessa 2 (Solana Wallet Adapter -integraatiolla); nykyisessä v1.0:ssa käytetään järjestelmän omaa attestation-allekirjoitusta. Attestation public key julkaistaan rekisterissä `issuer.attestation_pubkey`-kentässä.
 
 2. **Indexing (Arkistointi):**  
-   Kirjaa, mikä lompakko, minä päivänä, esitti **Labor Proof (Työn Todisteen)** mille teokselle; läpinäkyvässä ja kyselykelpoisessa rekisterikerroksessa.  
-   *(Tämä kerros voi olla tietokanta; blockchain-integraatio määritellään erikseen "Chain Anchor Layer":ksi.)*
+   Kirjaa läpinäkyvään ja kyselykelpoiseen rekisterikerrokseen, mikä lompakko, milloin ja mille teokselle on esittänyt **Labor Proof (Työtodiste)** -dokumentin.  
+   *(Tämä kerros voi olla tietokanta; lohkoketjuintegraatio määritellään erikseen "Chain Anchor Layer" -kerroksena.)*
 
 3. **Verification (Todentaminen):**  
-   Kun teoksen aitous kyseenalaistetaan, PFE käsittelee raakadodisteet uudelleen; testaa matemaattisella varmuudella, vastaako lasketut **EvidenceRoot / NotarySeal**-arvot arkiston tietueita.
+   Kun teoksen aitous kyseenalaistetaan, PFE käsittelee raakadatan uudelleen; testaa matemaattisella varmuudella, vastaavatko lasketut **EvidenceRoot / NotarySeal** -arvot arkiston tietueita.
 
 ---
 
 ### 🧮 PoArt-arvoteoreema (The Value Theorem)
 
-[PoArt]-protokolla sitoo digitaalisen omaisuuden arvon ($V$) ei subjektiiviseen markkinakäsitykseen, vaan **tuotantoprosessin fyysiseen todellisuuteen**.
+[PoArt]-protokolla yhdistää digitaalisen omaisuuserän arvon ($V$) subjektiivisen markkinakäsityksen sijaan **tuotantoprosessin fyysiseen todellisuuteen**.
 
-Tekoäly (AI) kumoaa prosessin tarjoamalla välittömiä tuloksia ($t \to 0$). [PoArt] pitää sen sijaan arvoa **ajan, työn ja tahdon** komponenttien kertymänä.
+Tekoäly (AI) tuhoaa prosessin tuottamalla tuloksen välittömästi ($t \to 0$). [PoArt] käsittelee arvoa **ajan, työn ja tahdon** komponenttien kertymänä.
 
 $$V_{\text{PoArt}} = \int_{t_{\text{start}}}^{t_{\text{end}}} \left(P_{\text{labor}}(t) \cdot I_{\text{agency}}(t)\right) dt + U_{\text{irreversible}}$$
 
-#### Muuttujien Määritelmä
+#### Muuttujien määritelmät
 
-- **$\int dt$ (Prosessin Kertyminen):**  
-  Arvo ei ole hetkellinen "tuloste"; se on **prosessi**, joka kertyy $t_{\text{start}}$:n ja $t_{\text{end}}$:n välillä. Kun aika vähenee (AI-tuotanto), integraalin tulos lähestyy nollaa.
+- **$\int dt$ (Prosessin kertymä):**  
+  Arvo ei ole välitön "tuotos" (output); se on **prosessi**, joka kertyy $t_{\text{start}}$:n ja $t_{\text{end}}$:n välillä. Kun aika lyhenee (tekoälytuotanto), integraalin tulos lähestyy nollaa.
 
-- **$P_{\text{labor}}(t)$ (Hetkellinen Työn Intensiteetti):**  
-   Edustaa tuotantohetkellä käytetyn henkisen ja fyysisen ponnistelun intensiteettiä. Kun todennettu ponnistelu kasvaa, integroitava kasvaa.  
-  > Huomautus: Tämä termi voidaan käytännössä normalisoida "mitattaviksi/todennettaviksi työsignaaleiksi".
+- **$P_{\text{labor}}(t)$ (Hetkellinen työpanos):**  
+  Edustaa tuotantohetkellä käytetyn henkisen ja fyysisen ponnistuksen intensiteettiä. Kun todennettavissa oleva ponnistus kasvaa, integrandi kasvaa.  
+  > Huom: Tätä termiä voidaan käytännössä normalisoida "mitattavissa/todennettavissa olevien työsignaalien" perusteella.
 
-- **$I_{\text{agency}}(t)$ (Tahdon Kerroin):**  
-  Tämä on tuottajan kyky ottaa riskejä ja tehdä päätöksiä. Saa arvoja $0$:n ja $1$:n välillä.
-  - **AI ($I \approx 0$):** Suorittaa käskyjä, ei ota riskejä, ei maksa kustannuksia.
+- **$I_{\text{agency}}(t)$ (Tahtokerroin):**  
+  Tuottajan riskinotto- ja päätöksentekokyky. Saa arvon välillä $0$ ja $1$.
+  - **AI ($I \approx 0$):** Suorittaa komentoja, ei ota riskejä, ei maksa hintaa.
   - **Ihminen ($I \to 1$):** Muuttaa päätöksiä, epäröi, ottaa riskejä.
 
-- **$U_{\text{irreversible}}$ (Peruuttamaton Ainutlaatuisuus):**  
-  Kun digitaalisessa tuotannossa voi peruuttaa (`Ctrl+Z`); fyysisessä tuotannossa (kankaalle levitetty maali, veistetty marmori, ele live-lähetyksen aikana) ei ole paluuta. Tämä **peruuttamattomuus** on lisätermi, joka luo "ainutlaatuisuuden" (ei-vaihdettavan luonteen) teokseen.
+- **$U_{\text{irreversible}}$ (Peruuttamaton ainutlaatuisuus):**  
+  Digitaalisessa tuotannossa kumous (`Ctrl+Z`) on mahdollinen; fyysisessä tuotannossa (kankaalle levitetty maali, veistetty marmori, suoran lähetyksen ele) ei ole paluuta. Tämä **peruuttamattomuus** on lisätermi, joka luo teokseen "ainutlaatuisuuden" (non-fungible-luonteen).
 
-### 🔎 Tapausanalyysi: AI "Välitön Tuloste" vs Ihminen "Todennettu Prosessi"
+### 🔎 Tapausanalyysi: AI "Välitön tuotos" vs. Ihmisen "Todennettu prosessi"
 
-Seuraava skenaario näyttää, miten **PoArt-arvoteoreema** toimii käytännössä ja miksi AI-tuotannot saavat alhaisia pisteitä [PoArt]-standardissa.
+Seuraava skenaario osoittaa, miten **PoArt-arvoteoreema** toimii käytännössä ja miksi tekoälytuotokset saavat alhaisen pistemäärän [PoArt]-standardissa.
 
-#### Skenaario A: Visuaalinen Tuotanto AI:lla 10 Sekunnissa
+#### Skenaario A: Kuvan tuottaminen tekoälyllä 10 sekunnissa
 
-- **Kesto ($\Delta t$):** $10$ sekuntia (prosessi käytännössä olematon)
-- **Työn Intensiteetti ($P_{\text{labor}}$):** $1$ yksikkö (vain komennon kirjoitus)
-- **Tahdon Kerroin ($I_{\text{agency}}$):** $0.01$ (ei riskiä, ei kustannuksia)
-- **Peruuttamattomuus ($U_{\text{irreversible}}$):** $0$ (peruutettavissa / kopioitavissa)
+- **Kesto ($\Delta t$):** $10$ sekuntia (prosessia ei käytännössä ole)
+- **Työpanos ($P_{\text{labor}}$):** $1$ yksikkö (vain komennon kirjoittaminen)
+- **Tahtokerroin ($I_{\text{agency}}$):** $0.01$ (ei riskiä, ei hintaa)
+- **Peruuttamattomuus ($U_{\text{irreversible}}$):** $0$ (kumottavissa / kopioitavissa)
 
 **Tulos:**
 
 $$V_{\text{AI}} \approx \int_{0}^{10} (1 \cdot 0.01) \, dt + 0 = 0.1$$
 
-> **Kommentti:** Vaikka tuloste olisi täydellinen; koska prosessia ei ole koettu eikä se sisällä tahtoa/riskiä, [PoArt]-arvo lähestyy $0$:aa.
+> **Tulkinta:** Vaikka tuotos olisi virheetön; koska prosessia ei koettu eikä se sisällä tahtoa/riskiä, [PoArt]-arvo lähestyy $0$:aa.
 
-#### Skenaario B: Fyysinen Tuotanto Live-lähetyksessä 6 Tunnin Ajan
+#### Skenaario B: 6 tunnin fyysinen tuotanto suorassa lähetyksessä
 
 - **Kesto ($\Delta t$):** $6$ tuntia ($21{,}600$ sekuntia)
-- **Työn Intensiteetti ($P_{\text{labor}}$):** $0.5$ yksikköä (fyysisen ja henkisen ponnistelun jatkuvuus)
-- **Tahdon Kerroin ($I_{\text{agency}}$):** $0.9$ (päätösten muuttaminen, riskien ottaminen, peruuttamattomat valinnat)
-- **Peruuttamattomuus ($U_{\text{irreversible}}$):** $>0$ (fyysisiä jälkiä ei voi peruuttaa)
+- **Työpanos ($P_{\text{labor}}$):** $0.5$ yksikköä (fyysisen ja henkisen ponnistuksen jatkuvuus)
+- **Tahtokerroin ($I_{\text{agency}}$):** $0.9$ (päätösten muuttaminen, riskinotto, peruuttamattomat valinnat)
+- **Peruuttamattomuus ($U_{\text{irreversible}}$):** $>0$ (fyysisiä jälkiä ei voi kumota)
 
 **Tulos:**
 
 $$V_{\text{Human}} \approx \int_{0}^{21600} (0.5 \cdot 0.9) \, dt + U_{\text{irreversible}} \approx 9720 + U_{\text{irreversible}}$$
 
-> **Kommentti:** Kun prosessi pitenee ja tahto (riski) kasvaa, arvo kertyy kumulatiivisesti. $U_{\text{irreversible}}$-termi on lisäpanos, joka luo "ainutlaatuisuuden" (ei-vaihdettavan luonteen) teokseen.
+> **Tulkinta:** Kun prosessi pitenee ja tahto (riski) kasvaa, arvo kertyy kumulatiivisesti. $U_{\text{irreversible}}$-termi on lisäpanos, joka luo teokseen "ainutlaatuisuuden" (non-fungible-luonteen).
 
 ---
 
-### ✅ Johtopäätös: Todisteeseen Sidottu Arvo (Proof-Bound Value)
+### ✅ Johtopäätös: Arvon lukitseminen todisteeseen (Proof-Bound Value)
 
-Tämä teoreema poistaa [PoArt]-arvoväitteen olemasta "tykkäys" tai "markkinatarina" ja sitoo sen **todennettuun tuotannon todellisuuteen**.
+Tämä teoreema muuttaa [PoArt]:n arvoväitteen "tykkäyksestä" tai "markkinatarinasta" **todistettavissa olevaksi tuotantotodellisuudeksi**.
 
-1. **Ilman Prosessia Ei Synny Arvoa:**  
-   AI kumoaa prosessin välittömässä tulosteessa ($t \to 0$). Kun prosessin ikkuna kapenee, integraalin tulos pienenee matemaattisesta välttämättömyydestä:
+1. **Ilman prosessia ei synny arvoa:**  
+   Tekoäly tuhoaa prosessin välittömällä tuotoksella ($t \to 0$). Kun prosessin aikaikkuna kapenee, integraalin tulos pienenee matemaattisena välttämättömyytenä:
    
    $$\Delta t \downarrow \ \Rightarrow\ \int \left(P(t) \cdot I(t)\right) dt \to 0$$
 
-2. **Tahto ja Riski Ovat Kertoimia:**  
-   [PoArt] mittaa ei vain "käytettyä aikaa", vaan myös todellista päätöksen, riskin ja kustannusten tasoa tuona aikana. Riskejä ottamattoman tuotannon (AI) arvo on alhainen:
+2. **Tahto ja riski ovat kertoimia:**  
+   [PoArt] ei mittaa vain "kulutettua aikaa"; se mittaa myös todellista päätöksentekoa, riskiä ja hintakerrosta tuon ajan sisällä. Riskinottoa välttävän (AI) tuotannon arvo on alhainen:
    
    $$V_{\text{PoArt}} \propto \int \left(P_{\text{labor}}(t) \cdot I_{\text{agency}}(t)\right) dt$$
 
-3. **Ainutlaatuisuus On Fyysinen Todiste, Ei Markkinointi:**  
-   Fyysisessä tuotannossa peruuttamattomat jäljet (siveltimenvetostisä kankaalla, murtunut marmori) ovat digitaalisen `Ctrl+Z`-logiikan ulkopuolella. Tämä peruuttamattomuus ($U_{\text{irreversible}}$) tekee teoksesta ontologisesti ainutlaatuisen.
+3. **Ainutlaatuisuus on fyysinen todiste, ei markkinointia:**  
+   Fyysisessä tuotannossa peruuttamattomat jäljet (kankaan isku, marmorin halkeama) ovat digitaalisen `Ctrl+Z`-logiikan ulkopuolella. Tämä peruuttamattomuus ($U_{\text{irreversible}}$) tekee teoksesta ontologisesti ainutlaatuisen.
 
-> **🔐 YHTEENVETO:** Vaikka arvoteoreema saattaa vaikuttaa epämääräiseltä mittauksena (vaikka sitä ei voida mitata 100% todellisessa elämässä), tämän kaavan tarkoitus on näyttää muuttujien rakenne ja suunta. Se, mikä on harvinaista AI-aikakaudella, ei ole "kuva", vaan **todennettu työ, aika ja tahto.** [PoArt] mittaa tätä harvinaisuutta ja tallentaa sen **Evidence Pack**:n kautta.
+> **🔐 YHTEENVETO:** Vaikka arvoteoreema vaikuttaa mittauksellisesti epävarmalta (vaikka sen tarkkaa vastinetta ei voida 100% mitata todellisessa elämässä), tämän kaavan tarkoitus on osoittaa muuttujien rakenne ja suunta. Tekoälyaikakaudella harvinaista ei ole "kuva"; **se on todennettavissa oleva työ, aika ja tahto.** [PoArt] mittaa tätä niukkuutta ja rekisteröi sen **Evidence Pack** -paketilla.
 
-### 🏛️ "Engine" (Moottori) -käsitteen Merkitys
+### 🏛️ "Engine" (Moottori) -käsitteen merkitys
 
-Pump.fun:n kaltaisilta alustoilta peräisin olevat tokenit ovat usein vain **"pääsylippuja"**. **PoArt Forensic Engine (PFE)** on sen sijaan **perustuslaillinen looginen kerros**, joka määrittelee, mitä oikeuksia tämä lippu suojaa, miten työ kirjataan ja miten taide/tiede/teknologia tulevat pysyviksi.
+Pump.fun:sta tai vastaavista alustoista tulevat tokenit ovat usein vain **"pääsylippuja"**. **PoArt Forensic Engine (PFE)** on **perustuslaillinen logiikkakerros**, joka määrittelee, mitä oikeuksia tuo lippu suojaa, miten työ kirjataan ja miten taide/tiede/teknologia säilytetään.
 
-> **Huomautus:** Syy, miksi aloitimme tämän projektin Pumpfun:ssa, on se, että meillä ei ollut tarpeeksi likviditeettiä ja seuraajia. Olemassa olevien tietojen käyttö oli strategisesti oikea askel, vaikkakin ei laadukkain. Tämän moottorin logiikan määrittely GitHubissa, budjetista ja resursseista riippumatta, todistaa, että projekti ei ole vain rahoitusspekulaatiota, vaan pitkän aikavälin visio **ohjelmistoinfrastruktuurista** ja **digitaalisesta kansalliskirjastosta**.
-
----
-
-## 🎨 [PoArt] PROOF OF ART -PROTOKOLLA (Proof of Art Protocol v1.0)
-
-> **"Aito Taiteilija, Aito Tuotanto, Aito Arvo."**
-
-Tämä protokolla on **biologinen ja älyllinen puolustusmekanismi**, joka on suunniteltu kryptovaluuttaekosysteemin täyttäneitä nimettömiä huijareita, 5 minuutissa tuotettuja AI-kuvia ja "Pump & Dump" -kulttuuria vastaan.
+> **Huom:** Syy tämän projektin aloittamiseen Pump.fun:ssa on se, ettemme saavuttaneet riittävää likviditeettiä ja seuraajamäärää. Vaikka olemassa olevan datan käyttäminen ei ole strategisesti optimaalista, voimme sanoa, että se oli oikea liike. Budjetista ja resursseista riippumatta tämän moottorin logiikan määrittely GitHubissa todistaa, että projekti ei ole vain taloudellinen spekulaatio, vaan pitkän aikavälin **ohjelmistoinfrastruktuuri** ja **digitaalinen kansalliskirjasto** -visio.
 
 ---
 
-## a) Mikä On [PoArt]? (Filosofinen ja Tekninen Määritelmä)
+## 🎨 [PoArt] TYÖTODISTE-PROTOKOLLA (Proof of Art Protocol v1.0)
 
-**Proof of Art [PoArt];** on institutionaalinen todennusstandardi, joka takaa, että blockchain-omaisuuden taustalla oleva arvo perustuu ei spekulaatioon, vaan todennettuun **inhimilliseen työhön**, **aikaan** ja **fyysiseen energiaan**.
+> **"Todellinen taiteilija, todellinen tuotanto, todellinen arvo."**
 
-Kuten Bitcoin tuottaa arvoa *"Sähköllä ja Laskentateholla"* **(Proof of Work)**; [PoArt]-yhteensopivat projektit tuottavat arvoa *"Taiteellisella Taidolla ja Inhimillisellä Ajalla"*.
-
-Eliminoi *"Dev myi, projekti päättyi"* -riskin, joka on läsnä Pump.fun:ssa ja DEX-alustoilla; koska täällä arvo ei ole koodissa, vaan **tuotannon jatkuvuudessa**.
-
-> **[PoArt] ei sano osallistujalle "Luota meihin"; se sanoo "Tässä todisteet, katso omin silmin, todenna omalla matematiikallasi".**
+Tämä protokolla on **biologinen ja älyllinen puolustusmekanismi**, joka on kehitetty kryptoekosysteemiä ympäröiviä anonyymeja huijareita, 5 minuutissa tuotettuja tekoälykuvia ja "Pump & Dump" (Pumppaa ja dumppaa) -kulttuuria vastaan.
 
 ---
 
-## b) [PoArt] 5-Pilarinen Standardi (The 5 Pillars of Truth)
+## a) Mikä on [PoArt]? (Filosofinen ja tekninen määritelmä)
+
+**Proof of Art [PoArt];** on institutionaalinen todentamisstandardi, joka takaa, että lohkoketjussa olevan omaisuuserän taustalla oleva arvo perustuu spekulaation sijaan todennettavissa olevaan **ihmistyöhön**, **aikaan** ja **fyysiseen energiaan**.
+
+Kuten Bitcoin tuottaa arvoa *"Sähköllä ja prosessoriteholla"* **(Proof of Work)**, myös [PoArt]-yhteensopivat projektit tuottavat arvoa *"Käytetyllä taidolla ja ihmisajalla"*. Ne "stakettavat" aikaa.
+
+Se eliminoi Pump.fun:n ja DEX-alustojen *"Kehittäjä (Dev) myi, projekti päättyi"* -riskin; sillä tässä arvo ei ole koodissa, vaan **tuotannon jatkuvuudessa**.
+
+> **[PoArt] ei sano osallistujalleen "Luottakaa meihin"; se sanoo "Tässä ovat todisteet, näe omin silmin, todenna matematiikallasi".**
+
+---
+
+## b) [PoArt] 5-osainen standardi (The 5 Pillars of Truth)
 
 Nämä 5 kohtaa ovat manipuloimattomia suodattimia, jotka projektin on läpäistävä saadakseen [PoArt]-sinetin.
 
-### 1) Live-identiteetin Todistus (Live Identity Proof)
+### 1) Reaaliaikainen henkilöllisyystodiste (Live Identity Proof)
 
-- **Ongelma:** Kryptomaailma on täynnä nimettömiä perustajia (Dev), joiden henkilöllisyys on määrittelemätön ja jotka keräävät rahaa ja hylkäävät projektin.
-- **[PoArt]-ratkaisu:** Tuottaja todistaa ei vain henkilöllisyytensä, vaan **läsnäolonsa tuotannon aikana**. Tämä sisältää live-istuntoja, joissa he ovat vuorovaikutuksessa yhteisön kanssa ja täyttävät tiettyjä välittömiä vaatimuksia, eivät ennalta nauhoitettuja videoita.  
-  (Esimerkiksi: *"Kirjoita tämän päivän päivämäärä ja nykyinen lohkonumero kankaan oikeaan kulmaan"*)
-- **Motto:** *"Robotit voivat maalata, mutta robotit eivät hikoile eivätkä improvisoi."*
+- **Ongelma:** Kryptomaailma on täynnä tuntemattomia anonyymeja perustajia (Devejä), jotka keräävät rahat ja hylkäävät projektin.
+- **[PoArt]-ratkaisu:** Tuottaja todistaa paitsi henkilöllisyystodistuksensa, myös **läsnäolonsa tuotantohetkellä**. Tähän sisältyy suoria lähetyksiä, joissa ollaan vuorovaikutuksessa yhteisön kanssa ja täytetään välittömiä erityispyyntöjä – ei ennalta nauhoitettuja videoita.  
+  (Esim: *"Kirjoita kankaan oikeaan kulmaan tämän päivän päivämäärä ja nykyinen lohkonumero"*)
+- **Motto:** *"Botit voivat maalata, mutta botit eivät hikoile eivätkä improvisoi."*
 
-### 2) Työn ja Prosessin Todistus (Labor & Process Proof)
+### 2) Työ- ja prosessitodiste (Labor & Process Proof)
 
-- **Ongelma:** 2 sekunnissa tuotetut AI-kuvat ja 2 kuukaudessa tehdyt öljymaalaukset katsotaan samaksi "jpegiksi" digitaalisessa maailmassa.
-- **[PoArt]-ratkaisu:** Teoksen "raskaus- ja syntymäprosessi" tallennetaan. Luonnosvaiheet, maalikerrokset, kertyneet käytetyt tunnit ja taiteilijan kokema fyysinen prosessi teoksen luomisen aikana dokumentoidaan. Tämä lisää **"Aikakustannuksen" (Time Cost)** tokeniin. Mitä vaikeampi omaisuutta on tuottaa, sitä vahvempi sen arvo.
+- **Ongelma:** 2 sekunnissa tuotetut tekoälykuvat ja 2 kuukaudessa tehty öljymaalaus saavat saman "jpeg"-kohtelun digitaalisessa maailmassa.
+- **[PoArt]-ratkaisu:** Teoksen "raskaus- ja syntymäprosessi" dokumentoidaan. Luonnosvaiheet, maalikerrokset, kertyneet tunnit ja taiteilijan fyysinen prosessi teosta luodessa dokumentoidaan. Tämä lisää tokeniin **"Aikakustannuksen" (Time Cost)**. Mitä vaikeampi omaisuuserän tuottaminen, sitä vakaampi sen arvo.
 
-### 3) Esteettisen Arvon Todistus (Aesthetic Value Proof)
+### 3) Esteettinen arvotodiste (Aesthetic Value Proof)
 
-- **Ongelma:** "Meme"-kulttuurin estetiikka ja taiteellinen syvyys, joka sivuuttaa kaiken ja keskittyy vain hetkelliseen komediaan, ja siitä seuraavat lyhytaikaiset "Hype"-projektit.
-- **[PoArt]-ratkaisu:** Projektilla on oltava akateemiset taidestandardit, väriteoria, sommittelusäännöt ja materiaalien tuntemus (Impasto, Tekstuuri jne.). Sisällön ei pidä vain naurattaa; sen on herätettävä ihailua katsojassa ja sillä on oltava **keräilyarvoa**.
+- **Ongelma:** "Meemi"-kulttuuri, joka sivuuttaa estetiikan ja taiteellisen syvyyden keskittyen vain hetkelliseen huumoriin, ja tästä johtuvat lyhytikäiset "Hype"-projektit.
+- **[PoArt]-ratkaisu:** Projektilla on oltava akateemiset taidestandardit, väriteoria, sommittelusäännöt ja materiaalituntemus (Impasto, tekstuuri jne.). Sisällön ei pidä vain naurattaa; sen pitää herättää ihailua katsojassa ja olla **keräilyarvoinen**.
 
-### 4) Käsitteellinen Innovaatio (Conceptual Novelty)
+### 4) Käsitteellinen innovaatio (Conceptual Novelty)
 
-- **Ongelma:** Tuhansia identtisiä dog/cat coin, kaukana luovuudesta.
-- **[PoArt]-ratkaisu:** Projektin on rakennettava uusi silta, joka yhdistää merkitsevästi taiteen, tieteen, filosofian tai teknologian.  
-  (Esimerkiksi: Klassisen Daavid-patsaan yhdistäminen kryptovaluuttamarkkinoiden tietoihin; tämän kautta ihmisen havaintojen "kivettymisen" idean käsittely ja mahdollisuus perustella tämä tieteellisillä lähteillä.)  
-  Teoksen on oltava ei vain visuaalinen juhla, vaan myös älyllinen haaste, joka kannustaa ajattelemaan **Tiedettä, Filosofiaa tai Teknologiaa**.
+- **Ongelma:** Tuhansia toistensa kopioita olevia koira/kissa-kolikoita vailla luovuutta.
+- **[PoArt]-ratkaisu:** Projektin on rakennettava uusi silta, joka yhdistää taiteen, tieteen, filosofian tai teknologian mielekkäällä tavalla.  
+  (Esim: Klassisen Daavidin veistoksen yhdistäminen kryptomarkkinadataan; ihmisten käsityksen "kiveytymisen" käsittely ja sen perustaminen tieteellisiin lähteisiin.)  
+  Teoksen on oltava paitsi visuaalinen juhla, myös älyllinen haaste, joka saa pohtimaan **tiedettä, filosofiaa tai teknologiaa**.
 
 > [!IMPORTANT]
-> **Viiteesimerkki (Las Palmitas -ilmiö):** Meksikon Las Palmitas -alueella, joka kamppailee rikollisuuden kanssa, yli 200 taloa muutettiin jättimäiseksi >sateenkaarijuhlaksi. Tämän esteettisen väliintulon seurauksena alueen rikollisuustilastot laskivat tietyissä määrin, nuoret alkoivat kiinnostua taiteesta jengien sijaan. >Esteettinen muutos uudelleenkoodasi ihmisten kunnioituksen ympäristöä ja toisiaan kohtaan (Sosiaalinen Koheesio).
+> **Referenssiesimerkki (Las Palmitas -vaikutus):**  
+> Meksikon rikollisuudesta kärsivässä Las Palmitasin naapurustossa yli 200 taloa muutettiin massiiviseksi sateenkaaren juhlaksi. Tämän esteettisen intervention seurauksena alueen rikollisuusaste laski tietyssä määrin, ja nuoret alkoivat kiinnostua taiteesta jengien sijaan. Esteettinen muutos koodasi uudelleen ihmisten kunnioituksen ympäristöään ja toisiaan kohtaan (Social Cohesion).
 >
-> **Odotus:** [PoArt]-listalle pääsevällä projektilla; kuten yllä olevassa esimerkissä, on oltava sosiologinen, tieteellinen tai filosofinen syy-seuraussuhde >visuaalisen estetiikan lisäksi. Koska ainoa asia, jota ei voi ostaa rahalla, on "Aika", tässä protokollassa aika on todistettava takuuna staking-menetelmällä. Projektin >käsitteellisen perustan on oltava niin vahva ja yleispätevä; että jopa mahdollisessa CTO (Community Take Over) -skenaariossa vuosia myöhemmin, yhteisö voi >autonomisesti ylläpitää projektin innovatiivista potentiaalia periessään tämän perinnön.
+> **Odotus:** [PoArt]-listalle pääsevän projektin on, aivan kuten yllä olevassa esimerkissä, sisällettävä pelkän visuaalisen estetiikan lisäksi sosiologinen, tieteellinen tai filosofinen syy-seuraus-suhde. Koska aika on ainoa omaisuuserä, jota ei voi ostaa rahalla, tässä protokollassa aika on stakettava vakuutena ja todistettava. Projektin käsitteellisen perustan on oltava niin vahva ja universaali, että mahdollisessa CTO (Community Take Over) -skenaariossa vuosien päästä yhteisö voi periä tämän perinnön ja jatkaa projektin innovatiivista potentiaalia autonomisesti.
 
-### 5) Ei-Algoritminen Tahto (Non-Algorithmic Agency)
+### 5) Ei-algoritminen tahto (Non-Algorithmic Agency)
 
-- **Ongelma:** Täydelliset mutta sieluttomat, toistuvat digitaaliset tuotannot.
-- **[PoArt]-ratkaisu:** Inhimillisen olennon alkuperäisen tahdon, joka voi tehdä virheitä, ottaa riskejä ja tuntea emotionaalisia vaihteluita, on tunnuttava teoksessa. Siveltimenvetojen epävarmuus, materiaalin odottamattomat reaktiot ja taiteilijan hetkelliset päätökset ovat **Biologinen Allekirjoitus**, joka erottaa teoksen "Mekaanisesta Tuotannosta".
-
----
-
-## c) Todennusmekanismi ja Väärentämisen Esto
-
-Tämä järjestelmä varmistaa, että projekti pysyy luotettavana ja elävänä ei vain "alussa", vaan "ikuisesti".
-
-### 📦 Todistepaketti (Evidence Pack - The Digital Twin)
-
-Jokaisen [PoArt]-sertifioidun teoksen takana on salattu ja aikaleimallinen datapaketti, jonka sijoittajat voivat ladata:
-
-- **RAW-videotallenteet:** Jatkuvat raakatallenteet tuotantohetkestä.
-- **Metadata-analyysi:** Tiedoston luontipäivä, käytetystä laitteesta tiedot ja sijaintitiedot.
-- **Fyysiset Viitteet:** Todisteet siitä, että teos on olemassa fyysisessä maailmassa  
-  (Esimerkiksi: Nykyinen sanomalehti tai nykyiset blockchain-tiedot teoksen vieressä).
-
-> *Huomautus johdonmukaisuudesta:* Ilmaus "todistepaketti" liittyy aiemmista osista **Evidence Pack → EvidenceRoot → NotarySeal** -linjaan; eli paketin eheys esitetään todennetulla sinetillä.
-
-### 🔄 365 Päivän Päivitys (The Sustainability Protocol)
-
-- **Vallankumouksellinen Ominaisuus:** Kryptoprojekteissa "Dev" (Kehittäjä) lanseeraa tokenin markkinoille ja yleensä katoaa 1-2 kuukauden kuluttua (Soft Rug). [PoArt] tekee tämän mahdottomaksi.
-- **Sääntö:** "Verified Artist" (Todennettu Taiteilija) -status ei ole elinikäinen. Se on voimassa vain **1 vuoden**.
-- **Toiminta:** Taiteilijan/kehittäjän on esitettävä yhteisölle joka 365. päivä **uusi, suuri ja todennettu teos**.
-- **Esimerkkiskenaario:** Aloitit projektin vuonna 2026. Tammikuussa 2027 järjestelmä antaa varoituksen "Todistusaika Päättynyt". Jos taiteilija ei esitä uutta näyttelyä, uutta fyysistä teosta tai uutta teknologista integraatiota, projektin "Luottamusmerkki" laskee.
-- **Tulos:** Tämä järjestelmä varmistaa, että **sisältö ei koskaan menetä relevanssiaan** ja että sijoittaja ei elä pelossa *"Onko kehittäjä vielä täällä?"*. Projekti tulee eläväksi studioksi.
-
-### 🚩 Punainen Lippu (Red Flag Protocol)
-
-**Mikäli yhteisö tai algoritmit havaitsevat väärentämisen (AI:n käyttö, varastettu työ, manipuloitu video):**
-
-1. Sertifikaatti merkitään välittömästi **"MITÄTÖIDYKSI" (VOID)**.
-2. Todistuspaketit merkitään julkisesti **"Vääriksi"**.
-3. Projekti lisätään [PoArt]-mustalle listalle. Tämä vahvistaa tosiasiaa, että hajautetussa maailmassa **maine on ainoa valuutta**.
+- **Ongelma:** Virheettömät mutta sieluttomat, toisiaan toistavat digitaaliset tuotokset.
+- **[PoArt]-ratkaisu:** Ihmisen ainutlaatuisen tahdon, joka voi tehdä virheitä, ottaa riskejä ja kokea tunnevaihteluja, on oltava aistittavissa teoksessa. Siveltimenvetojen epävarmuus, materiaalin odottamattomat reaktiot ja taiteilijan hetkelliset päätökset ovat **Biologinen allekirjoitus**, joka erottaa teoksen "Konetuotannosta".
 
 ---
 
-## d) Johtopäätös: Ei Kasino, Museo
+## c) Todentamis- ja huijauksenestomekanismi
 
-**Pump.fun ja Hajautetut Pörssit (DEX) ovat valitettavasti nyt kasinoita; valot vilkkuvat, kaikki etsivät nopeita voittoja, ja kasino (huijarit) voittaa aina. Syy, miksi aloitimme projektin täällä, on riittämättömän budjetin puute ja olemassa olevan yleisön olemassaolo live-lähetysten kautta.**
+Tämä järjestelmä varmistaa, että projekti pysyy luotettavana ja elävänä paitsi "alussa", myös "ikuisesti".
+
+### 📦 Todistuspaketti (Evidence Pack - The Digital Twin)
+
+Jokaisen [PoArt]-sertifioidun teoksen takana on salattu ja aikaleimalla varustettu datapaketti, jonka sijoittajat voivat ladata:
+
+- **RAW-videotallenteet:** Tuotantohetken keskeytymättömät raakakuvat.
+- **Metadata-analyysi:** Tiedoston luontipäivä, käytetyn laitteen tiedot ja sijaintitiedot (Kaupunki-Maa).
+- **Fyysiset viitteet:** Todisteet siitä, että teos on olemassa fyysisessä maailmassa  
+  (Esim: Teoksen vieressä oleva päivän sanomalehti tai sen hetkinen lohkoketjudata).
+
+> *Johdonmukaisuushuomautus:* "todistuspaketti"-ilmaisu yhdistyy edellisten osioiden **Evidence Pack → EvidenceRoot → NotarySeal** -ketjuun; eli paketin eheys edustetaan todennettavalla sinetillä.
+
+### 🔄 365 päivän uusiminen (The Sustainability Protocol)
+
+- **Vallankumouksellinen ominaisuus:** Kryptoprojekteissa "Dev" (Kehittäjä) lanseeraa tokenin ja yleensä katoaa 1-2 kuukauden kuluttua (Soft Rug). [PoArt] tekee tästä mahdotonta.
+- **Sääntö:** "Verified Artist" (Todennettu taiteilija) -status ei ole elinikäinen. Se on voimassa vain **1 vuoden**.
+- **Toiminta:** Taiteilijan/kehittäjän on esitettävä yhteisölle joka 365. päivä **uusi, merkittävä ja todennettavissa oleva teos**.
+- **Esimerkkiskenaario:** Aloititte projektin vuonna 2026. Tammikuussa 2027 järjestelmä antaa "Todistusaika päättynyt" -varoituksen. Jos taiteilija ei esitä uutta näyttelyä, uutta fyysistä teosta tai uutta teknologista integraatiota, projektin "Luottamusmerkki" laskee.
+- **Tulos:** Tämä järjestelmä varmistaa, että **sisältö ei koskaan vanhene** ja sijoittajan ei tarvitse pelätä *"Onko kehittäjä vielä täällä?"*. Projekti muuttuu eläväksi studioksi.
+
+### 🚩 Punainen lippu (Red Flag Protocol)
+
+**Kun yhteisö tai algoritmit havaitsevat huijauksen (tekoälyn käyttö, varastettu teos, manipuloitu video):**
+
+1. Sertifikaatti merkitään välittömästi **"MITÄTÖN" (VOID)**.
+2. Todistuspaketit merkitään julkisesti **"Väärennös"**.
+3. Projekti lisätään [PoArt]-mustalle listalle. Tämä vahvistaa todellisuutta, jonka mukaan hajautetussa maailmassa **maine on ainoa valuutta**.
+4. Missään julkaisussa ei saa käyttää [PoArt]-ilmaisuja, ainoa kelvollinen lähde on https://www.ilhanart.org/public-registry
+
+---
+
+## d) Johtopäätös: Kasino vai museo
+
+**Pump.fun ja hajautetut pörssit (DEX) ovat valitettavasti tällä hetkellä kasinoita; valot vilkkuvat, kaikki tavoittelevat nopeita voittoja ja talo (huijarit) voittaa aina. Syy projektin aloittamiseen täällä on myös yritys parantaa tätä paikkaa, ja meillä on nykyinen datamme ja suorat lähetykset tavoittaaksemme nykyisen yleisön.**
 
 **[PoArt] on linnoitus, joka on rakennettu tämän kasinon keskelle.**
 
-- 🎰 Kasinot perustuvat kortteihin; me perustumme **fyysiseen todellisuuteen**.
-- 🃏 Kasinot ovat avoimia petoksille; me olemme avoimia **läpinäkyville todisteille**.
-- ⏳ Kasinot ovat väliaikaisia; me keskitymme **taiteen ja tieteen ikuisuuteen**.
+- 🎰 Kasino perustuu korttipeleihin; me perustumme **fyysiseen todellisuuteen**.
+- 🃏 Kasino on altis huijaukselle; me olemme avoimia **läpinäkyville todisteille**.
+- ⏳ Kasino on väliaikainen; me keskitymme **taiteen ja tieteen ikuisuuteen**.
 
-**Tätä protokollaa käyttävä token ei ole vain "kolikko"; se on digitaalinen arvopaperi, joka sisältää hikeä, maalia, koodia ja filosofiaa.**
+**Tätä protokollaa käyttävä token ei ole vain "kolikko"; se on digitaalinen osake, jonka takana on hikeä, maalia, koodia ja filosofiaa.**
 
 ---
 
 ## 🗳️ 6) HALLINTO JA JULKINEN REKISTERI (Governance & Public Registry)
 
-**Tämän osion tarkoitus on: [PoArt]-standardin poistaminen "ihmisiin luottamisen" piiristä ja sen muuttaminen kestäväksi julkiseksi infrastruktuuriksi rekisterin + todennuksen + yhteisön valvonnan kanssa.**
+**Tämän osion tarkoitus on: muuttaa [PoArt]-standardi "henkilöihin luottamisesta" kestäväksi julkiseksi infrastruktuuriksi rekisteröinnin + todentamisen + yhteisövalvonnan avulla.**
 
-### 6.1 Julkinen Rekisteri (Public Registry)
+### 6.1 Public Registry (Julkinen rekisteri)
 
 - **Public Registry:** Kaikki hyväksytyt tiedot tallennetaan osoitteeseen `ilhanart.org/registry` (tai GitHub Registry).
 
-**Rekisteröintilogiikka (suositeltu standardi - JSON-polun muoto):**
+**Rekisteröintilogiikka (ehdotettu standardi - JSON-polkumuodossa):**
 
-Jokainen rekisteriin tuleva merkintä sisältää vähintään nämä todennetut peruskentät:
+Jokainen rekisteriin tuleva merkintä sisältää vähintään seuraavat todennettavat ydinkentät:
 
-- **Identiteetti ja Tila:**
+- **Identiteetti ja status:**
   - `certificate_id` (luettava viite)
   - `status` (active / void)
-  - `void_reason` (jos olemassa)
+  - `void_reason` (jos on)
   - `visibility` (private / masked / public)
   - `created_at` (aikaleima)
 
-- **Myöntäjäorganisaatio:**
+- **Myöntävä taho:**
   - `issuer.name`
   - `issuer.location`
   - `issuer.attestation_pubkey`
 
-- **Tiedot Teoksesta:**
+- **Teostiedot:**
   - `asset.title`
   - `asset.creator`
-  - `asset.creator_wallet` (jos mahdollista; token-gated identiteettiin)
+  - `asset.creator_wallet` (jos mahdollista; tokenin haltijan tunnistamiseen)
   - `asset.fingerprints.sha256`
   - `asset.fingerprints.sha512`
 
-- **Rikostekniset Tiedot:**
+- **Forensiset tiedot:**
   - `forensics.ip_masked`
   - `forensics.location`
   - `forensics.device`
   - `forensics.timestamp`
 
-- **Kryptografiset Todisteet:**
+- **Kryptografiset todisteet:**
   - `proof.evidence_root`
   - `proof.signer_sig`
   - `proof.notary_seal`
 
 - **Hallinto:**
   - `governance.decision`
-  - `governance.veto_threshold`
+  - `governance.review_notes`
 
-Rekisterillä voi olla kaksi tasoa:
-- **1)** Ihmisluettava hakemisto (web-lista / haku / suodatin)
-- **2)** Koneluettava manifesti (JSON-merkinnät; PFE-todennusta varten)
+Rekisterillä voi olla kaksi kerrosta:
+- **1)** Ihmisen luettava indeksi (web-listaus / haku / suodatus)
+- **2)** Koneluettava manifesti (JSON-tietueet; PFE-todentamiseen)
 
-**Tässä "rekisteröinti" tulee todennetuksi PFE:n Evidence Pack → EvidenceRoot → NotarySeal -ketjusta. Rekisteri tarjoaa todennuksen tarkoituksen, ei "väitettä".**
-
----
-
-### 6.2 40 % Yhteisön Veto (Token-Gated Governance)
-
-- **40 % Yhteisön Veto:** Äänestys alkaa kuukautta ennen statuksen saamista; **Token-Gated (Solana-Verified)** -yhteisön 40 %:n vastalause mitätöi hakemuksen.
-
-**Äänestysvirtaus (suositeltu puhdas prosessi):**
-- **Ehdokasikkuna:** Ehdokasprojekti avaa "PoArt-ehdokasrekisteröinnin" (ehdokasrekisteröinnit näkyvät "pending"-tilassa).
-- **Tarkistusjakso:** 30 päivän ajan yhteisö tutkii todisteita (Evidence Pack + live-tallenteet + metadata).
-- **Token-gated todentaminen:** Äänestys tapahtuu Solanassa todennetuilla lompakoilla (esim. tietyn tokenin/NFT:n omistus + lompakon allekirjoitus).
-- **Veto-sääntö:** Jos 40 % äänistä on **vastalause (NO / VETO)**, hakemus hylätään.
-- **Läpinäkyvyys:** Äänestysten tulos tallennetaan rekisteriin "decision record":ksi (päivämäärä, suhde, snapshot ID).
+**Tässä oleva "rekisteri" tulee todennettavaksi PFE:n Evidence Pack → EvidenceRoot → NotarySeal -ketjulla. Rekisteri tarjoaa todentamiskohteen, ei "väitettä".**
 
 ---
 
-### 6.3 Metadatan Synkronointi (Fyysisen Maailman Vastaavuus)
+### 6.2 PoArt Verified -hakuprosessi
 
-- **Metadata Sync:** Rekisterin tekniset tiedot on vastattava 100 % fyysistä omaisuutta.
+**PoArt Verified -hakemukset arvioidaan İlhanArt Galleryn toimesta 5 PoArt-standardin mukaisesti. Yhteisön palaute otetaan huomioon, mutta lopullinen päätös on kuratoriaalisella tiimillä. Päätökset julkistetaan läpinäkyvästi ja tallennetaan ilhanart.org/registry-rekisteriin.**
 
-**"100 % vastaavuuden" tekninen määrittely (suositeltu selvyys):**
-- **Vähimmäisvastaavuus (pakollinen):**
-  - Rekisterin `asset.fingerprints.sha256/sha512`:n on oltava **täsmälleen sama** kuin käsillä olevan tiedoston hash.
-  - Rekisterin `proof.notary_seal`:n, kun se toistetaan (jos Evidence Pack on olemassa), on oltava **täsmälleen sama**.
-- **Fyysisen viittauksen vastaavuus (todistustyyppi):**
-  - Todisteet, kuten live-lähetyksessä näkyvä fyysinen teos + päivä/lohko-viittaus, on oltava yhdenmukaisia Evidence Pack:n kanssa.
-- **Yksityisyyden vastaavuus:**
-  - Kentät, kuten IP/sijainti `masked`-näkyvyydessä, julkaistaan **peittämisstandardin mukaisesti**.
+#### Hakuprosessi
+
+**Hakemus:**
+- Taiteilija/projekti tekee PoArt Verified -hakemuksen
+- Evidence Pack valmistellaan (videotallenteet, metadata, suorien lähetysten linkit)
+- Hakemus lähetetään İlhanArt Gallerylle
+
+**Arviointi (30 päivää):**
+- Gallerian tiimi arvioi Evidence Pack -paketin yksityiskohtaisesti
+- Kaikki 5 PoArt-standardia tarkistetaan:
+  1. Live Identity Proof
+  2. Labor & Process Proof
+  3. Aesthetic Value Proof
+  4. Conceptual Novelty
+  5. Non-Algorithmic Agency
+- Haastattelu taiteilijan kanssa (valinnainen)
+
+**Yhteisön konsultointi:**
+- Evidence Pack jaetaan julkisesti hakuprosessin aikana
+- Yhteisö voi antaa palautetta ilhanart.org:n kautta
+- Tokenin haltijat (vähintään 10 000 $CULTURE) voivat erityisesti antaa ehdotuksia
+- **Kaikki palaute otetaan huomioon arviointiprosessissa**
+- **Lopullinen päätös perustuu kuitenkin kuratoriaaliseen arviointiin**
+
+**Päätös:**
+- Galleria hyväksyy tai hylkää hakemuksen
+- Päätöksen perustelu julkistetaan läpinäkyvästi
+- Jos hyväksytään → PoArt Verified -merkki
+- Jos hylätään → Uuden hakemuksen voi tehdä 6 kuukauden kuluttua
+
+**Läpinäkyvyys:**
+- Kaikki hakemukset ja päätökset tallennetaan ilhanart.org/registry-rekisteriin
+- Päätöstietue julkaistaan:
+  - Hakemuspäivä
+  - Arviointiprosessin yhteenveto
+  - Päätös (Approved / Rejected)
+  - Päätöksen perustelu (lyhyt selitys)
+  - Yhteisön palautteen yhteenveto (anonyymi)
+
+#### Miksi kuratoriaalinen päätös?
+
+**Laadunvalvonta:**  
+PoArt Verified -status on korkeiden standardien merkki. Kuratoriaalinen arviointi takaa näiden standardien säilymisen.
+
+**Spekulatiivisen manipuloinnin estäminen:**  
+Pump.fun-tokeneilla täysin ketjussa tapahtuva hallinto (esim: Realms, DAO-äänestys) ei ole teknisesti mahdollista. Ketjun ulkopuoliset äänestysjärjestelmät ovat alttiita valasmanipulaatiolle ja koordinoiduille hyökkäyksille. Kuratoriaalinen päätös poistaa tämän riskin.
+
+**Operatiivinen tehokkuus:**  
+Monimutkaisten äänestysmekanismien sijaan nopea ja selkeä päätösprosessi. Taiteilijat saavat tuloksen 30 päivän kuluessa.
+
+**Yhteisön osallistuminen:**  
+Yhteisön palaute otetaan täysin huomioon ja vaikuttaa päätösprosessiin. Lopullinen päätös on kuitenkin manipulaatiolta suojatulla kuratoriaalisella tiimillä.
+
+**Tulevaisuus:**  
+Kun projekti kypsyy (2027+), yhteisön konsultointimekanismia voidaan vahvistaa. Kuratoriaalinen standardisuoja säilyy kuitenkin pysyvänä.
 
 ---
 
-### 6.4 Riita, Tarkistus ja Peruutus (Dispute & Revocation)
+### 6.3 Token Utility (Tokenin käyttötarkoitukset)
 
-Rekisteri ei ole vain "hyväksymismekanismi"; se on **elävä valvontamekanismi väärentämistä vastaan**.
+**$CULTURE-tokenin haltijoille tarjotut edut:**
 
-- Kun riita aloitetaan, merkintä voidaan asettaa **"review"**-tilaan.
-- Jos väärentäminen havaitaan, se merkitään `status: void`:ksi ja lisätään syy:
-  - `void_reason` (AI:n käyttö / plagiointi / manipulointi jne.)
-  - `revoked_at` (peruutushetki)
-- Peruutuspäätöksen lähde on selvästi näkyvissä rekisterissä:
-  - yhteisön äänestys / valtuutettu neuvosto / rikostekniikkatutkimuksen muistiinpano (riippuen sovellettavasta)
+**1. Galleriatilaisuuksien prioriteettipääsy:**
+- Oikeus 1 viikon näyttelyyn vuodessa İlhanArt Galleryssa (oikeus siirrettävissä)
+- Drop painting -alennukset
+- 10-30% alennus gallerian maalauksista
 
-> **Tämä osio on rekisterin vastine "Red Flag Protocol" -osion VOID-käsitteelle.**
+**2. PoArt Registry -täysi pääsy:**
+- Kaikkien todennettujen teosten yksityiskohtaiset tietueet
+- Evidence Pack -pakettien täydet versiot
+- Forensic-todentamistyökalut
+
+**3. Neuvoa-antava äänestys:**
+- Neuvoa-antava oikeus PoArt Verified -hakemuksissa
+- Pääsy yhteisön palautekanaviin
+- Osallistuminen hallintokeskusteluihin
+
+**4. Eksklusiivinen sisältö:**
+- Studio behind-the-scenes -sisällöt
+- Taiteilijoiden haastattelut ja prosessivideot
+- Pääsy tekniseen dokumentaatioon
+
+**Huom:**  
+Tokenin haltijat antavat advisory vote (neuvoa-antava ääni). Lopullinen päätös kuuluu kuratoriaaliselle tiimille. Tämä rakenne on valittu valasmanipulaation ja spekulatiivisten hyökkäysten estämiseksi. Staking-palkkioita ei ole, koska etsimme pitkäaikaisia kulttuurisia osallistujia, emme lyhytaikaista palkkasoturipääomaa.
 
 ---
 
-### 6.5 Esimerkki Rekisterimerkinnästä (Koneluettava)
+### 6.4 Metadata Sync (Synkronointi fyysisen maailman kanssa)
+
+- **Metadata Sync:** Rekisterin teknisten tietojen on vastattava 100% fyysistä omaisuuserää.
+
+**"100% vastaavuuden" tekninen määrittely (ehdotettu selkeys):**
+
+- **Minimivastaavuus (pakollinen):**
+  - Rekisterin `asset.fingerprints.sha256/sha512` ja käsillä olevan tiedoston tiiviste ovat **täsmälleen samat**.
+  - Rekisterin `proof.notary_seal` uudelleen tuotettuna (jos Evidence Pack on käytettävissä) on **täsmälleen sama**.
+
+- **Fyysisen viitteen vastaavuus (todistetyyppi):**
+  - Suorassa lähetyksessä näytetyn fyysisen teoksen + päivämäärä/lohkoviitteen kaltaisten todisteiden on oltava johdonmukaisia Evidence Pack -paketin kanssa.
+
+- **Yksityisyysyhteensopivuus:**
+  - `masked`-näkyvyydessä IP/sijainti-kaltaiset kentät julkaistaan **maskausstandardin mukaisesti**.
+
+---
+
+### 6.5 Valitus, tarkistus ja peruutus (Dispute & Revocation)
+
+Rekisteri ei ole vain "hyväksyntämekanismi"; se on **elävä valvontamekanismi huijausta vastaan**.
+
+- Kun valitus käynnistetään, tietue voidaan asettaa **"review"**-tilaan.
+- Jos huijaus havaitaan, se merkitään `status: void` ja perustelu lisätään:
+  - `void_reason` (tekoälyn käyttö / varastettu / manipuloitu jne.)
+  - `revoked_at` (peruutusaika)
+- Peruutuspäätöksen lähde näkyy selvästi rekisterissä:
+  - kuratoriaalinen arviointi / yhteisön valitus / forensinen analyysimerkintä (kumpi soveltuu)
+
+> **Tämä osio on "Red Flag Protocol" -osion VOID-käsitteen rekisterivastine.**
+
+---
+
+### 6.6 Esimerkkirekisteritietue (Koneluettava)
 ```json
 {
   "certificate_id": "POART-AB12CD34",
@@ -356,8 +439,8 @@ Rekisteri ei ole vain "hyväksymismekanismi"; se on **elävä valvontamekanismi 
     "attestation_pubkey": "PFE_ATTEST_PUBKEY_BASE58..."
   },
   "asset": {
-    "title": "Nimetön",
-    "creator": "Anonyymi",
+    "title": "Untitled",
+    "creator": "Anonymous",
     "fingerprints": {
       "sha256": "e4123f83b44a409d7a43f0897837876dfabb3320db63dadbb34c54281f38a6ba",
       "sha512": "41e5e0d007a2a77b6e0e3ebc548fbaa2788ea265193434f58d23e8c0f5bb20a0835aa850edbadbd8341969cf743fc69fa951f7ed275901fefe0fe7eb1fb83099"
@@ -376,198 +459,197 @@ Rekisteri ei ole vain "hyväksymismekanismi"; se on **elävä valvontamekanismi 
   },
   "governance": {
     "decision": "approved",
-    "veto_threshold": 0.40
+    "review_notes": "Met all 5 PoArt standards. Community feedback positive."
   }
 }
 ```
-> *Huomautus: `asset.fingerprints.sha512` ja muut hash-arvot on lyhennetty esittelytarkoituksiin; todellisessa sovelluksessa käytetään täyden pituista heksadesimaalimerkkijonoa.*
+
+> *Huom: `asset.fingerprints.sha512` ja muut tiivistearvot on lyhennetty esitystarkoituksessa; todellisessa sovelluksessa käytetään täyspitkää heksadesimaalimerkkijonoa.*
 
 ---
 
 ## 7) 🔐 TEKNINEN SINETTI (NOTARY SEAL)
 
-**PoArt Forensic Engine (PFE) v1.0** järkkymätön sinetöintialgoritmi tuotettu:
+**PoArt Forensic Engine (PFE) v1.0:n** tuottama horjumaton sinettialgoritmi:
 
 $$\text{NotarySeal} = \text{SHA-512}\left(\text{EvidenceRoot} \mid \text{SignerSignature} \mid \text{TimeStamp}\right)$$
 
 ---
 
-# [PoArt]-protokolla Digitaalinen Notaari ja Rikostekniikka Todistus (Beta v1.0)
+# [PoArt] Digitaalinen notaari ja forensinen todistusprotokolla (Beta v1.0)
 
-> **"Kulttuuri Suurempi kuin Pääoma. Suojaa teoksesi tänään, vie ne huomiseen."**
-
----
-
-## Miksi Julkinen?
-
-Todellinen turvallisuus tulee läpinäkyvyydestä. **Public Registry (Julkinen Rekisteri)** -järjestelmämme ansiosta henkilö missä päin maailmaa tahansa voi todentaa muutamassa sekunnissa, onko hänen kädessään oleva tiedosto alkuperäinen, ilman minkäänlaista viranomaista.
+> **"Kulttuuri on suurempi kuin pääoma. Suojaa teoksesi tänään, vie ne huomiseen."**
 
 ---
 
-## 🧩 Miksi On Useampi "Näkyvyysmoduuli"?
+## Miksi julkinen?
 
-Kriittisin osa koodista on tässä (näkyvyyden valintavalikko). Nämä vaihtoehdot antavat käyttäjille mahdollisuuden tasapainottaa **"Yksityisyys vs Läpinäkyvyys"**:
+Todellinen turvallisuus tulee läpinäkyvyydestä. **Public Registry (Julkinen rekisteri)** -järjestelmämme ansiosta kuka tahansa missä päin maailmaa voi sekuntien kuluessa todentaa, onko hänen hallussa oleva tiedosto aito, ilman mitään viranomaista.
+
+---
+
+## 🧩 Miksi on useita "Näkyvyysmoduuleja"?
+
+Koodin kriittisin osa on tässä (visibility select -valikko). Nämä vaihtoehdot mahdollistavat käyttäjien **"Yksityisyys vs. Läpinäkyvyys"** -tasapainon:
 
 ### 🔒 Yksityinen (Private)
 
-- **Skenaario:** Taiteilija ei halua vielä julkaista teosta, mutta haluaa aikatestata sen ja todistaa "tein tämän tänä päivänä".
-- **Mitä Koodi Tekee:** Tallentaa tiedot tietokantaan, mutta käyttää tagia `visibility: "private"`. Tulevaisuudessa, kun kirjoitat "Public Read" -käytännön, voit piilottaa nämä merkinnät julkiselta sanomalla `WHERE visibility = 'public'`.
+- **Skenaario:** Taiteilija ei halua vielä julkaista teosta, mutta haluaa asettaa aikaleiman ja todistaa "tein tämän tänä päivänä".
+- **Mitä koodi tekee:** Kirjoittaa datan tietokantaan mutta asettaa `visibility: "private"` -tunnisteen. Tulevaisuudessa "Public Read" -käytäntöä kirjoittaessa voit käyttää `WHERE visibility = 'public'` piilottaaksesi nämä tietueet yleisöltä.
 
-### 🕶️ Peitetty (Masked)
+### 🕶️ Maskattu (Masked)
 
-- **Skenaario:** Taiteilija haluaa läpinäkyvyyttä, mutta pelkää kodin osoitteen löytyvän (IP-sijainti).
-- **Mitä Koodi Tekee:** JavaScript-puolella toimivat `maskIP`- ja `maskLoc`-funktiot. Muuntaa IP-osoitteen muotoon `88.241.***.***` ja sijainnin muotoon `***/TR` ja lähettää sensuroitua versiota tietokantaan.
-- **Huomautus Yksityisyydestä:** Peittäminen tapahtuu selaimessa, Supabase ei näe todellista sijaintia. **Kuitenkin:** Jos käytetään kolmannen osapuolen API:ita, kuten ipapi.co, sijaintitietoihin, nämä toimittajat näkevät IP-osoitteen pyynnön hetkellä.
-- **Sinetöinti Masked-tilassa:** EvidenceRoot:n ja NotarySeal:n laskenta tehdään peitetyillä forensics-tiedoilla; näin todentaminen pysyy deterministisenä.
+- **Skenaario:** Taiteilija haluaa läpinäkyvyyttä mutta pelkää kotiosoitteensa (IP-sijainnin) löytymistä.
+- **Mitä koodi tekee:** JavaScript-puolella `maskIP`- ja `maskLoc`-funktiot suoritetaan. Muuntaa IP-osoitteen muotoon `88.241.***.***` ja sijainnin muotoon `***/TR` ja lähettää sensuroituna tietokantaan.
+- **Yksityisyyshuomautus:** Maskaus tehdään selaimessa, Supabase ei näe todellista sijaintia. **Kuitenkin:** Jos sijaintidataan käytetään kolmannen osapuolen API:eja kuten ipapi.co, nämä palveluntarjoajat näkevät IP-osoitteen pyynnön hetkellä.
+- **Sinetöinti Masked-tilassa:** EvidenceRoot- ja NotarySeal-laskenta tehdään maskatulla forensics-datalla; näin todentaminen pysyy deterministisenä.
 
 ### 🌍 Julkinen (Public)
 
-- **Skenaario:** Täysi läpinäkyvyys. [PoArt]-standardin mukaan missä, milloin ja mistä verkosta teos tuotettiin, julistetaan nimenomaisesti.
+- **Skenaario:** Täysi läpinäkyvyys. [PoArt]-standardin mukaisesti ilmoitetaan selvästi, missä, milloin ja mistä verkosta teos on sinetöity.
 
 ---
 
-## 💡 Teknologinen Innovaatio
+## 💡 Teknologinen innovaatio
 
-PoArt ei ole vain tiedostojen latausjärjestelmä. Se on **"Forensic Chain of Custody"** -moottori, joka sulattaa kolme eri teknologista kerrosta yhdeksi sulatuspataksi ja tuo uuden standardin.
+PoArt ei ole vain tiedostonlatausjärjestelmä. Se on **"Forensinen todistusketju" (Forensic Chain of Custody)** -moottori, joka sulattaa kolme eri teknologiakerrosta yhteen ja tuo uuden standardin.
 
-**Tässä osiossa "moottori"ksi kuvattu kerros vastaa aiemmassa terminologiassa PoArt Forensic Engine (PFE) -ydintä.**
+**Tässä osiossa "moottorina" kuvattu kerros vastaa aiemman terminologian PoArt Forensic Engine (PFE) -ydintä.**
 
-### 1) Client-Side Hashing (Maksimaalinen Yksityisyys)
+### 1) Client-Side Hashing (Maksimaalinen yksityisyys)
 
-Teostesi tiedostoja ei koskaan ladata palvelimelle. Selainpohjainen (Client-side) moottori laskee tiedoston hash:n (digitaalisen tiivisteen) tietokoneellasi. Vain tämä sormenjälki ja metadata lähetetään palvelimelle.
+Teostiedostojasi ei koskaan ladata palvelimelle. Selainpohjainen (Client-side) moottorimme laskee tiedoston tiivisteen (digitaalisen yhteenvedon) omalla tietokoneellasi. Palvelimelle lähetetään vain tämä sormenjälki ja metatiedot.
 
-> **Huomautus Yksityisyydestä:** Teosfiedostoa ei ladata palvelimelle ja se on näin suojattu. Kuitenkin forensics-tiedot (IP/sijainti) jaetaan valitun näkyvyystilan mukaan (private/masked/public).
+> **Yksityisyyshuomautus:** Teostiedostoa ei ladata palvelimelle ja se suojataan näin. Forensics-data (IP/sijainti) jaetaan kuitenkin valitun näkyvyystilan (private/masked/public) mukaan.
 
-### 2) Forensic Data Fusion (Rikostekniikka Voima)
+### 2) Forensic Data Fusion (Forensinen voima)
 
-Tämä on paljon enemmän kuin pelkkä aikaleima. Järjestelmä yhdistää seuraavat tiedot yhdeksi "Genesis Seal":ksi:
+Se on paljon enemmän kuin tavallinen aikaleima (Timestamp). Järjestelmä yhdistää seuraavat tiedot yhteen "Genesis-sinettiin":
 
-- **Digitaalinen Tiiviste (SHA-512):** Kryptografisen tiivisteen (SHA-512) standardia käyttäen digitaalinen sormenjälki, joka hajoaa, vaikka yhden pikselin teosta muutetaan.
-- **Sijainti ja Aika:** Päivämäärä millisekunnin tarkkuudella, maa, kaupunki ja alue, jossa kauppa tehtiin.
-- **Laitteen Identiteetti:** Käyttöjärjestelmä, selain ja laitetyyppi (User-Agent-analyysi).
+- **Digitaalinen yhteenveto (SHA-512):** Kryptografinen tiiviste (SHA-512) -standardia käyttäen digitaalinen sormenjälki, joka rikkoutuu, jos yksikin pikseli teoksessa muuttuu.
+- **Sijainti ja aika:** Tapahtuman millisekunnin tarkkuudella oleva päivämäärä, maa, kaupunki ja alue.
+- **Laitetunnus:** Käyttöjärjestelmä, selain ja laitetyyppi (User-Agent-analyysi).
 
 ---
 
-## 🛡️ Sovellusalueet ja Edut
+## 🛡️ Käyttötarkoitukset ja hyödyt
 
-Jos olet taiteilija, kirjailija tai suunnittelija, ei riitä, että sanot "Tein tämän aiemmin", sinun on todistettava se.
+Jos olet taiteilija, kirjailija tai suunnittelija, "Tein tämän aiemmin" sanominen ei riitä, sinun on todistettava se.
 
 **PoArt:lla sinetöity teos:**
 
-- **Matemaattinen Todiste:** Järjestelmä havaitsee tämän, vaikka yhden pikselin tiedostosta muutettaisiin. Manipulointi on mahdotonta.
-- **Oikeudellinen Perusta:** On tallennettu, minä päivänä, missä kaupungissa, mistä laitteesta teos sinetöitiin.
-- **Välitön Sertifikaatti:** Muutamassa sekunnissa generoi henkilökohtaisen **"Omaisuuden Identiteettisertifikaatin"** QR-koodilla ja sinetöitynä.
+- **Matemaattinen todiste:** Järjestelmä huomaa, jos yksikin pikseli tiedostossasi muuttuu. Manipulointi on mahdotonta.
+- **Oikeudellinen perusta:** On kirjattu, minä päivänä, missä kaupungissa ja millä laitteella teos on sinetöity.
+- **Välitön sertifikaatti:** Tuottaa sekunneissa sinulle erityisen, QR-koodilla ja sinetillä varustetun **"Omaisuuserän identiteettisertifikaatin"**.
 
 ---
 
-## ⚙️ Järjestelmäarkkitehtuuri ja Tekniset Spesifikaatiot
+## ⚙️ Järjestelmäarkkitehtuuri ja tekniset ominaisuudet
 
-Järjestelmä on suunniteltu "Serverless" (Palvelimeton) -arkkitehtuurilla, keskittyen korkeaan suorituskykyyn ja skaalautuvuuteen.
+Järjestelmä on suunniteltu "Serverless" (Palvelimeton) -arkkitehtuurille, keskittyen korkeaan suorituskykyyn ja skaalautuvuuteen.
 
-| Kerros | Teknologia | Kuvaus |
+| Kerros | Teknologia | Selitys |
 |--------|-----------|----------|
 | **Kryptografia** | SHA-256 & SHA-512 | Kaksikerroksinen kryptografinen tiiviste |
-| **Tietokanta** | Supabase (PostgreSQL) | JSONB-tietorakenne, RLS-käytännöt |
-| **Rikostekniset Tiedot** | ipapi.co API | IP/Sijainti/Aika-kolmikko |
-| **Renderöinti** | html2canvas + jsPDF | PNG/PDF-generointi asiakaspuolella |
-| **Frontend** | Vanilla JavaScript | Nolla framework-riippuvuuksia |
-| **Turvallisuus** | Client-side hashing | Tiedosto ei koskaan saavu palvelimelle |
+| **Tietokanta** | Supabase (PostgreSQL) | JSONB-datarakenne, RLS-käytännöt |
+| **Forensinen data** | ipapi.co API | IP/Sijainti/Aika-kolmikko |
+| **Renderöinti** | html2canvas + jsPDF | Client-side PNG/PDF-tuotanto |
+| **Frontend** | Vanilla JavaScript | Nolla framework-riippuvuutta |
+| **Turvallisuus** | Client-side hashing | Tiedosto ei koskaan lähde palvelimelle |
 
-### Erottuvat Ominaisuudet
+### Korostetut ominaisuudet
 
 | Ominaisuus | Yksityiskohta | Kilpailijoilla? |
 |---------|-------|-------------|
-| **Drag & Drop UI** | Vedä ja pudota tiedosto, välitön esikatselu | ❌ Puuttuu useimmista |
-| **Multi-Format Export** | PNG, JSON, PDF - yksi napsautus | ⚠️ Rajoitettu |
-| **Real-Time Preview** | Sertifikaatin esikatselu reaaliajassa | ❌ Puuttuu |
-| **Privacy Controls** | Private/Masked/Public -vaihtoehdot | ❌ Puuttuu |
-| **Client-Side Hashing** | Tiedosto ei koskaan saavu palvelimelle | ✅ Vain joillakin |
-| **Forensic Metadata** | IP, sijainti, laite, aika - kaikki yhdessä | ❌ Hajanainen |
-| **QR Verification** | QR-koodi välitöntä todennusta varten | ⚠️ Rajoitettu |
-| **Rate Limiting** | Roskapostisuojaus (RLS + Client) | ❌ Puuttuu useimmista |
+| **Vedä ja pudota UI** | Vedä ja pudota tiedosto, välitön esikatselu | ❌ Useimmilla ei |
+| **Moniformaattivienti** | PNG, JSON, PDF - yhdellä napsautuksella | ⚠️ Rajoitettu |
+| **Reaaliaikainen esikatselu** | Sertifikaatin live-esikatselu | ❌ Ei |
+| **Yksityisyysasetukset** | Private/Masked/Public-vaihtoehdot | ❌ Ei |
+| **Client-Side Hashing** | Tiedosto ei koskaan mene palvelimelle | ✅ Vain muutamalla |
+| **Forensinen metadata** | IP, sijainti, laite, aika - kaikki yhdessä | ❌ Hajallaan |
+| **QR-todentaminen** | Välitön todentamis-QR-koodi | ⚠️ Rajoitettu |
+| **Rate Limiting** | Roskapostisuojaus (RLS + Client) | ❌ Useimmilla ei |
 
 ---
 
-## 🗺️ Tiekartta: "Trustless" Tulevaisuus
+## 🗺️ Tiekartta: "Trustless"-tulevaisuus
 
-Nykyinen versio **(Beta v1.0)** on optimoitu tarjoamaan loppukäyttäjälle maksimaalinen nopeus, helppo käyttöliittymä ja ilmainen pääsy. Kuitenkin lopullinen visiomme on siirtyminen rakenteeseen, jossa edes tietokannan ylläpitäjä (me) ei voi puuttua asiaan.
+Nykyinen versio **(Beta v1.0)** on optimoitu tarjoamaan loppukäyttäjälle maksimaalinen nopeus, helppo käyttöliittymä ja ilmainen pääsy. Lopullinen visiomme on kuitenkin siirtyä rakenteeseen, johon edes tietokantahallinnoija (me) ei voi puuttua.
 
-### Vaihe 1: Beta (Nyt Saatavilla)
+### Vaihe 1: Beta v1.0 (Nyt julkaistu)
 
-- **Infrastruktuuri:** Cloud Database (Supabase).
-- **Tarkoitus:** Nopeus, UX (Käyttäjäkokemus) -esteiden poistaminen ja mukautuminen. "Kitkattoman" turvallisuuden varmistaminen.
+**Infrastruktuuri:**
+- Cloud Database (Supabase)
+- Off-chain-rekisteri (PostgreSQL + IPFS-varmuuskopio)
+- Gallerian oma-attestointi (keskitetty mutta läpinäkyvä)
 
-### 🚀 Vaihe 2: (Mitä Vaatii Backend / Edge Function)
+**Token:**
+- Alusta: Pump.fun
+- Likviditeetti: Raydium (automaattinen)
+- Hallinto: Vain neuvoa-antava (yhteisön konsultointi)
 
-Tämä vaihe kattaa siirtymisen järjestelmän täysin "Client-Side" toimivasta rakenteesta turvallisempaan ja hallitumpaan "Server-Side Authority" -rakenteeseen.
+**Tavoite:**
+- Nopeus, UX-esteiden poistaminen
+- "Kitkaton" turvallisuus
+- Yhteisön rakentaminen
 
-| Elementti | Mitä Tuo? | Tech Stack | Prioriteetti |
-|-------|---------------|------------|---------|
-| **`INSERT` → Edge Function** | Roskapostin esto + API-avaimen turvallisuus | Supabase Edge (Deno) | 🔴 Korkea |
-| **Lompakon Allekirjoitus** | Kryptografisen identiteetin todentaminen | Solana Wallet Adapter | 🟡 Keskitaso |
-| **IPFS/Arweave Varmuuskopio** | Hajautettu muuttumattomuus | IPFS SDK + Pinata | 🟢 Matala |
-| **Peruutusmekanismi** | Väärien sertifikaattien mitätöinti | DB Schema päivitys | 🔴 Korkea |
-| **Audit Log** | Rikostekniikkatutkimuksen tallentaminen | Mukautettu lokitaulukko | 🟡 Keskitaso |
-| **OpenTimestamps** | Bitcoin-ankkurointi | OTS JavaScript | 🟢 Matala |
-| **DID-integraatio** | Decentralized Identity | ION/Ceramic | 🟢 Matala |
+**Token Utility (v1.0):**
+- Galleriatilaisuuksien prioriteettipääsy
+- PoArt Registry -katselu
+- Neuvoa-antava äänestysoikeus
 
-### Vaihe 3: Täysi Hajauttaminen (Pitkällä Aikavälillä)
+---
 
-| Ominaisuus | Tarkoitus | ETA |
+### 🚀 Vaihe 2: Hajautettu auktoriteetti (2026 Q2-Q4)
+
+Tämä vaihe kattaa siirtymän järjestelmän täysin "Client-Side" -rakenteesta turvallisempaan ja hajautetumpaan rakenteeseen.
+
+| Ominaisuus | Mitä se tuo? | Tech Stack | Arvio |
+|---------|---------------|------------|-----|
+| **Edge Function INSERT** | Roskapostiesto + API Key -turvallisuus | Supabase Edge (Deno) | Q2 2026 |
+| **Lompakkoallekirjoitus** | Hajautettu identiteetti | Solana Wallet Adapter | Q2 2026 |
+| **IPFS/Arweave-varmuuskopio** | Hajautettu arkisto | IPFS SDK + Pinata | Q3 2026 |
+| **Peruutusmekanismi** | Väärennetyn sertifikaatin peruutus | DB Schema Update | Q2 2026 |
+| **Audit Log** | Forensinen kyselyloki | Custom logs -taulu | Q3 2026 |
+| **OpenTimestamps** | Bitcoin-ankkurointi | OTS JavaScript | Q4 2026 |
+
+**Token Governance (v2.0):**
+- Off-chain-äänestys (x/web) + lompakkoallekirjoitus
+- Yhteisön edustajien valinta (ensimmäiset 90 päivää)
+- Multi-sig-operaatiolompakkojen hallinta
+- Painotettu neuvoa-antava äänestys (valaskatto)
+
+**Muuttumattomuus:**
+- Rekisterin varmuuskopio IPFS-tiivisteillä
+- Bitcoin-aikaleima-ankkurointi
+- Cross-chain-todentamisen valmistelu
+
+---
+
+### Vaihe 3: Täysi hajauttaminen (2027+)
+
+| Ominaisuus | Tavoite | Arvio |
 |---------|-------|-----|
-| **Blockchain Registry** | On-chain rekisteröinti Ethereum/Solana | Q4 2026 |
-| **DAO Governance** | Yhteisöhallinto | Q1 2027 |
-| **Multi-Chain Support** | Polygon, Arbitrum, Base | Q2 2027 |
-| **Legal Recognition** | Pätevyys Turkin tuomioistuimissa | 2027-2028 |
-| **API for Developers** | Julkinen API-päätepiste | Q3 2026 |
+| **On-Chain-rekisteri** | Solana on-chain -tallennus | Q1 2027 |
+| **Laajennettu Token Utility** | NFT-lyönti, edistyneet ominaisuudet | Q1 2027 |
+| **Multi-Chain-tuki** | Ethereum, Polygon, Base | Q2 2027 |
+| **DID-integraatio** | Hajautettu identiteetti | Q3 2027 |
+| **Yhteisöhallinto** | Vahvistettu neuvoa-antava järjestelmä | Q4 2027 |
+| **Oikeudellinen tunnustus** | Kelpoisuus Turkin tuomioistuimissa | 2027-2028 |
+| **API kehittäjille** | Julkinen API-päätepiste | Q3 2027 |
+
+**Hallinnon kehitys:**
+- v3.0: Hybridimalli (kuratoriaalinen + yhteisön painotettu)
+- 2028+: Täysi yhteisöhallinto (valinnainen)
+- Kuratoriaalinen laadunvalvonta säilyy aina
 
 ---
 
-## 📊 Kilpailijoiden Analyysi (Päivitetty)
+## 🧬 Protokollan datarakenne (JSON Schema)
 
-PoArt on sijoitettu "Sweet Spot" (Optimaalinen Ideaalipiste) -kohtaan, joka täydentää olemassa olevien ratkaisujen aukkoja.
+**Jokaisella [PoArt]-sertifikaatilla on siirrettävä ja todennettava JSON-henkilökortti, joka tuotetaan seuraavan standardin mukaisesti.**
 
-| Ominaisuus | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 証 Proof | Trust-Stamp |
-|---------|:---------:|:---------------:|:-----------------:|:------------:|:----:|:-----------:|:--------:|:-----------:|
-| **Hinta** | 🆓 Ilmainen | 🆓 | 💰 Maksullinen | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
-| **Drag & Drop UI** | ✅ Erittäin Helppo | ❌ CLI | ⚠️ Keskitaso | ⚠️ Keskitaso | ⚠️ | ⚠️ | ❌ | ⚠️ |
-| **Multi-Format Export** | ✅ PNG/PDF/JSON | ❌ | ⚠️ PDF | ⚠️ PDF | ❌ | ❌ | ❌ | ⚠️ |
-| **Real-Time Preview** | ✅ Reaaliajassa | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| **Privacy Controls** | ✅ 3 Tilaa | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Client-Side Hash** | ✅ Yksityisyys | ✅ | ❌ Upload | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
-| **Forensic Metadata** | ✅ Täydellinen | ❌ | ❌ | ⚠️ Rajoitettu | ❌ | ⚠️ | ❌ | ⚠️ |
-| **QR Verification** | ✅ Välitön | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
-| **Rate Limiting** | ✅ RLS+Client | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Blockchain Anchor** | 🔄 Tiekartta | ✅ Bitcoin | ✅ Ethereum | ✅ Multi | ✅ | ✅ | ✅ | ✅ |
-| **Open Source** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
-| **Suomen Tuki** | 🔄 Kehityksessä | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
-
-**Selite:**
-- ✅ : Täysi tuki / saatavilla
-- ⚠️ : Rajoitettu / maksullisissa suunnitelmissa
-- ❌ : Puuttuu / ei tueta
-- 🔄 : Tiekartalla (kehityksessä)
-- 🆓 : Täysin ilmainen
-- 💰 : Maksullinen / tilaus vaaditaan
-
-### Kilpailijoiden Haitat, PoArt:n Vahvuudet
-
-| Miinus | Kilpailijat | PoArt |
-|------|----------|-------|
-| **Käytön Monimutkaisuus** | CLI, API-tietämys, lompakko vaaditaan | Vedä ja pudota, päättyy 3 napsautuksessa |
-| **Kustannuseste** | Tilaus $50-500/kk | 100 % ilmainen |
-| **Yksityisyys** | Tiedosto ladataan palvelimelle | Client-side, tiedosto ei koskaan lähde |
-| **Rikostekniset Tiedot** | Vain aikaleima | IP, sijainti, laite, aika - kaikki |
-| **Suomen Tuki** | Puuttuu tai hyvin rajoitettu | Natiivi kielituki |
-| **Open Source** | Suljettu laatikko | Kaikki koodi avoinna GitHubissa |
-
----
-
-## 🧬 Protokollan Tietorakenne (JSON Schema)
-
-**Jokaisella [PoArt]-sertifikaatilla on siirrettävä ja todennettava JSON-identiteetti, joka tuotetaan seuraavan standardin mukaisesti.**
-
-> **Huomautus:** Tämä Identity JSON -muoto on käyttäjälle esitettävä sertifikaattimuoto. Rekisterimerkinnöissä `identity.asset_data`:n sijasta käytetään `registry.asset` (kartoitus: `identity.asset_data` == `registry.asset`).
+> **Huom:** Tämä Identity JSON -formaatti on käyttäjälle esitettävä sertifikaattimuoto. Rekisteritietueissa käytetään `identity.asset_data`:n sijaan `registry.asset`:ia (vastaavuus: `identity.asset_data` == `registry.asset`).
 ```json
 {
   "$schema": "https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json",
@@ -582,7 +664,7 @@ PoArt on sijoitettu "Sweet Spot" (Optimaalinen Ideaalipiste) -kohtaan, joka täy
     "archive_vision": "2025 - 3000"
   },
   "asset_data": {
-    "title": "Virallinen Whitepaper",
+    "title": "Official Whitepaper",
     "fingerprints": {
       "sha256": "e4123f83b44a409d7a43f0897837876dfabb3320db63dadbb34c54281f38a6ba",
       "sha512": "41e5e0d007a2a77b6e0e3ebc548fbaa2788ea265193434f58d23e8c0f5bb20a0835aa850edbadbd8341969cf743fc69fa951f7ed275901fefe0fe7eb1fb83099"
@@ -603,11 +685,11 @@ PoArt on sijoitettu "Sweet Spot" (Optimaalinen Ideaalipiste) -kohtaan, joka täy
 
 ---
 
-## 🔬 Tekninen Syvyys: Sinetöintialgoritmi
+## 🔬 Tekninen syvyys: Sinettialgoritmi
 
-### Deterministiset Hash-funktiot
+### Deterministiset tiivistefunktiot
 ```javascript
-// Apufunktiot: Muunna digest hex-merkkijonoksi
+// Apufunktiot: Muunna tiiviste heksamerkkijonoksi
 async function digestToHex(algorithm, dataBytes) {
   const hashBuffer = await crypto.subtle.digest(algorithm, dataBytes);
   const hashArray = Array.from(new Uint8Array(hashBuffer));
@@ -619,8 +701,8 @@ function stringToBytes(text) {
   return new TextEncoder().encode(text);
 }
 
-// Kanonisen forensics-merkkijonon generointi (v1.0: kiinteä kenttäjärjestys + UTF-8 + \n erotin)
-// Vaiheen 2 huomautus: Siirtyminen kanoniseen JSON:iin RFC 8785 (JCS) kanssa
+// Kanoninen forensics-merkkijonon tuotanto (v1.0: kiinteä kenttäjärjestys + UTF-8 + \n-erotin)
+// Vaihe 2 -huomio: Siirretään RFC 8785 (JCS) -kanoniseen JSON:iin
 function canonicalForensics(forensicsData) {
   return JSON.stringify({
     ip_masked: forensicsData.ip_masked,
@@ -631,7 +713,7 @@ function canonicalForensics(forensicsData) {
 }
 ```
 
-### NotarySeal-tuotantoprosessi (Täysin Deterministinen)
+### NotarySeal-tuotantoprosessi (Täysin deterministinen)
 ```javascript
 // 1. FileHash-laskenta (client-side)
 async function computeFileHash(file) {
@@ -644,9 +726,9 @@ async function computeFileHash(file) {
   return { sha256, sha512 };
 }
 
-// 2. Rikostekniikkatietojen kerääminen (käyttäen yhtä aikaleimaa)
+// 2. Forensisen datan kerääminen (yksittäinen aikaleima)
 async function collectForensics(visibilityMode) {
-  const timestamp = new Date().toISOString(); // Yhden aikaleiman generointi
+  const timestamp = new Date().toISOString(); // Yksittäinen aikaleiman tuotanto
   const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
   
   let forensics = {
@@ -667,13 +749,13 @@ async function computeEvidenceRoot(fileHash512, forensicsData) {
   return await digestToHex('SHA-512', stringToBytes(canonicalPayload));
 }
 
-// 4. NotarySeal-tuotanto (käyttäen samaa aikaleimaa)
+// 4. NotarySeal-tuotanto (sama aikaleima)
 async function computeNotarySeal(evidenceRoot, signerSignature, timestamp) {
   const sealPayload = `evidence_root:${evidenceRoot}\nsigner_sig:${signerSignature}\ntimestamp:${timestamp}`;
   return await digestToHex('SHA-512', stringToBytes(sealPayload));
 }
 
-// Peittämisen apufunktiot (IPv4- ja IPv6-tuki)
+// Maskauksen apufunktiot (IPv4- ja IPv6-tuki)
 function maskIP(ip) {
   if (!ip) return "***";
   
@@ -690,55 +772,55 @@ function maskIP(ip) {
 }
 ```
 
-### Todennusvirtaus (Kaksi Tasoa)
+### Todentamisvirta (Kaksi tasoa)
 
-#### Quick Verify (Nopea Todentaminen)
+#### Quick Verify (Nopea todentaminen)
 ```javascript
-// Tarkistaa vain tiedoston hashin (nopea punainen lippu)
+// Tarkistaa vain tiedoston tiivisteen (nopea punainen lippu)
 async function verifyQuick(file, certificateId) {
   const { sha512: userFileHash } = await computeFileHash(file);
   
-  // Hae Rekisteristä
+  // Hae rekisteristä
   const cert = await fetchFromRegistry(certificateId);
   const { sha512: originalHash } = cert.asset.fingerprints;
   
-  // Hash-vertailu
+  // Tiivisteen vertailu
   if (userFileHash === originalHash) {
     return {
       valid: true,
-      message: "✅ Aito - Tiedoston hash täsmää"
+      message: "✅ Aito - Tiedoston tiiviste täsmää"
     };
   } else {
     return {
       valid: false,
-      message: "❌ Väärä - Tiedostoa on manipuloitu"
+      message: "❌ Väärennös - Tiedostoa on manipuloitu"
     };
   }
 }
 ```
 
-#### Full Verify (Täysi Todentaminen)
+#### Full Verify (Täysi todentaminen)
 ```javascript
-// Toistaa ja todentaa EvidenceRoot:n ja NotarySeal:n
+// Tuottaa EvidenceRoot:n ja NotarySeal:n uudelleen ja todentaa
 async function verifyFull(file, certificateId) {
   const { sha512: userFileHash } = await computeFileHash(file);
 
-  // Hae Rekisteristä
+  // Hae rekisteristä
   const cert = await fetchFromRegistry(certificateId);
 
   // 1) FileHash-tarkistus (nopea punainen lippu)
   const originalHash = cert.asset.fingerprints.sha512;
   if (userFileHash !== originalHash) {
-    return { valid: false, message: "❌ Väärä - Tiedoston hash ei täsmää" };
+    return { valid: false, message: "❌ Väärennös - Tiedoston tiiviste ei täsmää" };
   }
 
-  // 2) EvidenceRoot-toisto (rekisteriin tallennetuilla forensics-tiedoilla)
+  // 2) Tuota EvidenceRoot uudelleen (rekisteriin tallennetulla forensics-datalla)
   const evidenceRoot = await computeEvidenceRoot(userFileHash, cert.forensics);
   if (evidenceRoot !== cert.proof.evidence_root) {
-    return { valid: false, message: "❌ Ei täsmää - EvidenceRoot virheellinen" };
+    return { valid: false, message: "❌ Ei täsmää - EvidenceRoot ei vastaa" };
   }
 
-  // 3) NotarySeal-toisto (samalla aikaleimalla + signer_sig)
+  // 3) Tuota NotarySeal uudelleen (sama aikaleima + signer_sig)
   const seal = await computeNotarySeal(
     evidenceRoot,
     cert.proof.signer_sig,
@@ -746,10 +828,10 @@ async function verifyFull(file, certificateId) {
   );
 
   if (seal !== cert.proof.notary_seal) {
-    return { valid: false, message: "❌ Ei täsmää - NotarySeal virheellinen" };
+    return { valid: false, message: "❌ Ei täsmää - NotarySeal ei vastaa" };
   }
 
-  // Valinnainen: Vaiheessa 2 todenna myös signer_sig attestation_pubkey:llä
+  // Valinnainen: Vaiheessa 2 todenna signer_sig myös attestation_pubkey:llä
   // const sigValid = await verifySig(cert.issuer.attestation_pubkey, cert.proof.signer_sig, evidenceRoot);
   // if (!sigValid) return { valid: false, message: "❌ Allekirjoitus virheellinen" };
 
@@ -757,83 +839,157 @@ async function verifyFull(file, certificateId) {
 }
 ```
 
-> **Tärkeät Huomautukset:**
-> - **Quick Verify:** Tarkistaa vain tiedoston hashin nopeaa käyttöä varten.
+> **Tärkeät huomiot:**
+> - **Quick Verify:** Tarkistaa vain tiedoston tiivisteen nopeaan käyttöön.
 > - **Full Verify:** Todentaa kaikki protokollan kerrokset (EvidenceRoot + NotarySeal).
-> - Kaikki hash-operaatiot suoritetaan deterministisesti, kiinteällä koodauksella ja erottimilla.
-> - **v1.0 kanonisointistandardi:** Kiinteä kenttäjärjestys + UTF-8 koodaus + `\n` erotin.
-> - **Vaiheen 2 suunnitelma:** Siirtyminen kanoniseen JSON:iin RFC 8785 (JCS - JSON Canonicalization Scheme) kanssa.
-> - Masked-tilassa EvidenceRoot- ja NotarySeal-laskenta tehdään peitetyillä forensics-tiedoilla.
-> - Käytetään yhtä aikaleimaa koko prosessissa (forensics + NotarySeal); determinismi taattu.
-> - **Forensics-kenttien nimet:** `ip_masked`, `location`, `device`, `timestamp` (koodi ja rekisteri täysin yhteensopivia).
-> - **Rekisterin polku:** `certificate.asset.fingerprints` (täysin yhteensopiva todennuskoodin kanssa).
-> - **signer_sig Rekisterissä:** `proof.signer_sig`-kenttä tarvitaan Full Verify:lle.
-> - SignerSignature-mekanismi aktivoidaan vaiheessa 2 Solana Wallet Adapter:lla; v1.0:ssa voidaan suorittaa todentaminen `attestation_pubkey`:llä.
+> - Kaikki tiivisteoperaatiot tehdään deterministisesti, kiinteällä koodauksella ja erottimilla.
+> - **v1.0-kanonisointistandardi:** Kiinteä kenttäjärjestys + UTF-8-koodaus + `\n`-erotin.
+> - **Vaihe 2 -suunnitelma:** Siirtyminen RFC 8785 (JCS - JSON Canonicalization Scheme) -kanoniseen JSON:iin.
+> - Masked-tilassa EvidenceRoot- ja NotarySeal-laskenta tehdään maskatulla forensics-datalla.
+> - Yksittäistä aikaleimaa käytetään koko prosessissa (forensics + NotarySeal); deterministisyys taataan.
+> - **Forensics-kenttänimet:** `ip_masked`, `location`, `device`, `timestamp` (koodi ja rekisteri täysin yhteensopivia).
+> - **Rekisteripolku:** `certificate.asset.fingerprints` (todentamiskoodi täysin yhteensopiva).
+> - **Rekisterin signer_sig:** `proof.signer_sig`-kenttä tarvitaan Full Verify -todentamiseen.
+> - SignerSignature-mekanismi otetaan käyttöön vaiheessa 2 Solana Wallet Adapter -integraatiolla; v1.0:ssa todentaminen voidaan tehdä `attestation_pubkey`:llä.
 
 ---
 
-## 📈 Käyttötilastot (Q1 2026 Tavoitteet)
+## 📊 Kilpailija-analyysi (Päivitetty)
+
+PoArt on sijoitettu "Sweet Spot" (Ihanteellinen piste) -kohtaan, joka täydentää nykyisten ratkaisujen puutteita.
+
+| Ominaisuus | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 證 Proof | Trust-Stamp |
+|---------|:---------:|:---------------:|:-----------------:|:------------:|:----:|:-----------:|:--------:|:-----------:|
+| **Hinta** | 🆓 Ilmainen | 🆓 | 💰 Maksullinen | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
+| **Vedä ja pudota UI** | ✅ Erittäin helppo | ❌ CLI | ⚠️ Keskitaso | ⚠️ Keskitaso | ⚠️ | ⚠️ | ❌ | ⚠️ |
+| **Moniformaattivienti** | ✅ PNG/PDF/JSON | ❌ | ⚠️ PDF | ⚠️ PDF | ❌ | ❌ | ❌ | ⚠️ |
+| **Reaaliaikainen esikatselu** | ✅ Live | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Yksityisyysasetukset** | ✅ 3 tilaa | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
+| **Client-Side Hash** | ✅ Yksityisyys | ✅ | ❌ Lataus | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
+| **Forensinen metadata** | ✅ Täysi | ❌ | ❌ | ⚠️ Rajoitettu | ❌ | ⚠️ | ❌ | ⚠️ |
+| **QR-todentaminen** | ✅ Välitön | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
+| **Rate Limiting** | ✅ RLS+Client | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
+| **Lohkoketjuankkuri** | 🔄 Tiekartassa | ✅ Bitcoin | ✅ Ethereum | ✅ Multi | ✅ | ✅ | ✅ | ✅ |
+| **Avoin lähdekoodi** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
+| **Suomen kielen tuki** | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
+
+**Selitys:**
+- ✅ : Täysi tuki / saatavilla
+- ⚠️ : Rajoitettu / maksullisissa suunnitelmissa
+- ❌ : Ei / ei tueta
+- 🔄 : Tiekartassa (kehitteillä)
+- 🆓 : Täysin ilmainen
+- 💰 : Maksullinen / tilaus vaaditaan
+
+### Kilpailijoiden puutteet, PoArt:n vahvuudet
+
+| Puute | Kilpailijat | PoArt |
+|------|----------|-------|
+| **Käytön vaikeus** | CLI, API-osaaminen, lompakko vaaditaan | Vedä ja pudota, 3 napsautuksella valmis |
+| **Hintaeste** | 50-500$/kk tilaus | 100% ilmainen |
+| **Yksityisyys** | Tiedosto ladataan palvelimelle | Client-side, tiedosto ei koskaan lähde |
+| **Forensinen data** | Vain aikaleima | IP, sijainti, laite, aika - kaikki |
+| **Turkin kielen tuki** | Ei tai hyvin rajoitettu | Natiivi kielituki |
+| **Avoin lähdekoodi** | Suljettu laatikko | Kaikki koodi avoinna GitHubissa |
+
+---
+
+## 📈 Käyttötilastot (2026 Q1 -tavoitteet)
 
 | Mittari | Tavoite | Tila |
 |--------|-------|-------|
-| **Sertifikaatteja Yhteensä** | 1,000 | 🔄 Käynnissä |
-| **Aktiivisia Käyttäjiä** | 500 | 🔄 Käynnissä |
-| **Todentamisten Määrä** | 5,000 | 🔄 Käynnissä |
-| **Uptime** | %99.9 | ✅ Aktiivinen |
-| **Keskimääräinen Vastausaika** | <200ms | ✅ Optimaalinen |
+| **Sertifikaatteja yhteensä** | 1 000 | 🔄 Edistyminen |
+| **Aktiivisia käyttäjiä** | 500 | 🔄 Edistyminen |
+| **Todentamismäärä** | 5 000 | 🔄 Edistyminen |
+| **Uptime** | 99,9% | ✅ Aktiivinen |
+| **Keskim. vasteaika** | <200ms | ✅ Optimaalinen |
 
 ---
 
-## 🌍 Yhteisö ja Tuki
+## 🌍 Yhteisö ja tuki
 
 - **Twitter:** [@Galerilhan](https://twitter.com/Galerilhan)
 - **Web:** [ilhanart.org](https://ilhanart.org)
-- **Email:** galeri@ilhanart.org
+- **Sähköposti:** galeri@ilhanart.org
+- **Instagram:** https://www.instagram.com/ilhanartgaleri
 
 ---
 
 ## 🙏 Osallistujat
 
-PoArt-protokolla kehittyy avoimen lähdekoodin yhteisön panosten ansiosta.
+PoArt-protokolla kehittyy edelleen avoimen lähdekoodin yhteisön panoksella.
 
-**Osallistumiseksi:**
+**Osallistuaksesi:**
 1. Tee fork
-2. Luo ominaisuushaara (`git checkout -b feature/amazing-feature`)
+2. Luo feature branch (`git checkout -b feature/amazing-feature`)
 3. Tee commit (`git commit -m 'Add amazing feature'`)
 4. Tee push (`git push origin feature/amazing-feature`)
 5. Avaa Pull Request
 
-### 🛠️ Mitä Tarvitsemme Nyt? (Avunpyyntö)
+### 🛠️ Mitä tällä hetkellä tarvitsemme? (Avunpyyntö)
 
-Etsimme kokeneita kehittäjiä osallistumaan seuraaviin aiheisiin PoArt-protokollan **Vaiheen 2** kehityksessä:
+PoArt-protokollan **Vaihe 2** -kehityksissä odotamme kokeneita kehittäjiä seuraavilla alueilla:
 
 * **Supabase Edge Functions:** Roskapostisuojauksen siirtäminen palvelinpuolelle.
-* **Solana Web3.js:** Lompakon allekirjoituksen (Wallet Signing) integrointi.
-* **IPFS / Arweave:** Arkistointi- ja ankkurointipalveluiden integrointi.
+* **Solana Web3.js:** Lompakkoallekirjoitus (Wallet Signing) -integraatio.
+* **IPFS / Arweave:** Arkistointi- ja pinning-palvelujen integraatio.
+* **Community Tools:** X-äänestys, voting systems, analytics dashboard.
 
-> Ennen ominaisuuden lisäämistä, aloita keskustelu "Issues"-osiossa.
+> Ennen ominaisuuden lisäämistä aloita keskustelu "Issues"-välilehdellä.
+
+---
+
+## 💬 Loppuhuomautukset
+
+### Pump.fun ja todellisuus
+
+Tämä projekti aloitettiin Pump.fun:ssa koska:
+- ✅ Likviditeettipääsy (Raydium automatic migration)
+- ✅ Pääsy nykyiseen yhteisöön
+- ✅ Alhainen aloituskustannus
+
+Selvennetään kuitenkin:
+- **Tokenin hinta** ei ole taiteellisen menestyksen mittari
+- **Operatiivinen budjetti** tokenin arvo on tärkeä (galleria, näyttelyt, infrastruktuuri)
+- **Menestysmittarit:** Todennetut teokset + yhteisön sitoutuminen + fyysiset vierailijat
+
+### Hallinto ja hajauttaminen
+
+**v1.0 Todellisuus (2026):**
+- Rekisteri: Off-chain (PostgreSQL + IPFS-varmuuskopio)
+- Attestointi: Gallerian oma-allekirjoitus (keskitetty mutta läpinäkyvä)
+- Hallinto: Vain neuvoa-antava (kuratoriaalinen lopullinen päätös)
+- Token utility: Galleriaccesss + rekisteri + NFT-prioriteetti
+
+**v2.0+ Visio (2027+):**
+- Rekisteri: On-chain (Solana)
+- Allekirjoitukset: Lompakkopohjainen (hajautettu)
+- Hallinto: Hybridi (yhteisön neuvoa-antava + kuratoriaalinen laatu)
+- Token utility: Laajennetut ominaisuudet + edistynyt pääsy
+
+Tämä rakenne tarjoaa **operatiivisen tehokkuuden** ja **laadunvalvonnan** varhaisessa vaiheessa, pitäen samalla avoinna tien **yhteisön osallistumisen** lisäämiseen tulevaisuudessa.
 
 ---
 
 **[PoArt] Proof of Art Protocol v1.0**  
-*"Culture > Capital" // Kulttuuri Suurempi kuin Pääoma*
+*"Culture > Capital" // Kulttuuri on suurempi kuin pääoma*
 
 ## 🧾 Lisenssi
 
-MIT License © 2026 İlhan Art Gallery Initiative
+MIT-lisenssi © 2026 İlhan Art Gallery Initiative
 
-Katso [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) täydellisistä ehdoista.
+Katso täydelliset ehdot [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE)
 
 ---
 
-## 💬 Credits
+## 💬 Tekijätiedot
 
 ![Version](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Security](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Platform](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
 
-**Tämä projekti on kehitetty [İlhan Art Gallery] -aloitteella ja lähdekoodi on julkisesti saatavilla läpinäkyvyyden vuoksi.**
+**Tämä projekti on kehitetty [İlhan Art Gallery] -aloitteella, ja lähdekoodi on avoinna läpinäkyvyyden vuoksi.**
 
 **PROTOKOLLA V1.0 // SINETÖITY SHA-512:LLA.**
 
-*© 2026 İLHAN ART | KAIKKI OIKEUDET TEOKSIIN, KUVIIN JA IDEOIHIN SUOJATTU.*
+*© 2026 İLHAN ART | KAIKKI OIKEUDET TEOKSIIN, KUVIIN JA IDEOIHIN PIDÄTETÄÄN.*
 
 ---
