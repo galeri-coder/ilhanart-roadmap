@@ -324,7 +324,6 @@ $$V_{\text{Human}} \approx \int_{0}^{21600} (0.5 \cdot 0.9) \, dt + U_{\text{irr
 
 **Κοινοτική Διαβούλευση:**
 - Το Evidence Pack μοιράζεται δημόσια κατά τη διαδικασία αίτησης
-- Η κοινότητα μπορεί να προσφέρει ανατροφοδότηση μέσω Discord και ilhanart.org/applications
 - Οι κάτοχοι token (ελάχιστο 10.000 $CULTURE) μπορούν να κάνουν ειδικά προτάσεις
 - **Όλη η ανατροφοδότηση λαμβάνεται υπόψη κατά τη διαδικασία εξέτασης**
 - **Αλλά η τελική απόφαση ανήκει στην επιμελητική αξιολόγηση**
@@ -377,17 +376,12 @@ $$V_{\text{Human}} \approx \int_{0}^{21600} (0.5 \cdot 0.9) \, dt + U_{\text{irr
 - Πλήρεις εκδόσεις των Evidence Pack
 - Εργαλεία εγκληματολογικής επαλήθευσης
 
-**3. Προτεραιότητα Mint NFT:**
-- Πρόσβαση λευκής λίστας όταν τα έργα PoArt Verified κοπούν ως NFT
-- Ευκαιρίες πρώιμου mint
-- Ειδικά NFT συλλογής
-
-**4. Συμβουλευτική Ψηφοφορία:**
+**3. Συμβουλευτική Ψηφοφορία:**
 - Δικαίωμα διαβούλευσης σε αιτήσεις PoArt Verified
 - Πρόσβαση σε κανάλια ανατροφοδότησης κοινότητας
 - Συμμετοχή σε συζητήσεις διακυβέρνησης
 
-**5. Αποκλειστικό Περιεχόμενο:**
+**4. Αποκλειστικό Περιεχόμενο:**
 - Περιεχόμενο behind-the-scenes από το στούντιο
 - Συνεντεύξεις καλλιτεχνών και βίντεο διαδικασίας
 - Πρόσβαση σε τεχνική τεκμηρίωση
@@ -618,7 +612,7 @@ $$\text{NotarySeal} = \text{SHA-512}\left(\text{EvidenceRoot} \mid \text{SignerS
 | **OpenTimestamps** | Bitcoin anchoring | OTS JavaScript | Q4 2026 |
 
 **Token Governance (v2.0):**
-- Off-chain voting (Discord/web) + wallet signature
+- Off-chain voting (x/web) + wallet signature
 - Επιλογή εκπροσώπων κοινότητας (πρώτες 90 ημέρες)
 - Έλεγχος πορτοφολιού λειτουργιών multi-sig
 - Weighted advisory voting (με whale cap)
@@ -635,7 +629,6 @@ $$\text{NotarySeal} = \text{SHA-512}\left(\text{EvidenceRoot} \mid \text{SignerS
 | Χαρακτηριστικό | Στόχος | ETA |
 |---------|-------|-----|
 | **On-Chain Registry** | Καταγραφή on-chain Solana | Q1 2027 |
-| **Enhanced Token Utility** | NFT mint, προηγμένα χαρακτηριστικά | Q1 2027 |
 | **Multi-Chain Support** | Ethereum, Polygon, Base | Q2 2027 |
 | **DID Integration** | Decentralized Identity | Q3 2027 |
 | **Community Governance** | Ενισχυμένο σύστημα advisory | Q4 2027 |
@@ -709,7 +702,6 @@ $$\text{NotarySeal} = \text{SHA-512}\left(\text{EvidenceRoot} \mid \text{SignerS
 - Registry: Off-chain (PostgreSQL + IPFS backup)
 - Attestation: Gallery self-signed (κεντρικοποιημένο αλλά διαφανές)
 - Governance: Advisory only (τελική επιμελητική απόφαση)
-- Token utility: Πρόσβαση γκαλερί + registry + προτεραιότητα NFT
 
 **Όραμα v2.0+ (2027+):**
 - Registry: On-chain (Solana)
