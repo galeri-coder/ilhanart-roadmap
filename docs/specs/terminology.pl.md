@@ -323,7 +323,6 @@ Rejestr może mieć dwie warstwy:
 
 **Konsultacja społecznościowa:**
 - Evidence Pack jest publicznie udostępniany podczas procesu aplikacji
-- Społeczność może przekazywać informacje zwrotne przez Discord i ilhanart.org/applications
 - Posiadacze tokenów (minimum 10,000 $CULTURE) mogą szczególnie składać propozycje
 - **Wszystkie opinie są brane pod uwagę podczas procesu przeglądu**
 - **Jednak ostateczna decyzja zależy od oceny kuratorskiej**
@@ -376,17 +375,12 @@ Gdy projekt dojrzeje (2027+), mechanizm konsultacji społecznościowej może zos
 - Pełne wersje Evidence Packs
 - Narzędzia weryfikacji kryminalistycznej
 
-**3. Priorytet Mint NFT:**
-- Dostęp do whitelisty, gdy dzieła PoArt Verified są mintowane jako NFT
-- Wczesne możliwości mintowania
-- Specjalne NFT kolekcjonerskie
-
-**4. Głosowanie doradcze:**
+**3. Głosowanie doradcze:**
 - Prawo do konsultacji w wnioskach PoArt Verified
 - Dostęp do kanałów opinii społeczności
 - Udział w dyskusjach o zarządzaniu
 
-**5. Treści ekskluzywne:**
+**4. Treści ekskluzywne:**
 - Treści zza kulis ze studia
 - Wywiady z artystami i filmy procesowe
 - Dostęp do dokumentacji technicznej
@@ -617,7 +611,7 @@ Ta faza obejmuje przejście systemu z całkowicie działającej struktury "Clien
 | **OpenTimestamps** | Zakotwiczenie Bitcoin | OTS JavaScript | Q4 2026 |
 
 **Zarządzanie tokenem (v2.0):**
-- Głosowanie off-chain (Discord/web) + podpis portfela
+- Głosowanie off-chain (x/web) + podpis portfela
 - Wybór przedstawicieli społeczności (pierwsze 90 dni)
 - Kontrola portfela operacji multi-sig
 - Ważone głosowanie doradcze (z limitem wielorybów)
@@ -634,7 +628,6 @@ Ta faza obejmuje przejście systemu z całkowicie działającej struktury "Clien
 | Cecha | Cel | ETA |
 |---------|-------|-----|
 | **On-Chain Registry** | Rejestracja on-chain Solana | Q1 2027 |
-| **Enhanced Token Utility** | Mint NFT, zaawansowane funkcje | Q1 2027 |
 | **Multi-Chain Support** | Ethereum, Polygon, Base | Q2 2027 |
 | **Integracja DID** | Zdecentralizowana tożsamość | Q3 2027 |
 | **Community Governance** | Wzmocniony system doradczy | Q4 2027 |
@@ -936,7 +929,7 @@ Oczekujemy wkładu doświadczonych deweloperów w następujących obszarach dla 
 * **Supabase Edge Functions:** Przeniesienie ochrony przed spamem po stronie serwera.
 * **Solana Web3.js:** Integracja podpisywania portfela (Wallet Signing).
 * **IPFS / Arweave:** Integracja usług archiwizacji i pinowania.
-* **Community Tools:** Bot Discord, systemy głosowania, dashboard analityczny.
+* **Community Tools:** systemy głosowania, dashboard analityczny.
 
 > Przed dodaniem funkcji prosimy o rozpoczęcie dyskusji w zakładce "Issues".
 
@@ -962,7 +955,6 @@ Jednak wyjaśnijmy to:
 - Rejestr: Off-chain (PostgreSQL + kopia zapasowa IPFS)
 - Atestacja: Podpisane przez galerię (scentralizowane, ale przejrzyste)
 - Zarządzanie: Tylko doradcze (kuratorska ostateczna decyzja)
-- Użyteczność tokena: Dostęp do galerii + rejestr + priorytet NFT
 
 **Wizja v2.0+ (2027+):**
 - Rejestr: On-chain (Solana)
