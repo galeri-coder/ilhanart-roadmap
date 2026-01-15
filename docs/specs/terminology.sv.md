@@ -324,7 +324,6 @@ Registret kan ha två lager:
 
 **Community-konsultation:**
 - Evidence Pack delas offentligt under ansökningsprocessen
-- Communityn kan ge feedback via Discord och ilhanart.org/applications
 - Token-innehavare (minimum 10 000 $CULTURE) kan särskilt ge förslag
 - **All feedback beaktas under granskningsprocessen**
 - **Men det slutgiltiga beslutet baseras på kuratoriell utvärdering**
@@ -377,17 +376,12 @@ När projektet mognar (2027+) kan community-konsultationsmekanismen stärkas. Me
 - Fullständiga versioner av Evidence Packs
 - Forensiska verifieringsverktyg
 
-**3. NFT Mint Priority:**
-- Whitelist-åtkomst när PoArt Verified-verk mintas som NFT
-- Tidiga mint-möjligheter
-- Specialsamlings-NFT:er
-
-**4. Advisory Voting:**
+**3. Advisory Voting:**
 - Rådgivningsrätt i PoArt Verified-ansökningar
 - Åtkomst till community-feedbackkanaler
 - Deltagande i styrningsdiskussioner
 
-**5. Exklusivt Innehåll:**
+**4. Exklusivt Innehåll:**
 - Behind-the-scenes-innehåll från studion
 - Konstnärsintervjuer och processvideos
 - Åtkomst till teknisk dokumentation
@@ -618,7 +612,7 @@ Denna fas täcker övergången från systemets helt "Client-Side"-arbetande stru
 | **OpenTimestamps** | Bitcoin anchoring | OTS JavaScript | Q4 2026 |
 
 **Token Governance (v2.0):**
-- Off-chain voting (Discord/web) + wallet signature
+- Off-chain voting x/web) + wallet signature
 - Val av community representatives (första 90 dagarna)
 - Multi-sig operations wallet-kontroll
 - Viktad rådgivande röstning (med whale cap)
@@ -635,7 +629,6 @@ Denna fas täcker övergången från systemets helt "Client-Side"-arbetande stru
 | Funktion | Mål | ETA |
 |----------|-----|-----|
 | **On-Chain Registry** | Solana on-chain-registrering | Q1 2027 |
-| **Enhanced Token Utility** | NFT mint, avancerade funktioner | Q1 2027 |
 | **Multi-Chain Support** | Ethereum, Polygon, Base | Q2 2027 |
 | **DID Integration** | Decentralized Identity | Q3 2027 |
 | **Community Governance** | Förstärkt advisory system | Q4 2027 |
@@ -937,7 +930,7 @@ PoArt Protocol **Fas 2**-utvecklingar väntar på bidrag från erfarna utvecklar
 * **Supabase Edge Functions:** Flytta spamskydd till serversidan.
 * **Solana Web3.js:** Wallet Signing-integration.
 * **IPFS / Arweave:** Arkivering och pinning-tjänstintegration.
-* **Community Tools:** Discord bot, voting systems, analytics dashboard.
+* **Community Tools:** voting systems, analytics dashboard.
 
 > Vänligen starta en diskussion i "Issues"-fliken innan du lägger till en funktion.
 
@@ -963,7 +956,6 @@ Men låt oss klargöra detta:
 - Registry: Off-chain (PostgreSQL + IPFS backup)
 - Attestation: Gallery self-signed (centraliserad men transparent)
 - Governance: Endast rådgivande (kuratoriellt slutgiltigt beslut)
-- Token utility: Gallery access + registry + NFT priority
 
 **v2.0+ Vision (2027+):**
 - Registry: On-chain (Solana)
