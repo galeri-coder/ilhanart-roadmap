@@ -324,7 +324,6 @@ El registro puede tener dos capas:
 
 **Consulta Comunitaria:**
 - El Evidence Pack se comparte públicamente durante el proceso de solicitud
-- La comunidad puede proporcionar retroalimentación a través de Discord e ilhanart.org/applications
 - Los titulares de tokens (mínimo 10,000 $CULTURE) pueden hacer sugerencias especialmente
 - **Toda la retroalimentación se considera en el proceso de revisión**
 - **Sin embargo, la decisión final depende de la evaluación curatorial**
@@ -377,17 +376,12 @@ Cuando el proyecto madure (2027+), el mecanismo de consulta comunitaria puede fo
 - Versiones completas de Evidence Packs
 - Herramientas de verificación forense
 
-**3. Prioridad de Acuñación NFT:**
-- Acceso a lista blanca cuando las obras PoArt Verified se acuñan como NFT
-- Oportunidades de acuñación temprana
-- NFT de colección especial
-
-**4. Votación Consultiva:**
+**3. Votación Consultiva:**
 - Derecho de consulta en solicitudes PoArt Verified
 - Acceso a canales de retroalimentación comunitaria
 - Participación en discusiones de gobernanza
 
-**5. Contenido Exclusivo:**
+**4. Contenido Exclusivo:**
 - Contenido detrás de escenas del estudio
 - Entrevistas con artistas y videos de procesos
 - Acceso a documentación técnica
@@ -618,7 +612,7 @@ Esta fase cubre la transición del sistema desde una estructura completamente op
 | **OpenTimestamps** | Anclaje en Bitcoin | OTS JavaScript | Q4 2026 |
 
 **Gobernanza del Token (v2.0):**
-- Votación off-chain (Discord/web) + firma de billetera
+- Votación off-chain (x/web) + firma de billetera
 - Selección de representantes comunitarios (primeros 90 días)
 - Control de billetera de operaciones multi-firma
 - Votación consultiva ponderada (con límite de ballenas)
@@ -635,7 +629,6 @@ Esta fase cubre la transición del sistema desde una estructura completamente op
 | Característica | Objetivo | ETA |
 |----------------|----------|-----|
 | **Registro On-Chain** | Registro on-chain en Solana | Q1 2027 |
-| **Utilidad Mejorada del Token** | Acuñación NFT, características avanzadas | Q1 2027 |
 | **Soporte Multi-Cadena** | Ethereum, Polygon, Base | Q2 2027 |
 | **Integración DID** | Identidad Descentralizada | Q3 2027 |
 | **Gobernanza Comunitaria** | Sistema consultivo fortalecido | Q4 2027 |
@@ -936,8 +929,7 @@ Esperamos las contribuciones de desarrolladores experimentados en los siguientes
 
 * **Supabase Edge Functions:** Mover la protección contra spam al lado del servidor.
 * **Solana Web3.js:** Integración de firma de billetera (Wallet Signing).
-* **IPFS / Arweave:** Integración de servicios de archivo y pinning.
-* **Herramientas Comunitarias:** Bot de Discord, sistemas de votación, panel de análisis.
+* **IPFS / Arweave:** Integración de servicios de archivo y pinning<
 
 > Por favor, inicie una discusión en la pestaña "Issues" antes de agregar una característica.
 
@@ -963,7 +955,6 @@ Sin embargo, aclaremos esto:
 - Registro: Off-chain (PostgreSQL + respaldo IPFS)
 - Attestation: Auto-firmado por galería (centralizado pero transparente)
 - Gobernanza: Solo consultiva (decisión final curatorial)
-- Utilidad del token: Acceso a galería + registro + prioridad NFT
 
 **Visión v2.0+ (2027+):**
 - Registro: On-chain (Solana)
@@ -1034,7 +1025,6 @@ Vea [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the
 
 **Asociaciones Potenciales:**
 - Colaboración con galerías de arte contemporáneo en España y Latinoamérica
-- Integración con mercados NFT hispanos emergentes
 - Conexión con comunidades blockchain de habla hispana
 
 **Cumplimiento Regulatorio:**
@@ -1048,7 +1038,6 @@ Vea [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the
 - Apreciación por la fusión de tradición y tecnología
 
 **Oportunidades de Mercado:**
-- Creciente interés en NFTs y blockchain en Latinoamérica
 - Mercados de arte emergentes en México, Argentina, Colombia
 - Comunidades artísticas digitales en España
 
