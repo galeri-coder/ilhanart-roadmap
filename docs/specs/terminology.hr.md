@@ -1,38 +1,38 @@
-# 📚 RJEČNIK TERMINOLOGIJE I POJMOVA
-> **"Razumijevanje jezika ovog protokola znači razumijevanje njegove vizije."**
+# 📚 TERMINOLOGIJA I RJEČNIK POJMOVA
+> **„Razumjeti jezik ovog protokola znači razumjeti njegovu viziju."**
 
-## ⚙️ PoArt Forensic Engine (PFE) v1.0: Osnovna Infrastruktura
+## ⚙️ PoArt Forensic Engine (PFE) v1.0: Temeljna infrastruktura
 
-**PoArt Forensic Engine (PFE)** je osnovni sloj koji predstavlja fundamentalnu logiku i tehničko funkcioniranje iza [PoArt] protokola. To je "kriminalistički motor" koji transformira sirove podatke proizvodnje umjetničkog djela u provjerljiv i nepromijenjen **digitalni dokaz**.
+**PoArt Forensic Engine (PFE)** predstavlja temeljni logički sloj i tehničko funkcioniranje iza [PoArt] protokola. Ovo je „forenzički motor" koji uzima sirove proizvodne podatke umjetničkog djela i pretvara ih u provjerljiv i nepromjenjiv **digitalni dokaz**.
 
-### 🧩 Zašto "PoArt Forensic"?
+### 🧩 Zašto „PoArt Forensic"?
 
-- **PoArt (Proof of Art):** Fokus motora je vezivanje vrijednosti digitalnog sredstva ne na spekulaciju, već na **provjereni proces proizvodnje**.
-- **Forensic (Kriminalističko Provjeravanje):**
-  - **Tehnička Definicija:** Algoritamski pristup i lanac dokaza za provjeru da podaci procesa proizvodnje (potezi kistom, timelapse, logovi) nisu manipulirani.
-  - **Filozofska Razina:** Protiv "trenutne proizvodnje" umjetne inteligencije; tvrdnja o transformaciji ljudske proizvodnje koja sadrži **vrijeme, trud i cijenu odluka**, u mjerljivu stvarnost.
+- **PoArt (Proof of Art):** Fokus motora je povezati vrijednost digitalnog sredstva ne sa spekulacijom, već s **dokazivim proizvodnim procesom**.
+- **Forensic (Forenzička verifikacija):**
+  - **Tehnička definicija:** Algoritam i pristup lanca zapisa za provjeru da podaci iz proizvodnog procesa (potezi kista, timelapse, logovi) nisu manipulirani.
+  - **Filozofski sloj:** Tvrdnja da se ljudska proizvodnja koja sadrži **vrijeme, trud i cijenu odluka** transformira u mjerljivu stvarnost, za razliku od „trenutnog izlaza" umjetne inteligencije.
 
-> Napomena: Blockchain integracija (npr. Solana) nije jezgra PFE-a; bit će definirana odvojeno kao **Chain Anchor Layer** za provjeru/registar.
+> Napomena: Integracija s blockchainom (npr. Solana) nije jezgra PFE-a; tretira se kao zasebni **Chain Anchor Layer** za verifikaciju/registraciju.
 
-### 🛠️ Tehnički Opseg v1.0
+### 🛠️ v1.0 Tehnički opseg
 
-**PoArt Forensic Engine (PFE) v1.0** izgrađen je na **3 osnovna stupa** umjesto složenih financijskih modela:
+**PoArt Forensic Engine (PFE) v1.0** izgrađen je na **3 glavna stupa** umjesto složenih financijskih modela:
 
-1. **Hashing & Sealing (Zapečaćivanje):**  
-   PFE deterministički obrađuje sve elemente u Evidence Pack (datoteka djela, video, JSON/log, potpis itd.) i generira jedinstvenu vrijednost **NotarySeal**.
+1. **Hashing & Sealing (Pečaćenje):**  
+   PFE deterministički obrađuje sve elemente u Evidence Pack-u (datoteka djela, video, JSON/log, potpis itd.) i proizvodi jedinstvenu **NotarySeal** vrijednost.
 
-   **Ključni pojmovi (v1.0):**
+   **Temeljni pojmovi (v1.0):**
    - **FileHash (otisak djela):** Hash generiran iz bajtova datoteke djela.
-   - **EvidenceRoot (korijen paketa dokaza):** Korijeni digest koji predstavlja integritet Evidence Pack-a (Merkle korijen ili hash kanonskog manifesta).
-   - **NotarySeal (konačni pečat / izlaz PFE-a):** Konačni pečat generiran iz kombinacije EvidenceRoot + vrijeme + potpis.
+   - **EvidenceRoot (korijen paketa dokaza):** Korijenski sažetak koji predstavlja integritet Evidence Pack-a (Merkle root ili kanonski manifest hash).
+   - **NotarySeal (konačni pečat / PFE izlaz):** Konačni pečat generiran iz kombinacije EvidenceRoot + vrijeme + potpis.
 
-   **Formule (u formatu razumljivom za investitore):**
+   **Formule (jasno vidljive investitorima):**
    
    $$\text{FileHash}_{512} = \text{SHA-512}(\text{ArtworkFileBytes})$$
    
    $$\text{NotarySeal} = \text{SHA-512}(\text{EvidenceRoot} \mid \text{SignerSignature} \mid \text{TimeStamp})$$
    
-   **Canonical Payload definicije (v1.0):**
+   **Definicije Canonical Payload-a (v1.0):**
    
    - **EvidenceRootPayload:**
 ```
@@ -44,306 +44,389 @@
    evidence_root:{evidence_root}\nsigner_sig:{signer_sig}\ntimestamp:{timestamp}
 ```
    
-   > Napomena: Vrijednost smatrana izlazom PFE-a je **NotarySeal**. Mehanizam **SignerSignature** će biti aktiviran u fazi 2 (sa Solana Wallet Adapter); u trenutnoj v1.0 koristi se vlastiti atestacijski potpis sustava. Javni atestacijski ključ se objavljuje u registru u polju `issuer.attestation_pubkey`.
+   > Napomena: Vrijednost koja se podrazumijeva kao PFE izlaz je **NotarySeal**. Mehanizam **SignerSignature** bit će aktiviran u Fazi 2 (sa Solana Wallet Adapterom); u trenutnoj v1.0 koristi se vlastiti attestation potpis sustava. Javni ključ za attestation objavljuje se u registru u polju `issuer.attestation_pubkey`.
 
 2. **Indexing (Arhiviranje):**  
-   Bilježi koji novčanik, koji datum, je predstavio **Labor Proof (Dokaz Rada)** za koje djelo; u transparentnom i pretražljivom sloju registra.  
-   *(Ovaj sloj može biti baza podataka; blockchain integracija je definirana odvojeno kao "Chain Anchor Layer".)*
+   Bilježi koji je novčanik predstavio **Labor Proof (Dokaz o radu)** za koje djelo, na koji datum; u transparentni i pretraživi sloj registracije.  
+   *(Ovaj sloj može biti baza podataka; integracija s lancem definira se zasebno kao „Chain Anchor Layer".)*
 
-3. **Verification (Provjera):**  
-   Kada se autentičnost djela dovede u pitanje, PFE ponovno obrađuje sirove dokaze; testira s matematičkom sigurnošću odgovaraju li izračunate vrijednosti **EvidenceRoot / NotarySeal** zapisima u arhivi.
+3. **Verification (Verifikacija):**  
+   Kada se ospori izvornost djela, PFE ponovno obrađuje sirove dokaze; s matematičkom preciznošću testira odgovaraju li izračunate vrijednosti **EvidenceRoot / NotarySeal** zapisu u arhivi.
 
 ---
 
-### 🧮 Teorem Vrijednosti PoArt (The Value Theorem)
+### 🧮 PoArt Teorem vrijednosti (The Value Theorem)
 
-[PoArt] protokol veže vrijednost ($V$) digitalnog sredstva ne na subjektivnu percepciju tržišta, već na **fizičku stvarnost procesa proizvodnje**.
+[PoArt] protokol povezuje vrijednost ($V$) digitalnog sredstva ne sa subjektivnom percepcijom tržišta, već s **fizičkom stvarnošću proizvodnog procesa**.
 
-Umjetna inteligencija (AI) poništava proces pružajući trenutne rezultate ($t \to 0$). [PoArt] umjesto toga vrijednost smatra akumulacijom komponenti **vrijeme, rad i volja**.
+Umjetna inteligencija (AI) eliminira proces dajući rezultat trenutno ($t \to 0$). [PoArt] tretira vrijednost kao akumulaciju komponenti **vremena, rada i volje**.
 
 $$V_{\text{PoArt}} = \int_{t_{\text{start}}}^{t_{\text{end}}} \left(P_{\text{labor}}(t) \cdot I_{\text{agency}}(t)\right) dt + U_{\text{irreversible}}$$
 
-#### Definicija Varijabli
+#### Definicije varijabli
 
-- **$\int dt$ (Akumulacija Procesa):**  
-  Vrijednost nije trenutni "izlaz"; to je **proces** koji se akumulira između $t_{\text{start}}$ i $t_{\text{end}}$. Kad se vrijeme smanjuje (AI proizvodnja), rezultat integrala se približava 0.
+- **$\int dt$ (Akumulacija procesa):**  
+  Vrijednost nije trenutni „izlaz"; to je **proces** koji se akumulira između $t_{\text{start}}$ i $t_{\text{end}}$. Kako se vrijeme smanjuje (AI proizvodnja), rezultat integrala se približava 0.
 
-- **$P_{\text{labor}}(t)$ (Trenutni Intenzitet Rada):**  
-  Predstavlja intenzitet mentalnog i fizičkog napora uloženog u trenutku proizvodnje. Kad potvrđeni napor raste, integrand raste.  
-  > Napomena: Ovaj član može biti u praksi normaliziran na "mjerljive/provjerljive signale rada".
+- **$P_{\text{labor}}(t)$ (Trenutna radna snaga):**  
+  Predstavlja intenzitet mentalnog i fizičkog napora utrošenog u trenutku proizvodnje. Kako dokazivi napor raste, integrand raste.  
+  > Napomena: Ovaj pojam može se u praksi normalizirati kroz „mjerljive/dokazive signale rada".
 
-- **$I_{\text{agency}}(t)$ (Koeficijent Volje):**  
-  Ovo je sposobnost proizvođača da preuzme rizik i donosi odluke. Poprima vrijednosti između $0$ i $1$.
-  - **AI ($I \approx 0$):** Izvršava naredbe, ne preuzima rizik, ne plaća troškove.
-  - **Čovjek ($I \to 1$):** Mijenja odluke, oklijeva, preuzima rizik.
+- **$I_{\text{agency}}(t)$ (Koeficijent volje):**  
+  Kapacitet proizvođača za preuzimanje rizika i donošenje odluka. Prima vrijednost između $0$ i $1$.
+  - **AI ($I \approx 0$):** Izvršava naredbe, ne preuzima rizike, ne plaća cijenu.
+  - **Čovjek ($I \to 1$):** Mijenja odluke, oklijevao, preuzima rizike.
 
-- **$U_{\text{irreversible}}$ (Nepovratna Jedinstvenost):**  
-  Dok u digitalnoj proizvodnji možeš vratiti natrag (`Ctrl+Z`); u fizičkoj proizvodnji (boja nanesena na platno, isklesani mramor, gesta tijekom prijenosa uživo) nema povratka. Ova **nepovratnost** je dodatni član koji stvara "jedinstvenost" (nezamjenjiv karakter) u djelu.
+- **$U_{\text{irreversible}}$ (Nepovratna singularnost):**  
+  Dok je poništavanje (`Ctrl+Z`) moguće u digitalnoj proizvodnji, u fizičkoj proizvodnji (boja na platnu, isklesani mramor, gesta u live prijenosu) nema povratka. Ova **nepovratnost** je dodatni pojam koji stvara „singularnost" (non-fungible karakter) u djelu.
 
-### 🔎 Analiza Slučaja: AI "Trenutni Izlaz" protiv Čovjek "Potvrđeni Proces"
+### 🔎 Studija slučaja: AI „Trenutni izlaz" vs. Čovjek „Dokazani proces"
 
-Sljedeći scenarij pokazuje kako **Teorem Vrijednosti PoArt** funkcionira u praksi i zašto AI proizvodnje dobivaju nisku ocjenu u [PoArt] standardu.
+Sljedeći scenarij pokazuje kako **PoArt Teorem vrijednosti** funkcionira u praksi i zašto AI proizvodnje dobivaju niske rezultate prema [PoArt] standardu.
 
-#### Scenarij A: Vizualna Proizvodnja s AI za 10 Sekundi
+#### Scenarij A: Proizvodnja slike s AI za 10 sekundi
 
-- **Trajanje ($\Delta t$):** $10$ sekundi (proces praktički nepostojeći)
-- **Intenzitet Rada ($P_{\text{labor}}$):** $1$ jedinica (samo pisanje naredbe)
-- **Koeficijent Volje ($I_{\text{agency}}$):** $0.01$ (bez rizika, bez troškova)
-- **Nepovratnost ($U_{\text{irreversible}}$):** $0$ (povratno / kopirljivo)
+- **Vrijeme ($\Delta t$):** $10$ sekundi (gotovo nikakav proces)
+- **Radna snaga ($P_{\text{labor}}$):** $1$ jedinica (samo pisanje naredbe)
+- **Koeficijent volje ($I_{\text{agency}}$):** $0.01$ (bez rizika, bez cijene)
+- **Nepovratnost ($U_{\text{irreversible}}$):** $0$ (može se poništiti / kopirati)
 
 **Rezultat:**
 
 $$V_{\text{AI}} \approx \int_{0}^{10} (1 \cdot 0.01) \, dt + 0 = 0.1$$
 
-> **Komentar:** Čak i ako je izlaz savršen; budući da proces nije doživljen i ne sadrži volju/rizik, [PoArt] vrijednost se približava $0$.
+> **Tumačenje:** Čak i ako je izlaz besprijekoran; budući da proces nije doživljen i ne sadrži volju/rizik, [PoArt] vrijednost se približava $0$.
 
-#### Scenarij B: Fizička Proizvodnja Uživo tijekom 6 Sati
+#### Scenarij B: 6 sati fizičke proizvodnje u live prijenosu
 
-- **Trajanje ($\Delta t$):** $6$ sati ($21{,}600$ sekundi)
-- **Intenzitet Rada ($P_{\text{labor}}$):** $0.5$ jedinica (kontinuitet fizičkog i mentalnog napora)
-- **Koeficijent Volje ($I_{\text{agency}}$):** $0.9$ (promjena odluka, preuzimanje rizika, nepovratni izbori)
-- **Nepovratnost ($U_{\text{irreversible}}$):** $>0$ (fizički tragovi se ne mogu vratiti natrag)
+- **Vrijeme ($\Delta t$):** $6$ sati ($21{,}600$ sekundi)
+- **Radna snaga ($P_{\text{labor}}$):** $0.5$ jedinica (kontinuirani fizički i mentalni napor)
+- **Koeficijent volje ($I_{\text{agency}}$):** $0.9$ (promjene odluka, preuzimanje rizika, nepovratni izbori)
+- **Nepovratnost ($U_{\text{irreversible}}$):** $>0$ (fizički tragovi ne mogu se poništiti)
 
 **Rezultat:**
 
 $$V_{\text{Human}} \approx \int_{0}^{21600} (0.5 \cdot 0.9) \, dt + U_{\text{irreversible}} \approx 9720 + U_{\text{irreversible}}$$
 
-> **Komentar:** Kad se proces produljuje i volja (rizik) raste, vrijednost se akumulira kumulativno. Član $U_{\text{irreversible}}$ je dodatni doprinos koji stvara "jedinstvenost" (nezamjenjiv karakter) u djelu.
+> **Tumačenje:** Kako se proces produžuje i volja (rizik) raste, vrijednost kumulativno raste. Pojam $U_{\text{irreversible}}$ je dodatni doprinos koji stvara „singularnost" (non-fungible karakter) u djelu.
 
 ---
 
-### ✅ Zaključak: Vrijednost Vezana na Dokaz (Proof-Bound Value)
+### ✅ Zaključak: Zaključavanje vrijednosti dokazom (Proof-Bound Value)
 
-Ovaj teorem uklanja tvrdnju vrijednosti [PoArt] iz toga da bude "sviđa mi se" ili "tržišna priča" i veže ga na **potvrđenu stvarnost proizvodnje**.
+Ovaj teorem uzima tvrdnju o vrijednosti [PoArt]-a iz „sviđanja" ili „tržišnog narativa" i povezuje je s **dokazivom proizvodnom stvarnošću**.
 
-1. **Bez Procesa Ne Nastaje Vrijednost:**  
-   AI poništava proces u trenutnom izlazu ($t \to 0$). Kad se prozor procesa sužava, rezultat integrala pada iz matematičke nužnosti:
+1. **Nema vrijednosti bez procesa:**  
+   AI eliminira proces u trenutnom izlazu ($t \to 0$). Kako se prozor procesa sužava, rezultat integrala se smanjuje kao matematička nužnost:
    
    $$\Delta t \downarrow \ \Rightarrow\ \int \left(P(t) \cdot I(t)\right) dt \to 0$$
 
-2. **Volja i Rizik Su Množitelji:**  
-   [PoArt] mjeri ne samo "uloženo vrijeme", već i stvarnu razinu odluke, rizika i troškova tijekom tog vremena. Vrijednost proizvodnje bez preuzimanja rizika (AI) je niska:
+2. **Volja i rizik su multiplikatori:**  
+   [PoArt] mjeri ne samo „utrošeno vrijeme"; već i sloj stvarne odluke, rizika i cijene tijekom tog vremena. Proizvodnja bez rizika (AI) ima nisku vrijednost:
    
    $$V_{\text{PoArt}} \propto \int \left(P_{\text{labor}}(t) \cdot I_{\text{agency}}(t)\right) dt$$
 
-3. **Jedinstvenost Je Fizički Dokaz, Ne Marketing:**  
-   U fizičkoj proizvodnji nepovratni tragovi (potez kistom na platnu, slomljeni mramor) su izvan digitalne `Ctrl+Z` logike. Ova nepovratnost ($U_{\text{irreversible}}$) čini djelo ontološki jedinstvenim.
+3. **Singularnost je fizički dokaz, ne marketing:**  
+   U fizičkoj proizvodnji nepovratni tragovi (udarac na platno, pukotina u mramoru) su izvan logike `Ctrl+Z` u digitalnom. Ova nepovratnost ($U_{\text{irreversible}}$) čini djelo ontološki jedinstvenim.
 
-> **🔐 SAŽETAK:** Iako se teorem vrijednosti može činiti neodređenim kao mjerenje (čak i ako se ne može mjeriti 100% u stvarnom životu), svrha ove formule je pokazati strukturu i smjer varijabli. Ono što je rijetko u eri AI-ja nije "slika", već **potvrđeni rad, vrijeme i volja.** [PoArt] mjeri tu rijetkost i bilježi je preko **Evidence Pack**.
+> **🔐 SAŽETAK:** Čak i ako teorem vrijednosti izgleda neodređeno kao mjerenje (čak i ako se ne može 100% izmjeriti u stvarnom životu), svrha ove formule je pokazati konstrukciju i smjer varijabli. U eri AI-ja rijetka stvar nije „slika"; to je **dokazivi rad, vrijeme i volja.** [PoArt] mjeri tu oskudicu i registrira je s **Evidence Pack**-om.
 
-### 🏛️ Značenje Pojma "Engine" (Motor)
+### 🏛️ Značaj koncepta „Engine" (Motor)
 
-Tokeni koji dolaze s platformi poput Pump.fun često su samo **"ulaznice"**. **PoArt Forensic Engine (PFE)** je umjesto toga **ustavni logički sloj** koji definira koja prava ta ulaznica štiti, kako se bilježi rad i kako umjetnost/znanost/tehnologija postaju trajni.
+Tokeni s Pump.fun ili sličnih platformi često su samo **„ulaznice za pristup"**. **PoArt Forensic Engine (PFE)** je **ustavni logički sloj** koji određuje koja prava ta ulaznica štiti, kako će rad biti zabilježen i kako će umjetnost/znanost/tehnologija biti sačuvana.
 
-> **Napomena:** Razlog zašto smo započeli ovaj projekt na Pumpfun je taj što nismo imali dovoljno likvidnosti i pratitelja. Korištenje postojećih podataka bio je strateški ispravan korak, iako ne najkvalitetniji. Definiranje logike ovog motora na GitHubu, neovisno o proračunu i resursima, dokazuje da projekt nije samo financijska spekulacija, već dugoročna vizija **softverske infrastrukture** i **digitalne nacionalne knjižnice**.
-
----
-
-## 🎨 [PoArt] PROOF OF ART PROTOKOL (Proof of Art Protocol v1.0)
-
-> **"Pravi Umjetnik, Prava Proizvodnja, Prava Vrijednost."**
-
-Ovaj protokol je **biološki i intelektualni obrambeni mehanizam** dizajniran protiv anonimnih prevaranata koji su preplavili kripto ekosustav, AI slika proizvedenih za 5 minuta i kulture "Pump & Dump".
+> **Napomena:** Razlog zašto smo pokrenuli ovaj projekt na Pump.fun je taj što je naš cilj također poboljšati to mjesto, a imamo postojeće podatke i krug koji će doseći postojeću publiku putem live prijenosa.
 
 ---
 
-## a) Što Je [PoArt]? (Filozofska i Tehnička Definicija)
+## 🎨 [PoArt] PROTOKOL DOKAZA O RADU (Proof of Art Protocol v1.0)
 
-**Proof of Art [PoArt];** je institucionalni standard provjere koji jamči da je vrijednost iza sredstva na blockchainu utemeljena ne na spekulaciji, već na provjerenom **ljudskom radu**, **vremenu** i **fizičkoj energiji**.
+> **„Pravi umjetnik, prava proizvodnja, prava vrijednost."**
 
-Baš kao što Bitcoin proizvodi vrijednost kroz *"Elektricitet i Računalnu Snagu"* **(Proof of Work)**; projekti kompatibilni s [PoArt] proizvode vrijednost kroz *"Umjetničku Vještinu i Ljudsko Vrijeme"*.
-
-Eliminira rizik *"Dev je prodao, projekt je završio"*, prisutan na Pump.fun i DEX platformama; jer ovdje vrijednost nije u kodu, već u **kontinuitetu proizvodnje**.
-
-> **[PoArt] ne kaže sudioniku "Vjerujte nam"; kaže "Evo dokaza, pogledajte vlastitim očima, provjerite vlastitom matematikom".**
+Ovaj protokol je **biološki i intelektualni obrambeni mehanizam** razvijen protiv anonimnih prevaranata koji okružuju kripto ekosustav, AI slika proizvedenih za 5 minuta i „Pump & Dump" kulture.
 
 ---
 
-## b) [PoArt] 5-Stupni Standard (The 5 Pillars of Truth)
+## a) Što je [PoArt]? (Filozofska i tehnička definicija)
 
-Ovih 5 točaka su nemanipulabilni filtri kroz koje projekt mora proći da dobije [PoArt] pečat.
+**Proof of Art [PoArt];** je institucionalni standard verifikacije koji jamči da se vrijednost iza sredstva na blockchainu temelji na provjerljivom **ljudskom radu**, **vremenu** i **fizičkoj energiji**, a ne na spekulaciji.
 
-### 1) Dokaz Identiteta Uživo (Live Identity Proof)
+Baš kao što Bitcoin proizvodi vrijednost s *„Električnom i procesorskom snagom"* **(Proof of Work)**; projekti kompatibilni s [PoArt] proizvode vrijednost s *„Utrošenim talentom i ljudskim vremenom"*. „Stake-aju" vrijeme.
 
-- **Problem:** Kripto svijet je pun anonimnih osnivača (Dev) s nedefiniranim identitetom koji skupljaju novac i napuštaju projekt.
-- **[PoArt] rješenje:** Proizvođač dokazuje ne samo identitet, već **prisutnost tijekom proizvodnje**. To uključuje emisije uživo gdje komuniciraju sa zajednicom i ispunjavaju specifične trenutne zahtjeve, ne s unaprijed snimljenim videozapisima.  
-  (Na primjer: *"Napiši današnji datum i trenutni broj bloka u desnom kutu platna"*)
-- **Moto:** *"Roboti mogu slikati, ali roboti se ne znoje i ne improviziraju."*
+Eliminira rizik *„Programer (Dev) prodao, projekt završio"* na platformama Pump.fun i DEX; jer ovdje vrijednost nije skrivena u kodu, već u **kontinuitetu proizvodnje**.
 
-### 2) Dokaz Rada i Procesa (Labor & Process Proof)
+> **[PoArt] ne kaže svom sudioniku „Vjerujte nam"; kaže „Evo dokaza, vidi svojim očima, provjeri svojom matematikom".**
 
-- **Problem:** AI slike proizvedene za 2 sekunde i uljane slike napravljene za 2 mjeseca smatraju se istim "jpeg" u digitalnom svijetu.
-- **[PoArt] rješenje:** "Trudnički i porođajni proces" djela se bilježi. Faze skice, slojevi boje, akumulirani utrošeni sati i fizički proces koji je umjetnik doživio tijekom stvaranja djela se dokumentiraju. To dodaje **"Vremenski Trošak" (Time Cost)** tokenu. Što je teže proizvesti sredstvo, to je čvršća njegova vrijednost.
+---
 
-### 3) Dokaz Estetske Vrijednosti (Aesthetic Value Proof)
+## b) [PoArt] 5 standarda (The 5 Pillars of Truth)
 
-- **Problem:** Estetika i umjetnička dubina "Meme" kulture koja ignorira sve i fokusira se samo na trenutnu komediju, i kratkoročni "Hype" projekti koji iz toga proizlaze.
-- **[PoArt] rješenje:** Projekt mora imati akademske umjetničke standarde, teoriju boja, pravila kompozicije i poznavanje materijala (Impasto, Tekstura itd.). Sadržaj ne bi trebao samo nasmijati; trebao bi probuditi divljenje kod gledatelja i imati **kolekcijsku vrijednost**.
+Ovih 5 točaka su nemanipulirajući filteri kroz koje projekt mora proći da bi dobio [PoArt] pečat.
 
-### 4) Konceptualna Inovacija (Conceptual Novelty)
+### 1) Dokaz o živom identitetu (Live Identity Proof)
 
-- **Problem:** Tisuće identičnih dog/cat coin, daleko od kreativnosti.
-- **[PoArt] rješenje:** Projekt mora izgraditi novi most koji značajno kombinira umjetnost, znanost, filozofiju ili tehnologiju.  
-  (Na primjer: Kombinacija klasičnog Davidovog kipa s podacima kripto tržišta; kroz to obrada ideje "okamenjavanja" ljudske percepcije i mogućnost opravdavanja toga znanstvenim izvorima.)  
-  Djelo mora biti ne samo vizualna gozba, već i intelektualni izazov koji potiče razmišljanje o **Znanosti, Filozofiji ili Tehnologiji**.
+- **Problem:** Kripto svijet je pun anonimnih osnivača (Dev-ova) s nejasnim identitetom koji prikupe novac i napuste projekt.
+- **[PoArt] Rješenje:** Proizvođač dokazuje ne samo svoju osobnu iskaznicu, već i **svoju prisutnost u trenutku proizvodnje**. Ovo uključuje sesije live prijenosa u kojima se interagira sa zajednicom i ispunjavaju se trenutni specifični zahtjevi, a ne unaprijed snimljeni videozapisi.  
+  (Npr.: *„Napiši današnji datum i trenutni broj bloka u desni kut platna"*)
+- **Moto:** *„Botovi mogu slikati, ali botovi se ne znoje i ne improviziraju."*
+
+### 2) Dokaz o radu i procesu (Labor & Process Proof)
+
+- **Problem:** AI slike proizvedene za 2 sekunde tretiraju se kao isti „jpeg" u digitalnom svijetu kao i uljana slika napravljena za 2 mjeseca.
+- **[PoArt] Rješenje:** „Trudnoća i porod" djela se bilježi. Faze skice, slojevi boje, kumulativni utrošeni sati i fizički proces koji je umjetnik doživio dok je stvarao djelo se dokumentiraju. Ovo dodaje **„Vremenski trošak" (Time Cost)** tokenu. Što je teže proizvesti sredstvo, to je njegova vrijednost čvršća.
+
+### 3) Dokaz o estetskoj vrijednosti (Aesthetic Value Proof)
+
+- **Problem:** Ignoriranje estetike i umjetničke dubine od strane „Meme" kulture za fokusiranje samo na trenutnu komediju i rezultirajući kratkotrajni „Hype" projekti.
+- **[PoArt] Rješenje:** Projekt mora imati akademske umjetničke standarde, teoriju boja, pravila kompozicije i poznavanje materijala (Impasto, Tekstura itd.). Sadržaj ne smije samo zabavljati; mora izazivati divljenje kod gledatelja i nositi **kolekcionarsku vrijednost**.
+
+### 4) Konceptualna inovacija (Conceptual Novelty)
+
+- **Problem:** Tisuće novčića psa/mačke koji kopiraju jedni druge, bez kreativnosti.
+- **[PoArt] Rješenje:** Projekt mora izgraditi novi most koji objedinjuje umjetnost, znanost, filozofiju ili tehnologiju u smislenu strukturu.  
+  (Npr.: Kombiniranje klasičnog kipa Davida s podacima s kripto tržišta; obrada ideje o „pretvaranju u kamen" ljudske percepcije i utemeljenje na znanstvenim izvorima.)  
+  Djelo mora biti ne samo vizualna gozba; već i intelektualni izazov koji tjera na razmišljanje o **Znanosti, Filozofiji ili Tehnologiji**.
 
 > [!IMPORTANT]
-> **Referentni Primjer (Efekt Las Palmitas):** U području Las Palmitas u Meksiku, koje se bori s kriminalom, više od 200 kuća je pretvoreno u >gigantsku dužičastu proslavu. Kao rezultat ove estetske intervencije, stope kriminala u području su pale do određene mjere, mladi ljudi su se počeli >zanimati za umjetnost umjesto za bande. Estetska promjena je prekodirala poštovanje ljudi prema okolišu i jedni prema drugima (Društvena Kohezija).
+> **Referentni primjer (Las Palmitas efekt):**  
+> U četvrti Las Palmitas u Meksiku, koja se borila s kriminalom, više od 200 kuća pretvoreno je u ogromnu duginsku proslavu. Kao rezultat ove estetske intervencije, stopa kriminala u četvrti je u određenoj mjeri pala, a mladi su se počeli zanimati za umjetnost umjesto za bande. Estetska promjena rekodirala je poštovanje ljudi prema njihovoj okolini i jednih prema drugima (Social Cohesion).
 >
-> **Očekivanje:** Projekt koji uđe na [PoArt] popis; kao u gornjem primjeru, mora sadržavati sociološki, znanstveni ili filozofski uzročno-posljedični >odnos osim vizualne estetike. Budući da je jedina stvar koju ne možete kupiti novcem "Vrijeme", u ovom protokolu vrijeme mora biti dokazano kao jamstvo >kroz staking. Konceptualna osnova projekta mora biti tako snažna i univerzalna; da čak i u mogućem CTO (Community Take Over) scenariju godinama kasnije, >zajednica može autonomno održavati inovativni potencijal projekta nasljeđujući tu ostavštinu.
+> **Očekivanje:** Projekt koji ulazi na [PoArt] listu mora, baš kao u gornjem primjeru, sadržavati sociološki, znanstveni ili filozofski uzročno-posljedični odnos izvan čiste vizualne estetike. Budući da je jedino sredstvo koje se ne može kupiti novcem „Vrijeme", u ovom protokolu vrijeme se mora stake-ati kao kolateral i dokazati. Konceptualna osnova projekta mora biti toliko snažna i univerzalna da čak i u scenariju mogućeg CTO-a (Community Take Over) godinama kasnije, zajednica može preuzeti to nasljeđe i autonomno nastaviti inovativni potencijal projekta.
 
-### 5) Nealgoritmička Volja (Non-Algorithmic Agency)
+### 5) Ne-algoritamska volja (Non-Algorithmic Agency)
 
-- **Problem:** Savršene, ali bezdušne, ponavljajuće digitalne proizvodnje.
-- **[PoArt] rješenje:** Originalna volja ljudskog bića koje može griješiti, preuzimati rizik i osjećati emocionalne fluktuacije mora se osjećati u djelu. Nesigurnost u potezima kistom, neočekivane reakcije materijala i trenutne odluke umjetnika su **Biološki Potpis** koji razlikuje djelo od "Mehaničke Proizvodnje".
-
----
-
-## c) Mehanizam Provjere i Zaštita od Krivotvorenja
-
-Ovaj sustav osigurava da projekt ostane pouzdan i živ ne samo "na početku", već "zauvijek".
-
-### 📦 Paket Dokaza (Evidence Pack - The Digital Twin)
-
-Iza svakog [PoArt] certificiranog djela stoji kriptirani i vremenski označeni paket podataka koji investitori mogu preuzeti:
-
-- **RAW Video Snimke:** Kontinuirane sirove snimke trenutka proizvodnje.
-- **Analiza Metapodataka:** Datum stvaranja datoteke, informacije o korištenom uređaju i podaci o lokaciji.
-- **Fizičke Reference:** Dokazi da djelo postoji u fizičkom svijetu  
-  (Na primjer: Aktualne novine ili aktualni blockchain podaci pored djela).
-
-> *Napomena o konzistentnosti:* Izraz "paket dokaza" je povezan s linijom **Evidence Pack → EvidenceRoot → NotarySeal** iz prethodnih odjeljaka; tj. integritet paketa je predstavljen provjerenim pečatom.
-
-### 🔄 365-Dnevno Ažuriranje (The Sustainability Protocol)
-
-- **Revolucionarna Značajka:** U kripto projektima "Dev" (Developer) pusti token na tržište i obično nestane nakon 1-2 mjeseca (Soft Rug). [PoArt] to čini nemogućim.
-- **Pravilo:** Status "Verified Artist" (Potvrđeni Umjetnik) nije doživotan. Vrijedi samo **1 godinu**.
-- **Funkcija:** Umjetnik/developer mora predstaviti zajednici svakih 365 dana **novo, veliko i potvrđeno djelo**.
-- **Primjer Scenarija:** Započeo si projekt 2026. godine. U siječnju 2027. sustav izdaje upozorenje "Razdoblje Dokaza Isteklo". Ako umjetnik ne predstavi novu izložbu, novo fizičko djelo ili novu tehnološku integraciju, "Oznaka Povjerenja" projekta pada.
-- **Rezultat:** Ovaj sustav osigurava da **sadržaj nikad ne gubi svoju relevantnost** i da investitor ne živi u strahu *"Je li developer još tu?"*. Projekt postaje živi studio.
-
-### 🚩 Crvena Zastava (Red Flag Protocol)
-
-**Ako zajednica ili algoritmi otkriju bilo kakvo krivotvorenje (korištenje AI-ja, ukradeni rad, manipulirani video):**
-
-1. Certifikat se odmah označava kao **"NEVAŽEĆI" (VOID)**.
-2. Paketi dokaza se javno označavaju kao **"Lažni"**.
-3. Projekt se dodaje na [PoArt] crnu listu. To pojačava činjenicu da je u decentraliziranom svijetu **reputacija jedina valuta**.
+- **Problem:** Besprijekorne, ali bezdušne, ponavljajuće digitalne produkcije.
+- **[PoArt] Rješenje:** Jedinstvena volja čovjeka koji može griješiti, preuzimati rizike i doživljavati emocionalne fluktuacije mora se osjećati u djelu. Nesigurnost u potezima kista, neočekivane reakcije materijala i trenutne odluke umjetnika su **Biološki potpis** koji razlikuje djelo od „Strojne proizvodnje".
 
 ---
 
-## d) Zaključak: Ne Kasino, Muzej
+## c) Mehanizam verifikacije i borbe protiv krivotvorenja
 
-**Pump.fun i Decentralizirane Burze (DEX) su nažalost sada kasina; svjetla trepću, svi traže brze dobitke, i kasino (prevaranti) uvijek pobjeđuje. Razlog zašto smo započeli projekt ovdje je nedostatak dovoljnog proračuna i postojanje postojećeg auditorija dostupnog preko prijenosa uživo.**
+Ovaj sustav osigurava da projekt ostane pouzdan i živ ne samo „na početku", već „zauvijek".
+
+### 📦 Paket dokaza (Evidence Pack - The Digital Twin)
+
+Iza svakog [PoArt] certificiranog djela nalazi se kriptirani i vremenski označeni paket podataka koji investitori mogu preuzeti:
+
+- **RAW video snimke:** Neprekidni sirovi snimci iz trenutka proizvodnje.
+- **Analiza metapodataka:** Datum stvaranja datoteke, informacije o korištenom uređaju i podaci o lokaciji (Grad-Država).
+- **Fizičke reference:** Dokazi da djelo postoji u fizičkom svijetu  
+  (Npr.: Aktualne novine pored djela ili blockchain podaci iz tog trenutka).
+
+> *Napomena o dosljednosti:* Izraz „paket dokaza" povezuje se s linijom **Evidence Pack → EvidenceRoot → NotarySeal** iz prethodnih odjeljaka; tj. integritet paketa predstavljen je provjerljivim pečatom.
+
+### 🔄 365-dnevna obnova (The Sustainability Protocol)
+
+- **Revolucionarna značajka:** U kripto projektima „Dev" (Programer) pušta token na tržište i obično nestaje nakon 1-2 mjeseca (Soft Rug). [PoArt] to čini nemogućim.
+- **Pravilo:** Status „Verified Artist" (Verificirani umjetnik) nije doživotan. Vrijedi samo **1 godinu**.
+- **Mehanizam:** Umjetnik/Programer mora svakih 365 dana predstaviti zajednici **novo, veliko i dokazivo djelo**.
+- **Primjer scenarija:** Pokrenuli ste projekt 2026. U siječnju 2027. sustav daje upozorenje „Rok dokaza istekao". Ako umjetnik ne predstavi novu izložbu, novo fizičko djelo ili novu tehnološku integraciju, „Značka povjerenja" projekta pada.
+- **Rezultat:** Ovaj sustav osigurava da **sadržaj nikada ne izgubi aktualnost** i da investitor ne doživi strah *„Je li programer još uvijek tu?"*. Projekt se pretvara u živi studio.
+
+### 🚩 Crvena zastava (Red Flag Protocol)
+
+**U slučaju otkrivanja bilo kakve krivotvorine (korištenje AI-ja, ukradeno djelo, manipulirani video) od strane zajednice ili algoritama:**
+
+1. Certifikat se odmah označava kao **„PONIŠTEN" (VOID)**.
+2. Paketi dokaza se javno označavaju kao **„Lažni"**.
+3. Projekt se stavlja na crnu listu [PoArt]. Ovo učvršćuje stvarnost da je **reputacija jedina valuta** u decentraliziranom svijetu.
+4. Nikakve [PoArt] izjave ne mogu se koristiti u bilo kojoj objavi, jedini valjani izvor je https://www.ilhanart.org/public-registry
+
+---
+
+## d) Zaključak: Muzej, ne kasino
+
+**Pump.fun i decentralizirane burze (DEX) su nažalost trenutno kasina; svjetla bljeskaju, svi jure za brzom zaradom i kuća (prevaranti) uvijek pobjeđuje. Razlog zašto smo pokrenuli projekt ovdje je također naš pokušaj da poboljšamo ovo mjesto, a imamo postojeće podatke i krug koji će doseći postojeću publiku putem live prijenosa.**
 
 **[PoArt] je tvrđava izgrađena usred tog kasina.**
 
-- 🎰 Kasina su zasnovana na kartama; mi smo zasnovani na **fizičkoj stvarnosti**.
-- 🃏 Kasina su otvorena za prijevaru; mi smo otvoreni za **transparentne dokaze**.
-- ⏳ Kasina su privremena; mi se fokusiramo na **vječnost umjetnosti i znanosti**.
+- 🎰 Kasino se oslanja na igre s kartama; mi se oslanjamo na **fizičku stvarnost**.
+- 🃏 Kasino je otvoren za varanje; mi smo otvoreni za **transparentne dokaze**.
+- ⏳ Kasino je privremeno; mi se fokusiramo na **vječnost umjetnosti i znanosti**.
 
-**Token koji koristi ovaj protokol nije samo "novčić"; to je digitalna vrijednosnica koja sadrži znoj, boju, kod i filozofiju.**
+**Token koji koristi ovaj protokol nije samo „coin"; to je digitalna dionica s znojem, bojom, kodom i filozofijom iza sebe.**
 
 ---
 
 ## 🗳️ 6) UPRAVLJANJE I JAVNI REGISTAR (Governance & Public Registry)
 
-**Svrha ovog odjeljka je: uklanjanje [PoArt] standarda iz sfere "povjerenja u ljude" i pretvaranje u održivu javnu infrastrukturu s registrom + provjerom + nadzorom zajednice.**
+**Svrha ovog odjeljka je: Izvesti [PoArt] standard iz ravnine „povjerenja u ljude" i transformirati ga u održivu javnu infrastrukturu s registracijom + verifikacijom + nadzorom zajednice.**
 
-### 6.1 Javni Registar (Public Registry)
+### 6.1 Public Registry (Javni registar)
 
-- **Public Registry:** Svi odobreni podaci se bilježe na adresi `ilhanart.org/registry` (ili GitHub Registry).
+- **Public Registry:** Svi odobreni podaci bilježe se na `ilhanart.org/registry` (ili GitHub Registry).
 
-**Logika registracije (preporučeni standard - format JSON putanje):**
+**Logika registracije (predloženi standard - u JSON path formatu):**
 
-Svaki zapis koji ulazi u registar sadrži barem ova provjerena osnovna polja:
+Svaki zapis koji ulazi u registar nosi minimalno sljedeća provjerljiva temeljna polja:
 
-- **Identitet i Status:**
+- **Identitet i status:**
   - `certificate_id` (čitljiva referenca)
   - `status` (active / void)
-  - `void_reason` (ako postoji)
+  - `void_reason` (ako je primjenjivo)
   - `visibility` (private / masked / public)
   - `created_at` (vremenska oznaka)
 
-- **Izdavačka Organizacija:**
+- **Institucija izdavatelj:**
   - `issuer.name`
   - `issuer.location`
   - `issuer.attestation_pubkey`
 
-- **Informacije o Djelu:**
+- **Informacije o djelu:**
   - `asset.title`
   - `asset.creator`
-  - `asset.creator_wallet` (ako je moguće; za token-gated identitet)
+  - `asset.creator_wallet` (ako je moguće; za identitet vlasnika tokena)
   - `asset.fingerprints.sha256`
   - `asset.fingerprints.sha512`
 
-- **Kriminalistički Podaci:**
+- **Forenzički podaci:**
   - `forensics.ip_masked`
   - `forensics.location`
   - `forensics.device`
   - `forensics.timestamp`
 
-- **Kriptografski Dokazi:**
+- **Kriptografski dokazi:**
   - `proof.evidence_root`
   - `proof.signer_sig`
   - `proof.notary_seal`
 
 - **Upravljanje:**
   - `governance.decision`
-  - `governance.veto_threshold`
+  - `governance.review_notes`
 
-Registar može imati dvije razine:
-- **1)** Ljudski čitljiv indeks (web lista / pretraživanje / filter)
-- **2)** Strojno čitljiv manifest (JSON zapisi; za PFE provjeru)
+Registar može imati dva sloja:
+- **1)** Indeks čitljiv za ljude (web popis / pretraga / filter)
+- **2)** Manifest čitljiv za strojeve (JSON zapisi; za PFE verifikaciju)
 
-**Ovdje "registracija" postaje provjerena iz lanca PFE Evidence Pack → EvidenceRoot → NotarySeal. Registar pruža svrhu provjere, ne "tvrdnju".**
-
----
-
-### 6.2 40% Veto Zajednice (Token-Gated Governance)
-
-- **40% Veto Zajednice:** Glasovanje počinje mjesec prije dobivanja statusa; 40% prigovor **Token-Gated (Solana-Verified)** zajednice poništava zahtjev.
-
-**Tijek glasovanja (preporučeni čisti proces):**
-- **Kandidatski prozor:** Kandidatski projekt otvara "PoArt kandidat registraciju" (kandidatske registracije se prikazuju sa statusom "pending").
-- **Razdoblje pregleda:** Tijekom 30 dana zajednica ispituje dokaze (Evidence Pack + snimke uživo + metapodaci).
-- **Token-gated provjera:** Glasovanje se provodi putem novčanika provjerenih na Solani (npr. posjedovanje određenog tokena/NFT-a + potpis novčanika).
-- **Veto pravilo:** Ako je 40% glasova **prigovor (NO / VETO)**, zahtjev se odbija.
-- **Transparentnost:** Rezultat glasovanja se sprema u registar kao "decision record" (datum, omjer, snapshot ID).
+**„Registracija" ovdje postaje provjerljiva s lancem Evidence Pack → EvidenceRoot → NotarySeal PFE-a. Registar predstavlja cilj verifikacije, a ne „tvrdnju".**
 
 ---
 
-### 6.3 Sinkronizacija Metapodataka (Usklađenost s Fizičkim Svijetom)
+### 6.2 Proces prijave za PoArt Verified
 
-- **Metadata Sync:** Tehnički podaci u registru moraju odgovarati 100% fizičkom sredstvu.
+**Prijave za PoArt Verified ocjenjuje İlhanArt Gallery prema 5 PoArt standarda. Povratne informacije zajednice se uzimaju u obzir, ali konačna odluka ovisi o kuratorskom timu. Odluke se transparentno objavljuju i bilježe u ilhanart.org/registry.**
 
-**Tehnička definicija "100% usklađenosti" (preporučena jasnoća):**
-- **Minimalna usklađenost (obavezna):**
-  - `asset.fingerprints.sha256/sha512` u registru mora biti **točno isti** kao hash datoteke u ruci.
-  - `proof.notary_seal` u registru, kada se reproducira (ako postoji Evidence Pack), mora biti **točno isti**.
-- **Usklađenost fizičke reference (tip dokaza):**
-  - Dokazi kao fizičko djelo prikazano uživo + datum/blok referenca moraju biti konzistentni s Evidence Pack-om.
-- **Usklađenost privatnosti:**
-  - Polja kao IP/lokacija u `masked` vidljivosti se objavljuju **prema standardu maskiranja**.
+#### Proces prijave
+
+**Prijava:**
+- Umjetnik/projekt podnosi prijavu za PoArt Verified
+- Evidence Pack se priprema (video snimke, metapodaci, linkovi na live prijenos)
+- Prijava se šalje İlhanArt Gallery
+
+**Pregled (30 dana):**
+- Tim galerije detaljno pregledava Evidence Pack
+- Provjeravaju se svih 5 PoArt standarda:
+  1. Live Identity Proof
+  2. Labor & Process Proof
+  3. Aesthetic Value Proof
+  4. Conceptual Novelty
+  5. Non-Algorithmic Agency
+- Intervju s umjetnikom (opcionalno)
+
+**Konzultacija sa zajednicom:**
+- Evidence Pack se javno dijeli tijekom procesa prijave
+- Zajednica može davati povratne informacije putem ilhanart.org
+- Vlasnici tokena (minimalno 10,000 $CULTURE) mogu posebno davati prijedloge
+- **Sve povratne informacije uzimaju se u obzir tijekom procesa pregleda**
+- **Ali konačna odluka temelji se na kuratorskoj procjeni**
+
+**Odluka:**
+- Galerija odobrava ili odbija prijavu
+- Obrazloženje odluke se transparentno objavljuje
+- Ako je odobrena → PoArt Verified značka
+- Ako je odbijena → Može se ponovno prijaviti nakon 6 mjeseci
+
+**Transparentnost:**
+- Sve prijave i odluke bilježe se u ilhanart.org/registry
+- Decision record se javno objavljuje:
+  - Datum prijave
+  - Sažetak procesa pregleda
+  - Odluka (Approved / Rejected)
+  - Obrazloženje odluke (kratko objašnjenje)
+  - Sažetak povratnih informacija zajednice (anonimno)
+
+#### Zašto kuratorska odluka?
+
+**Kontrola kvalitete:**  
+Status PoArt Verified je značka s visokim standardima. Kuratorska procjena jamči održavanje tih standarda.
+
+**Sprječavanje spekulativne manipulacije:**  
+Potpuno on-chain upravljanje (npr. Realms, DAO voting) s Pump.fun tokenima tehnički nije moguće. Off-chain sustavi glasovanja su otvoreni za manipulaciju kitova i koordinirane napade. Kuratorska odluka eliminira ovaj rizik.
+
+**Operativna učinkovitost:**  
+Brz i jasan proces donošenja odluka umjesto složenih mehanizama glasovanja. Umjetnici dobivaju rezultat u roku od 30 dana.
+
+**Sudjelovanje zajednice:**  
+Povratne informacije zajednice se u potpunosti uzimaju u obzir i utječu na proces donošenja odluka. Ali konačna odluka pripada kuratorskom timu zaštićenom od manipulacije.
+
+**Budućnost:**  
+Kada projekt sazrije (2027+), mehanizam konzultacija sa zajednicom može se ojačati. Ali kuratorska zaštita standarda ostaje trajna.
 
 ---
 
-### 6.4 Spor, Pregled i Opoziv (Dispute & Revocation)
+### 6.3 Token Utility (Područja korištenja tokena)
 
-Registar nije samo "mehanizam odobravanja"; to je **živi nadzorni mehanizam protiv krivotvorenja**.
+**Pogodnosti koje se pružaju vlasnicima $CULTURE tokena:**
 
-- Kada se pokrene spor, zapis može biti postavljen u režim **"review"**.
-- Ako se otkrije krivotvorenje, označava se kao `status: void` i dodaje se razlog:
-  - `void_reason` (korištenje AI-ja / plagijat / manipulacija itd.)
-  - `revoked_at` (trenutak opoziva)
-- Izvor odluke o opozivu je jasno vidljiv u registru:
-  - glasovanje zajednice / ovlašteno vijeće / bilješka kriminalističkog istraživanja (ovisno o primjenjivom)
+**1. Prioritetni pristup događanjima u galeriji:**
+- Pravo na izložbu od 1 tjedna godišnje u İlhanArt Gallery (pravo se može prenijeti)
+- Popusti na drop painting
+- Pravo na popust od 10% do 30% na slike u galeriji
 
-> **Ovaj odjeljak je registarski ekvivalent koncepta VOID u odjeljku "Red Flag Protocol".**
+**2. Puni pristup PoArt Registry:**
+- Detaljni zapisi svih autentificiranih umjetničkih djela
+- Pune verzije Evidence Pack-ova
+- Alati za forenzičku verifikaciju
+
+**3. Advisory Voting:**
+- Pravo na savjetovanje u prijavama za PoArt Verified
+- Pristup kanalima za povratne informacije zajednice
+- Sudjelovanje u raspravama o upravljanju
+
+**4. Exclusive Content:**
+- Behind-the-scenes sadržaj iz studija
+- Intervjui s umjetnicima i procesni videozapisi
+- Pristup tehničkoj dokumentaciji
+
+**Napomena:**  
+Vlasnici tokena daju advisory vote (savjetodavni glas). Konačna odluka pripada kuratorskom timu. Ova struktura je odabrana kako bi se spriječila manipulacija kitova i spekulativni napadi. Nema staking nagrada jer tražimo dugoročne kulturne sudionike, a ne kratkoročni plaćenički kapital.
 
 ---
 
-### 6.5 Primjer Zapisa u Registru (Strojno Čitljiv)
+### 6.4 Metadata Sync (Usklađivanje s fizičkim svijetom)
+
+- **Metadata Sync:** Tehnički podaci u registru moraju 100% odgovarati fizičkom sredstvu.
+
+**Tehnička definicija „100% podudaranja" (predložena jasnoća):**
+
+- **Minimalno podudaranje (obavezno):**
+  - `asset.fingerprints.sha256/sha512` u registru mora biti **potpuno isto** kao hash datoteke u ruci.
+  - `proof.notary_seal` u registru mora biti **potpuno isto** kada se regenerira (ako postoji Evidence Pack).
+
+- **Podudaranje fizičke reference (tip dokaza):**
+  - Dokazi poput fizičkog djela + referenca datuma/bloka prikazani u live prijenosu moraju biti dosljedni s Evidence Pack-om.
+
+- **Usklađenost s privatnošću:**
+  - Polja poput IP/lokacije u `masked` vidljivosti objavljuju se **prema standardu maskiranja**.
+
+---
+
+### 6.5 Osporavanje, pregled i poništenje (Dispute & Revocation)
+
+Registar nije samo mehanizam „odobrenja"; to je **živi mehanizam nadzora protiv krivotvorenja**.
+
+- Kada se pokrene osporavanje, zapis se može staviti u način **„review"**.
+- Ako se otkrije krivotvorina, označava se kao `status: void` i dodaje se obrazloženje:
+  - `void_reason` (korištenje AI-ja / ukradeno / manipulacija itd.)
+  - `revoked_at` (vrijeme poništenja)
+- Izvor odluke o poništenju jasno se prikazuje u registru:
+  - kuratorski pregled / osporavanje zajednice / bilješka forenzičke analize (što je primjenjivo)
+
+> **Ovaj dio je ekvivalent u registru koncepta VOID iz odjeljka „Red Flag Protocol".**
+
+---
+
+### 6.6 Primjer zapisa u registru (čitljiv za strojeve)
 ```json
 {
   "certificate_id": "POART-AB12CD34",
@@ -356,8 +439,8 @@ Registar nije samo "mehanizam odobravanja"; to je **živi nadzorni mehanizam pro
     "attestation_pubkey": "PFE_ATTEST_PUBKEY_BASE58..."
   },
   "asset": {
-    "title": "Bez naslova",
-    "creator": "Anoniman",
+    "title": "Untitled",
+    "creator": "Anonymous",
     "fingerprints": {
       "sha256": "e4123f83b44a409d7a43f0897837876dfabb3320db63dadbb34c54281f38a6ba",
       "sha512": "41e5e0d007a2a77b6e0e3ebc548fbaa2788ea265193434f58d23e8c0f5bb20a0835aa850edbadbd8341969cf743fc69fa951f7ed275901fefe0fe7eb1fb83099"
@@ -376,198 +459,197 @@ Registar nije samo "mehanizam odobravanja"; to je **živi nadzorni mehanizam pro
   },
   "governance": {
     "decision": "approved",
-    "veto_threshold": 0.40
+    "review_notes": "Met all 5 PoArt standards. Community feedback positive."
   }
 }
 ```
-> *Napomena: `asset.fingerprints.sha512` i druge hash vrijednosti su skraćene u demonstracijske svrhe; u stvarnoj aplikaciji se koristi heksadecimalni niz pune duljine.*
+
+> *Napomena: `asset.fingerprints.sha512` i druge hash vrijednosti su skraćene u svrhu prikaza; u stvarnoj primjeni koriste se heksadecimalni znakovni nizovi pune duljine.*
 
 ---
 
 ## 7) 🔐 TEHNIČKI PEČAT (NOTARY SEAL)
 
-**PoArt Forensic Engine (PFE) v1.0** nepokolebljivi algoritam zapečaćivanja proizveden s:
+**Nepokolebljiv algoritam pečata proizveden od strane PoArt Forensic Engine (PFE) v1.0:**
 
 $$\text{NotarySeal} = \text{SHA-512}\left(\text{EvidenceRoot} \mid \text{SignerSignature} \mid \text{TimeStamp}\right)$$
 
 ---
 
-# [PoArt] protokol Digitalni Notar i Kriminalistički Dokaz (Beta v1.0)
+# [PoArt] Digitalni notar i protokol forenzičkih dokaza (Beta v1.0)
 
-> **"Kultura Veća od Kapitala. Zaštiti svoja djela danas, prenesi ih u sutra."**
-
----
-
-## Zašto Javno?
-
-Prava sigurnost dolazi iz transparentnosti. Zahvaljujući našem sustavu **Public Registry (Javni Registar)**, osoba bilo gdje u svijetu može provjeriti za nekoliko sekundi je li datoteka koju drži u ruci originalna, bez ikakvog autoriteta.
+> **„Kultura je veća od kapitala. Zaštitite svoja djela od danas, prenesite ih u sutra."**
 
 ---
 
-## 🧩 Zašto Postoji Više "Modula Vidljivosti"?
+## Zašto je javno?
 
-Najkritičniji dio koda je ovdje (izbornik odabira vidljivosti). Ove opcije omogućuju korisnicima da uravnoteže **"Privatnost vs. Transparentnost"**:
+Prava sigurnost dolazi iz transparentnosti. Zahvaljujući našem sustavu **Public Registry (Javni registar)**, osoba bilo gdje u svijetu može u sekundama provjeriti je li datoteka u njenim rukama izvorna, bez potrebe za bilo kakvim autoritetom.
+
+---
+
+## 🧩 Zašto postoji više „modula vidljivosti"?
+
+Najkritičniji dio koda je ovdje (izbornik za odabir vidljivosti). Ove opcije omogućuju korisnicima da balansiraju **„Privatnost vs. Transparentnost"**:
 
 ### 🔒 Privatno (Private)
 
-- **Scenarij:** Umjetnik još ne želi objaviti djelo, ali želi ga vremenski označiti i dokazati "napravio sam ovo na ovaj datum".
-- **Što Kod Radi:** Sprema podatke u bazu podataka, ali primjenjuje oznaku `visibility: "private"`. U budućnosti, kada napišete politiku "Public Read", možete sakriti te zapise od javnosti rekavši `WHERE visibility = 'public'`.
+- **Scenarij:** Umjetnik još ne želi objaviti djelo, ali želi staviti vremensku oznaku i dokazati „napravio sam ovo na ovaj datum".
+- **Što kod radi:** Zapisuje podatke u bazu podataka, ali stavlja oznaku `visibility: "private"`. Kada kasnije napišeš „Public Read" politiku, možeš sakriti te zapise od javnosti govoreći `WHERE visibility = 'public'`.
 
 ### 🕶️ Maskirano (Masked)
 
-- **Scenarij:** Umjetnik želi transparentnost, ali strahuje da će se pronaći adresa kuće (IP lokacija).
-- **Što Kod Radi:** Na JavaScript strani funkcioniraju funkcije `maskIP` i `maskLoc`. Pretvara IP adresu u format `88.241.***.***` i lokaciju u format `***/TR` i šalje cenzuriranu verziju u bazu podataka.
-- **Napomena o Privatnosti:** Maskiranje se događa u pregledniku, Supabase ne vidi stvarnu lokaciju. **Međutim:** Ako se koriste API-ji treće strane poput ipapi.co za podatke o lokaciji, ti dobavljači vide IP adresu u trenutku zahtjeva.
-- **Zapečaćivanje u Masked režimu:** Izračun EvidenceRoot i NotarySeal se izvodi s maskiranim forensics podacima; tako provjera ostaje deterministička.
+- **Scenarij:** Umjetnik želi transparentnost, ali se boji da će kućna adresa (IP lokacija) biti otkrivena.
+- **Što kod radi:** Funkcije `maskIP` i `maskLoc` rade na JavaScript strani. Pretvara IP adresu u format `88.241.***.***`, lokaciju u format `***/TR` i šalje cenzuriranu verziju u bazu podataka.
+- **Napomena o privatnosti:** Maskiranje se vrši u pregledniku, Supabase ne vidi stvarnu lokaciju. **Međutim:** Ako se koriste API-ji trećih strana poput ipapi.co za podatke o lokaciji, ti pružatelji vide IP adresu u trenutku zahtjeva.
+- **Pečaćenje u Masked načinu:** Izračun EvidenceRoot i NotarySeal vrši se s maskiranim forenzičkim podacima; tako verifikacija ostaje deterministička.
 
 ### 🌍 Javno (Public)
 
-- **Scenarij:** Potpuna transparentnost. Prema [PoArt] standardu, gdje, kada i s koje mreže je djelo proizvedeno, izričito se izjavljuje.
+- **Scenarij:** Potpuna transparentnost. Prema [PoArt] standardu, otvoreno se izjavljuje gdje, kada i s koje mreže je djelo proizvedeno.
 
 ---
 
-## 💡 Tehnološka Inovacija
+## 💡 Tehnološka inovacija
 
-PoArt nije samo sustav prijenosa datoteka. To je **"Forensic Chain of Custody"** motor koji stapa tri različite tehnološke slojeve u jedan lonac i donosi novi standard.
+PoArt nije samo sustav za učitavanje datoteka. To je motor **„Forenzičkog lanca skrbništva" (Forensic Chain of Custody)** koji spaja tri različita tehnološka sloja u jedan lonac i uvodi novi standard.
 
-**Sloj opisan u ovom odjeljku kao "motor" odgovara jezgri PoArt Forensic Engine (PFE) u prethodnoj terminologiji.**
+**Sloj opisan kao „motor" u ovom odjeljku odgovara jezgri PoArt Forensic Engine (PFE) u prethodnoj terminologiji.**
 
-### 1) Client-Side Hashing (Maksimalna Privatnost)
+### 1) Client-Side Hashing (Maksimalna privatnost)
 
-Datoteke vaših djela se nikad ne prenose na poslužitelj. Naš motor zasnovan na pregledniku (Client-side) izračunava hash (digitalni sažetak) datoteke na vašem računalu. Samo taj otisak i metapodaci se šalju poslužitelju.
+Datoteke vaših djela nikada se ne učitavaju na poslužitelj. Naš motor koji radi u pregledniku (Client-side) izračunava hash (digitalni sažetak) datoteke na vašem vlastitom računalu. Na poslužitelj se šalje samo ovaj otisak i metapodaci.
 
-> **Napomena o Privatnosti:** Datoteka djela se ne prenosi na poslužitelj i tako je zaštićena. Međutim, forensics podaci (IP/lokacija) se dijele prema odabranom načinu vidljivosti (private/masked/public).
+> **Napomena o privatnosti:** Datoteka djela ne učitava se na poslužitelj i tako je zaštićena. Međutim, forenzički podaci (IP/lokacija) dijele se prema odabranom načinu vidljivosti (private/masked/public).
 
-### 2) Forensic Data Fusion (Kriminalistička Snaga)
+### 2) Forensic Data Fusion (Forenzička snaga)
 
-Ovo je mnogo više od jednostavne vremenske oznake. Sustav kombinira sljedeće podatke u jedan "Genesis Seal":
+Ovo je mnogo više od obične vremenske oznake (Timestamp). Sustav kombinira sljedeće podatke u jedan „Genesis pečat":
 
-- **Digitalni Sažetak (SHA-512):** Koristeći standard kriptografskog sažetka (SHA-512), digitalni otisak koji će se razbiti čak i ako se promijeni jedan piksel djela.
-- **Lokacija i Vrijeme:** Datum s preciznošću na milisekundu, država, grad i područje gdje je transakcija izvršena.
-- **Identitet Uređaja:** Operativni sustav, preglednik i tip uređaja (User-Agent analiza).
+- **Digitalni sažetak (SHA-512):** Digitalni otisak koji koristi kriptografski standard sažetka (SHA-512), koji se kvari ako se promijeni čak i jedan piksel djela.
+- **Lokacija i vrijeme:** Datum s milisekundnom preciznošću, država, grad i okrug kada je transakcija obavljena.
+- **Identitet uređaja:** Operativni sustav, preglednik i tip uređaja (User-Agent analiza).
 
 ---
 
-## 🛡️ Područja Primjene i Prednosti
+## 🛡️ Područja korištenja i prednosti
 
-Ako ste umjetnik, pisac ili dizajner, nije dovoljno reći "Napravio sam ovo ranije", morate to dokazati.
+Ako ste umjetnik, pisac ili dizajner, nije dovoljno reći „Ja sam to već napravio", morate to dokazati.
 
 **Djelo zapečaćeno s PoArt:**
 
-- **Matematički Dokaz:** Sustav to otkriva čak i ako se promijeni jedan piksel datoteke. Manipulacija je nemoguća.
-- **Pravna Osnova:** Bilježi se koji datum, u kojem gradu, s kojeg uređaja je djelo zapečaćeno.
-- **Trenutni Certifikat:** Za nekoliko sekundi generira personalizirani **"Certifikat Identiteta Sredstva"** s QR kodom i zapečaćen.
+- **Matematički dokaz:** Ako se promijeni čak i jedan piksel vaše datoteke, sustav to razumije. Manipulacija je nemoguća.
+- **Pravna osnova:** Zabilježeno je na koji datum, u kojem gradu, s kojeg uređaja je djelo zapečaćeno.
+- **Trenutni certifikat:** Proizvodi u sekundama jedinstveni za vas, s QR kodom i zapečaćeni **„Certifikat identiteta sredstva"**.
 
 ---
 
-## ⚙️ Arhitektura Sustava i Tehničke Specifikacije
+## ⚙️ Arhitektura sustava i tehničke specifikacije
 
-Sustav je dizajniran na arhitekturi "Serverless" (Bez Poslužitelja), fokusiranoj na visoku performansu i skalabilnost.
+Sustav je dizajniran na „Serverless" (Bez poslužitelja) arhitekturi, fokusirano na visoke performanse i skalabilnost.
 
 | Sloj | Tehnologija | Opis |
-|--------|-----------|----------|
+|------|-------------|------|
 | **Kriptografija** | SHA-256 & SHA-512 | Dvoslojni kriptografski sažetak |
-| **Baza Podataka** | Supabase (PostgreSQL) | JSONB struktura podataka, RLS politike |
-| **Kriminalistički Podaci** | ipapi.co API | IP/Lokacija/Vrijeme trijada |
-| **Renderiranje** | html2canvas + jsPDF | PNG/PDF generiranje na strani klijenta |
-| **Frontend** | Vanilla JavaScript | Nula ovisnosti o frameworku |
-| **Sigurnost** | Client-side hashing | Datoteka nikad ne doseže poslužitelj |
+| **Baza podataka** | Supabase (PostgreSQL) | JSONB struktura podataka, RLS politike |
+| **Forenzički podaci** | ipapi.co API | IP/Lokacija/Vrijeme trojka |
+| **Renderiranje** | html2canvas + jsPDF | Client-side PNG/PDF proizvodnja |
+| **Frontend** | Vanilla JavaScript | Nula framework ovisnosti |
+| **Sigurnost** | Client-side hashiranje | Datoteka se nikada ne učitava na poslužitelj |
 
-### Razlikujuće Karakteristike
+### Istaknute značajke
 
-| Karakteristika | Detalj | Kod Konkurenata? |
-|---------|-------|-------------|
-| **Drag & Drop UI** | Povucite i ispustite datoteku, trenutni pregled | ❌ Nedostaje kod većine |
-| **Multi-Format Export** | PNG, JSON, PDF - jedan klik | ⚠️ Ograničeno |
-| **Real-Time Preview** | Pregled certifikata u stvarnom vremenu | ❌ Nedostaje |
+| Značajka | Detalj | Kod konkurenata? |
+|----------|--------|------------------|
+| **Drag & Drop UI** | Povuci i ispusti datoteku, trenutni pregled | ❌ Nedostaje u većini |
+| **Multi-Format Export** | PNG, JSON, PDF - jednim klikom | ⚠️ Ograničeno |
+| **Real-Time Preview** | Pregled certifikata uživo | ❌ Nedostaje |
 | **Privacy Controls** | Private/Masked/Public opcije | ❌ Nedostaje |
-| **Client-Side Hashing** | Datoteka nikad ne doseže poslužitelj | ✅ Samo kod nekih |
-| **Forensic Metadata** | IP, lokacija, uređaj, vrijeme - sve zajedno | ❌ Fragmentirano |
-| **QR Verification** | QR kod za trenutnu provjeru | ⚠️ Ograničeno |
-| **Rate Limiting** | Zaštita od spama (RLS + Client) | ❌ Nedostaje kod većine |
+| **Client-Side Hashing** | Datoteka nikada ne ide na poslužitelj | ✅ Samo u nekoliko |
+| **Forensic Metadata** | IP, lokacija, uređaj, vrijeme - sve zajedno | ❌ Djelomično |
+| **QR Verification** | Trenutni QR kod za verifikaciju | ⚠️ Ograničeno |
+| **Rate Limiting** | Zaštita od spama (RLS + Client) | ❌ Nedostaje u većini |
 
 ---
 
-## 🗺️ Putokaz: "Trustless" Budućnost
+## 🗺️ Putokaz: „Trustless" budućnost
 
-Trenutna verzija **(Beta v1.0)** optimizirana je za pružanje krajnjem korisniku maksimalne brzine, jednostavnog sučelja i besplatnog pristupa. Međutim, naša konačna vizija je prelazak na strukturu gdje čak ni administrator baze podataka (mi) ne može intervenirati.
+Trenutna verzija **(Beta v1.0)** optimizirana je za pružanje krajnjem korisniku maksimalne brzine, jednostavnog sučelja i besplatnog pristupa. Međutim, naša krajnja vizija je prijelaz na strukturu u kojoj čak ni administrator baze podataka (mi) ne može intervenirati.
 
-### Faza 1: Beta (Sada Dostupna)
+### Faza 1: Beta v1.0 (Trenutno uživo)
 
-- **Infrastruktura:** Cloud Database (Supabase).
-- **Svrha:** Brzina, eliminacija UX (Korisničko Iskustvo) barijera i prilagodba. Osiguravanje "bez trenja" sigurnosti.
+**Infrastruktura:**
+- Cloud Database (Supabase)
+- Off-chain registar (PostgreSQL + IPFS backup)
+- Gallery self-attestation (centralizirano ali transparentno)
 
-### 🚀 Faza 2: (Što Zahtijeva Backend / Edge Function)
+**Token:**
+- Platforma: Pump.fun
+- Likvidnost: Raydium (automatska)
+- Upravljanje: Samo savjetodavno (konzultacija zajednice)
 
-Ova faza pokriva prelazak iz potpuno "Client-Side" funkcionirajuće strukture sustava na sigurniju i upravljanu "Server-Side Authority" strukturu.
+**Cilj:**
+- Brzina, uklanjanje UX barijera
+- Pružanje „beskontaktne" sigurnosti
+- Izgradnja zajednice
 
-| Element | Što Donosi? | Tech Stack | Prioritet |
-|-------|---------------|------------|---------|
-| **`INSERT` → Edge Function** | Blokiranje spama + sigurnost API ključa | Supabase Edge (Deno) | 🔴 Visok |
-| **Potpis Novčanika** | Kriptografska provjera identiteta | Solana Wallet Adapter | 🟡 Srednji |
-| **IPFS/Arweave Sigurnosna Kopija** | Decentralizirana nepromjenjivost | IPFS SDK + Pinata | 🟢 Nizak |
-| **Mehanizam Opoziva** | Poništavanje lažnih certifikata | DB Schema ažuriranje | 🔴 Visok |
-| **Audit Log** | Kriminalistička istraga bilježenje | Prilagođena log tablica | 🟡 Srednji |
-| **OpenTimestamps** | Bitcoin sidrenje | OTS JavaScript | 🟢 Nizak |
-| **DID integracija** | Decentralized Identity | ION/Ceramic | 🟢 Nizak |
-
-### Faza 3: Potpuna Decentralizacija (Dugoročno)
-
-| Karakteristika | Svrha | ETA |
-|---------|-------|-----|
-| **Blockchain Registry** | On-chain registracija Ethereum/Solana | Q4 2026 |
-| **DAO Governance** | Upravljanje zajednice | Q1 2027 |
-| **Multi-Chain Support** | Polygon, Arbitrum, Base | Q2 2027 |
-| **Legal Recognition** | Valjanost u turskim sudovima | 2027-2028 |
-| **API for Developers** | Javna API krajnja točka | Q3 2026 |
+**Token Utility (v1.0):**
+- Prioritetni pristup događanjima u galeriji
+- Pregled PoArt Registry
+- Pravo savjetodavnog glasovanja
 
 ---
 
-## 📊 Analiza Konkurenata (Ažurirana)
+### 🚀 Faza 2: Decentralized Authority (2026 Q2-Q4)
 
-PoArt je pozicioniran na "Sweet Spot" (Optimalna Idealna Točka) koja nadopunjuje praznine u postojećim rješenjima.
+Ova faza pokriva prijelaz sustava iz potpuno „Client-Side" radne strukture u sigurniju i decentraliziraniju strukturu.
 
-| Karakteristika | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 証 Proof | Trust-Stamp |
-|---------|:---------:|:---------------:|:-----------------:|:------------:|:----:|:-----------:|:--------:|:-----------:|
-| **Cijena** | 🆓 Besplatno | 🆓 | 💰 Plaćeno | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
-| **Drag & Drop UI** | ✅ Vrlo Jednostavno | ❌ CLI | ⚠️ Srednje | ⚠️ Srednje | ⚠️ | ⚠️ | ❌ | ⚠️ |
-| **Multi-Format Export** | ✅ PNG/PDF/JSON | ❌ | ⚠️ PDF | ⚠️ PDF | ❌ | ❌ | ❌ | ⚠️ |
-| **Real-Time Preview** | ✅ U Stvarnom Vremenu | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| **Privacy Controls** | ✅ 3 Režima | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Client-Side Hash** | ✅ Privatnost | ✅ | ❌ Upload | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
-| **Forensic Metadata** | ✅ Potpuno | ❌ | ❌ | ⚠️ Ograničeno | ❌ | ⚠️ | ❌ | ⚠️ |
-| **QR Verification** | ✅ Trenutna | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
-| **Rate Limiting** | ✅ RLS+Client | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Blockchain Anchor** | 🔄 Putokaz | ✅ Bitcoin | ✅ Ethereum | ✅ Multi | ✅ | ✅ | ✅ | ✅ |
-| **Open Source** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
-| **Hrvatska Podrška** | 🔄 U razvoju | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
+| Značajka | Što dobivamo? | Tech Stack | Rok |
+|----------|---------------|------------|-----|
+| **Edge Function INSERT** | Blokiranje spama + sigurnost API Key-a | Supabase Edge (Deno) | Q2 2026 |
+| **Wallet potpis** | Decentralizirani identitet | Solana Wallet Adapter | Q2 2026 |
+| **IPFS/Arweave Backup** | Decentralizirani arhiv | IPFS SDK + Pinata | Q3 2026 |
+| **Revocation Mechanism** | Poništenje lažnog certifikata | DB Schema Update | Q2 2026 |
+| **Audit Log** | Forenzički log upita | Custom logs tablica | Q3 2026 |
+| **OpenTimestamps** | Bitcoin anchoring | OTS JavaScript | Q4 2026 |
 
-**Legenda:**
-- ✅ : Potpuna podrška / dostupno
-- ⚠️ : Ograničeno / u plaćenim planovima
-- ❌ : Nedostaje / nije podržano
-- 🔄 : Na Putokazu (u razvoju)
-- 🆓 : Potpuno besplatno
-- 💰 : Plaćeno / zahtijeva pretplatu
+**Token Governance (v2.0):**
+- Off-chain glasovanje (x/web) + wallet potpis
+- Izbor predstavnika zajednice (prvih 90 dana)
+- Multi-sig kontrola operativnog novčanika
+- Ponderirano savjetodavno glasovanje (s whale ograničenjem)
 
-### Nedostaci Konkurenata, Snage PoArt
-
-| Minus | Konkurenti | PoArt |
-|------|----------|-------|
-| **Složenost Korištenja** | CLI, API znanje, novčanik potreban | Povucite i ispustite, završava za 3 klika |
-| **Cjenovna Barijera** | Pretplata $50-500/mjesec | 100% besplatno |
-| **Privatnost** | Datoteka se prenosi na poslužitelj | Client-side, datoteka nikad ne napušta |
-| **Kriminalistički Podaci** | Samo vremenska oznaka | IP, lokacija, uređaj, vrijeme - sve |
-| **Hrvatska Podrška** | Nedostaje ili vrlo ograničena | Nativna jezična podrška |
-| **Open Source** | Zatvorena kutija | Sav kod otvoren na GitHub |
+**Nepromjenjivost:**
+- Registry backup s IPFS hashevima
+- Bitcoin timestamp anchoring
+- Priprema za cross-chain verifikaciju
 
 ---
 
-## 🧬 Struktura Podataka Protokola (JSON Schema)
+### Faza 3: Potpuna decentralizacija (2027+)
 
-**Svaki [PoArt] certifikat ima prenosivi i provjerljiv JSON identitet proizveden prema sljedećem standardu.**
+| Značajka | Cilj | Rok |
+|----------|------|-----|
+| **On-Chain Registry** | Solana on-chain registracija | Q1 2027 |
+| **Enhanced Token Utility** | NFT mint, napredne značajke | Q1 2027 |
+| **Multi-Chain Support** | Ethereum, Polygon, Base | Q2 2027 |
+| **DID Integration** | Decentralizirani identitet | Q3 2027 |
+| **Community Governance** | Ojačani savjetodavni sustav | Q4 2027 |
+| **Legal Recognition** | Valjanost na turskim sudovima | 2027-2028 |
+| **API for Developers** | Javna API krajnja točka | Q3 2027 |
 
-> **Napomena:** Ovaj Identity JSON format je format certifikata predstavljen korisniku. U registarskim zapisima se umjesto `identity.asset_data` koristi `registry.asset` (mapiranje: `identity.asset_data` == `registry.asset`).
+**Evolucija upravljanja:**
+- v3.0: Hibridni model (kuratorski + ponderiran od zajednice)
+- 2028+: Potpuno upravljanje zajednice (opcionalno)
+- Kuratorska kontrola kvalitete uvijek se čuva
+
+---
+
+## 🧬 Struktura podataka protokola (JSON Schema)
+
+**Svaki [PoArt] certifikat ima prenosivu i provjerljivu JSON identifikacijsku karticu proizvedenu prema standardu ispod.**
+
+> **Napomena:** Ovaj Identity JSON format je format certifikata predstavljen korisniku. U zapisima registra koristi se `registry.asset` umjesto `identity.asset_data` (mapiranje: `identity.asset_data` == `registry.asset`).
 ```json
 {
   "$schema": "https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json",
@@ -582,7 +664,7 @@ PoArt je pozicioniran na "Sweet Spot" (Optimalna Idealna Točka) koja nadopunjuj
     "archive_vision": "2025 - 3000"
   },
   "asset_data": {
-    "title": "Službeni Whitepaper",
+    "title": "Official Whitepaper",
     "fingerprints": {
       "sha256": "e4123f83b44a409d7a43f0897837876dfabb3320db63dadbb34c54281f38a6ba",
       "sha512": "41e5e0d007a2a77b6e0e3ebc548fbaa2788ea265193434f58d23e8c0f5bb20a0835aa850edbadbd8341969cf743fc69fa951f7ed275901fefe0fe7eb1fb83099"
@@ -603,24 +685,24 @@ PoArt je pozicioniran na "Sweet Spot" (Optimalna Idealna Točka) koja nadopunjuj
 
 ---
 
-## 🔬 Tehnička Dubina: Algoritam Zapečaćivanja
+## 🔬 Tehnička dubina: Algoritam pečata
 
-### Deterministične Hash Funkcije
+### Determinističke hash funkcije
 ```javascript
-// Pomoćne Funkcije: Pretvaranje digesta u hex niz
+// Pomoćne funkcije: Pretvori digest u hex string
 async function digestToHex(algorithm, dataBytes) {
   const hashBuffer = await crypto.subtle.digest(algorithm, dataBytes);
   const hashArray = Array.from(new Uint8Array(hashBuffer));
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-// Pretvaranje niza u polje bajtova
+// Pretvori string u byte array
 function stringToBytes(text) {
   return new TextEncoder().encode(text);
 }
 
-// Generiranje kanoničkog forensics niza (v1.0: fiksni redoslijed polja + UTF-8 + razdvajač \n)
-// Napomena Faza 2: Prelazak na kanonički JSON s RFC 8785 (JCS)
+// Proizvodnja kanoničkog forensics stringa (v1.0: fiksni redoslijed polja + UTF-8 + \n delimiter)
+// Napomena za Fazu 2: Prijelaz na kanonički JSON s RFC 8785 (JCS)
 function canonicalForensics(forensicsData) {
   return JSON.stringify({
     ip_masked: forensicsData.ip_masked,
@@ -631,9 +713,9 @@ function canonicalForensics(forensicsData) {
 }
 ```
 
-### NotarySeal Proces Proizvodnje (Potpuno Deterministički)
+### Proces proizvodnje NotarySeal (Potpuno deterministički)
 ```javascript
-// 1. FileHash izračun (client-side)
+// 1. Izračun FileHash (client-side)
 async function computeFileHash(file) {
   const fileBuffer = await file.arrayBuffer();
   const fileBytes = new Uint8Array(fileBuffer);
@@ -644,9 +726,9 @@ async function computeFileHash(file) {
   return { sha256, sha512 };
 }
 
-// 2. Prikupljanje kriminalističkih podataka (korištenje jedne vremenske oznake)
+// 2. Prikupljanje forensic podataka (korištenje jedne vremenske oznake)
 async function collectForensics(visibilityMode) {
-  const timestamp = new Date().toISOString(); // Generiranje jedne vremenske oznake
+  const timestamp = new Date().toISOString(); // Proizvodnja jedne vremenske oznake
   const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
   
   let forensics = {
@@ -661,19 +743,19 @@ async function collectForensics(visibilityMode) {
   return { forensics, timestamp };
 }
 
-// 3. EvidenceRoot stvaranje (s kanoničkim kodiranjem)
+// 3. Kreiranje EvidenceRoot (s canonical encoding-om)
 async function computeEvidenceRoot(fileHash512, forensicsData) {
   const canonicalPayload = `file_sha512:${fileHash512}\nforensics:${canonicalForensics(forensicsData)}`;
   return await digestToHex('SHA-512', stringToBytes(canonicalPayload));
 }
 
-// 4. NotarySeal proizvodnja (korištenje iste vremenske oznake)
+// 4. Proizvodnja NotarySeal (korištenje iste vremenske oznake)
 async function computeNotarySeal(evidenceRoot, signerSignature, timestamp) {
   const sealPayload = `evidence_root:${evidenceRoot}\nsigner_sig:${signerSignature}\ntimestamp:${timestamp}`;
   return await digestToHex('SHA-512', stringToBytes(sealPayload));
 }
 
-// Pomoćne funkcije maskiranja (IPv4 i IPv6 podrška)
+// Pomoćne funkcije za maskiranje (podrška za IPv4 i IPv6)
 function maskIP(ip) {
   if (!ip) return "***";
   
@@ -690,19 +772,19 @@ function maskIP(ip) {
 }
 ```
 
-### Tijek Provjere (Dvije Razine)
+### Tok verifikacije (Dvije razine)
 
-#### Quick Verify (Brza Provjera)
+#### Quick Verify (Brza verifikacija)
 ```javascript
 // Provjerava samo hash datoteke (brza crvena zastava)
 async function verifyQuick(file, certificateId) {
   const { sha512: userFileHash } = await computeFileHash(file);
   
-  // Dohvaćanje iz Registra
+  // Dohvati iz Registry-ja
   const cert = await fetchFromRegistry(certificateId);
   const { sha512: originalHash } = cert.asset.fingerprints;
   
-  // Hash usporedba
+  // Usporedba hasheva
   if (userFileHash === originalHash) {
     return {
       valid: true,
@@ -717,13 +799,13 @@ async function verifyQuick(file, certificateId) {
 }
 ```
 
-#### Full Verify (Potpuna Provjera)
+#### Full Verify (Potpuna verifikacija)
 ```javascript
-// Reproducira i provjerava EvidenceRoot i NotarySeal
+// Ponovno stvara i verificira EvidenceRoot i NotarySeal
 async function verifyFull(file, certificateId) {
   const { sha512: userFileHash } = await computeFileHash(file);
 
-  // Dohvaćanje iz Registra
+  // Dohvati iz Registry-ja
   const cert = await fetchFromRegistry(certificateId);
 
   // 1) FileHash provjera (brza crvena zastava)
@@ -732,13 +814,13 @@ async function verifyFull(file, certificateId) {
     return { valid: false, message: "❌ Lažno - Hash datoteke se ne podudara" };
   }
 
-  // 2) EvidenceRoot reprodukcija (s forensics podacima pohranjenima u registru)
+  // 2) Ponovno stvori EvidenceRoot (s forensics pohranjenim u registry)
   const evidenceRoot = await computeEvidenceRoot(userFileHash, cert.forensics);
   if (evidenceRoot !== cert.proof.evidence_root) {
-    return { valid: false, message: "❌ Ne podudara se - EvidenceRoot nevažeći" };
+    return { valid: false, message: "❌ Ne podudara se - EvidenceRoot ne odgovara" };
   }
 
-  // 3) NotarySeal reprodukcija (s istom vremenskom oznakom + signer_sig)
+  // 3) Ponovno stvori NotarySeal (s istom vremenskom oznakom + signer_sig)
   const seal = await computeNotarySeal(
     evidenceRoot,
     cert.proof.signer_sig,
@@ -746,94 +828,168 @@ async function verifyFull(file, certificateId) {
   );
 
   if (seal !== cert.proof.notary_seal) {
-    return { valid: false, message: "❌ Ne podudara se - NotarySeal nevažeći" };
+    return { valid: false, message: "❌ Ne podudara se - NotarySeal ne odgovara" };
   }
 
-  // Opcionalno: U fazi 2 provjerite također signer_sig s attestation_pubkey
+  // Opcionalno: U Fazi 2 verificiraj signer_sig i s attestation_pubkey
   // const sigValid = await verifySig(cert.issuer.attestation_pubkey, cert.proof.signer_sig, evidenceRoot);
-  // if (!sigValid) return { valid: false, message: "❌ Potpis nevažeći" };
+  // if (!sigValid) return { valid: false, message: "❌ Nevažeći potpis" };
 
-  return { valid: true, message: "✅ Original - Full Verify odobren" };
+  return { valid: true, message: "✅ Original - Full Verify prošao" };
 }
 ```
 
-> **Važne Napomene:**
+> **Važne napomene:**
 > - **Quick Verify:** Provjerava samo hash datoteke za brzu upotrebu.
-> - **Full Verify:** Provjerava sve slojeve protokola (EvidenceRoot + NotarySeal).
-> - Sve hash operacije se izvode deterministički, s fiksnim kodiranjem i razdvajačima.
-> - **v1.0 standard kanonizacije:** Fiksni redoslijed polja + UTF-8 kodiranje + `\n` razdvajač.
-> - **Plan Faza 2:** Prelazak na kanonički JSON s RFC 8785 (JCS - JSON Canonicalization Scheme).
-> - U Masked režimu izračun EvidenceRoot i NotarySeal se izvodi s maskiranim forensics podacima.
-> - Koristi se jedna vremenska oznaka u cijelom procesu (forensics + NotarySeal); determinizam zajamčen.
-> - **Forensics nazivi polja:** `ip_masked`, `location`, `device`, `timestamp` (kod i registar potpuno kompatibilni).
-> - **Put Registra:** `certificate.asset.fingerprints` (potpuno kompatibilan s kodom provjere).
-> - **signer_sig u Registru:** Polje `proof.signer_sig` je potrebno za Full Verify.
-> - Mehanizam SignerSignature će biti aktiviran u fazi 2 sa Solana Wallet Adapter; u v1.0 može se izvršiti provjera s `attestation_pubkey`.
+> - **Full Verify:** Verificira sve slojeve protokola (EvidenceRoot + NotarySeal).
+> - Sve hash operacije izvode se deterministički s fiksnim kodiranjem i delimiterima.
+> - **v1.0 standard kanonizacije:** Fiksni redoslijed polja + UTF-8 kodiranje + `\n` delimiter.
+> - **Plan za Fazu 2:** Prijelaz na kanonički JSON s RFC 8785 (JCS - JSON Canonicalization Scheme).
+> - U masked načinu, izračun EvidenceRoot i NotarySeal vrši se s maskiranim forensics.
+> - Jedna vremenska oznaka koristi se kroz cijeli proces (forensics + NotarySeal); determinizam je zajamčen.
+> - **Nazivi forensics polja:** `ip_masked`, `location`, `device`, `timestamp` (kod i registry potpuno kompatibilni).
+> - **Putanja u Registry:** `certificate.asset.fingerprints` (potpuno kompatibilna s kodom za verifikaciju).
+> - **signer_sig u Registry:** Polje `proof.signer_sig` potrebno je za Full Verify.
+> - Mehanizam SignerSignature bit će aktiviran u Fazi 2 sa Solana Wallet Adapterom; u v1.0 verifikacija se može izvršiti s `attestation_pubkey`.
 
 ---
 
-## 📈 Statistika Korištenja (Q1 2026 Ciljevi)
+## 📊 Analiza konkurencije (Ažurirano)
+
+PoArt se pozicionira na „Sweet Spot" (Naidealnija točka) koji nadopunjuje nedostatke postojećih rješenja.
+
+| Značajka | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 證 Proof | Trust-Stamp |
+|----------|:---------:|:---------------:|:-----------------:|:------------:|:----:|:-----------:|:--------:|:-----------:|
+| **Cijena** | 🆓 Besplatno | 🆓 | 💰 Plaćeno | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
+| **Drag & Drop UI** | ✅ Vrlo lako | ❌ CLI | ⚠️ Srednje | ⚠️ Srednje | ⚠️ | ⚠️ | ❌ | ⚠️ |
+| **Multi-Format Export** | ✅ PNG/PDF/JSON | ❌ | ⚠️ PDF | ⚠️ PDF | ❌ | ❌ | ❌ | ⚠️ |
+| **Real-Time Preview** | ✅ Uživo | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Privacy Controls** | ✅ 3 načina | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
+| **Client-Side Hash** | ✅ Privatnost | ✅ | ❌ Upload | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
+| **Forensic Metadata** | ✅ Potpuno | ❌ | ❌ | ⚠️ Ograničeno | ❌ | ⚠️ | ❌ | ⚠️ |
+| **QR Verification** | ✅ Trenutno | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
+| **Rate Limiting** | ✅ RLS+Client | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
+| **Blockchain Anchor** | 🔄 Putokaz | ✅ Bitcoin | ✅ Ethereum | ✅ Multi | ✅ | ✅ | ✅ | ✅ |
+| **Open Source** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
+| **Turkish Support** | ✅ Native | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
+
+**Legenda:**
+- ✅ : Puna podrška / dostupno
+- ⚠️ : Ograničeno / u plaćenim planovima
+- ❌ : Nedostaje / nije podržano
+- 🔄 : U putokazu (u razvoju)
+- 🆓 : Potpuno besplatno
+- 💰 : Plaćeno / potrebna pretplata
+
+### Nedostaci konkurenata, snage PoArt-a
+
+| Nedostatak | Konkurenti | PoArt |
+|------------|-----------|-------|
+| **Poteškoće u korištenju** | CLI, potrebno API znanje, novčanik | Povuci i ispusti, gotovo s 3 klika |
+| **Barijera cijene** | $50-500/mjesec pretplata | 100% besplatno |
+| **Privatnost** | Datoteka se učitava na poslužitelj | Client-side, datoteka nikada ne ide |
+| **Forensic podaci** | Samo vremenska oznaka | IP, lokacija, uređaj, vrijeme - sve |
+| **Hrvatski Support** | Nedostaje ili vrlo ograničeno | Profesionalna lokalizacija |
+| **Otvoreni kod** | Zatvorena kutija | Sav kod otvoren na GitHub-u |
+
+---
+
+## 📈 Statistika korištenja (Ciljevi za 2026 Q1)
 
 | Metrika | Cilj | Status |
-|--------|-------|-------|
-| **Ukupni Certifikati** | 1,000 | 🔄 U tijeku |
-| **Aktivni Korisnici** | 500 | 🔄 U tijeku |
-| **Broj Provjera** | 5,000 | 🔄 U tijeku |
-| **Uptime** | %99.9 | ✅ Aktivan |
-| **Prosječno Vrijeme Odgovora** | <200ms | ✅ Optimalno |
+|---------|------|--------|
+| **Ukupno certifikata** | 1,000 | 🔄 U tijeku |
+| **Aktivni korisnici** | 500 | 🔄 U tijeku |
+| **Broj verifikacija** | 5,000 | 🔄 U tijeku |
+| **Uptime** | 99.9% | ✅ Aktivno |
+| **Avg Response Time** | <200ms | ✅ Optimalno |
 
 ---
 
-## 🌍 Zajednica i Podrška
+## 🌍 Zajednica i podrška
 
 - **Twitter:** [@Galerilhan](https://twitter.com/Galerilhan)
 - **Web:** [ilhanart.org](https://ilhanart.org)
 - **Email:** galeri@ilhanart.org
+- **Instagram:** https://www.instagram.com/ilhanartgaleri
 
 ---
 
 ## 🙏 Suradnici
 
-PoArt protokol se razvija zahvaljujući doprinosima zajednice s otvorenim kodom.
+PoArt protokol nastavlja se razvijati s doprinosima zajednice otvorenog koda.
 
 **Za doprinos:**
-1. Napravite fork
-2. Stvorite granu značajke (`git checkout -b feature/amazing-feature`)
-3. Napravite commit (`git commit -m 'Add amazing feature'`)
-4. Napravite push (`git push origin feature/amazing-feature`)
-5. Otvorite Pull Request
+1. Napravi fork
+2. Kreiraj feature branch (`git checkout -b feature/amazing-feature`)
+3. Napravi commit (`git commit -m 'Add amazing feature'`)
+4. Napravi push (`git push origin feature/amazing-feature`)
+5. Otvori Pull Request
 
-### 🛠️ Što Trebamo Sada? (Poziv za Pomoć)
+### 🛠️ Što nam trenutno treba? (Poziv za pomoć)
 
-Tražimo doprinose od iskusnih razvijača u sljedećim temama za razvoj **Faze 2** PoArt protokola:
+Razvoj PoArt Protocol **Faze 2** očekuje doprinose iskusnih programera u sljedećim područjima:
 
 * **Supabase Edge Functions:** Premještanje zaštite od spama na stranu poslužitelja.
-* **Solana Web3.js:** Integracija potpisivanja novčanika (Wallet Signing).
-* **IPFS / Arweave:** Integracija usluga arhiviranja i sidrenja.
+* **Solana Web3.js:** Integracija Wallet Signing.
+* **IPFS / Arweave:** Integracija usluga arhiviranja i pinning.
+* **Community Tools:** X glasovanje, voting systems, analytics dashboard.
 
-> Prije dodavanja značajke, molimo započnite raspravu u odjeljku "Issues".
+> Molimo započnite raspravu u kartici „Issues" prije dodavanja značajke.
+
+---
+
+## 💬 Završne napomene
+
+### Pump.fun i stvarnost
+
+Ovaj projekt je pokrenut na Pump.fun jer:
+- ✅ Pristup likvidnosti (Raydium automatic migration)
+- ✅ Pristup postojećoj zajednici
+- ✅ Niski početni troškovi
+
+Ali razjasnimo ovo:
+- **Cijena tokena** nije pokazatelj umjetničkog uspjeha
+- **Operativni budžet** zahtijeva vrijednost tokena (galerija, izložbe, infrastruktura)
+- **Metrike uspjeha:** Authenticated artworks + community engagement + fizički posjetitelji
+
+### Upravljanje i decentralizacija
+
+**v1.0 Stvarnost (2026):**
+- Registry: Off-chain (PostgreSQL + IPFS backup)
+- Attestation: Gallery self-signed (centralizirano ali transparentno)
+- Governance: Samo savjetodavno (kuratorska konačna odluka)
+- Token utility: Gallery access + registry + NFT priority
+
+**v2.0+ Vizija (2027+):**
+- Registry: On-chain (Solana)
+- Potpisi: Bazirani na Wallet-u (decentralizirano)
+- Governance: Hibridno (community advisory + curatorial quality)
+- Token utility: Poboljšane značajke + napredni pristup
+
+Ova struktura pruža **operativnu učinkovitost** i **kontrolu kvalitete** u ranoj fazi, dok drži put otvoren za **povećanje sudjelovanja zajednice** u budućnosti.
 
 ---
 
 **[PoArt] Proof of Art Protocol v1.0**  
-*"Culture > Capital" // Kultura Veća od Kapitala*
+*"Culture > Capital" // Kultura je veća od kapitala*
 
 ## 🧾 Licenca
 
 MIT License © 2026 İlhan Art Gallery Initiative
 
-Pogledajte [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) za potpune uvjete.
+Vidi [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) za potpune uvjete.
 
 ---
 
-## 💬 Credits
+## 💬 Zahvale
 
 ![Version](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Security](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Platform](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
 
-**Ovaj projekt je razvijen s inicijativom [İlhan Art Gallery] i izvorni kod je javno dostupan radi transparentnosti.**
+**Ovaj projekt je razvijen od strane inicijative [İlhan Art Gallery], a izvorni kodovi su otvoreni javnosti u ime transparentnosti.**
 
-**PROTOKOL V1.0 // ZAPEČAĆENO SA SHA-512.**
+**PROTOKOL V1.0 // ZAPEČAĆENO S SHA-512.**
 
-*© 2026 İLHAN ART | SVA PRAVA NA DJELA, SLIKE I IDEJE SU ZAŠTIĆENA.*
+*© 2026 İLHAN ART | SVA PRAVA NA DJELA, SLIKE I IDEJE SU ZADRŽANA.*
 
 ---
