@@ -1,38 +1,38 @@
-# 📚 TERMINOLOGIE & BEGRIPPEN WOORDENBOEK
-> **"De taal van dit protocol begrijpen betekent de visie ervan begrijpen."**
+# 📚 DICȚIONAR DE TERMINOLOGIE & CONCEPTE
+> **"A înțelege limba acestui protocol înseamnă a-i înțelege viziunea."**
 
-## ⚙️ PoArt Forensic Engine (PFE) v1.0: Kerninfrastructuur
+## ⚙️ PoArt Forensic Engine (PFE) v1.0: Infrastructura de Bază
 
-**PoArt Forensic Engine (PFE)** is de hoofdlaag die de kernlogica en technische werking achter het [PoArt]-protocol vertegenwoordigt. Dit is de "forensische motor" die de ruwe productiegegevens van een kunstwerk neemt en deze omzet in verifieerbaar en onveranderlijk **digitaal bewijs**.
+**PoArt Forensic Engine (PFE)** este stratul principal care reprezintă logica de bază și funcționarea tehnică din spatele protocolului [PoArt]. Acesta este "motorul forensic" care preia datele brute de producție ale operei de artă și le transformă în **dovezi digitale** verificabile și imuabile.
 
-### 🧩 Waarom "PoArt Forensic"?
+### 🧩 De ce "PoArt Forensic"?
 
-- **PoArt (Proof of Art):** De focus van de motor is om de waarde van een digitaal bezit te koppelen aan een **bewijsbaar productieproces**, niet aan speculatie.
-- **Forensic (Forensische Verificatie):**
-  - **Technische Definitie:** Een algoritme- en registratiekettenbenadering gericht op het verifiëren dat productieprocessgegevens (penseelstreken, timelapse, logs) niet zijn gemanipuleerd.
-  - **Filosofische Laag:** Tegen de "instant output" productie van kunstmatige intelligentie; de claim om de productie van de **mens met tijd, inspanning en beslissingsprijs** om te zetten in een meetbare realiteit.
+- **PoArt (Proof of Art):** Focusul motorului este de a lega valoarea unui activ digital nu de speculație, ci de **procesul de producție verificabil**.
+- **Forensic (Verificare Forensică):**
+  - **Definiție Tehnică:** O abordare algoritmică și a lanțului de înregistrare orientată spre verificarea că datele procesului de producție (lovituri de pensulă, timelapse, log-uri) nu au fost manipulate.
+  - **Strat Filozofic:** Împotriva producției de "output instant" a inteligenței artificiale; susținerea transformării producției **umane cu timp, efort și cost de decizie** într-o realitate măsurabilă.
 
-> Opmerking: Blockchain-integratie (bijv. Solana) is niet de kern van PFE; het wordt behandeld als een afzonderlijk gedefinieerde **Chain Anchor Layer** voor verificatie/register.
+> Notă: Integrarea blockchain (de ex. Solana) nu este nucleul PFE; este tratată ca un **Chain Anchor Layer** definit separat pentru verificare/registru.
 
-### 🛠️ v1.0 Technische Reikwijdte
+### 🛠️ Acoperire Tehnică v1.0
 
-**PoArt Forensic Engine (PFE) v1.0** is gebouwd op deze **3 hoofdpijlers** in plaats van complexe financiële modellen:
+**PoArt Forensic Engine (PFE) v1.0** este construit pe acești **3 piloni principali** în loc de modele financiare complexe:
 
-1. **Hashing & Sealing (Verzegeling):**  
-   PFE verwerkt alle items in het Evidence Pack (kunstwerkbestand, video, JSON/log, handtekening, enz.) deterministisch en genereert de unieke **NotarySeal**-waarde.
+1. **Hashing & Sealing (Sigilare):**  
+   PFE procesează deterministă toate elementele din Evidence Pack (fișier operă, video, JSON/log, semnătură etc.) și generează valoarea unică **NotarySeal**.
 
-   **Kernconcepten (v1.0):**
-   - **FileHash (kunstwerk vingerafdruk):** Hash gegenereerd uit de bytes van het kunstwerkbestand.
-   - **EvidenceRoot (bewijspakket wortel):** Wortelsamenvat­ting die de integriteit van het Evidence Pack vertegenwoordigt (Merkle root of canonieke manifest hash).
-   - **NotarySeal (definitieve zegel / PFE Output):** Definitieve zegel gegenereerd uit de combinatie van EvidenceRoot + tijd + handtekening.
+   **Concepte de bază (v1.0):**
+   - **FileHash (amprenta operei):** Hash generat din byte-ii fișierului operei.
+   - **EvidenceRoot (rădăcina pachetului de dovezi):** Rezumat rădăcină reprezentând integritatea Evidence Pack (Merkle root sau hash manifest canonic).
+   - **NotarySeal (sigiliu final / PFE Output):** Sigiliu final generat din combinația EvidenceRoot + timp + semnătură.
 
-   **Formules (duidelijk zichtbaar voor investeerders):**
+   **Formule (vizibile clar pentru investitori):**
    
    $$\text{FileHash}_{512} = \text{SHA-512}(\text{ArtworkFileBytes})$$
    
    $$\text{NotarySeal} = \text{SHA-512}(\text{EvidenceRoot} \mid \text{SignerSignature} \mid \text{TimeStamp})$$
    
-   **Canonical Payload Definities (v1.0):**
+   **Definiții Canonical Payload (v1.0):**
    
    - **EvidenceRootPayload:**
 ```
@@ -44,393 +44,393 @@
    evidence_root:{evidence_root}\nsigner_sig:{signer_sig}\ntimestamp:{timestamp}
 ```
    
-   > Opmerking: De waarde bedoeld als PFE-output is **NotarySeal**. Het **SignerSignature**-mechanisme wordt geactiveerd in Fase 2 (met Solana Wallet Adapter); in de huidige v1.0 wordt de eigen attestation-handtekening van het systeem gebruikt. De attestation public key wordt gepubliceerd in het register in het veld `issuer.attestation_pubkey`.
+   > Notă: Valoarea menționată ca output PFE este **NotarySeal**. Mecanismul **SignerSignature** va fi activat în Faza 2 (cu Solana Wallet Adapter); în v1.0 curent se folosește semnătura de atestare proprie a sistemului. Cheia publică de atestare este publicată în registru în câmpul `issuer.attestation_pubkey`.
 
-2. **Indexing (Archivering):**  
-   Verwerkt welke portemonnee, op welke datum, welk kunstwerk **Labor Proof (Bewijs van Arbeid)** heeft aangeleverd in een transparante en opvraagbare registerlaag.  
-   *(Deze laag kan een database zijn; ketenintegratie wordt afzonderlijk behandeld als "Chain Anchor Layer".)*
+2. **Indexing (Arhivare):**  
+   Procesează ce portofel, la ce dată, pentru ce operă a prezentat **Labor Proof (Dovada Muncii)** într-un strat de înregistrare transparent și interogabil.  
+   *(Acest strat poate fi o bază de date; integrarea în lanț este tratată separat ca "Chain Anchor Layer".)*
 
-3. **Verification (Verificatie):**  
-   Wanneer de authenticiteit van een kunstwerk wordt bevraagd, verwerkt PFE de ruwe bewijzen opnieuw; het test met wiskundige zekerheid of de berekende **EvidenceRoot / NotarySeal**-waarden overeenkomen met het record in het archief.
+3. **Verification (Verificare):**  
+   Când autenticitatea unei opere este pusă la îndoială, PFE reprocesează dovezile brute; testează cu certitudine matematică dacă valorile calculate **EvidenceRoot / NotarySeal** se potrivesc cu înregistrarea din arhivă.
 
 ---
 
-### 🧮 PoArt Waardestelling (The Value Theorem)
+### 🧮 Teorema Valorii PoArt (The Value Theorem)
 
-Het [PoArt]-protocol koppelt de waarde van een digitaal bezit ($V$) niet aan subjectieve marktperceptie, maar aan **de fysieke realiteit van het productieproces**.
+Protocolul [PoArt] leagă valoarea unui activ digital ($V$) nu de percepția subiectivă a pieței, ci de **realitatea fizică a procesului de producție**.
 
-Kunstmatige Intelligentie (AI) vernietigt het proces door het resultaat onmiddellijk te geven ($t \to 0$). [PoArt] behandelt waarde daarentegen als de accumulatie van componenten van **tijd, arbeid en wilskracht**.
+Inteligența Artificială (AI) distruge procesul prin oferirea rezultatului instantaneu ($t \to 0$). [PoArt] tratează valoarea ca acumularea componentelor de **timp, muncă și voință**.
 
 $$V_{\text{PoArt}} = \int_{t_{\text{start}}}^{t_{\text{end}}} \left(P_{\text{labor}}(t) \cdot I_{\text{agency}}(t)\right) dt + U_{\text{irreversible}}$$
 
-#### Definitie van Variabelen
+#### Definiția Variabilelor
 
-- **$\int dt$ (Procesaccumulatie):**  
-  Waarde is geen momentane "output"; het is een **proces** dat accumuleert tussen $t_{\text{start}}$ en $t_{\text{end}}$. Naarmate de duur afneemt (AI-productie), nadert het resultaat van de integraal tot 0.
+- **$\int dt$ (Acumulare de Proces):**  
+  Valoarea nu este un "output" instantaneu; este un **proces** care se acumulează între $t_{\text{start}}$ și $t_{\text{end}}$. Pe măsură ce durata scade (producție AI), rezultatul integralei tinde spre 0.
 
-- **$P_{\text{labor}}(t)$ (Momentane Arbeidskracht):**  
-  Vertegenwoordigt de intensiteit van mentale en fysieke inspanning tijdens de productie. Naarmate de bewijsbare inspanning toeneemt, groeit de integrand.  
-  > Opmerking: Deze term kan in de praktijk worden genormaliseerd via "meetbare/bewijsbare arbeidssignalen".
+- **$P_{\text{labor}}(t)$ (Forță de Muncă Instantanee):**  
+  Reprezintă intensitatea efortului mental și fizic cheltuit în momentul producției. Pe măsură ce efortul verificabil crește, integrandul crește.  
+  > Notă: Acest termen poate fi normalizat în practică prin "semnale de muncă măsurabile/verificabile".
 
-- **$I_{\text{agency}}(t)$ (Wilscoëfficiënt):**  
-  Het vermogen van de producent om risico's te nemen en beslissingen te nemen. Neemt een waarde aan tussen $0$ en $1$.
-  - **AI ($I \approx 0$):** Voert opdrachten uit, neemt geen risico, betaalt geen prijs.
-  - **Mens ($I \to 1$):** Verandert beslissingen, aarzelt, neemt risico's.
+- **$I_{\text{agency}}(t)$ (Coeficient de Voință):**  
+  Capacitatea producătorului de a lua riscuri și de a lua decizii. Ia o valoare între $0$ și $1$.
+  - **AI ($I \approx 0$):** Execută comenzi, nu ia riscuri, nu plătește prețul.
+  - **Om ($I \to 1$):** Schimbă decizii, ezită, ia riscuri.
 
-- **$U_{\text{irreversible}}$ (Onomkeerbare Uniciteit):**  
-  Terwijl ongedaan maken (`Ctrl+Z`) mogelijk is in digitale productie; is er geen weg terug in fysieke productie (verf op canvas, gehouwen marmer, gebaar in live-uitzending). Deze **onomkeerbaarheid** is een extra term die "uniciteit" (non-fungible karakter) in het werk creëert.
+- **$U_{\text{irreversible}}$ (Unicitate Ireversibilă):**  
+  În timp ce anularea (`Ctrl+Z`) este posibilă în producția digitală; în producția fizică (vopsea aplicată pe pânză, marmură cioplită, gest în transmisie live) nu există întoarcere. Această **ireversibilitate** este un termen suplimentar care creează "unicitate" (caracter non-fungibil) în operă.
 
-### 🔎 Casestudie: AI "Instant Output" vs. Mens "Bewezen Proces"
+### 🔎 Studiu de Caz: AI "Output Instant" vs. Om "Proces Dovedit"
 
-Het volgende scenario laat zien hoe het **PoArt Waardestelling** in de praktijk werkt en waarom AI-producties laag scoren in de [PoArt]-standaard.
+Următorul scenariu arată cum funcționează **Teorema Valorii PoArt** în practică și de ce producțiile AI au scor scăzut în standardul [PoArt].
 
-#### Scenario A: Visuele Productie met AI in 10 Seconden
+#### Scenariul A: Producție Vizuală cu AI în 10 Secunde
 
-- **Duur ($\Delta t$):** $10$ seconden (proces verwaarloosbaar)
-- **Arbeidskracht ($P_{\text{labor}}$):** $1$ eenheid (alleen opdracht schrijven)
-- **Wilscoëfficiënt ($I_{\text{agency}}$):** $0.01$ (geen risico, geen prijs)
-- **Onomkeerbaarheid ($U_{\text{irreversible}}$):** $0$ (omkeerbaar / kopieerbaar)
+- **Durată ($\Delta t$):** $10$ secunde (proces neglijabil)
+- **Forță de Muncă ($P_{\text{labor}}$):** $1$ unitate (doar scrierea comenzii)
+- **Coeficient de Voință ($I_{\text{agency}}$):** $0.01$ (fără risc, fără preț)
+- **Ireversibilitate ($U_{\text{irreversible}}$):** $0$ (reversibil / copiabil)
 
-**Resultaat:**
+**Rezultat:**
 
 $$V_{\text{AI}} \approx \int_{0}^{10} (1 \cdot 0.01) \, dt + 0 = 0.1$$
 
-> **Commentaar:** Zelfs als de output perfect is; omdat het proces niet is doorleefd en geen wilskracht/risico bevat, nadert de [PoArt]-waarde tot $0$.
+> **Comentariu:** Chiar dacă output-ul este perfect; deoarece procesul nu a fost trăit și nu conține voință/risc, valoarea [PoArt] tinde spre $0$.
 
-#### Scenario B: 6 Uur Fysieke Productie in Live Uitzending
+#### Scenariul B: Producție Fizică de 6 Ore în Transmisie Live
 
-- **Duur ($\Delta t$):** $6$ uur ($21{,}600$ seconden)
-- **Arbeidskracht ($P_{\text{labor}}$):** $0.5$ eenheid (continuïteit van fysieke en mentale inspanning)
-- **Wilscoëfficiënt ($I_{\text{agency}}$):** $0.9$ (beslissingen veranderen, risico nemen, onomkeerbare keuzes)
-- **Onomkeerbaarheid ($U_{\text{irreversible}}$):** $>0$ (fysieke sporen kunnen niet worden teruggedraaid)
+- **Durată ($\Delta t$):** $6$ ore ($21{,}600$ secunde)
+- **Forță de Muncă ($P_{\text{labor}}$):** $0.5$ unități (continuitatea efortului fizic și mental)
+- **Coeficient de Voință ($I_{\text{agency}}$):** $0.9$ (schimbarea deciziilor, asumarea riscurilor, alegeri ireversibile)
+- **Ireversibilitate ($U_{\text{irreversible}}$):** $>0$ (urmele fizice nu pot fi anulate)
 
-**Resultaat:**
+**Rezultat:**
 
 $$V_{\text{Human}} \approx \int_{0}^{21600} (0.5 \cdot 0.9) \, dt + U_{\text{irreversible}} \approx 9720 + U_{\text{irreversible}}$$
 
-> **Commentaar:** Naarmate het proces langer wordt en de wilskracht (risico) toeneemt, groeit de waarde cumulatief. De term $U_{\text{irreversible}}$ is een extra bijdrage die "uniciteit" (non-fungible karakter) in het werk creëert.
+> **Comentariu:** Pe măsură ce procesul se prelungește și voința (riscul) crește, valoarea crește cumulativ. Termenul $U_{\text{irreversible}}$ este o contribuție suplimentară care creează "unicitate" (caracter non-fungibil) în operă.
 
 ---
 
-### ✅ Conclusie: Waarde Vergrendeld met Bewijs (Proof-Bound Value)
+### ✅ Concluzie: Valoarea Blocată cu Dovada (Proof-Bound Value)
 
-Dit theorema koppelt de waardeclaim van [PoArt] los van een "like" of "marktnarratief" en bindt het aan een **bewijsbare productierealiteit**.
+Această teoremă desprinde afirmația de valoare a [PoArt] de un "like" sau "narațiune de piață" și o leagă de o **realitate de producție verificabilă**.
 
-1. **Geen Waarde Zonder Proces:**  
-   AI vernietigt het proces in instant output ($t \to 0$). Naarmate het procesvenster verkleint, krimpt het resultaat van de integraal met wiskundige noodzaak:
+1. **Fără Proces Nu Există Valoare:**  
+   AI distruge procesul în output-ul instantaneu ($t \to 0$). Pe măsură ce fereastra procesului se restrânge, rezultatul integralei scade printr-o necesitate matematică:
    
    $$\Delta t \downarrow \ \Rightarrow\ \int \left(P(t) \cdot I(t)\right) dt \to 0$$
 
-2. **Wilskracht en Risico zijn Vermenigvuldigers:**  
-   [PoArt] meet niet alleen "bestede tijd"; maar ook de echte beslissing, risico en prijslaag in die tijd. De waarde van een productie die geen risico neemt (AI) is laag:
+2. **Voința și Riscul sunt Multiplicatori:**  
+   [PoArt] măsoară nu doar "timpul cheltuit"; ci și stratul real de decizie, risc și preț în acel timp. Valoarea unei producții care nu își asumă riscuri (AI) este scăzută:
    
    $$V_{\text{PoArt}} \propto \int \left(P_{\text{labor}}(t) \cdot I_{\text{agency}}(t)\right) dt$$
 
-3. **Uniciteit is Fysiek Bewijs, Geen Marketing:**  
-   Onomkeerbare sporen in fysieke productie (canvasslag, marmerscherf) vallen buiten de `Ctrl+Z`-logica in digitaal. Deze onomkeerbaarheid ($U_{\text{irreversible}}$) maakt het werk ontologisch uniek.
+3. **Unicitatea este Dovadă Fizică, Nu Marketing:**  
+   Urmele ireversibile în producția fizică (lovitură de pânză, cioburi de marmură) sunt în afara logicii `Ctrl+Z` din digital. Această ireversibilitate ($U_{\text{irreversible}}$) face opera unică ontologic.
 
-> **🔐 SAMENVATTING:** Hoewel het waardestelling onzeker lijkt als meting (zelfs als het niet 100% kan worden gemeten in het echte leven), is het doel van deze formule; het opzet en de richting van de variabelen te tonen. Wat schaars is in het AI-tijdperk is niet "beeld"; maar **bewijsbare arbeid, tijd en wilskracht.** [PoArt] meet deze schaarste en registreert deze met het **Evidence Pack**.
+> **🔐 REZUMAT:** Deși teorema valorii pare nesigură ca măsurare (chiar dacă nu poate fi măsurată 100% în viața reală), scopul acestei formule este; să arate construcția și direcția variabilelor. Ceea ce este rar în epoca AI nu este "imaginea"; ci **munca verificabilă, timpul și voința.** [PoArt] măsoară această raritate și o înregistrează cu **Evidence Pack**.
 
-### 🏛️ Het Belang van het "Engine" (Motor) Concept
+### 🏛️ Importanța Conceptului de "Engine" (Motor)
 
-Tokens die voortkomen uit Pump.fun of soortgelijke platforms zijn vaak slechts **"toegangstickets"**. De **PoArt Forensic Engine (PFE)** is daarentegen de **constitutionele logische laag** die bepaalt welke rechten dat ticket beschermt, hoe arbeid wordt geregistreerd en hoe kunst/wetenschap/technologie wordt geëeterniseerd.
+Token-urile care provin din Pump.fun sau platforme similare sunt adesea doar **"bilete de acces"**. **PoArt Forensic Engine (PFE)** este în schimb **stratul de logică constituțională** care determină ce drepturi protejează acel bilet, cum va fi înregistrată munca și cum va fi perpetuată arta/știința/tehnologia.
 
-> **Opmerking:** De reden dat we dit project op Pump.fun hebben gelanceerd, is omdat we niet voldoende liquiditeit en voldoende aantal volgers hadden. Het gebruik van de bestaande data was strategisch gezien niet de hoogste kwaliteit, maar we kunnen zeggen dat het de juiste zet was. Onafhankelijk van budget en middelen bewijst het definiëren van de logica van deze motor op GitHub dat het project niet alleen een financiële speculatie is, maar een langetermijn **software-infrastructuur** en **digitale nationale bibliotheek** visie.
-
----
-
-## 🎨 [PoArt] BEWIJS VAN ARBEID PROTOCOL (Proof of Art Protocol v1.0)
-
-> **"Echte Kunstenaar, Echte Productie, Echte Waarde."**
-
-Dit protocol is ontwikkeld als een **biologisch en intellectueel verdedigingsmechanisme** tegen anonieme oplichters die het crypto-ecosysteem teisteren, kunstmatige intelligentie visuele elementen geproduceerd in 5 minuten, en de "Pump & Dump" cultuur.
+> **Notă:** Motivul pentru care am lansat acest proiect pe Pump.fun este că nu aveam suficientă lichiditate și suficienți urmăritori. Folosirea datelor existente nu a fost cea mai înaltă calitate strategic, dar putem spune că a fost mișcarea corectă. Независent де буџет și средства, definirea logicii acestui motor pe GitHub dovedește că proiectul nu este doar o speculație financiară, ci o viziune de **infrastructură software** pe termen lung și **bibliotecă națională digitală**.
 
 ---
 
-## a) Wat is [PoArt]? (Filosofische en Technische Definitie)
+## 🎨 [PoArt] PROTOCOLUL DOVEZII MUNCII (Proof of Art Protocol v1.0)
 
-**Proof of Art [PoArt];** is een institutionele verificatiestandaard die garandeert dat de waarde achter een bezit op de blockchain niet is gebaseerd op speculatie, maar op verifieerbare **menselijke arbeid**, **tijd** en **fysieke energie**.
+> **"Artist Adevărat, Producție Adevărată, Valoare Adevărată."**
 
-Net zoals Bitcoin waarde creëert met *"Elektriciteit en Processorkracht"* **(Proof of Work)**; creëren [PoArt]-conforme projecten waarde met *"Artistiek Talent en Menselijke Tijd"*.
-
-Het elimineert het risico van *"Developer (Dev) verkocht, project beëindigd"* op Pump.fun en DEX-platforms; omdat hier waarde niet in code zit, maar in **de continuïteit van productie**.
-
-> **[PoArt] zegt niet tegen de deelnemer "Vertrouw ons"; het zegt "Hier is het bewijs, zie met je eigen ogen, verifieer met je wiskunde".**
+Acest protocol este dezvoltat ca un **mecanism de apărare biologic și intelectual** împotriva escroci anonimi care înconjoară ecosistemul cripto, elemente vizuale de inteligență artificială produse în 5 minute și cultura "Pump & Dump".
 
 ---
 
-## b) [PoArt] 5-voudig Standaard (The 5 Pillars of Truth)
+## a) Ce este [PoArt]? (Definiție Filosofică și Tehnică)
 
-Deze 5 items zijn niet-manipuleerbare filters die een project moet doorstaan om het [PoArt]-zegel te ontvangen.
+**Proof of Art [PoArt];** este un standard de verificare instituțională care garantează că valoarea din spatele unui activ pe blockchain nu se bazează pe speculație, ci pe **muncă umană** verificabilă, **timp** și **energie fizică**.
 
-### 1) Live Identiteitsbewijs (Live Identity Proof)
+La fel cum Bitcoin creează valoare cu *"Electricitate și Putere de Procesor"* **(Proof of Work)**; proiectele conforme [PoArt] creează valoare cu *"Talent Artistic și Timp Uman"*.
 
-- **Probleem:** De cryptowereld zit vol anonieme oprichters (Devs) met onduidelijke identiteit die geld inzamelen en het project verlaten.
-- **[PoArt] Oplossing:** De producent bewijst niet alleen een identiteitskaart, maar **zijn aanwezigheid tijdens de productie**. Dit omvat geen vooraf opgenomen video's, maar live-uitzendingssessies waarin interactie met de gemeenschap plaatsvindt en specifieke directe verzoeken worden vervuld.  
-  (bijv.: *"Schrijf de datum van vandaag en het huidige bloknummer in de rechterhoek van het canvas"*)
-- **Motto:** *"Bots kunnen schilderen, maar bots zweten niet en kunnen niet improviseren."*
+Elimină riscul de *"Developer (Dev) a vândut, proiectul s-a terminat"* pe platformele Pump.fun și DEX; pentru că aici valoarea nu este în cod, ci în **continuitatea producției**.
 
-### 2) Arbeid en Procesbewijs (Labor & Process Proof)
+> **[PoArt] nu spune participantului "Aveți încredere în noi"; spune "Iată dovezile, vezi cu ochii tăi, verifică cu matematica ta".**
 
-- **Probleem:** AI (Kunstmatige Intelligentie) visuele elementen geproduceerd in 2 seconden en een olieverfschilderij gemaakt in 2 maanden krijgen dezelfde "jpeg" behandeling in de digitale wereld.
-- **[PoArt] Oplossing:** Het "zwangerschap en geboorte" proces van het werk wordt geregistreerd. Schetsfasen, verflagen, cumulatieve uren besteed en het fysieke proces dat de kunstenaar doormaakte tijdens het creëren van dat werk worden gedocumenteerd. Dit voegt **"Tijdkosten" (Time Cost)** toe aan de token. Hoe moeilijker de productie van een bezit, hoe solider de waarde.
+---
 
-### 3) Esthetische Waardebewijs (Aesthetic Value Proof)
+## b) [PoArt] Standardul în 5 Puncte (The 5 Pillars of Truth)
 
-- **Probleem:** De "Meme"-cultuur die esthetiek en artistieke diepte negeert en zich alleen richt op momentane komedie, resulterend in kortdurende "Hype"-projecten.
-- **[PoArt] Oplossing:** Het project moet voldoen aan academische kunststandaarden, kleurtheorie, compositieregels en materiaalkennis (Impasto, Textuur, enz.). De inhoud mag niet alleen vermaken; het moet bewondering wekken bij de kijker en **collectiewaarde** hebben.
+Aceste 5 puncte sunt filtre nemanipulabile pe care un proiect trebuie să le treacă pentru a primi sigiliul [PoArt].
 
-### 4) Conceptuele Innovatie (Conceptual Novelty)
+### 1) Dovada Identității Live (Live Identity Proof)
 
-- **Probleem:** Duizenden hond/kat coins die kopieën van elkaar zijn, verstoken van creativiteit.
-- **[PoArt] Oplossing:** Het project moet een nieuwe brug bouwen die kunst, wetenschap, filosofie of technologie combineert in een betekenisvolle structuur.  
-  (bijv.: Het klassieke David-beeld combineren met crypto-marktgegevens; het idee van menselijke perceptie die "verstenen" verwerken en dit kunnen onderbouwen met wetenschappelijke bronnen.)  
-  Het werk moet niet alleen een visueel feest zijn; maar ook een intellectuele uitdaging die doet nadenken over **Wetenschap, Filosofie of Technologie**.
+- **Problemă:** Lumea cripto este plină de fondatori anonimi (Dev-uri) cu identitate neclară care colectează bani și abandonează proiectul.
+- **Soluția [PoArt]:** Producătorul dovedește nu doar un card de identitate, ci **prezența sa în momentul producției**. Aceasta nu include videoclipuri preînregistrate, ci sesiuni de transmisie live în care se interacționează cu comunitatea și se îndeplinesc cerințe specifice instantanee.  
+  (Ex: *"Scrie data de astăzi și numărul blocului curent în colțul din dreapta al pânzei"*)
+- **Motto:** *"Roboții pot picta, dar roboții nu transpiră și nu pot improviza."*
+
+### 2) Dovada Muncii și Procesului (Labor & Process Proof)
+
+- **Problemă:** Elemente vizuale AI (Inteligență Artificială) produse în 2 secunde și un tablou în ulei realizat în 2 luni primesc același tratament "jpeg" în lumea digitală.
+- **Soluția [PoArt]:** Procesul de "sarcină și naștere" al operei este înregistrat. Etapele de schiță, straturile de vopsea, orele cumulative cheltuite și procesul fizic prin care a trecut artistul creând acea operă sunt documentate. Aceasta adaugă **"Cost de Timp" (Time Cost)** la token. Cu cât producția unui activ este mai dificilă, cu atât valoarea este mai solidă.
+
+### 3) Dovada Valorii Estetice (Aesthetic Value Proof)
+
+- **Problemă:** Cultura "Meme" care ignoră estetica și profunzimea artistică concentrându-se doar pe comedie instantanee, rezultând proiecte "Hype" de scurtă durată.
+- **Soluția [PoArt]:** Proiectul trebuie să respecte standardele de artă academică, teoria culorilor, regulile de compoziție și cunoașterea materialelor (Impasto, Textură etc.). Conținutul nu trebuie doar să distreze; trebuie să trezească admirație în privitor și să aibă **valoare de colecție**.
+
+### 4) Inovație Conceptuală (Conceptual Novelty)
+
+- **Problemă:** Mii de monede câine/pisică care sunt copii unele ale altora, lipsite de creativitate.
+- **Soluția [PoArt]:** Proiectul trebuie să construiască o nouă punte care combină arta, știința, filozofia sau tehnologia într-o structură semnificativă.  
+  (Ex: Combinarea statuii clasice David cu datele pieței cripto; procesarea ideii de "pietrifcare" a percepției umane prin aceasta și fundamentarea ei cu surse științifice.)  
+  Opera nu trebuie să fie doar o sărbătoare vizuală; ci și o provocare intelectuală care face să reflectezi asupra **Științei, Filozofiei sau Tehnologiei**.
 
 > [!IMPORTANT]
-> **Referentie Voorbeeld (Las Palmitas Effect):**  
-> In de met misdaad worstelende wijk Las Palmitas in Mexico zijn meer dan 200 huizen getransformeerd in een gigantisch regenboogfeest. Als gevolg van deze esthetische interventie zijn de misdaadcijfers in de wijk tot op zekere hoogte gedaald, zijn jongeren zich bezig gaan houden met kunst in plaats van bendes. Esthetische verandering heeft het respect van mensen voor hun omgeving en voor elkaar (Social Cohesion) opnieuw gecodeerd.
+> **Exemplu de Referință (Efectul Las Palmitas):**  
+> În cartierul Las Palmitas din Mexic, care se luptă cu criminalitatea, peste 200 de case au fost transformate într-o sărbătoare gigantică de curcubeu. Ca urmare a acestei intervenții estetice, ratele criminalității din cartier au scăzut într-o anumită măsură, tinerii au început să se intereseze de artă în loc de bande. Schimbarea estetică a recodat respectul oamenilor față de mediul lor și unii față de alții (Social Cohesion).
 >
-> **Verwachting:** Een project dat op de [PoArt]-lijst komt; moet, net als in het bovenstaande voorbeeld, een sociologische, wetenschappelijke of filosofische oorzaak-gevolg relatie bevatten die verder gaat dan louter visuele esthetiek. Omdat "Tijd" het enige bezit is dat niet met geld kan worden gekocht, moet in dit protocol tijd worden bewezen door te worden gestaked als onderpand. De intellectuele basis van het project moet zo sterk en universeel zijn dat; zelfs in een mogelijk CTO (Community Take Over) scenario jaren later, de gemeenschap deze erfenis kan overnemen en het innovatieve potentieel van het project autonoom kan voortzetten.
+> **Așteptare:** Un proiect care intră în lista [PoArt]; trebuie să conțină, ca în exemplul de mai sus, o relație sociologică, științifică sau filozofică cauză-efect care depășește estetica vizuală pură. Deoarece "Timpul" este singurul activ care nu poate fi cumpărat cu bani, în acest protocol timpul trebuie dovedit prin staking ca garanție. Baza intelectuală a proiectului trebuie să fie atât de puternică și universală încât; chiar și într-un posibil scenariu CTO (Community Take Over) ani mai târziu, comunitatea poate prelua această moștenire și continua potențialul inovator al proiectului în mod autonom.
 
-### 5) Niet-Algoritmische Wilskracht (Non-Algorithmic Agency)
+### 5) Voință Non-Algoritmică (Non-Algorithmic Agency)
 
-- **Probleem:** Perfecte maar zielloze, zich herhalende digitale producties.
-- **[PoArt] Oplossing:** De authentieke wilskracht van de mens die fouten kan maken, risico's neemt en emotionele schommelingen ervaart, moet voelbaar zijn in het werk. De onzekerheid in penseelstreken, de onverwachte reacties van materiaal en de momentane beslissingen van de kunstenaar zijn de **Biologische Handtekening** die het werk onderscheidt van "Machineproductie".
-
----
-
-## c) Verificatie & Anti-Vervalsingsmechanisme
-
-Dit systeem zorgt ervoor dat het project niet alleen "aan het begin" maar "voor altijd" betrouwbaar en levend blijft.
-
-### 📦 Bewijspakket (Evidence Pack - The Digital Twin)
-
-Achter elk [PoArt]-gecertificeerd werk bevindt zich een versleuteld en voorzien van tijdstempel datapakket dat investeerders kunnen downloaden:
-
-- **RAW Video-opnames:** Ononderbroken ruwe beelden van het productiemoment.
-- **Metadata Analyse:** Aanmaakdatum van het bestand, gebruikte apparaatinformatie en locatiegegevens.
-- **Fysieke Referenties:** Bewijs dat het werk bestaat in de fysieke wereld  
-  (bijv.: Actuele krant naast het werk of blockchain-gegevens van dat moment).
-
-> *Consistentienota:* De uitdrukking "bewijspakket" is verbonden met de lijn **Evidence Pack → EvidenceRoot → NotarySeal** in eerdere secties; d.w.z. de integriteit van het pakket wordt vertegenwoordigd door een verifieerbaar zegel.
-
-### 🔄 365-dagen Vernieuwing (The Sustainability Protocol)
-
-- **Revolutionaire Eigenschap:** In crypto-projecten lanceert de "Dev" (Ontwikkelaar) de token op de markt en verdwijnt meestal na 1-2 maanden (Soft Rug). [PoArt] maakt dit onmogelijk.
-- **Regel:** De status "Verified Artist" (Geverifieerde Kunstenaar) is niet levenslang. Hij is slechts **1 jaar** geldig.
-- **Werking:** De Kunstenaar/Ontwikkelaar moet elke 365 dagen een **nieuw, groot en bewijsbaar werk** aan de gemeenschap presenteren.
-- **Voorbeeldscenario:** U lanceerde het project in 2026. In januari 2027 geeft het systeem een waarschuwing "Bewijsperiode Verlopen". Als de kunstenaar geen nieuwe tentoonstelling, nieuw fysiek werk of nieuwe technologische integratie presenteert, valt de "Vertrouwensbadge" van het project.
-- **Resultaat:** Dit systeem zorgt ervoor dat **de inhoud nooit verouderd raakt** en dat de investeerder geen *"Is de ontwikkelaar er nog?"* angst ervaart. Het project wordt een levende studio.
-
-### 🚩 Rode Vlag Protocol (Red Flag Protocol)
-
-**In geval van vervalsing gedetecteerd door de gemeenschap of algoritmes (AI-gebruik, gestolen werk, gemanipuleerde video):**
-
-1. Het certificaat wordt onmiddellijk gemarkeerd als **"GEANNULEERD" (VOID)**.
-2. Bewijspakketten worden publiekelijk gelabeld als **"Vervalst"**.
-3. Het project wordt op de [PoArt] zwarte lijst geplaatst. Dit versterkt het feit dat **reputatie de enige valuta** is in een gedecentraliseerde wereld.
+- **Problemă:** Producții digitale perfecte dar fără suflet, care se repetă.
+- **Soluția [PoArt]:** Voința autentică a omului care poate face greșeli, își asumă riscuri și experimentează fluctuații emoționale trebuie să fie simțită în operă. Incertitudinea în loviturile de pensulă, reacțiile neașteptate ale materialului și deciziile instantanee ale artistului sunt **Semnătura Biologică** care diferențiază opera de "Producția Mașinii".
 
 ---
 
-## d) Conclusie: Geen Casino, Een Museum
+## c) Verificare & Mecanism Anti-Falsificare
 
-**Pump.fun en Gedecentraliseerde Beurzen (DEX) zijn helaas momenteel casino's; lichten flitsen, iedereen jaagt op snelle winst en de bank (oplichters) wint altijd. De reden dat we het project hier lanceerden is omdat we onvoldoende budget hadden en via live-uitzendingen onze bestaande netwerk konden bereiken.**
+Acest sistem asigură că proiectul rămâne de încredere și viu nu doar "la început" ci "pentru totdeauna".
 
-**[PoArt] is een fort gebouwd in het midden van dit casino.**
+### 📦 Pachetul de Dovezi (Evidence Pack - The Digital Twin)
 
-- 🎰 Casino is gebaseerd op kaartspellen; wij zijn gebaseerd op **fysieke realiteit**.
-- 🃏 Casino is vatbaar voor bedrog; wij zijn open voor **transparant bewijs**.
-- ⏳ Casino is tijdelijk; wij zijn gericht op de **eeuwigheid van kunst en wetenschap**.
+În spatele fiecărei opere certificate [PoArt] se află un pachet de date criptat și marcat temporal pe care investitorii îl pot descărca:
 
-**De token die dit protocol gebruikt is niet alleen een "coin"; het is een digitaal aandeel met zweet, verf, code en filosofie erachter.**
+- **Înregistrări Video RAW:** Imagini brute neîntrerupte ale momentului de producție.
+- **Analiză Metadata:** Data creării fișierului, informații despre dispozitivul folosit și date de locație.
+- **Referințe Fizice:** Dovezi că opera există în lumea fizică  
+  (Ex: Ziar actual lângă operă sau date blockchain din acel moment).
+
+> *Notă de consistență:* Expresia "pachet de dovezi" este conectată la linia **Evidence Pack → EvidenceRoot → NotarySeal** din secțiunile anterioare; adică integritatea pachetului este reprezentată de un sigiliu verificabil.
+
+### 🔄 Reînnoire de 365 Zile (The Sustainability Protocol)
+
+- **Caracteristică Revoluționară:** În proiectele cripto, "Dev" (Dezvoltatorul) lansează tokenul pe piață și de obicei dispare după 1-2 luni (Soft Rug). [PoArt] face acest lucru imposibil.
+- **Regulă:** Statutul "Verified Artist" (Artist Verificat) nu este pe viață. Este valabil doar **1 an**.
+- **Funcționare:** Artistul/Dezvoltatorul trebuie să prezinte comunității o **operă nouă, mare și verificabilă** la fiecare 365 de zile.
+- **Scenar Exemplu:** Ați lansat proiectul în 2026. În ianuarie 2027, sistemul oferă avertismentul "Perioada de Dovadă Expirată". Dacă artistul nu prezintă o nouă expoziție, o nouă operă fizică sau o nouă integrare tehnologică, "Badge-ul de Încredere" al proiectului scade.
+- **Rezultat:** Acest sistem asigură că **conținutul nu își pierde niciodată relevanța** și investitorul nu experimentează frica *"Dezvoltatorul mai este aici?"*. Proiectul devine un studio viu.
+
+### 🚩 Protocolul Steagului Roșu (Red Flag Protocol)
+
+**În caz de falsificare detectată de comunitate sau algoritmi (utilizare AI, operă furată, video manipulat):**
+
+1. Certificatul este marcat imediat ca **"ANULAT" (VOID)**.
+2. Pachetele de dovezi sunt etichetate public ca **"False"**.
+3. Proiectul este adăugat pe lista neagră [PoArt]. Acest lucru consolidează faptul că **reputația este singura monedă** într-o lume descentralizată.
 
 ---
 
-## 🗳️ 6) BESTUUR EN OPENBAAR REGISTER (Governance & Public Registry)
+## d) Concluzie: Nu Cazinou, Ci Muzeu
 
-**Het doel van dit gedeelte is: De [PoArt]-standaard uit het vlak van "vertrouwen in personen" halen en het omzetten in een duurzame openbare infrastructuur met registratie + verificatie + gemeenschapstoezicht.**
+**Pump.fun și Schimburile Descentralizate (DEX) sunt din păcate cazinouri în prezent; luminile clipesc, toată lumea urmărește profituri rapide și casa (escrocii) câștigă întotdeauna. Motivul pentru care am lansat proiectul aici este că nu aveam suficient buget și am putut ajunge la publicul existent prin transmisiuni live.**
 
-### 6.1 Openbaar Register (Public Registry)
+**[PoArt] este o fortăreață construită în mijlocul acestui cazinou.**
 
-- **Public Registry:** Alle goedgekeurde gegevens worden geregistreerd op `ilhanart.org/registry` (of GitHub Registry).
+- 🎰 Cazinourile se bazează pe jocuri de cărți; noi ne bazăm pe **realitate fizică**.
+- 🃏 Cazinourile sunt deschise înșelăciunii; noi suntem deschisi **dovezilor transparente**.
+- ⏳ Cazinourile sunt temporare; noi suntem concentrați pe **eternitatea artei și științei**.
 
-**Registratielogica (aanbevolen standaard - JSON path-formaat):**
+**Tokenul care folosește acest protocol nu este doar o "monedă"; este o acțiune digitală cu sudoare, vopsea, cod și filozofie în spate.**
 
-Elk record dat in het register komt, draagt minimaal deze verifieerbare kernvelden:
+---
 
-- **Identiteit & Status:**
-  - `certificate_id` (leesbare referentie)
+## 🗳️ 6) GUVERNARE ȘI REGISTRU PUBLIC (Governance & Public Registry)
+
+**Scopul acestei secțiuni este: A scoate standardul [PoArt] din planul "încrederii în persoane" și a-l transforma într-o infrastructură publică durabilă cu înregistrare + verificare + supraveghere comunitară.**
+
+### 6.1 Registru Public (Public Registry)
+
+- **Public Registry:** Toate datele aprobate sunt înregistrate la `ilhanart.org/registry` (sau GitHub Registry).
+
+**Logica de înregistrare (standard recomandat - format cale JSON):**
+
+Fiecare înregistrare care intră în registru poartă minimum aceste câmpuri de bază verificabile:
+
+- **Identitate & Statut:**
+  - `certificate_id` (referință citibilă)
   - `status` (active / void)
-  - `void_reason` (indien van toepassing)
+  - `void_reason` (dacă este cazul)
   - `visibility` (private / masked / public)
-  - `created_at` (tijdstempel)
+  - `created_at` (timestamp)
 
-- **Uitgevende Instelling:**
+- **Instituția Emitentă:**
   - `issuer.name`
   - `issuer.location`
   - `issuer.attestation_pubkey`
 
-- **Werkinformatie:**
+- **Informații Operă:**
   - `asset.title`
   - `asset.creator`
-  - `asset.creator_wallet` (indien mogelijk; voor token holder identiteit)
+  - `asset.creator_wallet` (dacă este posibil; pentru identitatea deținătorului de token)
   - `asset.fingerprints.sha256`
   - `asset.fingerprints.sha512`
 
-- **Forensische Gegevens:**
+- **Date Forensice:**
   - `forensics.ip_masked`
   - `forensics.location`
   - `forensics.device`
   - `forensics.timestamp`
 
-- **Cryptografisch Bewijs:**
+- **Dovezi Criptografice:**
   - `proof.evidence_root`
   - `proof.signer_sig`
   - `proof.notary_seal`
 
-- **Bestuur:**
+- **Guvernare:**
   - `governance.decision`
   - `governance.review_notes`
 
-Het register kan twee lagen hebben:
-- **1)** Mens-leesbare index (web listing / zoeken / filteren)
-- **2)** Machine-leesbaar manifest (JSON-records; voor PFE-verificatie)
+Registrul poate avea două straturi:
+- **1)** Index citibil de om (listare web / căutare / filtrare)
+- **2)** Manifest citibil de mașină (înregistrări JSON; pentru verificarea PFE)
 
-**Het "record" hier wordt verifieerbaar met de keten Evidence Pack → EvidenceRoot → NotarySeal van PFE. Het register biedt een verificatiedoel, geen "claim".**
+**"Înregistrarea" aici devine verificabilă cu lanțul Evidence Pack → EvidenceRoot → NotarySeal al PFE. Registrul oferă un obiectiv de verificare, nu o "afirmație".**
 
 ---
 
-### 6.2 PoArt Verified Aanvraagproces
+### 6.2 Procesul de Aplicare PoArt Verified
 
-**PoArt Verified aanvragen worden door İlhanArt Gallery beoordeeld volgens 5 PoArt-standaarden. Gemeenschapsfeedback wordt in overweging genomen, maar de definitieve beslissing berust bij het curatoriale team. Beslissingen worden transparant uitgelegd en geregistreerd op ilhanart.org/registry.**
+**Aplicațiile PoArt Verified sunt evaluate de İlhanArt Gallery conform celor 5 standarde PoArt. Feedback-ul comunității este luat în considerare, dar decizia finală aparține echipei curatoriale. Deciziile sunt explicate transparent și înregistrate pe ilhanart.org/registry.**
 
-#### Aanvraagproces
+#### Procesul de Aplicare
 
-**Aanvraag:**
-- Kunstenaar/project dient PoArt Verified aanvraag in
-- Evidence Pack wordt voorbereid (video-opnames, metadata, live-uitzendingslinks)
-- Aanvraag wordt naar İlhanArt Gallery gestuurd
+**Aplicare:**
+- Artistul/proiectul face aplicația PoArt Verified
+- Evidence Pack este pregătit (înregistrări video, metadata, linkuri de transmisiune live)
+- Aplicația este trimisă la İlhanArt Gallery
 
-**Onderzoek (30 Dagen):**
-- Galerieteam onderzoekt Evidence Pack in detail
-- Alle 5 PoArt-standaarden worden gecontroleerd:
+**Examinare (30 Zile):**
+- Echipa galeriei examinează detaliat Evidence Pack
+- Toate cele 5 standarde PoArt sunt verificate:
   1. Live Identity Proof
   2. Labor & Process Proof
   3. Aesthetic Value Proof
   4. Conceptual Novelty
   5. Non-Algorithmic Agency
-- Interview met kunstenaar (optioneel)
+- Interviu cu artistul (opțional)
 
-**Gemeenschapsconsultatie:**
-- Evidence Pack wordt tijdens het aanvraagproces publiekelijk gedeeld
-- Gemeenschap kan feedback geven via Discord en ilhanart.org/applications
-- Token holders (minimum 10.000 $CULTURE) kunnen specifiek aanbevelingen doen
-- **Alle feedback wordt in overweging genomen tijdens het onderzoeksproces**
-- **Maar de definitieve beslissing berust bij curatoriale beoordeling**
+**Consultare Comunitară:**
+- Evidence Pack este partajat public în timpul procesului de aplicare
+- Comunitatea poate oferi feedback prin Discord și ilhanart.org/applications
+- Token holder-ii (minimum 10.000 $CULTURE) pot face sugestii în mod special
+- **Tot feedback-ul este luat în considerare în timpul procesului de examinare**
+- **Dar decizia finală aparține evaluării curatoriale**
 
-**Beslissing:**
-- Galerij keurt de aanvraag goed of wijst deze af
-- Beslissingsgrondslag wordt transparant uitgelegd
-- Indien goedgekeurd → PoArt Verified badge
-- Indien afgewezen → Heraanvraag mogelijk na 6 maanden
+**Decizie:**
+- Galeria aprobă sau respinge aplicația
+- Motivarea deciziei este explicată transparent
+- Dacă este aprobat → PoArt Verified badge
+- Dacă este respins → Reaplicare posibilă după 6 luni
 
-**Transparantie:**
-- Alle aanvragen en beslissingen worden geregistreerd op ilhanart.org/registry
-- Decision record wordt publiekelijk gepubliceerd:
-  - Aanvraagdatum
-  - Samenvatting onderzoeksproces
-  - Beslissing (Approved / Rejected)
-  - Beslissingsgrondslag (korte uitleg)
-  - Samenvatting gemeenschapsfeedback (anoniem)
+**Transparență:**
+- Toate aplicațiile și deciziile sunt înregistrate pe ilhanart.org/registry
+- Decision record este publicat public:
+  - Data aplicării
+  - Rezumatul procesului de examinare
+  - Decizie (Approved / Rejected)
+  - Motivarea deciziei (explicație scurtă)
+  - Rezumatul feedback-ului comunității (anonim)
 
-#### Waarom Curatoriale Beslissing?
+#### De ce Decizie Curatorială?
 
-**Kwaliteitscontrole:**  
-PoArt Verified-status is een badge met hoge standaarden. Curatoriale beoordeling garandeert het behoud van deze standaarden.
+**Control de Calitate:**  
+Statutul PoArt Verified este un badge cu standarde înalte. Evaluarea curatorială garantează menținerea acestor standarde.
 
-**Speculatieve Manipulatie Preventie:**  
-Volledige on-chain governance (bijv.: Realms, DAO voting) is technisch niet mogelijk met Pump.fun tokens. Off-chain voting systemen zijn vatbaar voor whale-manipulatie en gecoördineerde aanvallen. Curatoriale beslissing elimineert dit risico.
+**Prevenirea Manipulării Speculative:**  
+Guvernarea completă on-chain (ex: Realms, DAO voting) nu este posibilă tehnic cu token-urile Pump.fun. Sistemele de voting off-chain sunt deschise manipulării whale și atacurilor coordonate. Decizia curatorială elimină acest risc.
 
-**Operationele Efficiëntie:**  
-In plaats van complexe stemming mechanismen, snel en helder beslissingsproces. Kunstenaars krijgen binnen 30 dagen resultaat.
+**Eficiență Operațională:**  
+În loc de mecanisme complexe de vot, proces de decizie rapid și clar. Artiștii primesc rezultat în 30 de zile.
 
-**Gemeenschapsdeelname:**  
-Gemeenschapsfeedback wordt volledig in overweging genomen en beïnvloedt het beslissingsproces. Maar de definitieve beslissing berust bij het curatoriale team beschermd tegen manipulatie.
+**Participare Comunitară:**  
+Feedback-ul comunității este luat complet în considerare și influențează procesul de decizie. Dar decizia finală aparține echipei curatoriale protejate împotriva manipulării.
 
-**Toekomst:**  
-Wanneer het project matured wordt (2027+), kan het gemeenschapsconsultatiemodel worden versterkt. Maar curatoriale standaardbescherming blijft permanent.
-
----
-
-### 6.3 Token Utility (Token Gebruiksgebieden)
-
-**Voordelen voor $CULTURE token houders:**
-
-**1. Prioriteitstoega ng Galerij Evenementen:**
-- İlhanArt Gallery fysieke tentoonstelling openingen
-- Kunstenaarsontmoetingen en atelierbezoeken
-- Speciale collectie bekijkingen
-
-**2. PoArt Registry Volledige Toegang:**
-- Gedetailleerde records van alle geauthenticeerde kunstwerken
-- Volledige versies van Evidence Packs
-- Forensische verificatie tools
-
-**3. NFT Mint Prioriteit:**
-- Whitelist-toegang wanneer PoArt Verified werken als NFT worden gemint
-- Vroege mint-mogelijkheden
-- Speciale collectie NFT's
-
-**4. Advisory Voting:**
-- Adviesrecht in PoArt Verified aanvragen
-- Toegang tot gemeenschapsfeedback kanalen
-- Deelname aan governance discussies
-
-**5. Exclusieve Content:**
-- Studio behind-the-scenes inhoud
-- Kunstenaarsinterviews en procesvideos
-- Technische documentatie toegang
-
-**Opmerking:**  
-Token holders geven advisory vote (advies stem). De definitieve beslissing berust bij het curatoriale team. Deze structuur is gekozen om whale-manipulatie en speculatieve aanvallen te voorkomen. Er is geen staking reward omdat we op zoek zijn naar langetermijn culturele deelnemers, niet kortetermijn mercenary capital.
+**Viitor:**  
+Când proiectul ajunge la maturitate (2027+), mecanismul de consultare a comunității poate fi întărit. Dar protecția standardului curatorial rămâne permanentă.
 
 ---
 
-### 6.4 Metadata Sync (Synchronisatie met Fysieke Wereld)
+### 6.3 Utilitatea Token-ului (Token Utility)
 
-- **Metadata Sync:** Technische gegevens in het register moeten 100% overeenkomen met het fysieke bezit.
+**Beneficii oferite deținătorilor de token-uri $CULTURE:**
 
-**"100% overeenkomst" technisch definiëren (aanbevolen helderheid):**
+**1. Acces Prioritar la Evenimente de Galerie:**
+- Deschideri de expoziții fizice İlhanArt Gallery
+- Întâlniri cu artiști și vizite de atelier
+- Vizualizări de colecții speciale
 
-- **Minimale overeenkomst (verplicht):**
-  - De `asset.fingerprints.sha256/sha512` in het register en de hash van het bestand in handen moeten **exact hetzelfde** zijn.
-  - Wanneer de `proof.notary_seal` in het register opnieuw wordt gegenereerd (als Evidence Pack aanwezig is), moet deze **exact hetzelfde** zijn.
+**2. Acces Complet la PoArt Registry:**
+- Înregistrări detaliate ale tuturor operelor autentificate
+- Versiuni complete ale Evidence Pack-urilor
+- Instrumente de verificare forensică
 
-- **Fysieke referentie overeenkomst (bewijs type):**
-  - Bewijs zoals fysiek werk + datum/blok referentie getoond in live-uitzending moet consistent zijn met Evidence Pack.
+**3. Prioritate Mint NFT:**
+- Acces whitelist când operele PoArt Verified sunt mintate ca NFT
+- Oportunități de mint timpurii
+- NFT-uri de colecție speciale
 
-- **Privacy naleving:**
-  - Velden zoals IP/locatie bij `masked` zichtbaarheid worden gepubliceerd **volgens maskeringstandaard**.
+**4. Vot Consultativ:**
+- Drept de consultare în aplicațiile PoArt Verified
+- Acces la canalele de feedback ale comunității
+- Participare la discuții de guvernare
+
+**5. Conținut Exclusiv:**
+- Conținut behind-the-scenes din studio
+- Interviuri cu artiști și videoclipuri de proces
+- Acces la documentație tehnică
+
+**Notă:**  
+Token holder-ii dau vot consultativ (advisory vote). Decizia finală aparține echipei curatoriale. Această structură este preferată pentru a preveni manipularea whale și atacurile speculative. Nu există staking reward pentru că căutăm participanți culturali pe termen lung, nu capital mercenary pe termen scurt.
 
 ---
 
-### 6.5 Bezwaar, Onderzoek en Annulering (Dispute & Revocation)
+### 6.4 Sincronizare Metadata (Metadata Sync)
 
-Het register is niet alleen een "goedkeurings"mechanisme; maar een **levend toezichtsmechanisme tegen vervalsing**.
+- **Metadata Sync:** Datele tehnice din registru trebuie să se potrivească 100% cu activul fizic.
 
-- Wanneer een bezwaar wordt gestart, kan het record in **"review"** modus worden gezet.
-- Als vervalsing wordt gedetecteerd, wordt het gemarkeerd als `status: void` en reden toegevoegd:
-  - `void_reason` (AI-gebruik / gestolen / manipulatie etc.)
-  - `revoked_at` (annuleringstijd)
-- De bron van de annuleringsbeslissing is duidelijk zichtbaar in het register:
-  - curatoriale beoordeling / gemeenschapsbezwaar / forensische analyse nota (wat van toepassing is)
+**Definirea tehnică a "potrivirii 100%" (claritate recomandată):**
 
-> **Dit gedeelte is de correspondentie op het register van het VOID-concept in de "Red Flag Protocol" sectie.**
+- **Potrivire minimă (obligatorie):**
+  - `asset.fingerprints.sha256/sha512` din registru și hash-ul fișierului în mână trebuie să fie **exact aceleași**.
+  - `proof.notary_seal` din registru când este reprodus (dacă Evidence Pack există) trebuie să fie **exact același**.
+
+- **Potrivire referință fizică (tip de dovadă):**
+  - Dovezi precum opera fizică + referință dată/bloc arătate în transmisiune live trebuie să fie consistente cu Evidence Pack.
+
+- **Conformitate confidențialitate:**
+  - Câmpurile precum IP/locație la vizibilitatea `masked` sunt publicate **conform standardului de mascare**.
 
 ---
 
-### 6.6 Voorbeeld Registerrecord (Machine-leesbaar)
+### 6.5 Dispută, Examinare și Anulare (Dispute & Revocation)
+
+Registrul nu este doar un mecanism de "aprobare"; ci un **mecanism de supraveghere viu împotriva falsificării**.
+
+- Când este inițiată o dispută, înregistrarea poate fi pusă în modul **"review"**.
+- Dacă este detectată falsificare, este marcată ca `status: void` și se adaugă motivul:
+  - `void_reason` (utilizare AI / furt / manipulare etc.)
+  - `revoked_at` (timpul anulării)
+- Sursa deciziei de anulare este clar vizibilă în registru:
+  - examinare curatorială / dispută comunitară / notă de analiză forensică (oricare se aplică)
+
+> **Această secțiune este corespondența pe registru a conceptului VOID din secțiunea "Red Flag Protocol".**
+
+---
+
+### 6.6 Exemplu Înregistrare Registru (Citibil de Mașină)
 ```json
 {
   "certificate_id": "POART-AB12CD34",
@@ -468,192 +468,192 @@ Het register is niet alleen een "goedkeurings"mechanisme; maar een **levend toez
 }
 ```
 
-> *Opmerking: `asset.fingerprints.sha512` en andere hash-waarden zijn verkort voor weergavedoeleinden; in werkelijke toepassing wordt een hexadecimale tekenreeks van volledige lengte gebruikt.*
+> *Notă: `asset.fingerprints.sha512` și alte valori hash sunt scurtate în scopuri de afișare; în aplicația reală se folosește un șir de caractere hexazecimale de lungime completă.*
 
 ---
 
-## 7) 🔐 TECHNISCH ZEGEL (NOTARY SEAL)
+## 7) 🔐 SIGILIU TEHNIC (NOTARY SEAL)
 
-**Onwrikbaar zegelalgoritme geproduceerd door PoArt Forensic Engine (PFE) v1.0:**
+**Algoritm de sigiliu indestructibil produs de PoArt Forensic Engine (PFE) v1.0:**
 
 $$\text{NotarySeal} = \text{SHA-512}\left(\text{EvidenceRoot} \mid \text{SignerSignature} \mid \text{TimeStamp}\right)$$
 
 ---
 
-# [PoArt] Digitale Notaris & Forensisch Bewijsprotocol (Beta v1.0)
+# [PoArt] Protocol Notar Digital & Dovadă Forensică (Beta v1.0)
 
-> **"Cultuur is groter dan kapitaal. Bescherm uw werken vanaf vandaag, draag ze over naar morgen."**
-
----
-
-## Waarom Publiek?
-
-Echte veiligheid komt van transparantie. Dankzij ons **Public Registry (Openbaar Register)** systeem kan iemand overal ter wereld; binnen enkele seconden verifiëren of het bestand in handen origineel is, zonder dat een autoriteit nodig is.
+> **"Cultura este mai mare decât capitalul. Protejează-ți operele de astăzi, poartă-le spre mâine."**
 
 ---
 
-## 🧩 Waarom Meerdere "Zichtbaarheidsmodules"?
+## De ce Public?
 
-Dit is het meest kritieke deel van de code (visibility select menu). Deze opties stellen gebruikers in staat om de **"Privacy vs. Transparantie"** balans in te stellen:
-
-### 🔒 Privé (Private)
-
-- **Scenario:** De kunstenaar wil het werk nog niet publiceren, maar wil een tijdstempel plaatsen en bewijzen "ik heb dit op deze datum gemaakt".
-- **Wat de Code Doet:** Schrijft gegevens naar database maar plaatst `visibility: "private"` tag. Later bij het schrijven van "Public Read" beleid kan je deze records van het publiek verbergen door `WHERE visibility = 'public'` te zeggen.
-
-### 🕶️ Gemaskeerd (Masked)
-
-- **Scenario:** De kunstenaar wil transparantie maar is bang dat zijn huisadres (IP-locatie) wordt gevonden.
-- **Wat de Code Doet:** `maskIP` en `maskLoc` functies werken aan JavaScript-zijde. Converteert IP-adres naar vorm `88.241.***.***`, locatie naar vorm `***/TR` en stuurt gecensureerde versie naar database.
-- **Privacy Opmerking:** Maskering wordt gedaan in de browser, Supabase ziet de echte locatie niet. **Maar:** Als locatiegegevens worden gebruikt via derde partij API's zoals ipapi.co, zien deze providers het IP-adres op het moment van het verzoek.
-- **Verzegeling in Masked Modus:** EvidenceRoot en NotarySeal berekening wordt gedaan met gemaskeerde forensics data; zo blijft verificatie deterministisch.
-
-### 🌍 Publiek (Public)
-
-- **Scenario:** Volledige transparantie. Volgens [PoArt]-standaard wordt duidelijk verklaard waar, wanneer, van welk netwerk het werk is geproduceerd.
+Adevărata securitate vine din transparență. Datorită sistemului nostru **Public Registry (Registru Public)**, cineva oriunde în lume; poate verifica în câteva secunde dacă fișierul în mână este original, fără nevoie de o autoritate.
 
 ---
 
-## 💡 Technologische Innovatie
+## 🧩 De ce Există Mai Multe "Module de Vizibilitate"?
 
-PoArt is niet alleen een bestandsupload systeem. Het is een **"Forensische Bewijsketen" (Forensic Chain of Custody)** motor die drie verschillende technologie lagen in één pot smelt en een nieuwe standaard brengt.
+Aceasta este partea cea mai critică a codului (meniul de selectare a vizibilității). Aceste opțiuni permit utilizatorilor să stabilească echilibrul **"Confidențialitate vs. Transparență"**:
 
-**De laag die als "motor" wordt uitgelegd in dit gedeelte komt overeen met de PoArt Forensic Engine (PFE) kern in eerdere terminologie.**
+### 🔒 Privat (Private)
 
-### 1) Client-Side Hashing (Maximale Privacy)
+- **Scenariu:** Artistul nu vrea încă să publice opera dar vrea să pună un timestamp și să dovedească "am făcut asta la această dată".
+- **Ce Face Codul:** Scrie datele în baza de date dar pune eticheta `visibility: "private"`. Mai târziu când scrii politica "Public Read" poți ascunde aceste înregistrări de public spunând `WHERE visibility = 'public'`.
 
-Uw werkbestanden worden nooit naar de server geüpload. Onze browser-gebaseerde (Client-side) werkende motor berekent de hash (digitale samenvatting) van het bestand op uw eigen computer. Alleen deze vingerafdruk en metadata worden naar de server gestuurd.
+### 🕶️ Mascat (Masked)
 
-> **Privacy Opmerking:** Werkbestand wordt niet naar server geüpload en wordt zo beschermd. Maar forensics-gegevens (IP/locatie) worden gedeeld volgens geselecteerde zichtbaarheidsmodus (private/masked/public).
+- **Scenariu:** Artistul vrea transparență dar se teme că adresa casei (locația IP) va fi găsită.
+- **Ce Face Codul:** Funcțiile `maskIP` și `maskLoc` funcționează pe partea JavaScript. Convertește adresa IP în forma `88.241.***.***`, locația în forma `***/TR` și trimite versiunea cenzurată în baza de date.
+- **Notă Confidențialitate:** Mascarea se face în browser, Supabase nu vede locația reală. **Dar:** Dacă datele de locație sunt folosite prin API-uri terțe precum ipapi.co, acești furnizori văd adresa IP în momentul cererii.
+- **Sigilare în Modul Mascat:** Calculul EvidenceRoot și NotarySeal se face cu datele forensice mascate; astfel verificarea rămâne deterministă.
 
-### 2) Forensic Data Fusion (Forensische Kracht)
+### 🌍 Public (Public)
 
-Het is veel meer dan een gewone tijdstempel (Timestamp). Het systeem combineert de volgende gegevens in één "Genesis Zegel":
-
-- **Digitale Samenvatting (SHA-512):** Digitale vingerafdruk die zal breken als zelfs één pixel van het werk verandert, met behulp van cryptografische samenvatting (SHA-512) standaard.
-- **Locatie & Tijd:** Datum met milliseconde nauwkeurigheid, land, stad en district gegevens van waar de transactie plaatsvond.
-- **Apparaat Identiteit:** Besturingssysteem, browser en apparaattype (User-Agent analyse).
-
----
-
-## 🛡️ Gebruiksgebieden en Voordelen
-
-Als u een kunstenaar, schrijver of ontwerper bent, is het niet genoeg om te zeggen "Ik heb dit eerder gemaakt", u moet het bewijzen.
-
-**Een werk verzegeld met PoArt:**
-
-- **Wiskundig Bewijs:** Als zelfs één pixel van uw bestand verandert, merkt het systeem dit. Manipulatie is onmogelijk.
-- **Juridische Basis:** Het is geregistreerd op welke datum, in welke stad, vanaf welk apparaat het werk is verzegeld.
-- **Onmiddellijk Certificaat:** Binnen enkele seconden genereert het een persoonlijk, QR-code en verzegeld **"Bezit Identiteitscertificaat"** voor u.
+- **Scenariu:** Transparență completă. Conform standardului [PoArt], se declară clar unde, când, din ce rețea a fost produsă opera.
 
 ---
 
-## ⚙️ Systeemarchitectuur en Technische Specificaties
+## 💡 Inovație Tehnologică
 
-Het systeem is ontworpen op een "Serverless" architectuur, gericht op hoge prestaties en schaalbaarheid.
+PoArt nu este doar un sistem de încărcare fișiere. Este un motor **"Lanț Forensic de Custodie" (Forensic Chain of Custody)** care topește trei straturi tehnologice diferite într-o oală și aduce un nou standard.
 
-| Laag | Technologie | Beschrijving |
+**Stratul explicat ca "motor" în această secțiune corespunde nucleului PoArt Forensic Engine (PFE) în terminologia anterioară.**
+
+### 1) Client-Side Hashing (Confidențialitate Maximă)
+
+Fișierele operelor dvs. nu sunt niciodată încărcate pe server. Motorul nostru care funcționează pe bază de browser (Client-side) calculează hash-ul fișierului (rezumatul digital) pe propriul dvs. calculator. Doar această amprentă și metadatele sunt trimise pe server.
+
+> **Notă Confidențialitate:** Fișierul operei nu este încărcat pe server și este astfel protejat. Dar datele forensice (IP/locație) sunt partajate conform modului de vizibilitate selectat (private/masked/public).
+
+### 2) Forensic Data Fusion (Putere Forensică)
+
+Este mult mai mult decât un simplu timestamp. Sistemul combină următoarele date într-un singur "Sigiliu Genesis":
+
+- **Rezumat Digital (SHA-512):** Amprentă digitală care se va deteriora chiar dacă un singur pixel al operei se schimbă, folosind standardul de rezumat criptografic (SHA-512).
+- **Locație & Timp:** Dată cu precizie de milisecundă, țară, oraș și date de district unde a avut loc tranzacția.
+- **Identitate Dispozitiv:** Sistem de operare, browser și tip de dispozitiv (analiză User-Agent).
+
+---
+
+## 🛡️ Domenii de Utilizare și Beneficii
+
+Dacă sunteți artist, scriitor sau designer, nu este suficient să spuneți "Am făcut asta mai devreme", trebuie să o dovediți.
+
+**O operă sigilată cu PoArt:**
+
+- **Dovadă Matematică:** Dacă chiar un singur pixel al fișierului dvs. se schimbă, sistemul o observă. Manipularea este imposibilă.
+- **Bază Juridică:** Este înregistrat la ce dată, în ce oraș, de pe ce dispozitiv a fost sigilată opera.
+- **Certificat Instant:** Generează în câteva secunde un **"Certificat de Identitate Activ"** personalizat, cu cod QR și sigilat pentru dvs.
+
+---
+
+## ⚙️ Arhitectură Sistem și Specificații Tehnice
+
+Sistemul este proiectat pe o arhitectură "Serverless" (Fără Server), concentrat pe performanță înaltă și scalabilitate.
+
+| Strat | Tehnologie | Descriere |
 |--------|-----------|----------|
-| **Cryptografie** | SHA-256 & SHA-512 | Dubbel-laags cryptografische samenvatting |
-| **Database** | Supabase (PostgreSQL) | JSONB datastructuur, RLS policies |
-| **Forensische Data** | ipapi.co API | IP/Locatie/Tijd drieluik |
-| **Rendering** | html2canvas + jsPDF | Client-side PNG/PDF generatie |
-| **Frontend** | Vanilla JavaScript | Nul framework dependency |
-| **Beveiliging** | Client-side hashing | Bestand gaat nooit naar server |
+| **Criptografie** | SHA-256 & SHA-512 | Rezumat criptografic dublu strat |
+| **Bază de Date** | Supabase (PostgreSQL) | Structură de date JSONB, politici RLS |
+| **Date Forensice** | ipapi.co API | Triplet IP/Locație/Timp |
+| **Rendering** | html2canvas + jsPDF | Generare PNG/PDF client-side |
+| **Frontend** | Vanilla JavaScript | Zero dependență framework |
+| **Securitate** | Client-side hashing | Fișierul nu merge niciodată pe server |
 
-### Uitstekende Functies
+### Caracteristici Excelente
 
-| Functie | Detail | Bij Concurrenten? |
+| Caracteristică | Detaliu | La Concurenți? |
 |---------|-------|-------------|
-| **Drag & Drop UI** | Bestand slepen-neerzetten, onmiddellijke preview | ❌ Bij de meeste niet |
-| **Multi-Format Export** | PNG, JSON, PDF - met één klik | ⚠️ Beperkt |
-| **Real-Time Preview** | Certificaat live preview | ❌ Niet |
-| **Privacy Controls** | Private/Masked/Public opties | ❌ Niet |
-| **Client-Side Hashing** | Bestand gaat nooit naar server | ✅ Slechts bij enkelen |
-| **Forensic Metadata** | IP, locatie, apparaat, tijd - allemaal samen | ❌ Gefragmenteerd |
-| **QR Verification** | Onmiddellijke verificatie QR-code | ⚠️ Beperkt |
-| **Rate Limiting** | Spam bescherming (RLS + Client) | ❌ Bij de meeste niet |
+| **Drag & Drop UI** | Tragere-plasare fișier, previzualizare instantanee | ❌ Lipsește la majoritatea |
+| **Multi-Format Export** | PNG, JSON, PDF - cu un clic | ⚠️ Limitat |
+| **Real-Time Preview** | Previzualizare certificat live | ❌ Nu |
+| **Privacy Controls** | Opțiuni Private/Masked/Public | ❌ Nu |
+| **Client-Side Hashing** | Fișierul nu merge niciodată pe server | ✅ Doar la câțiva |
+| **Forensic Metadata** | IP, locație, dispozitiv, timp - toate împreună | ❌ Fragmentat |
+| **QR Verification** | Cod QR verificare instantanee | ⚠️ Limitat |
+| **Rate Limiting** | Protecție spam (RLS + Client) | ❌ Lipsește la majoritatea |
 
 ---
 
-## 🗺️ Roadmap: "Trustless" Toekomst
+## 🗺️ Foaie de Parcurs: Viitor "Trustless"
 
-De huidige versie **(Beta v1.0)** is geoptimaliseerd om de eindgebruiker maximale snelheid, gemakkelijke interface en gratis toegang te bieden. Maar onze ultieme visie is om over te gaan naar een structuur waarin zelfs de databasebeheerder (wij) niet kan ingrijpen.
+Versiunea curentă **(Beta v1.0)** este optimizată pentru a oferi utilizatorului final viteză maximă, interfață ușoară și acces gratuit. Dar viziunea noastră finală este să trecem la o structură în care nici măcar administratorul bazei de date (noi) nu poate interveni.
 
-### Fase 1: Beta v1.0 (Nu Live)
+### Faza 1: Beta v1.0 (Acum Live)
 
-**Infrastructuur:**
+**Infrastructură:**
 - Cloud Database (Supabase)
 - Off-chain registry (PostgreSQL + IPFS backup)
-- Gallery self-attestation (gecentraliseerd maar transparant)
+- Gallery self-attestation (centralizat dar transparent)
 
 **Token:**
-- Platform: Pump.fun
-- Liquidity: Raydium (automatic)
-- Governance: Advisory only (gemeenschapsconsultatie)
+- Platformă: Pump.fun
+- Lichiditate: Raydium (automat)
+- Guvernare: Advisory only (consultare comunitate)
 
-**Doel:**
-- Snelheid, UX-barrières verwijderen
-- "Wrijvingsloze" beveiliging bieden
-- Gemeenschap bouwen
+**Scop:**
+- Viteză, eliminarea barierelor UX
+- Oferirea securității "fără fricțiune"
+- Construirea comunității
 
 **Token Utility (v1.0):**
-- Galerij evenementen prioriteitstoega ng
-- PoArt Registry bekijken
-- Advisory voting recht
+- Acces prioritar evenimente galerie
+- Vizualizare PoArt Registry
+- Drept de vot consultativ
 
 ---
 
-### 🚀 Fase 2: Gedecentraliseerd Gezag (2026 Q2-Q4)
+### 🚀 Faza 2: Autoritate Descentralizată (2026 Q2-Q4)
 
-Deze fase omvat de overgang van de volledig "Client-Side" werkende structuur van het systeem naar een veiligere en gedecentraliseerde structuur.
+Această fază acoperă tranziția sistemului de la structura care funcționează complet "Client-Side" la o structură mai sigură și descentralizată.
 
-| Functie | Wat Brengt Het? | Tech Stack | ETA |
+| Caracteristică | Ce Aduce? | Tech Stack | ETA |
 |---------|---------------|------------|-----|
-| **Edge Function INSERT** | Spam blokkade + API Key beveiliging | Supabase Edge (Deno) | Q2 2026 |
-| **Wallet Handtekening** | Decentralized identity | Solana Wallet Adapter | Q2 2026 |
-| **IPFS/Arweave Backup** | Gedecentraliseerd archief | IPFS SDK + Pinata | Q3 2026 |
-| **Revocation Mechanism** | Vals certificaat annulering | DB Schema Update | Q2 2026 |
-| **Audit Log** | Forensische vraag registratie | Custom logs table | Q3 2026 |
+| **Edge Function INSERT** | Blocare spam + securitate API Key | Supabase Edge (Deno) | Q2 2026 |
+| **Semnătură Portofel** | Decentralized identity | Solana Wallet Adapter | Q2 2026 |
+| **IPFS/Arweave Backup** | Arhivă descentralizată | IPFS SDK + Pinata | Q3 2026 |
+| **Revocation Mechanism** | Anulare certificat fals | DB Schema Update | Q2 2026 |
+| **Audit Log** | Înregistrare interogare forensică | Tabel logs personalizat | Q3 2026 |
 | **OpenTimestamps** | Bitcoin anchoring | OTS JavaScript | Q4 2026 |
 
 **Token Governance (v2.0):**
 - Off-chain voting (Discord/web) + wallet signature
-- Community representatives selectie (eerste 90 dagen)
-- Multi-sig operations wallet controle
-- Weighted advisory voting (met whale cap)
+- Selectare reprezentanți comunitate (primele 90 zile)
+- Control portofel operațiuni multi-sig
+- Weighted advisory voting (cu whale cap)
 
-**Onveranderlijkheid:**
-- Registry backup met IPFS hashes
+**Imuabilitate:**
+- Backup registru cu hash-uri IPFS
 - Bitcoin timestamp anchoring
-- Cross-chain verificatie voorbereiding
+- Pregătire verificare cross-chain
 
 ---
 
-### Fase 3: Volledige Decentralisatie (2027+)
+### Faza 3: Descentralizare Completă (2027+)
 
-| Functie | Doel | ETA |
+| Caracteristică | Obiectiv | ETA |
 |---------|-------|-----|
-| **On-Chain Registry** | Solana on-chain registratie | Q1 2027 |
-| **Enhanced Token Utility** | NFT mint, advanced features | Q1 2027 |
+| **On-Chain Registry** | Înregistrare on-chain Solana | Q1 2027 |
+| **Enhanced Token Utility** | NFT mint, caracteristici avansate | Q1 2027 |
 | **Multi-Chain Support** | Ethereum, Polygon, Base | Q2 2027 |
 | **DID Integration** | Decentralized Identity | Q3 2027 |
-| **Community Governance** | Versterkt advisory system | Q4 2027 |
-| **Legal Recognition** | Geldigheid in Nederlandse rechtbanken | 2027-2028 |
-| **API for Developers** | Public API endpoint | Q3 2027 |
+| **Community Governance** | Sistem advisory întărit | Q4 2027 |
+| **Legal Recognition** | Validitate în instanțele românești | 2027-2028 |
+| **API for Developers** | Endpoint API public | Q3 2027 |
 
-**Governance Evolutie:**
-- v3.0: Hybride model (curatoriale + community weighted)
-- 2028+: Full community governance (optioneel)
-- Curatoriale kwaliteitscontrole blijft altijd behouden
+**Evoluție Guvernare:**
+- v3.0: Model hibrid (curatorial + community weighted)
+- 2028+: Full community governance (opțional)
+- Controlul calității curatorial rămâne întotdeauna păstrat
 
 ---
 
-## 🧬 Protocol Datastructuur (JSON Schema)
+## 🧬 Structură Date Protocol (JSON Schema)
 
-**Elk [PoArt] certificaat heeft een draagbare en verifieerbare JSON-identiteitskaart geproduceerd in de onderstaande standaard.**
+**Fiecare certificat [PoArt] are un card de identitate JSON portabil și verificabil produs în standardul de mai jos.**
 
-> **Opmerking:** Dit Identity JSON-formaat is het certificaatformaat gepresenteerd aan de gebruiker. In registerrecords wordt `registry.asset` gebruikt in plaats van `identity.asset_data` (mapping: `identity.asset_data` == `registry.asset`).
+> **Notă:** Acest format Identity JSON este formatul de certificat prezentat utilizatorului. În înregistrările registry se folosește `registry.asset` în loc de `identity.asset_data` (mapping: `identity.asset_data` == `registry.asset`).
 ```json
 {
   "$schema": "https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json",
@@ -689,24 +689,24 @@ Deze fase omvat de overgang van de volledig "Client-Side" werkende structuur van
 
 ---
 
-## 🔬 Technische Diepte: Zegelalgoritme
+## 🔬 Profunzime Tehnică: Algoritm Sigiliu
 
-### Deterministische Hash-functies
+### Funcții Hash Deterministă
 ```javascript
-// Hulpfuncties: Digest converteren naar hex string
+// Funcții ajutătoare: Convertire digest în hex string
 async function digestToHex(algorithm, dataBytes) {
   const hashBuffer = await crypto.subtle.digest(algorithm, dataBytes);
   const hashArray = Array.from(new Uint8Array(hashBuffer));
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-// String converteren naar byte array
+// Convertire string în byte array
 function stringToBytes(text) {
   return new TextEncoder().encode(text);
 }
 
-// Canonical forensics string productie (v1.0: vaste veldvolgorde + UTF-8 + \n delimiter)
-// Fase 2 opmerking: Overgang naar canonical JSON met RFC 8785 (JCS)
+// Producție string forensics canonic (v1.0: ordine câmp fix + UTF-8 + \n delimiter)
+// Notă Faza 2: Tranziție la JSON canonic cu RFC 8785 (JCS)
 function canonicalForensics(forensicsData) {
   return JSON.stringify({
     ip_masked: forensicsData.ip_masked,
@@ -717,9 +717,9 @@ function canonicalForensics(forensicsData) {
 }
 ```
 
-### NotarySeal Productieproces (Volledig Deterministisch)
+### Proces Producție NotarySeal (Complet Deterministă)
 ```javascript
-// 1. FileHash berekening (client-side)
+// 1. Calcul FileHash (client-side)
 async function computeFileHash(file) {
   const fileBuffer = await file.arrayBuffer();
   const fileBytes = new Uint8Array(fileBuffer);
@@ -730,9 +730,9 @@ async function computeFileHash(file) {
   return { sha256, sha512 };
 }
 
-// 2. Forensic data verzameling (enkele timestamp gebruik)
+// 2. Colectare date forensice (utilizare timestamp unic)
 async function collectForensics(visibilityMode) {
-  const timestamp = new Date().toISOString(); // Enkele timestamp productie
+  const timestamp = new Date().toISOString(); // Producție timestamp unic
   const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
   
   let forensics = {
@@ -741,29 +741,29 @@ async function collectForensics(visibilityMode) {
       ? `***/${ipData.country}` 
       : `${ipData.city}, ${ipData.country_name || ipData.country}`,
     device: navigator.userAgent,
-    timestamp: timestamp // Zelfde timestamp
+    timestamp: timestamp // Același timestamp
   };
   
   return { forensics, timestamp };
 }
 
-// 3. EvidenceRoot creatie (met canonical encoding)
+// 3. Creare EvidenceRoot (cu encoding canonic)
 async function computeEvidenceRoot(fileHash512, forensicsData) {
   const canonicalPayload = `file_sha512:${fileHash512}\nforensics:${canonicalForensics(forensicsData)}`;
   return await digestToHex('SHA-512', stringToBytes(canonicalPayload));
 }
 
-// 4. NotarySeal productie (zelfde timestamp gebruik)
+// 4. Producție NotarySeal (utilizare același timestamp)
 async function computeNotarySeal(evidenceRoot, signerSignature, timestamp) {
   const sealPayload = `evidence_root:${evidenceRoot}\nsigner_sig:${signerSignature}\ntimestamp:${timestamp}`;
   return await digestToHex('SHA-512', stringToBytes(sealPayload));
 }
 
-// Maskering hulpfuncties (IPv4 en IPv6 ondersteuning)
+// Funcții ajutătoare mascare (suport IPv4 și IPv6)
 function maskIP(ip) {
   if (!ip) return "***";
   
-  // IPv4 controle
+  // Verificare IPv4
   if (ip.includes(".")) {
     const parts = ip.split(".");
     if (parts.length === 4) {
@@ -771,60 +771,60 @@ function maskIP(ip) {
     }
   }
   
-  // IPv6 of onbekend formaat
+  // IPv6 sau format necunoscut
   return "***";
 }
 ```
 
-### Verificatiestroom (Twee Niveaus)
+### Flux Verificare (Două Niveluri)
 
-#### Quick Verify (Snelle Verificatie)
+#### Quick Verify (Verificare Rapidă)
 ```javascript
-// Controleert alleen bestands hash (snelle rode vlag)
+// Verifică doar hash fișier (steag roșu rapid)
 async function verifyQuick(file, certificateId) {
   const { sha512: userFileHash } = await computeFileHash(file);
   
-  // Ophalen uit Register
+  // Extrage din Registry
   const cert = await fetchFromRegistry(certificateId);
   const { sha512: originalHash } = cert.asset.fingerprints;
   
-  // Hash vergelijking
+  // Comparație hash
   if (userFileHash === originalHash) {
     return {
       valid: true,
-      message: "✅ Origineel - Bestands hash komt overeen"
+      message: "✅ Original - Hash fișier se potrivește"
     };
   } else {
     return {
       valid: false,
-      message: "❌ Vervalst - Bestand gemanipuleerd"
+      message: "❌ Fals - Fișier manipulat"
     };
   }
 }
 ```
 
-#### Full Verify (Volledige Verificatie)
+#### Full Verify (Verificare Completă)
 ```javascript
-// EvidenceRoot en NotarySeal opnieuw genereren en verifiëren
+// Regenerează și verifică EvidenceRoot și NotarySeal
 async function verifyFull(file, certificateId) {
   const { sha512: userFileHash } = await computeFileHash(file);
 
-  // Ophalen uit Register
+  // Extrage din Registry
   const cert = await fetchFromRegistry(certificateId);
 
-  // 1) FileHash controle (snelle rode vlag)
+  // 1) Verificare FileHash (steag roșu rapid)
   const originalHash = cert.asset.fingerprints.sha512;
   if (userFileHash !== originalHash) {
-    return { valid: false, message: "❌ Vervalst - Bestands hash komt niet overeen" };
+    return { valid: false, message: "❌ Fals - Hash fișier nu se potrivește" };
   }
 
-  // 2) EvidenceRoot opnieuw genereren (met forensics opgeslagen in register)
+  // 2) Regenerare EvidenceRoot (cu forensics salvat în registry)
   const evidenceRoot = await computeEvidenceRoot(userFileHash, cert.forensics);
   if (evidenceRoot !== cert.proof.evidence_root) {
-    return { valid: false, message: "❌ Komt niet overeen - EvidenceRoot klopt niet" };
+    return { valid: false, message: "❌ Nu se potrivește - EvidenceRoot nu se verifică" };
   }
 
-  // 3) NotarySeal opnieuw genereren (met zelfde timestamp + signer_sig)
+  // 3) Regenerare NotarySeal (cu același timestamp + signer_sig)
   const seal = await computeNotarySeal(
     evidenceRoot,
     cert.proof.signer_sig,
@@ -832,85 +832,85 @@ async function verifyFull(file, certificateId) {
   );
 
   if (seal !== cert.proof.notary_seal) {
-    return { valid: false, message: "❌ Komt niet overeen - NotarySeal klopt niet" };
+    return { valid: false, message: "❌ Nu se potrivește - NotarySeal nu se verifică" };
   }
 
-  // Optioneel: In Fase 2 ook signer_sig verifiëren met attestation_pubkey
+  // Opțional: În Faza 2 verifică și signer_sig cu attestation_pubkey
   // const sigValid = await verifySig(cert.issuer.attestation_pubkey, cert.proof.signer_sig, evidenceRoot);
-  // if (!sigValid) return { valid: false, message: "❌ Handtekening ongeldig" };
+  // if (!sigValid) return { valid: false, message: "❌ Semnătură invalidă" };
 
-  return { valid: true, message: "✅ Origineel - Full Verify geslaagd" };
+  return { valid: true, message: "✅ Original - Full Verify reușit" };
 }
 ```
 
-> **Belangrijke Opmerkingen:**
-> - **Quick Verify:** Controleert alleen bestands hash voor snel gebruik.
-> - **Full Verify:** Verifieert alle lagen van het protocol (EvidenceRoot + NotarySeal).
-> - Alle hash-operaties worden deterministisch uitgevoerd, met vaste encoding en delimiters.
-> - **v1.0 canonicalization standaard:** Vaste veldvolgorde + UTF-8 encoding + `\n` delimiter.
-> - **Fase 2 plan:** Overgang naar canonical JSON met RFC 8785 (JCS - JSON Canonicalization Scheme).
-> - In masked modus wordt EvidenceRoot en NotarySeal berekening gedaan met gemaskeerde forensics.
-> - Enkele timestamp wordt gebruikt in het hele proces (forensics + NotarySeal); determinisme gegarandeerd.
-> - **Forensics veldnamen:** `ip_masked`, `location`, `device`, `timestamp` (code en register volledig compatibel).
-> - **Register path:** `certificate.asset.fingerprints` (volledig compatibel met verify code).
-> - **Register signer_sig:** `proof.signer_sig` veld is vereist voor Full Verify.
-> - SignerSignature mechanisme wordt geactiveerd in Fase 2 met Solana Wallet Adapter; in v1.0 kan verificatie worden gedaan met `attestation_pubkey`.
+> **Note Importante:**
+> - **Quick Verify:** Verifică doar hash-ul fișierului pentru utilizare rapidă.
+> - **Full Verify:** Verifică toate straturile protocolului (EvidenceRoot + NotarySeal).
+> - Toate operațiile hash sunt efectuate determinist, cu encoding fix și delimitatori.
+> - **Standard canonicalizare v1.0:** Ordine câmp fix + UTF-8 encoding + `\n` delimiter.
+> - **Plan Faza 2:** Tranziție la JSON canonic cu RFC 8785 (JCS - JSON Canonicalization Scheme).
+> - În modul mascat, calculul EvidenceRoot și NotarySeal se face cu forensics mascat.
+> - Timestamp unic este folosit în tot procesul (forensics + NotarySeal); determinismul este garantat.
+> - **Nume câmpuri forensics:** `ip_masked`, `location`, `device`, `timestamp` (cod și registry complet compatibile).
+> - **Cale registry:** `certificate.asset.fingerprints` (complet compatibil cu codul verify).
+> - **Registry signer_sig:** Câmpul `proof.signer_sig` este necesar pentru Full Verify.
+> - Mecanismul SignerSignature va fi activat în Faza 2 cu Solana Wallet Adapter; în v1.0 poate fi efectuată verificare cu `attestation_pubkey`.
 
 ---
 
-## 📊 Concurrent Analyse (Bijgewerkt)
+## 📊 Analiză Concurenți (Actualizat)
 
-PoArt is gepositioneerd op de "Sweet Spot" (Meest ideale punt) dat de tekortkomingen van bestaande oplossingen aanvult.
+PoArt este poziționat pe "Sweet Spot" (Punctul cel mai ideal) care completează deficiențele soluțiilor existente.
 
-| Functie | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 證 Proof | Trust-Stamp |
+| Caracteristică | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 證 Proof | Trust-Stamp |
 |---------|:---------:|:---------------:|:-----------------:|:------------:|:----:|:-----------:|:--------:|:-----------:|
-| **Kosten** | 🆓 Gratis | 🆓 | 💰 Betaald | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
-| **Drag & Drop UI** | ✅ Zeer Makkelijk | ❌ CLI | ⚠️ Gemiddeld | ⚠️ Gemiddeld | ⚠️ | ⚠️ | ❌ | ⚠️ |
+| **Cost** | 🆓 Gratuit | 🆓 | 💰 Plătit | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
+| **Drag & Drop UI** | ✅ Foarte Ușor | ❌ CLI | ⚠️ Mediu | ⚠️ Mediu | ⚠️ | ⚠️ | ❌ | ⚠️ |
 | **Multi-Format Export** | ✅ PNG/PDF/JSON | ❌ | ⚠️ PDF | ⚠️ PDF | ❌ | ❌ | ❌ | ⚠️ |
 | **Real-Time Preview** | ✅ Live | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| **Privacy Controls** | ✅ 3 Modi | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Client-Side Hash** | ✅ Privacy | ✅ | ❌ Upload | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
-| **Forensic Metadata** | ✅ Volledig | ❌ | ❌ | ⚠️ Beperkt | ❌ | ⚠️ | ❌ | ⚠️ |
-| **QR Verification** | ✅ Onmiddellijk | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
+| **Privacy Controls** | ✅ 3 Moduri | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
+| **Client-Side Hash** | ✅ Confidențialitate | ✅ | ❌ Upload | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
+| **Forensic Metadata** | ✅ Complet | ❌ | ❌ | ⚠️ Limitat | ❌ | ⚠️ | ❌ | ⚠️ |
+| **QR Verification** | ✅ Instant | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
 | **Rate Limiting** | ✅ RLS+Client | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
 | **Blockchain Anchor** | 🔄 Roadmap | ✅ Bitcoin | ✅ Ethereum | ✅ Multi | ✅ | ✅ | ✅ | ✅ |
 | **Open Source** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
-| **Nederlandse Ondersteuning** | ✅ Native | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
+| **Suport Română** | ✅ Nativ | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
 
-**Toelichting:**
-- ✅ : Volledige ondersteuning / aanwezig
-- ⚠️ : Beperkt / in betaalde abonnementen
-- ❌ : Niet / niet ondersteund
-- 🔄 : In Roadmap (in ontwikkeling)
-- 🆓 : Volledig gratis
-- 💰 : Betaald / abonnement vereist
+**Explicație:**
+- ✅ : Suport complet / prezent
+- ⚠️ : Limitat / în planuri plătite
+- ❌ : Nu / nesuportat
+- 🔄 : În Roadmap (în dezvoltare)
+- 🆓 : Complet gratuit
+- 💰 : Plătit / abonament necesar
 
-### Tekortkomingen van Concurrenten, Sterke Punten van PoArt
+### Deficiențe Concurenți, Puncte Forte PoArt
 
-| Tekort | Concurrenten | PoArt |
+| Deficiență | Concurenți | PoArt |
 |------|----------|-------|
-| **Gebruiksmoeilijkheid** | CLI, API-kennis, portemonnee vereist | Slepen-neerzetten, klaar in 3 klikken |
-| **Kostenbarrière** | $50-500/maand abonnement | 100% gratis |
-| **Privacy** | Bestand wordt naar server geüpload | Client-side, bestand gaat nooit weg |
-| **Forensische Data** | Alleen timestamp | IP, locatie, apparaat, tijd - allemaal |
-| **Nederlandse Ondersteuning** | Niet of zeer beperkt | Native taalondersteuning |
-| **Open Source** | Gesloten doos | Alle code open op GitHub |
+| **Dificultate Utilizare** | CLI, cunoștințe API, portofel necesar | Tragere-plasare, gata în 3 clicuri |
+| **Barieră Cost** | Abonament $50-500/lună | 100% gratuit |
+| **Confidențialitate** | Fișier încărcat pe server | Client-side, fișierul nu pleacă niciodată |
+| **Date Forensice** | Doar timestamp | IP, locație, dispozitiv, timp - toate |
+| **Suport Română** | Nu sau foarte limitat | Suport nativ limbă |
+| **Open Source** | Cutie închisă | Tot codul deschis pe GitHub |
 
 ---
 
-## 📈 Gebruiksstatistieken (2026 Q1 Doelen)
+## 📈 Statistici Utilizare (Obiective 2026 Q1)
 
-| Metriek | Doel | Status |
+| Metrică | Obiectiv | Status |
 |--------|-------|-------|
-| **Totaal Certificaten** | 1.000 | 🔄 In uitvoering |
-| **Actieve Gebruikers** | 500 | 🔄 In uitvoering |
-| **Verificatie Aantal** | 5.000 | 🔄 In uitvoering |
-| **Uptime** | 99,9% | ✅ Actief |
-| **Gem. Responstijd** | <200ms | ✅ Optimaal |
+| **Total Certificate** | 1.000 | 🔄 În progres |
+| **Utilizatori Activi** | 500 | 🔄 În progres |
+| **Număr Verificări** | 5.000 | 🔄 În progres |
+| **Uptime** | 99,9% | ✅ Activ |
+| **Timp Răspuns Mediu** | <200ms | ✅ Optim |
 
 ---
 
-## 🌍 Gemeenschap & Ondersteuning
+## 🌍 Comunitate & Suport
 
 - **Twitter:** [@Galerilhan](https://twitter.com/Galerilhan)
 - **Web:** [ilhanart.org](https://ilhanart.org)
@@ -919,70 +919,70 @@ PoArt is gepositioneerd op de "Sweet Spot" (Meest ideale punt) dat de tekortkomi
 
 ---
 
-## 🙏 Bijdragers
+## 🙏 Contributori
 
-Het PoArt-protocol blijft zich ontwikkelen met bijdragen van de open source gemeenschap.
+Protocolul PoArt continuă să se dezvolte cu contribuțiile comunității open source.
 
-**Om bij te dragen:**
-1. Fork maken
-2. Feature branch maken (`git checkout -b feature/amazing-feature`)
-3. Commit maken (`git commit -m 'Add amazing feature'`)
-4. Push maken (`git push origin feature/amazing-feature`)
-5. Pull Request openen
+**Pentru a contribui:**
+1. Faceți Fork
+2. Creați feature branch (`git checkout -b feature/amazing-feature`)
+3. Faceți Commit (`git commit -m 'Add amazing feature'`)
+4. Faceți Push (`git push origin feature/amazing-feature`)
+5. Deschideți Pull Request
 
-### 🛠️ Waar Hebben We Nu Hulp Bij Nodig? (Hulp Oproep)
+### 🛠️ La Ce Avem Nevoie Acum? (Apel Ajutor)
 
-Voor **Fase 2** ontwikkelingen van het PoArt Protocol verwachten we bijdragen van ervaren ontwikkelaars in de volgende onderwerpen:
+Pentru dezvoltările **Faza 2** ale Protocolului PoArt așteptăm contribuții de la dezvoltatori experimentați în următoarele subiecte:
 
-* **Supabase Edge Functions:** Spam-bescherming naar serverside verplaatsen.
-* **Solana Web3.js:** Portemonnee handtekening (Wallet Signing) integratie.
-* **IPFS / Arweave:** Archivering en pinning services integratie.
-* **Community Tools:** Discord bot, voting systems, analytics dashboard.
+* **Supabase Edge Functions:** Mutarea protecției spam pe server-side.
+* **Solana Web3.js:** Integrare semnătură portofel (Wallet Signing).
+* **IPFS / Arweave:** Integrare servicii arhivare și pinning.
+* **Community Tools:** Bot Discord, sisteme de votare, dashboard analytics.
 
-> Gelieve een discussie te starten in het "Issues" tabblad voordat u een functie toevoegt.
+> Vă rugăm să inițiați o discuție în tab-ul "Issues" înainte de a adăuga o caracteristică.
 
 ---
 
-## 💬 Slotnotities
+## 💬 Note Finale
 
-### Pump.fun en Realiteit
+### Pump.fun și Realitate
 
-Dit project is gelanceerd op Pump.fun omdat:
-- ✅ Liquiditeitstoegang (Raydium automatic migration)
-- ✅ Toegang tot bestaande gemeenschap
-- ✅ Lage startkosten
+Acest proiect a fost lansat pe Pump.fun pentru că:
+- ✅ Acces lichiditate (Raydium automatic migration)
+- ✅ Acces comunitate existentă
+- ✅ Cost de pornire redus
 
-Maar laten we dit verduidelijken:
-- **Token prijs** is geen indicator van artistiek succes
-- Token waarde is belangrijk voor **operationeel budget** (galerij, tentoonstellingen, infrastructuur)
-- **Succesindicatoren:** Authenticated artworks + community engagement + fysieke bezoekers
+Dar să clarificăm acest lucru:
+- **Prețul token-ului** nu este un indicator al succesului artistic
+- Valoarea token-ului este importantă pentru **bugetul operațional** (galerie, expoziții, infrastructură)
+- **Indicatori de succes:** Opere autentificate + angajament comunitate + vizitatori fizici
 
-### Bestuur en Decentralisatie
+### Guvernare și Descentralizare
 
-**v1.0 Realiteit (2026):**
+**Realitate v1.0 (2026):**
 - Registry: Off-chain (PostgreSQL + IPFS backup)
-- Attestation: Gallery self-signed (gecentraliseerd maar transparant)
-- Governance: Advisory only (curatoriale definitieve beslissing)
-- Token utility: Gallery access + registry + NFT priority
+- Attestation: Gallery self-signed (centralizat dar transparent)
+- Governance: Advisory only (decizie finală curatorială)
+- Token utility: Acces galerie + registry + prioritate NFT
 
-**v2.0+ Visie (2027+):**
+**Viziune v2.0+ (2027+):**
 - Registry: On-chain (Solana)
-- Signatures: Wallet-based (decentralized)
-- Governance: Hybrid (community advisory + curatorial quality)
-- Token utility: Enhanced features + advanced access
+- Signatures: Bazate pe portofel (descentralizat)
+- Governance: Hibrid (consultare comunitate + calitate curatorială)
+- Token utility: Caracteristici îmbunătățite + acces avansat
 
-Deze structuur biedt **operationele efficiëntie** en **kwaliteitscontrole** in een vroeg stadium, terwijl de weg wordt opengehouden om **gemeenschapsdeelname** in de toekomst te verhogen.
+Această structură oferă **eficiență operațională** și **control calitate** în fază timpurie, menținând deschisă calea pentru creșterea **participării comunității** în viitor.
 
 ---
 
 **[PoArt] Proof of Art Protocol v1.0**  
-*"Culture > Capital" // Cultuur is Groter dan Kapitaal*
+*"Culture > Capital" // Cultura Este Mai Mare Decât Capitalul*
 
-## 🧾 Licentie
+## 🧾 Licență
 
 MIT License © 2026 İlhan Art Gallery Initiative
 
-Zie [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) voor volledige voorwaarden.
+Vezi [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) pentru termeni completi.
 
 ---
 
@@ -990,10 +990,10 @@ Zie [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the
 
 ![Version](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Security](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Platform](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
 
-**Dit project is ontwikkeld met het [İlhan Art Gallery] initiatief en de broncode is publiekelijk toegankelijk in het kader van transparantie.**
+**Acest proiect este dezvoltat cu inițiativa [İlhan Art Gallery] și codul sursă este public accesibil în scopuri de transparență.**
 
-**PROTOCOL V1.0 // VERZEGELD MET SHA-512.**
+**PROTOCOL V1.0 // SIGILAT CU SHA-512.**
 
-*© 2026 İLHAN ART | ALLE RECHTEN OP WERKEN, VISUELE ELEMENTEN EN IDEEËN VOORBEHOUDEN.*
+*© 2026 İLHAN ART | TOATE DREPTURILE ASUPRA OPERELOR, ELEMENTELOR VIZUALE ȘI IDEILOR REZERVATE.*
 
 ---
