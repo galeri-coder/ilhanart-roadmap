@@ -323,7 +323,6 @@ Das Register kann zwei Schichten haben:
 
 **Community-Konsultation:**
 - Evidence Pack wird während des Bewerbungsprozesses öffentlich geteilt
-- Community kann Feedback über Discord und ilhanart.org/applications geben
 - Token-Holder (mindestens 10.000 $CULTURE) können besonders Vorschläge machen
 - **Alles Feedback wird im Prüfungsprozess berücksichtigt**
 - **Die endgültige Entscheidung hängt jedoch von der kuratorischen Bewertung ab**
@@ -376,17 +375,13 @@ Wenn das Projekt reift (2027+), kann der Community-Konsultationsmechanismus gest
 - Vollständige Versionen der Evidence Packs
 - Forensische Verifizierungswerkzeuge
 
-**3. NFT-Mint-Priorität:**
-- Whitelist-Zugang, wenn PoArt Verified Werke als NFT geprägt werden
-- Frühe Mint-Möglichkeiten
-- Spezielle Sammlungs-NFTs
 
-**4. Beratende Abstimmung:**
+**3. Beratende Abstimmung:**
 - Beratungsrecht bei PoArt Verified Bewerbungen
 - Zugang zu Community-Feedback-Kanälen
 - Teilnahme an Governance-Diskussionen
 
-**5. Exklusiver Inhalt:**
+**4. Exklusiver Inhalt:**
 - Studio-Behind-the-Scenes-Inhalte
 - Künstlerinterviews und Prozessvideos
 - Zugang zur technischen Dokumentation
@@ -617,7 +612,7 @@ Diese Phase umfasst den Übergang des Systems von einer vollständig "clientseit
 | **OpenTimestamps** | Bitcoin-Verankerung | OTS JavaScript | Q4 2026 |
 
 **Token-Governance (v2.0):**
-- Off-Chain-Voting (Discord/Web) + Wallet-Signatur
+- Off-Chain-Voting (x/Web) + Wallet-Signatur
 - Auswahl von Community-Vertretern (erste 90 Tage)
 - Multi-Sig-Operations-Wallet-Kontrolle
 - Gewichtetes beratendes Voting (mit Wal-Cap)
@@ -936,7 +931,7 @@ Wir erwarten Beiträge von erfahrenen Entwicklern in den folgenden Themen für *
 * **Supabase Edge Functions:** Spam-Schutz serverseitig verschieben.
 * **Solana Web3.js:** Wallet-Signatur-Integration (Wallet Signing).
 * **IPFS / Arweave:** Integration von Archivierungs- und Pinning-Diensten.
-* **Community-Tools:** Discord-Bot, Voting-Systeme, Analytics-Dashboard.
+* **Community-Tools:** Voting-Systeme, Analytics-Dashboard.
 
 > Bitte starten Sie eine Diskussion im "Issues"-Tab, bevor Sie eine Funktion hinzufügen.
 
