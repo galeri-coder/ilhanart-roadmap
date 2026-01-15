@@ -324,7 +324,6 @@ Le registre peut avoir deux couches:
 
 **Consultation Communautaire:**
 - L'Evidence Pack est partagé publiquement pendant le processus de candidature
-- La communauté peut fournir un retour via Discord et ilhanart.org/applications
 - Les détenteurs de jetons (minimum 10,000 $CULTURE) peuvent particulièrement faire des suggestions
 - **Tout le retour est pris en compte dans le processus d'examen**
 - **Cependant, la décision finale dépend de l'évaluation curatoriale**
@@ -377,17 +376,12 @@ Quand le projet arrive à maturité (2027+), le mécanisme de consultation commu
 - Versions complètes des Evidence Packs
 - Outils de vérification forensique
 
-**3. Priorité de Frappe NFT:**
-- Accès à liste blanche quand les œuvres PoArt Verified sont frappées en NFT
-- Opportunités de frappe précoce
-- NFT de collection spéciale
-
-**4. Vote Consultatif:**
+**3. Vote Consultatif:**
 - Droit de consultation dans les candidatures PoArt Verified
 - Accès aux canaux de retour communautaire
 - Participation aux discussions de gouvernance
 
-**5. Contenu Exclusif:**
+**4. Contenu Exclusif:**
 - Contenu des coulisses du studio
 - Interviews d'artistes et vidéos de processus
 - Accès à la documentation technique
@@ -680,7 +674,7 @@ Nous attendons les contributions de développeurs expérimentés dans les sujets
 * **Supabase Edge Functions:** Déplacer la protection contre spam côté serveur.
 * **Solana Web3.js:** Intégration de signature de portefeuille (Wallet Signing).
 * **IPFS / Arweave:** Intégration de services d'archivage et de pinning.
-* **Outils Communautaires:** Bot Discord, systèmes de vote, tableau de bord analytique.
+* **Outils Communautaires:** systèmes de vote, tableau de bord analytique.
 
 > Veuillez lancer une discussion dans l'onglet "Issues" avant d'ajouter une fonctionnalité.
 
@@ -706,7 +700,6 @@ Cependant, clarifions ceci:
 - Registre: Off-chain (PostgreSQL + sauvegarde IPFS)
 - Attestation: Auto-signé par galerie (centralisé mais transparent)
 - Gouvernance: Consultative uniquement (décision finale curatoriale)
-- Utilité du jeton: Accès galerie + registre + priorité NFT
 
 **Vision v2.0+ (2027+):**
 - Registre: On-chain (Solana)
