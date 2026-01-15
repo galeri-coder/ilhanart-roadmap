@@ -1,141 +1,141 @@
 # 📚 GLOSSAIRE DE TERMINOLOGIE ET CONCEPTS
 > **"Comprendre le langage de ce protocole, c'est comprendre sa vision."**
 
-## ⚙️ PoArt Forensic Engine (PFE) v1.0 : Infrastructure de Base
+## ⚙️ PoArt Forensic Engine (PFE) v1.0: Infrastructure de Base
 
-**PoArt Forensic Engine (PFE)** est la couche principale représentant la logique centrale et le fonctionnement technique derrière le protocole [PoArt]. C'est le "moteur forensique" qui prend les données brutes de production d'une œuvre d'art et les transforme en **preuves numériques** vérifiables et immuables.
+**PoArt Forensic Engine (PFE)** est la couche principale qui représente la logique centrale et le fonctionnement technique derrière le protocole [PoArt]. C'est le "moteur forensique" qui prend les données brutes de production de l'œuvre d'art et les transforme en une **preuve numérique** vérifiable et immuable.
 
-### 🧩 Pourquoi "PoArt Forensic" ?
+### 🧩 Pourquoi "PoArt Forensic"?
 
-- **PoArt (Proof of Art) :** L'objectif du moteur est de lier la valeur d'un actif numérique non à la spéculation, mais au **processus de production démontrable**.
-- **Forensic (Vérification Forensique) :**
-  - **Définition Technique :** Une approche algorithmique et de chaîne d'enregistrement pour vérifier que les données du processus de production (coups de pinceau, timelapse, journaux) n'ont pas été manipulées.
-  - **Couche Philosophique :** L'affirmation de transformer **le temps humain, l'effort et le coût de décision** en une réalité mesurable, contre la production de "sortie instantanée" de l'IA.
+- **PoArt (Proof of Art - Preuve d'Art):** L'objectif du moteur est de lier la valeur d'un actif numérique non pas à la spéculation, mais au **processus de production démontrable**.
+- **Forensic (Vérification Forensique):**
+  - **Définition Technique:** Approche algorithmique et de chaîne d'enregistrement visant à vérifier que les données du processus de production (coups de pinceau, timelapse, logs) n'ont pas été manipulées.
+  - **Couche Philosophique:** L'affirmation de transformer en une réalité mesurable la production humaine qui contient le **temps, l'effort et le coût de décision**, face à la production de "sortie instantanée" de l'Intelligence Artificielle.
 
-> Note : L'intégration blockchain (par ex. Solana) n'est pas le cœur du PFE ; elle sera définie séparément comme une **Chain Anchor Layer** à des fins de vérification/registre.
+> Note: L'intégration blockchain (ex. Solana) n'est pas le cœur de PFE; elle est traitée comme une **Chain Anchor Layer** (Couche d'Ancrage de Chaîne) qui sera définie séparément pour la vérification/registre.
 
 ### 🛠️ Portée Technique v1.0
 
-**PoArt Forensic Engine (PFE) v1.0** est construit sur les **3 piliers principaux** suivants plutôt que sur des modèles financiers complexes :
+**PoArt Forensic Engine (PFE) v1.0** est construit sur ces **3 piliers principaux** plutôt que sur des modèles financiers complexes:
 
-1. **Hashing & Sealing (Scellement) :**  
-   Le PFE traite de manière déterministe tous les éléments du Pack de Preuves (fichier d'œuvre, vidéo, JSON/log, signature, etc.) et génère une valeur unique de **NotarySeal**.
+1. **Hashing & Sealing (Hachage et Scellement):**  
+   PFE traite de manière déterministe tous les éléments du Evidence Pack (fichier d'œuvre, vidéo, JSON/logs, signature, etc.) et génère la valeur unique **NotarySeal**.
 
-   **Concepts centraux (v1.0) :**
-   - **FileHash (empreinte de l'œuvre) :** Hash généré à partir des octets du fichier de l'œuvre.
-   - **EvidenceRoot (racine du pack de preuves) :** Résumé racine représentant l'intégrité du Pack de Preuves (racine Merkle ou hash de manifeste canonique).
-   - **NotarySeal (sceau final / sortie PFE) :** Sceau final généré à partir de la combinaison EvidenceRoot + temps + signature.
+   **Concepts centraux (v1.0):**
+   - **FileHash (empreinte de l'œuvre):** Hash généré à partir des octets du fichier de l'œuvre.
+   - **EvidenceRoot (racine du paquet de preuve):** Résumé racine représentant l'intégrité du Evidence Pack (Merkle root ou hash de manifeste canonique).
+   - **NotarySeal (sceau final / Sortie PFE):** Sceau final généré à partir de la combinaison EvidenceRoot + temps + signature.
 
-   **Formules (clairement visibles pour les investisseurs) :**
+   **Formules (visibles clairement pour l'investisseur):**
    
    $$\text{FileHash}_{512} = \text{SHA-512}(\text{ArtworkFileBytes})$$
    
    $$\text{NotarySeal} = \text{SHA-512}(\text{EvidenceRoot} \mid \text{SignerSignature} \mid \text{TimeStamp})$$
    
-   **Définitions de Payload Canonique (v1.0) :**
+   **Définitions de Payload Canonique (v1.0):**
    
-   - **EvidenceRootPayload :**
+   - **EvidenceRootPayload:**
 ```
    file_sha512:{sha512}\nforensics:{canonicalForensics(forensics)}
 ```
    
-   - **NotarySealPayload :**
+   - **NotarySealPayload:**
 ```
    evidence_root:{evidence_root}\nsigner_sig:{signer_sig}\ntimestamp:{timestamp}
 ```
    
-   > Note : La valeur référencée comme sortie PFE est **NotarySeal**. Le mécanisme **SignerSignature** sera activé en Phase 2 (avec Solana Wallet Adapter) ; dans la v1.0 actuelle, la signature d'attestation propre au système est utilisée. La clé publique d'attestation est publiée dans le registre sous le champ `issuer.attestation_pubkey`.
+   > Note: La valeur prévue comme sortie PFE est **NotarySeal**. Le mécanisme **SignerSignature** sera activé en Phase 2 (avec Solana Wallet Adapter); dans la v1.0 actuelle, la signature d'attestation du système lui-même est utilisée. La clé publique d'attestation est publiée dans le champ `issuer.attestation_pubkey` du registre.
 
-2. **Indexing (Archivage) :**  
-   Enregistre quel portefeuille, à quelle date, a soumis **Proof of Labor (Preuve de Travail)** pour quelle œuvre dans une couche de registre transparente et interrogeable.  
-   *(Cette couche peut être une base de données ; l'intégration de chaîne est définie séparément comme "Chain Anchor Layer".)*
+2. **Indexing (Archivage):**  
+   Traite dans une couche d'enregistrement transparente et interrogeable quel portefeuille, à quelle date, a présenté la **Labor Proof (Preuve de Travail)** pour quelle œuvre.  
+   *(Cette couche peut être une base de données; l'intégration en chaîne est définie séparément comme "Chain Anchor Layer".)*
 
-3. **Verification (Vérification) :**  
-   Lorsque l'authenticité d'une œuvre est remise en question, le PFE retraite les preuves brutes ; il teste mathématiquement si les valeurs calculées de **EvidenceRoot / NotarySeal** correspondent aux enregistrements d'archive.
+3. **Verification (Vérification):**  
+   Lorsque l'authenticité d'une œuvre est questionnée, PFE retraite les preuves brutes; teste avec certitude mathématique si les valeurs calculées **EvidenceRoot / NotarySeal** correspondent à l'enregistrement dans l'archive.
 
 ---
 
 ### 🧮 Théorème de Valeur PoArt (The Value Theorem)
 
-Le protocole [PoArt] relie la valeur ($V$) d'un actif numérique non à la perception subjective du marché, mais à **la réalité physique du processus de production**.
+Le protocole [PoArt] relie la valeur ($V$) d'un actif numérique non pas à la perception subjective du marché, mais à **la réalité physique du processus de production**.
 
-L'Intelligence Artificielle (IA) détruit le processus en livrant le résultat instantanément ($t \to 0$). [PoArt], cependant, traite la valeur comme l'accumulation de composantes de **temps, travail et volonté**.
+L'Intelligence Artificielle (IA) détruit le processus en donnant le résultat instantanément ($t \to 0$). [PoArt], en revanche, traite la valeur comme l'accumulation des composantes de **temps, travail et volonté**.
 
 $$V_{\text{PoArt}} = \int_{t_{\text{start}}}^{t_{\text{end}}} \left(P_{\text{labor}}(t) \cdot I_{\text{agency}}(t)\right) dt + U_{\text{irreversible}}$$
 
-#### Définitions des Variables
+#### Définition des Variables
 
-- **$\int dt$ (Accumulation de Processus) :**  
-  La valeur n'est pas une "sortie" instantanée ; c'est un **processus** accumulé entre $t_{\text{start}}$ et $t_{\text{end}}$. À mesure que la durée diminue (production IA), le résultat de l'intégrale approche 0.
+- **$\int dt$ (Accumulation de Processus):**  
+  La valeur n'est pas une "sortie" (output) instantanée; c'est un **processus** qui s'accumule entre $t_{\text{start}}$ et $t_{\text{end}}$. À mesure que la durée diminue (production IA), le résultat de l'intégrale se rapproche de 0.
 
-- **$P_{\text{labor}}(t)$ (Puissance de Travail Instantanée) :**  
+- **$P_{\text{labor}}(t)$ (Force de Travail Instantanée):**  
   Représente l'intensité de l'effort mental et physique dépensé au moment de la production. À mesure que l'effort démontrable augmente, l'intégrande croît.  
-  > Note : Ce terme peut être normalisé en pratique à travers des "signaux de travail mesurables/démontrables".
+  > Note: Ce terme peut être normalisé en pratique à travers des "signaux de travail mesurables/démontrables".
 
-- **$I_{\text{agency}}(t)$ (Coefficient de Volonté) :**  
-  La capacité du producteur à prendre des risques et à prendre des décisions. Prend une valeur entre $0$ et $1$.
-  - **IA ($I \approx 0$) :** Exécute des commandes, ne prend pas de risques, ne paie pas de coûts.
-  - **Humain ($I \to 1$) :** Change de décisions, hésite, prend des risques.
+- **$I_{\text{agency}}(t)$ (Coefficient de Volonté):**  
+  C'est la capacité du producteur à prendre des risques et à prendre des décisions. Prend une valeur entre $0$ et $1$.
+  - **IA ($I \approx 0$):** Exécute des commandes, ne prend pas de risques, ne paie pas de prix.
+  - **Humain ($I \to 1$):** Change de décisions, hésite, prend des risques.
 
-- **$U_{\text{irreversible}}$ (Singularité Irréversible) :**  
-  Bien que l'annulation (`Ctrl+Z`) soit possible dans la production numérique, dans la production physique (peinture appliquée sur la toile, marbre taillé, geste en direct) il n'y a pas de retour en arrière. Cette **irréversibilité** est un terme supplémentaire créant la "singularité" (caractère non fongible) dans l'œuvre.
+- **$U_{\text{irreversible}}$ (Singularité Irréversible):**  
+  Alors que dans la production numérique il est possible d'annuler (`Ctrl+Z`); dans la production physique (peinture appliquée sur toile, marbre sculpté, geste en transmission en direct) il n'y a pas de retour en arrière. Cette **irréversibilité** est un terme supplémentaire qui crée la "singularité" (caractère non fongible) dans l'œuvre.
 
-### 🔎 Analyse de Cas : IA "Sortie Instantanée" vs. Humain "Processus Prouvé"
+### 🔎 Analyse de Cas: IA "Sortie Instantanée" vs. Humain "Processus Prouvé"
 
-Le scénario suivant démontre comment le **Théorème de Valeur PoArt** fonctionne en pratique et pourquoi les productions IA obtiennent de faibles scores dans la norme [PoArt].
+Le scénario suivant montre comment fonctionne le **Théorème de Valeur PoArt** en pratique et pourquoi les productions IA obtiennent de faibles scores dans la norme [PoArt].
 
-#### Scénario A : Production Visuelle en 10 Secondes avec IA
+#### Scénario A: Production Visuelle avec IA en 10 Secondes
 
-- **Durée ($\Delta t$) :** $10$ secondes (processus négligeable)
-- **Puissance de Travail ($P_{\text{labor}}$) :** $1$ unité (uniquement écrire des commandes)
-- **Coefficient de Volonté ($I_{\text{agency}}$) :** $0.01$ (pas de risque, pas de coût)
-- **Irréversibilité ($U_{\text{irreversible}}$) :** $0$ (réversible / copiable)
+- **Durée ($\Delta t$):** $10$ secondes (processus presque inexistant)
+- **Force de Travail ($P_{\text{labor}}$):** $1$ unité (uniquement écrire une commande)
+- **Coefficient de Volonté ($I_{\text{agency}}$):** $0.01$ (pas de risque, pas de coût)
+- **Irréversibilité ($U_{\text{irreversible}}$):** $0$ (réversible / copiable)
 
-**Résultat :**
+**Résultat:**
 
 $$V_{\text{AI}} \approx \int_{0}^{10} (1 \cdot 0.01) \, dt + 0 = 0.1$$
 
-> **Commentaire :** Même si la sortie est parfaite ; la valeur [PoArt] approche $0$ car aucun processus n'a été vécu et aucune volonté/risque n'a été impliqué.
+> **Commentaire:** Bien que la sortie soit parfaite; étant donné que le processus n'est pas vécu et ne contient pas de volonté/risque, la valeur [PoArt] se rapproche de $0$.
 
-#### Scénario B : Production Physique de 6 Heures en Direct
+#### Scénario B: Production Physique de 6 Heures en Transmission en Direct
 
-- **Durée ($\Delta t$) :** $6$ heures ($21{,}600$ secondes)
-- **Puissance de Travail ($P_{\text{labor}}$) :** $0.5$ unités (continuité de l'effort physique et mental)
-- **Coefficient de Volonté ($I_{\text{agency}}$) :** $0.9$ (changer de décisions, prendre des risques, choix irréversibles)
-- **Irréversibilité ($U_{\text{irreversible}}$) :** $>0$ (les traces physiques ne peuvent être annulées)
+- **Durée ($\Delta t$):** $6$ heures ($21{,}600$ secondes)
+- **Force de Travail ($P_{\text{labor}}$):** $0.5$ unités (continuité de l'effort physique et mental)
+- **Coefficient de Volonté ($I_{\text{agency}}$):** $0.9$ (changement de décisions, prise de risques, choix irréversibles)
+- **Irréversibilité ($U_{\text{irreversible}}$):** $>0$ (traces physiques irréversibles)
 
-**Résultat :**
+**Résultat:**
 
 $$V_{\text{Human}} \approx \int_{0}^{21600} (0.5 \cdot 0.9) \, dt + U_{\text{irreversible}} \approx 9720 + U_{\text{irreversible}}$$
 
-> **Commentaire :** À mesure que le processus s'allonge et que la volonté (risque) augmente, la valeur s'accumule cumulativement. Le terme $U_{\text{irreversible}}$ est une contribution supplémentaire créant la "singularité" (caractère non fongible) dans l'œuvre.
+> **Commentaire:** À mesure que le processus s'allonge et que la volonté (risque) augmente, la valeur augmente cumulativement. Le terme $U_{\text{irreversible}}$ est une contribution supplémentaire qui crée la "singularité" (caractère non fongible) dans l'œuvre.
 
 ---
 
-### ✅ Conclusion : Valeur Liée à la Preuve (Proof-Bound Value)
+### ✅ Conclusion: Valeur Liée à la Preuve (Proof-Bound Value)
 
-Ce théorème extrait l'affirmation de valeur de [PoArt] d'être un "like" ou un "récit de marché" et la lie à **une réalité de production démontrable**.
+Ce théorème sort l'affirmation de valeur de [PoArt] d'être un "goût" ou une "narration de marché" et la lie à une **réalité de production démontrable**.
 
-1. **Pas de Processus, Pas de Valeur :**  
-   L'IA détruit le processus avec une sortie instantanée ($t \to 0$). À mesure que la fenêtre de processus se rétrécit, le résultat de l'intégrale se réduit nécessairement :
+1. **Sans Processus, Pas de Valeur:**  
+   L'IA détruit le processus avec une sortie instantanée ($t \to 0$). À mesure que la fenêtre du processus se rétrécit, le résultat de l'intégrale diminue par nécessité mathématique:
    
    $$\Delta t \downarrow \ \Rightarrow\ \int \left(P(t) \cdot I(t)\right) dt \to 0$$
 
-2. **La Volonté et le Risque sont des Multiplicateurs :**  
-   [PoArt] ne mesure pas seulement le "temps passé" mais aussi la couche réelle de décision, risque et coût dans ce temps. Une production sans prise de risque (IA) a une faible valeur :
+2. **La Volonté et le Risque sont des Multiplicateurs:**  
+   [PoArt] mesure non seulement le "temps dépensé", mais aussi la couche réelle de décision, de risque et de coût pendant ce temps. La valeur d'une production sans risque (IA) est faible:
    
    $$V_{\text{PoArt}} \propto \int \left(P_{\text{labor}}(t) \cdot I_{\text{agency}}(t)\right) dt$$
 
-3. **La Singularité est une Preuve Physique, Pas du Marketing :**  
-   Les traces irréversibles dans la production physique (trait de toile, éclat de marbre) sont en dehors de la logique `Ctrl+Z` du numérique. Cette irréversibilité ($U_{\text{irreversible}}$) singularise ontologiquement l'œuvre.
+3. **La Singularité est une Preuve Physique, Pas du Marketing:**  
+   Les traces irréversibles dans la production physique (coup de pinceau sur toile, fracture de marbre) sont en dehors de la logique du `Ctrl+Z` numérique. Cette irréversibilité ($U_{\text{irreversible}}$) singularise ontologiquement l'œuvre.
 
-> **🔐 RÉSUMÉ :** Bien que le théorème de valeur puisse sembler incertain en tant que mesure (même si son équivalent dans le monde réel ne peut être entièrement mesuré), le but de cette formule est de montrer la configuration et la direction des variables. À l'ère de l'IA, ce qui est rare n'est pas "l'image" mais **le travail démontrable, le temps et la volonté.** [PoArt] mesure cette rareté et l'enregistre avec **Pack de Preuves**.
+> **🔐 RÉSUMÉ:** Bien que le théorème de valeur puisse sembler incertain comme mesure (même s'il ne peut pas être mesuré à 100% dans la vraie vie), le but de cette formule est de montrer la construction et la direction des variables. À l'ère de l'IA, ce qui est rare n'est pas "l'image"; c'est le **travail démontrable, le temps et la volonté**. [PoArt] mesure cette rareté et l'enregistre avec le **Evidence Pack**.
 
-### 🏛️ L'Importance du Concept de "Moteur"
+### 🏛️ Importance du Concept "Engine" (Moteur)
 
-Les tokens émergeant de Pump.fun ou de plateformes similaires sont souvent de simples **"billets d'accès"**. **PoArt Forensic Engine (PFE)**, cependant, est la **couche logique constitutionnelle** qui détermine quels droits ce billet protège, comment le travail sera enregistré et comment l'art/science/technologie sera perpétué.
+Les jetons qui sortent de Pump.fun ou de plateformes similaires ne sont souvent que des **"billets d'accès"**. **PoArt Forensic Engine (PFE)**, en revanche, est la **couche de logique constitutionnelle** qui détermine quels droits protège ce billet, comment le travail sera enregistré et comment l'art/science/technologie sera perpétué.
 
-> **Note :** La raison pour laquelle nous avons lancé ce projet sur Pumpfun est que nous n'avions pas suffisamment de liquidité ni suffisamment d'abonnés. Utiliser les données existantes était stratégiquement le bon mouvement, même si ce n'était pas de la plus haute qualité. Indépendamment du budget et des ressources, définir la logique de ce moteur sur GitHub prouve que le projet n'est pas seulement de la spéculation financière, mais une vision d'**infrastructure logicielle** et de **bibliothèque nationale numérique** à long terme.
+> **Note:** La raison pour laquelle nous avons lancé ce projet sur Pump.fun est que nous ne disposions pas de liquidité suffisante et de nombre de followers suffisant. L'utilisation des données existantes fut stratégiquement le mouvement le plus correct, bien que pas de la plus haute qualité. Indépendamment du budget et des possibilités, définir la logique de ce moteur sur GitHub démontre que le projet n'est pas seulement une spéculation financière, mais une **infrastructure logicielle** à long terme et une vision de **bibliothèque nationale numérique**.
 
 ---
 
@@ -143,484 +143,313 @@ Les tokens émergeant de Pump.fun ou de plateformes similaires sont souvent de s
 
 > **"Artiste Réel, Production Réelle, Valeur Réelle."**
 
-Ce protocole est un **mécanisme de défense biologique et intellectuelle** développé contre les escrocs anonymes entourant l'écosystème crypto, les visuels IA produits en 5 minutes et la culture "Pump & Dump".
+Ce protocole est un **mécanisme de défense biologique et intellectuel** développé contre les escrocs anonymes qui entourent l'écosystème crypto, les images d'intelligence artificielle produites en 5 minutes et la culture "Pump & Dump" (Pompage et Décharge).
 
 ---
 
-## a) Qu'est-ce que [PoArt] ? (Définition Philosophique et Technique)
+## a) Qu'est-ce que [PoArt]? (Définition Philosophique et Technique)
 
-**Proof of Art [PoArt] ;** est une norme de vérification institutionnelle qui garantit que la valeur derrière un actif sur la blockchain est basée non sur la spéculation, mais sur le **travail humain**, le **temps** et l'**énergie physique** vérifiables.
+**Proof of Art [PoArt];** est un standard de vérification institutionnelle qui garantit que la valeur derrière un actif sur blockchain est basée non pas sur la spéculation, mais sur le **travail humain** vérifiable, le **temps** et **l'énergie physique**.
 
-Tout comme Bitcoin génère de la valeur avec *"Électricité et Puissance de Processeur"* **(Proof of Work)**, les projets conformes à [PoArt] génèrent de la valeur avec *"Compétence Artistique et Temps Humain"*.
+Tout comme Bitcoin génère de la valeur avec *"Électricité et Puissance de Processeur"* **(Proof of Work)**, les projets compatibles [PoArt] génèrent de la valeur avec *"Talent Artistique et Temps Humain"*.
 
-Il élimine le risque de *"Le développeur a vendu, le projet est terminé"* sur les plateformes Pump.fun et DEX ; car ici la valeur n'est pas dans le code, mais dans la **continuité de la production**.
+Élimine le risque de *"Le développeur (Dev) a vendu, projet terminé"* sur Pump.fun et les plateformes DEX; car ici la valeur n'est pas dans le code, mais dans la **continuité de la production**.
 
-> **[PoArt] ne dit pas aux participants "Faites-nous confiance" ; il dit "Voici les preuves, voyez avec vos yeux, vérifiez avec vos mathématiques."**
+> **[PoArt] ne dit pas à son participant "Faites-nous confiance"; il dit "Voici les preuves, regardez de vos yeux, vérifiez avec vos mathématiques".**
 
 ---
 
-## b) Norme à 5 Piliers [PoArt] (Les 5 Piliers de la Vérité)
+## b) Standard des 5 Piliers [PoArt] (The 5 Pillars of Truth)
 
-Ces 5 éléments sont des filtres non manipulables qu'un projet doit passer pour recevoir le sceau [PoArt].
+Ces 5 éléments sont des filtres non manipulables qu'un projet doit passer pour obtenir le sceau [PoArt].
 
-### 1) Preuve d'Identité en Direct
+### 1) Preuve d'Identité en Direct (Live Identity Proof)
 
-- **Problème :** Le monde crypto est rempli de fondateurs anonymes (Devs) avec des identités peu claires qui collectent de l'argent et abandonnent les projets.
-- **Solution [PoArt] :** Le producteur prouve non seulement une carte d'identité, mais **la présence au moment de la production**. Cela inclut des sessions de diffusion en direct où l'interaction avec la communauté se produit et des demandes instantanées spécifiques sont satisfaites, pas des vidéos préenregistrées.  
-  (Par ex., *"Écris la date d'aujourd'hui et le numéro de bloc actuel dans le coin droit de la toile"*)
-- **Devise :** *"Les bots peuvent peindre mais les bots ne transpirent pas et ne peuvent pas improviser."*
+- **Problème:** Le monde crypto est rempli de fondateurs anonymes (Devs) d'identité incertaine qui collectent de l'argent et abandonnent le projet.
+- **Solution [PoArt]:** Le producteur prouve non seulement son document d'identité, mais **sa présence pendant la production**. Cela inclut des sessions de transmission en direct où l'on interagit avec la communauté et où des demandes spécifiques instantanées sont satisfaites, pas des vidéos préenregistrées.  
+  (Ex: *"Écris la date d'aujourd'hui et le numéro de bloc actuel dans le coin droit de la toile"*)
+- **Devise:** *"Les bots peuvent faire des images, mais les bots ne transpirent pas et n'improvisent pas."*
 
-### 2) Preuve de Travail et de Processus
+### 2) Preuve de Travail et de Processus (Labor & Process Proof)
 
-- **Problème :** Des visuels IA (Intelligence Artificielle) produits en 2 secondes recevant le même traitement "jpeg" que des peintures à l'huile faites en 2 mois dans le monde numérique.
-- **Solution [PoArt] :** Le processus de "grossesse et de naissance" de l'œuvre est enregistré. Les étapes d'esquisse, les couches de peinture, les heures cumulées passées et le processus physique que l'artiste a vécu en créant l'œuvre sont documentés. Cela ajoute un **"Coût de Temps"** au token. Plus la production d'un actif est difficile, plus sa valeur est solide.
+- **Problème:** Que les images IA (Intelligence Artificielle) produites en 2 secondes et la peinture à l'huile faite en 2 mois reçoivent le même traitement de "jpeg" dans le monde numérique.
+- **Solution [PoArt]:** Le processus de "gestation et naissance" de l'œuvre est enregistré. Les étapes d'esquisse, les couches de peinture, les heures cumulées dépensées et le processus physique que l'artiste a vécu en créant cette œuvre sont documentés. Cela ajoute un **"Coût de Temps" (Time Cost)** au jeton. Plus la production d'un actif est difficile, plus sa valeur est solide.
 
-### 3) Preuve de Valeur Esthétique
+### 3) Preuve de Valeur Esthétique (Aesthetic Value Proof)
 
-- **Problème :** Culture "Mème" se concentrant uniquement sur la comédie instantanée tout en ignorant l'esthétique et la profondeur artistique, résultant en des projets "Hype" de courte durée.
-- **Solution [PoArt] :** Le projet doit avoir des normes d'art académiques, une théorie des couleurs, des règles de composition et une connaissance des matériaux (Impasto, Texture, etc.). Le contenu ne doit pas seulement faire rire ; il doit inspirer l'admiration chez les spectateurs et avoir une **valeur collectionnable**.
+- **Problème:** Que la culture "Mème" ignore l'esthétique et la profondeur artistique en se concentrant uniquement sur la comédie instantanée, résultant en des projets de "Hype" de courte durée.
+- **Solution [PoArt]:** Le projet doit avoir des standards d'art académique, théorie des couleurs, règles de composition et connaissance des matériaux (Impasto, Texture, etc.). Le contenu ne doit pas seulement faire rire; il doit inspirer l'admiration chez le spectateur et avoir une **valeur de collection**.
 
-### 4) Nouveauté Conceptuelle
+### 4) Innovation Conceptuelle (Conceptual Novelty)
 
-- **Problème :** Des milliers de pièces chien/chat copies dépourvues de créativité.
-- **Solution [PoArt] :** Le projet doit construire un nouveau pont combinant art, science, philosophie ou technologie dans une structure significative.  
-  (Par ex., Combiner la sculpture classique de David avec les données du marché crypto ; traiter l'idée que la perception humaine "se transforme en pierre" à travers cela et la fonder avec des sources scientifiques.)  
-  L'œuvre ne doit pas seulement être une fête visuelle mais aussi un défi intellectuel qui provoque la réflexion sur **Science, Philosophie ou Technologie**.
+- **Problème:** Des milliers de pièces de chiens/chats qui sont des copies les unes des autres, éloignées de la créativité.
+- **Solution [PoArt]:** Le projet doit construire un nouveau pont qui combine art, science, philosophie ou technologie dans une structure significative.  
+  (Ex: Combiner la classique statue de David avec des données du marché crypto; traiter l'idée que la perception humaine se "pétrifie" à travers cela et pouvoir le fonder avec des sources scientifiques.)  
+  L'œuvre ne doit pas être seulement un festin visuel; elle doit aussi être un défi intellectuel qui fait réfléchir sur **Science, Philosophie ou Technologie**.
 
 > [!IMPORTANT]
-> **Exemple de Référence (Effet Las Palmitas) :** Dans le quartier de Las Palmitas au Mexique, en proie au crime, plus de 200 maisons ont été transformées en un spectacle arc-en-ciel massif. Suite à cette intervention esthétique, les taux de criminalité dans le quartier ont diminué dans une certaine mesure, et les jeunes ont commencé à s'engager dans l'art au lieu des gangs. Le changement esthétique a recodé le respect des gens pour leur environnement et les uns envers les autres (Cohésion Sociale).
+> **Exemple de Référence (Effet Las Palmitas):**  
+> Dans le quartier Las Palmitas du Mexique qui luttait contre le crime, plus de 200 maisons se sont transformées en un immense festin d'arc-en-ciel. Suite à cette intervention esthétique, les taux de criminalité du quartier ont diminué dans une certaine mesure, les jeunes ont commencé à s'intéresser à l'art au lieu des gangs. Le changement esthétique a recodé le respect des gens envers leur environnement et entre eux (Cohésion Sociale).
 >
-> **Attente :** Un projet entrant dans la liste [PoArt] doit, comme dans l'exemple ci-dessus, contenir une relation de cause à effet sociologique, scientifique ou philosophique au-delà de l'esthétique visuelle pure. Puisque le temps est le seul actif qui ne peut être acheté avec de l'argent, dans ce protocole le temps doit être prouvé en étant mis en jeu comme garantie. La base conceptuelle du projet doit être si forte et universelle que même dans un éventuel scénario CTO (Community Take Over) des années plus tard, la communauté puisse continuer de manière autonome le potentiel innovant du projet en héritant de cet héritage.
+> **Attente:** Un projet qui entre dans la liste [PoArt]; tout comme l'exemple ci-dessus, doit contenir une relation de cause à effet sociologique, scientifique ou philosophique au-delà de la pure esthétique visuelle. Étant donné que le seul actif qui ne peut être acheté avec de l'argent est le "Temps", dans ce protocole le temps doit être staké comme garantie et prouvé. La base conceptuelle du projet doit être si forte et universelle que; même dans un éventuel scénario de CTO (Community Take Over) des années plus tard, la communauté puisse hériter de cet héritage et continuer de manière autonome le potentiel innovant du projet.
 
-### 5) Volonté Non Algorithmique
+### 5) Volonté Non Algorithmique (Non-Algorithmic Agency)
 
-- **Problème :** Productions numériques parfaites mais sans âme qui se répètent entre elles.
-- **Solution [PoArt] :** La volonté unique de l'humain qui peut faire des erreurs, prendre des risques et vivre des fluctuations émotionnelles doit être ressentie dans l'œuvre. L'incertitude dans les coups de pinceau, les réactions inattendues des matériaux et les décisions instantanées de l'artiste sont la **Signature Biologique** qui sépare l'œuvre de la "Production Machine".
-
----
-
-## c) Mécanisme de Vérification et Anti-Fraude
-
-Ce système garantit que le projet reste fiable et vivant non seulement "au début" mais "pour toujours".
-
-### 📦 Pack de Preuves - Le Jumeau Numérique
-
-Derrière chaque œuvre certifiée [PoArt] se trouve un paquet de données crypté et horodaté que les investisseurs peuvent télécharger :
-
-- **Enregistrements Vidéo RAW :** Séquences brutes ininterrompues du moment de production.
-- **Analyse des Métadonnées :** Date de création du fichier, informations sur l'appareil utilisé et données de localisation.
-- **Références Physiques :** Preuves que l'œuvre existe dans le monde physique  
-  (Par ex., Journal actuel ou données blockchain de ce moment à côté de l'œuvre).
-
-> *Note de cohérence :* Le terme "pack de preuves" se connecte à la chaîne **Pack de Preuves → EvidenceRoot → NotarySeal** dans les sections précédentes ; c'est-à-dire que l'intégrité du paquet est représentée par un sceau vérifiable.
-
-### 🔄 Renouvellement de 365 Jours (Le Protocole de Durabilité)
-
-- **Caractéristique Révolutionnaire :** Dans les projets crypto, le "Dev" (Développeur) lance le token et disparaît généralement après 1-2 mois (Soft Rug). [PoArt] rend cela impossible.
-- **Règle :** Le statut d'"Artiste Vérifié" n'est pas à vie. Seulement **1 an** est valide.
-- **Opération :** L'artiste/développeur doit présenter à la communauté **une nouvelle œuvre importante et démontrable** tous les 365 jours.
-- **Scénario d'Exemple :** Vous avez lancé le projet en 2026. En janvier 2027, le système donne un avertissement "Période de Preuve Expirée". Si l'artiste ne présente pas une nouvelle exposition, une nouvelle œuvre physique ou une nouvelle intégration technologique, le "Badge de Confiance" du projet baisse.
-- **Résultat :** Ce système garantit que **le contenu ne perd jamais sa pertinence** et que l'investisseur ne connaît jamais la peur de *"Le développeur est-il toujours là ?"*. Le projet devient un studio vivant.
-
-### 🚩 Protocole de Drapeau Rouge
-
-**En cas de fraude détectée par la communauté ou les algorithmes (utilisation d'IA, œuvre volée, vidéo manipulée) :**
-
-1. Le certificat est immédiatement marqué comme **"VOID" (NUL)**.
-2. Les packs de preuves sont étiquetés publiquement comme **"Faux"**.
-3. Le projet est placé sur la liste noire [PoArt]. Cela renforce que dans un monde décentralisé, **la réputation est la seule monnaie**.
+- **Problème:** Productions numériques parfaites mais sans âme, qui se répètent entre elles.
+- **Solution [PoArt]:** La volonté authentique de l'être humain qui peut commettre des erreurs, prendre des risques et vivre des fluctuations émotionnelles doit se sentir dans l'œuvre. L'incertitude dans les coups de pinceau, les réactions inattendues du matériau et les décisions instantanées de l'artiste sont la **Signature Biologique** qui distingue l'œuvre de la "Production de Machine".
 
 ---
 
-## d) Conclusion : Pas un Casino, Mais un Musée
+## c) Mécanisme de Vérification et Anti-Falsification
 
-**Pump.fun et les Échanges Décentralisés (DEX) sont malheureusement des casinos en ce moment ; les lumières clignotent, tout le monde poursuit les gains rapides, et la maison (escrocs) gagne toujours. La raison pour laquelle nous avons commencé le projet ici est le manque de budget suffisant et avoir un environnement pour atteindre le public existant via des diffusions en direct.**
+Ce système garantit que le projet reste fiable et vivant non seulement "au début", mais "pour toujours".
+
+### 📦 Paquet de Preuve (Evidence Pack - The Digital Twin)
+
+Derrière chaque œuvre certifiée [PoArt] se trouve un paquet de données chiffré et horodaté que les investisseurs peuvent télécharger:
+
+- **Enregistrements Vidéo RAW:** Images brutes ininterrompues du moment de production.
+- **Analyse de Métadonnées:** Date de création du fichier, informations sur le dispositif utilisé et données de localisation.
+- **Références Physiques:** Preuve que l'œuvre existe dans le monde physique  
+  (Ex: Journal actuel à côté de l'œuvre ou données blockchain de ce moment).
+
+> *Note de cohérence:* L'expression "paquet de preuve" se connecte à la ligne **Evidence Pack → EvidenceRoot → NotarySeal** des sections précédentes; c'est-à-dire que l'intégrité du paquet est représentée par un sceau vérifiable.
+
+### 🔄 Renouvellement de 365 Jours (The Sustainability Protocol)
+
+- **Caractéristique Révolutionnaire:** Dans les projets crypto, le "Dev" (Développeur) lance le jeton sur le marché et disparaît généralement après 1-2 mois (Soft Rug). [PoArt] rend cela impossible.
+- **Règle:** Le statut de "Verified Artist" (Artiste Vérifié) n'est pas à vie. Il n'est valable que **1 an**.
+- **Fonctionnement:** L'artiste/développeur doit présenter à la communauté tous les 365 jours une **œuvre nouvelle, importante et démontrable**.
+- **Scénario d'Exemple:** Vous avez lancé le projet en 2026. En janvier 2027, le système donne l'avertissement "Temps de Preuve Expiré". Si l'artiste ne présente pas une nouvelle exposition, une nouvelle œuvre physique ou une nouvelle intégration technologique, le "Badge de Confiance" du projet tombe.
+- **Résultat:** Ce système garantit que **le contenu ne perd jamais son actualité** et que l'investisseur ne vive pas la peur de *"Le développeur est-il toujours là?"*. Le projet devient un studio vivant.
+
+### 🚩 Drapeau Rouge (Red Flag Protocol)
+
+**En cas de toute falsification détectée par la communauté ou les algorithmes (utilisation d'IA, œuvre volée, vidéo manipulée):**
+
+1. Le certificat est immédiatement marqué comme **"ANNULÉ" (VOID)**.
+2. Les paquets de preuve sont étiquetés publiquement comme **"Faux"**.
+3. Le projet est ajouté à la liste noire [PoArt]. Cela renforce le fait que dans un monde décentralisé, **la réputation est la seule monnaie**.
+
+---
+
+## d) Conclusion: Pas un Casino, Mais un Musée
+
+**Pump.fun et les Échanges Décentralisés (DEX) sont actuellement, malheureusement, des casinos; les lumières clignotent, tout le monde poursuit des gains rapides et la maison (escrocs) gagne toujours. Nous avons lancé le projet ici parce que nous n'avions pas de budget suffisant et avions un environnement pour atteindre le public existant avec des transmissions en direct.**
 
 **[PoArt] est une forteresse construite au milieu de ce casino.**
 
-- 🎰 Le casino est basé sur les jeux de cartes ; nous sommes basés sur la **réalité physique**.
-- 🃏 Le casino est ouvert à la triche ; nous sommes ouverts aux **preuves transparentes**.
-- ⏳ Le casino est temporaire ; nous nous concentrons sur **l'éternité de l'art et de la science**.
+- 🎰 Le casino se base sur les jeux de cartes; nous nous basons sur la **réalité physique**.
+- 🃏 Le casino est ouvert à la tromperie; nous sommes ouverts aux **preuves transparentes**.
+- ⏳ Le casino est temporaire; nous nous concentrons sur **l'éternité de l'art et de la science**.
 
-**Un token utilisant ce protocole n'est pas seulement une "pièce" ; c'est une équité numérique contenant sueur, peinture, code et philosophie.**
+**Le jeton qui utilise ce protocole n'est pas seulement une "pièce"; c'est une action numérique qui contient sueur, peinture, code et philosophie derrière.**
 
 ---
 
-## 🗳️ 6) GOUVERNANCE ET REGISTRE PUBLIC
+## 🗳️ 6) GOUVERNANCE ET REGISTRE PUBLIC (Governance & Public Registry)
 
-**Le but de cette section est : transformer la norme [PoArt] du plan de "confiance en les individus" vers une infrastructure publique durable avec registre + vérification + supervision communautaire.**
+**Le but de cette section est le suivant: Sortir le standard [PoArt] du plan de "confiance dans les personnes" et le transformer en une infrastructure publique durable avec enregistrement + vérification + supervision communautaire.**
 
-### 6.1 Registre Public
+### 6.1 Registre Public (Public Registry)
 
-- **Registre Public :** Toutes les données approuvées sont enregistrées sur `ilhanart.org/registry` (ou GitHub Registry).
+- **Registre Public:** Toutes les données approuvées sont enregistrées à l'adresse `ilhanart.org/registry` (ou GitHub Registry).
 
-**Logique de registre (norme recommandée - en format de chemin JSON) :**
+**Logique d'enregistrement (standard recommandé - format de chemin JSON):**
 
-Chaque enregistrement entrant dans le registre porte ces champs centraux vérifiables minimaux :
+Chaque enregistrement qui entre dans le registre possède au minimum ces champs centraux vérifiables:
 
-- **Identité et Statut :**
+- **Identité et Statut:**
   - `certificate_id` (référence lisible)
   - `status` (active / void)
-  - `void_reason` (si applicable)
+  - `void_reason` (si existe)
   - `visibility` (private / masked / public)
   - `created_at` (horodatage)
 
-- **Institution Émettrice :**
+- **Institution Émettrice:**
   - `issuer.name`
   - `issuer.location`
   - `issuer.attestation_pubkey`
 
-- **Informations sur l'Œuvre :**
+- **Informations sur l'Œuvre:**
   - `asset.title`
   - `asset.creator`
-  - `asset.creator_wallet` (si possible ; pour l'identité avec porte de token)
+  - `asset.creator_wallet` (si possible; pour identification du détenteur de jeton)
   - `asset.fingerprints.sha256`
   - `asset.fingerprints.sha512`
 
-- **Données Forensiques :**
+- **Données Forensiques:**
   - `forensics.ip_masked`
   - `forensics.location`
   - `forensics.device`
   - `forensics.timestamp`
 
-- **Preuves Cryptographiques :**
+- **Preuves Cryptographiques:**
   - `proof.evidence_root`
   - `proof.signer_sig`
   - `proof.notary_seal`
 
-- **Gouvernance :**
+- **Gouvernance:**
   - `governance.decision`
-  - `governance.veto_threshold`
+  - `governance.review_notes`
 
-Le registre peut avoir deux couches :
-- **1)** Index lisible par l'humain (liste web / recherche / filtre)
-- **2)** Manifeste lisible par machine (enregistrements JSON ; pour vérification PFE)
+Le registre peut avoir deux couches:
+- **1)** Index lisible pour humains (listage web / recherche / filtre)
+- **2)** Manifeste lisible pour machines (enregistrements JSON; pour vérification PFE)
 
-**Cet "enregistrement" devient vérifiable via la chaîne Pack de Preuves → EvidenceRoot → NotarySeal du PFE. Le registre offre des objectifs de vérification, pas des "affirmations".**
-
----
-
-### 6.2 Veto Communautaire de 40% (Gouvernance avec Porte de Token)
-
-- **Veto Communautaire de 40% :** Le vote commence un mois avant l'octroi du statut ; 40% d'objection de la communauté **avec Porte de Token (vérifiée Solana)** invalide la demande.
-
-**Flux de vote (processus clair recommandé) :**
-- **Fenêtre de candidature :** Le projet candidat ouvre "l'enregistrement de candidat PoArt" (les enregistrements de candidats apparaissent en statut "en attente").
-- **Période d'examen :** La communauté examine les preuves pendant 30 jours (Pack de Preuves + enregistrements de diffusion en direct + métadonnées).
-- **Vérification avec porte de token :** Le vote se fait avec des portefeuilles vérifiés Solana (par ex. propriété de token/NFT spécifique + signature de portefeuille).
-- **Règle de veto :** Si 40% des votes sont **objection (NON / VETO)**, la demande est rejetée.
-- **Transparence :** Le résultat du vote est stocké dans le registre comme "enregistrement de décision" (date, ratio, ID de snapshot).
+**L'"enregistrement" ici devient vérifiable à travers la chaîne Evidence Pack → EvidenceRoot → NotarySeal de PFE. Le registre offre un objectif de vérification, pas une "affirmation".**
 
 ---
 
-### 6.3 Synchronisation des Métadonnées (Alignement avec le Monde Physique)
+### 6.2 Processus de Candidature PoArt Verified
 
-- **Synchronisation des Métadonnées :** Les données techniques dans le registre doivent correspondre à 100% avec l'entité physique.
+**Les candidatures PoArt Verified sont évaluées par la Galerie İlhanArt selon les 5 standards PoArt. Le retour de la communauté est pris en compte, mais la décision finale appartient à l'équipe curatoriale. Les décisions sont expliquées de manière transparente et enregistrées sur ilhanart.org/registry.**
 
-**Définir techniquement la "correspondance à 100%" (clarté recommandée) :**
-- **Correspondance minimale (obligatoire) :**
-  - Le `asset.fingerprints.sha256/sha512` dans le registre doit être **identique** au hash du fichier en question.
-  - Lorsque le `proof.notary_seal` dans le registre est reproduit (si le Pack de Preuves existe), il doit être **identique**.
-- **Correspondance de référence physique (type de preuve) :**
-  - L'œuvre physique + référence de date/bloc montrée dans la diffusion en direct et preuves similaires doivent être cohérentes avec le Pack de Preuves.
-- **Conformité à la vie privée :**
-  - Les champs comme IP/localisation en visibilité `masked` sont publiés **selon les normes de masquage**.
+#### Processus de Candidature
+
+**Candidature:**
+- L'artiste/projet fait une candidature PoArt Verified
+- L'Evidence Pack est préparé (enregistrements vidéo, métadonnées, liens de transmission en direct)
+- La candidature est envoyée à la Galerie İlhanArt
+
+**Examen (30 Jours):**
+- L'équipe de la galerie examine en détail l'Evidence Pack
+- Tous les 5 standards PoArt sont vérifiés:
+  1. Live Identity Proof
+  2. Labor & Process Proof
+  3. Aesthetic Value Proof
+  4. Conceptual Novelty
+  5. Non-Algorithmic Agency
+- Entretien avec l'artiste (optionnel)
+
+**Consultation Communautaire:**
+- L'Evidence Pack est partagé publiquement pendant le processus de candidature
+- La communauté peut fournir un retour via Discord et ilhanart.org/applications
+- Les détenteurs de jetons (minimum 10,000 $CULTURE) peuvent particulièrement faire des suggestions
+- **Tout le retour est pris en compte dans le processus d'examen**
+- **Cependant, la décision finale dépend de l'évaluation curatoriale**
+
+**Décision:**
+- La galerie approuve ou rejette la candidature
+- La justification de la décision est expliquée de manière transparente
+- Si approuvée → badge PoArt Verified
+- Si rejetée → nouvelle candidature possible après 6 mois
+
+**Transparence:**
+- Toutes les candidatures et décisions sont enregistrées sur ilhanart.org/registry
+- L'enregistrement de décision est publié publiquement:
+  - Date de candidature
+  - Résumé du processus d'examen
+  - Décision (Approuvée / Rejetée)
+  - Justification de la décision (explication brève)
+  - Résumé du retour communautaire (anonyme)
+
+#### Pourquoi une Décision Curatoriale?
+
+**Contrôle de Qualité:**  
+Le statut PoArt Verified est un badge avec des standards élevés. L'évaluation curatoriale garantit le maintien de ces standards.
+
+**Prévention de Manipulation Spéculative:**  
+Avec les jetons Pump.fun, la gouvernance complète on-chain (ex: Realms, vote DAO) n'est pas techniquement possible. Les systèmes de vote off-chain sont vulnérables à la manipulation des baleines et aux attaques coordonnées. La décision curatoriale élimine ce risque.
+
+**Efficacité Opérationnelle:**  
+Au lieu de mécanismes de vote complexes, processus de décision rapide et clair. Les artistes obtiennent des résultats en 30 jours.
+
+**Participation Communautaire:**  
+Le retour de la communauté est entièrement pris en compte et affecte le processus de décision. Cependant, la décision finale appartient à l'équipe curatoriale protégée de la manipulation.
+
+**Avenir:**  
+Quand le projet arrive à maturité (2027+), le mécanisme de consultation communautaire peut être renforcé. Cependant, la protection du standard curatorial est permanente.
 
 ---
 
-### 6.4 Litige et Révocation
+### 6.3 Utilité du Jeton (Token Utility)
 
-Le registre n'est pas seulement un mécanisme d'"approbation" ; c'est un **mécanisme d'audit vivant contre la fraude**.
+**Avantages fournis aux détenteurs de jetons $CULTURE:**
 
-- Lorsqu'un litige est initié, l'enregistrement peut être placé en mode **"review" (révision)**.
-- Si une fraude est détectée, il est marqué comme `status: void` avec raison ajoutée :
-  - `void_reason` (utilisation d'IA / vol / manipulation, etc.)
-  - `revoked_at` (temps de révocation)
-- La source de la décision de révocation est clairement visible dans le registre :
-  - vote communautaire / comité autorisé / note d'enquête forensique (selon le cas)
+**1. Accès Prioritaire aux Événements de Galerie:**
+- Inaugurations d'expositions physiques de la Galerie İlhanArt
+- Rencontres avec artistes et visites d'ateliers
+- Visualisations de collections spéciales
 
-> **Cette section est la contrepartie dans le registre du concept VOID dans la section "Protocole de Drapeau Rouge".**
+**2. Accès Complet au Registre PoArt:**
+- Enregistrements détaillés de toutes les œuvres authentifiées
+- Versions complètes des Evidence Packs
+- Outils de vérification forensique
+
+**3. Priorité de Frappe NFT:**
+- Accès à liste blanche quand les œuvres PoArt Verified sont frappées en NFT
+- Opportunités de frappe précoce
+- NFT de collection spéciale
+
+**4. Vote Consultatif:**
+- Droit de consultation dans les candidatures PoArt Verified
+- Accès aux canaux de retour communautaire
+- Participation aux discussions de gouvernance
+
+**5. Contenu Exclusif:**
+- Contenu des coulisses du studio
+- Interviews d'artistes et vidéos de processus
+- Accès à la documentation technique
+
+**Note:**  
+Les détenteurs de jetons émettent un vote consultatif (advisory vote). La décision finale appartient à l'équipe curatoriale. Cette structure est préférée pour prévenir la manipulation des baleines et les attaques spéculatives. Il n'y a pas de récompenses de staking car nous recherchons des participants culturels à long terme, pas du capital mercenaire à court terme.
 
 ---
 
-### 6.5 Exemple d'Enregistrement de Registre (Lisible par Machine)
+### 6.4 Synchronisation des Métadonnées (Metadata Sync)
+
+- **Synchronisation des Métadonnées:** Les données techniques dans le registre doivent correspondre à 100% avec l'entité physique.
+
+**Définir techniquement la "correspondance à 100%" (clarté recommandée):**
+
+- **Correspondance minimale (obligatoire):**
+  - Le `asset.fingerprints.sha256/sha512` dans le registre doit être **exactement le même** que le hash du fichier en main.
+  - Lorsque le `proof.notary_seal` dans le registre est reproduit (si Evidence Pack existe) il doit être **exactement le même**.
+
+- **Correspondance de référence physique (type de preuve):**
+  - Les preuves comme œuvre physique + référence de date/bloc montrées en transmission en direct doivent être cohérentes avec l'Evidence Pack.
+
+- **Conformité de confidentialité:**
+  - En visibilité `masked`, les champs comme IP/localisation sont publiés **conformément au standard de masquage**.
+
+---
+
+### 6.5 Litige, Examen et Révocation (Dispute & Revocation)
+
+Le registre n'est pas seulement un mécanisme "d'approbation"; c'est un **mécanisme de supervision vivant contre la falsification**.
+
+- Quand un litige est initié, l'enregistrement peut être mis en mode **"review"** (examen).
+- Si une falsification est détectée, il est marqué comme `status: void` et une justification est ajoutée:
+  - `void_reason` (utilisation d'IA / plagiat / manipulation, etc.)
+  - `revoked_at` (temps d'annulation)
+- La source de la décision d'annulation est clairement visible dans le registre:
+  - examen curatorial / litige communautaire / note d'analyse forensique (selon ce qui est applicable)
+
+> **Cette partie est la contrepartie dans le registre du concept VOID dans la section "Red Flag Protocol".**
+
+---
+
+### 6.6 Exemple d'Enregistrement dans le Registre (Lisible par Machine)
 ```json
-{
-  "certificate_id": "POART-AB12CD34",
-  "status": "active",
-  "visibility": "masked",
-  "created_at": "2026-01-09T12:34:56.000Z",
-  "issuer": {
-    "name": "Ilhan Art Gallery",
-    "location": "Istanbul / Besiktas",
-    "attestation_pubkey": "PFE_ATTEST_PUBKEY_BASE58..."
-  },
-  "asset": {
-    "title": "Untitled",
-    "creator": "Anonymous",
-    "fingerprints": {
-      "sha256": "e4123f83b44a409d7a43f0897837876dfabb3320db63dadbb34c54281f38a6ba",
-      "sha512": "41e5e0d007a2a77b6e0e3ebc548fbaa2788ea265193434f58d23e8c0f5bb20a0835aa850edbadbd8341969cf743fc69fa951f7ed275901fefe0fe7eb1fb83099"
-    }
-  },
-  "forensics": {
-    "ip_masked": "46.1.***.***",
-    "device": "Brave (Windows;Monster,Tulpar)...",
-    "location": "***/TR",
-    "timestamp": "2026-01-09T12:34:56.000Z"
-  },
-  "proof": {
-    "evidence_root": "7f8a9b2c3d4e5f6a7b8c9d0e1f2a3b4c...",
-    "signer_sig": "PFE_ATTEST_SIG_BASE64...",
-    "notary_seal": "9d3e5a1f2b3c4d5e6f7a8b9c0d1e2f3a..."
-  },
-  "governance": {
-    "decision": "approved",
-    "veto_threshold": 0.40
-  }
-}
-```
-> *Note : `asset.fingerprints.sha512` et autres valeurs de hash sont abrégées à des fins d'affichage ; dans l'implémentation réelle, des chaînes de caractères hexadécimales de pleine longueur sont utilisées.*
-
----
-
-## 7) 🔐 SCEAU TECHNIQUE (NOTARY SEAL)
-
-L'algorithme de sceau inébranlable généré par **PoArt Forensic Engine (PFE) v1.0** :
-
-$$\text{NotarySeal} = \text{SHA-512}\left(\text{EvidenceRoot} \mid \text{SignerSignature} \mid \text{TimeStamp}\right)$$
-
----
-
-# [PoArt] Protocole de Notaire Numérique et Preuve Forensique (Beta v1.0)
-
-> **"La culture est plus grande que le capital. Protégez vos œuvres aujourd'hui, portez-les à demain."**
-
----
-
-## Pourquoi Public ?
-
-La vraie sécurité vient de la transparence. Grâce à notre système de **Registre Public**, n'importe qui n'importe où dans le monde peut vérifier si un fichier est original en quelques secondes, sans avoir besoin d'aucune autorité.
-
----
-
-## 🧩 Pourquoi Plusieurs "Modules de Visibilité" ?
-
-C'est la partie la plus critique du code (menu de sélection de visibilité). Ces options permettent aux utilisateurs d'équilibrer **"Vie Privée vs. Transparence"** :
-
-### 🔒 Privé
-
-- **Scénario :** L'artiste ne veut pas encore publier l'œuvre mais veut l'horodater pour prouver "j'ai fait ceci à cette date".
-- **Ce que Fait le Code :** Écrit les données dans la base de données mais estampille `visibility: "private"`. Plus tard lors de l'écriture de la politique "Public Read", vous pouvez cacher ces enregistrements du public avec `WHERE visibility = 'public'`.
-
-### 🕶️ Masqué
-
-- **Scénario :** L'artiste veut la transparence mais craint que son adresse personnelle (localisation IP) soit trouvée.
-- **Ce que Fait le Code :** Les fonctions `maskIP` et `maskLoc` fonctionnent côté JavaScript. Convertit l'adresse IP au format `88.241.***.***`, la localisation au format `***/TR`, et envoie la version censurée à la base de données.
-- **Note de Confidentialité :** Le masquage est fait dans le navigateur, Supabase ne voit pas la vraie localisation. **Cependant :** Si des API tierces comme ipapi.co sont utilisées pour les données de localisation, ces fournisseurs voient l'adresse IP au moment de la demande.
-- **Scellement en Mode Masqué :** Le calcul d'EvidenceRoot et NotarySeal est fait avec des données forensiques masquées ; ainsi la vérification reste déterministe.
-
-### 🌍 Public
-
-- **Scénario :** Transparence totale. Selon les normes [PoArt], où, quand, depuis quel réseau l'œuvre a été produite est clairement déclaré.
-
----
-
-## 💡 Innovation Technologique
-
-PoArt n'est pas seulement un système de téléchargement de fichiers. C'est un moteur de **"Chaîne de Custodie Forensique"** qui apporte une nouvelle norme en fondant trois couches technologiques différentes dans un seul pot.
-
-**La couche décrite comme "moteur" dans cette section correspond au cœur PoArt Forensic Engine (PFE) dans la terminologie précédente.**
-
-### 1) Hachage Côté Client (Confidentialité Maximale)
-
-Vos fichiers d'œuvres d'art ne sont jamais téléchargés sur le serveur. Notre moteur basé sur navigateur (côté client) calcule le hash (résumé numérique) du fichier sur votre propre ordinateur. Seule cette empreinte digitale et les métadonnées sont envoyées au serveur.
-
-> **Note de Confidentialité :** Le fichier de l'œuvre n'est pas téléchargé sur le serveur et est protégé de cette manière. Cependant, les données forensiques (IP/localisation) sont partagées selon le mode de visibilité sélectionné (privé/masqué/public).
-
-### 2) Fusion de Données Forensiques (Puissance Forensique)
-
-Bien plus qu'un simple horodatage ordinaire. Le système combine ces données dans un seul "Sceau Genèse" :
-
-- **Résumé Numérique (SHA-512) :** Empreinte digitale utilisant la norme de résumé cryptographique (SHA-512) qui se cassera si même un pixel de l'œuvre change.
-- **Localisation et Temps :** Date avec précision à la milliseconde, pays, ville et données de district de la transaction.
-- **Identité de l'Appareil :** Système d'exploitation, navigateur et type d'appareil (analyse User-Agent).
-
----
-
-## 🛡️ Cas d'Utilisation et Avantages
-
-Si vous êtes artiste, écrivain ou designer, dire "J'ai fait ceci plus tôt" ne suffit pas ; vous devez le prouver.
-
-**Une œuvre que vous scellez avec PoArt :**
-
-- **Preuve Mathématique :** Si même un pixel de votre fichier change, le système le sait. La manipulation est impossible.
-- **Base Juridique :** À quelle date, quelle ville, depuis quel appareil l'œuvre a été scellée est enregistré.
-- **Certificat Instantané :** Génère un **"Certificat d'Identité d'Actif"** spécial pour vous en quelques secondes, avec code QR et scellé.
-
----
-
-## ⚙️ Architecture du Système et Caractéristiques Techniques
-
-Le système est conçu sur une architecture "Sans Serveur", se concentrant sur la haute performance et l'évolutivité.
-
-| Couche | Technologie | Description |
-|--------|-----------|-------------|
-| **Cryptographie** | SHA-256 & SHA-512 | Résumé cryptographique double couche |
-| **Base de Données** | Supabase (PostgreSQL) | Structure de données JSONB, politiques RLS |
-| **Données Forensiques** | ipapi.co API | Trinité IP/Localisation/Temps |
-| **Rendu** | html2canvas + jsPDF | Génération PNG/PDF côté client |
-| **Frontend** | Vanilla JavaScript | Dépendance framework zéro |
-| **Sécurité** | Hachage côté client | Le fichier ne va jamais au serveur |
-
-### Caractéristiques Mises en Avant
-
-| Fonctionnalité | Détail | Chez les Concurrents ? |
-|---------|-------|-----------------|
-| **UI Glisser-Déposer** | Glisser-déposer fichier, aperçu instantané | ❌ Absent chez la plupart |
-| **Export Multi-Format** | PNG, JSON, PDF - un clic | ⚠️ Limité |
-| **Aperçu en Temps Réel** | Aperçu de certificat en direct | ❌ Aucun |
-| **Contrôles de Confidentialité** | Options Privé/Masqué/Public | ❌ Aucun |
-| **Hachage Côté Client** | Le fichier ne va jamais au serveur | ✅ Seulement dans quelques-uns |
-| **Métadonnées Forensiques** | IP, localisation, appareil, temps - tout ensemble | ❌ Fragmenté |
-| **Vérification QR** | Code QR de vérification instantanée | ⚠️ Limité |
-| **Limitation de Débit** | Protection contre le spam (RLS + Client) | ❌ Absent chez la plupart |
-
----
-
-## 🗺️ Feuille de Route : Avenir "Sans Confiance"
-
-La version actuelle **(Beta v1.0)** est optimisée pour fournir aux utilisateurs finaux une vitesse maximale, une interface facile et un accès gratuit. Cependant, notre vision ultime est de passer à une structure où même l'administrateur de base de données (nous) ne peut pas interférer.
-
-### Phase 1 : Beta (Actuellement en Direct)
-
-- **Infrastructure :** Base de Données Cloud (Supabase).
-- **Objectif :** Vitesse, suppression des barrières UX (Expérience Utilisateur) et adaptation. Fournir une sécurité "sans friction".
-
-### 🚀 Phase 2 : (Exigences Backend / Fonction Edge)
-
-Cette phase couvre la transition de la structure de travail entièrement "côté client" vers une structure "Autorité Côté Serveur" plus sécurisée et gérable.
-
-| Élément | Qu'apporte-t-il ? | Pile Technologique | Priorité |
-|-------|---------------|------------|---------|
-| **`INSERT` → Fonction Edge** | Prévention spam + sécurité clé API | Supabase Edge (Deno) | 🔴 Haute |
-| **Signature de Portefeuille** | Authentification cryptographique | Solana Wallet Adapter | 🟡 Moyenne |
-| **Sauvegarde IPFS/Arweave** | Immuabilité décentralisée | IPFS SDK + Pinata | 🟢 Basse |
-| **Mécanisme de Révocation** | Annulation de certificat faux | Mise à jour Schéma BD | 🔴 Haute |
-| **Journal d'Audit** | Enregistrement de requête forensique | Table de journaux personnalisée | 🟡 Moyenne |
-| **OpenTimestamps** | Ancrage Bitcoin | OTS JavaScript | 🟢 Basse |
-| **Intégration DID** | Identité Décentralisée | ION/Ceramic | 🟢 Basse |
-
-### Phase 3 : Décentralisation Complète (Long Terme)
-
-| Fonctionnalité | Objectif | ETA |
-|---------|------|-----|
-| **Registre Blockchain** | Enregistrement sur chaîne Ethereum/Solana | Q4 2026 |
-| **Gouvernance DAO** | Gestion communautaire | Q1 2027 |
-| **Support Multi-Chaîne** | Polygon, Arbitrum, Base | Q2 2027 |
-| **Reconnaissance Légale** | Validité dans les tribunaux turcs | 2027-2028 |
-| **API pour Développeurs** | Point de terminaison API publique | Q3 2026 |
-
----
-
-## 📊 Analyse Concurrentielle (Mise à Jour)
-
-PoArt est positionné sur le "Point Optimal" qui complète les lacunes des solutions existantes.
-
-| Fonctionnalité | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 證 Proof | Trust-Stamp |
-|---------|:---------:|:---------------:|:-----------------:|:------------:|:----:|:-----------:|:--------:|:-----------:|
-| **Coût** | 🆓 Gratuit | 🆓 | 💰 Payant | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
-| **UI Glisser-Déposer** | ✅ Très Facile | ❌ CLI | ⚠️ Moyen | ⚠️ Moyen | ⚠️ | ⚠️ | ❌ | ⚠️ |
-| **Export Multi-Format** | ✅ PNG/PDF/JSON | ❌ | ⚠️ PDF | ⚠️ PDF | ❌ | ❌ | ❌ | ⚠️ |
-| **Aperçu Temps Réel** | ✅ En Direct | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| **Contrôles Confidentialité** | ✅ 3 Modes | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Hachage Côté Client** | ✅ Confidentialité | ✅ | ❌ Téléchargement | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
-| **Métadonnées Forensiques** | ✅ Complet | ❌ | ❌ | ⚠️ Limité | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Vérification QR** | ✅ Instantanée | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
-| **Limitation Débit** | ✅ RLS+Client | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Ancrage Blockchain** | 🔄 Feuille de Route | ✅ Bitcoin | ✅ Ethereum | ✅ Multi | ✅ | ✅ | ✅ | ✅ |
-| **Open Source** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
-| **Support Turc** | ✅ Natif | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
-
-**Légende :**
-- ✅ : Support complet / disponible
-- ⚠️ : Limité / dans les plans payants
-- ❌ : Aucun / non supporté
-- 🔄 : Dans la feuille de route (en développement)
-- 🆓 : Complètement gratuit
-- 💰 : Payant / abonnement requis
-
-### Lacunes des Concurrents, Forces de PoArt
-
-| Moins | Concurrents | PoArt |
-|-------|-------------|-------|
-| **Difficulté d'Utilisation** | CLI, connaissance API, portefeuille requis | Glisser-déposer, terminé en 3 clics |
-| **Barrière de Coût** | Abonnement $50-500/mois | 100% gratuit |
-| **Confidentialité** | Le fichier est téléchargé sur le serveur | Côté client, le fichier ne part jamais |
-| **Données Forensiques** | Seulement horodatage | IP, localisation, appareil, temps - tout |
-| **Support Turc** | Aucun ou très limité | Support linguistique natif |
-| **Open Source** | Boîte fermée | Tout le code ouvert sur GitHub |
-
----
-
-## 🧬 Structure de Données du Protocole (JSON Schema)
-
-**Chaque certificat [PoArt] a une carte d'identité JSON portable et vérifiable produite dans la norme suivante.**
-
-> **Note :** Ce format JSON d'identité est le format de certificat présenté aux utilisateurs. Dans les enregistrements de registre, `registry.asset` est utilisé au lieu de `identity.asset_data` (mappage : `identity.asset_data` == `registry.asset`).
-```json
-{
-  "$schema": "https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json",
-  "manifest": {
-    "protocol": "[PoArt] Proof of Art",
-    "version": "1.0",
-    "status": "Production-Ready"
-  },
-  "identity": {
-    "issuer": "Ilhan Art Gallery",
-    "location": "Istanbul / Besiktas",
-    "archive_vision": "2025 - 3000"
-  },
-  "asset_data": {
-    "title": "Official Whitepaper",
-    "fingerprints": {
-      "sha256": "e4123f83b44a409d7a43f0897837876dfabb3320db63dadbb34c54281f38a6ba",
-      "sha512": "41e5e0d007a2a77b6e0e3ebc548fbaa2788ea265193434f58d23e8c0f5bb20a0835aa850edbadbd8341969cf743fc69fa951f7ed275901fefe0fe7eb1fb83099"
-    }
-  },
-  "official_links": {
-    "registry": "https://www.ilhanart.org/public-registry",
-    "evidence": "https://www.ilhanart.org/identity"
-  },
-  "forensics": {
-    "ip_masked": "46.1.***.***",
-    "device": "Brave (Windows;Monster,Tulpar)...",
-    "location": "***/TR",
-    "timestamp": "2026-01-09T12:34:56.000Z"
-  }
-}
-```
-
----
-
-## 🔬 Profondeur Technique : Algorithme de Sceau
+## 🔬 Profondeur Technique: Algorithme de Scellement
 
 ### Fonctions de Hachage Déterministes
 ```javascript
-// Fonctions Auxiliaires : Convertir le résumé en chaîne hexadécimale
+// Fonctions Auxiliaires: Convertir digest en chaîne hex
 async function digestToHex(algorithm, dataBytes) {
   const hashBuffer = await crypto.subtle.digest(algorithm, dataBytes);
   const hashArray = Array.from(new Uint8Array(hashBuffer));
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-// Convertir la chaîne en tableau d'octets
+// Convertir chaîne en tableau d'octets
 function stringToBytes(text) {
   return new TextEncoder().encode(text);
 }
 
-// Génération de chaîne forensique canonique (v1.0 : ordre de champ fixe + UTF-8 + délimiteur \n)
-// Note Phase 2 : Transition vers JSON canonique avec RFC 8785 (JCS)
+// Génération de chaîne forensique canonique (v1.0: ordre de champ fixe + UTF-8 + délimiteur \n)
+// Note Phase 2: Transition vers JSON canonique avec RFC 8785 (JCS)
 function canonicalForensics(forensicsData) {
   return JSON.stringify({
     ip_masked: forensicsData.ip_masked,
@@ -631,7 +460,7 @@ function canonicalForensics(forensicsData) {
 }
 ```
 
-### Processus de Production de NotarySeal (Entièrement Déterministe)
+### Processus de Génération de NotarySeal (Complètement Déterministe)
 ```javascript
 // 1. Calcul de FileHash (côté client)
 async function computeFileHash(file) {
@@ -667,7 +496,7 @@ async function computeEvidenceRoot(fileHash512, forensicsData) {
   return await digestToHex('SHA-512', stringToBytes(canonicalPayload));
 }
 
-// 4. Génération de NotarySeal (utilisation du même horodatage)
+// 4. Génération de NotarySeal (utilisant même horodatage)
 async function computeNotarySeal(evidenceRoot, signerSignature, timestamp) {
   const sealPayload = `evidence_root:${evidenceRoot}\nsigner_sig:${signerSignature}\ntimestamp:${timestamp}`;
   return await digestToHex('SHA-512', stringToBytes(sealPayload));
@@ -692,13 +521,13 @@ function maskIP(ip) {
 
 ### Flux de Vérification (Deux Niveaux)
 
-#### Quick Verify (Vérification Rapide)
+#### Vérification Rapide (Quick Verify)
 ```javascript
 // Vérifie uniquement le hash du fichier (drapeau rouge rapide)
 async function verifyQuick(file, certificateId) {
   const { sha512: userFileHash } = await computeFileHash(file);
   
-  // Récupérer du registre
+  // Obtenir du registre
   const cert = await fetchFromRegistry(certificateId);
   const { sha512: originalHash } = cert.asset.fingerprints;
   
@@ -706,39 +535,39 @@ async function verifyQuick(file, certificateId) {
   if (userFileHash === originalHash) {
     return {
       valid: true,
-      message: "✅ Original - Le hash du fichier correspond"
+      message: "✅ Original - Hash du fichier correspond"
     };
   } else {
     return {
       valid: false,
-      message: "❌ Faux - Le fichier a été manipulé"
+      message: "❌ Faux - Fichier manipulé"
     };
   }
 }
 ```
 
-#### Full Verify (Vérification Complète)
+#### Vérification Complète (Full Verify)
 ```javascript
 // Régénère et vérifie EvidenceRoot et NotarySeal
 async function verifyFull(file, certificateId) {
   const { sha512: userFileHash } = await computeFileHash(file);
 
-  // Récupérer du registre
+  // Obtenir du registre
   const cert = await fetchFromRegistry(certificateId);
 
   // 1) Vérification de FileHash (drapeau rouge rapide)
   const originalHash = cert.asset.fingerprints.sha512;
   if (userFileHash !== originalHash) {
-    return { valid: false, message: "❌ Faux - Le hash du fichier ne correspond pas" };
+    return { valid: false, message: "❌ Faux - Hash du fichier ne correspond pas" };
   }
 
-  // 2) Régénérer EvidenceRoot (avec données forensiques stockées dans le registre)
+  // 2) Régénérer EvidenceRoot (avec forensique stocké dans registre)
   const evidenceRoot = await computeEvidenceRoot(userFileHash, cert.forensics);
   if (evidenceRoot !== cert.proof.evidence_root) {
-    return { valid: false, message: "❌ Ne correspond pas - EvidenceRoot ne tient pas" };
+    return { valid: false, message: "❌ Ne correspond pas - EvidenceRoot ne passe pas" };
   }
 
-  // 3) Régénérer NotarySeal (avec le même horodatage + signer_sig)
+  // 3) Régénérer NotarySeal (avec même horodatage + signer_sig)
   const seal = await computeNotarySeal(
     evidenceRoot,
     cert.proof.signer_sig,
@@ -746,49 +575,90 @@ async function verifyFull(file, certificateId) {
   );
 
   if (seal !== cert.proof.notary_seal) {
-    return { valid: false, message: "❌ Ne correspond pas - NotarySeal ne tient pas" };
+    return { valid: false, message: "❌ Ne correspond pas - NotarySeal ne passe pas" };
   }
 
-  // Optionnel : En Phase 2, vérifier également signer_sig avec attestation_pubkey
+  // Optionnel: En Phase 2 vérifier aussi signer_sig avec attestation_pubkey
   // const sigValid = await verifySig(cert.issuer.attestation_pubkey, cert.proof.signer_sig, evidenceRoot);
   // if (!sigValid) return { valid: false, message: "❌ Signature invalide" };
 
-  return { valid: true, message: "✅ Original - Vérification complète réussie" };
+  return { valid: true, message: "✅ Original - Full Verify approuvé" };
 }
 ```
 
-> **Notes Importantes :**
-> - **Quick Verify :** Vérifie uniquement le hash du fichier pour une utilisation rapide.
-> - **Full Verify :** Vérifie toutes les couches du protocole (EvidenceRoot + NotarySeal).
-> - Toutes les opérations de hachage sont effectuées de manière déterministe avec encodage et délimiteurs fixes.
-> - **Norme de canonicalisation v1.0 :** Ordre de champ fixe + encodage UTF-8 + délimiteur `\n`.
-> - **Plan Phase 2 :** Transition vers JSON canonique avec RFC 8785 (JCS - JSON Canonicalization Scheme).
-> - En mode masqué, le calcul d'EvidenceRoot et NotarySeal est effectué avec des données forensiques masquées ; ainsi la vérification reste déterministe.
-> - Un seul horodatage est utilisé dans tout le processus (forensique + NotarySeal) ; le déterminisme est garanti.
-> - **Noms de champs forensiques :** `ip_masked`, `location`, `device`, `timestamp` (code et registre entièrement compatibles).
-> - **Chemin de registre :** `certificate.asset.fingerprints` (entièrement compatible avec le code de vérification).
-> - **signer_sig dans le registre :** Le champ `proof.signer_sig` est nécessaire pour Full Verify.
-> - Le mécanisme SignerSignature sera activé en Phase 2 avec Solana Wallet Adapter ; en v1.0, la vérification peut être faite avec `attestation_pubkey`.
+> **Notes Importantes:**
+> - **Quick Verify:** Vérifie uniquement le hash du fichier pour utilisation rapide.
+> - **Full Verify:** Vérifie toutes les couches du protocole (EvidenceRoot + NotarySeal).
+> - Toutes les opérations de hachage sont effectuées de manière déterministe, avec encodage et délimiteurs fixes.
+> - **Standard de canonicalisation v1.0:** Ordre de champ fixe + encodage UTF-8 + délimiteur `\n`.
+> - **Plan Phase 2:** Transition vers JSON canonique avec RFC 8785 (JCS - JSON Canonicalization Scheme).
+> - En mode masqué, le calcul d'EvidenceRoot et NotarySeal est effectué avec des données forensiques masquées.
+> - Un horodatage unique est utilisé dans tout le processus (forensics + NotarySeal); le déterminisme est garanti.
+> - **Noms de champs forensiques:** `ip_masked`, `location`, `device`, `timestamp` (code et registre entièrement compatibles).
+> - **Chemin du registre:** `certificate.asset.fingerprints` (entièrement compatible avec code de vérification).
+> - **signer_sig dans le registre:** Le champ `proof.signer_sig` est nécessaire pour Full Verify.
+> - Le mécanisme SignerSignature sera activé en Phase 2 avec Solana Wallet Adapter; en v1.0 on peut vérifier avec `attestation_pubkey`.
+
+---
+
+## 📊 Analyse Concurrentielle (Actualisée)
+
+PoArt est positionné sur le "Point Optimal" (Sweet Spot) qui complète les déficiences des solutions existantes.
+
+| Caractéristique | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 証 Proof | Trust-Stamp |
+|-----------------|:---------:|:---------------:|:-----------------:|:------------:|:----:|:-----------:|:--------:|:-----------:|
+| **Coût** | 🆓 Gratuit | 🆓 | 💰 Payant | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
+| **UI Glisser-Déposer** | ✅ Très facile | ❌ CLI | ⚠️ Moyen | ⚠️ Moyen | ⚠️ | ⚠️ | ❌ | ⚠️ |
+| **Export Multi-Format** | ✅ PNG/PDF/JSON | ❌ | ⚠️ PDF | ⚠️ PDF | ❌ | ❌ | ❌ | ⚠️ |
+| **Aperçu Temps Réel** | ✅ En direct | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Contrôles Confidentialité** | ✅ 3 Modes | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
+| **Hachage Côté Client** | ✅ Confidentialité | ✅ | ❌ Téléchargement | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
+| **Métadonnées Forensiques** | ✅ Complet | ❌ | ❌ | ⚠️ Restreint | ❌ | ⚠️ | ❌ | ⚠️ |
+| **Vérification QR** | ✅ Instantanée | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
+| **Limitation Débit** | ✅ RLS+Client | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
+| **Ancrage Blockchain** | 🔄 Feuille de route | ✅ Bitcoin | ✅ Ethereum | ✅ Multi | ✅ | ✅ | ✅ | ✅ |
+| **Code Source Ouvert** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
+| **Support Français** | ✅ Natif | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
+
+**Explication:**
+- ✅ : Support complet / disponible
+- ⚠️ : Restreint / dans plans payants
+- ❌ : N'existe pas / non supporté
+- 🔄 : Dans feuille de route (en développement)
+- 🆓 : Complètement gratuit
+- 💰 : Payant / abonnement requis
+
+### Déficiences des Concurrents, Forces de PoArt
+
+| Déficience | Concurrents | PoArt |
+|------------|-------------|-------|
+| **Difficulté d'Utilisation** | CLI, connaissance API, portefeuille requis | Glisser-déposer, terminé en 3 clics |
+| **Barrière de Coût** | Abonnement $50-500/mois | 100% gratuit |
+| **Confidentialité** | Fichier téléchargé sur serveur | Côté client, fichier ne va jamais |
+| **Données Forensiques** | Seulement horodatage | IP, localisation, dispositif, temps - tout |
+| **Support Français** | N'existe pas ou très restreint | Support de langue natif |
+| **Code Source Ouvert** | Boîte fermée | Tout le code ouvert sur GitHub |
 
 ---
 
 ## 📈 Statistiques d'Utilisation (Objectifs Q1 2026)
 
 | Métrique | Objectif | Statut |
-|--------|--------|--------|
-| **Certificats Totaux** | 1,000 | 🔄 Progrès |
-| **Utilisateurs Actifs** | 500 | 🔄 Progrès |
-| **Nombre de Vérifications** | 5,000 | 🔄 Progrès |
+|----------|----------|--------|
+| **Certificats Totaux** | 1,000 | 🔄 En progression |
+| **Utilisateurs Actifs** | 500 | 🔄 En progression |
+| **Nombre de Vérifications** | 5,000 | 🔄 En progression |
 | **Temps de Disponibilité** | 99.9% | ✅ Actif |
-| **Temps de Réponse Moyen** | <200ms | ✅ Optimal |
+| **Temps Réponse Moyen** | <200ms | ✅ Optimal |
 
 ---
 
 ## 🌍 Communauté et Support
 
-- **Twitter :** [@Galerilhan](https://twitter.com/Galerilhan)
-- **Web :** [ilhanart.org](https://ilhanart.org)
-- **Email :** galeri@ilhanart.org
+- **Twitter:** [@Galerilhan](https://twitter.com/Galerilhan)
+- **Web:** [ilhanart.org](https://ilhanart.org)
+- **Email:** galeri@ilhanart.org
+- **Instagram:** https://www.instagram.com/ilhanartgaleri
 
 ---
 
@@ -796,44 +666,141 @@ async function verifyFull(file, certificateId) {
 
 Le protocole PoArt continue de se développer avec les contributions de la communauté open source.
 
-**Pour contribuer :**
-1. Forkez le dépôt
-2. Créez une branche de fonctionnalité (`git checkout -b feature/amazing-feature`)
-3. Committez (`git commit -m 'Add amazing feature'`)
-4. Poussez (`git push origin feature/amazing-feature`)
-5. Ouvrez une Pull Request
+**Pour contribuer:**
+1. Faire un Fork
+2. Créer une branche de fonctionnalité (`git checkout -b feature/amazing-feature`)
+3. Faire un Commit (`git commit -m 'Add amazing feature'`)
+4. Faire un Push (`git push origin feature/amazing-feature`)
+5. Ouvrir une Pull Request
 
-### 🛠️ De Quoi Avons-Nous Besoin Maintenant ? (Appel à l'Aide)
+### 🛠️ De Quoi Avons-Nous Besoin Maintenant? (Appel à l'Aide)
 
-Le Protocole PoArt recherche des développeurs expérimentés dans les domaines suivants pour les développements de **Phase 2** :
+Nous attendons les contributions de développeurs expérimentés dans les sujets suivants pour les développements de **Phase 2** du Protocole PoArt:
 
-* **Supabase Edge Functions :** Déplacer la protection contre le spam côté serveur.
-* **Solana Web3.js :** Intégration de signature de portefeuille.
-* **IPFS / Arweave :** Intégration de services d'archivage et d'épinglage.
+* **Supabase Edge Functions:** Déplacer la protection contre spam côté serveur.
+* **Solana Web3.js:** Intégration de signature de portefeuille (Wallet Signing).
+* **IPFS / Arweave:** Intégration de services d'archivage et de pinning.
+* **Outils Communautaires:** Bot Discord, systèmes de vote, tableau de bord analytique.
 
 > Veuillez lancer une discussion dans l'onglet "Issues" avant d'ajouter une fonctionnalité.
 
 ---
 
+## 💬 Notes Finales
+
+### Pump.fun et Réalité
+
+Ce projet a été lancé sur Pump.fun car:
+- ✅ Accès à liquidité (migration automatique Raydium)
+- ✅ Accès à communauté existante
+- ✅ Faible coût initial
+
+Cependant, clarifions ceci:
+- **Le prix du jeton** n'est pas un indicateur de succès artistique
+- La valeur du jeton est importante pour le **budget opérationnel** (galerie, expositions, infrastructure)
+- **Métriques de succès:** Œuvres authentifiées + engagement communautaire + visiteurs physiques
+
+### Gouvernance et Décentralisation
+
+**Réalité v1.0 (2026):**
+- Registre: Off-chain (PostgreSQL + sauvegarde IPFS)
+- Attestation: Auto-signé par galerie (centralisé mais transparent)
+- Gouvernance: Consultative uniquement (décision finale curatoriale)
+- Utilité du jeton: Accès galerie + registre + priorité NFT
+
+**Vision v2.0+ (2027+):**
+- Registre: On-chain (Solana)
+- Signatures: Basées sur portefeuille (décentralisées)
+- Gouvernance: Hybride (consultative communautaire + qualité curatoriale)
+- Utilité du jeton: Fonctionnalités améliorées + accès avancé
+
+Cette structure fournit **efficacité opérationnelle** et **contrôle de qualité** dans la phase précoce, tout en maintenant ouvert le chemin pour augmenter la **participation communautaire** dans le futur.
+
+---
+
 **[PoArt] Proof of Art Protocol v1.0**  
-*"Culture > Capital"*
+*"Culture > Capital" // La Culture est Plus Grande Que le Capital*
 
 ## 🧾 Licence
 
-Licence MIT © 2026 İlhan Art Gallery Initiative
+MIT License © 2026 İlhan Art Gallery Initiative
 
-Voir [![Licence](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) pour les conditions complètes.
+Voir [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) pour les termes complets.
 
 ---
 
 ## 💬 Crédits
 
-![Version](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Sécurité](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Plateforme](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![Licence](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Security](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Platform](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
 
-**Ce projet est développé par l'initiative [İlhan Art Gallery], et ses codes sources sont accessibles publiquement pour la transparence.**
+**Ce projet a été développé avec l'initiative [İlhan Art Gallery] et les codes sources sont ouverts au public au nom de la transparence.**
 
 **PROTOCOLE V1.0 // SCELLÉ AVEC SHA-512**
 
-*© 2026 İLHAN ART | TOUS LES DROITS RÉSERVÉS POUR LES ŒUVRES D'ART, LES VISUELS ET LES IDÉES.*
+*© 2026 İLHAN ART | TOUS LES DROITS DES ŒUVRES, IMAGES ET IDÉES SONT RÉSERVÉS.*
+
+---
+
+## 📝 Notes sur l'Adaptation Culturelle pour le Marché Francophone
+
+### Considérations Spéciales pour la Version Française
+
+**Registre Linguistique et Terminologie:**
+- Ton formel et technique maintenu, approprié pour documentation professionnelle
+- Termes cryptographiques maintenus en anglais (PoArt, NotarySeal, EvidenceRoot)
+- Équivalents techniques établis en français utilisés (hash, blockchain, forensique)
+- Terminologie technique internationale préservée pour compatibilité
+
+**Expressions Mathématiques:**
+- Toutes les formules LaTeX maintenues intactes
+- Explications mathématiques suivent conventions académiques francophones
+- Variables et symboles restent inchangés pour universalité
+
+**Adaptation Culturelle:**
+- La métaphore "Casino vs. Musée" résonne fortement dans le contexte francophone
+- Concepts comme "confiance", "transparence" et "contrôle qualité" ont grand poids culturel
+- La distinction IA vs. créativité humaine est hautement pertinente dans marchés artistiques français
+
+**Précision Technique:**
+- Tous les exemples de code restent sans modification (commentaires en anglais préservés)
+- Structures JSON et noms de champs maintiennent format original
+- Points de terminaison API et structures URL sans changements
+
+**Recommandations de Localisation:**
+- Pour marchés francophones, maintenir "İlhanArt Gallery" comme nom propre
+- Informations de contact restent originales (orientation internationale)
+- Considérer éventuellement support spécifique en français pour consultations
+
+---
+
+## 🌎 Perspectives pour le Marché Francophone
+
+**Partenariats Potentiels:**
+- Collaboration avec galeries d'art contemporain en France et pays francophones
+- Intégration avec marchés NFT français émergents
+- Connexion avec communautés blockchain francophones
+
+**Conformité Réglementaire:**
+- Adaptation aux régulations d'actifs crypto dans pays francophones
+- Coopération possible avec ministères de la culture
+- Alignement avec lois de propriété intellectuelle locales
+
+**Proposition de Valeur Culturelle:**
+- Résonance avec traditions artistiques d'"artisanat" et de "métier"
+- Connexion avec valeurs d'authenticité et d'origine
+- Appréciation pour fusion de tradition et technologie
+
+**Opportunités de Marché:**
+- Intérêt croissant pour NFTs et blockchain en France et francophonie
+- Marchés d'art émergents à Paris, Montréal, Bruxelles
+- Communautés artistiques numériques dans pays francophones
+- France: leader européen en régulation blockchain
+- Québec: hub blockchain nord-américain francophone
+
+**Écosystème Français Spécifique:**
+- Centre Pompidou: intérêt pour art numérique
+- ADIAF (Association de Diffusion Internationale de l'Art Français)
+- Paris Blockchain Week: événement majeur
+- Tezos: blockchain avec forte présence française
 
 ---
