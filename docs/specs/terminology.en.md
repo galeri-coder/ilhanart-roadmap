@@ -324,7 +324,6 @@ The registry can have two layers:
 
 **Community Advisory:**
 - Evidence Pack is publicly shared during the application process
-- Community can provide feedback via Discord and ilhanart.org/applications
 - Token holders (minimum 10,000 $CULTURE) can especially make recommendations
 - **All feedback is considered during the review process**
 - **However, the final decision depends on curatorial evaluation**
@@ -377,17 +376,12 @@ Once the project matures (2027+), the community advisory mechanism can be streng
 - Full versions of Evidence Packs
 - Forensic verification tools
 
-**3. NFT Mint Priority:**
-- Whitelist access when PoArt Verified artworks are minted as NFTs
-- Early mint opportunities
-- Special collection NFTs
-
-**4. Advisory Voting:**
+**3. Advisory Voting:**
 - Advisory rights in PoArt Verified applications
 - Access to community feedback channels
 - Participation in governance discussions
 
-**5. Exclusive Content:**
+**4. Exclusive Content:**
 - Studio behind-the-scenes content
 - Artist interviews and process videos
 - Technical documentation access
@@ -618,7 +612,7 @@ This phase covers the transition from a fully "Client-Side" operating structure 
 | **OpenTimestamps** | Bitcoin anchoring | OTS JavaScript | Q4 2026 |
 
 **Token Governance (v2.0):**
-- Off-chain voting (Discord/web) + wallet signature
+- Off-chain voting (x/web) + wallet signature
 - Community representatives election (first 90 days)
 - Multi-sig operations wallet control
 - Weighted advisory voting (with whale cap)
@@ -635,7 +629,6 @@ This phase covers the transition from a fully "Client-Side" operating structure 
 | Feature | Goal | ETA |
 |---------|------|-----|
 | **On-Chain Registry** | Solana on-chain recording | Q1 2027 |
-| **Enhanced Token Utility** | NFT mint, advanced features | Q1 2027 |
 | **Multi-Chain Support** | Ethereum, Polygon, Base | Q2 2027 |
 | **DID Integration** | Decentralized Identity | Q3 2027 |
 | **Community Governance** | Strengthened advisory system | Q4 2027 |
@@ -936,7 +929,7 @@ For PoArt Protocol **Phase 2** developments, we are awaiting contributions from 
 * **Supabase Edge Functions:** Moving spam protection to server-side.
 * **Solana Web3.js:** Wallet Signing integration.
 * **IPFS / Arweave:** Archive and pinning services integration.
-* **Community Tools:** Discord bot, voting systems, analytics dashboard.
+* **Community Tools:** voting systems, analytics dashboard.
 
 > Please start a discussion in the "Issues" tab before adding a feature.
 
@@ -962,7 +955,6 @@ However, let's clarify:
 - Registry: Off-chain (PostgreSQL + IPFS backup)
 - Attestation: Gallery self-signed (centralized but transparent)
 - Governance: Advisory only (curatorial final decision)
-- Token utility: Gallery access + registry + NFT priority
 
 **v2.0+ Vision (2027+):**
 - Registry: On-chain (Solana)
