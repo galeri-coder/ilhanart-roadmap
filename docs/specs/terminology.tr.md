@@ -151,7 +151,7 @@ Bu protokol; kripto ekosistemini saran anonim dolandırıcılara, 5 dakikada ür
 
 **Proof of Art [PoArt];** blokzincir üzerindeki bir varlığın arkasındaki değerin, spekülasyona değil; doğrulanabilir **insan emeğine**, **zamana** ve **fiziksel enerjiye** dayandığını garanti altına alan kurumsal bir doğrulama standardıdır.
 
-Bitcoin nasıl *"Elektrik ve İşlemci Gücü"* **(Proof of Work)** ile değer üretiyorsa; [PoArt] uyumlu projeler de *"Sanatsal Yetenek ve İnsan Zamanı"* ile değer üretir.
+Bitcoin nasıl *"Elektrik ve İşlemci Gücü"* **(Proof of Work)** ile değer üretiyorsa; [PoArt] uyumlu projeler de *"Harcanan Yetenek ve İnsan Zamanı"* ile değer üretir. Zamanı "Stake" eder.
 
 Pump.fun ve DEX platformlarındaki *"Yazılımcı (Dev) sattı, proje bitti"* riskini ortadan kaldırır; çünkü burada değer kodda değil, **üretimin sürekliliğinde** saklıdır.
 
@@ -209,7 +209,7 @@ Bu sistem, projenin sadece "başlangıçta" değil, "sonsuza kadar" güvenilir v
 Her [PoArt] sertifikalı eserin arkasında, yatırımcıların indirebileceği şifreli ve zaman damgalı bir veri paketi bulunur:
 
 - **RAW Video Kayıtları:** Üretim anının kesintisiz ham görüntüleri.
-- **Metadata Analizi:** Dosyanın oluşturulma tarihi, kullanılan cihaz bilgileri ve konum verileri.
+- **Metadata Analizi:** Dosyanın oluşturulma tarihi, kullanılan cihaz bilgileri ve konum verileri (Şehir-Ülke).
 - **Fiziksel Referanslar:** Eserin fiziksel dünyada var olduğuna dair kanıtlar  
   (Örn: Eserin yanında duran güncel gazete veya o anki blokzincir verisi).
 
@@ -230,12 +230,12 @@ Her [PoArt] sertifikalı eserin arkasında, yatırımcıların indirebileceği �
 1. Sertifika derhal **"İPTAL" (VOID)** olarak işaretlenir.
 2. Kanıt paketleri halka açık şekilde **"Sahte"** olarak etiketlenir.
 3. Proje, [PoArt] kara listesine alınır. Bu, merkeziyetsiz bir dünyada **itibarın tek para birimi** olduğu gerçeğini pekiştirir.
-
+4. Herhangi bir yayında [PoArt] ifadelerine yer verilemez, tek geçerli kaynak https://www.ilhanart.org/public-registry
 ---
 
 ## d) Sonuç: Kumarhane Değil, Müze
 
-**Pump.fun ve Merkeziyetsiz Borsalar (DEX) şu an maalesef birer kumarhanedir; ışıklar yanıp söner, herkes hızlı kazanç peşindedir ve kasa (dolandırıcılar) her zaman kazanır. Projeyi burada başlatma sebebimiz yeterli bütçemizin olmaması ve canlı yayınlar ile mevcut kitleye ulaşacak çevremizin olmasından kaynaklıdır.**
+**Pump.fun ve Merkeziyetsiz Borsalar (DEX) şu an maalesef birer kumarhanedir; ışıklar yanıp söner, herkes hızlı kazanç peşindedir ve kasa (dolandırıcılar) her zaman kazanır. Projeyi burada başlatma sebebimiz aynı zamanda burayı iyileştirmeye çalışmamızdır ve mevcut datamız ile canlı yayınlar aracılıyğa mevcut kitleye ulaşacak çevremizin olmasından kaynaklıdır.**
 
 **[PoArt], bu kumarhanenin ortasına inşa edilmiş bir kaledir.**
 
@@ -324,7 +324,7 @@ Sicilin iki katmanı bulunabilir:
 
 **Topluluk Danışma:**
 - Evidence Pack, başvuru sürecinde kamuya açık olarak paylaşılır
-- Topluluk, Discord ve ilhanart.org/applications üzerinden geri bildirim verebilir
+- Topluluk ve ilhanart.org üzerinden geri bildirim verebilir
 - Token holder'lar (minimum 10,000 $CULTURE) özellikle önerilerde bulunabilir
 - **Tüm geri bildirimler inceleme sürecinde dikkate alınır**
 - **Ancak final karar, kuratoryal değerlendirmeye bağlıdır**
@@ -368,26 +368,22 @@ Proje matured olunca (2027+), topluluk danışma mekanizması güçlendirilebili
 **$CULTURE token holder'larına sağlanan faydalar:**
 
 **1. Galeri Etkinlikleri Öncelikli Erişim:**
-- İlhanArt Gallery fiziksel sergi açılışları
-- Sanatçı buluşmaları ve atölye ziyaretleri
-- Özel koleksiyon görüntülemeleri
+- İlhanArt Galleryde senede 1 hafta sergi yapabilme hakkı ( hak devredilebilir )
+- Drop painting indirimleri
+- Galeri de resimlerde %10 ile %30 arasında indirim hakkı
 
 **2. PoArt Registry Tam Erişim:**
 - Tüm authenticated artworks'lerin detaylı kayıtları
 - Evidence Pack'lerin tam versiyonları
 - Forensic verification araçları
 
-**3. NFT Mint Priority:**
-- PoArt Verified eserler NFT olarak mint edildiğinde whitelist erişimi
-- Erken mint fırsatları
-- Özel koleksiyon NFT'leri
 
-**4. Advisory Voting:**
+**3. Advisory Voting:**
 - PoArt Verified başvurularında danışma hakkı
 - Topluluk geri bildirim kanallarına erişim
 - Governance tartışmalarına katılım
 
-**5. Exclusive Content:**
+**4. Exclusive Content:**
 - Stüdyo behind-the-scenes içerikleri
 - Sanatçı röportajları ve süreç videoları
 - Teknik dokümantasyon erişimi
@@ -618,7 +614,7 @@ Bu faz, sistemin tamamen "Client-Side" çalışan yapısından, daha güvenli ve
 | **OpenTimestamps** | Bitcoin anchoring | OTS JavaScript | Q4 2026 |
 
 **Token Governance (v2.0):**
-- Off-chain voting (Discord/web) + wallet signature
+- Off-chain voting (x/web) + wallet signature
 - Community representatives seçimi (ilk 90 gün)
 - Multi-sig operations wallet kontrolü
 - Weighted advisory voting (whale cap ile)
@@ -937,7 +933,7 @@ PoArt Protokolü **Faz 2** geliştirmeleri için aşağıdaki konularda deneyiml
 * **Supabase Edge Functions:** Spam korumasını sunucu tarafına taşıma.
 * **Solana Web3.js:** Cüzdan imzalama (Wallet Signing) entegrasyonu.
 * **IPFS / Arweave:** Arşivleme ve pinning servisleri entegrasyonu.
-* **Community Tools:** Discord bot, voting systems, analytics dashboard.
+* **Community Tools:**  X oylama , voting systems, analytics dashboard.
 
 > Bir özellik eklemeden önce lütfen "Issues" sekmesinde tartışma başlatın.
 
