@@ -540,7 +540,7 @@ PoArt je umiestnený na "Sweet Spot" (Optimálny Ideálny Bod), ktorý dopĺňa 
 | **Rate Limiting** | ✅ RLS+Client | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
 | **Blockchain Anchor** | 🔄 Cestovná mapa | ✅ Bitcoin | ✅ Ethereum | ✅ Multi | ✅ | ✅ | ✅ | ✅ |
 | **Open Source** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
-| **Slovenská Podpora** | 🔄 Vo vývoji | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
+| **Natívna jazyková podpora** | 🔄 Vo vývoji | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
 
 **Legenda:**
 - ✅ : Plná podpora / dostupné
