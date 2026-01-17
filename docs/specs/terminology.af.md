@@ -1,30 +1,30 @@
-# 📚 WOORDELYS VAN TEGNIESE TERME EN KONSEPTE
-> **"Om die taal van hierdie protokol te verstaan, beteken om die visie daarvan te verstaan."**
+# 📚 TERMINOLOGIE & KONSEPTE WOORDELYS
+> **"Om die taal van hierdie protokol te verstaan, is om sy visie te verstaan."**
 
-## ⚙️ PoArt Forensiese Enjin (PFE) v1.0: Grondslag Infrastruktuur
+## ⚙️ PoArt Forensic Engine (PFE) v1.0: Kern-infrastruktuur
 
-**PoArt Forensiese Enjin (PFE)** is die hooflaag wat die sentrale logika en tegniese werking agter die [PoArt] protokol verteenwoordig. Dit is die "forensiese enjin" wat rou data van kunswerk produksie neem en dit omskakel in **digitale bewyse** wat geverifieer kan word en onveranderbaar is.
+**PoArt Forensic Engine (PFE)** is die hooflaag wat die kernlogika en tegniese werking agter die [PoArt]-protokol verteenwoordig. Dit is die "forensiese enjin" wat die rou produksiedata van 'n kunswerk neem en dit omskep in **digitale bewyse** wat verifieerbaar en onveranderlik is.
 
-### 🧩 Hoekom "PoArt Forensic"?
+### 🧩 Waarom "PoArt Forensic"?
 
-- **PoArt (Bewys van Kuns):** Die doel van die enjin is om die waarde van 'n digitale bate nie aan spekulasie te koppel nie, maar aan **'n verifieerbare produksieproses**.
-- **Forensic (Wetenskaplike Verifikasie):**
-  - **Tegniese Definisie:** Algoritme metode en rekordreeks om te verifieer dat die data van die produksieproses (kwas slae, tyd video, rekords) nie gemanipuleer is nie.
-  - **Filosofiese Vlak:** Die bewering om **menslike tyd, poging en besluitnemingskoste** om te skakel in meetbare waarheid, teen AI se "onmiddellike resultaat" produksie.
+- **PoArt (Proof of Art / Bewys van Kuns):** Die fokus van die enjin is om die waarde van 'n digitale bate nie aan spekulasie te koppel nie; maar aan 'n **verifieerbare produksieproses**.
+- **Forensic (Forensiese Verifikasie):**
+  - **Tegniese Definisie:** 'n Algoritme en rekordkettingbenadering wat verifieer dat data wat verband hou met die produksieproses (kwasstrepe, timelapse, logs) nie gemanipuleer is nie.
+  - **Filosofiese Laag:** Teen die "onmiddellike uitset" produksie van kunsmatige intelligensie; die aanspraak om **menslike tyd, inspanning en besluitnemingskoste** om te skakel na 'n meetbare werklikheid.
 
-> Let wel: Blockchain integrasie (bv. Solana) is nie die kern van PFE nie; dit sal apart beskryf word as die **Ketting Anker Laag** vir verifikasie/registrasie doeleindes.
+> Let wel: Blockchain-integrasie (bv. Solana) is nie die kern van PFE nie; dit word as 'n aparte **Chain Anchor Layer** vir verifikasie/registrasie hanteer.
 
-### 🛠️ Tegniese Omvang v1.0
+### 🛠️ v1.0 Tegniese Omvang
 
-**PoArt Forensiese Enjin (PFE) v1.0** is gebou op die volgende **3 sleutelpilare** eerder as komplekse finansiële modelle:
+**PoArt Forensic Engine (PFE) v1.0** is gebou op die volgende **3 hoofpilare** in plaas van komplekse finansiële modelle:
 
 1. **Hashing & Sealing (Verseëling):**  
-   PFE verwerk op 'n bepaalbare manier al die elemente in die Bewys Pak (kunswerkfêer, video, JSON/rekord, handtekening, ens.) en genereer 'n unieke **NotarySeal** waarde.
+   PFE verwerk alle items in die Evidence Pack (kunswerkslêer, video, JSON/log, handtekening, ens.) deterministies en produseer 'n unieke **NotarySeal**-waarde.
 
-   **Sleutelkonsepte (v1.0):**
-   - **FileHash (vingerafdruk van werk):** Hash gegenereer vanaf die kunswerkfêer se bytes.
-   - **EvidenceRoot (wortelpak van bewys):** Wortelsamevatting wat die integriteit van die Bewys Pak verteenwoordig (Merkle wortel of hash van kanonieke voorstelling).
-   - **NotarySeal (finale seël / PFE uitset):** Finale seël gegenereer vanaf die kombinasie van EvidenceRoot + tyd + handtekening.
+   **Kernkonsepte (v1.0):**
+   - **FileHash (kunswerk vingerafdruk):** Hash gegenereer uit die bytes van die kunswerkslêer.
+   - **EvidenceRoot (bewyspakketwortel):** Wortelopsomming wat die integriteit van die Evidence Pack verteenwoordig (Merkle-wortel of kanonieke manifest-hash).
+   - **NotarySeal (finale seël / PFE Uitset):** Finale seël geproduseer uit die kombinasie van EvidenceRoot + tyd + handtekening.
 
    **Formules (duidelik sigbaar vir beleggers):**
    
@@ -32,7 +32,7 @@
    
    $$\text{NotarySeal} = \text{SHA-512}(\text{EvidenceRoot} \mid \text{SignerSignature} \mid \text{TimeStamp})$$
    
-   **Kanonieke Payload Definisies (v1.0):**
+   **Canonical Payload Definisies (v1.0):**
    
    - **EvidenceRootPayload:**
 ```
@@ -44,236 +44,238 @@
    evidence_root:{evidence_root}\nsigner_sig:{signer_sig}\ntimestamp:{timestamp}
 ```
    
-   > Let wel: Die waarde waarna verwys word as PFE uitset is **NotarySeal**. Die **SignerSignature** prosedure sal geaktiveer word in Fase 2 (met Solana Wallet Adapter); in die huidige v1.0 word die stelsel se attestasie handtekening gebruik. Die attestasie openbare sleutel word gepubliseer in die register onder die `issuer.attestation_pubkey` veld.
+   > Let wel: Die waarde wat as PFE-uitset bedoel word, is **NotarySeal**. Die **SignerSignature**-meganisme sal in Fase 2 (met Solana Wallet Adapter) geaktiveer word; in die huidige v1.0 word die stelsel se eie attestasie-handtekening gebruik. Die attestasie publieke sleutel word in die register gepubliseer in die `issuer.attestation_pubkey`-veld.
 
-2. **Indexing (Opberging):**  
-   Dit skryf watter beursie, op watter datum, **Bewys van Werk** vir watter werk gestuur het na 'n duidelike en navraagbare registervlak.  
-   *(Hierdie vlak kan 'n databasis wees; ketting integrasie word apart beskryf as "Ketting Anker Laag".)*
+2. **Indexing (Argivering):**  
+   Rekordeer watter beursie, op watter datum, **Labor Proof (Arbeidsbewys)** vir watter kunswerk voorgelê het; in 'n deursigtige en navraagbare rekordlaag.  
+   *(Hierdie laag kan 'n databasis wees; kettingintegrasie word apart as "Chain Anchor Layer" gedefinieer.)*
 
 3. **Verification (Verifikasie):**  
-   Wanneer die geldigheid van 'n werk bevraagteken word, verwerk PFE die rou bewyse weer; dit toets wiskundig of die berekende **EvidenceRoot / NotarySeal** waardes ooreenstem met die gestoorde rekords.
+   Wanneer die oorspronklikheid van 'n kunswerk bevraagteken word, herverwerk PFE die rou bewyse; toets met wiskundige sekerheid of die berekende **EvidenceRoot / NotarySeal**-waardes ooreenstem met die rekord in die argief.
 
 ---
 
-### 🧮 PoArt Waarde Teorie (The Value Theorem)
+### 🧮 PoArt Waarde Stelling (The Value Theorem)
 
-Die [PoArt] protokol koppel die waarde ($V$) van 'n digitale bate nie aan ongrypsbare markpersepsie nie, maar aan die **fisiese werklikheid van die produksieproses**.
+Die [PoArt]-protokol koppel die waarde van 'n digitale bate ($V$) nie aan subjektiewe markpersepsie nie; maar aan die **fisiese werklikheid van die produksieproses**.
 
-Kunsmatige Intelligensie (AI) vernietig die proses deur onmiddellik resultate te lewer ($t \to 0$). [PoArt], egter, hanteer waarde as die akkumulasie van elemente van **tyd, arbeid en agentskap**.
+Kunsmatige Intelligensie (AI), deur die resultaat onmiddellik te lewer ($t \to 0$), vernietig die proses. [PoArt] hanteer waarde as; die akkumulasie van **tyd, arbeid en wil** komponente.
 
 $$V_{\text{PoArt}} = \int_{t_{\text{start}}}^{t_{\text{end}}} \left(P_{\text{labor}}(t) \cdot I_{\text{agency}}(t)\right) dt + U_{\text{irreversible}}$$
 
-#### Definisies van Veranderlikes
+#### Definisie van Veranderlikes
 
 - **$\int dt$ (Prosesakkumulasie):**  
-  Waarde is nie 'n "onmiddellike resultaat" nie; dit is 'n **proses** wat akkumuleer tussen $t_{\text{start}}$ en $t_{\text{end}}$. Soos die duur afneem (AI produksie), nader die integraalresultaat 0.
+  Waarde is nie 'n onmiddellike "uitset" (output) nie; dit is 'n **proses** wat tussen $t_{\text{start}}$ en $t_{\text{end}}$ akkumuleer. Soos die tyd afneem (AI-produksie), nader die resultaat van die integraal 0.
 
 - **$P_{\text{labor}}(t)$ (Oombliklike Arbeidskrag):**  
-  Verteenwoordig die intensiteit van verstandelike en fisiese poging wat tydens produksie bestee word. Soos verifieerbare poging toeneem, groei die integrand.  
-  > Let wel: Hierdie term kan in praktyk genormaliseer word deur "meetbare/verifieerbare arbeidstekens".
+  Verteenwoordig die intensiteit van geestelike en fisiese inspanning wat tydens produksie spandeer word. Soos bewysbare inspanning toeneem, groei die integrand.  
+  > Let wel: Hierdie term kan in die praktyk genormaliseer word deur "meetbare/bewysbare arbeidseine".
 
-- **$I_{\text{agency}}(t)$ (Agentskap Faktor):**  
-  Die vermoë van die skepper om risiko's te neem en besluite te neem. Dit neem waardes tussen $0$ en $1$.
-  - **AI ($I \approx 0$):** Voer opdragte uit, neem geen risiko's, betaal geen koste.
-  - **Mens ($I \to 1$):** Verander besluite, twyfel, neem risiko's.
+- **$I_{\text{agency}}(t)$ (Wilskoëffisiënt):**  
+  Die produsent se vermoë om risiko te neem en besluite te neem. Dit neem 'n waarde tussen $0$ en $1$ aan.
+  - **AI ($I \approx 0$):** Voer opdragte uit, neem nie risiko nie, betaal nie 'n prys nie.
+  - **Mens ($I \to 1$):** Verander besluite, huiwer, neem risiko.
 
 - **$U_{\text{irreversible}}$ (Onomkeerbare Uniekheid):**  
-  Terwyl ongedaan maak (`Ctrl+Z`) moontlik is in digitale produksie, in fisiese produksie (verf aangebring op doek, gebeitel klip, beweging in regstreekse uitsending) is daar geen terugweg nie. Hierdie **onomkeerbaarheid** is 'n bykomende term wat "uniekheid" (onvervangbare eienskappe) in die werk skep.
+  In digitale produksie is terugdraai (`Ctrl+Z`) moontlik; maar in fisiese produksie (verf op doek, gebeeldhoupte marmer, gebare in lewende uitsending) is daar geen terugkeer nie. Hierdie **onomkeerbaarheid** is 'n bykomende term wat "uniekheid" (nie-fungibele karakter) in die kunswerk skep.
 
-### 🔎 Gevalle Analise: AI "Onmiddellike Resultaat" vs. Mens "Geverifieerde Proses"
+### 🔎 Gevallestudie: AI "Onmiddellike Uitset" vs. Mens "Bewese Proses"
 
-Die volgende scenario toon hoe die **PoArt Waarde Teorie** in praktyk werk en hoekom AI produksie laer tellings kry op die [PoArt] skaal.
+Die volgende scenario toon hoe die **PoArt Waarde Stelling** in die praktyk werk en waarom AI-produksies lae tellings in die [PoArt]-standaard kry.
 
-#### Scenario A: 10-Sekonde Visuele Produksie met AI
+#### Scenario A: Beeldproduksie met AI in 10 Sekondes
 
-- **Duur ($\Delta t$):** $10$ sekondes (klein proses)
-- **Arbeidskrag ($P_{\text{labor}}$):** $1$ eenheid (net opdrag skryf)
-- **Agentskap Faktor ($I_{\text{agency}}$):** $0.01$ (geen risiko, geen koste)
+- **Tyd ($\Delta t$):** $10$ sekondes (feitlik geen proses nie)
+- **Arbeidskrag ($P_{\text{labor}}$):** $1$ eenheid (slegs opdrag skryf)
+- **Wilskoëffisiënt ($I_{\text{agency}}$):** $0.01$ (geen risiko, geen prys)
 - **Onomkeerbaarheid ($U_{\text{irreversible}}$):** $0$ (omkeerbaar / kopieerbaar)
 
 **Resultaat:**
 
 $$V_{\text{AI}} \approx \int_{0}^{10} (1 \cdot 0.01) \, dt + 0 = 0.1$$
 
-> **Kommentaar:** Selfs al is die resultaat perfek; die [PoArt] waarde nader $0$ omdat daar geen proses geleef is nie en geen agentskap/risiko betrokke is nie.
+> **Kommentaar:** Selfs al is die uitset perfek; omdat die proses nie beleef is nie en dit nie wil/risiko bevat nie, nader die [PoArt]-waarde $0$.
 
-#### Scenario B: 6-Uur Fisiese Produksie in Regstreekse Uitsending
+#### Scenario B: 6-Uur Fisiese Produksie in Lewende Uitsending
 
-- **Duur ($\Delta t$):** $6$ ure ($21{,}600$ sekondes)
-- **Arbeidskrag ($P_{\text{labor}}$):** $0.5$ eenhede (volgehoue fisiese en verstandelike poging)
-- **Agentskap Faktor ($I_{\text{agency}}$):** $0.9$ (veranderende besluite, neem risiko's, onomkeerbare keuses)
-- **Onomkeerbaarheid ($U_{\text{irreversible}}$):** $>0$ (fisiese tekens kan nie ongedaan gemaak word nie)
+- **Tyd ($\Delta t$):** $6$ ure ($21{,}600$ sekondes)
+- **Arbeidskrag ($P_{\text{labor}}$):** $0.5$ eenhede (kontinuïteit van fisiese en geestelike inspanning)
+- **Wilskoëffisiënt ($I_{\text{agency}}$):** $0.9$ (besluitverandering, risiko-neming, onomkeerbare keuses)
+- **Onomkeerbaarheid ($U_{\text{irreversible}}$):** $>0$ (fisiese spore kan nie teruggedraai word nie)
 
 **Resultaat:**
 
 $$V_{\text{Human}} \approx \int_{0}^{21600} (0.5 \cdot 0.9) \, dt + U_{\text{irreversible}} \approx 9720 + U_{\text{irreversible}}$$
 
-> **Kommentaar:** Soos die proses verleng en agentskap (risiko) toeneem, akkumuleer die waarde kumulatief. Die $U_{\text{irreversible}}$ term is 'n bykomende bydrae wat "uniekheid" (onvervangbare eienskappe) in die werk skep.
+> **Kommentaar:** Soos die proses langer word en wil (risiko) toeneem, neem waarde kumulatief toe. Die $U_{\text{irreversible}}$-term is 'n bykomende bydrae wat "uniekheid" (nie-fungibele karakter) in die kunswerk skep.
 
 ---
 
-### ✅ Gevolgtrekking: Bewys-Gebonde Waarde (Proof-Bound Value)
+### ✅ Gevolgtrekking: Waarde Gesluit met Bewys (Proof-Bound Value)
 
-Hierdie teorie haal die waarde-bewering van [PoArt] uit om "voorkeur" of "markverhaal" te wees en koppel dit aan **verifieerbare produksiewerklikheid**.
+Hierdie stelling neem die [PoArt] waarde-aanspraak uit 'n "voorkeur" of "marknarratief" en koppel dit aan 'n **bewysbare produksiewerklikheid**.
 
-1. **Geen Proses, Geen Waarde:**  
-   AI vernietig die proses met onmiddellike resultate ($t \to 0$). Soos die prosesvenster krimp, moet die integraalresultaat afneem:
+1. **Geen Waarde Sonder Proses:**  
+   AI vernietig die proses in onmiddellike uitset ($t \to 0$). Soos die prosesvenster vernou, verklein die resultaat van die integraal met wiskundige noodsaaklikheid:
    
    $$\Delta t \downarrow \ \Rightarrow\ \int \left(P(t) \cdot I(t)\right) dt \to 0$$
 
-2. **Agentskap en Risiko is Vermenigvuldigers:**  
-   [PoArt] meet nie net "tyd spandeer" nie maar ook die werklike vlak van besluitneming, risiko en koste in daardie tyd. Produksie sonder risiko (AI) het lae waarde:
+2. **Wil en Risiko is Vermenigvuldigers:**  
+   [PoArt] meet nie net "tyd spandeer" nie; dit meet ook die werklike besluit, risiko en pryslaag in daardie tyd. Die waarde van produksie wat nie risiko neem nie (AI) is laag:
    
    $$V_{\text{PoArt}} \propto \int \left(P_{\text{labor}}(t) \cdot I_{\text{agency}}(t)\right) dt$$
 
-3. **Uniekheid is Fisiese Bewys, Nie Bemarking Nie:**  
-   Onomkeerbare tekens in fisiese produksie (doek slag, klip stuk) is buite die `Ctrl+Z` logika van digitaal. Hierdie onomkeerbaarheid ($U_{\text{irreversible}}$) maak die werk uniek deur ontologie.
+3. **Uniekheid is nie Bemarking nie, maar Fisiese Bewys:**  
+   In fisiese produksie is onomkeerbare spore (doekslag, marmerbreuk) buite die `Ctrl+Z`-logika van digitaal. Hierdie onomkeerbaarheid ($U_{\text{irreversible}}$) maak die kunswerk ontologies uniek.
 
-> **🔐 OPSOMMING:** Alhoewel die waarde teorie onsekerheid as 'n maatstaf kan lyk (selfs al kan die werklike wêreld ekwivalent nie volledig gemeet word nie), is die doel van hierdie formule om die opstelling en rigting van veranderlikes te toon. In die AI-era is wat skaars is nie die "prentjie" nie maar **verifieerbare werk, tyd en agentskap.** [PoArt] meet hierdie skaarsheid en skryf dit neer met die **Bewys Pak**.
+> **🔐 OPSOMMING:** Selfs al lyk die waardestelling onduidelik as meting (selfs al kan dit nie 100% in werklike lewe gemeet word nie), is die doel van hierdie formule om die konstruksie en rigting van veranderlikes te wys. Wat skaars is in die AI-era is nie "beeld" nie; **bewysbare arbeid, tyd en wil**. [PoArt] meet hierdie skaarsheid en registreer dit met **Evidence Pack**.
 
-### 🏛️ Belangrikheid van die "Enjin" Konsep
+### 🏛️ Die Belangrikheid van die "Engine" (Enjin) Konsep
 
-Tokens wat verskyn vanaf Pump.fun of soortgelyke platforms is dikwels slegs **"toegangkaartjies"**. Die **PoArt Forensiese Enjin (PFE)**, egter, is die **grondwetlike logika laag** wat bepaal watter regte hierdie kaartjie beskerm, hoe die werk opgeskryf sal word en hoe kuns/wetenskap/tegnologie volgehou sal word.
+Tokens wat uit Pump.fun of soortgelyke platforms kom, is dikwels net **"toegangskaartjies"**. **PoArt Forensic Engine (PFE)** is egter die **konstitusionele logiese laag** wat bepaal watter regte daardie kaartjie beskerm, hoe arbeid geregistreer word en hoe kuns/wetenskap/tegnologie permanent gemaak word.
 
-> **Let wel:** Die rede waarom ons hierdie projek op Pumpfun begin het, is omdat ons nie genoeg finansiering of genoeg volgelinge gehad het nie. Om bestaande data te gebruik was 'n strategiese korrekte stap, selfs al was dit nie die hoogste gehalte nie. Ongeag die begroting en hulpbronne, bewys die definiëring van hierdie enjin se logika op GitHub dat die projek nie net 'n finansiële spekulasie is nie, maar 'n langetermyn visie van **sagteware infrastruktuur** en **nasionale digitale biblioteek**.
+> **Let wel:** Die rede waarom ons hierdie projek op Pump.fun begin het, is omdat ons nie genoeg likiditeit en volgelinge gehad het nie. Alhoewel die gebruik van bestaande data strategies nie die beste kwaliteit was nie, kan ons sê dit was die regte skuif. Ongeag begroting en geleenthede, die definisie van die logika van hierdie enjin op GitHub bewys dat die projek nie net finansiële spekulasie is nie, maar 'n langtermyn **sagteware-infrastruktuur** en visie van 'n **digitale nasionale biblioteek**.
 
 ---
 
-## �🎨 [PoArt] BEWYS VAN WERK PROTOKOL (Proof of Art Protocol v1.0)
+## 🎨 [PoArt] ARBEIDSBEWYS PROTOKOL (Proof of Art Protocol v1.0)
 
-> **"Egte Kunstenaar, Egte Produksie, Egte Waarde."**
+> **"Werklike Kunstenaar, Werklike Produksie, Werklike Waarde."**
 
-Hierdie protokol is 'n **biologiese en intellektuele beskermingsprosedure** wat ontwikkel is teen onbekende opligters wat die crypto ekosisteem omring, AI beelde wat in 5 minute geskep word, en "Pump & Dump" kultuur.
+Hierdie protokol is 'n **biologiese en intellektuele verdedigingsmeganisme** ontwikkel teen anonieme bedrieërs wat die kripto-ekosisteem omring, kunsmatige intelligensie-beelde wat in 5 minute geproduseer word en die "Pump & Dump"-kultuur.
 
 ---
 
 ## a) Wat is [PoArt]? (Filosofiese en Tegniese Definisie)
 
-**Bewys van Kuns [PoArt];** is 'n institusionele verifikasie standaard wat verseker dat die waarde agter 'n bate op die blockchain nie gebaseer is op spekulasie nie, maar op **menslike arbeid**, **tyd** en **fisiese energie** wat geverifieer kan word.
+**Proof of Art [PoArt];** is 'n institusionele verifikasiestandaard wat waarborg dat die waarde agter 'n bate op die blockchain gebaseer is op verifieerbare **menslike arbeid**, **tyd** en **fisiese energie**, nie spekulasie nie.
 
-Soos Bitcoin waarde skep met *"Elektrisiteit en Prosessorkrag"* **(Bewys van Werk)**, skep projekte wat ooreenstem met [PoArt] waarde met *"Kuns Vaardigheid en Menslike Tyd"*.
+Net soos Bitcoin waarde produseer met *"Elektrisiteit en Verwerkerkrag"* **(Proof of Work)**; produseer [PoArt]-verenigbare projekte ook waarde met *"Gespandeerde Talent en Menslike Tyd"*. Dit "Stake" tyd.
 
-Dit verwyder die risiko van *"Ontwikkelaar het verkoop, projek is verby"* op Pump.fun en DEX platforms; want hier is waarde nie in die kode nie, maar in die **voortsetting van produksie**.
+Dit elimineer die *"Ontwikkelaar (Dev) het verkoop, projek is verby"* risiko op Pump.fun en DEX-platforms; omdat waarde hier nie in kode is nie, dit is versteek in die **kontinuïteit van produksie**.
 
-> **[PoArt] sê nie vir deelnemers "Glo ons"; dit sê "Hier is die bewys, kyk met jou oë, verifieer met jou wiskunde."**
+> **[PoArt] sê nie aan sy deelnemer "Vertrou ons" nie; dit sê "Hier is die bewyse, sien met jou oë, verifieer met jou wiskunde".**
 
 ---
 
-## b) [PoArt] se 5-Pilaar Standaard (5 Pilare van Waarheid)
+## b) [PoArt] 5-Pilaar Standaard (The 5 Pillars of Truth)
 
-Hierdie 5 items is onomkeerbare filters wat 'n projek moet slaag om die [PoArt] seël te ontvang.
+Hierdie 5 items is onmanipuleerbare filters wat 'n projek moet deurgaan om die [PoArt]-seël te ontvang.
 
-### 1) Direkte Identiteit Bewys
+### 1) Lewende Identiteitsbewys (Live Identity Proof)
 
-- **Probleem:** Die crypto wêreld is vol anonieme stigters (Devs) met onduidelike identiteite wat geld insamel en projekte verlaat.
-- **[PoArt] Oplossing:** Die skepper verifieer nie net identiteit nie, maar **teenwoordigheid tydens produksie**. Dit sluit in regstreekse uitsending sessies waar gemeenskap interaksie plaasvind en spesifieke versoeke dadelik uitgevoer word, nie vooraf opgenome video's nie.  
-  (Byvoorbeeld, *"Skryf vandag se datum en huidige blok nommer op die regterkantste hoek van die doek"*)
-- **Slagspreuk:** *"Bots kan verf maar bots sweet nie en kan nie improviseer nie."*
+- **Probleem:** Die kripto-wêreld is vol anonieme stigters (Devs) wat geld insamel en die projek verlaat.
+- **[PoArt] Oplossing:** Die produsent bewys nie net sy identiteitskaart nie, maar ook **sy teenwoordigheid tydens produksie**. Dit sluit lewende uitsendingsessies in waar daar interaksie met die gemeenskap is en oombliklike spesifieke versoeke vervul word, nie vooraf opgenome video's nie.  
+  (Bv: *"Skryf vandag se datum en huidige bloknommer in die regterhoek van die doek"*)
+- **Leuse:** *"Bots kan skilder maar bots sweet nie en kan nie improviseer nie."*
 
-### 2) Bewys van Werk en Proses
+### 2) Arbeids- en Prosesbewys (Labor & Process Proof)
 
-- **Probleem:** AI (Kunsmatige Intelligensie) beelde geskep in 2 sekondes kry dieselfde "jpeg" behandeling as olieverf wat 2 maande lank gemaak is in die digitale wêreld.
-- **[PoArt] Oplossing:** Die "swangerskap en geboorte" proses van die werk word opgeskryf. Skets stappe, verfstadiums, gestoorde opgehoopte ure en die fisiese proses wat die kunstenaar ondergaan het tydens die skep van die werk word opgeskryf. Dit voeg **"Tydkoste"** by die token. Hoe moeiliker die bate produksie, hoe sterker sy waarde.
+- **Probleem:** AI-beelde wat in 2 sekondes geproduseer word en olieverfskilderye wat in 2 maande gemaak word, word dieselfde "jpeg"-behandeling in die digitale wêreld gegee.
+- **[PoArt] Oplossing:** Die "swangerskap en geboorte" proses van die kunswerk word geregistreer. Skets fases, verflaë, kumulatiewe ure spandeer en die fisiese proses wat die kunstenaar deurgegaan het tydens die skepping van daardie kunswerk word gedokumenteer. Dit voeg **"Tydkoste" (Time Cost)** by die token. Hoe moeiliker die produksie van 'n bate, hoe stewiger sy waarde.
 
-### 3) Bewys van Estetiese Waarde
+### 3) Estetiese Waardebewys (Aesthetic Value Proof)
 
-- **Probleem:** "Meme" kultuur wat fokus op oombliklike komedie terwyl dit estetika en artistieke diepte verontagsaam, wat lei tot korttermyn "Hype" projekte.
-- **[PoArt] Oplossing:** Die projek moet akademiese kunstandaarde hê, kleurteorie, komposisiereëls en materiaalkennis (Impasto, Tekstuur, ens.). Inhoud moet nie net jou laat lag nie; dit moet verwondering in kykers opwek en **versamelwaarde** hê.
+- **Probleem:** Die "Meme"-kultuur wat estetika en artistieke diepte ignoreer en net op oombliklike komedie fokus en die kortstondige "Hype"-projekte wat daaruit voortspruit.
+- **[PoArt] Oplossing:** Die projek moet akademiese kunsstandaarde, kleurteorie, komposisiereëls en materiaalkennis (Impasto, Tekstuur, ens.) hê. Inhoud moet nie net lag maak nie; dit moet bewondering by die kyker wek en **versamelingwaarde** hê.
 
-### 4) Konsep Nuutheid
+### 4) Konseptuele Innovasie (Conceptual Novelty)
 
-- **Probleem:** Duisende hond/kat munt afskrifte sonder kreatiwiteit.
+- **Probleem:** Duisende hond/kat-munte wat mekaar kopieer, ver van kreatiwiteit.
 - **[PoArt] Oplossing:** Die projek moet 'n nuwe brug bou wat kuns, wetenskap, filosofie of tegnologie in 'n betekenisvolle struktuur kombineer.  
-  (Byvoorbeeld, Kombineer die antieke standbeeld van David met crypto mark data; verwerk die idee dat menslike persepsie "in klip verander" deur dit en grond dit met wetenskaplike bronne.)  
-  Die werk moet nie net 'n visuele fees wees nie maar ook 'n intellektuele uitdaging wat gedagtes oor **Wetenskap, Filosofie of Tegnologie** opwek.
+  (Bv: Die klassieke Dawid-beeld met kripto-markdata kombineer; die idee van menslike persepsie wat "in klip verander" daaruit werk en dit met wetenskaplike bronne kan begrond.)  
+  Die kunswerk moet nie net 'n visuele fees wees nie; dit moet ook 'n intellektuele uitdaging wees wat laat nadink oor **Wetenskap, Filosofie of Tegnologie**.
 
 > [!IMPORTANT]
-> **Geheue Voorbeeld (Las Palmitas Effek):** In die Las Palmitas buurt in Meksiko, geteister deur misdaad, is meer as 200 huise omskep in 'n groot reënboog spektakel. As gevolg van hierdie estetiese ingryping het misdaadvlakke in die buurt aansienlik afgeneem, en jongmense het begin om betrokke te raak by kuns eerder as misdaad bendes. Die estetiese verandering het mense se respek vir hul omgewing en mekaar herskryf (Sosiale Integrasie).
+> **Verwysingsvoorbeeld (Las Palmitas Effek):**  
+> In die Las Palmitas-woonbuurt in Mexiko wat met misdaad gesukkel het, is meer as 200 huise omskep in 'n reuse reënboogfees. As gevolg van hierdie estetiese ingryping het misdaadsyfers in die woonbuurt tot 'n sekere mate gedaal, en jongmense het begin belangstel in kuns in plaas van bendes. Die estetiese verandering het mense se respek vir hul omgewing en mekaar (Social Cohesion) herkodeer.
 >
-> **Verwagting:** 'n Projek wat die [PoArt] lys betree moet, soos in die voorbeeld hierbo, 'n verhouding van sosiale, wetenskaplike of filosofiese oorsaak en gevolg hê bo net visuele estetika. Aangesien tyd die enigste bate is wat nie met geld gekoop kan word nie, moet tyd in hierdie protokol geverifieer word deur dit as sekuriteit te sit. Die konsep grondslag van die projek moet so sterk en universeel wees dat selfs in die geval van 'n moontlike CTO (Gemeenskap Oorneem) jare later, die gemeenskap onafhanklik kan voortgaan met die kreatiewe potensiaal van die projek deur hierdie nalatenskap te erf.
+> **Verwagting:** 'n Projek wat op die [PoArt]-lys wil kom; moet, soos die voorbeeld hierbo, 'n sosiologiese, wetenskaplike of filosofiese oorsaak-gevolg-verhouding bevat bo en behalwe blote visuele estetika. Omdat "Tyd" die enigste bate is wat nie met geld gekoop kan word nie, moet tyd in hierdie protokol as waarborg gestake word en bewys word. Die intellektuele basis van die projek moet so sterk en universeel wees dat; selfs in 'n moontlike CTO (Community Take Over) scenario jare later, die gemeenskap hierdie erfenis kan oorneem en die projek se innoverende potensiaal outonoom kan voortsit.
 
-### 5) Nie-Algoritmiese Agentskap
+### 5) Nie-Algoritmiese Wil (Non-Algorithmic Agency)
 
-- **Probleem:** Volledige maar sielloos herhalende digitale produksies.
-- **[PoArt] Oplossing:** Die unieke agentskap van 'n mens wat foute kan maak, risiko's kan neem en emosionele veranderinge kan ondervind moet gevoel word in die werk. Onsekerheid in kwasslae, onverwagte reaksies van materiale en die oombliklike besluite van die kunstenaar is die **Biologiese Handtekening** wat die werk skei van "Masjien Produksie".
-
----
-
-## c) Verifikasie Prosedure en Bedrog Voorkoming
-
-Hierdie stelsel verseker dat die projek geloofwaardig en lewend bly nie net "aan die begin" nie maar "vir ewig".
-
-### 📦 Bewys Pak - Digitale Tweeling
-
-Agter elke werk wat deur [PoArt] goedgekeur is, is daar 'n geënkripteerde en tyd-gestempelde data pakket wat beleggers kan aflaai:
-
-- **RAW Video Rekords:** Rou ononderbroke film van die produksietyd.
-- **Metadata Analise:** Fêer skeppingsdatum, inligting oor die apparaat wat gebruik is en ligging data.
-- **Fisiese Verwysings:** Bewys dat die werk bestaan in die fisiese wêreld  
-  (Byvoorbeeld, Huidige koerant of blockchain data van daardie tyd naby die werk).
-
-> *Ooreenstemming nota:* Die term "bewys pak" koppel aan die ketting **Bewys Pak → EvidenceRoot → NotarySeal** in voorafgaande afdelings; dit wil sê, die integriteit van die pakket word verteenwoordig deur 'n verifieerbare seël.
-
-### 🔄 365-Dag Hernuwing (Volhoubaarheid Protokol)
-
-- **Revolusionêre Kenmerk:** In crypto projekte gee die "Dev" (Ontwikkelaar) gewoonlik die token uit en verdwyn gewoonlik na 1-2 maande (Sagte Mat). [PoArt] maak dit onmoontlik.
-- **Reël:** Die status van "Geverifieerde Kunstenaar" is nie lewenslank nie. Slegs **1 Jaar** is geldig.
-- **Werking:** Die kunstenaar/ontwikkelaar moet elke 365 dae 'n **nuwe belangrike en verifieerbare werk** aan die gemeenskap voorlê.
-- **Scenario Voorbeeld:** Jy het die projek in 2026 begin. In Januarie 2027 gee die stelsel 'n waarskuwing "Bewys Tydperk het Verstryk". As die kunstenaar nie 'n nuwe vertoning, nuwe fisiese werk of nuwe tegnologie-integrasie voorlê nie, val die "Vertroue Badge" van die projek.
-- **Resultaat:** Hierdie stelsel verseker dat **inhoud nooit relevansie verloor nie** en dat die belegger nooit die vrees het van *"Is die ontwikkelaar nog daar?"*. Die projek word 'n lewende ateljee.
-
-### 🚩 Rooi Vlag Protokol
-
-**In die geval van enige bedrog wat deur die gemeenskap of algoritmes ontdek word (AI gebruik, gesteelde werk, gemanipuleerde video):**
-
-1. Die sertifikaat word onmiddellik gemerk as **"VOID" (NIETIG)**.
-2. Bewys pakkette word openbaar gemerk as **"Vals"**.
-3. Die projek word op die [PoArt] swartlys geplaas. Dit versterk dat in die gedekentraliseerde wêreld, **reputasie die enigste munt is**.
+- **Probleem:** Perfekte maar siellose, herhalende digitale produksies.
+- **[PoArt] Oplossing:** Die unieke wil van die mens wat foute kan maak, risiko neem en emosionele skommelinge ervaar, moet in die kunswerk gevoel word. Die onsekerheid in kwasstrepe, die onverwagte reaksies van materiaal en die oombliklike besluite van die kunstenaar is die **Biologiese Handtekening** wat die kunswerk van "Masjien Produksie" onderskei.
 
 ---
 
-## d) Gevolgtrekking: Nie 'n Casino Nie, Maar 'n Museum
+## c) Verifikasie & Anti-Vervalsing Meganisme
 
-**Pump.fun en Gedekentraliseerde Uitruilings (DEX) is ongelukkig nou 'n casino; ligte flikker, almal jaag vinnige winste, en die huis (opligters) wen altyd. Die rede waarom ons die projek hier begin het, is gebrek aan voldoende finansiering en om 'n omgewing te hê om bestaande gehore te bereik deur regstreekse uitsending.**
+Hierdie stelsel verseker dat die projek nie net "aan die begin" nie, maar "vir ewig" betroubaar en lewend bly.
 
-**[PoArt] is 'n vesting gebou in die middel van hierdie casino.**
+### 📦 Bewyspakket (Evidence Pack - The Digital Twin)
 
-- 🎰 Casino is gebaseer op kaartspeletjies; ons is gebaseer op **fisiese werklikheid**.
-- 🃏 Casino is oop vir bedrog; ons is oop vir **duidelike bewys**.
-- ⏳ Casino is tydelik; ons fokus op **ewigheid van kuns en wetenskap**.
+Agter elke [PoArt]-gesertifiseerde kunswerk is daar 'n geënkripteerde en tydgestempelde datapakket wat beleggers kan aflaai:
 
-**Die token wat hierdie protokol gebruik is nie net "'n munt" nie; dit is digitale kapitaal met sweet, verf, kode en filosofie.**
+- **RAW Video-opnames:** Ononderbroke rou beelde van die produksieoomblik.
+- **Metadata-analise:** Lêerskeppingsdatum, gebruikte toestelinligting en liggingdata (Stad-Land).
+- **Fisiese Verwysings:** Bewyse dat die kunswerk in die fisiese wêreld bestaan  
+  (Bv: Huidige koerant of daardie oomblik se blockchain-data langs die kunswerk).
+
+> *Konsekwentheidsnota:* Die uitdrukking "bewyspakket" koppel aan die **Evidence Pack → EvidenceRoot → NotarySeal**-lyn in vorige afdelings; dit wil sê die integriteit van die pakket word verteenwoordig deur 'n verifieerbare seël.
+
+### 🔄 365-Dae Hernuwing (The Sustainability Protocol)
+
+- **Revolusionêre Kenmerk:** In kripto-projekte stel die "Dev" (Ontwikkelaar) die token in die mark bekend en verdwyn gewoonlik 1-2 maande later (Soft Rug). [PoArt] maak dit onmoontlik.
+- **Reël:** "Verified Artist" (Geverifieerde Kunstenaar) status is nie lewenslank nie. Dit is slegs vir **1 jaar** geldig.
+- **Werking:** Die kunstenaar/ontwikkelaar moet elke 365 dae 'n **nuwe, groot en bewysbare kunswerk** aan die gemeenskap voorlê.
+- **Voorbeeldscenario:** Jy het die projek in 2026 begin. In Januarie 2027 gee die stelsel 'n "Bewystydperk Verstreke" waarskuwing. As die kunstenaar nie 'n nuwe uitstalling, nuwe fisiese kunswerk of nuwe tegnologiese integrasie aanbied nie, val die projek se "Vertrouenswapen" af.
+- **Resultaat:** Hierdie stelsel verseker dat **inhoud nooit verouderd raak nie** en dat die belegger nie die vrees van *"Is die ontwikkelaar nog hier?"* ervaar nie. Die projek word 'n lewende ateljee.
+
+### 🚩 Rooi Vlag (Red Flag Protocol)
+
+**In die geval van enige vervalsing (AI-gebruik, gesteelde kunswerk, gemanipuleerde video) wat deur die gemeenskap of algoritmes opgespoor word:**
+
+1. Die sertifikaat word onmiddellik gemerk as **"NIETIG" (VOID)**.
+2. Bewyspakkette word openlik gemerk as **"Vals"**.
+3. Die projek word op die [PoArt]-swartlys geplaas. Dit versterk die werklikheid dat **reputasie die enigste geldeenheid** in 'n gedesentraliseerde wêreld is.
+4. [PoArt]-uitdrukkings kan nie in enige publikasie ingesluit word nie, die enigste geldige bron is https://www.ilhanart.org/public-registry
 
 ---
 
-## 🗳️ 6) BESTUUR EN OPENBARE REGISTER
+## d) Gevolgtrekking: Museum, Nie Casino Nie
 
-**Die doel van hierdie afdeling is: om die [PoArt] standaard te verander van die vlak van "vertrou individue" na volhoubare openbare infrastruktuur met register + verifikasie + gemeenskapstoesig.**
+**Pump.fun en Gedesentraliseerde Beurse (DEX) is ongelukkig tans casino's; ligte flikker, almal jaag vinnige wins na en die huis (bedrieërs) wen altyd. Die rede waarom ons die projek hier begin het, is ook omdat ons probeer om dit hier te verbeter en omdat ons die data en lewende uitsendings het om die huidige gehoor te bereik.**
 
-### 6.1 Openbare Register
+**[PoArt] is 'n kasteel gebou in die middel van hierdie casino.**
 
-- **Openbare Register:** Alle goedgekeurde data word geskryf by `ilhanart.org/registry` (of GitHub Registry).
+- 🎰 Die casino is gebaseer op kaartspeletjies; ons is gebaseer op **fisiese werklikheid**.
+- 🃏 Die casino is oop vir bedrog; ons is oop vir **deursigtige bewyse**.
+- ⏳ Die casino is tydelik; ons fokus op die **ewigheid van kuns en wetenskap**.
 
-**Register logika (voorgestelde standaard - in JSON pad formaat):**
+**'n Token wat hierdie protokol gebruik, is nie net 'n "munt" nie; dit is 'n digitale aandeel met sweet, verf, kode en filosofie daaragter.**
 
-Elke inskrywing wat die register betree dra hierdie minimum verifieerbare kern velde:
+---
 
-- **Identiteit en Status:**
+## 🗳️ 6) BESTUUR & OPENBARE REGISTER (Governance & Public Registry)
+
+**Die doel van hierdie afdeling is: Om die [PoArt]-standaard uit die vlak van "vertrou mense" te neem en dit om te skakel na 'n volhoubare openbare infrastruktuur met registrasie + verifikasie + gemeenskapstoesig.**
+
+### 6.1 Public Registry (Openbare Register)
+
+- **Public Registry:** Alle goedgekeurde data word geregistreer by `ilhanart.org/registry` (of GitHub Registry).
+
+**Registrasielogika (voorgestelde standaard - in JSON-padformaat):**
+
+Elke rekord wat die register binnegaan, dra ten minste die volgende verifieerbare kernvelde:
+
+- **Identiteit & Status:**
   - `certificate_id` (leesbare verwysing)
   - `status` (active / void)
-  - `void_reason` (indien van toepassing)
+  - `void_reason` (indien enige)
   - `visibility` (private / masked / public)
   - `created_at` (tydstempel)
 
-- **Uitreikende Gesag:**
+- **Uitreikende Instelling:**
   - `issuer.name`
   - `issuer.location`
   - `issuer.attestation_pubkey`
 
-- **Werk Inligting:**
+- **Kunswerkinligting:**
   - `asset.title`
   - `asset.creator`
-  - `asset.creator_wallet` (indien moontlik; vir identiteit met token hek)
+  - `asset.creator_wallet` (indien moontlik; vir token-houer identifikasie)
   - `asset.fingerprints.sha256`
   - `asset.fingerprints.sha512`
 
@@ -290,60 +292,141 @@ Elke inskrywing wat die register betree dra hierdie minimum verifieerbare kern v
 
 - **Bestuur:**
   - `governance.decision`
-  - `governance.veto_threshold`
+  - `governance.review_notes`
 
-Die register kan twee vlakke hê:
+Die register kan twee lae hê:
 - **1)** Mens-leesbare indeks (weblys / soek / filter)
-- **2)** Masjien-leesbare verteenwoordiging (JSON rekords; vir PFE verifikasie)
+- **2)** Masjien-leesbare manifest (JSON-rekords; vir PFE-verifikasie)
 
-**Hierdie "inskrywing" word verifieerbaar deur die ketting Bewys Pak → EvidenceRoot → NotarySeal van PFE. Die register verskaf verifikasie doelwitte, nie "bewerings" nie.**
-
----
-
-### 6.2 40% Gemeenskap Veto (Token-Gated Bestuur)
-
-- **40% Gemeenskap Veto:** Stemming begin een maand voor die toekenning van status; 'n 40% gemeenskap **Token-Gated (geverifieer met Solana)** veto kanselleer die aansoek.
-
-**Stemvloei (voorgestelde duidelike proses):**
-- **Aansoek venster:** Kandidaat projek open "'n PoArt kandidaat registrasie" (kandidaat rekords sigbaar in "wagstatus").
-- **Resensie tydperk:** Gemeenskap ondersoek bewyse vir 30 dae (Bewys Pak + regstreekse uitsending rekords + metadata).
-- **Token-gated verifikasie:** Stemming word gedoen met geverifieerde Solana beursies (bv. eienaarskap van spesifieke token/NFT + beursie handtekening).
-- **Veto reël:** As 40% van stemme **teenkanting (NEE / VETO)** is, word die aansoek verwerp.
-- **Deursigtigheid:** Stemresultate word in die register gestoor as "'n besluitrekord" (datum, verhouding, beeld ID).
+**Die "registrasie" hier word verifieerbaar met PFE se Evidence Pack → EvidenceRoot → NotarySeal-ketting. Die register bied nie 'n "aanspraak" nie, maar 'n verifikasiedoelwit.**
 
 ---
 
-### 6.3 Metadata Sinchronisasie (Ooreenstemming met Fisiese Wêreld)
+### 6.2 PoArt Verified Aansoekproses
 
-- **Metadata Sinchronisasie:** Tegniese data in die register moet 100% ooreenstem met die fisiese entiteit.
+**PoArt Verified-aansoeke word deur İlhanArt Gallery geëvalueer volgens die 5 PoArt-standaarde. Gemeenskapsterugvoer word in ag geneem, maar die finale besluit berus by die kuratorspan. Besluite word deursigtig aangekondig en geregistreer by ilhanart.org/registry.**
 
-**Tegniese definisie van "100% ooreenstemming" (voorgestelde deursigtigheid):**
+#### Aansoekproses
+
+**Aansoek:**
+- Kunstenaar/projek dien PoArt Verified-aansoek in
+- Evidence Pack word voorberei (video-opnames, metadata, lewende uitsendingskakels)
+- Aansoek word aan İlhanArt Gallery gestuur
+
+**Hersiening (30 Dae):**
+- Galeryspan hersien Evidence Pack in detail
+- Alle 5 PoArt-standaarde word nagegaan:
+  1. Live Identity Proof
+  2. Labor & Process Proof
+  3. Aesthetic Value Proof
+  4. Conceptual Novelty
+  5. Non-Algorithmic Agency
+- Onderhoud met kunstenaar (opsioneel)
+
+**Gemeenskapskonsultasie:**
+- Evidence Pack word openlik gedeel tydens die aansoekproses
+- Gemeenskap kan terugvoer gee via ilhanart.org
+- Token-houers (minimum 10,000 $CULTURE) kan veral voorstelle maak
+- **Alle terugvoer word tydens die hersieningsproses in ag geneem**
+- **Die finale besluit berus egter op kuratoriale evaluering**
+
+**Besluit:**
+- Galery keur die aansoek goed of keur dit af
+- Besluitrede word deursigtig aangekondig
+- Indien goedgekeur → PoArt Verified badge
+- Indien afgekeur → Kan ná 6 maande weer aansoek doen
+
+**Deursigtigheid:**
+- Alle aansoeke en besluite word by ilhanart.org/registry geregistreer
+- Besluitrekord word openlik gepubliseer:
+  - Aansoekdatum
+  - Opsomming van hersieningsproses
+  - Besluit (Approved / Rejected)
+  - Besluitrede (kort verduideliking)
+  - Opsomming van gemeenskapsterugvoer (anoniem)
+
+#### Waarom Kuratoriale Besluit?
+
+**Kwaliteitsbeheer:**  
+PoArt Verified-status is 'n kenteken met hoë standaarde. Kuratoriale evaluering waarborg die behoud van hierdie standaarde.
+
+**Voorkoming van Spekulatiewe Manipulasie:**  
+Volledige on-chain bestuur (bv: Realms, DAO-stemming) is tegnies nie moontlik met Pump.fun-tokens nie. Off-chain stemstelsels is ook oop vir walvismanipulasie en gekoördineerde aanvalle. Kuratoriale besluit elimineer hierdie risiko.
+
+**Operasionele Doeltreffendheid:**  
+In plaas van komplekse stemmeganismes, 'n vinnige en duidelike besluitproses. Kunstenaars kry binne 30 dae 'n resultaat.
+
+**Gemeenskapsdeelname:**  
+Gemeenskapsterugvoer word ten volle in ag geneem en beïnvloed die besluitproses. Die finale besluit berus egter by die kuratorspan wat teen manipulasie beskerm word.
+
+**Toekoms:**  
+Wanneer die projek volwasse is (2027+), kan die gemeenskapskonsultasiemeganisme versterk word. Kuratoriale standaardbeskerm bly egter permanent.
+
+---
+
+### 6.3 Token Utility (Token Gebruiksareas)
+
+**Voordele wat aan $CULTURE token-houers verskaf word:**
+
+**1. Prioriteitstoegang tot Galery-geleenthede:**
+- Reg om 1 week per jaar 'n uitstalling by İlhanArt Gallery te hou (reg kan oorgedra word)
+- Afslag op drop paintings
+- Reg op 10% tot 30% afslag op skilderye in die galery
+
+**2. Volle Toegang tot PoArt Register:**
+- Gedetailleerde rekords van alle geverifieerde kunswerke
+- Volledige weergawes van Evidence Packs
+- Forensiese verifikasie-gereedskap
+
+**3. Advisory Voting:**
+- Adviesreg in PoArt Verified-aansoeke
+- Toegang tot gemeenskapsterugvoerkanale
+- Deelname aan bestuursgesprekke
+
+**4. Eksklusiewe Inhoud:**
+- Ateljee agter-die-skerms-inhoud
+- Kunstenaaronderhoude en prosesvideo's
+- Toegang tot tegniese dokumentasie
+
+**Let wel:**  
+Token-houers gee advisory vote (adviesstemmings). Die finale besluit behoort aan die kuratorspan. Hierdie struktuur is gekies om walvismanipulasie en spekulatiewe aanvalle te voorkom. Daar is geen staking-belonings nie omdat ons langtermyn kulturele deelnemers soek, nie korttermyn huurlingkapitaal nie.
+
+---
+
+### 6.4 Metadata Sync (Sinchronisasie met Fisiese Wêreld)
+
+- **Metadata Sync:** Tegniese data in die register moet 100% met die fisiese bate ooreenstem.
+
+**Tegniese definisie van "100% ooreenstemming" (voorgestelde duidelikheid):**
+
 - **Minimum ooreenstemming (verpligtend):**
-  - `asset.fingerprints.sha256/sha512` in die register moet **dieselfde** wees as die hash van die betrokke fêer.
-  - Wanneer `proof.notary_seal` in die register hergenereer word (as Bewys Pak teenwoordig is), moet dit **dieselfde** wees.
-- **Fisiese verwysing ooreenstemming (tipe bewys):**
-  - Fisiese werk + datum/blok verwysing getoon in regstreekse uitsending en dieselfde bewys moet ooreenstem met die Bewys Pak.
-- **Privaatheid nakoming:**
-  - Velde soos IP/ligging in `masked` sigbaarheid word gepubliseer **volgens maskering standaarde**.
+  - `asset.fingerprints.sha256/sha512` in die register en die hash van die lêer in hand moet **presies dieselfde** wees.
+  - `proof.notary_seal` in die register wanneer dit herproduseer word (indien Evidence Pack beskikbaar is) moet **presies dieselfde** wees.
+
+- **Fisiese verwysing ooreenstemming (bewysstipe):**
+  - Bewyse soos fisiese kunswerk + datum/blok verwysing getoon in lewende uitsending, moet konsekwent wees met Evidence Pack.
+
+- **Privaatheidskonformiteit:**
+  - In `masked` sigbaarheid word velde soos IP/ligging **gepubliseer volgens maskeringsstandaard**.
 
 ---
 
-### 6.4 Geskil en Kansellasie
+### 6.5 Betwisting, Hersiening en Herroeping (Dispute & Revocation)
 
-Die register is nie net 'n "goedkeuring" prosedure nie; dit is 'n **lewende resensie proses teen bedrog**.
+Die register is nie net 'n "goedkeuring" meganisme nie; dit is 'n **lewende toesigmeganisme teen vervalsing**.
 
-- Wanneer 'n geskil begin word, kan die inskrywing in **"review" (resensie)** status geplaas word.
-- As bedrog ontdek word, word dit gemerk as `status: void` met rede bygevoeg:
-  - `void_reason` (AI gebruik / diefstal / manipulasie, ens.)
-  - `revoked_at` (kansellasie tyd)
-- Die bron van die kansellasie besluit is duidelik in die register:
-  - gemeenskap stem / gemagtigde komitee / wetenskaplike ondersoek nota (wat van toepassing is)
+- Wanneer 'n betwisting begin word, kan die rekord in **"review"** modus geplaas word.
+- Indien vervalsing opgespoor word, word dit gemerk as `status: void` en rede word bygevoeg:
+  - `void_reason` (AI-gebruik / diefstal / manipulasie ens.)
+  - `revoked_at` (herroepingstyd)
+- Die bron van die herroepingsbesluit is duidelik sigbaar in die register:
+  - kuratoriale hersiening / gemeenskapsbetwisting / forensiese analise-nota (wat ook al van toepassing is)
 
-> **Hierdie afdeling is die register tweeling van die VOID konsep in die "Rooi Vlag Protokol" afdeling.**
+> **Hierdie afdeling is die registerekwivalent van die VOID-konsep in die "Red Flag Protocol"-afdeling.**
 
 ---
 
-### 6.5 Register Inskrywing Voorbeeld (Masjien Leesbaar)
+### 6.6 Voorbeeld Register Rekord (Masjien-leesbaar)
 ```json
 {
   "certificate_id": "POART-AB12CD34",
@@ -376,198 +459,194 @@ Die register is nie net 'n "goedkeuring" prosedure nie; dit is 'n **lewende rese
   },
   "governance": {
     "decision": "approved",
-    "veto_threshold": 0.40
+    "review_notes": "Met all 5 PoArt standards. Community feedback positive."
   }
 }
 ```
-> *Let wel: `asset.fingerprints.sha512` en ander hash waardes is afgekort vir vertoon doeleindes; in werklike implementering word volle lengte hexadecimale stringe gebruik.*
+
+> *Let wel: `asset.fingerprints.sha512` en ander hash-waardes is verkort vir vertoning; in werklike toepassing word vollengte heksadesimale karakterstringe gebruik.*
 
 ---
 
 ## 7) 🔐 TEGNIESE SEËL (NOTARY SEAL)
 
-Onwrikbare seël algoritme gegenereer deur die **PoArt Forensiese Enjin (PFE) v1.0**:
+**Onwrikbare seël-algoritme geproduseer deur PoArt Forensic Engine (PFE) v1.0:**
 
 $$\text{NotarySeal} = \text{SHA-512}\left(\text{EvidenceRoot} \mid \text{SignerSignature} \mid \text{TimeStamp}\right)$$
+# [PoArt] Digitale Notaris & Forensiese Bewys Protokol (Beta v1.0)
+
+> **"Kultuur is groter as kapitaal. Beskerm jou kunswerke vandag, dra dit oor na môre."**
 
 ---
 
-# [PoArt] Digitale Notaris en Wetenskaplike Bewys Protokol (Beta v1.0)
+## Waarom Openbaar?
 
-> **"Kultuur is Groter as Kapitaal. Beskerm jou werke vandag, neem hulle môre."**
-
----
-
-## Hoekom Openbaar?
-
-Werklike sekuriteit kom van deursigtigheid. Danksy ons **Openbare Register** stelsel kan enigiemand oral in die wêreld binne sekondes verifieer dat 'n fêer outentiek is, sonder enige gesag.
+Werklike sekuriteit kom van deursigtigheid. Danksy ons **Public Registry (Openbare Register)** stelsel kan enige iemand enige plek in die wêreld; binne sekondes verifieer of die lêer in hul hand oorspronklik is, sonder om enige gesag te benodig.
 
 ---
 
-## 🧩 Hoekom Veelvuldige "Sigbaarheid Modules"?
+## 🧩 Waarom Veelvuldige "Sigbaarheidsmodules"?
 
-Dit is die mees kritiese deel van die kode (sigbaarheid keuse kieslys). Hierdie keuses stel gebruikers in staat om **"Privaatheid vs. Deursigtigheid"** te balanseer:
+Dit is die mees kritieke deel van die kode (sigbaarheid keuslys). Hierdie opsies laat gebruikers toe om die **"Privaatheid vs. Deursigtigheid"** balans te stel:
 
-### 🔒 Privaat
+### 🔒 Privaat (Private)
 
-- **Scenario:** Kunstenaar wil nog nie die werk publiseer nie, maar wil dit tyd-stempel om te bewys "ek het dit op hierdie datum gemaak".
-- **Wat Doen Die Kode:** Dit skryf data in die databasis maar druk die seël `visibility: "private"`. Later wanneer jy die "Openbare Lees" beleid skryf, kan jy hierdie rekords van die publiek wegsteek met `WHERE visibility = 'public'`.
+- **Scenario:** Die kunstenaar wil die kunswerk nog nie publiseer nie, maar wil 'n datumstempel sit en bewys "Ek het dit op hierdie datum gemaak".
+- **Wat die Kode Doen:** Dit skryf data na die databasis maar sit 'n `visibility: "private"` etiket. In die toekoms wanneer jy "Public Read" beleid skryf, kan jy hierdie rekords van die publiek versteek deur `WHERE visibility = 'public'` te sê.
 
-### 🕶️ Gemaskeer
+### 🕶️ Gemaskerd (Masked)
 
-- **Scenario:** Kunstenaar wil deursigtigheid maar is bevrees sy huis adres (IP ligging) sal gevind word.
-- **Wat Doen Die Kode:** Die `maskIP` en `maskLoc` funksies werk aan die JavaScript kant. Dit verander die IP adres na formaat `88.241.***.***`, ligging na formaat `***/TR`, en stuur die gesensureerde weergawe na die databasis.
-- **Privaatheid Waarheid:** Maskering word gedoen op die blaaier, Supabase sien nie die werklike ligging nie. **Maar:** As derde party APIs soos ipapi.co gebruik word vir ligging data, sien hierdie verskaffers die IP adres tydens die versoek.
-- **Verseëling in Maskeer Modus:** EvidenceRoot en NotarySeal berekening word gedoen met gemaskeerde forensiese data; dus bly verifikasie bepaalbaar.
+- **Scenario:** Die kunstenaar wil deursigtigheid maar is bang sy huisadres (IP-ligging) sal gevind word.
+- **Wat die Kode Doen:** Aan die JavaScript-kant werk `maskIP` en `maskLoc` funksies. Dit verander die IP-adres na die `88.241.***.***` formaat, ligging na die `***/TR` formaat en stuur die gesensureerde weergawe na die databasis.
+- **Privaatheidsnota:** Maskering word in die blaaier gedoen, Supabase sien nie die werklike ligging nie. **Maar:** As derdeparty-API's soos ipapi.co vir liggingsdata gebruik word, sien hierdie verskaffers die IP-adres op die oomblik van versoek.
+- **Verseëling in Masked Mode:** EvidenceRoot en NotarySeal berekening word gedoen met gemaskerde forensiese data; so verifikasie bly deterministies.
 
-### 🌍 Openbaar
+### 🌍 Openbaar (Public)
 
-- **Scenario:** Volle deursigtigheid. Volgens [PoArt] standaarde word waar, wanneer, vanaf watter netwerk die werk geskep is openlik aangekondig.
+- **Scenario:** Volle deursigtigheid. Volgens die [PoArt]-standaard word dit duidelik verklaar waar, wanneer, uit watter netwerk die kunswerk geproduseer is.
 
 ---
 
 ## 💡 Tegnologiese Innovasie
 
-PoArt is nie net 'n fêer oplaai stelsel nie. Dit is 'n **"Wetenskaplike Sorg Ketting"** enjin wat 'n nuwe standaard bring deur drie verskillende tegnologie vlakke in een pot te kombineer.
+PoArt is nie net 'n lêeroplaaaistelsel nie. Dit is 'n **"Forensiese Bewysketting" (Forensic Chain of Custody)** enjin wat drie verskillende tegnologielae in een pot smelt en 'n nuwe standaard bring.
 
-**Die laag wat as "enjin" in hierdie afdeling beskryf word stem ooreen met die kern van die PoArt Forensiese Enjin (PFE) in voorafgaande terme.**
+**Die laag wat in hierdie afdeling as "enjin" beskryf word, stem ooreen met die PoArt Forensic Engine (PFE) kern in vorige terminologie.**
 
-### 1) Kliënt-Kant Hashing (Hoogste Privaatheid)
+### 1) Client-Side Hashing (Maksimum Privaatheid)
 
-Jou kunswerkfêers word nie na die bediener opgelaai nie. Ons blaaier-gebaseerde (kliënt-kant) enjin bereken die hash (digitale opsomming) van die fêer op jou eie rekenaar. Net hierdie vingerafdruk en metadata word na die bediener gestuur.
+Jou kunswerklêers word nooit na die bediener opgelaai nie. Ons blaaier-gebaseerde (Client-side) enjin bereken die hash (digitale opsomming) van die lêer op jou eie rekenaar. Slegs hierdie vingerafdruk en metadata word na die bediener gestuur.
 
-> **Privaatheid Waarheid:** Die werkfêer word nie na die bediener opgelaai nie en word op hierdie manier beskerm. Maar, forensiese data (IP/ligging) word gedeel volgens die gekose sigbaarheid modus (privaat/gemaskeer/openbaar).
+> **Privaatheidsnota:** Die kunswerklêer word nie na die bediener opgelaai nie en word so beskerm. Forensiese data (IP/ligging) word egter gedeel volgens die gekose sigbaarheidsmodus (private/masked/public).
 
-### 2) Forensiese Data Samesmelting (Wetenskaplike Krag)
+### 2) Forensic Data Fusion (Forensiese Krag)
 
-Meer as gewone tydstempel. Die stelsel smelt hierdie data saam in een "Oorsprong Seël":
+Dit is baie meer as 'n gewone tydstempel (Timestamp). Die stelsel kombineer die volgende data in 'n enkele "Genesis Seal":
 
-- **Digitale Opsomming (SHA-512):** Vingerafdruk deur gebruik te maak van die kriptografiese opsomming standaard (SHA-512) wat sal breek as selfs een pixel van die werk verander.
-- **Ligging en Tyd:** Datum met millisekondes akkuraatheid, land, stad en distrik data van die transaksie.
-- **Toestel Identiteit:** Bedryfstelsel, blaaier en toestel tipe (User-Agent analise).
-
----
-
-## 🛡️ Gebruik Gevalle en Voordele
-
-As jy 'n kunstenaar, skrywer of ontwerper is, is dit nie genoeg om te sê "Ek het dit vroeër gemaak" nie; jy moet bewys.
-
-**Die werk wat jy met PoArt seël:**
-
-- **Wiskundige Bewys:** As selfs een pixel van jou fêer verander, weet die stelsel dit. Manipulasie is onmoontlik.
-- **Wetlike Grondslag:** Watter datum, watter stad, vanaf watter toestel die werk verseël is, is opgeskryf.
-- **Onmiddellike Sertifikaat:** Dit genereer 'n spesiale **"Bate Identiteit Sertifikaat"** vir jou binne sekondes, met QR kode en verseël.
+- **Digitale Opsomming (SHA-512):** Digitale vingerafdruk wat sal breek selfs as 'n enkele pixel van die kunswerk verander, geproduseer met behulp van die kriptografiese opsomming (SHA-512) standaard.
+- **Ligging & Tyd:** Datum met millisekondeakkuraatheid van wanneer die transaksie gedoen is, land, stad en distrikdata.
+- **Toestelidentiteit:** Bedryfstelsel, blaaier en toesteltipe (User-Agent analise).
 
 ---
 
-## ⚙️ Stelsel Argitektuur en Tegniese Kenmerke
+## 🛡️ Gebruiksareas en Voordele
 
-Die stelsel is ontwerp op "Serverless" argitektuur, met fokus op hoë werkverrigting en skaalbaarheid.
+As jy 'n kunstenaar, skrywer of ontwerper is, is dit nie genoeg om te sê "Ek het dit vroeër gedoen" nie, jy moet dit bewys.
+
+**'n Kunswerk wat jy met PoArt verseël:**
+
+- **Wiskundige Bewys:** Selfs as 'n enkele pixel van jou lêer verander, weet die stelsel dit. Manipulasie is onmoontlik.
+- **Wetlike Basis:** Dit word geregistreer op watter datum, in watter stad, van watter toestel die kunswerk verseël is.
+- **Onmiddellike Sertifikaat:** Binne sekondes produseer dit 'n **"Bate-identiteitsertifikaat"** uniek aan jou, met QR-kode en verseël.
+
+---
+
+## ⚙️ Stelselargitektuur en Tegniese Kenmerke
+
+Die stelsel is ontwerp op 'n "Serverless" (Bediener-loos) argitektuur, gefokus op hoë prestasie en skaalbaarheid.
 
 | Laag | Tegnologie | Beskrywing |
-|--------|-----------|-------------|
-| **Enkripsie** | SHA-256 & SHA-512 | Twee-vlak kriptografiese opsomming |
-| **Databasis** | Supabase (PostgreSQL) | JSONB data struktuur, RLS beleide |
-| **Forensiese Data** | ipapi.co API | IP/Ligging/Tyd driehoek |
-| **Vertoning** | html2canvas + jsPDF | Kliënt-kant PNG/PDF generasie |
-| **Frontend** | Vanilla JavaScript | Zero raamwerk afhanklikheid |
-| **Sekuriteit** | Kliënt-kant hashing | Fêer gaan nooit na bediener |
+|------|------------|------------|
+| **Kriptografie** | SHA-256 & SHA-512 | Dubbellaag kriptografiese opsomming |
+| **Databasis** | Supabase (PostgreSQL) | JSONB datastruktuur, RLS-beleide |
+| **Forensiese Data** | ipapi.co API | IP/Ligging/Tyd drietalligheid |
+| **Rendering** | html2canvas + jsPDF | Client-side PNG/PDF produksie |
+| **Frontend** | Vanilla JavaScript | Nul raamwerk-afhanklikheid |
+| **Sekuriteit** | Client-side hashing | Lêer word nooit na bediener opgelaai nie |
 
-### Opvallende Kenmerke
+### Uitstaande Kenmerke
 
-| Kenmerk | Beskrywing | By Mededingers? |
-|---------|-------|-----------------|
-| **UI Sleep & Los** | Sleep en los fêer, onmiddellike voorskou | ❌ Nie by meeste |
-| **Veelvuldige Formaat Uitvoer** | PNG, JSON, PDF - een klik | ⚠️ Beperk |
-| **Regtydse Voorskou** | Sertifikaat voorskou direk | ❌ Niks |
-| **Privaatheid Kontroles** | Privaat/Gemaskeer/Openbaar keuses | ❌ Niks |
-| **Kliënt-Kant Hash** | Fêer gaan nooit na bediener | ✅ Net by paar |
-| **Forensiese Metadata** | IP, ligging, toestel, tyd - alles saam | ❌ Verdeel |
-| **QR Verifikasie** | Onmiddellike verifikasie QR kode | ⚠️ Beperk |
-| **Spoed Beperking** | Spam beskerming (RLS + Kliënt) | ❌ Nie by meeste |
-
----
-
-## 🗺️ Padkaart: Toekoms "Sonder Vertroue"
-
-Die huidige weergawe **(Beta v1.0)** is ontwerp om eindgebruikers maksimum spoed, maklike koppelvlak en gratis toegang te gee. Ons uiteindelike visie is egter die oorgang na 'n struktuur waar selfs die databasis bestuurder (ons) nie kan inmeng nie.
-
-### Fase 1: Beta (Leef Nou)
-
-- **Infrastruktuur:** Wolk Databasis (Supabase).
-- **Doel:** Spoed, verwyder UX (Gebruikerservaring) hindernisse en ooreenstemming. Verskaf "wrywinglose" sekuriteit.
-
-### 🚀 Fase 2: (Backend / Rand Werk Vereistes)
-
-Hierdie fase behels die oorgang vanaf "kliënt-kant" algehele werking struktuur na 'n "Bediener Kant Gesag" struktuur met meer sekuriteit en beheerbaar.
-
-| Item | Wat Bring Dit? | Tegnologie Stapel | Prioriteit |
-|-------|---------------|------------|---------|
-| **`INSERT` → Rand Funksie** | Voorkom spam + API sleutel sekuriteit | Supabase Edge (Deno) | 🔴 Hoog |
-| **Beursie Handtekening** | Kriptografiese verifikasie | Solana Wallet Adapter | 🟡 Medium |
-| **IPFS/Arweave Rugsteun** | Gedekentraliseerde onveranderlikheid | IPFS SDK + Pinata | 🟢 Laag |
-| **Kansellasie Prosedure** | Kanselleer vals sertifikate | Opdateer DB Skema | 🔴 Hoog |
-| **Oorsig Loglêer** | Wetenskaplike navraag rekord | Spesiale rekord tabel | 🟡 Medium |
-| **OpenTimestamps** | Bitcoin anker | OTS JavaScript | 🟢 Laag |
-| **DID Integrasie** | Gedekentraliseerde Identiteit | ION/Ceramic | 🟢 Laag |
-
-### Fase 3: Volle Desentralisasie (Langter myn)
-
-| Kenmerk | Doel | ETA |
-|---------|------|-----|
-| **Blockchain Register** | On-chain registrasie Ethereum/Solana | Q4 2026 |
-| **DAO Bestuur** | Gemeenskap bestuur | Q1 2027 |
-| **Multi-Ketting Ondersteuning** | Polygon, Arbitrum, Base | Q2 2027 |
-| **Wetlike Erkenning** | Geldigheid in Turkse howe | 2027-2028 |
-| **API vir Ontwikkelaars** | Openbare API eindpunt | Q3 2026 |
+| Kenmerk | Detail | By Mededingers? |
+|---------|--------|-----------------|
+| **Drag & Drop UI** | Sleep en los lêer, onmiddellike voorskou | ❌ Meeste het nie |
+| **Multi-Format Export** | PNG, JSON, PDF - een klik | ⚠️ Beperk |
+| **Real-Time Preview** | Sertifikaat lewende voorskou | ❌ Nie beskikbaar |
+| **Privacy Controls** | Private/Masked/Public opsies | ❌ Nie beskikbaar |
+| **Client-Side Hashing** | Lêer gaan nooit na bediener nie | ✅ Slegs 'n paar |
+| **Forensic Metadata** | IP, ligging, toestel, tyd - alles saam | ❌ Gefragmenteer |
+| **QR Verification** | Onmiddellike verifikasie QR-kode | ⚠️ Beperk |
+| **Rate Limiting** | Spam-beskerming (RLS + Client) | ❌ Meeste het nie |
 
 ---
 
-## 📊 Mededingende Analise (Opgedateer)
+## 🗺️ Padkaart: "Trustless" Toekoms
 
-PoArt staan in die "Sweet Spot" wat die leemtes van bestaande oplossings vul.
+Die huidige weergawe **(Beta v1.0)** is geoptimaliseer om die eindgebruiker maksimum spoed, maklike koppelvlak en gratis toegang te bied. Ons uiteindelike visie is egter om oor te gaan na 'n struktuur waar selfs die databasisadministrateur (ons) nie kan inmeng nie.
 
-| Kenmerk | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 證 Proof | Trust-Stamp |
-|---------|:---------:|:---------------:|:-----------------:|:------------:|:----:|:-----------:|:--------:|:-----------:|
-| **Koste** | 🆓 Gratis | 🆓 | 💰 Betaald | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
-| **UI Sleep & Los** | ✅ Baie Maklik | ❌ CLI | ⚠️ Medium | ⚠️ Medium | ⚠️ | ⚠️ | ❌ | ⚠️ |
-| **Veelvuldige Formaat Uitvoer** | ✅ PNG/PDF/JSON | ❌ | ⚠️ PDF | ⚠️ PDF | ❌ | ❌ | ❌ | ⚠️ |
-| **Regtydse Voorskou** | ✅ Direk | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| **Privaatheid Kontroles** | ✅ 3 Modusse | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Kliënt-Kant Hash** | ✅ Privaatheid | ✅ | ❌ Oplaai | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
-| **Forensiese Metadata** | ✅ Volledig | ❌ | ❌ | ⚠️ Beperk | ❌ | ⚠️ | ❌ | ⚠️ |
-| **QR Verifikasie** | ✅ Onmiddellik | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
-| **Spoed Beperking** | ✅ RLS+Kliënt | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Blockchain Anker** | 🔄 Padkaart | ✅ Bitcoin | ✅ Ethereum | ✅ Veelvoudig | ✅ | ✅ | ✅ | ✅ |
-| **Oopbron** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
-| **Turkse Ondersteuning** | ✅ Inheems | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
+### Fase 1: Beta v1.0 (Tans Aanlyn)
 
-**Sleutel:**
-- ✅ : Volle ondersteuning / beskikbaar
-- ⚠️ : Beperk / in betaalde planne
-- ❌ : Niks / nie ondersteun
-- 🔄 : In padkaart (word ontwikkel)
-- 🆓 : Heeltemal gratis
-- 💰 : Betaald / registrasie benodig
+**Infrastruktuur:**
+- Cloud Database (Supabase)
+- Off-chain register (PostgreSQL + IPFS-rugsteun)
+- Gallery self-attestation (gesentraliseerd maar deursigtig)
 
-### Mededingers se Leemtes, PoArt se Sterkpunte
+**Token:**
+- Platform: Pump.fun
+- Likiditeit: Raydium (outomaties)
+- Bestuur: Slegs advies (gemeenskapskonsultasie)
 
-| Leemte | Mededingers | PoArt |
-|-------|-------------|-------|
-| **Gebruik Moeilikheid** | CLI, API kennis, beursie benodig | Sleep en los, gereed met 3 klieke |
-| **Koste Hindernis** | Registrasie $50-500/maand | 100% gratis |
-| **Privaatheid** | Fêer opgelaai na bediener | Kliënt-kant, fêer gaan nooit |
-| **Forensiese Data** | Net tydstempel | IP, ligging, toestel, tyd - alles |
-| **Turkse Ondersteuning** | Niks of baie beperk | Inheemse taal ondersteuning |
-| **Oopbron** | Geslote boks | Alle kode oop op GitHub |
+**Doel:**
+- Spoed, verwyder UX-hindernisse
+- Verskaf "wrywingslose" sekuriteit
+- Bou gemeenskap
+
+**Token Utility (v1.0):**
+- Prioriteitstoegang tot galery-geleenthede
+- Sien PoArt Register
+- Advisory voting reg
 
 ---
 
-## 🧬 Protokol Data Struktuur (JSON Schema)
+### 🚀 Fase 2: Decentralized Authority (2026 Q2-Q4)
 
-**Elke [PoArt] sertifikaat het 'n dragbare en verifieerbare JSON identiteitskaart gegenereer volgens die volgende standaard.**
+Hierdie fase dek die oorgang van die stelsel van 'n volledig "Client-Side" werkende struktuur na 'n veiliger en meer gedesentraliseerde struktuur.
 
-> **Let wel:** Hierdie JSON identiteit formaat is die sertifikaat formaat wat aan gebruikers voorgelê word. In register rekords word `registry.asset` gebruik in plaas van `identity.asset_data` (kartering: `identity.asset_data` == `registry.asset`).
+| Kenmerk | Wat Bied Dit? | Tech Stack | ETA |
+|---------|--------------|------------|-----|
+| **Edge Function INSERT** | Spam-blokkering + API Key-sekuriteit | Supabase Edge (Deno) | Q2 2026 |
+| **Wallet Signature** | Gedesentraliseerde identiteit | Solana Wallet Adapter | Q2 2026 |
+| **IPFS/Arweave Backup** | Gedesentraliseerde argief | IPFS SDK + Pinata | Q3 2026 |
+| **Revocation Mechanism** | Vals sertifikaat herroeping | DB Schema Update | Q2 2026 |
+| **Audit Log** | Forensiese navraag rekord | Custom logs tabel | Q3 2026 |
+| **OpenTimestamps** | Bitcoin-anker | OTS JavaScript | Q4 2026 |
+
+**Token Governance (v2.0):**
+- Off-chain stemming (x/web) + beursie handtekening
+- Gemeenskapverteenwoordigers verkiesing (eerste 90 dae)
+- Multi-sig operasies beursie beheer
+- Weighted advisory voting (met walviskapitaal)
+
+**Onveranderlikheid:**
+- Register-rugsteun met IPFS-hashes
+- Bitcoin-tydstempelanker
+- Cross-chain verifikasie voorbereiding
+
+---
+
+### Fase 3: Volle Desentralisasie (2027+)
+
+| Kenmerk | Doelwit | ETA |
+|---------|---------|-----|
+| **On-Chain Register** | Solana on-chain rekord | Q1 2027 |
+| **Enhanced Token Utility** | NFT mint, gevorderde kenmerke | Q1 2027 |
+| **Multi-Chain Support** | Ethereum, Polygon, Base | Q2 2027 |
+| **DID Integration** | Gedesentraliseerde Identiteit | Q3 2027 |
+| **Community Governance** | Versterkte advies stelsel | Q4 2027 |
+| **Legal Recognition** | Geldigheid in Turkse howe | 2027-2028 |
+| **API for Developers** | Openbare API-eindpunt | Q3 2027 |
+
+**Bestuur Evolusie:**
+- v3.0: Hibriede model (kuratoriaal + gemeenskap geweeg)
+- 2028+: Volledige gemeenskapsbestuur (opsioneel)
+- Kuratoriale kwaliteitsbeheer bly altyd
+
+---
+
+## 🧬 Protokol Datastruktuur (JSON Schema)
+
+**Elke [PoArt] sertifikaat het 'n draagbare en verifieerbare JSON-identiteitskaart wat in die volgende standaard geproduseer word.**
+
+> **Let wel:** Hierdie Identity JSON-formaat is die sertifikaatformaat wat aan die gebruiker aangebied word. In registerrekords word `registry.asset` in plaas van `identity.asset_data` gebruik (kartering: `identity.asset_data` == `registry.asset`).
 ```json
 {
   "$schema": "https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json",
@@ -603,24 +682,24 @@ PoArt staan in die "Sweet Spot" wat die leemtes van bestaande oplossings vul.
 
 ---
 
-## 🔬 Tegniese Diepte: Seël Algoritme
+## 🔬 Tegniese Diepte: Seël-algoritme
 
-### Bepaalbare Hash Funksies
+### Deterministiese Hash-funksies
 ```javascript
-// Hulp Funksies: Skakel opsomming om na hexadecimale string
+// Helperfunksies: Skakel digest om na hex-string
 async function digestToHex(algorithm, dataBytes) {
   const hashBuffer = await crypto.subtle.digest(algorithm, dataBytes);
   const hashArray = Array.from(new Uint8Array(hashBuffer));
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
-// Skakel string om na byte array
+// Skakel String om na byte array
 function stringToBytes(text) {
   return new TextEncoder().encode(text);
 }
 
-// Kanonieke forensiese string generasie (v1.0: vaste veld volgorde + UTF-8 + skeier \n)
-// Fase 2 waarheid: Oorgang na kanonieke JSON met RFC 8785 (JCS)
+// Kanonieke forensiese string produksie (v1.0: vaste veldvolgorde + UTF-8 + \n delimiter)
+// Fase 2 nota: Sal oorskakel na kanonieke JSON met RFC 8785 (JCS)
 function canonicalForensics(forensicsData) {
   return JSON.stringify({
     ip_masked: forensicsData.ip_masked,
@@ -631,9 +710,9 @@ function canonicalForensics(forensicsData) {
 }
 ```
 
-### NotarySeal Generasie Proses (Volledig Bepaalbaar)
+### NotarySeal Produksieproses (Volledig Deterministies)
 ```javascript
-// 1. FileHash Berekening (kliënt-kant)
+// 1. FileHash berekening (client-side)
 async function computeFileHash(file) {
   const fileBuffer = await file.arrayBuffer();
   const fileBytes = new Uint8Array(fileBuffer);
@@ -644,9 +723,9 @@ async function computeFileHash(file) {
   return { sha256, sha512 };
 }
 
-// 2. Forensiese data versameling (gebruik van enkele tydstempel)
+// 2. Forensiese data insameling (enkele tydstempel gebruik)
 async function collectForensics(visibilityMode) {
-  const timestamp = new Date().toISOString(); // Enkele tydstempel generasie
+  const timestamp = new Date().toISOString(); // Enkele tydstempel produksie
   const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
   
   let forensics = {
@@ -661,19 +740,19 @@ async function collectForensics(visibilityMode) {
   return { forensics, timestamp };
 }
 
-// 3. EvidenceRoot konstruksie (met kanonieke enkripsie)
+// 3. EvidenceRoot skepping (met kanonieke enkodering)
 async function computeEvidenceRoot(fileHash512, forensicsData) {
   const canonicalPayload = `file_sha512:${fileHash512}\nforensics:${canonicalForensics(forensicsData)}`;
   return await digestToHex('SHA-512', stringToBytes(canonicalPayload));
 }
 
-// 4. NotarySeal generasie (gebruik van dieselfde tydstempel)
+// 4. NotarySeal produksie (dieselfde tydstempel gebruik)
 async function computeNotarySeal(evidenceRoot, signerSignature, timestamp) {
   const sealPayload = `evidence_root:${evidenceRoot}\nsigner_sig:${signerSignature}\ntimestamp:${timestamp}`;
   return await digestToHex('SHA-512', stringToBytes(sealPayload));
 }
 
-// Maskering hulp funksies (IPv4 en IPv6 ondersteuning)
+// Maskering helperfunksies (IPv4 en IPv6 ondersteuning)
 function maskIP(ip) {
   if (!ip) return "***";
   
@@ -690,15 +769,15 @@ function maskIP(ip) {
 }
 ```
 
-### Verifikasie Vloei (Twee Vlakke)
+### Verifikasiestroom (Twee Vlakke)
 
 #### Quick Verify (Vinnige Verifikasie)
 ```javascript
-// Verifieer net fêer hash (vinnige rooi vlag)
+// Kontroleer slegs lêer-hash (vinnige rooi vlag)
 async function verifyQuick(file, certificateId) {
   const { sha512: userFileHash } = await computeFileHash(file);
   
-  // Kry van register
+  // Trek uit register
   const cert = await fetchFromRegistry(certificateId);
   const { sha512: originalHash } = cert.asset.fingerprints;
   
@@ -706,39 +785,39 @@ async function verifyQuick(file, certificateId) {
   if (userFileHash === originalHash) {
     return {
       valid: true,
-      message: "✅ Outentiek - Fêer hash stem ooreen"
+      message: "✅ Oorspronklik - Lêer-hash stem ooreen"
     };
   } else {
     return {
       valid: false,
-      message: "❌ Vals - Fêer is gemanipuleer"
+      message: "❌ Vals - Lêer gemanipuleer"
     };
   }
 }
 ```
 
-#### Full Verify (Volle Verifikasie)
+#### Full Verify (Volledige Verifikasie)
 ```javascript
-// Hergenereer en verifieer EvidenceRoot en NotarySeal
+// Herproduseer EvidenceRoot en NotarySeal en verifieer
 async function verifyFull(file, certificateId) {
   const { sha512: userFileHash } = await computeFileHash(file);
 
-  // Kry van register
+  // Trek uit register
   const cert = await fetchFromRegistry(certificateId);
 
-  // 1) FileHash Verifikasie (vinnige rooi vlag)
+  // 1) FileHash kontrole (vinnige rooi vlag)
   const originalHash = cert.asset.fingerprints.sha512;
   if (userFileHash !== originalHash) {
-    return { valid: false, message: "❌ Vals - Fêer hash stem nie ooreen" };
+    return { valid: false, message: "❌ Vals - Lêer-hash stem nie ooreen nie" };
   }
 
-  // 2) Hergenereer EvidenceRoot (met forensiese data gestoor in register)
+  // 2) Herproduseer EvidenceRoot (met forensics gestoor in register)
   const evidenceRoot = await computeEvidenceRoot(userFileHash, cert.forensics);
   if (evidenceRoot !== cert.proof.evidence_root) {
-    return { valid: false, message: "❌ Stem nie ooreen - EvidenceRoot staan nie" };
+    return { valid: false, message: "❌ Stem nie ooreen nie - EvidenceRoot klop nie" };
   }
 
-  // 3) Hergenereer NotarySeal (met dieselfde tydstempel + signer_sig)
+  // 3) Herproduseer NotarySeal (dieselfde tydstempel + signer_sig)
   const seal = await computeNotarySeal(
     evidenceRoot,
     cert.proof.signer_sig,
@@ -746,94 +825,168 @@ async function verifyFull(file, certificateId) {
   );
 
   if (seal !== cert.proof.notary_seal) {
-    return { valid: false, message: "❌ Stem nie ooreen - NotarySeal staan nie" };
+    return { valid: false, message: "❌ Stem nie ooreen nie - NotarySeal klop nie" };
   }
 
-  // Opsioneel: In Fase 2, verifieer ook signer_sig met attestation_pubkey
+  // Opsioneel: In Fase 2 verifieer ook signer_sig met attestation_pubkey
   // const sigValid = await verifySig(cert.issuer.attestation_pubkey, cert.proof.signer_sig, evidenceRoot);
-  // if (!sigValid) return { valid: false, message: "❌ Ongeldige handtekening" };
+  // if (!sigValid) return { valid: false, message: "❌ Handtekening ongeldig" };
 
-  return { valid: true, message: "✅ Outentiek - Volle verifikasie geslaag" };
+  return { valid: true, message: "✅ Oorspronklik - Full Verify geslaag" };
 }
 ```
 
-> **Kritiese Waarhede:**
-> - **Quick Verify:** Verifieer net fêer hash vir vinnige gebruik.
-> - **Full Verify:** Verifieer alle protokol vlakke (EvidenceRoot + NotarySeal).
-> - Alle hash operasies word bepaalbaar uitgevoer met vaste enkripsie en vaste skeiers.
-> - **Huidige standaard v1.0:** Vaste veld volgorde + UTF-8 enkripsie + skeier `\n`.
-> - **Fase 2 Plan:** Oorgang na kanonieke JSON met RFC 8785 (JCS - JSON Canonicalization Scheme).
-> - In maskeer modus word EvidenceRoot en NotarySeal berekening gedoen met gemaskeerde forensiese data; dus bly verifikasie bepaalbaar.
-> - Enkele tydstempel word gebruik regdeur die proses (forensies + NotarySeal); bepaalbaarheid is gewaarborg.
-> - **Forensiese veld name:** `ip_masked`, `location`, `device`, `timestamp` (kode en register stem presies ooreen).
-> - **Register pad:** `certificate.asset.fingerprints` (stem presies ooreen met verifikasie kode).
-> - **signer_sig in register:** Die `proof.signer_sig` veld is nodig vir Volle Verifikasie.
-> - SignerSignature prosedure sal geaktiveer word in Fase 2 met Solana Wallet Adapter; in v1.0 kan verifikasie met `attestation_pubkey` gedoen word.
+> **Belangrike Notas:**
+> - **Quick Verify:** Kontroleer slegs lêer-hash vir vinnige gebruik.
+> - **Full Verify:** Verifieer alle lae van die protokol (EvidenceRoot + NotarySeal).
+> - Alle hash-bewerkings word deterministies gedoen, met vaste enkodering en delimiters.
+> - **v1.0 kanonikaliseringstandaard:** Vaste veldvolgorde + UTF-8 enkodering + `\n` delimiter.
+> - **Fase 2 plan:** Oorgang na kanonieke JSON met RFC 8785 (JCS - JSON Canonicalization Scheme).
+> - In Masked modus word EvidenceRoot en NotarySeal berekening gedoen met gemaskerde forensics.
+> - Enkele tydstempel word deurgaans in die hele proses (forensics + NotarySeal) gebruik; determinisme is gewaarborg.
+> - **Forensics veldname:** `ip_masked`, `location`, `device`, `timestamp` (kode en register is volledig verenigbaar).
+> - **Register pad:** `certificate.asset.fingerprints` (volledig verenigbaar met verifikasieklode).
+> - **signer_sig in Register:** `proof.signer_sig` veld is nodig vir Full Verify.
+> - SignerSignature-meganisme sal in Fase 2 met Solana Wallet Adapter geaktiveer word; in v1.0 kan verifikasie gedoen word met `attestation_pubkey`.
 
 ---
 
-## 📈 Gebruik Statistieke (Q1 2026 Doelwitte)
+## 📊 Mededinger-analise (Opgedateer)
 
-| Metriek | Teiken | Status |
-|--------|--------|--------|
-| **Totaal Sertifikate** | 1,000 | 🔄 Aan die gang |
-| **Aktiewe Gebruikers** | 500 | 🔄 Aan die gang |
-| **Verifikasie Tel** | 5,000 | 🔄 Aan die gang |
-| **Uptime** | 99.9% | ✅ Leef |
-| **Gemiddelde Reaksie Tyd** | <200ms | ✅ Uitstekend |
+PoArt is geposisioneer op die "Sweet Spot" (ideale punt) wat die tekortkominge van bestaande oplossings aanvul.
+
+| Kenmerk | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 證 Proof | Trust-Stamp |
+|---------|:---------:|:---------------:|:-----------------:|:------------:|:----:|:-----------:|:--------:|:-----------:|
+| **Koste** | 🆓 Gratis | 🆓 | 💰 Betaald | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
+| **Drag & Drop UI** | ✅ Baie Maklik | ❌ CLI | ⚠️ Gemiddeld | ⚠️ Gemiddeld | ⚠️ | ⚠️ | ❌ | ⚠️ |
+| **Multi-Format Export** | ✅ PNG/PDF/JSON | ❌ | ⚠️ PDF | ⚠️ PDF | ❌ | ❌ | ❌ | ⚠️ |
+| **Real-Time Preview** | ✅ Lewendig | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Privacy Controls** | ✅ 3 Modusse | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
+| **Client-Side Hash** | ✅ Privaatheid | ✅ | ❌ Oplaai | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
+| **Forensic Metadata** | ✅ Volledig | ❌ | ❌ | ⚠️ Beperk | ❌ | ⚠️ | ❌ | ⚠️ |
+| **QR Verification** | ✅ Onmiddellik | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
+| **Rate Limiting** | ✅ RLS+Client | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
+| **Blockchain Anchor** | 🔄 Padkaart | ✅ Bitcoin | ✅ Ethereum | ✅ Multi | ✅ | ✅ | ✅ | ✅ |
+| **Open Source** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
+| **Afrikaans Ondersteuning** | ✅ Inheems | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
+
+**Verduideliking:**
+- ✅ : Volle ondersteuning / beskikbaar
+- ⚠️ : Beperk / in betaalde planne
+- ❌ : Nie beskikbaar / nie ondersteun nie
+- 🔄 : Op padkaart (word ontwikkel)
+- 🆓 : Volledig gratis
+- 💰 : Betaald / intekening benodig
+
+### Mededingers se Tekortkominge, PoArt se Sterk Punte
+
+| Tekort | Mededingers | PoArt |
+|--------|-------------|-------|
+| **Gebruiksmoeilikheid** | CLI, API-kennis, beursie benodig | Sleep en los, klaar met 3 klieke |
+| **Koste-hindernis** | $50-500/maand intekening | 100% gratis |
+| **Privaatheid** | Lêer word na bediener opgelaai | Client-side, lêer gaan nooit |
+| **Forensiese Data** | Slegs tydstempel | IP, ligging, toestel, tyd - alles |
+| **Afrikaans Ondersteuning** | Nie beskikbaar of baie beperk | Inheemse taalondersteuning |
+| **Oopbron** | Geslote boks | Alle kode oop op GitHub |
 
 ---
 
-## 🌍 Gemeenskap en Ondersteuning
+## 📈 Gebruikstatistieke (2026 Q1 Doelwitte)
+
+| Metriek | Doelwit | Status |
+|---------|---------|--------|
+| **Totale Sertifikate** | 1,000 | 🔄 Vordering |
+| **Aktiewe Gebruikers** | 500 | 🔄 Vordering |
+| **Verifikasie Getal** | 5,000 | 🔄 Vordering |
+| **Uptime** | 99.9% | ✅ Aktief |
+| **Gem. Responstyd** | <200ms | ✅ Optimaal |
+
+---
+
+## 🌍 Gemeenskap & Ondersteuning
 
 - **Twitter:** [@Galerilhan](https://twitter.com/Galerilhan)
-- **Webwerf:** [ilhanart.org](https://ilhanart.org)
+- **Web:** [ilhanart.org](https://ilhanart.org)
 - **E-pos:** galeri@ilhanart.org
+- **Instagram:** https://www.instagram.com/ilhanartgaleri
 
 ---
 
 ## 🙏 Bydraers
 
-Die PoArt protokol groei voort met bydraes van die oopbron gemeenskap.
+Die PoArt-protokol bly ontwikkel met bydraes van die oopbron-gemeenskap.
 
 **Om by te dra:**
-1. Fork die repository
-2. Skep 'n kenmerk tak (`git checkout -b feature/amazing-feature`)
+1. Fork
+2. Skep 'n feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit (`git commit -m 'Add amazing feature'`)
-4. Stoot (`git push origin feature/amazing-feature`)
-5. Maak 'n Trek Versoek oop
+4. Push (`git push origin feature/amazing-feature`)
+5. Maak 'n Pull Request oop
 
-### 🛠️ Wat Het Ons Nou Nodig? (Hulp Oproep)
+### 🛠️ Wat Het Ons Nou Nodig? (Hulpoproep)
 
-Die PoArt protokol soek ervare ontwikkelaars in die volgende areas vir **Fase 2** ontwikkeling:
+Ons wag op bydraes van ervare ontwikkelaars in die volgende onderwerpe vir **Fase 2** ontwikkelinge van die PoArt Protokol:
 
-* **Supabase Edge Funksies:** Skuif spam beskerming na bediener kant.
-* **Solana Web3.js:** Beursie handtekening integrasie.
-* **IPFS / Arweave:** Stoor en pin diensintegrasie.
+* **Supabase Edge Functions:** Skuif spam-beskerming na bedienerkant.
+* **Solana Web3.js:** Beursie-ondertekening (Wallet Signing) integrasie.
+* **IPFS / Arweave:** Argivering en pinning dienste integrasie.
+* **Community Tools:** X stemming, stemsisteme, analytics dashboard.
 
-> Asseblief begin 'n bespreking in die "Issues" oortjie voor om 'n kenmerk by te voeg.
+> Begin asseblief 'n bespreking in die "Issues"-oortjie voordat jy 'n kenmerk byvoeg.
 
 ---
 
-**[PoArt] Proof of Art Protokol v1.0**  
-*"Kultuur > Kapitaal"*
+## 💬 Finale Notas
+
+### Pump.fun en Werklikheid
+
+Hierdie projek is op Pump.fun begin omdat:
+- ✅ Likiditeit toegang (Raydium outomatiese migrasie)
+- ✅ Bestaande gemeenskap toegang
+- ✅ Lae beginkoste
+
+Maar laat ons dit duidelik maak:
+- **Token prys** is nie 'n aanduiding van artistieke sukses nie
+- **Operasionele begroting** vir token waarde is belangrik (galery, uitstallings, infrastruktuur)
+- **Sukses-metrieke:** Geverifieerde kunswerke + gemeenskapsbetrokkenheid + fisiese besoekers
+
+### Bestuur en Desentralisasie
+
+**v1.0 Werklikheid (2026):**
+- Register: Off-chain (PostgreSQL + IPFS-rugsteun)
+- Attestasie: Gallery self-signed (gesentraliseerd maar deursigtig)
+- Bestuur: Slegs advies (kuratoriale finale besluit)
+- Token utility: Gallery toegang + register + NFT prioriteit
+
+**v2.0+ Visie (2027+):**
+- Register: On-chain (Solana)
+- Handtekeninge: Beursie-gebaseer (gedesentraliseerd)
+- Bestuur: Hibried (gemeenskap advies + kuratoriale kwaliteit)
+- Token utility: Verbeterde kenmerke + gevorderde toegang
+
+Hierdie struktuur verskaf **operasionele doeltreffendheid** en **kwaliteitsbeheer** in die vroeë stadium, terwyl dit die pad oopmaak om **gemeenskapsdeelname** in die toekoms te verhoog.
+
+---
+
+**[PoArt] Proof of Art Protocol v1.0**  
+*"Culture > Capital" // Kultuur is Groter as Kapitaal*
 
 ## 🧾 Lisensie
 
-MIT Lisensie © 2026 Ilhan Art Gallery Initiative
+MIT-lisensie © 2026 İlhan Art Gallery Initiative
 
-Sien [![Lisensie](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) vir volledige terme.
+Sien [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) vir volledige terme.
 
 ---
 
 ## 💬 Erkennings
 
-![Weergawe](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Sekuriteit](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Platform](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![Lisensie](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Security](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Platform](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
 
-**Hierdie projek word ontwikkel deur die [Ilhan Art Gallery] inisiatief, en sy bronkode is openlik beskikbaar vir deursigtigheid.**
+**Hierdie projek is ontwikkel met die [İlhan Art Gallery] inisiatief, en bronkodes is oop vir die publiek ter wille van deursigtigheid.**
 
-**PROTOKOL V1.0 // VERSEËL MET SHA-512**
+**PROTOKOL V1.0 // VERSEËL MET SHA-512.**
 
-*© 2026 İLHAN ART | ALLE REGTE VOORBEHOU VIR KUNSWERKE, BEELDE EN IDEES.*
+*© 2026 İLHAN ART | ALLE REGTE OP KUNSWERKE, BEELDE EN IDEES VOORBEHOU.*
 
 ---
