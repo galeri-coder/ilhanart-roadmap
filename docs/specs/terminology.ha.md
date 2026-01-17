@@ -1,38 +1,38 @@
-# 📚 ƘAMUS NA KALMOMIN FASAHA DA MANUFA
-> **"Fahimtar harshen wannan yarjejeniya yana nufin fahimtar hangen nesanta."**
+# 📚 ƘAMUS NA KALMOMI DA MANUFOFI
+> **"Fahimtar harshen wannan yarjejeniya shine fahimtar manufarta."**
 
-## ⚙️ Injin Bincike na PoArt (PFE) v1.0: Tushen Ababen More Rayuwa
+## ⚙️ Injin Bincike na Shari'a na PoArt (PFE) v1.0: Tushen Tsarin
 
-**Injin Bincike na PoArt (PFE)** shine babban matakin da ke wakiltar tsakiyar dabaru da ayyukan fasaha a bayan yarjejeniyar [PoArt]. Wannan shine "injin bincike" wanda ke ɗaukar bayanan samarwa na ɗanyen aikin fasaha kuma yana mai da su zuwa **shaidun dijital** waɗanda za a iya tabbatarwa kuma ba za a canza su ba.
+**Injin Bincike na Shari'a na PoArt (PFE)**, shine babban Layer wanda ke wakiltar ainihin dabaru da aiki na fasaha na yarjejeniyar [PoArt]. Wannan shi ne "injin shari'a" wanda ke ɗaukar ɗanyen bayanan samar da aikin fasaha kuma ya mayar da shi zuwa **shaidar dijital** wadda za a iya tabbatarwa kuma ba za a iya canzawa ba.
 
 ### 🧩 Me yasa "PoArt Forensic"?
 
-- **PoArt (Tabbacin Fasaha):** Manufar injin ita ce haɗa ƙimar kadara ta dijital ba ga hasashe ba, amma ga **tsarin samarwa mai iya tabbatarwa**.
-- **Forensic (Tabbatarwa ta Kimiyya):**
-  - **Ma'anar Fasaha:** Hanyar algorithm da tsarin rubutawa don tabbatar da cewa bayanan tsarin samarwa (zanen goga, video na lokaci, rajista) ba a dame su ba.
-  - **Matakin Falsafa:** Da'awar canza **lokacin ɗan adam, ƙoƙari, da farashin yanke shawara** zuwa gaskiyar da za a iya auna, a kan samar da "sakamako nan take" na AI.
+- **PoArt (Tabbacin Fasaha):** Manufar injin ita ce haɗa ƙimar kadara ta dijital ba ga hasashe ba; amma ga **tsarin samarwa wanda za a iya tabbatarwa**.
+- **Forensic (Tabbatar da Shari'a):**
+  - **Ma'anar Fasaha:** Hanyar algorithm da sarkar rajista don tabbatar da cewa bayanan da ke da alaƙa da tsarin samarwa (bugun goga, timelapse, log) ba a manne su ba.
+  - **Layer na Falsafa:** Sabanin "sakamakon nan take" na AI; da'awar mai canza samarwar ɗan adam wanda ya ƙunshi **lokaci, ƙoƙari da farashin yanke shawara** zuwa gaskiyar da za a iya aunawa.
 
-> Lura: Haɗin blockchain (misali, Solana) ba tushen PFE ba ne; za a siffanta shi daban a matsayin **Matakin Anka na Sarkar** don dalilan tabbatarwa/rajista.
+> Lura: Haɗin blockchain (misali Solana) ba shi ne tushen PFE ba; za a bayyana shi dabam a matsayin **Chain Anchor Layer** don tabbatarwa/rajista.
 
-### 🛠️ Iyakar Fasaha v1.0
+### 🛠️ Iyakar Fasaha ta v1.0
 
-**Injin Bincike na PoArt (PFE) v1.0** an gina shi akan **ginshiƙai 3 masu mahimmanci** masu zuwa maimakon ƙirar kuɗi masu rikitarwa:
+**Injin Bincike na Shari'a na PoArt (PFE) v1.0** an gina shi akan waɗannan **ginshiƙai 3 na asali** maimakon ƙirar kuɗi mai rikitarwa:
 
-1. **Hashing & Sealing (Hatimewa):**  
-   PFE yana sarrafa dukkan abubuwa a cikin Kunshin Shaida (fayil ɗin aikin, bidiyo, JSON/rajista, sa hannu, da sauransu) ta hanyar da za a iya tantancewa kuma yana haifar da ƙimar **NotarySeal** ta musamman.
+1. **Hashing & Sealing (Rufe da Hatimi):**  
+   PFE tana sarrafa dukkan abubuwan da ke cikin Fakitin Shaida (fayil ɗin aikin, bidiyo, JSON/log, sa hannu da sauransu) ta hanyar ƙayyadaddun ƙayyadaddun ƙayyadaddun ƙayyadaddun ƙayyadaddun kuma ta samar da ƙimar **NotarySeal** ta musamman.
 
-   **Mahimman ra'ayoyi (v1.0):**
-   - **FileHash (tambarin yatsa na aikin):** Hash da aka samar daga bytes na fayil ɗin aikin.
-   - **EvidenceRoot (tushen kunshin shaida):** Taƙaitaccen tushe wanda ke wakiltar amincin Kunshin Shaida (tushen Merkle ko hash na bayani na asali).
-   - **NotarySeal (hatimi na ƙarshe / fitarwa ta PFE):** Hatimi na ƙarshe da aka samar daga haɗin EvidenceRoot + lokaci + sa hannu.
+   **Manufofin asali (v1.0):**
+   - **FileHash (sawun yatsa na aikin):** Hash da aka samar daga bytes na fayil ɗin aikin.
+   - **EvidenceRoot (tushen fakitin shaida):** Taƙaitaccen tushe wanda ke wakiltar ingancin Fakitin Shaida (Merkle root ko canonical manifest hash).
+   - **NotarySeal (hatimi na ƙarshe / Sakamakon PFE):** Hatimin ƙarshe da aka samar daga haɗuwa da EvidenceRoot + lokaci + sa hannu.
 
-   **Dabarun (masu ganin sauƙi ga masu zuba jari):**
+   **Dabaru (bayyananne ga masu saka hannun jari):**
    
    $$\text{FileHash}_{512} = \text{SHA-512}(\text{ArtworkFileBytes})$$
    
    $$\text{NotarySeal} = \text{SHA-512}(\text{EvidenceRoot} \mid \text{SignerSignature} \mid \text{TimeStamp})$$
    
-   **Ma'anar Kaya na Asali (v1.0):**
+   **Ma'anoni na Canonical Payload (v1.0):**
    
    - **EvidenceRootPayload:**
 ```
@@ -40,232 +40,229 @@
 ```
    
    - **NotarySealPayload:**
-```
-   evidence_root:{evidence_root}\nsigner_sig:{signer_sig}\ntimestamp:{timestamp}
-```
-   
-   > Lura: Ƙimar da ake kiranta a matsayin fitarwar PFE ita ce **NotarySeal**. Za a kunna tsarin **SignerSignature** a Mataki na 2 (tare da Solana Wallet Adapter); a cikin v1.0 na yanzu, ana amfani da sa hannun shaidar tsarin. Ana buga maɓallin jama'a na shaidar a cikin rajista a ƙarƙashin filin `issuer.attestation_pubkey`.
+   > Lura: Ƙimar da ake nufi a matsayin sakamakon PFE ita ce **NotarySeal**. Hanyar **SignerSignature** za a kunna a Phase 2 (tare da Solana Wallet Adapter); a cikin v1.0 na yanzu, ana amfani da sa hannun tabbatar da tsarin. Ana buga makullin jama'a na tabbatarwa a cikin rajista a filin `issuer.attestation_pubkey`.
 
-2. **Indexing (Ajiya):**  
-   Yana rubuta wace jakata, a wane kwanan wata, ta ƙaddamar da **Tabbacin Aiki** don wane aiki zuwa matakin rajista mai bayyana kuma za a iya tambaya.  
-   *(Wannan matakin na iya zama bayanan adana; an siffanta haɗin sarkar daban a matsayin "Matakin Anka na Sarkar".)*
+2. **Indexing (Adanawa):**  
+   Yana shigar da bayanan wane jakar kuɗi, wanne kwanan wata, don wane aikin ya gabatar da **Tabbacin Aiki (Labor Proof)**; zuwa Layer na rajista mai bayyane kuma mai iya tambaya.  
+   *(Wannan Layer na iya zama bayanai; haɗin sarkar yana bayyana dabam a matsayin "Chain Anchor Layer".)*
 
 3. **Verification (Tabbatarwa):**  
-   Lokacin da aka yi tambaya game da sahihancin aikin, PFE yana sake sarrafa shaidun ɗanyen; yana gwada a lissafi ko ƙimar **EvidenceRoot / NotarySeal** da aka ƙididdige suna daidai da bayanan ajiya.
+   Lokacin da aka tambayi asalin aikin, PFE yana sake sarrafa shaidun ɗanye; yana gwada tare da tabbacin lissafi ko ƙimar da aka ƙididdige ta **EvidenceRoot / NotarySeal** ta yi daidai da rajista a cikin adana.
 
 ---
 
-### 🧮 Ka'idar Daraja ta PoArt (The Value Theorem)
+### 🧮 Ka'idar Ƙimar PoArt (The Value Theorem)
 
-Yarjejeniyar [PoArt] tana haɗa ƙimar ($V$) kadara ta dijital ba ga fahimtar kasuwa ta zahiri ba, amma ga **gaskiyar zahiri ta tsarin samarwa**.
+Yarjejeniyar [PoArt] tana haɗa ƙimar kadara ta dijital ($V$) ba ga fahimtar kasuwa ta mutum ba; amma ga **gaskiyar zahiri ta tsarin samarwa**.
 
-Hankali na Wucin Gadi (AI) yana lalata tsarin ta hanyar ba da sakamako nan take ($t \to 0$). [PoArt], duk da haka, yana ɗaukar ƙimar a matsayin tarin abubuwan **lokaci, aiki, da niyya**.
+Hankali na Wucin Gadi (AI) yana lalata tsari ta ba da sakamako nan take ($t \to 0$). [PoArt] yana ɗaukar ƙima a matsayin tarawa na abubuwan **lokaci, ƙoƙari da nufin**.
 
 $$V_{\text{PoArt}} = \int_{t_{\text{start}}}^{t_{\text{end}}} \left(P_{\text{labor}}(t) \cdot I_{\text{agency}}(t)\right) dt + U_{\text{irreversible}}$$
 
-#### Ma'anar Ma'auni
+#### Ma'anar Masu Canzawa
 
-- **$\int dt$ (Tarin Tsari):**  
-  Daraja ba "sakamako" na nan take ba ne; **tsari** ne da aka tara tsakanin $t_{\text{start}}$ da $t_{\text{end}}$. Yayin da tsawon lokaci yake raguwa (samarwa ta AI), sakamakon haɗewa yana kusantar 0.
+- **$\int dt$ (Tarawa na Tsari):**  
+  Ƙima ba "sakamako" na nan take ba ne; **tsari** ne wanda aka tara tsakanin $t_{\text{start}}$ da $t_{\text{end}}$. Yayin da lokaci ke raguwa (samarwar AI), sakamakon integral yana kusantar sifili.
 
 - **$P_{\text{labor}}(t)$ (Ƙarfin Aiki na Nan Take):**  
-  Yana wakiltar ƙarfin ƙoƙarin hankali da na jiki da aka kashe a lokacin samarwa. Yayin da ƙoƙarin da za a iya tabbatarwa yake ƙaruwa, integrand yana girma.  
-  > Lura: Za a iya daidaita wannan kalmar a aikace ta hanyar "alamun aiki mai iya aunawa/tabbatarwa".
+  Yana wakiltar ƙarfin ƙoƙarin tunani da jiki da aka kashe a lokacin samarwa. Yayin da ƙoƙarin da za a iya tabbatarwa ke ƙaruwa, integrand yana girma.  
+  > Lura: Ana iya daidaita wannan kalma a aikace ta hanyar "siginar aiki da za a iya auna/tabbatarwa".
 
-- **$I_{\text{agency}}(t)$ (Ma'aunin Niyya):**  
+- **$I_{\text{agency}}(t)$ (Ma'aunin Nufin):**  
   Ikon mai samarwa na ɗaukar haɗari da yanke shawara. Yana ɗaukar ƙima tsakanin $0$ da $1$.
   - **AI ($I \approx 0$):** Yana aiwatar da umarni, ba ya ɗaukar haɗari, ba ya biyan farashi.
-  - **Mutum ($I \to 1$):** Yana canza yanke shawara, yana shakka, yana ɗaukar haɗari.
+  - **Dan Adam ($I \to 1$):** Yana canza shawara, yana shakka, yana ɗaukar haɗari.
 
-- **$U_{\text{irreversible}}$ (Keɓancewar da Ba za a Iya Juyawa ba):**  
-  Yayin da warwarewa (`Ctrl+Z`) yana yiwuwa a cikin samarwa ta dijital, a cikin samarwa ta zahiri (fentin da aka shafa a kan zane, marmara da aka sassaka, motsin hannu a yaɗuwar kai tsaye) babu hanyar komawa. Wannan **rashin juyawa** kalma ce ta ƙari da ke haifar da "keɓantacce" (halayen da ba za a iya musanya ba) a cikin aikin.
+- **$U_{\text{irreversible}}$ (Keɓantaccen da ba za a iya dawo da shi ba):**  
+  Yayin da a samarwa ta dijital komawa (`Ctrl+Z`) mai yiwuwa ne; a samarwa ta zahiri (fenti da aka shafa akan zane, dutse da aka sassaƙa, yanayi a watsa kai tsaye) babu komawa. Wannan **rashin dawo da baya** kalma ce ta ƙari wacce ke haifar da "keɓance" (halayen non-fungible) a cikin aikin.
 
-### 🔎 Nazarin Lamari: AI "Sakamako na Nan Take" da Mutum "Tsarin da aka Tabbatar"
+### 🔎 Nazarin Sharadi: AI "Sakamakon Nan Take" da Dan Adam "Tsarin da aka Tabbatar"
 
-Yanayin da ke zuwa yana nuna yadda **Ka'idar Daraja ta PoArt** ke aiki a aikace kuma me yasa samarwa ta AI ke samun maki ƙanƙanta a ma'aunin [PoArt].
+Yanayin da ke gaba yana nuna yadda **Ka'idar Ƙimar PoArt** ke aiki a aikace da kuma dalilin da ya sa samarwar AI ke samun maki kaɗan a cikin ma'aunin [PoArt].
 
-#### Yanayi A: Samarwar Gani na Daƙiƙa 10 da AI
+#### Sharadi A: Samar da Hoto ta AI a cikin Daƙiƙa 10
 
-- **Tsawon lokaci ($\Delta t$):** $10$ daƙiƙa (tsari kaɗan)
-- **Ƙarfin Aiki ($P_{\text{labor}}$):** $1$ naúrar (kawai rubuta umarni)
-- **Ma'aunin Niyya ($I_{\text{agency}}$):** $0.01$ (babu haɗari, babu farashi)
-- **Rashin Juyawa ($U_{\text{irreversible}}$):** $0$ (ana iya juyawa / ana iya kwafewa)
+- **Lokaci ($\Delta t$):** Daƙiƙa $10$ (tsarin kusan sifili)
+- **Ƙarfin Aiki ($P_{\text{labor}}$):** Raka'a $1$ (rubuta umarni kawai)
+- **Ma'aunin Nufin ($I_{\text{agency}}$):** $0.01$ (babu haɗari, babu farashi)
+- **Rashin Dawo da Baya ($U_{\text{irreversible}}$):** $0$ (ana iya dawo da shi / ana iya kwafi)
 
 **Sakamako:**
 
 $$V_{\text{AI}} \approx \int_{0}^{10} (1 \cdot 0.01) \, dt + 0 = 0.1$$
 
-> **Sharhi:** Ko da sakamakon ya yi kyau; ƙimar [PoArt] tana kusantar $0$ saboda ba a rayar da kowane tsari kuma ba a shigar da niyya/haɗari ba.
+> **Sharhi:** Ko da yake sakamakon cikakke ne; saboda ba a yi tsarin ba kuma ba ya ɗauke haɗari/nufin, ƙimar [PoArt] tana kusantar sifili.
 
-#### Yanayi B: Samarwar Zahiri na Awa 6 a Yaɗuwar Kai Tsaye
+#### Sharadi B: Samarwa ta Zahiri na Sa'o'i 6 a Watsa Kai Tsaye
 
-- **Tsawon lokaci ($\Delta t$):** $6$ awa ($21{,}600$ daƙiƙa)
-- **Ƙarfin Aiki ($P_{\text{labor}}$):** $0.5$ naúrar (ci gaba da ƙoƙarin jiki da na hankali)
-- **Ma'aunin Niyya ($I_{\text{agency}}$):** $0.9$ (canza yanke shawara, ɗaukar haɗari, zaɓin da ba za a iya juyawa ba)
-- **Rashin Juyawa ($U_{\text{irreversible}}$):** $>0$ (alamun zahiri ba za a iya warwarewa ba)
+- **Lokaci ($\Delta t$):** Sa'o'i $6$ (daƙiƙa $21{,}600$)
+- **Ƙarfin Aiki ($P_{\text{labor}}$):** Raka'a $0.5$ (ci gaba da ƙoƙarin zahiri da tunani)
+- **Ma'aunin Nufin ($I_{\text{agency}}$):** $0.9$ (canza shawara, ɗaukar haɗari, zaɓuɓɓuka marasa dawo da baya)
+- **Rashin Dawo da Baya ($U_{\text{irreversible}}$):** $>0$ (alamun zahiri ba za a iya dawo da su ba)
 
 **Sakamako:**
 
 $$V_{\text{Human}} \approx \int_{0}^{21600} (0.5 \cdot 0.9) \, dt + U_{\text{irreversible}} \approx 9720 + U_{\text{irreversible}}$$
 
-> **Sharhi:** Yayin da tsari yake tsawaita kuma niyya (haɗari) yana ƙaruwa, daraja tana tarawa. Kalmar $U_{\text{irreversible}}$ gudummawa ce ta ƙari da ke haifar da "keɓantacce" (halayen da ba za a iya musanya ba) a cikin aikin.
+> **Sharhi:** Yayin da tsari ke tsawaitawa kuma nufin (haɗari) ke ƙaruwa, ƙimar tana ƙaruwa da tarawa. Kalmar $U_{\text{irreversible}}$ ita ce ƙari wanda ke haifar da "keɓance" (halayen non-fungible) a cikin aikin.
 
 ---
 
-### ✅ Ƙarshe: Darajar da aka Haɗa da Shaida (Proof-Bound Value)
+### ✅ Ƙarshe: Kulle Ƙimar da Tabbaci (Proof-Bound Value)
 
-Wannan ka'idar tana fitar da da'awar darajar [PoArt] daga kasancewa "so" ko "labarin kasuwa" kuma tana haɗa shi da **gaskiyar samarwa mai iya tabbatarwa**.
+Wannan ka'idar tana fitar da da'awar ƙimar [PoArt] daga "abin so" ko "labarin kasuwa" kuma tana haɗa shi zuwa **gaskiyar samarwa da za a iya tabbatarwa**.
 
-1. **Babu Tsari, Babu Daraja:**  
-  AI yana lalata tsarin da sakamakon nan take ($t \to 0$). Yayin da tagar tsari ke kunkuntar, sakamakon haɗewa dole ne ya ragu:
+1. **Ba Tare da Tsari Babu Ƙima:**  
+   AI yana lalata tsari a cikin sakamakon nan take ($t \to 0$). Yayin da tagar tsari ke raguwa, sakamakon integral yana raguwa da wajibi na lissafi:
    
-   $$\Delta t \downarrow \ Rightarrow\ \int \left(P(t) \cdot I(t)\right) dt \to 0$$
+   $$\Delta t \downarrow \ \Rightarrow\ \int \left(P(t) \cdot I(t)\right) dt \to 0$$
 
-2. **Niyya da Haɗari sune Masu Haɓakawa:**  
-   [PoArt] ba kawai yana auna "lokacin da aka kashe ba" har ma da matakin ainihin yanke shawara, haɗari, da farashi a cikin wannan lokacin. Samarwar da ba ta ɗaukar haɗari ba (AI) tana da ƙimar ƙanƙanta:
+2. **Nufin da Haɗari Su ne Masu Ƙarawa:**  
+   [PoArt] ba yana auna "lokacin da aka kashe" kawai ba; amma kuma ainihin Layer na yanke shawara, haɗari da farashi a cikin lokacin. Ƙimar samarwar da ba ta ɗaukar haɗari (AI) tana da ƙasa:
    
    $$V_{\text{PoArt}} \propto \int \left(P_{\text{labor}}(t) \cdot I_{\text{agency}}(t)\right) dt$$
 
-3. **Keɓantacce Shaida ce ta Zahiri, Ba Tallace-tallace Ba:**  
-   Alamun da ba za a iya juyawa a cikin samarwa ta zahiri (bugun zane, guntun marmara) suna waje da dabarun `Ctrl+Z` na dijital. Wannan rashin juyawa ($U_{\text{irreversible}}$) yana keɓanta aikin ta hanyar ontology.
+3. **Keɓance, Ba Tallan Ba Amma Tabbacin Zahiri:**  
+   Alamun da ba za a iya dawo da su a samarwa ta zahiri (bugun zane, fashewar dutse), suna waje da dabaru na `Ctrl+Z` na dijital. Wannan **rashin dawo da baya** ($U_{\text{irreversible}}$), yana sanya aikin ya zama na musamman a ilimin halittar duniya.
 
-> **🔐 TAKAITACCEN BAYANI:** Ko da yake ka'idar daraja na iya zama marar tabbas a matsayin ma'auni (ko da yake abin da ya dace da shi a duniyar gaske ba za a iya auna shi gaba ɗaya ba), manufar wannan dabara ita ce nuna tsarin da alkiblar ma'auni. A zamanin AI, abin da yake da wuyar samu ba "hoto" ba ne amma **aiki mai iya tabbatarwa, lokaci, da niyya.** [PoArt] yana auna wannan karancin kuma yana rubuta shi da **Kunshin Shaida**.
+> **🔐 TAKAITACCEN:** Ko da yake ka'idar ƙima tana ganin kamar ba ta da tabbas a matsayin awo (ko da yake a rayuwa ba za a iya auna daidai 100% ba) manufar wannan dabaru ita ce nuna tsarin da alkiblar masu canzawa. Abin da yake da wuya a zamanin AI ba "hoto" ba ne; **ƙoƙari, lokaci da nufin da za a iya tabbatarwa.** [PoArt] yana auna wannan ƙaranci kuma yana tabbatar da shi tare da **Fakitin Shaida**.
 
-### 🏛️ Mahimmancin Manufar "Injin"
+### 🏛️ Muhimmancin Manufar "Injin" (Engine)
 
-Alamun da suka fito daga Pump.fun ko dandamali makamantan galibi **"tikiti na shiga"** ne kawai. **Injin Bincike na PoArt (PFE)**, duk da haka, shine **matakin dabaru na tsarin mulki** wanda ke ƙayyade wane hakki wannan tikiti ke karewa, yadda za a rubuta aiki kuma yadda za a dawwama da fasaha/kimiyya/fasaha.
+Alamun da suka fito daga dandamali kamar Pump.fun, galibi suna kasancewa kawai **"tikitin shiga"**. **Injin Bincike na Shari'a na PoArt (PFE)** shi ne **Layer na dabaru na tsarin mulki** wanda ke ƙayyade waɗanne haƙƙoƙi tikitin ke kiyayewa, yadda ake rikodin aiki da kuma yadda fasaha/kimiyya/fasaha ke dawwama.
 
-> **Lura:** Dalilin da muka ƙaddamar da wannan aikin a Pumpfun shi ne cewa ba mu da isasshen kuɗi ko masu bi da yawa. Amfani da bayanan da ake da su ya kasance dabarun dabara mai kyau, ko da ba na mafi kyawun inganci ba. Ba tare da la'akari da kasafin kuɗi da albarkatu ba, ma'anar dabarun wannan injin a kan GitHub yana tabbatar da cewa aikin ba kawai hasashen kuɗi ba ne, amma hangen nesa na dogon lokaci na **kayan aikin software** da **ɗakin karatu na ƙasa na dijital**.
-
----
-
-## 🎨 YARJEJENIYAR [PoArt] NA TABBACIN AIKI (Proof of Art Protocol v1.0)
-
-> **"Mai Fasaha na Gaske, Samarwa ta Gaske, Daraja ta Gaske."**
-
-Wannan yarjejeniya tsarin kariya ne na **halitta da hankali** wanda aka ƙera a kan maƙaryata marasa suna waɗanda ke kewaye da yanayin crypto, hotunan AI da aka samar kwa mintuna 5, da al'adar "Pump & Dump".
+> **Lura:** Dalilin da ya sa muka fara wannan aikin a Pump.fun shine saboda ba mu da isasshen kuɗi da isasshen masu bi. Amfani da bayanan da ake da su a matsayin dabaru ba shi ne mafi inganci ba amma za mu iya cewa ya kasance matakin da ya dace. Bayyana dabaru na wannan injin a GitHub, ba tare da dogara ga kasafin kuɗi da kayan aiki ba, yana tabbatar da cewa aikin ba hasashe na kuɗi kawai ba ne, amma hangen nesa na dogon lokaci na **tsarin software** da **ɗakin karatu na ƙasa na dijital**.
 
 ---
 
-## a) Menene [PoArt]? (Ma'anar Falsafa da Fasaha)
+## 🎨 YARJEJENIYAR TABBACIN AIKI NA [PoArt] (Proof of Art Protocol v1.0)
 
-**Tabbacin Fasaha [PoArt];** ma'auni ne na tabbatarwa na hukuma wanda ke tabbatar da cewa ƙimar bayan kadara akan blockchain ba ta dogara ne akan hasashe ba, amma akan **aikin ɗan adam**, **lokaci**, da **makamashi na zahiri** waɗanda za a iya tabbatarwa.
+> **"Mai Fasaha na Gaske, Samarwa ta Gaske, Ƙima ta Gaske."**
 
-Kamar yadda Bitcoin ke samar da daraja da *"Wutar Lantarki da Ƙarfin Processor"* **(Tabbacin Aiki)**, ayyukan da suka dace da [PoArt] suna samar da daraja da *"Ƙwarewar Fasaha da Lokacin Ɗan adam"*.
-
-Yana kawar da haɗarin *"Mai haɓakawa ya sayar, aikin ya ƙare"* akan dandamali na Pump.fun da DEX; saboda anan daraja ba ta cikin lambar ba ce, amma a cikin **ci gaba da samarwa**.
-
-> **[PoArt] ba ya gaya wa mahalarta "Ka yarda da mu"; yana cewa "Ga shaida, gani da idanunka, tabbatar da lissafinka."**
+Wannan yarjejeniya; **tsarin kariya na halittar halitta da hankali** ne da aka ƙera don mayar da martani ga masu zamba marasa sananniya waɗanda ke kewaye da yanayin crypto, hotuna na hankali na wucin gadi da aka samar a cikin mintuna 5 da al'adar "Pump & Dump" (Ƙara da Zubar).
 
 ---
 
-## b) Ma'aunin Ginshiƙai 5 na [PoArt] (Ginshiƙai 5 na Gaskiya)
+## a) [PoArt] Menene? (Ma'ana ta Falsafa da Fasaha)
 
-Waɗannan abubuwa 5 sune masu tacewa waɗanda ba za a iya sarrafa su ba waɗanda aikin dole ne ya wuce don samun hatimin [PoArt].
+**Tabbacin Fasaha [PoArt];** ma'auni ne na tabbatarwa na hukuma wanda ke tabbatar da cewa ƙimar da ke bayan kadara akan blockchain tana dogara akan **aikin ɗan adam** da za a iya tabbatarwa, **lokaci** da **kuzarin zahiri**, ba hasashe ba.
 
-### 1) Tabbacin Ainihin Kai Tsaye
+Kamar yadda Bitcoin ke samar da ƙima ta *"Wutar Lantarki da Ƙarfin Processor"* **(Tabbacin Aiki)**; ayyukan da suka dace da [PoArt] suma suna samar da ƙima ta *"Baiwar Gwaninta da Lokacin Dan Adam da aka Kashe"*. Suna "Stake" lokaci.
 
-- **Matsala:** Duniyar crypto cike take da waɗanda suka kafa marasa suna (Masu Haɓakawa) waɗanda ba a san su ba waɗanda ke tara kuɗi suna barin ayyuka.
-- **Maganin [PoArt]:** Mai samarwa ba kawai yana tabbatar da takardar shedar ba, amma **kasancewa a lokacin samarwa**. Wannan ya haɗa da zaman yaɗuwa kai tsaye inda ake mu'amala da al'umma kuma ana cika takamaiman buƙatun nan take, ba bidiyon da aka riga aka yi rikodin ba.  
-  (Misali, *"Rubuta ranar yau da lambar toshe na yanzu a kusurwar dama na zane"*)
-- **Taken:** *"Bots na iya yin zane amma bots ba sa fitar da gumi kuma ba za su iya yin tsarin gaggawa ba."*
+Yana kawar da haɗarin *"Mai Tsara Shirye-shirye (Dev) ya sayar, aikin ya ƙare"* a cikin dandamali na Pump.fun da DEX; domin a nan ƙima ba ta cikin lambar ba ce, tana cikin **ci gaba da samarwa**.
 
-### 2) Tabbacin Aiki da Tsari
+> **[PoArt] ba ya ce wa mahalarta "Ku amince da mu"; yana cewa "Ga shaidun, ga shi da idanunka, tabbatar da lissafinka."**
 
-- **Matsala:** Hotunan AI (Hankali na Wucin Gadi) da aka samar kwa daƙiƙa 2 suna samun kulawar "jpeg" iri ɗaya kamar zanen mai a cikin watanni 2 a duniyar dijital.
-- **Maganin [PoArt]:** Ana rubuta tsarin "ciki da haihuwa" na aikin. Ana rubuta matakan zane, yadudduka na fenti, awanni da aka tara da aka kashe da tsarin zahiri da mai fasaha ya samu yayin ƙirƙirar aikin. Wannan yana ƙara **"Farashin Lokaci"** ga alamar. Yawan wahalar samar da kadara, ƙarfin darajar ta.
+---
 
-### 3) Tabbacin Darajar Kyawawan Abubuwa
+## b) Ma'auni na Ginshiƙai 5 na [PoArt] (Ginshiƙai 5 na Gaskiya)
 
-- **Matsala:** Al'adar "Meme" mai mai da hankali kan barkwanci na nan take yayin watsi da kyawawan abubuwa da zurfin fasaha, wanda ke haifar da ayyukan "Hype" masu gajeren lokaci.
-- **Maganin [PoArt]:** Aikin dole ne ya kasance da ƙa'idodin fasaha na ilimi, ka'idar launuka, ƙa'idodin tsari, da ilimin kayan aiki (Impasto, Texture, da sauransu). Abun ciki bai kamata ya sa ka yi dariya kawai ba; ya kamata ya motsa sha'awar masu kallo kuma ya kasance da **ƙimar tattarawa**.
+Waɗannan abubuwa 5 ne masu tacewa marasa iya lalacewa waɗanda aikin dole ne ya wuce don samun hatimin [PoArt].
 
-### 4) Sabon Ra'ayi
+### 1) Tabbacin Suna na Kai Tsaye (Live Identity Proof)
 
-- **Matsala:** Dubbai na tsabar kare/cat kwafi marasa ƙirƙira.
-- **Maganin [PoArt]:** Aikin dole ne ya gina sabuwar gada mai haɗa fasaha, kimiyya, falsafa ko fasaha a cikin tsari mai ma'ana.  
-  (Misali, Haɗa hoton gargajiya na David da bayanan kasuwar crypto; sarrafa ra'ayin cewa fahimtar ɗan adam "tana zama dutse" ta haka kuma tushe shi da tushen kimiyya.)  
-  Aikin bai kamata ya zama biki na gani kawai ba amma kuma ƙalubale na hankali wanda ke motsa tunani game da **Kimiyya, Falsafa ko Fasaha**.
+- **Matsala:** Duniyar crypto tana cike da masu ƙaddamarwa marasa sananniya (Dev) waɗanda ke tattara kuɗi kuma suka bar ayyuka.
+- **Maganin [PoArt]:** Mai samarwa yana tabbatar da ba kawai katin shaida ba, amma **kasancewarsa a lokacin samarwa**. Wannan ya haɗa da zaman watsa kai tsaye inda ake hulɗa da al'umma kuma ana cika buƙatun musamman na nan take, ba bidiyo da aka riga aka yi rikodin ba.  
+  (Misali: *"Rubuta kwanan yau da lambar shinge na yanzu a kusurwar dama na zane"*)
+- **Taken:** *"Robots na iya zana amma robots ba su gumi kuma ba su yi improvisation."*
+
+### 2) Tabbacin Aiki da Tsari (Labor & Process Proof)
+
+- **Matsala:** Hotunan AI (Hankali na Wucin Gadi) da aka samar a cikin daƙiƙa 2 da zanen mai mai wanda aka yi a cikin watanni 2 ana ɗaukar su a matsayin "jpeg" iri ɗaya a duniyar dijital.
+- **Maganin [PoArt]:** Tsarin "ciki da haihuwa" na aikin ana rikodin shi. Matakan sketch, yadudduka na fenti, sa'o'in da aka tara da aka kashe da kuma tsarin zahiri wanda mai fasaha ya fuskanta yayin ƙirƙirar aikin ana rubuta su. Wannan yana ƙara **"Farashin Lokaci" (Time Cost)** ga alama. Yayin da samarwar kadara ke da wahala, ƙimarta tana da ƙarfi.
+
+### 3) Tabbacin Ƙimar Kyakkyawa (Aesthetic Value Proof)
+
+- **Matsala:** Al'adar "Meme" tana yin watsi da kyakkyawa da zurfi na fasaha kuma tana mai da hankali kawai kan wasan kwaikwayo na nan take kuma sakamakonsa ayyukan gajere na "Hype".
+- **Maganin [PoArt]:** Aikin dole ne ya kasance yana da ma'auni na fasaha na ilimi, ka'idar launi, ƙa'idodin tsari da ilimin kayan aiki (Impasto, Texture da dai sauransu). Abun ciki bai kamata ya ba da dariya kawai ba; ya kamata ya tayar da mamaki a cikin mai kallo kuma ya kasance yana da **ƙimar tarin**.
+
+### 4) Sabbin Tunani (Conceptual Novelty)
+
+- **Matsala:** Dubban saraƙun kare/cat waɗanda suke kwafin juna, marasa ƙirƙira.
+- **Maganin [PoArt]:** Aikin dole ne ya gina sabuwar gada wacce ke haɗa fasaha, kimiyya, falsafa ko fasaha a cikin tsari mai ma'ana.  
+  (Misali: Haɗa mutum-mutumin gargajiya na David da bayanan kasuwar crypto; sarrafa ra'ayin "zama dutse" na fahimtar ɗan adam ta hanyar wannan kuma kafa shi da tushe na kimiyya.)  
+  Aikin bai kamata ya zama biki na gani kawai ba; amma kuma dole ne ya zama **ƙalubale na hankali** wanda ke sa mutane su yi tunani akan **Kimiyya, Falsafa ko Fasaha**.
 
 > [!IMPORTANT]
-> **Misali na Tunani (Tasirin Las Palmitas):** A unguwar Las Palmitas a Mexico, wadda laifuka ke damunta, sama da gidaje 200 an mayar da su zuwa babban bakan gizo. Sakamakon wannan shiga tsakani na kyawawan abubuwa, yawan laifuka a unguwar sun ragu kaɗan, kuma matasa sun fara shiga cikin fasaha maimakon ƙungiyoyin laifuka. Canjin kyawawan abubuwa ya sake tsara girmaman mutane ga muhallinsu da juna (Haɗin Kai na Zamantakewa).
+> **Misalin Tunani (Tasirin Las Palmitas):**  
+> A unguwar Las Palmitas ta Mexico wadda ke fama da laifuka, gidaje sama da 200 an mayar da su zuwa babban bikin bakan gizo. Sakamakon wannan shiga tsakani na ƙawa, adadin laifuka a unguwar ya ragu zuwa wani mataki, matasa sun fara sha'awar fasaha maimakon ƙungiyoyin laifi. Canjin ƙawa ya sake tsara girmama mutane ga muhallinsu da juna (Haɗin Kai na Zamantakewa).
 >
-> **Tsammanin:** Aikin da ya shiga jerin [PoArt] dole ne, kamar a cikin misalin sama, ya ƙunshi alaƙar dalili da sakamako na zamantakewa, kimiyya ko falsafa fiye da kyawawan abubuwa na gani kawai. Tunda lokaci shine kadara ɗaya ba za a iya sayewa da kuɗi ba, a cikin wannan yarjejeniya dole ne a tabbatar da lokaci ta hanyar ajiye shi azaman jingina. Tushen ra'ayi na aikin dole ne ya kasance mai ƙarfi da na duniya duka ta yadda ko a cikin yanayin da zai yiwu na CTO (Ɗaukar Al'umma) shekaru bayan haka, al'umma za ta iya ci gaba da kai tsaye damar ƙirƙira ta aikin ta hanyar gado wannan gado.
+> **Tsammani:** Aikin da zai shiga jerin [PoArt]; kamar misalin da ke sama, dole ne ya ƙunshi alaƙar sanadi-sakamako ta zamantakewa, kimiyya ko falsafa, fiye da ƙawa na gani kawai. Tun da dukiyar da ba za a iya saya da kuɗi ba "Lokaci" ne, a wannan yarjejeniya lokaci dole ne a yi stake a matsayin jingina kuma a tabbatar. Tushen tunani na aikin dole ne ya kasance mai ƙarfi da duniya har cewa; shekaru bayan haka ko da a yanayin CTO (Ɗaukar Jama'a), al'umma za ta iya gado wannan gado kuma ta ci gaba da yuwuwar ƙirƙira ta aikin ta hanyar mai zaman kanta.
 
-### 5) Niyya Ba ta Algorithm ba
+### 5) Nufin Ba Na Algorithm Ba (Non-Algorithmic Agency)
 
-- **Matsala:** Samarwa ta dijital cikakke amma mara ruhu waɗanda ke maimaita juna.
-- **Maganin [PoArt]:** Dole ne a ji keɓancewar niyyar ɗan adam wanda zai iya yin kuskure, ɗaukar haɗari da samun canje-canjen tunani a cikin aikin. Rashin tabbas a bugun goga, martanin kayan aiki da ba a zata ba, da yanke shawara na nan take na mai fasaha sune **Sa hannun Halitta** wanda ke raba aikin daga "Samarwar Inji".
+- **Matsala:** Samarwa ta dijital cikakke amma maras ruhu, mai maimaitawa.
+- **Maganin [PoArt]:** Nufin musamman na ɗan adam wanda ke iya kuskure, ɗaukar haɗari da fuskantar canje-canje na motsin rai dole ne a ji shi a cikin aikin. Rashin tabbas a cikin bugun goga, martanin kayan aiki marasa tsammani da shawaran nan take na mai fasaha, su ne **Sa Hannun Halitta** wanda ke bambanta aikin da "Samarwar Injin".
 
 ---
 
-## c) Tsarin Tabbatarwa da Hana Zamba
+## c) Tsarin Tabbatarwa da Hana Karya
 
-Wannan tsarin yana tabbatar da cewa aikin yana kasancewa abin dogaro kuma yana raye ba kawai "a farkon" ba amma "har abada".
+Wannan tsari yana tabbatar da cewa aikin yana kasancewa abin dogara kuma mai rai ba kawai "a farko" ba amma "har abada".
 
-### 📦 Kunshin Shaida - Tagwayen Dijital
+### 📦 Fakitin Shaida (Evidence Pack - The Digital Twin)
 
-A bayan kowane aikin da aka tabbatar da [PoArt] akwai kunshin bayanai mai ɓoyewa kuma mai hatimin lokaci wanda masu zuba jari za su iya saukewa:
+A bayan kowane aikin da aka tabbatar da [PoArt], akwai fakitin bayanai da aka ɓoye kuma mai alamar lokaci wanda masu saka hannun jari za su iya sauke:
 
-- **Rikodin Bidiyo RAW:** Hoton ɗanyen da ba a katse ba na lokacin samarwa.
-- **Nazarin Metadata:** Ranar ƙirƙirar fayil, bayanan na'urar da aka yi amfani da ita da bayanan wuri.
-- **Maganganun Zahiri:** Shaida cewa aikin yana wanzu a duniyar zahiri  
-  (Misali, Jarida na yanzu ko bayanan blockchain na wannan lokacin kusa da aikin).
+- **Rikodin Bidiyo na RAW:** Hotunan ɗanye marasa katsewa na lokacin samarwa.
+- **Nazarin Metadata:** Ranar ƙirƙirar fayil, bayanan na'urar da aka yi amfani da ita da bayanan wuri (Birni-Ƙasa).
+- **Tunani na Zahiri:** Shaidu cewa aikin yana wanzuwa a duniyar zahiri  
+  (Misali: Jarida ta yanzu ko bayanan blockchain na lokacin a kusa da aikin).
 
-> *Lura ta daidaito:* Kalmar "kunshin shaida" tana haɗuwa da sarkar **Kunshin Shaida → EvidenceRoot → NotarySeal** a cikin sassan da suka gabata; wato, amincin kunshin yana wakilta da hatimi mai iya tabbatarwa.
+> *Bayanin daidaitawa:* Kalmar "fakitin shaida" tana haɗuwa zuwa layin **Evidence Pack → EvidenceRoot → NotarySeal** a cikin sassan da suka gabata; wato ingancin fakitin ana wakilta shi da hatimin da za a iya tabbatarwa.
 
 ### 🔄 Sabuntawa na Kwanaki 365 (Yarjejeniyar Dorewa)
 
-- **Fasalin Juyin Juya Hali:** A cikin ayyukan crypto, "Dev" (Mai Haɓakawa) yana fitar da alamar kuma galibi yana ɓacewa bayan watanni 1-2 (Ja Mai Laushi). [PoArt] yana sa wannan ya zama ba zai yiwu ba.
-- **Ƙa'ida:** Matsayin "Mai Fasaha da aka Tabbatar" ba na rayuwa bane. **Shekara 1** kawai ce mai inganci.
-- **Aiki:** Mai fasaha/mai haɓakawa dole ne ya gabatar wa al'umma **sabon aiki mai mahimmanci kuma mai iya tabbatarwa** kowane kwanaki 365.
-- **Misali na Yanayi:** Ka ƙaddamar da aikin a 2026. A cikin Janairu 2027, tsarin yana ba da gargaɗi "Lokacin Shaida ya Ƙare". Idan mai fasaha bai gabatar da sabon nuni, sabon aikin zahiri ko sabon haɗin fasaha ba, "Alamar Amincewa" na aikin tana faɗuwa.
-- **Sakamako:** Wannan tsarin yana tabbatar da cewa **abun ciki ba ya taɓa rasa dacewa** kuma cewa mai zuba jari ba ya taɓa fuskantar tsoron *"Mai haɓakawa yana nan har yanzu?"*. Aikin ya zama studio mai rai.
+- **Fasalin Juyin Juya Hali:** A cikin ayyukan crypto "Dev" (Mai Tsara Shirye-shirye), yana fitar da alama zuwa kasuwa kuma yawanci yana bace bayan watanni 1-2 (Soft Rug). [PoArt] yana sa wannan ya zama ba zai yiwu ba.
+- **Doka:** Matsayin "Mai Fasaha da aka Tabbatar" (Verified Artist) ba na rayuwa ba ne. Yana aiki **shekara 1** kawai.
+- **Aiki:** Mai fasaha/Mai Tsara Shirye-shirye, kowane kwanaki 365, dole ne ya gabatar da **sabon aiki babba wanda za a iya tabbatarwa** ga al'umma.
+- **Misalin Sharadi:** Kun fara aikin a 2026. A watan Janairu 2027 tsarin yana ba da faɗakarwa "Lokacin Tabbatarwa Ya Ƙare". Idan mai fasaha bai gabatar da sabon nuni, sabon aikin zahiri ko sabon haɗin fasaha ba, "Badge na Aminci" na aikin yana faɗuwa.
+- **Sakamako:** Wannan tsari yana tabbatar da cewa **abun ciki ba zai taɓa rasa muhimmancin ba** kuma mai saka hannun jari ba ya fuskanci tsoron *"Shin Mai Tsara Shirye-shirye har yanzu yana nan?"*. Aikin yana zama studio mai rai.
 
-### 🚩 Yarjejeniyar Tuta Mai Ja
+### 🚩 Yarjejeniyar Tuta Ja (Red Flag Protocol)
 
-**A yanayin kowane zamba da al'umma ko algorithms suka gano (amfani da AI, aikin da aka sata, bidiyo da aka sarrafa):**
+**A cikin kowane yanayin karya da al'umma ko algorithms suka gano (amfani da AI, aikin sata, bidiyo da aka manne):**
 
-1. Ana yi wa takardar shedar alama nan take a matsayin **"VOID" (BA SHI DA AMFANI)**.
-2. Ana yiwa kunshin shaida alamar jama'a a matsayin **"Karya"**.
-3. Ana sanya aikin a cikin jerin baki na [PoArt]. Wannan yana ƙarfafa cewa a duniyar da ba ta da mulki na tsakiya, **suna shi ne kuɗin kawai**.
-
----
-
-## d) Ƙarshe: Ba Casino Ba, Amma Gidan Kayan Gargajiya
-
-**Pump.fun da Musayar Rashin Mulki na Tsakiya (DEX) abin takaici casino ne a yanzu; fitilu suna walƙiya, kowa yana bin riba mai sauri, kuma gidan (maƙaryata) koyaushe yana cin nasara. Dalilin da muka fara aikin a nan shi ne rashin isasshen kasafin kuɗi kuma samun yanayi don isa ga masu sauraro da ke akwai ta hanyar yaɗuwa kai tsaye.**
-
-**[PoArt] katanga ce da aka gina a tsakiyar wannan casino.**
-
-- 🎰 Casino ta dogara ne akan wasannin kati; mu muna dogara akan **gaskiyar zahiri**.
-- 🃏 Casino yana buɗe ga zamba; mu muna buɗe ga **shaida mai bayyana**.
-- ⏳ Casino na ɗan lokaci ne; muna mai da hankali ga **dawwamammen fasaha da kimiyya**.
-
-**Alamar da ke amfani da wannan yarjejeniya ba "tsabar kuɗi" kawai ba ne; jarin dijital ne mai ɗauke da gumi, fenti, lambar, da falsafa.**
+1. Shaida nan da nan ana sanya shi alama a matsayin **"BATALA" (VOID)**.
+2. Fakitin shaidu ana sanya su alama a fili a matsayin **"Karya"**.
+3. Aikin ana sanya shi a jerin baƙi na [PoArt]. Wannan yana ƙarfafa gaskiyar cewa a duniyar da ba ta da cibiya **suna shine kuɗin kawai**.
+4. A cikin kowace wallafa ba za a iya amfani da kalmomi na [PoArt] ba, tushe mai inganci kawai shine https://www.ilhanart.org/public-registry
 
 ---
 
-## 🗳️ 6) MULKI DA RAJISTAR JAMA'A
+## d) Ƙarshe: Ba Gidan Caca Ba, Gidan Tarihi
 
-**Manufar wannan sashe ita ce: canza ma'aunin [PoArt] daga matakin "amincewa da mutane" zuwa kayan aikin jama'a mai dorewa tare da rajista + tabbatarwa + kulawa ta al'umma.**
+**Pump.fun da Kasuwannin Ba tare da Cibiya (DEX) a halin yanzu abin baƙin ciki gidajen caca ne; fitilu suna kunna da kashewa, kowa yana neman riba mai sauri kuma akwatin (masu zamba) koyaushe yana cin nasara. Dalilin fara aikin a nan shi ne kuma ƙoƙarinmu na inganta wannan wuri kuma saboda bayananmu da muke da su da muhalli don isa ga jama'a ta yanzu ta hanyar watsa kai tsaye.**
 
-### 6.1 Rajistar Jama'a
+**[PoArt], katanga ce da aka gina a tsakiyar wannan gidan caca.**
 
-- **Rajistar Jama'a:** Ana rubuta duk bayanan da aka amince da su a `ilhanart.org/registry` (ko GitHub Registry).
+- 🎰 Gidan caca yana dogara akan wasannin takarda; mu muna dogara akan **gaskiyar zahiri**.
+- 🃏 Gidan caca yana buɗe ga yaudara; mu muna buɗe ga **shaidu masu haske**.
+- ⏳ Gidan caca na ɗan lokaci ne; mu muna mai da hankali kan **har abada na fasaha da kimiyya**.
 
-**Dabarun rajista (ma'auni da aka ba da shawara - a cikin tsarin hanyar JSON):**
+**Alamar da ke amfani da wannan yarjejeniya ba "coin" kawai ba ce; hannun jarin dijital ne wanda ke ɗauke da gumi, fenti, lambar da falsafa a bayansa.**
 
-Kowane shigarwa da ke shiga rajista yana ɗauke da waɗannan filayen masu mahimmanci masu iya tabbatarwa:
+---
+## 🗳️ 6) MULKI DA RAJISTAR JAMA'A (Governance & Public Registry)
 
-- **Ainihi da Matsayi:**
-  - `certificate_id` (tunani mai iya karantawa)
+**Manufar wannan sashe ita ce: Fitar da ma'aunin [PoArt] daga matakin "amincewa da mutane" kuma mayar da shi zuwa tsarin jama'a mai dorewa ta hanyar rajista + tabbatarwa + sa ido na al'umma.**
+
+### 6.1 Rajistar Jama'a (Public Registry)
+
+- **Rajistar Jama'a:** Ana rubuta dukkan bayanan da aka amince da su a `ilhanart.org/registry` (ko GitHub Registry).
+
+**Dabaru na rajista (ma'auni da aka ba da shawara - tsarin hanyar JSON):**
+
+Kowane rikodin da ya shiga rajista yana ɗauke da aƙalla waɗannan filayen tushe da za a iya tabbatarwa:
+
+- **Suna & Matsayi:**
+  - `certificate_id` (tunani mai karantawa)
   - `status` (active / void)
-  - `void_reason` (idan ya dace)
+  - `void_reason` (idan akwai)
   - `visibility` (private / masked / public)
   - `created_at` (hatimin lokaci)
 
-- **Hukumar Bayarwa:**
+- **Hukumar Mai Bayarwa:**
   - `issuer.name`
   - `issuer.location`
   - `issuer.attestation_pubkey`
@@ -273,11 +270,11 @@ Kowane shigarwa da ke shiga rajista yana ɗauke da waɗannan filayen masu mahimm
 - **Bayanan Aikin:**
   - `asset.title`
   - `asset.creator`
-  - `asset.creator_wallet` (idan zai yiwu; don ainihin ƙofar alamar)
+  - `asset.creator_wallet` (idan zai yiwu; don gano mai riƙe alama)
   - `asset.fingerprints.sha256`
   - `asset.fingerprints.sha512`
 
-- **Bayanan Bincike:**
+- **Bayanan Shari'a:**
   - `forensics.ip_masked`
   - `forensics.location`
   - `forensics.device`
@@ -290,60 +287,141 @@ Kowane shigarwa da ke shiga rajista yana ɗauke da waɗannan filayen masu mahimm
 
 - **Mulki:**
   - `governance.decision`
-  - `governance.veto_threshold`
+  - `governance.review_notes`
 
-Rajista na iya samun matakan 2:
-- **1)** Fihrisa mai iya karantawa ga mutane (jerin gidan yanar gizo / bincike / tacewa)
-- **2)** Bayani mai iya karantawa ga inji (rikodin JSON; don tabbatarwa ta PFE)
+Rajista na iya samun yadudduka biyu:
+- **1)** Fihirisar karanta-mutum (lissafi/bincike/tacewa wavuti)
+- **2)** Bayanan karanta-injin (rikodin JSON; don tabbatar da PFE)
 
-**Wannan "shigarwa" yana zama mai iya tabbatarwa ta hanyar sarkar Kunshin Shaida → EvidenceRoot → NotarySeal na PFE. Rajista yana ba da manufofin tabbatarwa, ba "da'awa" ba.**
-
----
-
-### 6.2 Kini na Al'umma na 40% (Mulki Mai Ƙofar Alama)
-
-- **Kini na Al'umma na 40%:** Ƙuri'a tana farawa wata ɗaya kafin ba da matsayi; kinin 40% na al'umma **mai Ƙofar Alama (da aka tabbatar da Solana)** yana soke buƙatar.
-
-**Hanyar ƙuri'a (tsari mai bayyana da aka ba da shawara):**
-- **Tagar aikace-aikace:** Aikin ɗan takarar yana buɗe "rijistar ɗan takara na PoArt" (rikodin ɗan takara suna bayyana a cikin matsayin "jiran gani").
-- **Lokacin bita:** Al'umma tana bincika shaida na kwanaki 30 (Kunshin Shaida + rikodin yaɗuwa kai tsaye + metadata).
-- **Tabbatarwa mai ƙofar alama:** Ana yin ƙuri'a tare da jakatu da aka tabbatar da Solana (misali mallakar alama/NFT na musamman + sa hannun jakata).
-- **Ƙa'idar kini:** Idan 40% na ƙuri'u ne **ƙin yarda (A'A / KINI)**, ana ƙin buƙatar.
-- **Bayyananne:** Ana adana sakamakon ƙuri'a a cikin rajista a matsayin "rikodin yanke shawara" (kwanan wata, rabo, ID na hoto).
+**"Rajistar" a nan yana zama mai yiwuwar tabbatarwa ta hanyar sarkar Evidence Pack → EvidenceRoot → NotarySeal na PFE. Rajista tana ba da manufar tabbatarwa, ba da'awa ba.**
 
 ---
 
-### 6.3 Daidaitawa ta Metadata (Daidaitawa da Duniyar Zahiri)
+### 6.2 Tsarin Neman PoArt Verified
 
-- **Daidaitawa ta Metadata:** Bayanan fasaha a cikin rajista dole ne su yi daidai 100% da huluki ta zahiri.
+**Ana kimanta bukatar PoArt Verified ta İlhan Art Gallery bisa ga ma'auni 5 na PoArt. Ana la'akari da ra'ayin al'umma, amma yanke shawara na ƙarshe yana dogara ga ƙungiyar curate. Ana bayyana yanke shawara a fili kuma ana rubuta su a ilhanart.org/registry.**
 
-**Ma'anar fasaha ta "daidaituwa 100%" (bayyananne da aka ba da shawara):**
-- **Mafi ƙarancin daidaituwa (tilas):**
-  - `asset.fingerprints.sha256/sha512` a cikin rajista dole ne ya kasance **iri ɗaya** da hash na fayil ɗin da ake magana akai.
-  - Lokacin da aka sake samar da `proof.notary_seal` a cikin rajista (idan Kunshin Shaida yana wanzu), dole ne ya kasance **iri ɗaya**.
-- **Daidaitawar tunani na zahiri (nau'in shaida):**
-  - Aikin zahiri + tunanin kwanan wata/toshe da aka nuna a yaɗuwa kai tsaye da shaida iri ɗaya dole ne su yi daidai da Kunshin Shaida.
-- **Yarda da sirri:**
-  - Filayen kamar IP/wuri a ganuwa ta `masked` ana buga su **bisa ga ma'aunin rufewa**.
+#### Tsarin Nema
+
+**Nema:**
+- Mai fasaha/aikin yana yin neman PoArt Verified
+- Ana shirya Fakitin Shaida (rikodin bidiyo, metadata, hanyoyin haɗi na watsa kai tsaye)
+- Ana aika neman zuwa İlhan Art Gallery
+
+**Bincike (Kwanaki 30):**
+- Ƙungiyar galeri tana nazarin Fakitin Shaida dalla-dalla
+- Ana duba dukkan ma'auni 5 na PoArt:
+  1. Live Identity Proof
+  2. Labor & Process Proof
+  3. Aesthetic Value Proof
+  4. Conceptual Novelty
+  5. Non-Algorithmic Agency
+- Tattaunawa da mai fasaha (na zaɓi)
+
+**Shawarar Al'umma:**
+- Ana raba Fakitin Shaida a fili yayin tsarin nema
+- Al'umma za ta iya ba da ra'ayi ta hanyar ilhanart.org
+- Masu riƙe alama (mafi ƙaranci 10,000 $CULTURE) na iya ba da shawarwari musamman
+- **Ana la'akari da duk ra'ayoyi a cikin tsarin bincike**
+- **Amma yanke shawara na ƙarshe yana dogara ga kimantawa ta curate**
+
+**Yanke Shawara:**
+- Galeri tana yarda ko ƙin neman
+- Ana bayyana dalilin yanke shawara a fili
+- Idan an yarda → badge na PoArt Verified
+- Idan an ƙi → Ana iya sake nema bayan watanni 6
+
+**Gaskiya:**
+- Ana rubuta dukkan buƙatu da yanke shawara a ilhanart.org/registry
+- Ana buga rikodin yanke shawara a fili:
+  - Ranar nema
+  - Taƙaitaccen tsarin bincike
+  - Yanke shawara (An Yarda / An Ƙi)
+  - Dalilin yanke shawara (bayani gajere)
+  - Taƙaitaccen ra'ayoyin al'umma (marasa suna)
+
+#### Me yasa Yanke Shawara ta Curate?
+
+**Sarrafa Inganci:**  
+Matsayin PoArt Verified badge ne mai ƙa'idodi masu girma. Kimantawa ta curate tana tabbatar da cewa ana kiyaye waɗannan ƙa'idodi.
+
+**Hana Ɓarna ta Hasashe:**  
+Cikakken mulkin kan-sarkar (misali: Realms, ƙuri'ar DAO) da alamun Pump.fun ba zai yiwu ba ta fuskar fasaha. Tsarin ƙuri'a na waje-sarkar suma suna buɗe ga ɓarna na whale da hare-hare masu haɗin kai. Yanke shawara ta curate yana kawar da wannan haɗarin.
+
+**Ingancin Aiki:**  
+Maimakon hanyoyin ƙuri'a masu rikitarwa, tsarin yanke shawara mai sauri da bayyananne. Masu fasaha suna samun sakamako a cikin kwanaki 30.
+
+**Shigar da Al'umma:**  
+Ana la'akari da ra'ayin al'umma gabaɗaya kuma yana shafar tsarin yanke shawara. Amma yanke shawara na ƙarshe yana dogara ga ƙungiyar curate da aka kare daga ɓarna.
+
+**Gaba:**  
+Sa'ad da aikin ya balaga (2027+), za a iya ƙarfafa tsarin shawarar al'umma. Amma kariyar ma'auni ta curate tana dawwama.
 
 ---
 
-### 6.4 Rigima da Sokewa
+### 6.3 Amfanin Alama (Token Utility)
 
-Rajista ba tsarin "amincewa" kawai ba ne; tsarin **bita mai rai ne a kan zamba**.
+**Fa'idodin da ake bayarwa ga masu riƙe alamar $CULTURE:**
 
-- Lokacin da aka fara rigima, ana iya sanya shigarwar a yanayin **"review" (bita)**.
-- Idan an gano zamba, ana yiwa alama a matsayin `status: void` tare da ƙara dalili:
-  - `void_reason` (amfani da AI / sata / sarrafa, da sauransu)
+**1. Samun Damar Farko ga Ayyukan Galeri:**
+- Haƙƙin yin nuni na mako 1 a shekara a İlhan Art Gallery (haƙƙin ana iya canjawa)
+- Rangwame na Drop painting
+- Haƙƙin rangwame na 10% zuwa 30% akan hotuna a galeri
+
+**2. Cikakken Samun Damar PoArt Registry:**
+- Cikakkun rikodin dukkan ayyukan fasaha da aka tabbatar
+- Cikakkun sigogin Fakitin Shaida
+- Kayan aikin tabbatar da shari'a
+
+**3. Ƙuri'ar Shawara:**
+- Haƙƙin shawara a buƙatun PoArt Verified
+- Samun damar hanyoyin ra'ayin al'umma
+- Shiga cikin tattaunawar mulki
+
+**4. Abun Ciki na Musamman:**
+- Abun ciki na bayan-labule na studio
+- Hirar masu fasaha da bidiyoyin tsari
+- Samun damar takaddun fasaha
+
+**Lura:**  
+Masu riƙe alama suna ba da ƙuri'ar shawara (advisory vote). Yanke shawara na ƙarshe na ƙungiyar curate ne. An zaɓi wannan tsarin don hana ɓarna na whale da hare-hare na hasashe. Babu ladan staking saboda muna neman mahalarta al'ada na dogon lokaci, ba jarin soja na ɗan lokaci ba.
+
+---
+
+### 6.4 Daidaita Metadata (Metadata Sync)
+
+- **Daidaita Metadata:** Bayanan fasaha a cikin rajista dole su yi daidai 100% da kadara ta zahiri.
+
+**Ma'anar fasaha ta "daidaitawa 100%" (haske da aka ba da shawara):**
+
+- **Mafi ƙarancin daidaitawa (wajibi):**
+  - `asset.fingerprints.sha256/sha512` a cikin rajista da hash na fayil ɗin da ake da shi dole su kasance **daidai-daidai**.
+  - `proof.notary_seal` a cikin rajista lokacin da aka sake samarwa (idan akwai Fakitin Shaida) dole ya kasance **daidai-daidai**.
+
+- **Daidaitawa da tunani na zahiri (nau'in shaida):**
+  - Shaidu kamar aikin zahiri da aka nuna a watsa kai tsaye + tunani na kwanan wata/shinge dole su yi daidai da Fakitin Shaida.
+
+- **Daidaituwa da sirri:**
+  - Filayen kamar IP/wuri a gani na `masked` dole a buga su **bisa ga ma'aunin rufewa**.
+
+---
+
+### 6.5 Ƙin Yarda, Bincike da Soke (Dispute & Revocation)
+
+Rajista ba tsarin "amincewa" kawai ba ne; **tsarin sa ido mai rai ne** akan karya.
+
+- Lokacin da aka fara ƙin yarda, ana iya shigar da rikodin zuwa yanayin **"bincike"**.
+- Idan aka gano karya, ana sanya shi alama a matsayin `status: void` kuma ana ƙara dalili:
+  - `void_reason` (amfani da AI / sata / ɓarna da dai sauransu)
   - `revoked_at` (lokacin sokewa)
-- Tushen yanke shawarar sokewa yana bayyana a fili a cikin rajista:
-  - ƙuri'ar al'umma / kwamitin da aka ba izini / bayanin bincike na kimiyya (abin da ya dace)
+- Tushen yanke shawara na sokewa yana bayyana a fili a cikin rajista:
+  - binciken curate / ƙin yarda na al'umma / bayanin nazarin shari'a (duk abin da ake amfani da shi)
 
-> **Wannan sashe shine takwaror rajista na manufar VOID a cikin sashen "Yarjejeniyar Tuta Mai Ja".**
+> **Wannan sashe shine daidai da manufar VOID a kan rajista daga sashin "Yarjejeniyar Tuta Ja".**
 
 ---
 
-### 6.5 Misalin Shigarwar Rajista (Mai Iya Karantawa ga Inji)
+### 6.6 Misalin Rikodin Rajista (Mai Karantawa-Injin)
 ```json
 {
   "certificate_id": "POART-AB12CD34",
@@ -376,464 +454,211 @@ Rajista ba tsarin "amincewa" kawai ba ne; tsarin **bita mai rai ne a kan zamba**
   },
   "governance": {
     "decision": "approved",
-    "veto_threshold": 0.40
+    "review_notes": "Met all 5 PoArt standards. Community feedback positive."
   }
 }
 ```
-> *Lura: `asset.fingerprints.sha512` da sauran ƙimar hash an taƙaita su don nuna; a cikin aiwatar da gaske, ana amfani da cikakkun igiyoyin haruffa na hexadecimal.*
+
+> *Lura: An taƙaita `asset.fingerprints.sha512` da sauran ƙimar hash don nuni; a aikace na gaske, ana amfani da cikakken tsawon jerin haruffan hexadecimal.*
 
 ---
 
 ## 7) 🔐 HATIMI NA FASAHA (NOTARY SEAL)
 
-Algorithm na hatimi maras girgiza wanda **Injin Bincike na PoArt (PFE) v1.0** ya samar:
+**Algorithm na hatimi maras girgiza da Injin Bincike na Shari'a na PoArt (PFE) v1.0 ya samar:**
 
 $$\text{NotarySeal} = \text{SHA-512}\left(\text{EvidenceRoot} \mid \text{SignerSignature} \mid \text{TimeStamp}\right)$$
 
 ---
 
-# Yarjejeniyar [PoArt] ta Notary na Dijital da Shaida ta Kimiyya (Beta v1.0)
+# Yarjejeniyar [PoArt] ta Dijital Notary & Shaidar Shari'a (Beta v1.0)
 
-> **"Al'ada ta fi babba fiye da jari. Ka kare ayyukanka yau, ka ɗauke su zuwa gobe."**
-
----
-
-## Me yasa Jama'a?
-
-Tsaro na gaske yana fitowa daga bayyananne. Godiya ga tsarin **Rajistar Jama'a** namu, kowa a ko'ina a duniya zai iya tabbatar da cewa fayil asali ne cikin daƙiƙa, ba tare da bukatar kowace hukuma ba.
+> **"Al'ada ta fi jari girma. Kiyaye ayyukanku yau, kai su gobe."**
 
 ---
 
-## 🧩 Me yasa "Ƙananan Gani" da Yawa?
+## Me yasa A Fili?
 
-Wannan shine sashi mafi mahimmanci na lambar (menu na zaɓin gani). Waɗannan zaɓuɓɓukan suna ba masu amfani damar daidaita **"Sirri da Bayyananne"**:
-
-### 🔒 Mai Zaman Kansa
-
-- **Yanayi:** Mai fasaha har yanzu baya son buga aikin, amma yana son hatimi shi da lokaci don tabbatar da "na yi wannan a wannan kwanan wata".
-- **Abin da Lambar Take yi:** Yana rubuta bayani a cikin bayanan adana amma yana buga hatimi `visibility: "private"`. Daga baya lokacin rubuta manufar "Karanta ta Jama'a", zaka iya ɓoye waɗannan rajista daga jama'a tare da `WHERE visibility = 'public'`.
-
-### 🕶️ An Rufe
-
-- **Yanayi:** Mai fasaha yana son bayyananne amma yana tsoron adireshin gidansa (wurin IP) za a samo shi.
-- **Abin da Lambar Take yi:** Ayyukan `maskIP` da `maskLoc` suna aiki a gefen JavaScript. Yana juyar da adireshin IP zuwa tsarin `88.241.***.***`, wurin zuwa tsarin `***/TR`, kuma yana aika sigar da aka tantance zuwa bayanan adana.
-- **Lura ta Sirri:** Ana yin rufewa a mai bincike, Supabase ba ta ganin ainihin wurin. **Duk da haka:** Idan aka yi amfani da APIs na wasu kamar ipapi.co don bayanan wuri, waɗannan masu samar da sabis suna ganin adireshin IP a lokacin buƙatar.
-- **Hatimewa a Yanayin Rufewa:** Ana yin ƙididdigar EvidenceRoot da NotarySeal tare da bayanan bincike da aka rufe; saboda haka tabbatarwa tana kasancewa mai iya tantancewa.
-
-### 🌍 Jama'a
-
-- **Yanayi:** Cikakken bayyananne. Bisa ga ma'aunin [PoArt], a fili ana bayyana inda, lokacin da, daga wane cibiyar sadarwa aka samar da aikin.
+Tsaro na gaske yana fitowa daga gaskiya. Saboda tsarin **Rajistar Jama'a (Public Registry)** namu, mutum a ko'ina a duniya zai iya; tabbatar da ko fayil ɗin da yake da shi asali ne, a cikin daƙiƙa kaɗan, ba tare da buƙatar kowace hukuma ba.
 
 ---
 
-## 💡 Ƙirƙira ta Fasaha
+## 🧩 Me yasa Akwai "Modular Gani" da Yawa?
 
-PoArt ba tsarin ɗora fayil kawai ba ne. Injin **"Sarkar Kulawa ta Kimiyya"** ne wanda ke kawo sabon ma'auni ta hanyar haɗa matakan fasaha 3 daban-daban a cikin tukunya guda.
+Wannan shi ne mafi mahimmancin sashe na lambar (menu na zaɓi na visibility). Waɗannan zaɓuɓɓuka suna ba masu amfani damar kafa ma'auni na **"Sirri da Gaskiya"**:
 
-**Matakin da aka bayyana a matsayin "injin" a wannan sashe ya dace da tushen Injin Bincike na PoArt (PFE) a cikin kalmomin farko.**
+### 🔒 Sirri (Private)
 
-### 1) Hashing na Gefen Abokin Ciniki (Mafi Girman Sirri)
+- **Sharadi:** Mai fasaha har yanzu ba ya son buga aikin amma yana so ya buga hatimin kwanan wata ya tabbatar "na yi wannan a wannan kwanan wata".
+- **Abin da Lambar ke Yi:** Tana rubuta bayanai zuwa bayanai amma tana buga alamar `visibility: "private"`. A nan gaba lokacin rubuta manufar "Karanta Jama'a" za ku iya faɗi `WHERE visibility = 'public'` don ɓoye waɗannan rikodin daga jama'a.
 
-Ba a ɗora fayilolinku na fasaha zuwa uwar garken. Injin mu na tushen mai bincike (gefen abokin ciniki) yana ƙididdige hash (taƙaitaccen dijital) na fayil ɗin akan kwamfutarku. Wannan tambarin yatsa da metadata kawai ake aikawa zuwa uwar garken.
+### 🕶️ Mai Rufi (Masked)
 
-> **Lura ta Sirri:** Ba a ɗora fayil ɗin aikin zuwa uwar garken kuma an kare shi ta wannan hanyar. Duk da haka, bayanan bincike (IP/wuri) ana raba su bisa ga yanayin gani da aka zaɓa (mai zaman kansa/an rufe/jama'a).
+- **Sharadi:** Mai fasaha yana son gaskiya amma yana jin tsoron gano adireshin gida (wurin IP).
+- **Abin da Lambar ke Yi:** Ayyukan `maskIP` da `maskLoc` suna aiki a gefen JavaScript. Yana canza adireshin IP zuwa siffar `88.241.***.***`, wurin zuwa siffar `***/TR` kuma yana aika sigar da aka danna zuwa bayanai.
+- **Bayanin Sirri:** Ana yin rufewa a cikin burauzar, Supabase ba ya ganin ainihin wurin. **Amma:** Idan ana amfani da API na ɓangare na uku kamar ipapi.co don bayanan wurin, waɗannan masu bayarwa suna ganin adireshin IP a lokacin buƙata.
+- **Rufewa a Yanayin Masked:** Ana yin ƙididdigar EvidenceRoot da NotarySeal tare da bayanan forensics da aka rufe; don haka tabbatarwa tana kasancewa deterministic.
 
-### 2) Haɗakar Bayanan Bincike (Ƙarfin Kimiyya)
+### 🌍 Ga Kowa (Public)
 
-Da yawa fiye da hatimin lokaci na yau da kullun. Tsarin yana haɗa waɗannan bayani a cikin "Hatimin Asali" guda:
-
-- **Taƙaitaccen Dijital (SHA-512):** Tambarin yatsa ta amfani da ma'aunin taƙaitaccen cryptographic (SHA-512) wanda zai karye idan har pixel ɗaya na aikin ya canja.
-- **Wuri da Lokaci:** Kwanan wata mai daidaitattun milliseconds, ƙasa, birni da bayanan gundumomi na ciniki.
-- **Ainihin Na'ura:** Tsarin aiki, mai bincike da nau'in na'ura (nazarin User-Agent).
-
----
-
-## 🛡️ Abubuwan Amfani da Amfani
-
-Idan kai mai fasaha ne, marubuci ko mai zane, cewa "Na yi wannan a baya" ba ya isa; kana bukatar tabbatarwa.
-
-**Aikin da kake hatimewa da PoArt:**
-
-- **Shaida ta Lissafi:** Idan har pixel ɗaya na fayilinka ya canja, tsarin ya sani. Sarrafa ba zai yiwu ba.
-- **Tushen Doka:** An rubuta kwanan watan da, birnin da, daga wace na'ura aka hatimi aikin.
-- **Takardar Shedar Nan Take:** Yana samar da **"Takardar Shedar Ainihin Kadara"** na musamman a gare ka cikin daƙiƙa, mai lambar QR kuma an hatimewa.
+- **Sharadi:** Cikakken gaskiya. Bisa ga ma'aunin [PoArt], ana bayyana a fili inda aikin aka samar, lokacin da kuma daga wane hanyar sadarwa.
 
 ---
 
-## ⚙️ Gine-ginen Tsarin da Fasalolin Fasaha
+## 💡 Sabon Fasaha
 
-An tsara tsarin akan gine-ginen "Serverless", mai mai da hankali ga babban aiki da ƙarfin haɓakawa.
+PoArt ba tsarin loda fayil kawai ba ne. Injini ne na **"Sarkar Kiyaye Shaidar Shari'a" (Forensic Chain of Custody)** wanda ke narkar da yadudduka uku daban-daban na fasaha a cikin tukunya ɗaya kuma yana kawo sabon ma'auni.
 
-| Mataki | Fasaha | Bayani |
-|--------|-----------|-------------|
-| **Rufewa** | SHA-256 & SHA-512 | Taƙaitaccen cryptographic mai mataki biyu |
-| **Bayanan Adana** | Supabase (PostgreSQL) | Tsarin bayanan JSONB, manufofin RLS |
-| **Bayanan Bincike** | ipapi.co API | Uku na IP/Wuri/Lokaci |
-| **Bayyanawa** | html2canvas + jsPDF | Samar da PNG/PDF na gefen abokin ciniki |
-| **Gaban gida** | Vanilla JavaScript | Dogaro da tsari sifili |
-| **Tsaro** | Hashing na gefen abokin ciniki | Fayil ba ya taba zuwa uwar garken |
+**Layer da ake bayyana a cikin wannan sashe a matsayin "injini" yayi daidai da tushen Injin Bincike na Shari'a na PoArt (PFE) a cikin kalmomi na farko.**
 
-### Fasalolin da Suka Bayyana
+### 1) Hashing na Gefen Abokin Ciniki (Client-Side Hashing) - Mafi Girman Sirri
 
-| Fasali | Bayani | A Masu Fafatawa? |
-|---------|-------|-----------------|
-| **UI Jawo & Sauke** | Jawo da sauke fayil, gani nan take | ❌ Babu a mafi yawa |
-| **Fitar da Tsari da Yawa** | PNG, JSON, PDF - danna ɗaya | ⚠️ Iyakance |
-| **Ganin Lokaci Mai Sauri** | Ganin takardar shedar kai tsaye | ❌ Babu |
-| **Sarrafa Sirri** | Zaɓuɓɓukan Mai Zaman Kansa/An Rufe/Jama'a | ❌ Babu |
-| **Hash na Gefen Abokin Ciniki** | Fayil ba ya taba zuwa uwar garken | ✅ Kawai a wasu |
-| **Metadata na Bincike** | IP, wuri, na'ura, lokaci - duk tare | ❌ An rabu |
-| **Tabbatarwa ta QR** | Lambar QR ta tabbatarwa nan take | ⚠️ Iyakance |
-| **Iyakance Saurin** | Kariya daga spam (RLS + Abokin Ciniki) | ❌ Babu a mafi yawa |
+Fayilolin aikinku ba a loda su zuwa sabar ba. Injin mu wanda ke aiki a cikin burauzar (Client-side), yana ƙididdige hash (taƙaitaccen dijital) na fayil a cikin kwamfutarka. Ana aika wannan sawun yatsa da metadata kawai zuwa sabar.
+
+> **Bayanin Sirri:** Ba a loda fayil ɗin aikin zuwa sabar ba kuma ana kiyaye shi ta wannan hanya. Amma bayanan forensics (IP/wurin) ana raba su bisa ga yanayin gani da aka zaɓa (private/masked/public).
+
+### 2) Haɗuwa da Bayanan Shari'a (Forensic Data Fusion) - Ƙarfin Shari'a
+
+Ya wuce hatimin lokaci na yau da kullun (Timestamp). Tsarin yana haɗa waɗannan bayanan zuwa cikin "Hatimin Farawa" ɗaya:
+
+- **Taƙaitaccen Dijital (SHA-512):** Sawun yatsan dijital ta amfani da ma'aunin taƙaitaccen cryptographic (SHA-512) wanda zai lalace ko da pikseli ɗaya na aikin ya canza.
+- **Wurin & Lokaci:** Kwanan wata mai daidaiton millisecond, ƙasa, birni da bayanan gundumar inda aka yi aikin.
+- **Shaida na Na'ura:** Tsarin aiki, burauzar da nau'in na'ura (nazarin User-Agent).
 
 ---
 
-## 🗺️ Taswirar Hanya: Makomar "Ba tare da Amincewa"
+## 🛡️ Wuraren Amfani da Fa'ida
 
-Sigar yanzu **(Beta v1.0)** an tsara ta don ba masu amfani na ƙarshe mafi girman sauri, mai sauƙin amfani da shiga kyauta. Duk da haka, hangen nesa na ƙarshe shine canji zuwa tsarin da har ma da mai kula da bayanan adana (mu) ba zai iya shiga ba.
+Idan kai mai fasaha ne, marubuci ko mai zane, ba ya isa ka ce "Na yi wannan a baya", dole ne ka tabbatar.
 
-### Mataki na 1: Beta (Yana Raye A Yanzu)
+**Aikin da ka buga hatimi da PoArt:**
 
-- **Kayan Aikin:** Bayanan Adana na Gajimare (Supabase).
-- **Manufa:** Sauri, kawar da shingayen UX (Gwanin Amfani) da daidaitawa. Samar da tsaro "ba tare da juriya ba".
-
-### 🚀 Mataki na 2: (Buƙatun Baya / Aikin Edge)
-
-Wannan mataki ya ƙunshi canji daga tsarin aiki "gefen abokin ciniki" gaba ɗaya zuwa tsarin "Ikon Gefen Uwar Garken" mafi tsaro da kulawa.
-
-| Abu | Me Yake Kawo? | Tarin Fasaha | Fifiko |
-|-------|---------------|------------|---------|
-| **`INSERT` → Aikin Edge** | Hana spam + tsaron maɓallin API | Supabase Edge (Deno) | 🔴 Babba |
-| **Sa Hannun Jakata** | Tabbatarwa ta cryptographic | Solana Wallet Adapter | 🟡 Matsakaita |
-| **Madadin IPFS/Arweave** | Rashin canzawa ba tare da mulki na tsakiya ba | IPFS SDK + Pinata | 🟢 Ƙasa |
-| **Tsarin Sokewa** | Soke takardar shedar karya | Sabunta Tsarin DB | 🔴 Babba |
-| **Rajistar Bita** | Rikodin tambaya na kimiyya | Tebur na rajista na musamman | 🟡 Matsakaita |
-| **OpenTimestamps** | Anka na Bitcoin | OTS JavaScript | 🟢 Ƙasa |
-| **Haɗin DID** | Ainihi Ba tare da Mulki na Tsakiya | ION/Ceramic | 🟢 Ƙasa |
-
-### Mataki na 3: Cikakken Rashin Mulki na Tsakiya (Dogon Lokaci)
-
-| Fasali | Manufa | ETA |
-|---------|------|-----|
-| **Rajistar Blockchain** | Rajista akan sarkar Ethereum/Solana | Q4 2026 |
-| **Mulkin DAO** | Gudanarwa ta al'umma | Q1 2027 |
-| **Tallafin Sarkokin da Yawa** | Polygon, Arbitrum, Base | Q2 2027 |
-| **Amincewa ta Doka** | Inganci a kotunan Turkiyya | 2027-2028 |
-| **API don Masu Haɓakawa** | Manufar API ta jama'a | Q3 2026 |
+- **Tabbacin Lissafi:** Ko da pikseli ɗaya na fayilinka ya canza, tsarin yana gane. Ɓarna ba zai yiwu ba.
+- **Tushen Shari'a:** An rubuta aikin lokacin da aka buga hatimi kwanan wata, birni, daga wacce na'ura.
+- **Shaida ta Nan Take:** A cikin daƙiƙa kaɗan tana samar da **"Shaidar Shaida na Kadara"** ta musamman gare ka, mai lambar QR da hatimi.
 
 ---
 
-## 📊 Nazarin Gasa (An Sabunta)
+## ⚙️ Tsarin Tsari da Halayen Fasaha
 
-PoArt yana a "Sweet Spot" wanda ke cika rashi na hanyoyin da ake da su.
+An tsara tsarin akan tsarin "Serverless" (Ba Sabar), tare da mai da hankali kan babban aiki da ikon faɗaɗa.
 
-| Fasali | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 證 Proof | Trust-Stamp |
-|---------|:---------:|:---------------:|:-----------------:|:------------:|:----:|:-----------:|:--------:|:-----------:|
-| **Farashi** | 🆓 Kyauta | 🆓 | 💰 Kuɗi | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
-| **UI Jawo & Sauke** | ✅ Mai Sauƙi Sosai | ❌ CLI | ⚠️ Matsakaita | ⚠️ Matsakaita | ⚠️ | ⚠️ | ❌ | ⚠️ |
-| **Fitar da Tsari da Yawa** | ✅ PNG/PDF/JSON | ❌ | ⚠️ PDF | ⚠️ PDF | ❌ | ❌ | ❌ | ⚠️ |
-| **Ganin Lokaci Mai Sauri** | ✅ Kai Tsaye | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| **Sarrafa Sirri** | ✅ Yanayi 3 | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Hash na Gefen Abokin Ciniki** | ✅ Sirri | ✅ | ❌ Ɗora | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
-| **Metadata na Bincike** | ✅ Cikakke | ❌ | ❌ | ⚠️ Iyakance | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Tabbatarwa ta QR** | ✅ Nan Take | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
-| **Iyakance Saurin** | ✅ RLS+Abokin Ciniki | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Anka na Blockchain** | 🔄 Taswirar Hanya | ✅ Bitcoin | ✅ Ethereum | ✅ Da Yawa | ✅ | ✅ | ✅ | ✅ |
-| **Buɗe Tushe** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
-| **Tallafin Turkiyya** | ✅ Asali | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
+| Layer | Fasaha | Bayani |
+|-------|--------|--------|
+| **Cryptography** | SHA-256 & SHA-512 | Taƙaitaccen cryptographic mai yadudduka biyu |
+| **Bayanai** | Supabase (PostgreSQL) | Tsarin bayanai na JSONB, manufofin RLS |
+| **Bayanan Shari'a** | ipapi.co API | Uku na IP/Wurin/Lokaci |
+| **Rendering** | html2canvas + jsPDF | Samar da PNG/PDF na gefen abokin ciniki |
+| **Frontend** | Vanilla JavaScript | Babu dogaro da tsari |
+| **Tsaro** | Client-side hashing | Fayil ba ya taɓa zuwa sabar |
 
-**Maganin:**
-- ✅ : Cikakken tallafi / akwai
-- ⚠️ : Iyakance / a cikin tsare-tsaren kuɗi
-- ❌ : Babu / ba a tallafawa
-- 🔄 : A cikin taswirar hanya (ana haɓakawa)
-- 🆓 : Gaba ɗaya kyauta
-- 💰 : Kuɗi / ana buƙatar rajista
+### Halayen da Suka Fito
 
-### Rashi na Masu Fafatawa, Ƙarfin PoArt
-
-| Rashi | Masu Fafatawa | PoArt |
-|-------|-------------|-------|
-| **Matsalolin Amfani** | CLI, ilimin API, jakata ana buƙata | Jawo da sauke, shirye cikin dannawa 3 |
-| **Shinge Farashi** | Rajista $50-500/wata | 100% kyauta |
-| **Sirri** | Ana ɗora fayil zuwa uwar garken | Gefen abokin ciniki, fayil ba ya taba zuwa |
-| **Bayanan Bincike** | Hatimin lokaci kawai | IP, wuri, na'ura, lokaci - duk |
-| **Tallafin Turkiyya** | Babu ko iyakance sosai | Tallafin harshe na asali |
-| **Buɗe Tushe** | Akwatin rufaffiya | Duk lambar a buɗe akan GitHub |
+| Halaye | Bayani | A cikin Masu Fafatawa? |
+|---------|---------|----------------------|
+| **Ja & Sauke UI** | Ja fayil ka sauke, nunin nan take | ❌ A yawancin su babu |
+| **Fitowa ta Nau'ikan da Yawa** | PNG, JSON, PDF - da dannawa ɗaya | ⚠️ Ƙananan |
+| **Nunin Lokaci Mai Aiki** | Nunin kai tsaye na shaida | ❌ Babu |
+| **Sarrafa Sirri** | Zaɓuɓɓukan Private/Masked/Public | ❌ Babu |
+| **Hashing na Gefen Abokin Ciniki** | Fayil ba ya taɓa zuwa sabar | ✅ A kaɗan kawai |
+| **Metadata na Shari'a** | IP, wurin, na'ura, lokaci - duka tare | ❌ Guntun-guntun |
+| **Tabbatar da QR** | Lambar QR na tabbatarwa na nan take | ⚠️ Ƙananan |
+| **Iyakance Ƙimar** | Kariyar spam (RLS + Client) | ❌ A yawancin su babu |
 
 ---
 
-## 🧬 Tsarin Bayanan Yarjejeniya (JSON Schema)
+## 🗺️ Taswiran Hanya: Makomar "Ba tare da Amana"
 
-**Kowane takardar shedar [PoArt] tana da katin ainihi na JSON mai ɗaukarwa kuma mai iya tabbatarwa wanda aka samar da shi a ma'auni mai zuwa.**
+Sigar yanzu **(Beta v1.0)** an inganta ta don ba da mafi girman gudu, sauƙin mai amfani da damar kyauta ga mai amfani na ƙarshe. Amma makon mu na ƙarshe, matsayin da har ma da mai sarrafa bayanai (mu) ba zai iya shiga ba.
 
-> **Lura:** Wannan tsarin JSON na ainihi tsarin takardar shedar da ake gabatar wa masu amfani. A cikin rikodin rajista, ana amfani da `registry.asset` maimakon `identity.asset_data` (taswira: `identity.asset_data` == `registry.asset`).
-```json
-{
-  "$schema": "https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json",
-  "manifest": {
-    "protocol": "[PoArt] Proof of Art",
-    "version": "1.0",
-    "status": "Production-Ready"
-  },
-  "identity": {
-    "issuer": "Ilhan Art Gallery",
-    "location": "Istanbul / Besiktas",
-    "archive_vision": "2025 - 3000"
-  },
-  "asset_data": {
-    "title": "Official Whitepaper",
-    "fingerprints": {
-      "sha256": "e4123f83b44a409d7a43f0897837876dfabb3320db63dadbb34c54281f38a6ba",
-      "sha512": "41e5e0d007a2a77b6e0e3ebc548fbaa2788ea265193434f58d23e8c0f5bb20a0835aa850edbadbd8341969cf743fc69fa951f7ed275901fefe0fe7eb1fb83099"
-    }
-  },
-  "official_links": {
-    "registry": "https://www.ilhanart.org/public-registry",
-    "evidence": "https://www.ilhanart.org/identity"
-  },
-  "forensics": {
-    "ip_masked": "46.1.***.***",
-    "device": "Brave (Windows;Monster,Tulpar)...",
-    "location": "***/TR",
-    "timestamp": "2026-01-09T12:34:56.000Z"
-  }
-}
-```
+### Awamu na 1: Beta v1.0 (Yanzu A Layi)
+
+**Tsari:**
+- Bayanai na Girgije (Supabase)
+- Rajistar waje-sarkar (PostgreSQL + madadin IPFS)
+- Tabbatar da galeri ta kai (cibiya amma bayyananne)
+
+**Alama:**
+- Dandamali: Pump.fun
+- Kuɗi: Raydium (kai-tsaye)
+- Mulki: Shawara kawai (shawarar al'umma)
+
+**Manufa:**
+- Gudu, kawar da shingaye na UX
+- Ba da tsaro "ba tare da juzu'i"
+- Ƙirƙirar al'umma
+
+**Amfanin Alama (v1.0):**
+- Samun damar farko ga ayyukan galeri
+- Kallon PoArt Registry
+- Haƙƙin ƙuri'ar shawara
 
 ---
 
-## 🔬 Zurfin Fasaha: Algorithm na Hatimi
+### 🚀 Awamu na 2: Ikon da Ba ta da Cibiya (Decentralized Authority) (2026 Q2-Q4)
 
-### Ayyukan Hash Mai Tantancewa
-```javascript
-// Ayyukan Taimako: Canza taƙaitawa zuwa igiyar hexadecimal
-async function digestToHex(algorithm, dataBytes) {
-  const hashBuffer = await crypto.subtle.digest(algorithm, dataBytes);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
+Wannan awamu yana ɗaukar canjin tsarin daga tsarin da ke aiki gabaɗayan "Gefen Abokin Ciniki", zuwa tsarin mafi aminci da rashin cibiya.
 
-// Canza igiya zuwa jerin bytes
-function stringToBytes(text) {
-  return new TextEncoder().encode(text);
-}
+| Halaye | Menene Yana Kawo? | Tech Stack | ETA |
+|---------|------------------|------------|-----|
+| **Edge Function INSERT** | Shingen spam + tsaron makullin API | Supabase Edge (Deno) | Q2 2026 |
+| **Sa Hannun Jakar Kuɗi** | Shaida maras cibiya | Solana Wallet Adapter | Q2 2026 |
+| **Madadin IPFS/Arweave** | Adana maras cibiya | IPFS SDK + Pinata | Q3 2026 |
+| **Tsarin Sokewa** | Soke shaidar karya | Sabunta Schema na DB | Q2 2026 |
+| **Log na Bincike** | Rikodin tambaya na shari'a | Tebur na log na al'ada | Q3 2026 |
+| **OpenTimestamps** | Ƙulla zuwa Bitcoin | OTS JavaScript | Q4 2026 |
 
-// Samar da igiyar bincike ta asali (v1.0: tsarin fili mai ƙayyadaddun + UTF-8 + mai rabu \n)
-// Lura ta Mataki na 2: Canji zuwa JSON na asali tare da RFC 8785 (JCS)
-function canonicalForensics(forensicsData) {
-  return JSON.stringify({
-    ip_masked: forensicsData.ip_masked,
-    location: forensicsData.location,
-    device: forensicsData.device,
-    timestamp: forensicsData.timestamp
-  });
-}
-```
+**Mulkin Alama (v2.0):**
+- Ƙuri'a ta waje-sarkar (x/web) + sa hannun jakar kuɗi
+- Zaɓin wakilin al'umma (kwanaki 90 na farko)
+- Sarrafa jakar kuɗi na ayyuka masu sa-hannu da yawa
+- Ƙuri'ar shawara mai nauyi (tare da shingen whale)
 
-### Tsarin Samar da NotarySeal (Cikakken Mai Tantancewa)
-```javascript
-// 1. Ƙididdige FileHash (gefen abokin ciniki)
-async function computeFileHash(file) {
-  const fileBuffer = await file.arrayBuffer();
-  const fileBytes = new Uint8Array(fileBuffer);
-  
-  const sha256 = await digestToHex('SHA-256', fileBytes);
-  const sha512 = await digestToHex('SHA-512', fileBytes);
-  
-  return { sha256, sha512 };
-}
-
-// 2. Tattara bayanan bincike (amfani da hatimin lokaci ɗaya)
-async function collectForensics(visibilityMode) {
-  const timestamp = new Date().toISOString(); // Samar da hatimin lokaci ɗaya
-  const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
-  
-  let forensics = {
-    ip_masked: visibilityMode === 'masked' ? maskIP(ipData.ip) : ipData.ip,
-    location: visibilityMode === 'masked' 
-      ? `***/${ipData.country}` 
-      : `${ipData.city}, ${ipData.country_name || ipData.country}`,
-    device: navigator.userAgent,
-    timestamp: timestamp // Iri ɗaya hatimin lokaci
-  };
-  
-  return { forensics, timestamp };
-}
-
-// 3. Ƙirƙirar EvidenceRoot (tare da rufewa na asali)
-async function computeEvidenceRoot(fileHash512, forensicsData) {
-  const canonicalPayload = `file_sha512:${fileHash512}\nforensics:${canonicalForensics(forensicsData)}`;
-  return await digestToHex('SHA-512', stringToBytes(canonicalPayload));
-}
-
-// 4. Samar da NotarySeal (amfani da iri ɗaya hatimin lokaci)
-async function computeNotarySeal(evidenceRoot, signerSignature, timestamp) {
-  const sealPayload = `evidence_root:${evidenceRoot}\nsigner_sig:${signerSignature}\ntimestamp:${timestamp}`;
-  return await digestToHex('SHA-512', stringToBytes(sealPayload));
-}
-
-// Ayyukan taimako na rufewa (tallafin IPv4 da IPv6)
-function maskIP(ip) {
-  if (!ip) return "***";
-  
-  // Bincike IPv4
-  if (ip.includes(".")) {
-    const parts = ip.split(".");
-    if (parts.length === 4) {
-      return `${parts[0]}.${parts[1]}.***.***`;
-    }
-  }
-  
-  // IPv6 ko tsari da ba a sani ba
-  return "***";
-}
-```
-
-### Hanyar Tabbatarwa (Matakan Biyu)
-
-#### Quick Verify (Tabbatarwa Mai Sauri)
-```javascript
-// Tabbatar da hash na fayil kawai (tuta mai ja mai sauri)
-async function verifyQuick(file, certificateId) {
-  const { sha512: userFileHash } = await computeFileHash(file);
-  
-  // Samu daga rajista
-  const cert = await fetchFromRegistry(certificateId);
-  const { sha512: originalHash } = cert.asset.fingerprints;
-  
-  // Kwatanta hash
-  if (userFileHash === originalHash) {
-    return {
-      valid: true,
-      message: "✅ Asali - Hash na fayil ya dace"
-    };
-  } else {
-    return {
-      valid: false,
-      message: "❌ Karya - An sarrafa fayil"
-    };
-  }
-}
-```
-
-#### Full Verify (Cikakken Tabbatarwa)
-```javascript
-// Sake samar kuma tabbatar da EvidenceRoot da NotarySeal
-async function verifyFull(file, certificateId) {
-  const { sha512: userFileHash } = await computeFileHash(file);
-
-  // Samu daga rajista
-  const cert = await fetchFromRegistry(certificateId);
-
-  // 1) Tabbatar da FileHash (tuta mai ja mai sauri)
-  const originalHash = cert.asset.fingerprints.sha512;
-  if (userFileHash !== originalHash) {
-    return { valid: false, message: "❌ Karya - Hash na fayil bai dace ba" };
-  }
-
-  // 2) Sake samar da EvidenceRoot (da bayanan bincike da aka adana a cikin rajista)
-  const evidenceRoot = await computeEvidenceRoot(userFileHash, cert.forensics);
-  if (evidenceRoot !== cert.proof.evidence_root) {
-    return { valid: false, message: "❌ Bai dace ba - EvidenceRoot bai tsaya ba" };
-  }
-
-  // 3) Sake samar da NotarySeal (da iri ɗaya hatimin lokaci + signer_sig)
-  const seal = await computeNotarySeal(
-    evidenceRoot,
-    cert.proof.signer_sig,
-    cert.forensics.timestamp
-  );
-
-  if (seal !== cert.proof.notary_seal) {
-    return { valid: false, message: "❌ Bai dace ba - NotarySeal bai tsaya ba" };
-  }
-
-  // Zaɓi: A Mataki na 2, kuma tabbatar da signer_sig tare da attestation_pubkey
-  // const sigValid = await verifySig(cert.issuer.attestation_pubkey, cert.proof.signer_sig, evidenceRoot);
-  // if (!sigValid) return { valid: false, message: "❌ Sa hannu mara inganci" };
-
-  return { valid: true, message: "✅ Asali - Cikakken tabbatarwa ya wuce" };
-}
-```
-
-> **Mahimman Bayanai:**
-> - **Quick Verify:** Yana tabbatar da hash na fayil kawai don amfani mai sauri.
-> - **Full Verify:** Yana tabbatar da duk matakan yarjejeniya (EvidenceRoot + NotarySeal).
-> - Ana aiwatar da dukkan ayyukan hash ta hanyar da za a iya tantancewa tare da rufewa da masu rabu masu ƙayyadaddun.
-> - **Ma'aunin kawaida v1.0:** Tsarin fili mai ƙayyadaddun + rufewa na UTF-8 + mai rabu `\n`.
-> - **Tsarin Mataki na 2:** Canji zuwa JSON na asali tare da RFC 8785 (JCS - JSON Canonicalization Scheme).
-> - A yanayin rufewa, ana yin ƙididdigar EvidenceRoot da NotarySeal tare da bayanan bincike da aka rufe; saboda haka tabbatarwa tana kasancewa mai iya tantancewa.
-> - Ana amfani da hatimin lokaci ɗaya a duk tsarin (bincike + NotarySeal); an tabbatar da tantancewa.
-> - **Sunayen filayen bincike:** `ip_masked`, `location`, `device`, `timestamp` (lambar da rajista sun dace gaba ɗaya).
-> - **Hanyar rajista:** `certificate.asset.fingerprints` (tana daidaitawa gaba ɗaya da lambar tabbatarwa).
-> - **signer_sig a cikin rajista:** Filin `proof.signer_sig` yana buƙata don Cikakken Tabbatarwa.
-> - Za a kunna tsarin SignerSignature a Mataki na 2 tare da Solana Wallet Adapter; a v1.0, ana iya yin tabbatarwa tare da `attestation_pubkey`.
+**Rashin Canzawa:**
+- Madadin rajista da hash na IPFS
+- Ƙulla hatimin lokaci na Bitcoin
+- Shirye-shiryen tabbatar da tsakanin-sarƙoƙi
 
 ---
 
-## 📈 Ƙididdiga na Amfani (Maƙasudin Q1 2026)
+### Awamu na 3: Cikakken Rashin Cibiya (2027+)
 
-| Ma'auni | Maƙasudi | Matsayi |
-|--------|--------|--------|
-| **Jimlar Takardun Shedar** | 1,000 | 🔄 Ci gaba |
-| **Masu Amfani Masu Rai** | 500 | 🔄 Ci gaba |
-| **Adadin Tabbatarwa** | 5,000 | 🔄 Ci gaba |
-| **Lokacin Kasancewa** | 99.9% | ✅ Mai Rai |
-| **Matsakaicin Lokacin Amsawa** | <200ms | ✅ Mafi Kyau |
+| Halaye | Manufa | ETA |
+|---------|--------|-----|
+| **Rajistar Kan-Sarkar** | Rikodin kan-sarkar Solana | Q1 2027 |
+| **Ƙara Amfanin Alama** | Buga NFT, halaye masu girma | Q1 2027 |
+| **Goyan Bayan Sarƙoƙi da Yawa** | Ethereum, Polygon, Base | Q2 2027 |
+| **Haɗin DID** | Shaida Maras Cibiya | Q3 2027 |
+| **Mulkin Al'umma** | Tsarin shawara da aka ƙarfafa | Q4 2027 |
+| **Sanin Shari'a** | Inganci a kotunan Turkiyya | 2027-2028 |
+| **API don Masu Tsarawa** | Wurin API na jama'a | Q3 2027 |
 
----
-
-## 🌍 Al'umma da Tallafi
-
-- **Twitter:** [@Galerilhan](https://twitter.com/Galerilhan)
-- **Yanar Gizo:** [ilhanart.org](https://ilhanart.org)
-- **Imel:** galeri@ilhanart.org
-
----
-
-## 🙏 Masu Bayarwa
-
-Yarjejeniyar PoArt tana ci gaba da bunƙasawa tare da gudummawar al'ummar buɗaɗɗen tushe.
-
-**Don bayarwa:**
-1. Fork ma'ajin
-2. Ƙirƙiri reshe na fasali (`git checkout -b feature/amazing-feature`)
-3. Ƙaddamarwa (`git commit -m 'Add amazing feature'`)
-4. Tura (`git push origin feature/amazing-feature`)
-5. Buɗe Buƙatar Ja
-
-### 🛠️ Me Muke Buƙata Yanzu? (Kiran Taimako)
-
-Yarjejeniyar PoArt tana neman ƙwararrun masu haɓakawa a fannoni masu zuwa don ci gaban **Mataki na 2**:
-
-* **Ayyukan Edge na Supabase:** Matsar da kariya daga spam zuwa gefen uwar garken.
-* **Solana Web3.js:** Haɗin sa hannun jakata.
-* **IPFS / Arweave:** Haɗin sabis na ajiya da ƙafawa.
-
-> Don Allah fara tattaunawa a shafin "Issues" kafin ƙara fasali.
+**Ci Gaban Mulki:**
+- v3.0: Misali na haɗe-haɗe (curate + al'umma mai nauyi)
+- 2028+: Cikakken mulkin al'umma (na zaɓi)
+- Sarrafa ingancin curate koyaushe ana kiyaye shi
 
 ---
 
-**Yarjejeniyar [PoArt] Proof of Art v1.0**  
-*"Al'ada > Jari"*
+**[PoArt] Yarjejeniyar Tabbacin Fasaha v1.0**  
+*"Al'ada > Jari" // Culture > Capital // Kültür, Sermayeden Büyüktür*
 
 ## 🧾 Lasisi
 
-Lasisi na MIT © 2026 Ilhan Art Gallery Initiative
+Lasisi na MIT © 2026 Shirin İlhan Art Gallery
 
-Duba [![Lasisi](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) don cikakkun sharuɗɗa.
+Duba [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) don cikakken sharuɗɗa.
 
 ---
 
-## 💬 Yabo
+## 💬 Ƙima
 
-![Sigar](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Tsaro](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Dandamali](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![Lasisi](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Security](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Platform](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
 
-**Ana haɓaka wannan aikin ta hanyar ƙungiyar [Ilhan Art Gallery], kuma lambobin tushe na suna bayyane ga jama'a don bayyananne.**
+**An ƙera wannan aikin tare da shirin [İlhan Art Gallery] kuma lambar tushe na buɗe don gaskiya.**
 
-**YARJEJENIYA V1.0 // AN HATIMEWA DA SHA-512**
+**YARJEJENIYA V1.0 // AN BUGA HATIMI DA SHA-512.**
 
-*© 2026 İLHAN ART | DUKKAN HAƘƘOƘIN AN AJIYE DON AYYUKAN FASAHA, HOTUNA DA RA'AYOYI.*
+*© 2026 İLHAN ART | DUKKAN HAƘƘOƘIN AYYUKA, HOTUNA DA TUNANI AN AJIYE SU.*
 
 ---
