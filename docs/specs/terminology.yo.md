@@ -1,38 +1,38 @@
-# 📚 ÌTÚMỌ̀ ÀTI ÀKÓJỌ ÈRÒ
-> **"Láti mọ èdè ìlànà yìí túmọ̀ sí láti mọ ìran rẹ̀."**
+# 📚 ÌTUMỌ̀ ÀTI ÀWỌN ÈRÒ ÌMỌ̀ ỌRỌ̀
+> **"Láti mọ èdè ìlànà yìí ni láti mọ ìran rẹ̀."**
 
-## ⚙️ Ẹ̀rọ Ìwádìí PoArt (PFE) v1.0: Ìpìlẹ̀ Pàtàkì
+## ⚙️ PoArt Forensic Engine (PFE) v1.0: Ìpìlẹ̀ Pàtàkì
 
-**Ẹ̀rọ Ìwádìí PoArt (PFE)** jẹ́ ipele àkọ́kọ́ tí ó ń ṣojú ọgbọ́n àárín àti iṣẹ́ ìmọ̀-ẹ̀rọ lẹ́yìn ìlànà [PoArt]. Èyí ni "ẹ̀rọ ìwádìí" tí ó ń mú àwọn dátà títàn ti iṣẹ́ ọnà tí ó wà ní ojú-ìwé tí ó sì ń yí wọn padà sí **ẹ̀rí dájítà** tí a lè ṣàyẹ̀wò tí kò sì lè yí padà.
+**PoArt Forensic Engine (PFE)** jẹ́ ipele àkọ́kọ́ tí ó wà lábẹ́ ìlànà [PoArt], tí ó ń ṣàfihàn ìmọ̀ràn pàtàkì àti ìṣiṣẹ́ ìmọ̀-ẹ̀rọ tí ó wà lábẹ́ rẹ̀. Èyí ni "ẹ̀rọ àdájọ́" tí ó ń mú data ìṣẹ́dá gbòǹgbò iṣẹ́ ọnà tí ó yí i padà sí **ẹ̀rí oníróbótó** tí a lè ṣàyẹ̀wò tí kò sì lè yí padà.
 
-### 🧩 Kí ni ìdí "PoArt Forensic"?
+### 🧩 Kí Ni Ìdí "PoArt Forensic"?
 
-- **PoArt (Ẹ̀rí Ọnà):** Èrò ẹ̀rọ náà ni láti so iye kadara dájítà kì í ṣe sí àsọtẹ́lẹ̀, ṣùgbọ́n sí **ìlànà ìṣèdá tí a lè ṣàyẹ̀wò**.
-- **Forensic (Ìṣàyẹ̀wò Sáyẹ́ńsì):**
-  - **Ìtúmọ̀ Ìmọ̀-ẹ̀rọ:** Ọ̀nà algorithm àti ìlànà àkọsílẹ̀ láti ṣàyẹ̀wò pé àwọn dátà ìlànà ìṣèdá (àwọn ìfàsẹ́ brush, vídíò àkókò, àkọsílẹ̀) kò ní ìdàrúdàpọ̀.
-  - **Ipele Ìmọ̀-ọgbọ́n:** Ẹ̀rí láti yí **àkókò ènìyàn, ìgbìyànjú, àti iye ìpinnu** padà sí òtítọ́ tí a lè wọ̀n, lòdì sí ìṣèdá "èsì lẹ́sẹ̀kẹsẹ̀" AI.
+- **PoArt (Proof of Art - Ẹ̀rí Ọnà):** Ìfojúsùn ẹ̀rọ náà ni láti so iye ohun-ìní oníróbótó mọ́ **ìlànà ìṣẹ́dá tí a lè fihàn**, kì í ṣe sí àrokò owó.
+- **Forensic (Ìdájọ́ Àdánwò):**
+  - **Ìtumọ̀ Ìmọ̀-Ẹ̀rọ:** Ìlànà algorithm àti ìgbéléwọ́n ìforúkọsílẹ̀ láti ṣàyẹ̀wò pé data ìlànà ìṣẹ́dá (gbígbọ̀n fọ́ọ̀mù, timelapse, àwọn ìforúkọsílẹ̀) kò tí ṣe àyípadà.
+  - **Ipele Ìmọ̀ Ọgbọ́n:** Lòdì sí ìṣẹ́dá "èsì lẹ́sẹ̀kẹsẹ̀" ti AI; ìfẹ́ láti yí **àkókò ènìyàn, agbára àti iye ìpinnu** padà sí òtítọ́ tí a lè wọ̀n.
 
-> Àkíyèsí: Ìsopọ̀ blockchain (fún àpẹẹrẹ, Solana) kì í ṣe ọkàn PFE; a ó ṣàlàyé rẹ̀ lọ́tọ̀ gẹ́gẹ́ bí **Ipele Ìdásílẹ̀ Pùpọ̀** fún èrè ìṣàyẹ̀wò/ìforúkọsílẹ̀.
+> Àkíyèsí: Ìdàpọ̀ blockchain (bíi Solana) kìí ṣe àárín PFE; a máa tọ́ka sí rẹ̀ bíi **Chain Anchor Layer** fún ìdánwò/registry.
 
-### 🛠️ Ìwọ̀n Ìmọ̀-ẹ̀rọ v1.0
+### 🛠️ v1.0 Ìbò Ìmọ̀-Ẹ̀rọ
 
-**Ẹ̀rọ Ìwádìí PoArt (PFE) v1.0** jẹ́ kíkọ́ lórí **àwọn òpó mẹ́ta pàtàkì** wọ̀nyí dípò àwọn ìwé ìnáwó tí ó nira:
+**PoArt Forensic Engine (PFE) v1.0** kọ́ lórí àwọn **ọ̀wọ́n pàtàkì mẹ́ta** yìí dípò àwọn àpẹẹrẹ owó tó nira:
 
-1. **Hashing & Sealing (Dídì):**  
-   PFE ń ṣiṣẹ́ pẹ̀lú ìpinnu gbogbo àwọn nǹkan nínú Àpò Ẹ̀rí (fáìlì iṣẹ́, vídíò, JSON/àkọsílẹ̀, ìbúwọ́lù, àti bẹ́ẹ̀ bẹ́ẹ̀ lọ) tí ó sì ń ṣẹ̀dá iye **NotarySeal** pàtàkì kan.
+1. **Hashing & Sealing (Dídì Èdìdì):**  
+   PFE ń ṣiṣẹ́ gbogbo ohun tó wà nínú Evidence Pack (fáìlì iṣẹ́ ọnà, video, JSON/log, ìbuwọ́lù àbáwọlé) ní ọ̀nà tó ṣeé ṣàkóso, ó sì máa ṣe àgbéjáde iye **NotarySeal** kan ṣoṣo.
 
    **Àwọn èrò pàtàkì (v1.0):**
-   - **FileHash (ìtẹ̀sẹ́ ìka iṣẹ́):** Hash tí a ṣẹ̀dá láti bytes fáìlì iṣẹ́.
-   - **EvidenceRoot (gbòǹgbò àpò ẹ̀rí):** Àkópọ̀ gbòǹgbò tí ó ń ṣojú òdodo Àpò Ẹ̀rí (gbòǹgbò Merkle tàbí hash àlàyé tó péye).
-   - **NotarySeal (èdìdì ìparí / ìṣàkójáde PFE):** Èdìdì ìparí tí a ṣẹ̀dá láti àpapọ̀ EvidenceRoot + àkókò + ìbúwọ́lù.
+   - **FileHash (ìtẹ̀ka iṣẹ́ ọnà):** Hash tí a ṣe láti bytes fáìlì iṣẹ́ ọnà náà.
+   - **EvidenceRoot (gbòǹgbò àkójọ ẹ̀rí):** Àkópọ̀ gbòǹgbò tó dúró fún ìdọ́gba Evidence Pack (Merkle root tàbí kanonik manifest hash).
+   - **NotarySeal (èdìdì ìparí / PFE Output):** Èdìdì ìkẹyìn tí a ṣe láti EvidenceRoot + àkókò + ìbuwọ́lù.
 
-   **Àwọn fọ́múlà (tí ó hàn kedere fún àwọn olùdókòwò):**
+   **Àwọn Àgbékalẹ̀ (tí ó hàn kedere fún olùdókòwò):**
    
    $$\text{FileHash}_{512} = \text{SHA-512}(\text{ArtworkFileBytes})$$
    
    $$\text{NotarySeal} = \text{SHA-512}(\text{EvidenceRoot} \mid \text{SignerSignature} \mid \text{TimeStamp})$$
    
-   **Ìtúmọ̀ Ẹrù Pàtàkì (v1.0):**
+   **Àwọn Ìtumọ̀ Canonical Payload (v1.0):**
    
    - **EvidenceRootPayload:**
 ```
@@ -44,240 +44,241 @@
    evidence_root:{evidence_root}\nsigner_sig:{signer_sig}\ntimestamp:{timestamp}
 ```
    
-   > Àkíyèsí: Iye tí a ń tọ́ka sí gẹ́gẹ́ bí ìṣàkójáde PFE ni **NotarySeal**. Ilana **SignerSignature** yóò di mímúṣẹ́ ní Ipele 2 (pẹ̀lú Solana Wallet Adapter); nínú v1.0 lọ́wọ́lọ́wọ́, a ń lo ìbúwọ́lù ẹ̀rí ètò. Wọ́n ń tẹ̀ jáde kọ́kọ́rọ́ gbogbogbò ẹ̀rí nínú ìforúkọsílẹ̀ lábẹ́ àyè `issuer.attestation_pubkey`.
+   > Àkíyèsí: Iye tí PFE ń ṣe àgbéjáde ni **NotarySeal**. Ìlànà **SignerSignature** yóò wọlé ní Faz 2 (pẹ̀lú Solana Wallet Adapter); ní v1.0 tó wà báyìí, ìbuwọ́lù attestation ti ètò náà ni a ń lò. Attestation public key yóò hàn sí registry ní `issuer.attestation_pubkey`.
 
-2. **Indexing (Ìpamọ́):**  
-   Ó ń kọ sílẹ̀ àpamọ́wọ́ wo, ní ọjọ́ wo, ló fi **Ẹ̀rí Iṣẹ́** ránṣẹ́ fún iṣẹ́ wo sí ipele ìforúkọsílẹ̀ tí ó hàn kedere tí a sì lè béèrè lọ́wọ́ rẹ̀.  
-   *(Ipele yìí lè jẹ́ ibi ìpamọ́ dátà; ìsopọ̀ pùpọ̀ ní a ṣàlàyé lọ́tọ̀ gẹ́gẹ́ bí "Ipele Ìdásílẹ̀ Pùpọ̀".)*
+2. **Indexing (Ìforúkọsílẹ̀):**  
+   Àpamọ́wọ́ wo ni, ní ọjọ́ wo ni, fún iṣẹ́ ọnà wo ni **Labor Proof (Ẹ̀rí Iṣẹ́)** fi hàn; ó ń fi sínú ipele ìforúkọsílẹ̀ tí ó ṣí sílẹ̀ tí a sì lè béèrè.  
+   *(Ipele yìí lè jẹ́ ibi-ìpamọ́ data; ìdàpọ̀ chain yóò jẹ́ "Chain Anchor Layer" tó yàtọ̀.)*
 
-3. **Verification (Ìṣàyẹ̀wò):**  
-   Nígbà tí a bá ṣe ìyàsọ́tọ̀ nípa òdodo iṣẹ́ kan, PFE ń tún ṣiṣẹ́ àwọn ẹ̀rí títàn; ó ń ṣe ìdánwò ní ọ̀nà ìṣirò bóyá àwọn iye **EvidenceRoot / NotarySeal** tí a ṣèṣírò bá àwọn àkọsílẹ̀ ìpamọ́ mu.
+3. **Verification (Ìdánwò):**  
+   Nígbà tí wọ́n bá béèrè bóyá iṣẹ́ ọnà kan jẹ́ ọkọ̀ọ̀kan, PFE yóò tún ṣiṣẹ́ àwọn ẹ̀rí gbòǹgbò; yóò sì ṣe àyẹ̀wò pẹ̀lú ìdánilójú mathematiki bóyá àwọn iye **EvidenceRoot / NotarySeal** tí a ṣe ìṣirò bá àwọn tó wà nínú registry mu.
 
 ---
 
 ### 🧮 Ìlànà Iye PoArt (The Value Theorem)
 
-Ìlànà [PoArt] ń so iye ($V$) kadara dájítà kì í ṣe sí ìmọ̀ àìmọ́gbọ́nwá ọjà, ṣùgbọ́n sí **òtítọ́ ti ara ìlànà ìṣèdá**.
+Ìlànà [PoArt] so iye ohun-ìní oníróbótó ($V$) mọ́ **òtítọ́ ti ara ìlànà ìṣẹ́dá**, kì í ṣe mọ́ ìrò ojú ọjà tí ó lè yí padà.
 
-Ọgbọ́n Ìró (AI) ń ba ìlànà jẹ́ nípa fífa èsì jáde lẹ́sẹ̀kẹsẹ̀ ($t \to 0$). [PoArt], bí ó tilẹ̀ jẹ́ bẹ́ẹ̀, ń ṣe ìtọ́jú iye gẹ́gẹ́ bí àkójọpọ̀ àwọn apá **àkókò, iṣẹ́, àti ìfẹ́**.
+Artificial Intelligence (AI) ń pa ìlànà rẹ̀ run nípa fífun ní èsì lẹ́sẹ̀kẹsẹ̀ ($t \to 0$). [PoArt] gbé iye kalẹ̀ lórí **àkójọpọ̀ àkókò, iṣẹ́, àti ìfẹ́** bíi ohun kan.
 
 $$V_{\text{PoArt}} = \int_{t_{\text{start}}}^{t_{\text{end}}} \left(P_{\text{labor}}(t) \cdot I_{\text{agency}}(t)\right) dt + U_{\text{irreversible}}$$
 
-#### Ìtúmọ̀ Àwọn Ọ̀nà
+#### Ìtumọ̀ Àwọn Onísẹ́
 
 - **$\int dt$ (Àkójọpọ̀ Ìlànà):**  
-  Iye kì í ṣe "èsì" lẹ́sẹ̀kẹsẹ̀; **ìlànà** ni tí a kó jọ láàárín $t_{\text{start}}$ àti $t_{\text{end}}$. Bí gígùn bá ń dínkù (ìṣèdá AI), èsì integral náà ń súnmọ́ 0.
+  Iye kìí ṣe "èsì" tí ó yára; ó jẹ́ **ìlànà** tí ó kójọpọ̀ láàárín $t_{\text{start}}$ àti $t_{\text{end}}$. Bí àkókò bá ń dínkù (ìṣẹ́dá AI), èsì integral náà yóò súnmọ́ 0.
 
-- **$P_{\text{labor}}(t)$ (Agbára Iṣẹ́ Lẹ́sẹ̀kẹsẹ̀):**  
-  Ó ń ṣojú líle ìgbìyànjú ọpọlọ àti ti ara tí a ná ní àkókò ìṣèdá. Bí ìgbìyànjú tí a lè ṣàyẹ̀wò bá ń pọ̀ sí i, integrand náà ń dàgbà.  
-  > Àkíyèsí: A lè ṣe àtúnṣe ọ̀rọ̀ yìí ní ìtẹ̀lọ́rùn nípa "àwọn àmì iṣẹ́ tí a lè wọ̀n/ṣàyẹ̀wò".
+- **$P_{\text{labor}}(t)$ (Agbára Iṣẹ́ Lọ́wọ́lọ́wọ́):**  
+  Ó dúró fún kíkankíkan agbára inú àti ti ara tí a lò ní àkókò ìṣẹ́dá. Bí agbára tí a lè fihàn bá ń pọ̀ sí i, integrand náà yóò ń tóbi sí i.  
+  > Àkíyèsí: A lè ṣe ìbámu ọ̀rọ̀ yìí ní ìṣe pẹ̀lú "àwọn àmì iṣẹ́ tí a lè wọ̀n/fihàn".
 
-- **$I_{\text{agency}}(t)$ (Ìpín Ìfẹ́):**  
-   Agbára olùṣèdá láti gba ewu àti ṣe ìpinnu. Ó ń gba iye láàárín $0$ àti $1$.
-  - **AI ($I \approx 0$):** Ó ń ṣe àṣẹ, kò gba ewu, kò san iye owó.
-  - **Ènìyàn ($I \to 1$):** Ń yí ìpinnu padà, ń ṣiyèméjì, ń gba ewu.
+- **$I_{\text{agency}}(t)$ (Ìdínwọ̀n Ìfẹ́):**  
+  Agbára olùṣẹ́dá láti gba ewu àti láti ṣe ìpinnu. Ó gbà iye láàárín $0$ àti $1$.
+  - **AI ($I \approx 0$):** Ó ń ṣe àṣẹ, kò gba ewu, kò san iye kan.
+  - **Ènìyàn ($I \to 1$):** Ó yí ìpinnu padà, ó ń ṣiyèméjì, ó ń gba ewu.
 
-- **$U_{\text{irreversible}}$ (Àdánilójú Àìlèyípadà):**  
-  Nígbà tí ìdásẹ́yìn (`Ctrl+Z`) ṣe é ṣe nínú ìṣèdá dájítà, nínú ìṣèdá ti ara (àwọ̀ tí a fi lé canvas, òkúta tí a gé, ìgbésẹ̀ nínú ìgbésíta taara) kò sí ọ̀nà ìpadàbọ̀. **Àìlèyípadà** yìí jẹ́ ọ̀rọ̀ àfikún tí ó ń ṣẹ̀dá "àdánilójú" (àbùdá àìlèpààrọ̀) nínú iṣẹ́ náà.
+- **$U_{\text{irreversible}}$ (Àìlèyípadà Ọ̀tọ̀ọ̀tọ̀):**  
+  Nínú ìṣẹ́dá oníróbótó, ìdápadà (`Ctrl+Z`) ṣeé ṣe; nínú ìṣẹ́dá ti ara (ìgbọ̀nwọ́ ewé sórí canvas, fífọ́ òkúta, ìṣesí ní ìṣafihàn láìkede), ìdápadà kò sí. **Àìlèyípadà** yìí ń dá "ọ̀tọ̀ọ̀tọ̀" (non-fungible character) sílẹ̀ nínú iṣẹ́ ọnà náà.
 
-### 🔎 Àyẹ̀wò Ọ̀rọ̀: AI "Èsì Lẹ́sẹ̀kẹsẹ̀" vs. Ènìyàn "Ìlànà Tí A Ti Ṣàyẹ̀wò"
+### 🔎 Ìtúpalẹ̀ Àpẹẹrẹ: AI "Èsì Lẹ́sẹ̀kẹsẹ̀" vs. Ènìyàn "Ìlànà Pẹ̀lú Ẹ̀rí"
 
-Ìṣẹ̀lẹ̀ tí ó tẹ̀le yìí ń ṣàfihàn bí **Ìlànà Iye PoArt** ṣe ń ṣiṣẹ́ ní ìtẹ̀lọ́rùn àti ìdí tí ìṣèdá AI fi ń gba àwọn àmì kékeré ní ìlànà [PoArt].
+Àpẹẹrẹ ìsàlẹ̀ yìí ń ṣàfihàn bí **Ìlànà Iye PoArt** ṣe ń ṣiṣẹ́ ní ìṣe àti ìdí tí ìṣẹ́dá AI fi ń gba àmì kékeré ní ìlànà [PoArt].
 
-#### Ìṣẹ̀lẹ̀ A: Ìṣèdá Ríran ní Ìṣẹ́jú 10 pẹ̀lú AI
+#### Àpẹẹrẹ A: Ìṣẹ́dá Àwòrán Pẹ̀lú AI Ní Ìṣẹ́jú Àáyá 10
 
-- **Gígùn ($\Delta t$):** $10$ ìṣẹ́jú (ìlànà kékeré)
-- **Agbára Iṣẹ́ ($P_{\text{labor}}$):** $1$ ìwọ̀n (kìkọ àṣẹ nìkan)
-- **Ìpín Ìfẹ́ ($I_{\text{agency}}$):** $0.01$ (kò sí ewu, kò sí iye owó)
-- **Àìlèyípadà ($U_{\text{irreversible}}$):** $0$ (a lè yí padà / a lè ṣẹ̀dà)
+- **Àkókò ($\Delta t$):** Ìṣẹ́jú àáyá $10$ (ìlànà kò sí fẹ́rẹ̀)
+- **Agbára Iṣẹ́ ($P_{\text{labor}}$):** $1$ ìwọ̀n (kíkọ àṣẹ nìkan)
+- **Ìdínwọ̀n Ìfẹ́ ($I_{\text{agency}}$):** $0.01$ (kò sí ewu, kò sí iye)
+- **Àìlèyípadà ($U_{\text{irreversible}}$):** $0$ (a lè dá padà / a lè ṣẹ̀dà)
 
 **Èsì:**
 
 $$V_{\text{AI}} \approx \int_{0}^{10} (1 \cdot 0.01) \, dt + 0 = 0.1$$
 
-> **Àsọyé:** Bí èsì náà tilẹ̀ jẹ́ pípé; iye [PoArt] ń súnmọ́ $0$ nítorí a kò gbé ìlànà kankan ṣe kò sì sí ìfẹ́/ewu tí ó wà nínú rẹ̀.
+> **Àsọyé:** Bí èsì náà tilẹ̀ jẹ́ pípé; nítorí pé ìlànà kò gbà lára rẹ̀ àti pé kò ní ìfẹ́/ewu, iye [PoArt] yóò súnmọ́ $0$.
 
-#### Ìṣẹ̀lẹ̀ B: Ìṣèdá Ti Ara ti Wákàtí 6 ní Ìgbésíta Taara
+#### ÀpẹẀrẹ B: Ìṣẹ́dá Ti Ara Ní Ìṣafihàn Láìkede Fún Wákàtí 6
 
-- **Gígùn ($\Delta t$):** $6$ wákàtí ($21{,}600$ ìṣẹ́jú)
-- **Agbára Iṣẹ́ ($P_{\text{labor}}$):** $0.5$ ìwọ̀n (ìtẹ̀síwájú ìgbìyànjú ti ara àti ọpọlọ)
-- **Ìpín Ìfẹ́ ($I_{\text{agency}}$):** $0.9$ (yíyí ìpinnu padà, gbígba ewu, ìyàn àìlèyípadà)
-- **Àìlèyípadà ($U_{\text{irreversible}}$):** $>0$ (àwọn àmì ti ara kò lè ṣe ìdásẹ́yìn)
+- **Àkókò ($\Delta t$):** Wákàtí $6$ (ìṣẹ́jú àáyá $21{,}600$)
+- **Agbára Iṣẹ́ ($P_{\text{labor}}$):** $0.5$ ìwọ̀n (ìtẹ̀síwájú agbára inú àti ti ara)
+- **Ìdínwọ̀n Ìfẹ́ ($I_{\text{agency}}$):** $0.9$ (yíyí ìpinnu padà, gbígba ewu, àwọn ìpinnu àìlèyípadà)
+- **Àìlèyípadà ($U_{\text{irreversible}}$):** $>0$ (àwọn àmì ti ara kò lè yí padà)
 
 **Èsì:**
 
 $$V_{\text{Human}} \approx \int_{0}^{21600} (0.5 \cdot 0.9) \, dt + U_{\text{irreversible}} \approx 9720 + U_{\text{irreversible}}$$
 
-> **Àsọyé:** Bí ìlànà ṣe ń gùn àti bí ìfẹ́ (ewu) ṣe ń pọ̀ sí i, iye náà ń kó jọ ní àkójọpọ̀. Ọ̀rọ̀ $U_{\text{irreversible}}$ jẹ́ ìdásí àfikún tí ó ń ṣẹ̀dá "àdánilójú" (àbùdá àìlèpààrọ̀) nínú iṣẹ́ náà.
+> **Àsọyé:** Bí ìlànà bá ń gùn sí i àti bí ìfẹ́ (ewu) bá ń pọ̀ sí i, iye náà yóò ń kójọpọ̀. Ọ̀rọ̀ $U_{\text{irreversible}}$ ń ṣèrànwọ́ láti dá "ọ̀tọ̀ọ̀tọ̀" (non-fungible character) sílẹ̀ nínú iṣẹ́ ọnà náà.
 
 ---
 
-### ✅ Ìparí: Iye Tí A So Mọ́ Ẹ̀rí (Proof-Bound Value)
+### ✅ Ìparí: Dídì Iye Pẹ̀lú Ẹ̀rí (Proof-Bound Value)
 
-Ìlànà yìí ń mú ìjẹ́rìísí iye [PoArt] jáde láti jẹ́ "ìfẹ́ràn" tàbí "ìtàn ọjà" ó sì so ó mọ́ **òtítọ́ ìṣèdá tí a lè ṣàyẹ̀wò**.
+Ìlànà yìí mú ìfẹ́ iye ti [PoArt] kúrò nínú "ìfẹ́ràn" tàbí "ìtàn ọjà" ó sì so ó mọ́ **òtítọ́ ìṣẹ́dá tí a lè fihàn**.
 
-1. **Kò Sí Ìlànà, Kò Sí Iye:**  
-   AI ń ba ìlànà jẹ́ pẹ̀lú èsì lẹ́sẹ̀kẹsẹ̀ ($t \to 0$). Bí fèrèsé ìlànà ṣe ń dín, èsì integral náà dọ́gba láti dínkù:
+1. **Iye Kò Lè Wáyé Láìsí Ìlànà:**  
+   AI ń pa ìlànà rẹ̀ run nínú èsì lẹ́sẹ̀kẹsẹ̀ ($t \to 0$). Bí fèrèsé ìlànà bá ń dín, èsì integral náà yóò dínkù pẹ̀lú ìdánilójú mathematiki:
    
    $$\Delta t \downarrow \ \Rightarrow\ \int \left(P(t) \cdot I(t)\right) dt \to 0$$
 
-2. **Ìfẹ́ Àti Ewu Jẹ́ Aṣe-ìlọ́pọ̀:**  
-   [PoArt] kì í ṣe kìkà "àkókò tí a ná" nìkan ṣùgbọ́n ipele òtítọ́ ìpinnu, ewu, àti iye owó nínú àkókò yẹn náà. Ìṣèdá láìgba ewu (AI) ní iye kékeré:
+2. **Ìfẹ́ Àti Ewu Jẹ́ Olùṣàkóso:**  
+   [PoArt] kì í ṣe "àkókò tí a lò" nìkan ni ó ń wọ̀n; ó tún ń wọ̀n ìpinnu òtítọ́, ewu àti iye nínú àkókò náà. Iye ìṣẹ́dá tí kò gba ewu (AI) kéré:
    
    $$V_{\text{PoArt}} \propto \int \left(P_{\text{labor}}(t) \cdot I_{\text{agency}}(t)\right) dt$$
 
-3. **Àdánilójú Jẹ́ Ẹ̀rí Ti Ara, Kì í Ṣe Títà:**  
-   Àwọn àmì àìlèyípadà nínú ìṣèdá ti ara (ìgbọ̀nsẹ̀ canvas, gígé òkúta) wà lóde ìmọ̀tò `Ctrl+Z` ti dájítà. Àìlèyípadà yìí ($U_{\text{irreversible}}$) ń ṣe àdánilójú iṣẹ́ náà ní ọ̀nà ontology.
+3. **Ọ̀tọ̀ọ̀tọ̀ Jẹ́ Ẹ̀rí Ti Ara, Kì Í Ṣe Tí Títà:**  
+   Àwọn àmì àìlèyípadà nínú ìṣẹ́dá ti ara (ìgbọ̀nwọ́ ewé, fífọ́ òkúta) wà lóde ìmọ̀ `Ctrl+Z` ti oníróbótó. Àìlèyípadà yìí ($U_{\text{irreversible}}$) ń ṣe ọ̀tọ̀ọ̀tọ̀ sí iṣẹ́ ọnà náà ní ọ̀nà ontolojiki.
 
-> **🔐 ÀKÓPỌ̀:** Bí ìlànà iye tilẹ̀ lè dàbí àìnídìí gẹ́gẹ́ bí wíwọ̀n (bí ó tilẹ̀ jẹ́ pé àpẹẹrẹ rẹ̀ nínú ayé gidi kò lè ní wíwọ̀n ní kíkún), èrò fọ́múlà yìí ni láti ṣàfihàn ìṣètò àti itọ́sọ́nà àwọn ọ̀nà. Ní àkókò AI, ohun tí ó ṣòro ni kì í ṣe "àwòrán" ṣùgbọ́n **iṣẹ́ tí a lè ṣàyẹ̀wò, àkókò, àti ìfẹ́.** [PoArt] ń wọ̀n àìpọ̀ yìí ó sì ń kọ ọ́ sílẹ̀ pẹ̀lú **Àpò Ẹ̀rí**.
+> **🔐 ÀKÓPỌ̀:** Bí ìlànà iye tilẹ̀ dàbí ìdánwò tí kò ṣeé ṣàyẹ̀wò (nínú ayé gidi kò lè wọ̀n 100%), ète àgbékalẹ̀ yìí ni láti fi ìṣètò àti ọ̀nà àwọn onísẹ́ hàn. Nínú àkókò AI, ohun tí ó ṣọ̀wọ́n kì í ṣe "àwòrán"; ó jẹ́ **iṣẹ́ tí a lè fihàn, àkókò, àti ìfẹ́.** [PoArt] ń wọ̀n àìpọ̀ yìí ó sì fi **Evidence Pack** jẹ́rìí rẹ̀.
 
-### 🏛️ Pàtàkì Èrò "Ẹ̀rọ"
+### 🏛️ Pàtàkì Èrò "Engine" (Ẹ̀rọ)
 
-Àwọn àmì tí ó ń yọ jáde láti Pump.fun tàbí àwọn pẹpẹ aláàjò ní ìgbà púpọ̀ jẹ́ **"àwọn tíkẹ́ẹ̀tì ìwọlé"** nìkan. **Ẹ̀rọ Ìwádìí PoArt (PFE)**, bí ó tilẹ̀ jẹ́ bẹ́ẹ̀, ni **ipele ìmọ̀tò ọgbọ́n òfin** tí ó ń pinnu àwọn ẹ̀tọ́ wo ni tíkẹ́ẹ̀tì yìí ń dáàbò bò, báwo ni a ṣe máa kọ iṣẹ́ náà sílẹ̀ àti báwo ni a ṣe máa tẹ̀síwájú ọnà/sáyẹ́ńsì/ìmọ̀-ẹ̀rọ.
+Àwọn token tí ó ti Pump.fun tàbí àwọn pẹpẹ ìrú rẹ̀ jáde sábà máa ń jẹ́ **"tíkẹ́ẹ̀tì ìwọlé"** nìkan. **PoArt Forensic Engine (PFE)** ṣùgbọ́n jẹ́ **ipele ìmọ̀ràn tí ó dàbí ìlànà òfin** tí ó ń pinnu àwọn ẹ̀tọ́ tí tíkẹ́ẹ̀tì náà ń dáàbò bò, bí a ṣe lè forúkọsílẹ̀ iṣẹ́, àti bí a ṣe lè ṣe ìdúróṣinṣin ọnà/ìmọ̀ sáyẹ́nsì/ìmọ̀-ẹ̀rọ.
 
-> **Àkíyèsí:** Ìdí tí a fi ṣe ìfilọ́lẹ̀ iṣẹ́ yìí lórí Pumpfun ni pé a kò ní omi tó tó kò sì ní àwọn olùtẹ̀lé tó tó. Lílo dátà tí ó wà jẹ́ ìlànà ìgbésẹ̀ tó tọ́, bí ó tilẹ̀ jẹ́ pé kì í ṣe ìwọ̀n tó ga jù lọ. Láìka ìsúná àti àwọn ohun èlò sí i, ṣíṣàlàyé ìmọ̀tò ẹ̀rọ yìí lórí GitHub ń ṣe ẹ̀rí pé iṣẹ́ náà kì í ṣe àsọtẹ́lẹ̀ owó nìkan, ṣùgbọ́n ìran ìgbà pípẹ́ ti **ohun èlò sọ́fùtíwíà** àti **ilé-ìkàwé orílẹ̀-èdè dájítà**.
+> **Àkíyèsí:** Ìdí tí a fi bẹ̀rẹ̀ iṣẹ́ àkànṣe yìí ní Pump.fun ni pé a kò ní omi ọjà tó tó àti àwọn olùtẹ̀lé tó pọ̀. Lílo data tí a ní báyìí jẹ́ ìgbésẹ̀ tó tọ́ jùlọ ní ìlànà, bí ó tilẹ̀ jẹ́ pé kì í ṣe ti ọ̀gá jùlọ. Láìsí ọwọ́ ìṣúná tàbí àǹfààní, ṣíṣe àlàyé ìmọ̀ràn ẹ̀rọ yìí lórí GitHub fi hàn pé iṣẹ́ àkànṣe yìí kì í ṣe àrokò owó nìkan, ṣùgbọ́n **ìpìlẹ̀ sọ́fítìwíà** ìgbà pípẹ́ àti **ilé-ìkàwé oríìlú oníróbótó**.
+
+---
+## 🎨 [PoArt] ÌLÀNÀ Ẹ̀RÍ IṢẸ́ (Proof of Art Protocol v1.0)
+
+> **"Oníṣọ̀nà Gidi, Ìṣẹ́dá Gidi, Iye Gidi."**
+
+Ìlànà yìí jẹ́ **ẹ̀rọ ààbò ti ara àti ti ọgbọ́n** tí a ṣe lòdì sí àwọn alárékérekè aláìmọ̀ tó kárí eto crypto, àwọn àwòrán AI tí a ṣe ní ìṣẹ́jú 5, àti àṣà "Pump & Dump" (Fẹ́ẹ̀ Sókè Kó Sọnù).
 
 ---
 
-## 🎨 ÌLÀNÀ [PoArt] TI ẸRÍ IṢẸ́ (Proof of Art Protocol v1.0)
+## a) [PoArt] Kín Ni? (Ìtumọ̀ Ìmọ̀ Ọgbọ́n Àti Ìmọ̀-Ẹ̀rọ)
 
-> **"Oníṣọ̀nà Gidi, Ìṣèdá Gidi, Iye Gidi."**
+**Proof of Art [PoArt];** jẹ́ ìlànà ìdánwò ilé-iṣẹ́ tí ó ń dáàbò bò pé iye tí ó wà lẹ́yìn ohun-ìní kan lórí blockchain dúró lé **iṣẹ́ ènìyàn**, **àkókò** àti **agbára ti ara** tí a lè fihàn, kì í ṣe lórí àrokò.
 
-Ìlànà yìí jẹ́ **ìlànà ààbò ìbísí àti ọgbọ́n** tí a ṣẹ̀dá lòdì sí àwọn alárékérekè aláìmọ̀ tí ó yí ìṣesí crypto ká, àwọn àwòrán AI tí a ṣe ní ìṣẹ́jú 5, àti àṣà "Pump & Dump".
+Bí Bitcoin ṣe ń ṣe iye pẹ̀lú *"Iná Mànàmáná Àti Agbára Processor"* **(Proof of Work)**; àwọn iṣẹ́ àkànṣe tó bá mu [PoArt] náà ń ṣe iye pẹ̀lú *"Ọgbọ́n Àti Àkókò Ènìyàn Tó Lò"*. Wọ́n ń fi àkókò "Stake".
 
----
+Ó ń pa ewu *"Olùṣe-sọ́fítìwíà (Dev) tà á, iṣẹ́ àkànṣe parí"* rẹ́ nínú Pump.fun àti àwọn pẹpẹ DEX; nítorí pé níbí, iye kì í wà nínú code, ó wà nínú **ìtẹ̀síwájú ìṣẹ́dá**.
 
-## a) Kí ni [PoArt]? (Ìtúmọ̀ Ìmọ̀-ọgbọ́n àti Ìmọ̀-ẹ̀rọ)
-
-**Ẹ̀rí Ọnà [PoArt];** jẹ́ ìlànà ìṣàyẹ̀wò ilé-iṣẹ́ tí ó ń ṣe ìdánilójú pé iye lẹ́yìn kadara lórí blockchain kì í ṣe tó dá lórí àsọtẹ́lẹ̀, ṣùgbọ́n lórí **iṣẹ́ ènìyàn**, **àkókò**, àti **agbára ti ara** tí a lè ṣàyẹ̀wò.
-
-Bí Bitcoin ṣe ń ṣẹ̀dá iye pẹ̀lú *"Iná Mànàmáná àti Agbára Processer"* **(Ẹ̀rí Iṣẹ́)**, àwọn iṣẹ́ aṣàmúlò tí ó bá [PoArt] mu ń ṣẹ̀dá iye pẹ̀lú *"Ọgbọ́n Ọnà àti Àkókò Ènìyàn"*.
-
-Ó ń mú ewu *"Olùgbékalẹ̀ tà á, iṣẹ́ náà parí"* kúrò lórí àwọn pẹpẹ Pump.fun àti DEX; nítorí níbí iye kì í ṣe nínú kóòdù, ṣùgbọ́n nínú **ìtẹ̀síwájú ìṣèdá**.
-
-> **[PoArt] kò sọ fún àwọn olùkópa "Ẹ gbà wá gbọ́"; ó ń sọ "Èyí ni ẹ̀rí, wò ó pẹ̀lú ojú rẹ, ṣàyẹ̀wò pẹ̀lú ìṣirò rẹ."**
+> **[PoArt] kì í sọ fún olùkópa rẹ̀ pé "Ẹ gbà wá gbọ́"; ó sọ pé "Ẹ wò àwọn ẹ̀rí, ẹ fi ojú yín rí i, ẹ fi mathematiki yín ṣàyẹ̀wò."**
 
 ---
 
-## b) Ìlànà Òpó 5 [PoArt] (Àwọn Òpó 5 Ti Òtítọ́)
+## b) Ìlànà 5-In-One [PoArt] (The 5 Pillars of Truth)
 
-Àwọn nǹkan márùn-ún wọ̀nyí jẹ́ àwọn àṣẹ̀ tí a kò lè ṣèṣí tí iṣẹ́ gbọ́dọ̀ kọjá láti gba èdìdì [PoArt].
+Àwọn mẹ́ta yìí jẹ́ àwọn àṣẹ̀ tí kò ṣeé ṣe àyípadà tí iṣẹ́ àkànṣe kan gbọ́dọ̀ kọjá kó tó lè gba èdìdì [PoArt].
 
-### 1) Ẹ̀rí Ìdánimọ̀ Taara
+### 1) Ẹ̀rí Ìdánimọ̀ Láìkede (Live Identity Proof)
 
-- **Ìṣòro:** Ayé crypto kún fún àwọn olùdásílẹ̀ aláìmọ̀ (Devs) pẹ̀lú ìdánimọ̀ àìmọ́ tí ó ń kó owó tí wọ́n sì ń fi iṣẹ́ sílẹ̀.
-- **Ojútùú [PoArt]:** Olùṣèdá ń ṣe ẹ̀rí kì í ṣe ìwé ẹ̀rí nìkan, ṣùgbọ́n **ìwàláàyè ní àkókò ìṣèdá**. Èyí ní àwọn ìjókòó ìgbésíta taara níbi tí ìbáṣepọ̀ pẹ̀lú àwùjọ ń wáyé tí a sì ń pé àwọn ìbéèrè pàtàkì lẹ́sẹ̀kẹsẹ̀, kì í ṣe àwọn vídíò tí a ti ṣe àgbékalẹ̀ tẹ́lẹ̀.  
-  (Fún àpẹẹrẹ, *"Kọ ọjọ́ òní àti nọ́mbà búlọ́ọ̀kù lọ́wọ́lọ́wọ́ ní igun ọ̀tún canvas"*)
-- **Àkọlé:** *"Bots lè ya àwòrán ṣùgbọ́n bots kò lè gbẹ̀fún kò sì lè ṣe improvisation."*
+- **Ìṣòro:** Ayé crypto kún fún àwọn olùdásílẹ̀ aláìmọ̀ (Dev) tó ń gba owó tó sì ń fi iṣẹ́ àkànṣe sílẹ̀.
+- **Ojútùú [PoArt]:** Olùṣẹ́dá kì í fi **káàdì ìdánimọ̀** nìkan hàn, ṣùgbọ́n ó ń fi **ìwáyé rẹ̀ ní àkókò ìṣẹ́dá** hàn. Èyí kì í ṣe pẹ̀lú àwọn video tí a ti forúkọsílẹ̀ tẹ́lẹ̀, ṣùgbọ́n pẹ̀lú àwọn ìgbà ìṣafihàn láìkede níbi tí wọ́n ti ń bá àwùjọ lò pọ̀ tí wọ́n sì ń ṣe àwọn ìbéèrè pàtó lẹ́sẹ̀kẹsẹ̀.  
+  (Fún àpẹẹrẹ: *"Kọ ọjọ́ òní àti nọ́mbà búlọ́ọ̀kù tó wà lọ́wọ́ sí apá ọ̀tún canvas"*)
+- **Kókó Ọ̀rọ̀:** *"Àwọn bot lè ṣe àwòrán ṣùgbọ́n àwọn bot kò lè jẹ́gbẹ̀ẹ́ bẹ́ẹ̀ ni wọn kò lè ṣe àìróte."*
 
-### 2) Ẹ̀rí Iṣẹ́ Àti Ìlànà
+### 2) Ẹ̀rí Iṣẹ́ Àti Ìlànà (Labor & Process Proof)
 
-- **Ìṣòro:** Àwọn àwòrán AI (Ọgbọ́n Ìró) tí a ṣe ní ìṣẹ́jú 2 tí ó ń gba ìtọ́jú "jpeg" kan náà bí àwòn ìyàwòrán epo tí a ṣe ní oṣù 2 ní ayé dájítà.
-- **Ojútùú [PoArt]:** A ń kọ ìlànà "oyún àti ìbímọ" iṣẹ́ náà sílẹ̀. A ń kọ àwọn ìgbésẹ̀ sketch, àwọn ipele àwọ̀, àwọn wákàtí tí a kó jọ tí a ná àti ìlànà ti ara tí oníṣọ̀nà kọjá nígbà tí ó ń ṣẹ̀dá iṣẹ́ náà sílẹ̀. Èyí ń fi **"Iye Owó Àkókò"** kún àmì náà. Ìṣòro ìṣèdá kadara bó ṣe pọ̀ tó, iye rẹ̀ múra tó.
+- **Ìṣòro:** Àwọn àwòrán AI tí a ṣe ní ìṣẹ́jú àáyá 2 àti àwòrán oil painting tí a ṣe ní oṣù 2 ní ayé oníróbótó jọra bíi "jpeg" kan náà.
+- **Ojútùú [PoArt]:** A forúkọsílẹ̀ ìlànà "ìlóyún àti ìbímọ" ti iṣẹ́ ọnà náà. Àwọn ìpele sketch, àwọn ipele ewé, àwọn wákàtí tí a kójọpọ̀ lò àti ìlànà ti ara tí oníṣọ̀nà náà kọjá láti dá iṣẹ́ ọnà náà ni a forúkọsílẹ̀. Èyí ń fi **"Iye Àkókò" (Time Cost)** kún token náà. Bí ìṣẹ́dá ohun-ìní kan bá ṣòro tó, iye rẹ̀ yóò ní ìdúróṣinṣin tó.
 
-### 3) Ẹ̀rí Iye Ẹwà
+### 3) Ẹ̀rí Iye Ẹwà (Aesthetic Value Proof)
 
-- **Ìṣòro:** Àṣà "Meme" tí ó ń dójúkọ ẹ̀rín lẹ́sẹ̀kẹsẹ̀ nìkan nígbà tí ó ń fi ẹwà àti ìjìnlẹ̀ ọnà sílẹ̀, èyí tó ń fa àwọn iṣẹ́ "Hype" ìgbà kúkúrú.
-- **Ojútùú [PoArt]:** Iṣẹ́ náà gbọ́dọ̀ ní àwọn ìlànà ọnà ẹ̀kọ́, ìlànà àwọ̀, òfin ìṣètò, àti ìmọ̀ ohun èlò (Impasto, Texture, àti bẹ́ẹ̀ bẹ́ẹ̀ lọ). Àkóónú kò gbọ́dọ̀ jẹ́ kí o rẹ́rìn-ín nìkan; ó gbọ́dọ̀ ru ìyanu sókè fún àwọn olùwòran ó sì gbọ́dọ̀ ní **iye ìkójọpọ̀**.
+- **Ìṣòro:** Àṣà "Meme" tí ó ń kọjú àwọ̀ àti ìjìnlẹ̀ ọnà tí ó sì ń fọkàn sí àwọ̀ àpanilẹ́rìn nìkan, èyí tó ń fa àwọn iṣẹ́ àkànṣe "Hype" aláìpẹ́.
+- **Ojútùú [PoArt]:** Iṣẹ́ àkànṣe gbọ́dọ̀ ní àwọn ìlànà ọnà ìwé-ẹ̀kọ́, ìlànà àwọ̀, àwọn òfin ìṣètò àti ìmọ̀ nípa àwọn ohun èlò (Impasto, Doku àti bẹ́ẹ̀ bẹ́ẹ̀ lọ). Àkóónú kì í yẹ kí ó ṣe àpanilẹ́rìn nìkan; ó yẹ kí ó ru ìyàlẹ́nu sókè nínú ẹni tó ń wò ó kó sì ní **iye àkójọpọ̀**.
 
-### 4) Tuntun Èrò
+### 4) Ìtúnṣe Èrò (Conceptual Novelty)
 
-- **Ìṣòro:** Ẹgbẹ̀rún àwọn owó ajá/ológbò àdàkọ láìní ìṣẹ̀dá.
-- **Ojútùú [PoArt]:** Iṣẹ́ náà gbọ́dọ̀ kọ́ afárá tuntun tí ó ń da ọnà, sáyẹ́ńsì, ìmọ̀-ọgbọ́n tàbí ìmọ̀-ẹ̀rọ pọ̀ nínú àgbékalẹ̀ tó ní ìtumọ̀.  
-  (Fún àpẹẹrẹ, Dídapọ̀ ère atijọ́ David pẹ̀lú dátà ọjà crypto; ṣíṣe ìmúṣẹ èrò pé ìmọ̀ ènìyàn "ń di òkúta" nípa èyí tí a sì fi ìpìlẹ̀ẹ rẹ̀ múlẹ̀ pẹ̀lú àwọn orísun sáyẹ́ńsì.)  
-  Iṣẹ́ náà kò gbọ́dọ̀ jẹ́ àjọ̀dún ríran nìkan ṣùgbọ́n tún ní ìpèníjà ọgbọ́n tí ó ń ru èrò sókè nípa **Sáyẹ́ńsì, Ìmọ̀-ọgbọ́n tàbí Ìmọ̀-ẹ̀rọ**.
+- **Ìṣòro:** Ẹgbẹẹgbẹ̀rún àwọn coin ajá/ológbò tó ń ṣẹ̀dà ara wọn tí kò sí ìmọ̀-ọ̀nà kankan.
+- **Ojútùú [PoArt]:** Iṣẹ́ àkànṣe náà gbọ́dọ̀ kọ́ àfárá tuntun tó ní ìtumọ̀ tó ń so ọnà, sáyẹ́nsì, ìmọ̀ ọgbọ́n tàbí ìmọ̀-ẹ̀rọ pọ̀.  
+  (Fún àpẹẹrẹ: Dídapọ̀ ère David àtijọ́ pẹ̀lú data ojú ọjà crypto; láti inú èyí láti ṣe àlàyé èrò "dí i di òkúta" ti ìmọ̀ ènìyàn kó sì fi àwọn orísun sáyẹ́nsì ṣe ìpìlẹ̀ rẹ̀.)  
+  Iṣẹ́ ọnà kì í yẹ kí ó jẹ́ àjọyọ̀ àwòrán nìkan; ó tún gbọ́dọ̀ jẹ́ **ìjà ọgbọ́n** tó ń mú ènìyàn ronú lórí Sáyẹ́nsì, Ìmọ̀ Ọgbọ́n tàbí Ìmọ̀-Ẹ̀rọ.
 
 > [!IMPORTANT]
-> **Àpẹẹrẹ Ìrántí (Ipa Las Palmitas):** Ní àgbègbè Las Palmitas ní Mexico, tí ọ̀daràn ń pọ̀ sí i, wọ́n yí àwọn ilé tó lé ní 200 padà sí ìran òṣùmàrè ńlá kan. Nítorí ìṣediwọ́n ẹwà yìí, iye ọ̀daràn ní àgbègbè náà dínkù díẹ̀, àwọn ọ̀dọ́ sì bẹ̀rẹ̀ sí í ní ṣe ọnà dípò àwọn ẹgbẹ́ ọ̀daràn. Ìyípadà ẹwà náà tún kọ ọ̀wọ̀ ìbọ̀wọ̀ àwọn ènìyàn fún àyíká wọn àti ara wọn (Ìsopọ̀ Àwùjọ).
+> **Àpẹẹrẹ Ìtọ́kasí (Ipa Las Palmitas):**  
+> Ní àgbègbè Las Palmitas ti Mexico tó kún fún ọ̀daràn, wọ́n yí ilé tó lé ní 200 padà sí àjọyọ̀ rainbow ńlá. Lẹ́yìn ìṣọwọ́-ìṣẹ̀wà yìí, ìwọ̀n ọ̀daràn ní àgbègbè náà dínkù díẹ̀, àwọn ọ̀dọ́ bẹ̀rẹ̀ sí ní ní àníyàn sí ọnà ju àwọn ẹgbẹ́ ọ̀daràn lọ. Ìyípadà ẹwà tún ṣe code sí ọ̀wọ̀ tí ènìyàn ń fi bọ̀wọ̀ fún àyíká wọn àti fún ara wọn (Social Cohesion).
 >
-> **Ìrètí:** Iṣẹ́ tí ó bá wọ inú àtòjọ [PoArt] gbọ́dọ̀, bí nínú àpẹẹrẹ tó wà lókè, ní ìbátan ìdí-èsì àwùjọ, sáyẹ́ńsì tàbí ìmọ̀-ọgbọ́n ju ẹwà ríran lọ. Bí àkókò ṣe jẹ́ kadara kan ṣoṣo tí a kò lè rà pẹ̀lú owó, nínú ìlànà yìí a gbọ́dọ̀ ṣe ẹ̀rí àkókò nípa fífi rẹ̀ ṣe ìlérí gẹ́gẹ́ bí ààbò. Ìpìlẹ̀ èrò iṣẹ́ náà gbọ́dọ̀ jẹ́ alágbára àti ti ayé gbogbo tó bẹ́ẹ̀ tí àní nínú ìṣẹ̀lẹ̀ CTO (Ìgbà Àwùjọ Gbà) tó ṣeé ṣe lẹ́yìn ọdún, àwùjọ lè tẹ̀síwájú ní òmìnira agbára ìṣẹ̀dá iṣẹ́ náà nípa jogún ogún yìí.
+> **Ìrètí:** Iṣẹ́ àkànṣe tó bá wọ àtòkọ [PoArt]; gẹ́gẹ́ bí àpẹẹrẹ òkè yìí, gbọ́dọ̀ ní ìbáṣepọ̀ ìdí-èsì tó kọjá ẹwà àwòrán lásán, ìbá à ṣe ti àwùjọ, sáyẹ́nsì tàbí ìmọ̀ ọgbọ́n. Nítorí pé "Àkókò" ni ohun kan ṣoṣo tí owó kò lè rà, nínú ìlànà yìí, a fi àkókò "stake" bíi ẹ̀rí. Ìpìlẹ̀ èrò ti iṣẹ́ àkànṣe náà gbọ́dọ̀ lágbára tó àti àgbáyé tó; pé kódà lẹ́yìn ọdún púpọ̀ nínú àpẹẹrẹ CTO (Community Take Over) tó ṣeé ṣe, àwùjọ lè gba ogún yìí kí wọ́n sì tẹ̀síwájú àǹfààní ìmọ̀-ọ̀nà ti iṣẹ́ àkànṣe náà ní ọ̀nà aládàáṣe.
 
-### 5) Ìfẹ́ Tí Kì í Ṣe Ti Algorithm
+### 5) Ìfẹ́ Tí Kì Í Ṣe Ti Algorithm (Non-Algorithmic Agency)
 
-- **Ìṣòro:** Àwọn ìṣèdá dájítà pípé ṣùgbọ́n aláìlẹ́mí tí ó ń tún ara wọn ṣe.
-- **Ojútùú [PoArt]:** A gbọ́dọ̀ mọ ìfẹ́ àdáni ènìyàn tí ó lè ṣe àṣìṣe, gba ewu àti ní ìyípadà ìmọ̀lára nínú iṣẹ́ náà. Àìnídìí nínú àwọn ìgbọ̀nsẹ̀ brush, àwọn èsì àìrètí àwọn ohun èlò, àti àwọn ìpinnu lẹ́sẹ̀kẹsẹ̀ oníṣọ̀nà ni **Ìbúwọ́lù Ìbísí** tí ó ń yà iṣẹ́ náà sọ́tọ̀ kúrò ní "Ìṣèdá Ẹ̀rọ".
-
----
-
-## c) Ìlànà Ìṣàyẹ̀wò Àti Ìdènà-Ẹ̀tàn
-
-Ètò yìí ń ṣe ìdánilójú pé iṣẹ́ náà ń jẹ́ ìgbẹ́kẹ̀lé tí ó sì wà láàyè kì í ṣe "ní ìbẹ̀rẹ̀" nìkan ṣùgbọ́n "títí láé".
-
-### 📦 Àpò Ẹ̀rí - Ìbejì Dájítà
-
-Lẹ́yìn gbogbo iṣẹ́ tí [PoArt] ti fọwọ́sí ni àpò dátà tí a ti parọ́ tí ó sì ní àmì àkókò tí àwọn olùdókòwò lè gbà sọ̀kalẹ̀:
-
-- **Àwọn Ìgbàsílẹ̀ Vídíò RAW:** Fíìmù títàn tí kò ní ìdásílẹ̀ ti àkókò ìṣèdá.
-- **Àyẹ̀wò Metadata:** Ọjọ́ ìṣẹ̀dá fáìlì, àlàyé nípa ẹ̀rọ tí a lò àti dátà ipò.
-- **Àwọn Ìtọ́kasí Ti Ara:** Ẹ̀rí pé iṣẹ́ náà wà ní ayé ti ara  
-  (Fún àpẹẹrẹ, Ìwé ìròyìn lọ́wọ́lọ́wọ́ tàbí dátà blockchain ti àkókò yẹn lẹ́gbẹ̀ẹ́ iṣẹ́ náà).
-
-> *Àkíyèsí ìbámu:* Ọ̀rọ̀ "àpò ẹ̀rí" ń sopọ̀ mọ́ pùpọ̀ **Àpò Ẹ̀rí → EvidenceRoot → NotarySeal** ní àwọn apá tó wà ṣáájú; èyí tó túmọ̀ sí pé, òdodo àpò náà ní wíwakọ́ nípa èdìdì tí a lè ṣàyẹ̀wò.
-
-### 🔄 Ìmúdójúìwọ̀n Ọjọ́ 365 (Ìlànà Ìdúró Pẹ́)
-
-- **Ẹ̀yà Ìyípadà:** Nínú àwọn iṣẹ́ crypto, "Dev" (Olùgbékalẹ̀) ń ṣe ìfilọ́lẹ̀ àmì tí ó sì gbogbo ìgbà ń parẹ́ lẹ́yìn oṣù 1-2 (Soft Rug). [PoArt] ń jẹ́ kí èyí má ṣeé ṣe.
-- **Òfin:** Ipò "Oníṣọ̀nà Tí A Ti Ṣàyẹ̀wò" kì í ṣe fún gbogbo ayé. **Ọdún 1** nìkan ní ó wúlò.
-- **Ìṣiṣẹ́:** Oníṣọ̀nà/olùgbékalẹ̀ gbọ́dọ̀ fi **iṣẹ́ tuntun pàtàkì tí a lè ṣàyẹ̀wò** hàn fún àwùjọ ní gbogbo ọjọ́ 365.
-- **Àpẹẹrẹ Ìṣẹ̀lẹ̀:** O ṣe ìfilọ́lẹ̀ iṣẹ́ náà ní 2026. Ní January 2027, ètò náà ń fún ni ní ìkìlọ̀ "Àkókò Ẹ̀rí Ti Parí". Tí oníṣọ̀nà kò bá ṣàfihàn ìfihàn tuntun, iṣẹ́ ti ara tuntun tàbí ìsopọ̀ ìmọ̀-ẹ̀rọ tuntun, "Àmì Ìgbẹ́kẹ̀lé" iṣẹ́ náà ń ṣubú.
-- **Èsì:** Ètò yìí ń ṣe ìdánilójú pé **àkóónú kò níí parẹ́ láé** àti pé olùdókòwò kò níí ní ìrìlárá ẹ̀rù *"Ṣé olùgbékalẹ̀ sì wà níbẹ̀?"*. Iṣẹ́ náà di ile-iṣẹ́ aláàyè.
-
-### 🚩 Ìlànà Àsíá Pupa
-
-**Ní ìṣẹ̀lẹ̀ ẹ̀tàn kankan tí àwùjọ tàbí algorithms bá ṣàwárí (lílo AI, iṣẹ́ jíjà, vídíò tí a ti dàrúdàpọ̀):**
-
-1. Wọ́n ń fi àmì sí ìwé ẹ̀rí lẹ́sẹ̀kẹsẹ̀ bí **"VOID" (KÒ WÚLÒ)**.
-2. Wọ́n ń fi àmì sí àwọn àpò ẹ̀rí ní gbangba bí **"Èké"**.
-3. Wọ́n ń fi iṣẹ́ náà sínú àtòjọ dúdú [PoArt]. Èyí ń mú kí ó di mímọ̀ pé ní ayé aláìlákóso, **orúkọ rere ni owó kan ṣoṣo**.
+- **Ìṣòro:** Àwọn ìṣẹ́dá oníróbótó tó pé tí kò sì ní ẹ̀mí, tó ń ṣẹ̀dà ara wọn.
+- **Ojútùú [PoArt]:** Ìfẹ́ àdáni ti ènìyàn tó lè ṣàṣìṣe, tó ń gba ewu tó sì ń ní ìyípadà ẹ̀mí gbọ́dọ̀ hàn nínú iṣẹ́ ọnà náà. Àìdánilójú nínú gbígbọ̀nwọ́ ewé, àwọn ìdáhùn àìrètí ti ohun èlò àti àwọn ìpinnu lẹ́sẹ̀kẹsẹ̀ ti oníṣọ̀nà ni **Ìbuwọ́lù Ti Ara** tó ń ya iṣẹ́ ọnà yìí sọ́tọ̀ kúrò nínú "Ìṣẹ́dá Ẹ̀rọ".
 
 ---
 
-## d) Ìparí: Kì í Ṣe Casino, Ṣùgbọ́n Ilé-Ìṣọ́
+## c) Ẹ̀rọ Ìdánwò & Ààbò Lòdì Sí Èké
 
-**Pump.fun àti Àwọn Pàṣípààrọ̀ Aláìlákóso (DEX) jẹ́ àníyàn casino báyìí; àwọn fìtílà ń tan, gbogbo ènìyàn ń lé èrè kíákíá lọ, ilé (àwọn alárékérekè) sì ń borí nígbà gbogbo. Ìdí tí a fi bẹ̀rẹ̀ iṣẹ́ náà níbí ni àìní ìsúná tó tó àti ní àyíká láti dé ọ̀dọ̀ àwọn olùgbọ́ tó wà nípa ìgbésíta taara.**
+Ètò yìí ń ṣe àdánilójú pé iṣẹ́ àkànṣe náà kò ní "ìbẹ̀rẹ̀" nìkan ṣùgbọ́n tẹ̀síwájú láì parí láti jẹ́ ìgbẹ́kẹ̀lé àti láìkú.
 
-**[PoArt] jẹ́ odi tí a kọ́ láàárín casino yìí.**
+### 📦 Àpò Ẹ̀rí (Evidence Pack - The Digital Twin)
 
-- 🎰 Casino dá lórí eré kààdì; àwa dá lórí **òtítọ́ ti ara**.
-- 🃏 Casino ṣí sílẹ̀ fún ẹ̀tàn; àwa ṣí sílẹ̀ fún **ẹ̀rí tó hàn kedere**.
-- ⏳ Casino jẹ́ ìgbà díẹ̀; a dójúkọ **títí láé ọnà àti sáyẹ́ńsì**.
+Lẹ́yìn gbogbo iṣẹ́ ọnà tó ní ìwé-ẹ̀rí [PoArt], àpò data tó ní ìdí èdìdì àti àmì àkókò tí àwọn olùdókòwò lè gbà sílẹ̀:
 
-**Àmì tí ó bá lo ìlànà yìí kì í ṣe "owó" nìkan; ó jẹ́ ohun-ìní dájítà tó ní òógùn, àwọ̀, kóòdù àti ìmọ̀-ọgbọ́n.**
+- **Àwọn Ìforúkọsílẹ̀ Video RAW:** Àwọn àwòrán gbòǹgbò aláìdáwọ́ dúró ti àkókò ìṣẹ́dá náà.
+- **Ìtúpalẹ̀ Metadata:** Ọjọ́ ìṣẹ̀dá fáìlì, àlàyé nípa ẹ̀rọ tí a lò àti data ipò (Ìlú-Orílẹ̀-èdè).
+- **Àwọn Ìtọ́kasí Ti Ara:** Àwọn ẹ̀rí pé iṣẹ́ ọnà náà wà nínú ayé ti ara  
+  (Fún àpẹẹrẹ: Ìwé ìròyìn àìkú tó wà lẹ́gbẹ̀ẹ́ iṣẹ́ ọnà náà tàbí data blockchain àkókò náà).
+
+> *Àkíyèsí ìbámu:* Ọ̀rọ̀ "àpò ẹ̀rí" so mọ́ **Evidence Pack → EvidenceRoot → NotarySeal** tó wà ní àwọn apá tó kọjá; èyí túmọ̀ sí pé ìdọ́gba àpò náà ni a fi èdìdì tó ṣeé ṣàyẹ̀wò ṣe àpèjúwe.
+
+### 🔄 Ìsọdọ̀tun 365 Ọjọ́ (The Sustainability Protocol)
+
+- **Ìṣẹ̀ Ìyàlẹ́nu:** Nínú àwọn iṣẹ́ àkànṣe crypto, "Dev" (Olùṣe-sọ́fítìwíà) yóò fi token sí ojú ọjà yóò sì sábà máa parẹ́ lẹ́yìn oṣù 1-2 (Soft Rug). [PoArt] kọ̀ ó di aláìṣeéṣe.
+- **Òfin:** Ipò "Verified Artist" (Oníṣọ̀nà Tó Ti Ní Ìjẹ́rìísí) kì í ṣe títí láé. Ọdún **kan** nìkan ni ó tó.
+- **Bí Ó Ṣe Ń Ṣiṣẹ́:** Oníṣọ̀nà/Olùṣe-sọ́fítìwíà gbọ́dọ̀ máa fi **iṣẹ́ ọnà tuntun, ńlá tí a sì lè fihàn** sílẹ̀ fún àwùjọ ní gbogbo 365 ọjọ́.
+- **Àpẹẹrẹ Ìṣẹ̀lẹ̀:** Ẹ bẹ̀rẹ̀ iṣẹ́ àkànṣe náà ní 2026. Ní January 2027, ètò náà yóò fún ni ìkilọ̀ "Àkókò Ẹ̀rí Ti Parí". Bí oníṣọ̀nà kò bá fi ìrísí tuntun, iṣẹ́ ọnà ti ara tuntun tàbí ìdàpọ̀ ìmọ̀-ẹ̀rọ tuntun sílẹ̀, "Báàjì Ìgbẹ́kẹ̀lé" ti iṣẹ́ àkànṣe náà yóò ṣubú.
+- **Èsì:** Ètò yìí ń ṣe àdánilójú pé **àkóónú náà kò ní ọjọ́ gbẹ láé** àti pé olùdókòwò kò ní ní ìbẹ̀rù *"Ṣé Olùṣe-sọ́fítìwíà ṣì wà níbí?"* Iṣẹ́ àkànṣe náà di ilé-iṣẹ́ alààyè.
+
+### 🚩 Àmì Pupa (Red Flag Protocol)
+
+**Nígbà tí àwùjọ tàbí algorithms bá ṣe àwárí èké kankan (lílo AI, jíjà iṣẹ́ ọnà, ṣíṣe àyípadà video):**
+
+1. Ìwé-ẹ̀rí yóò di "**FÀGÍLÉ" (VOID)** lẹ́sẹ̀kẹsẹ̀.
+2. A yóò samisi àwọn àpò ẹ̀rí ní àti gbangba bíi **"Èké"**.
+3. A yóò fi iṣẹ́ àkànṣe náà sínú àtòkọ dúdú [PoArt]. Èyí ń ṣe ìmúdára òtítọ́ pé nínú ayé aládàáṣe, **orúkọ rere ni owó kan ṣoṣo**.
+4. A kò lè lo àwọn ọ̀rọ̀ [PoArt] nínú ìpolongo kankan, orísun tó tọ́ kan ṣoṣo ni https://www.ilhanart.org/public-registry
 
 ---
 
-## 🗳️ 6) ÌṢÀKÓSO ÀTI ÌFORÚKỌSÍLẸ̀ GBOGBOGBÒ
+## d) Ìparí: Kì Í Ṣe Ilé-Ìṣeré, Ṣùgbọ́n Ilé-Ìṣọ́
 
-**Èrò apá yìí ni: láti yí ìlànà [PoArt] padà láti ipele "ìgbẹ́kẹ̀lé nínú àwọn ènìyàn" sí ohun èlò gbogbogbò tí ó ní ìdúró pẹ́ pẹ̀lú ìforúkọsílẹ̀ + ìṣàyẹ̀wò + ìbójútó àwùjọ.**
+**Pump.fun àti Àwọn Ọjà Aládàáṣe (DEX) jẹ́ ilé-ìṣeré báyìí lákọtọ́; àwọn iná ń yọ àti kú, gbogbo ènìyàn ń lépa èrè tó yára àti àpótí (àwọn alárékérekè) máa ń borí nígbà gbogbo. Ìdí tí a fi bẹ̀rẹ̀ iṣẹ́ àkànṣe níbí tún ni láti gbìyànjú láti ṣe ìtúnṣe sí ibẹ̀ àti pẹ̀lú data àti àwọn ìṣafihàn láìkede tí a ní, a lè dé ọ̀dọ̀ àwùjọ tó wà lọ́wọ́.**
 
-### 6.1 Ìforúkọsílẹ̀ Gbogbogbò
+**[PoArt] jẹ́ ilé-ìṣọ́ tí a kọ́ sí àárín ilé-ìṣeré yìí.**
 
-- **Ìforúkọsílẹ̀ Gbogbogbò:** A ń kọ gbogbo dátà tí a fọwọ́sí sílẹ̀ ní `ilhanart.org/registry` (tàbí GitHub Registry).
+- 🎰 Ilé-ìṣeré dúró lórí eré káàdì; àwa dúró lórí **òtítọ́ ti ara**.
+- 🃏 Ilé-ìṣeré ṣí sílẹ̀ fún ẹ̀tàn; àwa ṣí sílẹ̀ fún **ẹ̀rí kedere**.
+- ⏳ Ilé-ìṣeré jẹ́ ìgbà díẹ̀; àwa fọkàn sí **àìnípẹ̀kun ọnà àti sáyẹ́nsì**.
 
-**Ìmọ̀tò ìforúkọsílẹ̀ (ìlànà tí a ṣe ìmọ̀ràn - ní ọ̀nà ọ̀nà JSON):**
+**Token tó ń lo ìlànà yìí kì í ṣe "coin" kan nìkan; ó jẹ́ ìpín oníróbótó kan tó ní bílẹ̀, ewé, code àti ìmọ̀ ọgbọ́n lẹ́yìn rẹ̀.**
 
-Gbogbo ìforúkọsílẹ̀ tí ó bá wọ inú ìforúkọsílẹ̀ ń gba àwọn àyè àárín wọ̀nyí tí a lè ṣàyẹ̀wò tó kéré jù:
+---
 
-- **Ìdánimọ̀ Àti Ipò:**
-  - `certificate_id` (ìtọ́kasí tí a lè kà)
+## 🗳️ 6) ÌṢÀKÓSO ÀTI ÌFORÚKỌSÍLẸ̀ GBANGBA (Governance & Public Registry)
+
+**Èrí-ìníkàn apá yìí ni: Mú ìlànà [PoArt] kúrò nínú ipele "ìgbẹ́kẹ̀lé sí ènìyàn" kí ó sì di ìpìlẹ̀ gbangba tó ní ìdúróṣinṣin pẹ̀lú ìforúkọsílẹ̀ + ìdánwò + ìṣàkóso àwùjọ.**
+
+### 6.1 Public Registry (Ìforúkọsílẹ̀ Gbangba)
+
+- **Public Registry:** Gbogbo data tó ti ní ìfọwọ́sí ni a forúkọsílẹ̀ sí `ilhanart.org/registry` (tàbí GitHub Registry).
+
+**Ìmọ̀ ìforúkọsílẹ̀ (ìlànà tí a ṣe ìmọ̀ràn - ní ọ̀nà JSON path):**
+
+Ìforúkọsílẹ̀ kọ̀ọ̀kan tó bá wọ inú registry gbọ́dọ̀ ní àwọn aaye pàtàkì tó ṣeé ṣàyẹ̀wò yìí:
+
+- **Ìdánimọ̀ & Ipò:**
+  - `certificate_id` (ìtọ́kasí tó ṣeé kà)
   - `status` (active / void)
-  - `void_reason` (tí ó bá wúlò)
+  - `void_reason` (bí ó bá wà)
   - `visibility` (private / masked / public)
   - `created_at` (àmì àkókò)
 
-- **Ilé-iṣẹ́ Ẹlẹ́rìí:**
+- **Ilé-Iṣẹ́ Olùfúnni:**
   - `issuer.name`
   - `issuer.location`
   - `issuer.attestation_pubkey`
 
-- **Àlàyé Iṣẹ́:**
+- **Àlàyé Iṣẹ́ Ọnà:**
   - `asset.title`
   - `asset.creator`
-  - `asset.creator_wallet` (tí ó bá ṣeé ṣe; fún ìdánimọ̀ pẹ̀lú ẹnu-ọ̀nà àmì)
+  - `asset.creator_wallet` (bí ó bá ṣeé ṣe; fún ìdánimọ̀ olùdìímú token)
   - `asset.fingerprints.sha256`
   - `asset.fingerprints.sha512`
 
-- **Dátà Ìwádìí:**
+- **Data Àdájọ́:**
   - `forensics.ip_masked`
   - `forensics.location`
   - `forensics.device`
@@ -290,60 +291,141 @@ Gbogbo ìforúkọsílẹ̀ tí ó bá wọ inú ìforúkọsílẹ̀ ń gba àw
 
 - **Ìṣàkóso:**
   - `governance.decision`
-  - `governance.veto_threshold`
+  - `governance.review_notes`
 
-Ìforúkọsílẹ̀ lè ní àwọn ipele méjì:
-- **1)** Àtọ́kà tí ènìyàn lè kà (àtòjọ wẹ́ẹ̀bù / wíwá / àṣẹ̀)
-- **2)** Àlàyé tí ẹ̀rọ lè kà (àwọn àkọsílẹ̀ JSON; fún ìṣàyẹ̀wò PFE)
+Registry lè ní ipele méjì:
+- **1)** Ìtọ́ka tí ènìyàn lè kà (àtòjọ wẹ́ẹ̀bù / wíwá / àṣẹ)
+- **2)** Manifest tí ẹ̀rọ lè kà (àwọn ìforúkọsílẹ̀ JSON; fún ìdánwò PFE)
 
-**"Ìforúkọsílẹ̀" yìí di ẹni tí a lè ṣàyẹ̀wò nípa pùpọ̀ Àpò Ẹ̀rí → EvidenceRoot → NotarySeal ti PFE. Ìforúkọsílẹ̀ náà ń pèsè àwọn àfojúsùn ìṣàyẹ̀wò, kì í ṣe "ẹ̀sùn".**
-
----
-
-### 6.2 Ìdílọ́wọ́ Àwùjọ 40% (Ìṣàkóso Pẹ̀lú Ẹnu-ọ̀nà Àmì)
-
-- **Ìdílọ́wọ́ Àwùjọ 40%:** Ìdìbò ń bẹ̀rẹ̀ oṣù kan ṣáájú fífún ní ipò; ìdílọ́wọ́ 40% ti àwùjọ **pẹ̀lú Ẹnu-ọ̀nà Àmì (tí a ti ṣàyẹ̀wò Solana)** ń fagilee ìbéèrè náà.
-
-**Ìlò ìdìbò (ìlànà tó hàn kedere tí a ṣe ìmọ̀ràn):**
-- **Fèrèsé ìbéèrè:** Iṣẹ́ ọlọ́jà ń ṣí "ìforúkọsílẹ̀ ọlọ́jà PoArt" (àwọn àkọsílẹ̀ ọlọ́jà ń hàn ní ipò "dúró").
-- **Àkókò àtúnyẹ̀wò:** Àwùjọ ń ṣàyẹ̀wò ẹ̀rí fún ọjọ́ 30 (Àpò Ẹ̀rí + àwọn ìgbàsílẹ̀ ìgbésíta taara + metadata).
-- **Ìṣàyẹ̀wò pẹ̀lú ẹnu-ọ̀nà àmì:** A ń ṣe ìdìbò pẹ̀lú àwọn àpamọ́wọ́ Solana tí a ti ṣàyẹ̀wò (fún àpẹẹrẹ ohun-ìní àmì/NFT pàtàkì + ìbúwọ́lù àpamọ́wọ́).
-- **Òfin ìdílọ́wọ́:** Tí 40% ti àwọn ìdìbò bá jẹ́ **ìdílọ́wọ́ (BẸẸ̀ KỌ́ / ÌDÍLỌ́WỌ́)**, a ń kọ̀ ìbéèrè náà.
-- **Síṣíi:** A ń pa èsì ìdìbò mọ́ nínú ìforúkọsílẹ̀ bí "àkọsílẹ̀ ìpinnu" (ọjọ́, ìpín, ID àwòrán).
+**"Ìforúkọsílẹ̀" níbí di ohun tó ṣeé ṣàyẹ̀wò pẹ̀lú ọ̀nà Evidence Pack → EvidenceRoot → NotarySeal ti PFE. Registry ń fún ni àfojúsùn ìdánwò, kì í ṣe "ìsọ" nìkan.**
 
 ---
 
-### 6.3 Ìdọ́gbà Metadata (Ìbámu Pẹ̀lú Ayé Ti Ara)
+### 6.2 Ìlànà Ìbéèrè PoArt Verified
 
-- **Ìdọ́gbà Metadata:** Dátà ìmọ̀-ẹ̀rọ nínú ìforúkọsílẹ̀ gbọ́dọ̀ bá nǹkan ti ara mu 100%.
+**İlhanArt Gallery ló ń ṣàyẹ̀wò àwọn ìbéèrè PoArt Verified gẹ́gẹ́ bí 5 ìlànà PoArt. A máa ń kíyèsi ìdáhùn àwùjọ, ṣùgbọ́n ìpinnu ìparí wà lọ́wọ́ ẹgbẹ́ curatorial. A ṣàlàyé àwọn ìpinnu ní kedere a sì forúkọsílẹ̀ wọ́n sí ilhanart.org/registry.**
 
-**Ṣíṣàlàyé "ìbámu 100%" ní ọ̀nà ìmọ̀-ẹ̀rọ (ìṣípayá tí a ṣe ìmọ̀ràn):**
-- **Ìbámu kékeré jù (dandan):**
-  - `asset.fingerprints.sha256/sha512` nínú ìforúkọsílẹ̀ gbọ́dọ̀ jẹ́ **bákan náà** pẹ̀lú hash fáìlì tí a ń sọ̀rọ̀ nípa rẹ̀.
-  - Nígbà tí a bá tún ṣe `proof.notary_seal` nínú ìforúkọsílẹ̀ (tí Àpò Ẹ̀rí bá wà), ó gbọ́dọ̀ jẹ́ **bákan náà**.
+#### Ìlànà Ìbéèrè
+
+**Ìbéèrè:**
+- Oníṣọ̀nà/iṣẹ́ àkànṣe ṣe ìbéèrè PoArt Verified
+- Ìgbaradì Evidence Pack (àwọn ìforúkọsílẹ̀ video, metadata, àwọn ọ̀nà asopọ̀ ìṣafihàn láìkede)
+- Ìbéèrè ránṣẹ́ sí İlhanArt Gallery
+
+**Ìṣàyẹ̀wò (Ọjọ́ 30):**
+- Ẹgbẹ́ gallery ṣe àyẹ̀wò Evidence Pack ní ìkíni
+- Wọ́n ṣàyẹ̀wò gbogbo 5 ìlànà PoArt:
+  1. Live Identity Proof
+  2. Labor & Process Proof
+  3. Aesthetic Value Proof
+  4. Conceptual Novelty
+  5. Non-Algorithmic Agency
+- Ìfọ̀rọ̀wánilẹ́nuwò pẹ̀lú oníṣọ̀nà (ìyàn)
+
+**Ìmọ̀ràn Àwùjọ:**
+- A máa ń pín Evidence Pack sí gbangba ní àkókò ìbéèrè
+- Àwùjọ lè fún ni ìdáhùn lórí ilhanart.org
+- Àwọn olùdìímú token (tó kéré jù 10,000 $CULTURE) lè ṣe ìmọ̀ràn pàtó
+- **A máa ń kíyèsi gbogbo ìdáhùn ní àkókò ìṣàyẹ̀wò**
+- **Ṣùgbọ́n ìpinnu ìparí wà lọ́wọ́ àyẹ̀wò curatorial**
+
+**Ìpinnu:**
+- Gallery fọwọ́sí tàbí kọ̀ ìbéèrè náà
+- A ṣàlàyé ìdí ìpinnu ní kedere
+- Bí a bá fọwọ́sí → Báàjì PoArt Verified
+- Bí a bá kọ̀ → Ó lè tún béèrè lẹ́yìn oṣù 6
+
+**Kedere:**
+- A forúkọsílẹ̀ gbogbo ìbéèrè àti ìpinnu sí ilhanart.org/registry
+- A ṣe àtẹ̀jáde ìforúkọsílẹ̀ ìpinnu sí gbangba:
+  - Ọjọ́ ìbéèrè
+  - Àkópọ̀ ìlànà ìṣàyẹ̀wò
+  - Ìpinnu (Approved / Rejected)
+  - Ìdí ìpinnu (àlàyé kúkúrú)
+  - Àkópọ̀ ìdáhùn àwùjọ (aláìlórúkọ)
+
+#### Kí Ni Ìdí Ìpinnu Curatorial?
+
+**Ìṣàkóso Ìdárayá:**  
+Ipò PoArt Verified ní àwọn ìlànà gíga. Àyẹ̀wò curatorial ń ṣe àdánilójú ìdúróṣinṣin àwọn ìlànà yìí.
+
+**Ìdènà Ṣíṣe Àyípadà Àrokò:**  
+Pẹ̀lú àwọn token Pump.fun, on-chain governance tó kún (bíi: Realms, DAO voting) kò ṣeé ṣe ní ọ̀nà ìmọ̀-ẹ̀rọ. Àwọn ètò ìdìbò off-chain sì ṣí sílẹ̀ fún ṣíṣe àyípadà whale àti ìkọlù tó ṣètò. Ìpinnu curatorial ń pa ewu yìí rẹ́.
+
+**Ìmúṣiṣẹ́ Ṣíṣe:**  
+Dípò àwọn ìlànà ìdìbò tó nira, ìlànà ìpinnu tó yára tó sì kedere. Àwọn oníṣọ̀nà máa ń gba èsì láàárín ọjọ́ 30.
+
+**Ìkópa Àwùjọ:**  
+A máa ń kíyèsi ìdáhùn àwùjọ pátápátá ó sì ń ní ipa lórí ìlànà ìpinnu. Ṣùgbọ́n ìpinnu ìparí wà lọ́wọ́ ẹgbẹ́ curatorial tí a ti dáàbò bò kúrò nínú ṣíṣe àyípadà.
+
+**Ọjọ́ Iwájú:**  
+Nígbà tí iṣẹ́ àkànṣe bá ti dàgbà (2027+), a lè mú ìlànà ìmọ̀ràn àwùjọ lágbára sí i. Ṣùgbọ́n ààbò ìlànà curatorial yóò wà títí láé.
+
+---
+
+### 6.3 Token Utility (Àwọn Àǹfààní Lílo Token)
+
+**Àwọn àǹfààní tí a ń fún àwọn olùdìímú token $CULTURE:**
+
+**1. Ìwọlé Àkọ́kọ́ Sí Àwọn Ìṣẹ̀lẹ̀ Gallery:**
+- Ẹ̀tọ́ láti ṣe ìrísí ní İlhanArt Gallery fún ọ̀sẹ̀ kan ní ọdún (ẹ̀tọ́ tó ṣeé gbé)
+- Ìdínkù fún drop painting
+- Ẹ̀tọ́ ìdínkù láàárín 10% sí 30% fún àwọn àwòrán ní gallery
+
+**2. Ìwọlé Kíkún Sí PoArt Registry:**
+- Àwọn ìforúkọsílẹ̀ àlàyé kíkún ti gbogbo authenticated artworks
+- Àwọn ẹ̀dà kíkún ti Evidence Pack
+- Àwọn irinṣẹ́ ìdánwò forensic
+
+**3. Advisory Voting:**
+- Ẹ̀tọ́ ìmọ̀ràn nínú àwọn ìbéèrè PoArt Verified
+- Ìwọlé sí àwọn ọ̀nà ìdáhùn àwùjọ
+- Ìkópa nínú àwọn ìjíròrò ìṣàkóso
+
+**4. Àkóónú Àkànṣe:**
+- Àkóónú behind-the-scenes ti ilé-iṣẹ́
+- Àwọn ìfọ̀rọ̀wérọ̀ oníṣọ̀nà àti àwọn video ìlànà
+- Ìwọlé sí ìwé àlàyé ìmọ̀-ẹ̀rọ
+
+**Àkíyèsí:**  
+Àwọn olùdìímú token ń fún ni advisory vote (ìdìbò ìmọ̀ràn). Ìpinnu ìparí wà lọ́wọ́ ẹgbẹ́ curatorial. A yan ìṣètò yìí láti ṣe ìdènà ṣíṣe àyípadà whale àti ìkọlù àrokò. Kò sí èrè staking nítorí pé àwa ń wá àwọn olùkópa àṣà ìgbà pípẹ́, kì í ṣe mercenary capital ìgbà kúkúrú.
+
+---
+
+### 6.4 Metadata Sync (Ìbámu Pẹ̀lú Ayé Ti Ara)
+
+- **Metadata Sync:** Data ìmọ̀-ẹ̀rọ nínú registry gbọ́dọ̀ bá ohun-ìní ti ara mu ní 100%.
+
+**Ṣíṣe àlàyé "ìbámu 100%" ní ọ̀nà ìmọ̀-ẹ̀rọ (ìmọ̀ràn àlàyé):**
+
+- **Ìbámu tó kéré jù (dandan):**
+  - `asset.fingerprints.sha256/sha512` nínú registry àti hash ti fáìlì tó wà lọ́wọ́ gbọ́dọ̀ **jọra pátápátá**.
+  - `proof.notary_seal` nínú registry nígbà tí a bá tún ṣe é (bí Evidence Pack bá wà) gbọ́dọ̀ **jọra pátápátá**.
+
 - **Ìbámu ìtọ́kasí ti ara (irú ẹ̀rí):**
-  - Iṣẹ́ ti ara + ìtọ́kasí ọjọ́/búlọ́ọ̀kù tí a fi hàn nínú ìgbésíta taara àti ẹ̀rí bákan náà gbọ́dọ̀ bá Àpò Ẹ̀rí mu.
-- **Ìgbọ́ràn àṣírí:**
-  - Àwọn àyè bí IP/ipò ní ìríran `masked` ní wíwé jáde **gẹ́gẹ́ bí àwọn ìlànà ìbòjú**.
+  - Iṣẹ́ ọnà ti ara tí a fi hàn ní ìṣafihàn láìkede + àwọn ẹ̀rí ọjọ́/búlọ́ọ̀kù gbọ́dọ̀ bá Evidence Pack mu.
+
+- **Ìbámu ìkọ̀kọ̀:**
+  - Ní ipò `masked`, àwọn aaye bíi IP/ipò gbọ́dọ̀ jáde gẹ́gẹ́ bí **ìlànà masking**.
 
 ---
 
-### 6.4 Ìjà Àti Ìfagilee
+### 6.5 Ìtakọ̀, Ìṣàyẹ̀wò Àti Fàgílé (Dispute & Revocation)
 
-Ìforúkọsílẹ̀ kì í ṣe ìlànà "ìfọwọ́sí" nìkan; **ìlànà àyẹ̀wò aláàyè** ni lòdì sí ẹ̀tàn.
+Registry kì í ṣe ẹ̀rọ "ìfọwọ́sí" nìkan; ó jẹ́ **ẹ̀rọ ìṣàkóso alààyè** lòdì sí èké.
 
-- Nígbà tí a bá bẹ̀rẹ̀ ìjà, a lè fi ìforúkọsílẹ̀ náà sí ipò **"review" (àtúnyẹ̀wò)**.
-- Tí a bá rí ẹ̀tàn, a ń fi àmì sí i bí `status: void` pẹ̀lú ìdí tí a fi kùn:
-  - `void_reason` (lílo AI / jíjà / dídàrúdàpọ̀, àti bẹ́ẹ̀ bẹ́ẹ̀ lọ)
-  - `revoked_at` (àkókò ìfagilee)
-- Orísun ìpinnu ìfagilee ń hàn kedere nínú ìforúkọsílẹ̀:
-  - ìdìbò àwùjọ / ìgbìmọ̀ tí a fún ní àṣẹ / àkíyèsí ìwádìí sáyẹ́ńsì (èyí tó bá wúlò)
+- Nígbà tí ìtakọ̀ bá bẹ̀rẹ̀, a lè fi ìforúkọsílẹ̀ sí ipò **"review"**.
+- Bí a bá rí èké, a máa samisi rẹ̀ bíi `status: void` a sì fi ìdí kún un:
+  - `void_reason` (lílo AI / jíjà / ṣíṣe àyípadà àbáwọlé)
+  - `revoked_at` (àkókò fàgílé)
+- Orísun ìpinnu fàgílé yóò hàn kedere nínú registry:
+  - àyẹ̀wò curatorial / ìtakọ̀ àwùjọ / àkíyèsí ìtúpalẹ̀ àdájọ́ (èyí tó bá wà)
 
-> **Apá yìí ni àkọ́kọ́ ìforúkọsílẹ̀ ti èrò VOID nínú apá "Ìlànà Àsíá Pupa".**
+> **Apá yìí jẹ́ ìbámu ti èrò VOID nínú apá "Red Flag Protocol" lórí registry.**
 
 ---
 
-### 6.5 Àpẹẹrẹ Ìforúkọsílẹ̀ (Tí Ẹ̀rọ Lè Kà)
+### 6.6 Àpẹẹrẹ Ìforúkọsílẹ̀ Registry (Tí ẹ̀rọ lè kà)
 ```json
 {
   "certificate_id": "POART-AB12CD34",
@@ -376,464 +458,207 @@ Gbogbo ìforúkọsílẹ̀ tí ó bá wọ inú ìforúkọsílẹ̀ ń gba àw
   },
   "governance": {
     "decision": "approved",
-    "veto_threshold": 0.40
+    "review_notes": "Met all 5 PoArt standards. Community feedback positive."
   }
 }
 ```
-> *Àkíyèsí: `asset.fingerprints.sha512` àti àwọn iye hash mìíràn ní píkúrúkúrú fún àfihàn; nínú ìmúṣẹ gan-an, a ń lo àwọn okùn kíkún ọ̀rọ̀ hexadecimal.*
+
+> *Àkíyèsí: `asset.fingerprints.sha512` àti àwọn iye hash míìràn di kúkúrú fún àpẹẹrẹ; nínú ìṣe gidi, a máa lò ọ̀rọ̀ hexadecimal tó kún.*
 
 ---
 
 ## 7) 🔐 ÈDÌDÌ ÌMỌ̀-ẸRỌ (NOTARY SEAL)
 
-Algorithm èdìdì aláìyípadà tí **Ẹ̀rọ Ìwádìí PoArt (PFE) v1.0** ṣẹ̀dá:
+**Algorithm èdìdì tí kò lè yọ̀ tí PoArt Forensic Engine (PFE) v1.0 ṣe:**
 
 $$\text{NotarySeal} = \text{SHA-512}\left(\text{EvidenceRoot} \mid \text{SignerSignature} \mid \text{TimeStamp}\right)$$
 
 ---
 
-# Ìlànà [PoArt] Ti Notary Dájítà Àti Ẹ̀rí Sáyẹ́ńsì (Beta v1.0)
+# [PoArt] Ìlànà Akọ̀wé Oníróbótó & Ẹ̀rí Àdájọ́ (Beta v1.0)
 
-> **"Àṣà tóbi ju Owó lọ. Dáàbò bo àwọn iṣẹ́ rẹ lónìí, gbé wọn lọ sí ọ̀la."**
-
----
-
-## Kí ni ìdí Gbogbogbò?
-
-Ààbò òtítọ́ ń wá láti ìhàn kedere. Ọpẹ́ fún ètò **Ìforúkọsílẹ̀ Gbogbogbò** wa, ẹnikẹ́ni níbikíbi ní ayé lè ṣàyẹ̀wò pé fáìlì kan jẹ́ atọ́wọ́dọ́wọ́ ní ìṣẹ́jú, láì nílò ẹ̀rí kankan.
+> **"Àṣà tóbi ju Oluómìnira. Dáàbò bo àwọn iṣẹ́ yín láti òní, gbé wọn lọ sí ọ̀la."**
 
 ---
 
-## 🧩 Kí ni ìdí "Àwọn Module Ìríran" Púpọ̀?
+## Kí Ni Ìdí Sí Gbangba?
 
-Èyí ni apá pàtàkì jù ti kóòdù (àtòjọ yíyàn ìríran). Àwọn àṣàyàn wọ̀nyí ń jẹ́ kí àwọn olùlò ṣe ìdọ́gbà **"Àṣírí vs. Ìhàn Kedere"**:
-
-### 🔒 Àdání
-
-- **Ìṣẹ̀lẹ̀:** Oníṣọ̀nà ò tíì fẹ́ tẹ̀ iṣẹ́ náà jáde, ṣùgbọ́n ó fẹ́ fi àmì àkókò sí i láti ṣe ẹ̀rí "mo ṣe èyí ní ọjọ́ yìí".
-- **Kíni Kóòdù Náà Ń Ṣe:** Ó ń kọ dátà sínú ibi ìpamọ́ dátà ṣùgbọ́n ó ń fi àmì `visibility: "private"`. Lẹ́yìn àyè nígbà tí o bá kọ ìlànà "Kíkà Gbogbogbò", o lè fi àwọn àkọsílẹ̀ wọ̀nyí pamọ́ kúrò ní gbangba pẹ̀lú `WHERE visibility = 'public'`.
-
-### 🕶️ Ìbòjú
-
-- **Ìṣẹ̀lẹ̀:** Oníṣọ̀nà fẹ́ ìhàn kedere ṣùgbọ́n ó bẹ̀rù pé a máa rí àdírẹ́ẹ̀sì ilé rẹ̀ (ipò IP).
-- **Kíni Kóòdù Náà Ń Ṣe:** Àwọn iṣẹ́ `maskIP` àti `maskLoc` ń ṣiṣẹ́ ní apá JavaScript. Ó ń yí àdírẹ́ẹ̀sì IP padà sí ọ̀nà `88.241.***.***`, ipò sí ọ̀nà `***/TR`, tí ó sì ń fi àtúntò tí a fi ìyàsọ́tọ̀ ránṣẹ́ sí ibi ìpamọ́ dátà.
-- **Àkíyèsí Àṣírí:** A ń ṣe ìbòjú ní ẹ̀rọ àwárí, Supabase kò rí ipò gan-an. **Ṣùgbọ́n:** Tí a bá lo àwọn APIs ẹlòmíràn bí ipapi.co fún dátà ipò, àwọn olùpèsè wọ̀nyí ń rí àdírẹ́ẹ̀sì IP ní àkókò ìbéèrè.
-- **Èdìdì ní Ọ̀nà Ìbòjú:** A ń ṣe ìṣirò EvidenceRoot àti NotarySeal pẹ̀lú dátà ìwádìí tí a fi ìbòjú; nítorí náà ìṣàyẹ̀wò ń jẹ́ ìpinnu.
-
-### 🌍 Gbogbogbò
-
-- **Ìṣẹ̀lẹ̀:** Ìhàn kedere kíkún. Gẹ́gẹ́ bí àwọn ìlànà [PoArt], níbo, nígbà wo, láti orí nẹ́tíwọ́ọ̀kì wo ni a ṣẹ̀dá iṣẹ́ náà ní kíkéde kedere.
+Ààbò tòótọ́ wá láti inú kedere. Pẹ̀lú ètò **Public Registry (Ìforúkọsílẹ̀ Gbangba)** wa, ẹnikẹ́ni ní ibikíbi láyé lè ṣàyẹ̀wò bóyá fáìlì tó wà lọ́wọ́ rẹ̀ jẹ́ ọkọ̀ọ̀kan láìsí aláṣẹ kankan láàárín ìṣẹ́jú àáyá díẹ̀.
 
 ---
 
-## 💡 Ìṣẹ̀dá Ìmọ̀-ẹ̀rọ
+## 🧩 Kí Ni Ìdí Púpọ̀ "Module Ìríran"?
 
-PoArt kì í ṣe ètò ìgbékalẹ̀ fáìlì nìkan. Ó jẹ́ ẹ̀rọ **"Pùpọ̀ Ìtọ́jú Sáyẹ́ńsì"** tí ó ń mú ìlànà tuntun wá nípa dídàpọ̀ àwọn ipele ìmọ̀-ẹ̀rọ mẹ́ta tó yàtọ̀ sí ìkòkò kan.
+Èyí ni apá tó ṣe pàtàkì jù nínú code (àtòjọ àṣàyàn visibility). Àwọn àṣàyàn yìí ń jẹ́ kí àwọn olùlò ṣètò ìdọ́gba **"Ìkọ̀kọ̀ vs. Kedere"**:
 
-**Ipele tí a ṣàlàyé gẹ́gẹ́ bí "ẹ̀rọ" nínú apá yìí ń bá ọkàn Ẹ̀rọ Ìwádìí PoArt (PFE) mu nínú ìṣàlàyé ṣáájú.**
+### 🔒 Àdáni (Private)
 
-### 1) Hashing Apá Oníbàárà (Àṣírí Tó Ga Jù)
+- **Àpẹẹrẹ:** Oníṣọ̀nà kò fẹ́ ṣe àtẹ̀jáde iṣẹ́ ọnà ṣìbẹ̀ ṣùgbọ́n ó fẹ́ fi àmì àkókò kùn ún kó lè fihàn pé "Mo ṣe èyí ní ọjọ́ yìí".
+- **Ohun Tí Code Ń Ṣe:** Ó kọ data sínú ibi-ìpamọ́ ṣùgbọ́n ó fi àmì `visibility: "private"` sí i. Ní ọjọ́ iwájú nígbà tí a bá kọ "Public Read" policy, a lè sọ `WHERE visibility = 'public'` láti fi àwọn ìforúkọsílẹ̀ yìí pamọ́ kúrò lọ́dọ̀ àwùjọ.
 
-A kò gbé àwọn fáìlì iṣẹ́ ọnà rẹ kalẹ̀ sórí ọ̀dọ̀. Ẹ̀rọ wa tó dá lórí ẹ̀rọ àwárí (apá oníbàárà) ń ṣe ìṣirò hash (àkópọ̀ dájítà) fáìlì náà lórí kọ̀mpútà tìrẹ. Ìtẹ̀sẹ́ ìka yìí àti metadata nìkan ni a ń fi ránṣẹ́ sí ọ̀dọ̀.
+### 🕶️ Aláàbò (Masked)
 
-> **Àkíyèsí Àṣírí:** A kò gbé fáìlì iṣẹ́ náà kalẹ̀ sórí ọ̀dọ̀ a sì dáàbò bò ó báyìí. Bí ó tilẹ̀ jẹ́ bẹ́ẹ̀, a ń pín dátà ìwádìí (IP/ipò) gẹ́gẹ́ bí ọ̀nà ìríran tí a yàn (àdání/ìbòjú/gbogbogbò).
+- **Àpẹẹrẹ:** Oníṣọ̀nà fẹ́ kedere ṣùgbọ́n ó bẹ̀rù pé wọ́n á rí àdírẹ́ẹ̀sì ilé rẹ̀ (ipò IP).
+- **Ohun Tí Code Ń Ṣe:** Ní apá JavaScript, àwọn iṣẹ́ `maskIP` àti `maskLoc` ń ṣiṣẹ́. Ó yí àdírẹ́ẹ̀sì IP padà sí `88.241.***.***`, ipò sí `***/TR` ó sì fi ẹ̀dà tí a ti ṣe sansọ́ọ̀ sínú ibi-ìpamọ́.
+- **Àkíyèsí Ìkọ̀kọ̀:** A ń ṣe masking ní apá browser, Supabase kò rí ipò tòótọ́. **Ṣùgbọ́n:** Bí a bá ń lo API ẹlẹ́gbẹ́ bíi ipapi.co fún data ipò, àwọn olùpèsè yìí yóò rí àdírẹ́ẹ̀sì IP ní àkókò ìbéèrè.
+- **Mühürleme Ní Ipò Masked:** Ìṣírò EvidenceRoot àti NotarySeal ṣe pẹ̀lú data forensics tí a ti ṣe masking; báyìí ìdánwò yóò jẹ́ deterministik.
 
-### 2) Àdàpọ̀ Dátà Ìwádìí (Agbára Sáyẹ́ńsì)
+### 🌍 Sí Gbogbo Ènìyàn (Public)
 
-Púpọ̀ ju àmì àkókò déédé lọ. Ètò náà ń da àwọn dátà wọ̀nyí pọ̀ sínú "Èdìdì Ìbẹ̀rẹ̀" kan:
-
-- **Àkópọ̀ Dájítà (SHA-512):** Ìtẹ̀sẹ́ ìka nípa lílo ìlànà àkópọ̀ cryptographic (SHA-512) tí yóò fọ́ tí kódà pixel kan bá yí padà nínú iṣẹ́ náà.
-- **Ipò Àti Àkókò:** Ọjọ́ pẹ̀lú ìgbéléyìn milliseconds, orílẹ̀-èdè, ìlú àti dátà àgbègbè ìdúnàádúrà.
-- **Ìdánimọ̀ Ẹ̀rọ:** Ètò ìṣiṣẹ́, ẹ̀rọ àwárí àti irú ẹ̀rọ (àyẹ̀wò User-Agent).
-
----
-
-## 🛡️ Àwọn Ìlò Àti Àǹfàní
-
-Tí o bá jẹ́ oníṣọ̀nà, onímọ̀kọ́wé tàbí aláṣẹ, sísọ "Mo ṣe èyí tẹ́lẹ̀" kò tó; o nílò láti ṣe ẹ̀rí.
-
-**Iṣẹ́ tí o fi èdìdì pẹ̀lú PoArt:**
-
-- **Ẹ̀rí Ìṣirò:** Tí kódà pixel kan bá yí padà nínú fáìlì rẹ, ètò náà mọ̀. Àìṣedéédéé kò ṣeé ṣe.
-- **Ìpìlẹ̀ Òfin:** A ti kọ ọjọ́ wo, ìlú wo, láti ẹ̀rọ wo ni a fi èdìdì sí iṣẹ́ náà sílẹ̀.
-- **Ìwé Ẹ̀rí Lẹ́sẹ̀kẹsẹ̀:** Ó ń ṣẹ̀dá **"Ìwé Ẹ̀rí Ìdánimọ̀ Kadara"** pàtàkì fún ọ ní ìṣẹ́jú, pẹ̀lú kóòdù QR tí a sì fi èdìdì sí i.
+- **Àpẹẹrẹ:** Kedere kíkún. Gẹ́gẹ́ bí ìlànà [PoArt], níbo, nígbà wo, láti orí nẹ́tíwọ̀ọ̀kì wo ni a ṣe iṣẹ́ ọnà náà ni a sọ kedere.
 
 ---
-
-## ⚙️ Àgbékalẹ̀ Ètò Àti Àwọn Ẹ̀yà Ìmọ̀-ẹ̀rọ
-
-A ṣe àgbékalẹ̀ ètò náà lórí àgbékalẹ̀ "Serverless", tí ó ń dójúkọ ìṣesí gíga àti agbára láti gbooro.
-
-| Ipele | Ìmọ̀-ẹ̀rọ | Àlàyé |
-|--------|-----------|-------------|
-| **Ìparọ́** | SHA-256 & SHA-512 | Àkópọ̀ cryptographic ipele méjì |
-| **Ibi Ìpamọ́ Dátà** | Supabase (PostgreSQL) | Àgbékalẹ̀ dátà JSONB, àwọn ìlànà RLS |
-| **Dátà Ìwádìí** | ipapi.co API | Mẹ́ta IP/Ipò/Àkókò |
-| **Ṣíṣe Àfihàn** | html2canvas + jsPDF | Ìṣẹ̀dá PNG/PDF apá oníbàárà |
-| **Frontend** | Vanilla JavaScript | Ìgbẹ́kẹ̀lé lórí ilana òfò |
-| **Ààbò** | Hashing apá oníbàárà | Fáìlì kò gbẹ̀dọ̀ lọ |
-
-### Àwọn Ẹ̀yà Tó Hàn Kedere
-
-| Ẹ̀yà | Àlàyé | Ní Àwọn Alámìíṣe? |
-|---------|-------|-----------------|
-| **UI Wọlé & Sọ̀kalẹ̀** | Wọlé àti sọ̀kalẹ̀ fáìlì, ìríran lẹ́sẹ̀kẹsẹ̀ | ❌ Kò sí ní ọ̀pọ̀ |
-| **Ìgbéjáde Oríṣiríṣi** | PNG, JSON, PDF - tẹ̀ ẹyọkan | ⚠️ Àìtó |
-| **Ìríran Àkókò Lára** | Ìríran ìwé ẹ̀rí taara | ❌ Kò sí |
-| **Àwọn Ìṣàkóso Àṣírí** | Àwọn àṣàyàn Àdání/Ìbòjú/Gbogbogbò | ❌ Kò sí |
-| **Hash Apá Oníbàárà** | Fáìlì kò gbẹ̀dọ̀ lọ | ✅ Nínú díẹ̀ nìkan |
-| **Metadata Ìwádìí** | IP, ipò, ẹ̀rọ, àkókò - gbogbo wọn papọ̀ | ❌ Pínpín |
-| **Ìṣàyẹ̀wò QR** | Kóòdù QR ìṣàyẹ̀wò lẹ́sẹ̀kẹsẹ̀ | ⚠️ Àìtó |
-| **Ìdínà Iyára** | Ààbò lòdì sí spam (RLS + Oníbàárà) | ❌ Kò sí ní ọ̀pọ̀ |
-
----
-
-## 🗺️ Àwòrán Ọ̀nà: Ọjọ́ Iwájú "Láì Ní Ìgbẹ́kẹ̀lé"
-
-Àtúntò lọ́wọ́lọ́wọ́ **(Beta v1.0)** jẹ́ ìmúdára láti fún àwọn olùlò ìparí ní iyára tó ga jù, ẹ̀rọ tó rọrùn àti ìwọlé ọ̀fẹ́. Bí ó tilẹ̀ jẹ́ bẹ́ẹ̀, ìran wa ìparí ni àyípadà sí àgbékalẹ̀ níbi tí kódà alábòójútó ibi ìpamọ́ dátà (àwa) kò lè lọ́wọ́ sí i.
-
-### Ipele 1: Beta (Ó Wà Lára Lọ́wọ́lọ́wọ́)
-
-- **Ohun Èlò:** Ibi Ìpamọ́ Dátà Àwọsánmọ̀ (Supabase).
-- **Èrò:** Iyára, ìmúkúrò àwọn ìdènà UX (Ìrírí Olùlò) àti ìbámu. Pípèsè ààbò "láì ní ìdènà".
-
-### 🚀 Ipele 2: (Àwọn Ìbéèrè Backend / Iṣẹ́ Edge)
-
-Ipele yìí ń bò àyípadà láti àgbékalẹ̀ iṣẹ́ "apá oníbàárà" pátápátá sí àgbékalẹ̀ "Àṣẹ Apá Ọ̀dọ̀" tó ní ààbò púpọ̀ tó sì lè ní ìṣàkóso.
-
-| Nǹkan | Kíni Ó Ń Mú Wá? | Àpapọ̀ Ìmọ̀-ẹ̀rọ | Pàtàkì |
-|-------|---------------|------------|---------|
-| **`INSERT` → Iṣẹ́ Edge** | Ìdènà spam + ààbò kọ́kọ́rọ́ API | Supabase Edge (Deno) | 🔴 Gíga |
-| **Ìbúwọ́lù Àpamọ́wọ́** | Ìṣàyẹ̀wò cryptographic | Solana Wallet Adapter | 🟡 Àárín |
-| **Àdúgbò IPFS/Arweave** | Àìlèyípadà láì ní àkóso àárín | IPFS SDK + Pinata | 🟢 Kékeré |
-| **Ìlànà Ìfagilee** | Ìfàgílé ìwé ẹ̀rí èké | Ìmúdójúìwọ̀n Àgbékalẹ̀ DB | 🔴 Gíga |
-| **Àkọsílẹ̀ Àyẹ̀wò** | Àkọsílẹ̀ ìbéèrè sáyẹ́ńsì | Tábìlì àkọsílẹ̀ pàtàkì | 🟡 Àárín |
-| **OpenTimestamps** | Ìdásílẹ̀ Bitcoin | OTS JavaScript | 🟢 Kékeré |
-| **Ìsopọ̀ DID** | Ìdánimọ̀ Láì Ní Àkóso Àárín | ION/Ceramic | 🟢 Kékeré |
-
-### Ipele 3: Àìní Àkóso Àárín Kíkún (Ìgbà Pípẹ́)
-
-| Ẹ̀yà | Èrò | ETA |
-|---------|------|-----|
-| **Ìforúkọsílẹ̀ Blockchain** | Ìforúkọsílẹ̀ lórí pùpọ̀ Ethereum/Solana | Q4 2026 |
-| **Ìṣàkóso DAO** | Ìṣàkóso àwùjọ | Q1 2027 |
-| **Àtìlẹ́yìn Pùpọ̀ Púpọ̀** | Polygon, Arbitrum, Base | Q2 2027 |
-| **Ìmọ̀ Òfin** | Ìwúlò ní àwọn ilé-ẹjọ́ Turkíì | 2027-2028 |
-| **API Fún Àwọn Olùgbékalẹ̀** | Ìparí API gbogbogbò | Q3 2026 |
-
----
-
-## 📊 Àyẹ̀wò Ìdíje (Tí A Ti Ṣe Ìmúdójúìwọ̀n)
-
-PoArt wà ní "Sweet Spot" tí ó ń kun àwọn àìtó àwọn ojútùú tí ó wà.
-
-| Ẹ̀yà | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 證 Proof | Trust-Stamp |
-|---------|:---------:|:---------------:|:-----------------:|:------------:|:----:|:-----------:|:--------:|:-----------:|
-| **Iye Owó** | 🆓 Ọ̀fẹ́ | 🆓 | 💰 Owó | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
-| **UI Wọlé & Sọ̀kalẹ̀** | ✅ Rọrùn Gan-an | ❌ CLI | ⚠️ Àárín | ⚠️ Àárín | ⚠️ | ⚠️ | ❌ | ⚠️ |
-| **Ìgbéjáde Oríṣiríṣi** | ✅ PNG/PDF/JSON | ❌ | ⚠️ PDF | ⚠️ PDF | ❌ | ❌ | ❌ | ⚠️ |
-| **Ìríran Àkókò Lára** | ✅ Taara | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| **Àwọn Ìṣàkóso Àṣírí** | ✅ Ọ̀nà 3 | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Hash Apá Oníbàárà** | ✅ Àṣírí | ✅ | ❌ Ìgbékalẹ̀ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
-| **Metadata Ìwádìí** | ✅ Kíkún | ❌ | ❌ | ⚠️ Àìtó | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Ìṣàyẹ̀wò QR** | ✅ Lẹ́sẹ̀kẹsẹ̀ | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
-| **Ìdínà Iyára** | ✅ RLS+Oníbàárà | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Ìdásílẹ̀ Blockchain** | 🔄 Àwòrán Ọ̀nà | ✅ Bitcoin | ✅ Ethereum | ✅ Púpọ̀ | ✅ | ✅ | ✅ | ✅ |
-| **Orísun Ṣíṣí** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
-| **Àtìlẹ́yìn Turkíì** | ✅ Ìbílẹ̀ | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
-
-**Ìtumọ̀:**
-- ✅ : Àtìlẹ́yìn kíkún / wà
-- ⚠️ : Àìtó / nínú àwọn ètò owó
-- ❌ : Kò sí / a kò tìlẹ́yìn
-- 🔄 : Nínú àwòrán ọ̀nà (ń gbòòrò)
-- 🆓 : Ọ̀fẹ́ pátápátá
-- 💰 : Owó / ìforúkọsílẹ̀ ń bééré
-
-### Àwọn Àìtó Àwọn Alámìíṣe, Àwọn Agbára PoArt
-
-| Àìtó | Àwọn Alámìíṣe | PoArt |
-|-------|-------------|-------|
-| **Ìṣòro Ìlò** | CLI, ìmọ̀ API, àpamọ́wọ́ ń bééré | Wọlé àti sọ̀kalẹ̀, tán ní tẹ̀ 3 |
-| **Ìdènà Iye Owó** | Ìforúkọsílẹ̀ $50-500/oṣù | 100% ọ̀fẹ́ |
-| **Àṣírí** | A ń gbé fáìlì kalẹ̀ sórí ọ̀dọ̀ | Apá oníbàárà, fáìlì kò gbẹ̀dọ̀ lọ |
-| **Dátà Ìwádìí** | Àmì àkókò nìkan | IP, ipò, ẹ̀rọ, àkókò - gbogbo |
-| **Àtìlẹ́yìn Turkíì** | Kò sí tàbí àìtó púpọ̀ | Àtìlẹ́yìn èdè ìbílẹ̀ |
-| **Orísun Ṣíṣí** | Àpótí títì | Gbogbo kóòdù ṣíṣí lórí GitHub |
-
----
-
-## 🧬 Àgbékalẹ̀ Dátà Ìlànà (JSON Schema)
-
-**Gbogbo ìwé ẹ̀rí [PoArt] ní kàádì ìdánimọ̀ JSON tí ó lè gbé tí a sì lè ṣàyẹ̀wò tí a ṣẹ̀dá ní ìlànà tó wà nísàlẹ̀.**
-
-> **Àkíyèsí:** Àgbékalẹ̀ JSON ìdánimọ̀ yìí jẹ́ àgbékalẹ̀ ìwé ẹ̀rí tí a ń gbé kalẹ̀ fún àwọn olùlò. Nínú àwọn àkọsílẹ̀ ìforúkọsílẹ̀, a ń lo `registry.asset` dípò `identity.asset_data` (ìṣàpèjúwe: `identity.asset_data` == `registry.asset`).
-```json
-{
-  "$schema": "https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json",
-  "manifest": {
-    "protocol": "[PoArt] Proof of Art",
-    "version": "1.0",
-    "status": "Production-Ready"
-  },
-  "identity": {
-    "issuer": "Ilhan Art Gallery",
-    "location": "Istanbul / Besiktas",
-    "archive_vision": "2025 - 3000"
-  },
-  "asset_data": {
-    "title": "Official Whitepaper",
-    "fingerprints": {
-      "sha256": "e4123f83b44a409d7a43f0897837876dfabb3320db63dadbb34c54281f38a6ba",
-      "sha512": "41e5e0d007a2a77b6e0e3ebc548fbaa2788ea265193434f58d23e8c0f5bb20a0835aa850edbadbd8341969cf743fc69fa951f7ed275901fefe0fe7eb1fb83099"
-    }
-  },
-  "official_links": {
-    "registry": "https://www.ilhanart.org/public-registry",
-    "evidence": "https://www.ilhanart.org/identity"
-  },
-  "forensics": {
-    "ip_masked": "46.1.***.***",
-    "device": "Brave (Windows;Monster,Tulpar)...",
-    "location": "***/TR",
-    "timestamp": "2026-01-09T12:34:56.000Z"
-  }
-}
-```
-
----
-
-## 🔬 Ìjìnlẹ̀ Ìmọ̀-ẹ̀rọ: Algorithm Èdìdì
-
-### Àwọn Iṣẹ́ Hash Tí Ó Ní Ìpinnu
-```javascript
-// Àwọn Iṣẹ́ Ìrànlọ́wọ́: Yí àkópọ̀ padà sí okùn hexadecimal
-async function digestToHex(algorithm, dataBytes) {
-  const hashBuffer = await crypto.subtle.digest(algorithm, dataBytes);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-// Yí okùn padà sí àkójọpọ̀ bytes
-function stringToBytes(text) {
-  return new TextEncoder().encode(text);
-}
-
-// Ìṣẹ̀dá okùn ìwádìí pàtàkì (v1.0: ètò àyè tí ó dúró + UTF-8 + pínpín \n)
-// Àkíyèsí Ipele 2: Àyípadà sí JSON pàtàkì pẹ̀lú RFC 8785 (JCS)
-function canonicalForensics(forensicsData) {
-  return JSON.stringify({
-    ip_masked: forensicsData.ip_masked,
-    location: forensicsData.location,
-    device: forensicsData.device,
-    timestamp: forensicsData.timestamp
-  });
-}
-```
-
-### Ìlànà Ìṣẹ̀dá NotarySeal (Pẹ̀lú Ìpinnu Pátápátá)
-```javascript
-// 1. Ìṣirò FileHash (apá oníbàárà)
-async function computeFileHash(file) {
-  const fileBuffer = await file.arrayBuffer();
-  const fileBytes = new Uint8Array(fileBuffer);
-  
-  const sha256 = await digestToHex('SHA-256', fileBytes);
-  const sha512 = await digestToHex('SHA-512', fileBytes);
-  
-  return { sha256, sha512 };
-}
-
-// 2. Kíkójọpọ̀ dátà ìwádìí (lílo àmì àkókò kan)
-async function collectForensics(visibilityMode) {
-  const timestamp = new Date().toISOString(); // Ìṣẹ̀dá àmì àkókò kan
-  const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
-  
-  let forensics = {
-    ip_masked: visibilityMode === 'masked' ? maskIP(ipData.ip) : ipData.ip,
-    location: visibilityMode === 'masked' 
-      ? `***/${ipData.country}` 
-      : `${ipData.city}, ${ipData.country_name || ipData.country}`,
-    device: navigator.userAgent,
-    timestamp: timestamp // Àmì àkókò kan náà
-  };
-  
-  return { forensics, timestamp };
-}
-
-// 3. Ìṣẹ̀dá EvidenceRoot (pẹ̀lú ìparọ́ pàtàkì)
-async function computeEvidenceRoot(fileHash512, forensicsData) {
-  const canonicalPayload = `file_sha512:${fileHash512}\nforensics:${canonicalForensics(forensicsData)}`;
-  return await digestToHex('SHA-512', stringToBytes(canonicalPayload));
-}
-
-// 4. Ìṣẹ̀dá NotarySeal (lílo àmì àkókò kan náà)
-async function computeNotarySeal(evidenceRoot, signerSignature, timestamp) {
-  const sealPayload = `evidence_root:${evidenceRoot}\nsigner_sig:${signerSignature}\ntimestamp:${timestamp}`;
-  return await digestToHex('SHA-512', stringToBytes(sealPayload));
-}
-
-// Àwọn iṣẹ́ ìrànlọ́wọ́ ìbòjú (àtìlẹ́yìn IPv4 àti IPv6)
-function maskIP(ip) {
-  if (!ip) return "***";
-  
-  // Àyẹ̀wò IPv4
-  if (ip.includes(".")) {
-    const parts = ip.split(".");
-    if (parts.length === 4) {
-      return `${parts[0]}.${parts[1]}.***.***`;
-    }
-  }
-  
-  // IPv6 tàbí àgbékalẹ̀ àìmọ̀
-  return "***";
-}
-```
-
-### Ìlò Ìṣàyẹ̀wò (Àwọn Ipele Méjì)
-
-#### Quick Verify (Ìṣàyẹ̀wò Kíákíá)
-```javascript
-// Ṣàyẹ̀wò hash fáìlì nìkan (àsíá pupa kíákíá)
-async function verifyQuick(file, certificateId) {
-  const { sha512: userFileHash } = await computeFileHash(file);
-  
-  // Gbà láti ìforúkọsílẹ̀
-  const cert = await fetchFromRegistry(certificateId);
-  const { sha512: originalHash } = cert.asset.fingerprints;
-  
-  // Àfiwéra hash
-  if (userFileHash === originalHash) {
-    return {
-      valid: true,
-      message: "✅ Atọ́wọ́dọ́wọ́ - Hash fáìlì bá ara mu"
-    };
-  } else {
-    return {
-      valid: false,
-      message: "❌ Èké - A ti dàrúdàpọ̀ fáìlì náà"
-    };
-  }
-}
-```
-
-#### Full Verify (Ìṣàyẹ̀wò Kíkún)
-```javascript
-// Tún ṣẹ̀dá kí o sì ṣàyẹ̀wò EvidenceRoot àti NotarySeal
-async function verifyFull(file, certificateId) {
-  const { sha512: userFileHash } = await computeFileHash(file);
-
-  // Gbà láti ìforúkọsílẹ̀
-  const cert = await fetchFromRegistry(certificateId);
-
-  // 1) Ìṣàyẹ̀wò FileHash (àsíá pupa kíákíá)
-  const originalHash = cert.asset.fingerprints.sha512;
-  if (userFileHash !== originalHash) {
-    return { valid: false, message: "❌ Èké - Hash fáìlì kò bá ara mu" };
-  }
-
-  // 2) Tún ṣẹ̀dá EvidenceRoot (pẹ̀lú dátà ìwádìí tí a pa mọ́ nínú ìforúkọsílẹ̀)
-  const evidenceRoot = await computeEvidenceRoot(userFileHash, cert.forensics);
-  if (evidenceRoot !== cert.proof.evidence_root) {
-    return { valid: false, message: "❌ Kò bá ara mu - EvidenceRoot kò dúró" };
-  }
-
-  // 3) Tún ṣẹ̀dá NotarySeal (pẹ̀lú àmì àkókò kan náà + signer_sig)
-  const seal = await computeNotarySeal(
-    evidenceRoot,
-    cert.proof.signer_sig,
-    cert.forensics.timestamp
-  );
-
-  if (seal !== cert.proof.notary_seal) {
-    return { valid: false, message: "❌ Kò bá ara mu - NotarySeal kò dúró" };
-  }
-
-  // Àṣàyàn: Ní Ipele 2, tún ṣàyẹ̀wò signer_sig pẹ̀lú attestation_pubkey
-  // const sigValid = await verifySig(cert.issuer.attestation_pubkey, cert.proof.signer_sig, evidenceRoot);
-  // if (!sigValid) return { valid: false, message: "❌ Ìbúwọ́lù tí kò wúlò" };
-
-  return { valid: true, message: "✅ Atọ́wọ́dọ́wọ́ - Ìṣàyẹ̀wò kíkún kọjá" };
-}
-```
-
 > **Àwọn Àkíyèsí Pàtàkì:**
-> - **Quick Verify:** Ń ṣàyẹ̀wò hash fáìlì nìkan fún ìlò kíákíá.
-> - **Full Verify:** Ń ṣàyẹ̀wò gbogbo àwọn ipele ìlànà (EvidenceRoot + NotarySeal).
-> - A ń ṣe gbogbo àwọn iṣẹ́ hash ní ìpinnu pẹ̀lú ìparọ́ àti àwọn pínpín tó dúró.
-> - **Ìlànà ṣíṣe pàtàkì v1.0:** Ètò àyè tó dúró + ìparọ́ UTF-8 + pínpín `\n`.
-> - **Ètò Ipele 2:** Àyípadà sí JSON pàtàkì pẹ̀lú RFC 8785 (JCS - JSON Canonicalization Scheme).
-> - Ní ọ̀nà ìbòjú, a ń ṣe ìṣirò EvidenceRoot àti NotarySeal pẹ̀lú dátà ìwádìí tí a fi ìbòjú; nítorí náà ìṣàyẹ̀wò ń jẹ́ ìpinnu.
-> - A ń lo àmì àkókò kan náà jákèjádò ìlànà náà (ìwádìí + NotarySeal); a ti ṣe ìdánilójú ìpinnu.
-> - **Àwọn orúkọ àyè ìwádìí:** `ip_masked`, `location`, `device`, `timestamp` (kóòdù àti ìforúkọsílẹ̀ bá ara mu pátápátá).
-> - **Ọ̀nà ìforúkọsílẹ̀:** `certificate.asset.fingerprints` (bá kóòdù ìṣàyẹ̀wò mu pátápátá).
-> - **signer_sig nínú ìforúkọsílẹ̀:** Àyè `proof.signer_sig` ń nílò fún Full Verify.
-> - A ó mú ìlànà SignerSignature ṣiṣẹ́ ní Ipele 2 pẹ̀lú Solana Wallet Adapter; ní v1.0, a lè ṣe ìṣàyẹ̀wò pẹ̀lú `attestation_pubkey`.
+> - **Quick Verify:** Ìṣàyẹ̀wò hash fáìlì nìkan fún lílo tó yára.
+> - **Full Verify:** Ṣàyẹ̀wò gbogbo ipele ìlànà (EvidenceRoot + NotarySeal).
+> - Gbogbo iṣẹ́ hash ṣe ní ọ̀nà deterministik, pẹ̀lú encoding tó dúró àti àwọn delimiter.
+> - **Ìlànà canonicalization v1.0:** Ìtò aaye tó dúró + UTF-8 encoding + delimiter `\n`.
+> - **Ètò Ipele 2:** Ìlọ sí canonical JSON pẹ̀lú RFC 8785 (JCS - JSON Canonicalization Scheme).
+> - Ní ipò masked, ìṣírò EvidenceRoot àti NotarySeal ṣe pẹ̀lú data forensics tí a ti mask.
+> - A lò timestamp kan kárí ìlànà náà (forensics + NotarySeal); determinism ni a ń ṣe àdánilójú.
+> - **Àwọn orúkọ aaye forensics:** `ip_masked`, `location`, `device`, `timestamp` (code àti registry bá ara mu pátápátá).
+> - **Ọ̀nà registry:** `certificate.asset.fingerprints` (bá code verify mu).
+> - **signer_sig ní registry:** Aaye `proof.signer_sig` ṣe pàtàkì fún Full Verify.
+> - Ìlànà SignerSignature yóò wọlé ní Ipele 2 pẹ̀lú Solana Wallet Adapter; ní v1.0, a lè ṣàyẹ̀wò pẹ̀lú `attestation_pubkey`.
 
 ---
 
-## 📈 Àwọn Ìṣirò Ìlò (Àwọn Àfojúsùn Q1 2026)
+## 📊 Ìtúpalẹ̀ Àwọn Aláfara (Tí A Ti Ṣe Ìmúdájú)
 
-| Òṣùwọ̀n | Àfojúsùn | Ipò |
-|--------|--------|--------|
-| **Àpapọ̀ Àwọn Ìwé Ẹ̀rí** | 1,000 | 🔄 Ìlọsíwájú |
-| **Àwọn Olùlò Aláàyè** | 500 | 🔄 Ìlọsíwájú |
-| **Iye Àwọn Ìṣàyẹ̀wò** | 5,000 | 🔄 Ìlọsíwájú |
-| **Àkókò Ìwàláàyè** | 99.9% | ✅ Aláàyè |
-| **Àpapọ̀ Àkókò Ìdáhùn** | <200ms | ✅ Dáradára |
+PoArt wà ní ipò "Sweet Spot" (Ipò Tó Dára Jù) tó ń kún àwọn àlàfo àwọn ojútùú tó wà.
+
+| Àbùdá | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 證 Proof | Trust-Stamp |
+|---------|:---------:|:---------------:|:-----------------:|:------------:|:----:|:-----------:|:--------:|:-----------:|
+| **Owó Náà** | 🆓 Ọ̀fẹ́ | 🆓 | 💰 Owó Ń Wọlé | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
+| **Drag & Drop UI** | ✅ Rọrùn Púpọ̀ | ❌ CLI | ⚠️ Àárín | ⚠️ Àárín | ⚠️ | ⚠️ | ❌ | ⚠️ |
+| **Multi-Format Export** | ✅ PNG/PDF/JSON | ❌ | ⚠️ PDF | ⚠️ PDF | ❌ | ❌ | ❌ | ⚠️ |
+| **Real-Time Preview** | ✅ Láìkú | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| **Privacy Controls** | ✅ Ipò 3 | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
+| **Client-Side Hash** | ✅ Ìkọ̀kọ̀ | ✅ | ❌ Upload | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
+| **Forensic Metadata** | ✅ Kíkún | ❌ | ❌ | ⚠️ Níòpin | ❌ | ⚠️ | ❌ | ⚠️ |
+| **QR Verification** | ✅ Lẹ́sẹ̀kẹsẹ̀ | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
+| **Rate Limiting** | ✅ RLS+Client | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
+| **Blockchain Anchor** | 🔄 Roadmap | ✅ Bitcoin | ✅ Ethereum | ✅ Multi | ✅ | ✅ | ✅ | ✅ |
+| **Open Source** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
+| **Ìtìlẹ́yìn Yorùbá** | ✅ Native | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
+
+**Àlàyé:**
+- ✅ : Ìtìlẹ́yìn kíkún / wà
+- ⚠️ : Níòpin / ní àwọn ètò tó ń gba owó
+- ❌ : Kò sí / a kò ṣe ìtìlẹ́yìn
+- 🔄 : Ní roadmap (a ń ṣiṣẹ́ lórí rẹ̀)
+- 🆓 : Ọ̀fẹ́ pátápátá
+- 💰 : Owó ń wọlé / ìforúkọsílẹ̀ ń wọlé
+
+### Àwọn Àlàfo Àwọn Aláfara, Àwọn Agbára PoArt
+
+| Àlàfo | Àwọn Aláfara | PoArt |
+|------|----------|-------|
+| **Ìṣòro Lílo** | CLI, ìmọ̀ API, àpamọ́wọ́ ń wọlé | Fà-jù, ó parí pẹ̀lú títẹ̀ mẹ́ta |
+| **Ìdènà Owó** | Ìforúkọsílẹ̀ $50-500/oṣù | 100% ọ̀fẹ́ |
+| **Ìkọ̀kọ̀** | Fáìlì lọ sórí server | Client-side, fáìlì kò lọ láé |
+| **Data Forensic** | Timestamp nìkan | IP, ipò, ẹ̀rọ, àkókò - gbogbo rẹ̀ |
+| **Ìtìlẹ́yìn Yorùbá** | Kò sí tàbí kékeré púpọ̀ | Ìtìlẹ́yìn èdè abínibí |
+| **Open Source** | Àpótí tí a ti pa | Gbogbo code wà lórí GitHub |
 
 ---
 
-## 🌍 Àwùjọ Àti Àtìlẹ́yìn
+## 📈 Ìṣirò Lílo (Àwọn Àfojúsùn 2026 Q1)
+
+| Ìwọ̀n | Àfojúsùn | Ipò |
+|--------|-------|-------|
+| **Ìwé-Ẹ̀rí Lápapọ̀** | 1,000 | 🔄 Ń Lọ | 
+| **Olùlò Tó Ń Ṣiṣẹ́** | 500 | 🔄 Ń Lọ |
+| **Nọ́mbà Ìdánwò** | 5,000 | 🔄 Ń Lọ |
+| **Uptime** | %99.9 | ✅ Ń Ṣiṣẹ́ |
+| **Avg Response Time** | <200ms | ✅ Tó Dára |
+
+---
+
+## 🌍 Àwùjọ & Ìtìlẹ́yìn
 
 - **Twitter:** [@Galerilhan](https://twitter.com/Galerilhan)
-- **Wẹ́ẹ̀bù:** [ilhanart.org](https://ilhanart.org)
-- **Ímeèlì:** galeri@ilhanart.org
+- **Web:** [ilhanart.org](https://ilhanart.org)
+- **Email:** galeri@ilhanart.org
+- **Instagram:** https://www.instagram.com/ilhanartgaleri
 
 ---
 
-## 🙏 Àwọn Alábábọ̀
+## 🙏 Àwọn Olùkópa
 
-Ìlànà PoArt ń tẹ̀síwájú láti gbòòrò pẹ̀lú àwọn àbábọ̀ láti àwùjọ orísun ṣíṣí.
+Ìlànà PoArt ń tẹ̀síwájú pẹ̀lú àwọn ìkópa láti àwùjọ open source.
 
-**Láti ṣe àbábọ̀:**
-1. Fork àpamọ́wọ́ náà
-2. Ṣẹ̀dá ẹ̀ka ẹ̀yà (`git checkout -b feature/amazing-feature`)
-3. Ṣe Ìbúwọ́lù (`git commit -m 'Add amazing feature'`)
-4. Títa (`git push origin feature/amazing-feature`)
-5. Ṣí Ìbéèrè Wíwọ́lé
+**Láti kópa:**
+1. Ṣe Fork
+2. Ṣẹ̀dá feature branch (`git checkout -b feature/amazing-feature`)
+3. Ṣe Commit (`git commit -m 'Add amazing feature'`)
+4. Ṣe Push (`git push origin feature/amazing-feature`)
+5. Ṣí Pull Request
 
-### 🛠️ Kí ni A Nílò Báyìí? (Ìpè Ìrànlọ́wọ́)
+### 🛠️ Kí Ni A Nílò Báyìí? (Ìpè Fún Ìrànlọ́wọ́)
 
-Ìlànà PoArt ń wá àwọn olùgbékalẹ̀ ọlọ́gbọ́n ní àwọn àgbègbè tó wà nísàlẹ̀ fún ìgbòòrò **Ipele 2**:
+Fún àwọn ìdàgbàsókè **Ipele 2** ti Ìlànà PoArt, a ń retí àwọn ìkópa láti ọ̀dọ̀ àwọn olùṣẹ̀dá tó ní ìmọ̀ nínú àwọn kókó yìí:
 
-* **Àwọn Iṣẹ́ Edge Supabase:** Gbé ààbò spam lọ sí apá ọ̀dọ̀.
-* **Solana Web3.js:** Ìsopọ̀ ìbúwọ́lù àpamọ́wọ́.
-* **IPFS / Arweave:** Ìsopọ̀ àwọn iṣẹ́ ìpamọ́ àti píníní.
+* **Supabase Edge Functions:** Gbígbé ààbò spam sí apá server.
+* **Solana Web3.js:** Ìdàpọ̀ ìbuwọ́lù àpamọ́wọ́ (Wallet Signing).
+* **IPFS / Arweave:** Ìdàpọ̀ ìforúkọsílẹ̀ àti àwọn iṣẹ́ pinning.
+* **Community Tools:** Ìdìbò X, àwọn ètò ìdìbò, dashboard analytics.
 
-> Jọ̀wọ́ bẹ̀rẹ̀ ìjíròrò ní àkójọ "Issues" ṣáájú fífikún ẹ̀yà kan.
-
----
-
-**Ìlànà [PoArt] Proof of Art v1.0**  
-*"Àṣà > Owó"*
-
-## 🧾 Ìwé-àṣẹ
-
-Ìwé-àṣẹ MIT © 2026 Ilhan Art Gallery Initiative
-
-Wo [![Ìwé-àṣẹ](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) fún àwọn òfin kíkún.
+> Ẹ jọ̀wọ́ bẹ̀rẹ̀ ìjíròrò ní "Issues" kí ẹ tó fi àbùdá kan kún un.
 
 ---
 
-## 💬 Àwọn Ẹ̀tọ́
+## 💬 Àwọn Àkíyèsí Ìparí
 
-![Àtúntò](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Ààbò](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Pẹpẹ](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![Ìwé-àṣẹ](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
+### Pump.fun Àti Òtítọ́
 
-**A ṣe ìgbòòrò iṣẹ́ yìí nípa ìgbàlódé [Ilhan Art Gallery], àwọn kóòdù orísun rẹ̀ sì wà ní gbangba fún ìhàn kedere.**
+A bẹ̀rẹ̀ iṣẹ́ àkànṣe yìí ní Pump.fun nítorí pé:
+- ✅ Ìwọlé sí omi (Raydium automatic migration)
+- ✅ Ìwọlé sí àwùjọ tó wà
+- ✅ Iye ìbẹ̀rẹ̀ tó kéré
 
-**ÌLÀNÀ V1.0 // TÍ A FI ÈDÌDÌ SHA-512 SÍ**
+Ṣùgbọ́n ẹ jẹ́ ká ṣàlàyé èyí:
+- **Iye token** kì í ṣe àpẹẹrẹ àṣeyọrí ọnà
+- Iye token ṣe pàtàkì fún **ìṣúná ṣíṣe** (gallery, àwọn ìrísí, ìpìlẹ̀)
+- **Àwọn ìwọ̀n àṣeyọrí:** Authenticated artworks + ìkópa àwùjọ + àwọn alábèwò ti ara
 
-*© 2026 İLHAN ART | GBOGBO ẸTỌ́ NÍ ÌPAMỌ́ FÚN ÀW ỌN IṢẸ́ ỌNÀ, ÀWÒRÁN ÀTI ÈRÒ.*
+### Ìṣàkóso Àti Aládàáṣe
+
+**Òtítọ́ v1.0 (2026):**
+- Registry: Off-chain (PostgreSQL + IPFS backup)
+- Attestation: Gallery self-signed (àárín ṣùgbọ́n kedere)
+- Governance: Advisory nìkan (ìpinnu curatorial ìparí)
+- Token utility: Ìwọlé gallery + registry + àkọ́kọ́ NFT
+
+**Ìran v2.0+ (2027+):**
+- Registry: On-chain (Solana)
+- Àwọn Ìbuwọ́lù: Dídúró lórí àpamọ́wọ́ (aládàáṣe)
+- Governance: Híbrídì (ìmọ̀ràn àwùjọ + ìdárayá curatorial)
+- Token utility: Àwọn àbùdá tó ga + ìwọlé tó ga
+
+Ìṣètò yìí ń fún ni **ìmúṣiṣẹ́ ṣíṣe** àti **ìṣàkóso ìdárayá** ní ìbẹ̀rẹ̀, bó tilẹ̀ jẹ́ pé ó ń ṣí ọ̀nà sílẹ̀ fún **ìkópa àwùjọ** tó pọ̀ sí i ní ọjọ́ iwájú.
+
+---
+
+**[PoArt] Proof of Art Protocol v1.0**  
+*"Culture > Capital" // Àṣà Tóbi Ju Oluómìnira*
+
+## 🧾 Ìwé-Àṣẹ
+
+MIT License © 2026 İlhan Art Gallery Initiative
+
+Wò [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) fún àwọn ọ̀rọ̀ kíkún.
+
+---
+
+## 💬 Ọpẹ́
+
+![Version](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Security](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Platform](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
+
+**A ti ṣe iṣẹ́ àkànṣe yìí pẹ̀lú ìgbìmọ̀ [İlhan Art Gallery], gbogbo code sì wà ní gbangba fún kedere.**
+
+**ÌLÀNÀ V1.0 // A FI SHA-512 DÌ ÈDÌ**
+
+*© 2026 İLHAN ART | GBOGBO ẸTỌ́ TI ÀWỌN IṢẸ́ ỌNÀ, ÀWÒRÁN ÀTI ÈRÒ JẸ́ TI WA.*
 
 ---
