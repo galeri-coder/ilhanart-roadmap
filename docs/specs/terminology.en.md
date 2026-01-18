@@ -510,7 +510,7 @@ This is the most critical part of the code (visibility select menu). These optio
 
 ## 💡 Technological Innovation
 
-PoArt is not just a file upload system. It is a **"Forensic Chain of Custody"** engine that melts three different technology layers in one pot and brings a new standard.
+PoArt is not just a file upload system. It is a **"Forensic Chain of Custody"** engine that fuses three different technology layers in one pot and brings a new standard.
 
 **The layer described as "engine" in this section corresponds to the PoArt Forensic Engine (PFE) core in previous terminology.**
 
