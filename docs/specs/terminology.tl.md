@@ -1,349 +1,420 @@
-# 📚 Talasalitaan ng mga Termino at Konsepto
-> **"Ang pag-unawa sa wika ng protokol na ito ay nangangahulugang pag-unawa sa bisyon nito"**
+# 📚 DIKSYUNARYO NG TERMINOLOHIYA AT MGA KONSEPTO - Bahagi 1
+> **"Ang pag-unawa sa wika ng protocol na ito ay pag-unawa sa bisyon nito."**
 
 ## ⚙️ PoArt Forensic Engine (PFE) v1.0: Pangunahing Imprastraktura
 
-Ang **PoArt Forensic Engine (PFE)** ay ang pangunahing layer na kumakatawan sa core logic at teknikal na operasyon sa likod ng protokol na [PoArt]. Ito ay isang "forensic engine" na tumatanggap ng raw production data ng artwork at ginagawa itong **digital na ebidensya** na maaaring ma-verify at hindi mababago.
+**Ang PoArt Forensic Engine (PFE)** ay ang pangunahing layer na kumakatawan sa core logic at teknikal na operasyon sa likod ng [PoArt] protocol. Ito ang "forensic engine" na kumukuha ng raw production data ng sining at nagiging **digital na ebidensya** na verified at immutable.
 
 ### 🧩 Bakit "PoArt Forensic"?
 
-- **PoArt (Proof of Art):** Ang pokus ng engine ay ang pag-uugnay ng halaga ng digital asset hindi sa spekulasyon, kundi sa **proseso ng produksyon na maaaring patunayan**
-- **Forensic (Forensic na Pagsusuri):**
-  - **Teknikal na Kahulugan:** Mga algorithm at record chain approach na naglalayong i-verify na ang data na may kaugnayan sa proseso ng produksyon (mga brush stroke, timelapse, logs) ay hindi nabago
-  - **Philosophical Layer:** Ang paghahabol na gawing masusukat na realidad ang **oras, pagsisikap, at gastos sa pagpapasya ng tao** sa produksyon, kabaligtaran ng "instant na resulta" ng AI
+- **PoArt (Proof of Art):** Ang focus ng engine ay ang pag-ugnay ng halaga ng digital asset hindi sa speculation; kundi sa **napatunayang proseso ng produksyon**.
+- **Forensic (Forensic Verification):**
+  - **Teknikal na Kahulugan:** Algorithm at record chain approach upang patunayan na ang data na nauugnay sa proseso ng produksyon (brush strokes, timelapse, logs) ay hindi na-manipulate.
+  - **Philosophical Layer:** Laban sa "instant output" production ng Artificial Intelligence; ang claim na ang produksyon ng tao na may **oras, pagsisikap, at presyo ng desisyon** ay maaaring maging sukatan ng katotohanan.
 
-> Nota: Ang Blockchain integration (hal. Solana) ay hahawakan bilang hiwalay na **Chain Anchor Layer** para sa verification/registry, hindi bilang core ng PFE
+> Tandaan: Ang blockchain (hal. Solana) integration ay hindi core ng PFE; ito ay hiwalay na tinutukoy bilang **Chain Anchor Layer** para sa verification/registry.
 
-### 🛠️ Teknikal na Saklaw v1.0
+### 🛠️ v1.0 Teknikal na Saklaw
 
-Ang **PoArt Forensic Engine (PFE) v1.0** ay itinayo sa **3 haligi** sa halip na kumplikadong modelo ng pananalapi:
+**Ang PoArt Forensic Engine (PFE) v1.0** ay itinayo sa **3 pangunahing haligi** sa halip na kumplikadong financial models:
 
-1. **Hashing & Sealing (Pag-seal):**  
-   Pinoproseso ng PFE ang lahat ng elemento sa Evidence Pack (file ng gawa, video, JSON/log, lagda atbp.) nang deterministic at bumubuo ng natatanging halaga ng **NotarySeal**.
+1. **Hashing & Sealing (Pagtatak):**  
+   Ang PFE ay deterministically nagpoproseso ng lahat ng elemento sa Evidence Pack (artwork file, video, JSON/log, signature atbp.) upang makagawa ng natatanging **NotarySeal** value.
 
-   **Mga Pangunahing Konsepto (v1.0):**
-   - **FileHash (Fingerprint ng Gawa):** Hash na nabuo mula sa bytes ng file ng gawa
-   - **EvidenceRoot (Ugat ng Set ng Ebidensya):** Root summary na kumakatawan sa integridad ng Evidence Pack (Merkle root o canonical manifest hash)
-   - **NotarySeal (Panghuling Tatak / PFE Output):** Panghuling tatak na nabuo mula sa kombinasyon ng EvidenceRoot + oras + lagda
+   **Pangunahing konsepto (v1.0):**
+   - **FileHash (fingerprint ng artwork):** Hash na ginawa mula sa bytes ng artwork file.
+   - **EvidenceRoot (root ng evidence pack):** Root summary na kumakatawan sa integridad ng Evidence Pack (Merkle root o canonical manifest hash).
+   - **NotarySeal (final seal / PFE Output):** Huling seal na ginawa mula sa kombinasyon ng EvidenceRoot + oras + signature.
 
-   **Formula (Malinaw na ipinapakita para sa mga mamumuhunan):**
+   **Mga Formula (malinaw na makikita ng mga investor):**
    
    $$\text{FileHash}_{512} = \text{SHA-512}(\text{ArtworkFileBytes})$$
    
    $$\text{NotarySeal} = \text{SHA-512}(\text{EvidenceRoot} \mid \text{SignerSignature} \mid \text{TimeStamp})$$
    
-   **Kahulugan ng Canonical Payload (v1.0):**
+   **Canonical Payload Definitions (v1.0):**
    
    - **EvidenceRootPayload:**
-   ```
+```
    file_sha512:{sha512}\nforensics:{canonicalForensics(forensics)}
-   ```
+```
    
    - **NotarySealPayload:**
-   ```
+```
    evidence_root:{evidence_root}\nsigner_sig:{signer_sig}\ntimestamp:{timestamp}
-   ```
+```
    
-   > Nota: Ang halagang tinutukoy bilang PFE output ay ang **NotarySeal**. Ang mekanismo ng **SignerSignature** ay ia-activate sa Phase 2 (kasama ang Solana Wallet Adapter); sa kasalukuyang v1.0, ginagamit ang sariling attestation signature ng sistema. Ang Attestation public key ay ilalathala sa field na `issuer.attestation_pubkey` sa registry
+   > Tandaan: Ang value na tinutukoy bilang PFE output ay **NotarySeal**. Ang **SignerSignature** mechanism ay ie-enable sa Phase 2 (kasama ang Solana Wallet Adapter); sa kasalukuyang v1.0, ginagamit ang system's own attestation signature. Ang Attestation public key ay nai-publish sa `issuer.attestation_pubkey` field ng registry.
 
 2. **Indexing (Pag-archive):**  
-   Nagre-record kung aling wallet, sa anong petsa, nagpadala ng **Labor Proof (Patunay ng Paggawa)** para sa anong gawa sa transparent at mahahanap na record layer.  
-   *(Ang layer na ito ay maaaring maging database; ang chain integration ay ide-define nang hiwalay bilang "Chain Anchor Layer")*
+   Nagre-record kung aling wallet, anong petsa, para sa aling artwork ang nag-submit ng **Labor Proof (Proof of Labor)**; sa transparent at searchable na record layer.  
+   *(Ang layer na ito ay maaaring database; ang chain integration ay hiwalay na tinutukoy bilang "Chain Anchor Layer".)*
 
-3. **Verification (Pagpapatunay):**  
-   Kapag kinuwestiyon ang pagiging orihinal ng gawa, muling pinoproseso ng PFE ang raw na ebidensya; sinusubok na may mathematical certainty kung ang nakalkula na halaga ng **EvidenceRoot / NotarySeal** ay tumutugma sa record sa archive o hindi.
+3. **Verification (Pag-verify):**  
+   Kapag may tanong tungkol sa orihinal ng artwork, ang PFE ay muling nagpoproseso ng raw evidence; sinusubukan nang may mathematical certainty kung ang kinakalkula na **EvidenceRoot / NotarySeal** values ay tumutugma sa record sa archive.
 
 ---
 
-### 🧮 Teorema ng Halaga ng PoArt (The Value Theorem)
+### 🧮 PoArt Value Theorem (Teorama ng Halaga)
 
-Iniuugnay ng protokol na [PoArt] ang halaga ($V$) ng digital asset hindi sa subjective na pananaw ng merkado, kundi sa **pisikal na realidad ng proseso ng produksyon**.
+Ang [PoArt] protocol ay nag-uugnay ng halaga ($V$) ng digital asset hindi sa subjective market perception; kundi sa **pisikal na katotohanan ng proseso ng produksyon**.
 
-Sinisira ng AI ang proseso sa pamamagitan ng pagbibigay ng instant na resulta ($t \to 0$). Itinuturing ng [PoArt] ang halaga bilang akumulasyon ng mga bahagi ng **oras, paggawa, at kalooban**.
+Ang Artificial Intelligence (AI) ay pumupuksa sa proseso sa pamamagitan ng instant result ($t \to 0$). Ang [PoArt] ay tumatanggap ng halaga bilang; akumulasyon ng **oras, pagsisikap, at kalooban**.
 
 $$V_{\text{PoArt}} = \int_{t_{\text{start}}}^{t_{\text{end}}} \left(P_{\text{labor}}(t) \cdot I_{\text{agency}}(t)\right) dt + U_{\text{irreversible}}$$
 
 #### Kahulugan ng mga Variable
 
-- **$\int dt$ (Akumulasyon ng Proseso):**  
-  Ang halaga ay hindi instant na "resulta"; ito ay **proseso** na nag-iipon sa pagitan ng $t_{\text{start}}$ at $t_{\text{end}}$. Kapag bumaba ang tagal (AI production), ang resulta ng integral ay lumalapit sa 0.
+- **$\int dt$ (Process Accumulation):**  
+  Ang halaga ay hindi instant na "output"; ito ay **proseso** na nag-aakumula sa pagitan ng $t_{\text{start}}$ at $t_{\text{end}}$. Habang bumababa ang tagal (AI production), ang resulta ng integral ay lumalapit sa 0.
 
-- **$P_{\text{labor}}(t)$ (Instant na Kapangyarihan ng Paggawa):**  
-  Kumakatawan sa intensity ng mental at pisikal na pagsisikap na ginagamit sa panahon ng produksyon. Kapag tumataas ang napapatunayan na pagsisikap, lumalaki ang integrand.  
-  > Nota: Sa praktika, ang term na ito ay maaaring i-normalize sa pamamagitan ng "masusukat/napapatunayan na mga signal ng paggawa"
+- **$P_{\text{labor}}(t)$ (Instantaneous Labor Power):**  
+  Kumakatawan sa intensity ng mental at physical effort na ginastos sa oras ng produksyon. Habang tumataas ang napatunayan na pagsisikap, lumalaki ang integrand.  
+  > Tandaan: Ang term na ito ay maaaring i-normalize sa praktikal na paraan gamit ang "measurable/provable labor signals".
 
-- **$I_{\text{agency}}(t)$ (Coefficient ng Kalooban):**  
-  Ang kakayahan ng producer na kumuha ng panganib at magpasya. Tumatanggap ng halaga sa pagitan ng $0$ at $1$.
-  - **AI ($I \approx 0$):** Nagpapatupad ng utos, hindi kumukuha ng panganib, hindi nagbabayad ng gastos
-  - **Tao ($I \to 1$):** Nagbabago ng desisyon, nag-aalangan, kumukuha ng panganib
+- **$I_{\text{agency}}(t)$ (Agency Coefficient):**  
+  Ang kakayahan ng producer na kumuha ng risk at gumawa ng desisyon. Tumatagal ng value sa pagitan ng $0$ at $1$.
+  - **AI ($I \approx 0$):** Sumusunod sa mga command, hindi kumukuha ng risk, walang binabayaran.
+  - **Tao ($I \to 1$):** Nagbabago ng desisyon, nag-aalangan, kumukuha ng risk.
 
-- **$U_{\text{irreversible}}$ (Hindi Maibabalik na Pagiging Natatangi):**  
-  Habang posible ang pag-undo (`Ctrl+Z`) sa digital production; walang balik sa pisikal na produksyon (pintura na ipininta sa canvas, marmol na inukit, gesture sa live broadcast). Ang **hindi maibabalik** na ito ay karagdagang term na lumilikha ng "pagiging natatangi" (non-fungible na katangian) sa gawa.
+- **$U_{\text{irreversible}}$ (Irreversible Uniqueness):**  
+  Habang ang undo (`Ctrl+Z`) ay posible sa digital production; sa physical production (pintura sa canvas, ukit sa marble, gesture sa live broadcast) walang pag-balik. Ang **hindi maibabalik na ito** ay karagdagang term na lumilikha ng "uniqueness" (non-fungible character) sa artwork.
 
-### 🔎 Pagsusuri ng Kaso: AI "Instant na Resulta" vs. Tao "Prosesong Napapatunayan"
+### 🔎 Case Analysis: AI "Instant Output" vs. Human "Proven Process"
 
-Ang mga sumusunod na senaryo ay nagpapakita kung paano gumagana ang **Teorema ng Halaga ng PoArt** sa praktika at kung bakit mababa ang marka ng AI production sa pamantayan ng [PoArt].
+Ang sumusunod na sitwasyon ay nagpapakita kung paano gumagana ang **PoArt Value Theorem** sa praktikal at bakit ang AI productions ay nakakakuha ng mababang score sa [PoArt] standard.
 
-#### Senaryo A: Produksyon ng Imahe ng AI sa 10 Segundo
+#### Scenario A: Visual Production sa 10 Segundo gamit ang AI
 
 - **Tagal ($\Delta t$):** $10$ segundo (halos walang proseso)
-- **Kapangyarihan ng Paggawa ($P_{\text{labor}}$):** $1$ unit (pag-type lang ng utos)
-- **Coefficient ng Kalooban ($I_{\text{agency}}$):** $0.01$ (walang panganib, walang gastos)
-- **Hindi Maibabalik ($U_{\text{irreversible}}$):** $0$ (maaaring ibalik / kopyahin)
+- **Labor Power ($P_{\text{labor}}$):** $1$ unit (pagsulat lang ng command)
+- **Agency Coefficient ($I_{\text{agency}}$):** $0.01$ (walang risk, walang presyo)
+- **Irreversibility ($U_{\text{irreversible}}$):** $0$ (reversible / copyable)
 
 **Resulta:**
 
 $$V_{\text{AI}} \approx \int_{0}^{10} (1 \cdot 0.01) \, dt + 0 = 0.1$$
 
-> **Komento:** Kahit perpekto ang resulta; dahil walang proseso at walang kalooban/panganib, ang halaga ng [PoArt] ay lumalapit sa $0$.
+> **Komento:** Kahit perpekto ang output; dahil walang prosesong naranasan at walang agency/risk, ang [PoArt] value ay lumalapit sa $0$.
 
-#### Senaryo B: 6 Oras na Pisikal na Produksyon sa Live Broadcast
+#### Scenario B: 6 Oras na Physical Production sa Live Broadcast
 
 - **Tagal ($\Delta t$):** $6$ oras ($21{,}600$ segundo)
-- **Kapangyarihan ng Paggawa ($P_{\text{labor}}$):** $0.5$ unit (pagpapatuloy ng pisikal at mental na pagsisikap)
-- **Coefficient ng Kalooban ($I_{\text{agency}}$):** $0.9$ (pagbabago ng desisyon, pagkuha ng panganib, mga pagpipiliang hindi maibabalik)
-- **Hindi Maibabalik ($U_{\text{irreversible}}$):** $>0$ (ang pisikal na bakas ay hindi maibabalik)
+- **Labor Power ($P_{\text{labor}}$):** $0.5$ unit (patuloy na physical at mental effort)
+- **Agency Coefficient ($I_{\text{agency}}$):** $0.9$ (pagbabago ng desisyon, pagtanggap ng risk, hindi maibabalik na pagpili)
+- **Irreversibility ($U_{\text{irreversible}}$):** $>0$ (hindi maibabalik ang physical traces)
 
 **Resulta:**
 
 $$V_{\text{Human}} \approx \int_{0}^{21600} (0.5 \cdot 0.9) \, dt + U_{\text{irreversible}} \approx 9720 + U_{\text{irreversible}}$$
 
-> **Komento:** Kapag mas mahaba ang proseso at tumataas ang kalooban (panganib), tumataas ang naiipong halaga. Ang term na $U_{\text{irreversible}}$ ay karagdagang kontribusyon na lumilikha ng "pagiging natatangi" (non-fungible na katangian) sa gawa.
+> **Komento:** Habang tumatagal ang proseso at tumataas ang agency (risk), ang halaga ay kumulative na tumataas. Ang term na $U_{\text{irreversible}}$ ay karagdagang kontribusyon na lumilikha ng "uniqueness" (non-fungible character) sa artwork.
 
 ---
 
-### ✅ Konklusyon: Halagang Nakabigkis sa Patunay (Proof-Bound Value)
+### ✅ Konklusyon: Proof-Bound Value (Halaga na Nakakandado sa Patunay)
 
-Ibinabalik ng teorema na ito ang paghahabol ng halaga ng [PoArt] sa **realidad ng produksyon na napapatunayan** sa halip na "kagustuhan" o "market narrative".
+Ang theorem na ito ay nag-aalis ng value claim ng [PoArt] mula sa pagiging "preference" o "market narrative" at nag-uugnay nito sa **napatunayang katotohanan ng produksyon**.
 
 1. **Walang Halaga Kung Walang Proseso:**  
-   Sinisira ng AI ang proseso sa instant na resulta ($t \to 0$). Kapag lumiliit ang window ng proseso, lumiliit ang resulta ng integral ayon sa matematika:
+   Ang AI ay pumupuksa sa proseso sa instant output ($t \to 0$). Habang sumasara ang process window, ang resulta ng integral ay mathematical necessity na bumababa:
    
    $$\Delta t \downarrow \ \Rightarrow\ \int \left(P(t) \cdot I(t)\right) dt \to 0$$
 
-2. **Ang Kalooban at Panganib ay Multiplier:**  
-   Sinusukat ng [PoArt] hindi lang ang "oras na ginugol" kundi pati ang aktwal na desisyon, panganib, at layer ng gastos sa panahong iyon. Mababa ang halaga ng produksyon na hindi kumukuha ng panganib (AI):
+2. **Ang Agency at Risk ay Multiplier:**  
+   Ang [PoArt] ay sumusukat hindi lamang ng "oras na ginugol"; kundi pati na rin ng tunay na desisyon, risk, at presyo sa oras na iyon. Ang produksyon na hindi kumukuha ng risk (AI) ay may mababang halaga:
    
    $$V_{\text{PoArt}} \propto \int \left(P_{\text{labor}}(t) \cdot I_{\text{agency}}(t)\right) dt$$
 
-3. **Ang Pagiging Natatangi ay Pisikal na Patunay, Hindi Marketing:**  
-   Ang hindi maibabalik na bakas sa pisikal na produksyon (brush stroke sa canvas, bitak ng marmol) ay nasa labas ng digital na `Ctrl+Z` logic. Ang hindi maibabalik na ito ($U_{\text{irreversible}}$) ang gumagawa sa gawa na natatangi sa ontolohikal na paraan.
+3. **Ang Uniqueness ay Physical Proof, Hindi Marketing:**  
+   Ang mga bakas na hindi maibabalik sa physical production (canvas stroke, marble crack) ay lampas sa `Ctrl+Z` logic ng digital. Ang irreversibility na ito ($U_{\text{irreversible}}$) ay ontologically nagpapaka-unique sa artwork.
 
-> **🔐 Buod:** Bagama't ang teorema ng halaga ay maaaring magmukhang hindi tiyak sa aspeto ng pagsukat (kahit sa totoong buhay ay hindi 100% masusukat), ang layunin ng formula na ito ay ipakita ang istruktura at direksyon ng mga variable. Ang bihira sa panahon ng AI ay hindi "imahe"; kundi **paggawa, oras, at kaloobang napapatunayan**. Sinusukat ng [PoArt] ang kakulangan na ito at inirerehistro gamit ang **Evidence Pack**.
+> **🔐 SUMMARY:** Kahit ang value theorem ay mukhang uncertain bilang measurement (kahit sa tunay na buhay ay hindi 100% masusukatan), ang layunin ng formula na ito ay; ipakita ang istruktura at direksyon ng mga variable. Sa AI age, ang bihira ay hindi "larawan"; kundi **napatunayang pagsisikap, oras, at kalooban.** Ang [PoArt] ay sumusukat ng kakulangan na ito at nagre-register gamit ang **Evidence Pack**.
 
-### 🏛️ Kahalagahan ng Konsepto ng "Engine" (Makina)
+### 🏛️ Kahalagahan ng Konsepto ng "Engine"
 
-Ang mga token na inilabas mula sa Pump.fun o mga katulad na platform ay kadalasang **"tiket sa pagpasok"** lamang. Ang **PoArt Forensic Engine (PFE)** ang **constitutional logic layer** na tumutukoy kung anong mga karapatan ang pinoprotektahan ng tiket na iyon, kung paano nire-record ang paggawa, at kung paano ginagawang permanente ang sining/agham/teknolohiya.
+Ang mga token na lumalabas mula sa mga platform tulad ng Pump.fun o katulad nito ay kadalasang pawang **"access ticket"** lamang. Ang **PoArt Forensic Engine (PFE)** ay ang **constitutional logic layer** na tumutukoy kung aling karapatan ang pinoprotektahan ng ticket na iyon, kung paano irerehistro ang pagsisikap, at kung paano magiging permanente ang sining/agham/teknolohiya.
 
-> **Nota:** Ang dahilan kung bakit sinimulan namin ang proyektong ito sa Pumpfun ay dahil wala kaming sapat na liquidity at tagasunod. Ang paggamit ng umiiral na data ay maaaring hindi pinakamataas na kalidad na estratehiya, ngunit masasabi naming ito ang pinakatamang hakbang anuman ang budget at mapagkukunan. Ang pagtukoy ng logic ng engine na ito sa GitHub ay nagpapatunay na ang proyekto ay hindi lamang spekulasyon sa pananalapi, kundi pangmatagalang **software infrastructure** at bisyon ng **pambansang digital library**.
-
----
-
-## 🎨 Protokol ng Patunay ng Paggawa [PoArt] (Proof of Art Protocol v1.0)
-
-> **"Tunay na artista, tunay na produksyon, tunay na halaga"**
-
-Ang protokol na ito ay isang **mekanismo ng depensa sa biyolohiya at intelektwal** na binuo laban sa mga anonymous na manloloko na pumupuno sa crypto ecosystem, mga imahe ng AI na ginawa sa 5 minuto, at kulturang "Pump & Dump" (bomba at itapon).
+> **Tandaan:** Ang dahilan kung bakit namin sinimulan ang proyektong ito sa Pump.fun ay dahil wala kaming sapat na liquidity at bilang ng followers. Ang paggamit ng available data ay strategically ang pinaka-wastong hakbang kahit hindi ito ang pinakamataas na kalidad. Ang pagtukoy sa logic ng engine na ito sa GitHub nang independiyente sa budget at kakayahan ay nagpapatunay na ang proyekto ay hindi lamang financial speculation, kundi isang long-term **software infrastructure** at **digital national library** vision.
 
 ---
 
-## a) Ano ang [PoArt]? (Pilosopikal at Teknikal na Kahulugan)
+## 🎨 [PoArt] LABOR PROOF PROTOCOL (Proof of Art Protocol v1.0)
 
-Ang **Proof of Art [PoArt];** ay isang institutional verification standard na ginagarantiya na ang halaga sa likod ng asset sa blockchain ay nakabatay sa **paggawa ng tao**, **oras**, at **pisikal na enerhiya** na maaaring i-verify, hindi spekulasyon.
+> **"Tunay na Artista, Tunay na Produksyon, Tunay na Halaga."**
 
-Tulad ng paglikha ng Bitcoin ng halaga gamit ang *"electrical energy at processing power"* **(Proof of Work)**; ang mga proyektong compatible sa [PoArt] ay lumilikha ng halaga gamit ang *"artistic ability at oras ng tao"*.
-
-Inaalis nito ang panganib na *"Nagbenta ang Dev (developer), tapos na ang proyekto"* sa mga platform na Pump.fun at DEX; dahil dito ang halaga ay iniimbak hindi sa code, kundi sa **pagpapatuloy ng produksyon**.
-
-> **Ang [PoArt] ay hindi nagsasabi sa mga kalahok na "magtiwala sa amin"; sinasabi nito na "ito ang ebidensya, tingnan mo gamit ang iyong mga mata, i-verify gamit ang iyong matematika"**
+Ang protocol na ito; ay **biological at intellectual defense mechanism** na binuo laban sa anonymous scammers na sumasaklaw sa crypto ecosystem, AI visuals na ginawa sa 5 minuto, at "Pump & Dump" culture.
 
 ---
 
-## b) 5 Pamantayan ng [PoArt] (The 5 Pillars of Truth)
+## a) Ano ang [PoArt]? (Philosophical at Technical Definition)
 
-Ang 5 ito ay mga filter na hindi maaaring manipulahin na dapat lampasan ng proyekto upang matanggap ang tatak ng [PoArt].
+**Proof of Art [PoArt];** ay isang institutional verification standard na ginagarantiya na ang halaga sa likod ng asset sa blockchain ay hindi nakabatay sa speculation; kundi sa verified **human labor**, **time**, at **physical energy**.
 
-### 1) Patunay ng Live na Pagkakakilanlan (Live Identity Proof)
+Tulad ng kung paano ang Bitcoin ay gumagawa ng halaga gamit ang *"Electricity at Processor Power"* **(Proof of Work)**; ang [PoArt] compliant projects ay gumagawa rin ng halaga gamit ang *"Spent Talent at Human Time"*. Nag-stake ng oras.
 
-- **Problema:** Ang mundo ng crypto ay puno ng mga anonymous na founder (Devs) na nangongolekta ng pera at umaaalis sa proyekto
-- **Solusyon ng [PoArt]:** Pinapatunayan ng producer hindi lang ang ID card, kundi **ang kanilang presensya sa panahon ng produksyon**. Kasama dito ang mga live broadcast session na nakikipag-ugnayan sa komunidad at tumutugon kaagad sa mga partikular na kahilingan, hindi pre-recorded na video.  
-  (hal: *"Isulat ang petsa ngayon at kasalukuyang block number sa kanang sulok ng canvas"*)
-- **Kasabihan:** *"Ang bot ay maaaring gumuhit, ngunit ang bot ay hindi pinapawisan at hindi kayang mag-improvise"*
+Nag-aalis ng risk na *"Developer (Dev) bumenta, tapos na ang project"* sa Pump.fun at DEX platforms; dahil dito ang halaga ay hindi nakaimbak sa code, kundi sa **sustainability ng produksyon**.
 
-### 2) Patunay ng Paggawa at Proseso (Labor & Process Proof)
+> **Ang [PoArt] ay hindi nagsasabi sa participant na "Magtiwala sa amin"; kundi "Heto ang mga patunay, tingnan mo sa iyong mga mata, i-verify mo sa iyong matematika."**
 
-- **Problema:** Ang mga imahe ng AI na ginawa sa 2 segundo ay tinatrato na parang iisang "jpeg" tulad ng oil painting na iginuhit sa loob ng 2 buwan sa digital na mundo
-- **Solusyon ng [PoArt]:** Nire-record ang proseso ng "pagbubuntis at panganganak" ng gawa. Ang mga yugto ng sketch, layer ng kulay, naipon na oras na ginugol, at pisikal na proseso na naranasan ng artista habang lumilikha ay dokumentado. Nagdadagdag ito ng **"Time Cost" (Gastos ng Oras)** sa token. Habang mas mahirap gawin ang asset, mas malakas ang halaga nito.
+---
 
-### 3) Patunay ng Aesthetic na Halaga (Aesthetic Value Proof)
+## b) [PoArt] 5-Pillar Standard (The 5 Pillars of Truth)
 
-- **Problema:** Kulturang "Meme" na binabalewala ang aesthetics at artistic depth, nakatutok lang sa instant na biro, at ang nagresultang mga proyektong "Hype" na maikli ang buhay
-- **Solusyon ng [PoArt]:** Ang proyekto ay dapat magkaroon ng akademikong pamantayan ng sining, teorya ng kulay, mga panuntunan sa komposisyon, at kaalaman sa materyal (Impasto, Texture atbp.) Ang nilalaman ay hindi lang dapat magpatawa; dapat itong humanga sa manonood at magkaroon ng **collective value**.
+Ang 5 item na ito ay mga filter na hindi maaaring manipulahin na dapat lampasan ng project upang makatanggap ng [PoArt] seal.
 
-### 4) Pagbabago sa Konsepto (Conceptual Novelty)
+### 1) Live Identity Proof (Patunay ng Live na Pagkakakilanlan)
 
-- **Problema:** Libu-libong dog/cat coin na kinokopya ang isa't isa, walang pagkamalikhain
-- **Solusyon ng [PoArt]:** Dapat magbuo ang proyekto ng bagong tulay na pinagsasama ang sining, agham, pilosopiya, o teknolohiya sa makabuluhang istruktura.  
-  (hal: Pagsasama ng klasikong eskultura ni David sa data ng crypto market; pagtatrabaho sa konsepto ng "petrification" ng persepsyon ng tao at maaaring suportahan ng mga siyentipikong pinagkukunan)  
-  Ang gawa ay hindi lang dapat maging visual feast; kundi dapat ding maging intelektwal na hamon na nagpapasigla ng pag-iisip tungkol sa **agham, pilosopiya, o teknolohiya**.
+- **Problema:** Ang crypto world ay puno ng anonymous founders (Dev) na walang malinaw na pagkakakilanlan na nag-iipon ng pera at nag-aabandona sa project.
+- **[PoArt] Solusyon:** Ang producer ay nagpapatunay hindi lamang ng ID card, kundi ng **presensya niya sa oras ng produksyon**. Ito ay hindi pre-recorded videos, kundi live broadcast sessions na nakikipag-ugnayan sa komunidad at nagsasagawa ng mga instant specific requests.  
+  (Hal: *"Isulat ang petsa ngayon at kasalukuyang block number sa kanang sulok ng canvas"*)
+- **Motto:** *"Ang mga bot ay maaaring gumawa ng larawan pero ang mga bot ay hindi pumapawis at hindi makakapaglaro ng impromptu."*
+
+### 2) Labor & Process Proof (Patunay ng Pagsisikap at Proseso)
+
+- **Problema:** Ang AI visuals na ginawa sa 2 segundo at oil painting na ginawa sa 2 buwan ay pareho lamang na "jpeg" sa digital world.
+- **[PoArt] Solusyon:** Ang "pregnancy at birth" process ng artwork ay naka-record. Ang sketch stages, paint layers, accumulated hours spent, at physical process na naranasan ng artist habang lumilikha ng artwork na iyon ay documented. Ito ay nagdadagdag ng **"Time Cost"** sa token. Habang mas mahirap ang produksyon ng asset, mas malakas ang halaga nito.
+
+### 3) Aesthetic Value Proof (Patunay ng Aesthetic na Halaga)
+
+- **Problema:** Ang "Meme" culture na nag-iignora sa aesthetics at artistic depth, nakatuon lamang sa instant comedy, at nagreresulta sa short-lived "Hype" projects.
+- **[PoArt] Solusyon:** Ang project ay dapat may academic art standards, color theory, composition rules, at material knowledge (Impasto, Texture atbp.). Ang content ay hindi dapat tumawa lamang; dapat magdulot ng hanghang sa audience at may **collection value**.
+
+### 4) Conceptual Novelty (Konsepto ng Pagkakabago)
+
+- **Problema:** Libu-libong dog/cat coins na kopya ng isa't isa, malayo sa creativity.
+- **[PoArt] Solusyon:** Ang project ay dapat gumawa ng bagong tulay na pinagsasama ang sining, agham, pilosopiya, o teknolohiya sa meaningful na istruktura.  
+  (Hal: Pagsasama ng classic David sculpture sa crypto market data; sa pamamagitan nito ay proseso ng ideya ng "pagiging bato" ng human perception at maaaring ilatag gamit ang scientific sources.)  
+  Ang artwork ay hindi dapat visual feast lamang; kundi intellectual challenge na nagpapaisip tungkol sa **Agham, Pilosopiya, o Teknolohiya**.
 
 > [!IMPORTANT]
-> **Halimbawang Sanggunian (Las Palmitas Effect):** Sa kapitbahayan ng Las Palmitas sa Mexico na nakikipaglaban sa krimen, higit sa 200 bahay ang ginawang higanteng festival ng bahaghari. Bilang resulta ng aesthetic intervention na ito, bumaba nang bahagya ang rate ng krimen sa kapitbahayan, at nagsimulang mag-interes ang mga kabataan sa sining sa halip na mga gang. Ang aesthetic na pagbabago ay nag-recode ng paggalang ng mga tao sa kapaligiran at sa isa't isa (Social Cohesion).
+> **Reference Example (Las Palmitas Effect):**  
+> Sa nakakalabang sa krimen na baryo ng Las Palmitas sa Mexico, higit sa 200 bahay ay naging malaking rainbow feast. Bilang resulta ng aesthetic intervention na ito, ang crime rates sa baryo ay bumaba sa tiyak na antas, ang mga kabataan ay nagsimulang mag-focus sa sining sa halip na gang. Ang aesthetic change ay nag-recode ng respeto ng mga tao sa kanilang kapaligiran at sa isa't isa (Social Cohesion).
 >
-> **Inaasahan:** Ang mga proyektong ilalista sa [PoArt] ay dapat magkaroon ng sociological, scientific, o philosophical na cause-effect relationship bukod sa visual aesthetics lamang, tulad ng halimbawa sa itaas. Dahil ang tanging asset na hindi mabibili ng pera ay "oras", ang oras ay dapat i-stake bilang collateral at patunayan sa protokol na ito. Ang conceptual foundation ng proyekto ay dapat sapat na malakas at unibersal na sa posibleng senaryo ng CTO (Community Take Over) sa mga susunod na taon, ang komunidad ay maaaring magmana ng legacy na ito at ipagpatuloy nang nakapag-iisa ang potensyal ng pagbabago ng proyekto.
+> **Inaasahan:** Ang project na papasok sa [PoArt] list; tulad ng halimbawa sa itaas, ay dapat magkaroon ng sociological, scientific, o philosophical cause-effect relationship lampas sa pure visual aesthetics. Dahil ang tanging bagay na hindi mabibili ng pera ay "Oras", sa protocol na ito ang oras ay dapat i-stake bilang collateral at patunayan. Ang intellectual foundation ng project ay dapat napakalakas at universal na; kahit sa possible CTO (Community Take Over) scenario makalipas ang ilang taon, ang komunidad ay maaaring mag-inherit ng legacy na ito at autonomously magpatuloy ng innovative potential ng project.
 
-### 5) Kalooban na Hindi Algorithmic (Non-Algorithmic Agency)
+### 5) Non-Algorithmic Agency (Kalooban na Hindi Algorithmic)
 
-- **Problema:** Perpektong digital production ngunit walang kaluluwa, paulit-ulit
-- **Solusyon ng [PoArt]:** Ang natatanging kalooban ng tao na maaaring magkamali, kumuha ng panganib, at maranasan ang pagbabagu-bago ng emosyon ay dapat maramdaman sa gawa. Ang hindi katiyakan sa brush stroke, ang hindi inaasahang reaksyon ng materyal, at ang instant na desisyon ng artista ay mga **biological signature** na naghihiwalay sa gawa mula sa "machine production".
+- **Problema:** Perpektong pero walang kaluluwa, paulit-ulit na digital productions.
+- **[PoArt] Solusyon:** Ang orihinal na kalooban ng tao na maaaring magkamali, kumuha ng risk, at mag-experience ng emotional fluctuations ay dapat maramdaman sa artwork. Ang uncertainty sa brush strokes, ang unexpected reactions ng material, at ang instant decisions ng artist ay ang **Biological Signature** na naghihiwalay sa artwork mula sa "Machine Production".
 
 ---
 
-## c) Mekanismo ng Pagpapatunay at Anti-Peke
+**(Katapusan ng Bahagi 1 - Bahagi 2 ay magpapatuloy...)**
 
-Ginagarantiya ng sistema na ito na ang proyekto ay mananatiling mapagkakatiwalaan at buhay hindi lang "sa simula" kundi "habang panahon".
+# PoArt Protocol - Bahagi 2
+
+## c) Verification & Anti-Fraud Mechanism (Mekanismo ng Pag-verify at Laban sa Pandaraya)
+
+Ang system na ito ay ginagarantiya na ang project ay hindi lamang "sa simula" kundi "magpakailanman" reliable at buhay.
 
 ### 📦 Evidence Pack (Pakete ng Ebidensya - The Digital Twin)
 
-Sa likod ng bawat sertipikadong gawa ng [PoArt] ay isang naka-encrypt at may timestamp na set ng data na maaaring i-download ng mga mamumuhunan:
+Sa likod ng bawat [PoArt] certified artwork, mayroon isang encrypted at time-stamped data package na maaaring i-download ng mga investor:
 
-- **RAW Video Recording:** Hindi putol na raw footage ng panahon ng produksyon
-- **Pagsusuri ng Metadata:** Petsa ng paglikha ng file, impormasyon ng device na ginamit, at data ng lokasyon
-- **Pisikal na Sanggunian:** Ebidensya na ang gawa ay umiiral sa pisikal na mundo  
-  (hal: Kasalukuyang diyaryo sa tabi ng gawa o blockchain data sa oras na iyon)
+- **RAW Video Recordings:** Tuluy-tuloy na raw footage ng sandali ng produksyon.
+- **Metadata Analysis:** Petsa ng creation ng file, impormasyon ng device na ginamit, at location data (Lungsod-Bansa).
+- **Physical References:** Patunay na ang artwork ay umiiral sa physical world  
+  (Hal: Kasalukuyang pahayagan na nakatayo sa tabi ng artwork o blockchain data sa oras na iyon).
 
-> *Nota sa Consistency:* Ang expression na "evidence pack" ay nauugnay sa kadena ng **Evidence Pack → EvidenceRoot → NotarySeal** sa nakaraang seksyon; ibig sabihin, ang integridad ng set ay kinakatawan ng tatak na maaaring i-verify.
+> *Consistency note:* Ang expression na "evidence package" ay konektado sa **Evidence Pack → EvidenceRoot → NotarySeal** line sa nakaraang sections; ibig sabihin, ang integridad ng package ay kinakatawan ng verifiable seal.
 
-### 🔄 365 Araw na Pag-renew (The Sustainability Protocol)
+### 🔄 365-Day Renewal (The Sustainability Protocol)
 
-- **Rebolusyonaryong Feature:** Sa mga proyektong crypto, inilulunsad ng "Dev" (developer) ang token sa merkado at madalas na nawawala pagkatapos ng 1-2 buwan (Soft Rug). Ginagawa ng [PoArt] na imposible ito.
-- **Panuntunan:** Ang status na "Verified Artist" (Na-verify na Artista) ay hindi panghabangbuhay. Ito ay may bisa lamang ng **1 taon**.
-- **Pagpapatupad:** Ang artista/developer ay dapat magpresenta ng **bago, malaki, at napapatunayang gawa** sa komunidad bawat 365 araw.
-- **Halimbawang Senaryo:** Sinimulan mo ang proyekto noong 2026. Sa Enero 2027, babala ang sistema ng "Proof Period Expired". Kung hindi magpresenta ang artista ng bagong exhibition, bagong pisikal na gawa, o bagong technology integration, bababa ang "Trust Badge" ng proyekto.
-- **Resulta:** Ginagarantiya ng sistema na ito na **hindi kailanman luma ang nilalaman** at hindi nararanasan ng mga mamumuhunan ang takot na *"Nariyan pa ba ang Dev?"*. Ang proyekto ay nagiging buhay na studio.
+- **Revolutionary Feature:** Sa crypto projects, ang "Dev" (Developer) ay naglalabas ng token sa market at karaniwang nawawala pagkatapos ng 1-2 buwan (Soft Rug). Ang [PoArt] ay ginagawang imposible ito.
+- **Patakaran:** Ang "Verified Artist" status ay hindi habambuhay. Tumatagal lamang ng **1 taon**.
+- **Operasyon:** Ang artist/developer ay dapat mag-present sa komunidad ng **bagong, malaking, at napatunayang artwork** bawat 365 araw.
+- **Sample Scenario:** Nagsimula ka ng project noong 2026. Sa January 2027, magbibigay ng babala ang system na "Proof Period Expired". Kung ang artist ay hindi magbibigay ng bagong exhibit, bagong physical artwork, o bagong technological integration, bababa ang "Trust Badge" ng project.
+- **Resulta:** Ang system na ito ay ginagarantiya na ang **content ay hindi kailanman magiging luma** at ang investor ay hindi mag-aalala sa *"Nandito pa ba ang developer?"* Ang project ay nagiging living studio.
 
-### 🚩 Red Flag (Pulang Bandila na Protokol)
+### 🚩 Red Flag Protocol (Protokol ng Pulang Bandila)
 
-**Sa kaso ng anumang pamemeke na natukoy ng komunidad o algorithm (paggamit ng AI, ninakaw na gawa, binagong video):**
+**Sa kaso ng anumang fraud (AI usage, stolen artwork, manipulated video) na natukoy ng komunidad o algorithms:**
 
-1. Kaagad na minarkahan ang sertipiko bilang **"VOID" (walang bisa)**
-2. Ang evidence pack ay pampublikong nilagyan ng label na **"peke"**
-3. Ang proyekto ay idinagdag sa blacklist ng [PoArt]. Pinapalakas nito ang katotohanan na **ang reputasyon ang tanging pera** sa decentralized na mundo.
-
----
-
-## d) Konklusyon: Museo, Hindi Casino
-
-**Ang Pump.fun at Decentralized Exchanges (DEX) ay kasalukuyang nakalulungkot na mga casino; kumikislap ang mga ilaw, lahat ay naghahabol ng mabilis na kita, at laging nananalo ang banker (manloloko). Ang dahilan kung bakit sinimulan namin ang proyekto dito ay dahil wala kaming sapat na budget at network upang maabot ang umiiral na audience sa pamamagitan ng live broadcast.**
-
-**Ang [PoArt] ay isang kuta na itinayo sa gitna ng casino na ito.**
-
-- 🎰 Umaasa ang casino sa card game; kami ay **umaasa sa pisikal na realidad**
-- 🃏 Bukas ang casino sa pandaraya; kami ay **bukas sa transparent na ebidensya**
-- ⏳ Pansamantala ang casino; kami ay **nakatutok sa walang hanggang sining at agham**
-
-**Ang token na gumagamit ng protokol na ito ay hindi lang "coin"; ito ay digital share na may pawis, pintura, code, at pilosopiya sa likod nito.**
+1. Ang certificate ay agad na marka-markahan bilang **"VOID" (CANCELLED)**.
+2. Ang evidence packages ay publicly na matatag bilang **"Fake"**.
+3. Ang project ay ilalagay sa [PoArt] blacklist. Ito ay nagpapalakas ng katotohanang ang **reputasyon ay ang tanging currency** sa decentralized world.
+4. Hindi maaaring gumamit ng [PoArt] expressions sa anumang publication, ang tanging valid source ay https://www.ilhanart.org/public-registry
 
 ---
 
-## 🗳️ 6) Pamamahala at Pampublikong Rehistro (Governance & Public Registry)
+## d) Konklusyon: Hindi Casino, Kundi Museo
 
-**Ang layunin ng seksyong ito ay: Ibahin ang pamantayan ng [PoArt] mula sa antas ng "pagtitiwala sa indibidwal" patungo sa napapanatiling pampublikong imprastraktura na may pagre-record + pagpapatunay + pamamahala ng komunidad.**
+**Ang Pump.fun at Decentralized Exchanges (DEX) ay sa kasalukuyan ay casino; kumikislap ang mga ilaw, lahat ay humahabol ng mabilis na kita, at ang house (scammers) ay palaging nanalo. Ang dahilan kung bakit namin sinimulan ang project dito ay dahil sinusubukan din naming pahusayin ito at dahil sa available data at live broadcasts ay may kapaligiran kami na makakaabot sa kasalukuyang audience.**
 
-### 6.1 Public Registry (Pampublikong Rehistro)
+**Ang [PoArt] ay isang fortress na itinayo sa gitna ng casino na ito.**
 
-- **Public Registry:** Lahat ng naaprubahang data ay nire-record sa `ilhanart.org/registry` (o GitHub Registry)
+- 🎰 Ang casino ay nakasalalay sa card games; tayo ay nakasalalay sa **pisikal na katotohanan**
+- 🃏 Ang casino ay bukas sa pandaraya; tayo ay bukas sa **transparent na patunay**
+- ⏳ Ang casino ay pansamantala; tayo ay nakatuon sa **walang hanggan ng sining at agham**
 
-**Logic ng Pag-record (Inirerekomendang Standard - JSON path format):**
+**Ang token na gumagamit ng protocol na ito ay hindi lamang "coin"; ito ay digital stock na may pawis, pintura, code, at pilosopiya sa likod.**
 
-Bawat record na pumapasok sa rehistro ay may minimum na mga pangunahing field na maaaring i-verify:
+---
 
-- **Pagkakakilanlan at Status:**
-  - `certificate_id` (nababasang sanggunian)
+## 🗳️ 6) GOVERNANCE AT PUBLIC REGISTRY (Pamamahala at Pampublikong Talaan)
+
+**Ang layunin ng section na ito ay: ilabas ang [PoArt] standard mula sa level ng "trust sa mga tao" at gawing sustainable public infrastructure gamit ang record + verification + community oversight.**
+
+### 6.1 Public Registry (Pampublikong Talaan)
+
+- **Public Registry:** Lahat ng approved data ay naka-record sa `ilhanart.org/registry` (o GitHub Registry).
+
+**Record logic (recommended standard - JSON path format):**
+
+Ang bawat record na pumapasok sa registry ay may minimum na mga verifiable core field na ito:
+
+- **Identity & Status:**
+  - `certificate_id` (readable reference)
   - `status` (active / void)
   - `void_reason` (kung mayroon)
   - `visibility` (private / masked / public)
   - `created_at` (timestamp)
 
-- **Institusyong Nag-isyu:**
+- **Issuing Institution:**
   - `issuer.name`
   - `issuer.location`
   - `issuer.attestation_pubkey`
 
-- **Data ng Gawa:**
+- **Artwork Information:**
   - `asset.title`
   - `asset.creator`
-  - `asset.creator_wallet` (kung posible; para sa token-gated identity)
+  - `asset.creator_wallet`
   - `asset.fingerprints.sha256`
   - `asset.fingerprints.sha512`
 
-- **Data ng Forensic:**
+- **Forensic Data:**
   - `forensics.ip_masked`
   - `forensics.location`
   - `forensics.device`
   - `forensics.timestamp`
 
-- **Cryptographic Proof:**
+- **Cryptographic Evidence:**
   - `proof.evidence_root`
   - `proof.signer_sig`
   - `proof.notary_seal`
 
-- **Pamamahala:**
+- **Governance:**
   - `governance.decision`
-  - `governance.veto_threshold`
-
-Ang rehistro ay maaaring magkaroon ng dalawang layer:
-- **1)** Human-readable index (web listing / paghahanap / pagsasala)
-- **2)** Machine-readable manifest (JSON record; para sa PFE verification)
-
-**Ang "record" dito ay maaaring i-verify gamit ang kadena ng Evidence Pack → EvidenceRoot → NotarySeal ng PFE. Ang rehistro ay nag-aalok ng target ng verification, hindi "claim".**
+  - `governance.review_notes`
 
 ---
 
-### 6.2 40% Community Veto (Token-Gated Governance)
+### 6.2 PoArt Verified Application Process
 
-- **40% Community Veto:** Nagsisimula ang pagboto isang buwan bago makuha ang status; ang 40% na pagtutol ng **Token-Gated (Solana-Verified)** na komunidad ay magpapawalang-bisa sa aplikasyon.
+**Ang PoArt Verified applications ay sinusuri ng İlhanArt Gallery ayon sa 5 PoArt standards. Ang community feedback ay isinasaalang-alang, ngunit ang final decision ay nakasalalay sa curatorial team. Ang mga desisyon ay transparently ipinaliwanag at naka-record sa ilhanart.org/registry.**
 
-**Mga Hakbang sa Pagboto (Inirerekomendang eksplisitong proseso):**
-- **Application Window:** Ang kandidatong proyekto ay nagbubukas ng "PoArt Candidate Registration" (ang candidate record ay lumilitaw sa "pending" status)
-- **Panahon ng Pagsusuri:** 30 araw para sa komunidad na suriin ang ebidensya (Evidence Pack + live broadcast record + metadata)
-- **Token-gated Verification:** Ang pagboto ay ginagawa sa pamamagitan ng wallet na na-verify sa Solana (hal. paghawak ng partikular na token/NFT + wallet signature)
-- **Panuntunan sa Veto:** Kung 40% ng mga boto ay **pagtutol (NO / VETO)**, tatanggihan ang aplikasyon
-- **Transparency:** Ang mga resulta ng pagboto ay iniimbak sa rehistro bilang "decision record" (petsa, ratio, snapshot ID)
+#### Application Process
+
+**Application:**
+- Ang artist/project ay nag-apply ng PoArt Verified
+- Inihahanda ang Evidence Pack (video recordings, metadata, live broadcast links)
+- Ipinapadala ang application sa İlhanArt Gallery
+
+**Review (30 Days):**
+- Ang gallery team ay detalyadong sinusuri ang Evidence Pack
+- Sinusuri ang lahat ng 5 PoArt standards:
+  1. Live Identity Proof
+  2. Labor & Process Proof
+  3. Aesthetic Value Proof
+  4. Conceptual Novelty
+  5. Non-Algorithmic Agency
+- Interview sa artist (optional)
+
+**Community Consultation:**
+- Ang Evidence Pack ay publicly shared sa panahon ng application process
+- Ang komunidad ay maaaring magbigay ng feedback sa pamamagitan ng ilhanart.org
+- Ang token holders (minimum 10,000 $CULTURE) ay maaaring mag-suggest
+- **Lahat ng feedback ay isinasaalang-alang sa review process**
+- **Ngunit ang final decision ay nakasalalay sa curatorial assessment**
+
+**Decision:**
+- Ang gallery ay nag-approve o nagtanggihan ng application
+- Ang rationale ng desisyon ay transparently ipinaliwanag
+- Kung approved → PoArt Verified badge
+- Kung rejected → maaaring mag-apply muli pagkatapos ng 6 buwan
+
+**Transparency:**
+- Lahat ng applications at decisions ay naka-record sa ilhanart.org/registry
+- Ang Decision record ay publicly published:
+  - Application date
+  - Review process summary
+  - Decision (Approved / Rejected)
+  - Decision rationale (maikling paliwanag)
+  - Community feedback summary (anonymous)
+
+#### Bakit Curatorial Decision?
+
+**Quality Control:**  
+Ang PoArt Verified status ay high-standard badge. Ang curatorial assessment ay ginagarantiya ang pagpapanatili ng standards na ito.
+
+**Speculative Manipulation Prevention:**  
+Sa Pump.fun tokens, ang full on-chain governance (hal: Realms, DAO voting) ay technically hindi posible. Ang off-chain voting systems ay bukas sa whale manipulation at coordinated attacks. Ang curatorial decision ay nag-aalis ng risk na ito.
+
+**Operational Efficiency:**  
+Mabilis at malinaw na decision process sa halip na kumplikadong voting mechanisms. Ang mga artist ay makakakuha ng resulta sa loob ng 30 araw.
+
+**Community Participation:**  
+Ang community feedback ay ganap na isinasaalang-alang at nag-aambag sa decision process. Ngunit ang final decision ay nasa curatorial team na protected mula sa manipulation.
+
+**Future:**  
+Kapag mature na ang project (2027+), ang community consultation mechanism ay maaaring palakasin. Ngunit ang curatorial standard protection ay nananatiling permanent.
 
 ---
 
-### 6.3 Metadata Sync (Pagtutugma sa Pisikal na Mundo)
+### 6.3 Token Utility (Mga Gamit ng Token)
 
-- **Metadata Sync:** Ang teknikal na data sa rehistro ay dapat 100% tumugma sa pisikal na asset.
+**Mga benepisyo na ibinibigay sa $CULTURE token holders:**
 
-**Teknikal na Kahulugan ng "100% Pagtutugma" (Inirerekomendang Kalinawan):**
-- **Minimum na Pagtutugma (Kinakailangan):**
-  - `asset.fingerprints.sha256/sha512` sa rehistro ay dapat **eksaktong pareho** sa hash ng umiiral na file
-  - `proof.notary_seal` sa rehistro ay dapat **eksaktong pareho** kapag muling nabuo (kung may Evidence Pack)
-- **Pagtutugma ng Pisikal na Sanggunian (Uri ng Ebidensya):**
-  - Ang ebidensya tulad ng pisikal na gawa + sanggunian ng petsa/block na ipinapakita sa live broadcast ay dapat tumugma sa Evidence Pack
-- **Pagsunod sa Privacy:**
-  - Ang mga field tulad ng IP/lokasyon sa `masked` visibility ay inilalathala **ayon sa masking standard**
+**1. Priority Access sa Gallery Events:**
+- Karapatang mag-exhibit ng 1 linggo bawat taon sa İlhanArt Gallery (transferable right)
+- Drop painting discounts
+- 10% hanggang 30% discount sa mga paintings sa gallery
+
+**2. Full Access sa PoArt Registry:**
+- Detalyadong records ng lahat ng authenticated artworks
+- Full versions ng Evidence Packs
+- Forensic verification tools
+
+**3. Advisory Voting:**
+- Consultation rights sa PoArt Verified applications
+- Access sa community feedback channels
+- Participation sa governance discussions
+
+**4. Exclusive Content:**
+- Studio behind-the-scenes content
+- Artist interviews at process videos
+- Technical documentation access
+
+**Tandaan:**  
+Ang token holders ay nagbibigay ng advisory vote. Ang final decision ay sa curatorial team. Ang structure na ito ay pinili upang maiwasan ang whale manipulation at speculative attacks. Walang staking reward dahil naghahanap kami ng long-term cultural participants, hindi short-term mercenary capital.
 
 ---
 
-### 6.4 Pagtatalo, Pagsusuri, at Pagpapawalang-bisa (Dispute & Revocation)
+### 6.4 Metadata Sync (Pagkakasundo sa Physical World)
 
-Ang rehistro ay hindi lang mekanismo ng "pag-apruba"; ito ay **buhay na mekanismo ng verification laban sa pamemeke**.
+**Ang pagtukoy ng "100% match" technically:**
 
-- Kapag nagsimula ang pagtatalo, ang record ay maaaring ilagay sa **"review"** mode
-- Kung natukoy ang pamemeke, minarkahan itong `status: void` at idinagdag ang dahilan:
-  - `void_reason` (paggamit ng AI / ninakaw / binago atbp.)
-  - `revoked_at` (oras ng pagpapawalang-bisa)
-- Ang pinagmulan ng desisyon sa pagpapawalang-bisa ay malinaw na lumilitaw sa rehistro:
-  - Pagboto ng komunidad / awtorisadong panel / forensic examination record (alinman ang ginamit)
-
-> **Ang seksyong ito ay kapareha ng konsepto ng VOID sa seksyong "Red Flag Protocol" sa rehistro.**
+- **Minimum match (mandatory):**
+  - Ang `asset.fingerprints.sha256/sha512` sa registry at ang hash ng file na hawak ay dapat **eksaktong pareho**.
+  - Ang `proof.notary_seal` sa registry kapag muling ginawa (kung may Evidence Pack) ay dapat **eksaktong pareho**.
 
 ---
 
-### 6.5 Halimbawa ng Record sa Rehistro (Machine-Readable)
+### 6.5 Dispute, Review, at Revocation
+
+Ang registry ay hindi lamang "approval" mechanism; kundi **buhay na oversight mechanism laban sa fraud**.
+
+- Kapag nagsimula ang dispute, ang record ay maaaring ipasok sa **"review"** mode.
+- Kung natukoy ang fraud, marka-markahan bilang `status: void` at idadagdag ang rationale:
+  - `void_reason` (AI usage / stolen / manipulation atbp.)
+  - `revoked_at` (revocation time)
+- Ang source ng revocation decision ay malinaw na makikita sa registry:
+  - curatorial review / community dispute / forensic analysis note (alinman ang applicable)
+
+---
+
+### 6.6 Sample Registry Record (Machine-readable)
 
 ```json
 {
@@ -361,7 +432,7 @@ Ang rehistro ay hindi lang mekanismo ng "pag-apruba"; ito ay **buhay na mekanism
     "creator": "Anonymous",
     "fingerprints": {
       "sha256": "e4123f83b44a409d7a43f0897837876dfabb3320db63dadbb34c54281f38a6ba",
-      "sha512": "41e5e0d007a2a77b6e0e3ebc548fbaa2788ea265193434f58d23e8c0f5bb20a0835aa850edbadbd8341969cf743fc69fa951f7ed275901fefe0fe7eb1fb83099"
+      "sha512": "41e5e0d007a2a77b6e0e3ebc548fbaa2788ea265193434f58d23e8c0f5bb20a0..."
     }
   },
   "forensics": {
@@ -377,268 +448,82 @@ Ang rehistro ay hindi lang mekanismo ng "pag-apruba"; ito ay **buhay na mekanism
   },
   "governance": {
     "decision": "approved",
-    "veto_threshold": 0.40
+    "review_notes": "Met all 5 PoArt standards."
   }
 }
 ```
 
-> *Nota: Ang `asset.fingerprints.sha512` at iba pang hash value ay pinaikli para sa pagpapakita; sa aktwal na paggamit ay ginagamit ang buong haba ng hexadecimal character string*
-
 ---
 
-## 7) 🔐 Teknikal na Tatak (NOTARY SEAL)
+## 7) 🔐 TECHNICAL SEAL (NOTARY SEAL)
 
-Ang hindi naguguluhang algoritmo ng tatak na nabuo ng **PoArt Forensic Engine (PFE) v1.0**:
+**Unshakeable seal algorithm na ginawa ng PoArt Forensic Engine (PFE) v1.0:**
 
 $$\text{NotarySeal} = \text{SHA-512}\left(\text{EvidenceRoot} \mid \text{SignerSignature} \mid \text{TimeStamp}\right)$$
 
 ---
 
-# Digital Notary at Forensic Evidence Protocol [PoArt] (Beta v1.0)
+## 🗺️ Roadmap: "Trustless" Future
 
-> **"Ang kultura ay mas malaki kaysa kapital. Protektahan ang iyong gawa mula ngayon, dalhin sa bukas"**
+### Phase 1: Beta v1.0 (Live Na Ngayon)
 
----
+**Infrastructure:**
+- Cloud Database (Supabase)
+- Off-chain registry (PostgreSQL + IPFS backup)
+- Gallery self-attestation (centralized pero transparent)
 
-## Bakit Ibinubunyag sa Publiko?
+**Token:**
+- Platform: Pump.fun
+- Liquidity: Raydium (automatic)
+- Governance: Advisory only (community consultation)
 
-Ang tunay na seguridad ay nagmumula sa transparency. Gamit ang aming sistema ng **Public Registry (Pampublikong Rehistro)**, sinuman mula saanman sa mundo ay maaaring mag-verify sa loob ng mga segundo kung ang file na hawak nila ay orihinal o hindi, nang hindi umaasa sa anumang awtoridad.
+**Layunin:**
+- Speed, alisin ang UX barriers
+- "Frictionless" security
+- Community building
 
----
-
-## 🧩 Bakit Mayroong Maraming "Module ng Visibility"?
-
-Ito ang pinaka-kritikal na bahagi ng code (visibility select menu). Ang mga pagpipiliang ito ay nagpapahintulot sa mga user na balansehin ang **"privacy vs. transparency"**:
-
-### 🔒 Pribado (Private)
-
-- **Senaryo:** Hindi pa gustong i-publish ng artista ang gawa ngunit gustong i-timestamp at patunayan na "ginawa ko ito sa petsang ito"
-- **Ano ang ginagawa ng code:** Sinusulat ang data sa database ngunit nilalagyan ng label na `visibility: "private"`. Pagkatapos kapag isinulat ang "Public Read" policy, maaaring itago ang mga record na ito mula sa publiko gamit ang `WHERE visibility = 'public'`
-
-### 🕶️ Naka-mask (Masked)
-
-- **Senaryo:** Gusto ng artista ng transparency ngunit natatakot na matuklasan ang home address (IP location)
-- **Ano ang ginagawa ng code:** Ang mga function na `maskIP` at `maskLoc` ay gumagana sa JavaScript side, binabago ang IP address sa format na `88.241.***.***`, lokasyon sa format na `***/TR`, at ipinapadala ang censored version sa database
-- **Nota sa Privacy:** Ang masking ay ginagawa sa browser. Hindi nakikita ng Supabase ang aktwal na lokasyon. **Gayunpaman:** Kung gumagamit ng third-party API tulad ng ipapi.co para sa data ng lokasyon, makikita ng mga provider na ito ang IP address habang humihiling
-- **Pag-seal sa Masked mode:** Ang pagkalkula ng EvidenceRoot at NotarySeal ay ginagawa gamit ang masked forensics data; kaya nananatiling deterministic ang verification
-
-### 🌍 Ganap na Nakalantad (Public)
-
-- **Senaryo:** Buong transparency. Ayon sa pamantayan ng [PoArt], malinaw na inanunsyo kung saan, kailan, at mula sa anong network ginawa ang gawa.
+**Token Utility (v1.0):**
+- Priority access sa gallery events
+- PoArt Registry viewing
+- Advisory voting rights
 
 ---
 
-## 💡 Teknolohikal na Inobasyon
+### 🚀 Phase 2: Decentralized Authority (2026 Q2-Q4)
 
-Ang PoArt ay hindi lang file upload system. Ito ay isang **"Forensic Chain of Custody" (Kadena ng Pag-iingat ng Ebidensyang Forensic)** engine na pinagsasama ang tatlong magkakaibang layer ng teknolohiya sa isang palayok at nagdadala ng bagong pamantayan.
+| Feature | Ano ang Makukuha? | Tech Stack | ETA |
+|---------|---------------|------------|-----|
+| **Edge Function INSERT** | Spam prevention + API Key security | Supabase Edge (Deno) | Q2 2026 |
+| **Wallet Signature** | Decentralized identity | Solana Wallet Adapter | Q2 2026 |
+| **IPFS/Arweave Backup** | Decentralized archive | IPFS SDK + Pinata | Q3 2026 |
+| **Revocation Mechanism** | Fake certificate cancellation | DB Schema Update | Q2 2026 |
+| **OpenTimestamps** | Bitcoin anchoring | OTS JavaScript | Q4 2026 |
 
-**Ang layer na inilarawan bilang "engine" sa seksyong ito ay tumutugma sa PoArt Forensic Engine (PFE) core sa nakaraang terminolohiya.**
-
-### 1) Client-Side Hashing (Maximum na Privacy)
-
-Ang file ng iyong gawa ay hindi kailanman ina-upload sa server. Kinakalkula ng aming engine na tumatakbo sa browser (Client-side) ang hash (digital summary) ng file sa iyong sariling computer. Tanging ang fingerprint at metadata lang ang ipinapadala sa server.
-
-> **Nota sa Privacy:** Ang file ng gawa ay hindi ina-upload sa server at protektado sa ganitong paraan. Gayunpaman, ang forensics data (IP/lokasyon) ay ibinabahagi ayon sa napiling visibility mode (private/masked/public).
-
-### 2) Forensic Data Fusion (Forensic Power)
-
-Ito ay higit pa sa karaniwang timestamp. Pinagsasama ng sistema ang sumusunod na data sa isang "Genesis Seal":
-
-- **Digital Summary (SHA-512):** Digital fingerprint na masisira kung kahit isang pixel ng gawa ay magbago, gamit ang cryptographic summary standard (SHA-512)
-- **Lokasyon at Oras:** Petsa na may millisecond precision, bansa, lungsod, at distrito kung saan isinagawa ang operasyon
-- **Device Identity:** Operating system, browser, at uri ng device (User-Agent analysis)
+**Token Governance (v2.0):**
+- Off-chain voting (x/web) + wallet signature
+- Community representatives election
+- Multi-sig operations control
+- Weighted advisory voting (with whale cap)
 
 ---
 
-## 🛡️ Mga Kaso ng Paggamit at Benepisyo
-
-Kung ikaw ay isang artista, manunulat, o designer, ang pagsasabi ng "ginawa ko muna ito" ay hindi sapat. Kailangan mong patunayan.
-
-**Ang gawa na iyong i-seal gamit ang PoArt:**
-
-- **Matematikal na Patunay:** Kung kahit isang pixel ng iyong file ay magbago, madedetect ito ng sistema. Imposible ang pagbabago.
-- **Legal na Pundasyon:** Naka-record ang petsa, lungsod, at device kung saan na-seal ang gawa.
-- **Instant na Sertipiko:** Gumagawa ng **"Asset Identity Certificate"** na may QR code at natatanging tatak para sa iyo sa loob ng mga segundo.
-
----
-
-## ⚙️ Arkitektura ng Sistema at Teknikal na Specifications
-
-Ang sistema ay dinisenyo sa "Serverless" (walang server) na arkitektura na nakatutok sa mataas na performance at scalability.
-
-| Layer | Teknolohiya | Paglalarawan |
-|-------|-------------|--------------|
-| **Cryptography** | SHA-256 & SHA-512 | Dalawang layer na cryptographic summary |
-| **Database** | Supabase (PostgreSQL) | JSONB data structure, RLS policies |
-| **Forensic Data** | ipapi.co API | Triple na IP/lokasyon/oras |
-| **Rendering** | html2canvas + jsPDF | Client-side PNG/PDF production |
-| **Frontend** | Vanilla JavaScript | Walang framework dependency |
-| **Seguridad** | Client-side hashing | Hindi kailanman ina-upload ang file sa server |
-
-### Mga Natatanging Feature
-
-| Feature | Detalye | Mayroon sa Kakumpitensya? |
-|---------|---------|---------------------------|
-| **Drag & Drop UI** | I-drag ang file, instant preview | ❌ Karamihan wala |
-| **Multi-Format Export** | PNG, JSON, PDF - isang click | ⚠️ Limitado |
-| **Real-Time Preview** | Live na preview ng sertipiko | ❌ Wala |
-| **Privacy Controls** | Private/Masked/Public na pagpipilian | ❌ Wala |
-| **Client-Side Hashing** | Hindi kailanman pumupunta ang file sa server | ✅ Ilan lang |
-| **Forensic Metadata** | IP, lokasyon, device, oras - lahat sa isang lugar | ❌ Nahiwalay |
-| **QR Verification** | Instant verification QR code | ⚠️ Limitado |
-| **Rate Limiting** | Spam protection (RLS + Client) | ❌ Karamihan wala |
-
----
-
-## 🗺️ Roadmap: "Trustless" na Kinabukasan
-
-Ang kasalukuyang bersyon **(Beta v1.0)** ay na-optimize upang bigyan ang end users ng maximum speed, simpleng interface, at libreng access. Gayunpaman, ang aming ultimate vision ay lumipat sa istruktura kung saan kahit ang database admin (kami) ay hindi makakainterbensyon.
-
-### Phase 1: Beta (Aktibo Ngayon)
-
-- **Imprastraktura:** Cloud Database (Supabase)
-- **Layunin:** Bilis, alisin ang UX (user experience) barriers, at adaptasyon. Magbigay ng "frictionless" na seguridad
-
-### 🚀 Phase 2: (Kailangan ang Backend / Edge Function)
-
-Sinasaklaw ng phase na ito ang paglipat mula sa ganap na "Client-Side" na istruktura ng sistema patungo sa mas secure at mas manageable na istrukturang "Server-Side Authority".
-
-| Item | Ano ang Ibinibigay? | Tech Stack | Kahalagahan |
-|------|---------------------|------------|-------------|
-| **`INSERT` → Edge Function** | Block spam + API Key security | Supabase Edge (Deno) | 🔴 Mataas |
-| **Wallet Signature** | Cryptographic identity verification | Solana Wallet Adapter | 🟡 Katamtaman |
-| **IPFS/Arweave Backup** | Decentralized immutability | IPFS SDK + Pinata | 🟢 Mababa |
-| **Revocation Mechanism** | Pagpapawalang-bisa ng pekeng sertipiko | DB Schema Update | 🔴 Mataas |
-| **Audit Log** | Forensic investigation record | Custom logs table | 🟡 Katamtaman |
-| **OpenTimestamps** | Bitcoin anchoring | OTS JavaScript | 🟢 Mababa |
-| **DID Integration** | Decentralized Identity | ION/Ceramic | 🟢 Mababa |
-
-### Phase 3: Buong Decentralization (Pangmatagalan)
+### Phase 3: Full Decentralization (2027+)
 
 | Feature | Target | ETA |
-|---------|--------|-----|
-| **Blockchain Registry** | On-chain Ethereum/Solana record | Q4 2026 |
-| **DAO Governance** | Pamamahala ng komunidad | Q1 2027 |
-| **Multi-Chain Support** | Polygon, Arbitrum, Base | Q2 2027 |
-| **Legal Recognition** | Bisa sa korte ng Turkey | 2027-2028 |
-| **API for Developers** | Public API endpoint | Q3 2026 |
+|---------|-------|-----|
+| **On-Chain Registry** | Solana on-chain record | Q1 2027 |
+| **Enhanced Token Utility** | NFT mint, advanced features | Q1 2027 |
+| **Multi-Chain Support** | Ethereum, Polygon, Base | Q2 2027 |
+| **Legal Recognition** | Validity sa Turkish courts | 2027-2028 |
 
 ---
 
-## 📊 Pagsusuri sa Kakumpitensya (Na-update)
-
-Ang PoArt ay nakaposisyon sa "Sweet Spot" (pinaka-optimal na punto) na pumupuno sa mga kahinaan ng umiiral na solusyon.
-
-| Feature | **PoArt** | OpenTime-stamps | Verisart / Artory | Origin-Stamp | Myco | Chroni-cled | 證 Proof | Trust-Stamp |
-|---------|:---------:|:---------------:|:-----------------:|:------------:|:----:|:-----------:|:--------:|:-----------:|
-| **Gastos** | 🆓 Libre | 🆓 | 💰 Bayad | ⚠️ Freemium | 💰 | 💰 | 💰 | 💰 |
-| **Drag & Drop UI** | ✅ Napakadali | ❌ CLI | ⚠️ Katamtaman | ⚠️ Katamtaman | ⚠️ | ⚠️ | ❌ | ⚠️ |
-| **Multi-Format Export** | ✅ PNG/PDF/JSON | ❌ | ⚠️ PDF | ⚠️ PDF | ❌ | ❌ | ❌ | ⚠️ |
-| **Real-Time Preview** | ✅ Live | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| **Privacy Controls** | ✅ 3 mode | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Client-Side Hash** | ✅ Privacy | ✅ | ❌ Upload | ⚠️ | ❌ | ❌ | ⚠️ | ❌ |
-| **Forensic Metadata** | ✅ Buo | ❌ | ❌ | ⚠️ Limitado | ❌ | ⚠️ | ❌ | ⚠️ |
-| **QR Verification** | ✅ Instant | ❌ | ✅ | ✅ | ⚠️ | ✅ | ⚠️ | ✅ |
-| **Rate Limiting** | ✅ RLS+Client | ❌ | ⚠️ | ❌ | ❌ | ⚠️ | ❌ | ⚠️ |
-| **Blockchain Anchor** | 🔄 Roadmap | ✅ Bitcoin | ✅ Ethereum | ✅ Multi | ✅ | ✅ | ✅ | ✅ |
-| **Open Source** | ✅ GitHub | ✅ | ❌ | ⚠️ | ❌ | ❌ | ❌ | ❌ |
-| **Turkish Support** | ✅ Native | ❌ | ❌ | ❌ | ❌ | ❌ | ⚠️ | ❌ |
-
-**Paliwanag:**
-- ✅ : Buong suporta / Mayroon
-- ⚠️ : Limitado / Sa bayad na plano
-- ❌ : Wala / Hindi suportado
-- 🔄 : Sa Roadmap (ginagawa)
-- 🆓 : Ganap na libre
-- 💰 : Bayad / Kailangan ng subscription
-
-### Mga Kahinaan ng Kakumpitensya, Mga Lakas ng PoArt
-
-| Kahinaan | Kakumpitensya | PoArt |
-|----------|---------------|-------|
-| **Hirap sa Paggamit** | CLI, kailangang malaman ang API, kailangang may wallet | Drag and drop, tapos sa 3 click |
-| **Hadlang sa Gastos** | $50-500/buwan na subscription | 100% Libre |
-| **Privacy** | Ina-upload ang file sa server | Client-side, hindi kailanman pumupunta ang file |
-| **Forensic Data** | Timestamp lang | IP, lokasyon, device, oras - lahat |
-| **Turkish Support** | Wala o napaka-limitado | Lokal na wika na suporta |
-| **Open Source** | Saradong kahon | Lahat ng code ay bukas sa GitHub |
-
----
-
-## 🧬 Istruktura ng Data ng Protokol (JSON Schema)
-
-**Bawat sertipiko ng [PoArt] ay may portable at mave-verify na JSON identity card na ginawa ayon sa sumusunod na pamantayan:**
-
-> **Nota:** Ang Identity JSON format na ito ay ang certificate format na ipinepresenta sa user. Sa Registry record, ginagamit ang `registry.asset` sa halip na `identity.asset_data` (mapping: `identity.asset_data` == `registry.asset`)
-
-```json
-{
-  "$schema": "https://raw.githubusercontent.com/galeri-coder/ilhanart-core/main/protocols/poart-identity-v1.json",
-  "manifest": {
-    "protocol": "[PoArt] Proof of Art",
-    "version": "1.0",
-    "status": "Production-Ready"
-  },
-  "identity": {
-    "issuer": "Ilhan Art Gallery",
-    "location": "Istanbul / Besiktas",
-    "archive_vision": "2025 - 3000"
-  },
-  "asset_data": {
-    "title": "Official Whitepaper",
-    "fingerprints": {
-      "sha256": "e4123f83b44a409d7a43f0897837876dfabb3320db63dadbb34c54281f38a6ba",
-      "sha512": "41e5e0d007a2a77b6e0e3ebc548fbaa2788ea265193434f58d23e8c0f5bb20a0835aa850edbadbd8341969cf743fc69fa951f7ed275901fefe0fe7eb1fb83099"
-    }
-  },
-  "official_links": {
-    "registry": "https://www.ilhanart.org/public-registry",
-    "evidence": "https://www.ilhanart.org/identity"
-  },
-  "forensics": {
-    "ip_masked": "46.1.***.***",
-    "device": "Brave (Windows;Monster,Tulpar)...",
-    "location": "***/TR",
-    "timestamp": "2026-01-09T12:34:56.000Z"
-  }
-}
-```
-
----
-
-## 🔬 Teknikal na Lalim: Algorithm ng Pag-seal
+## 🔬 Technical Depth: Seal Algorithm
 
 ### Deterministic Hash Functions
 
 ```javascript
-// Helper Functions: I-convert ang Digest sa hex string
-async function digestToHex(algorithm, dataBytes) {
-  const hashBuffer = await crypto.subtle.digest(algorithm, dataBytes);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-// I-convert ang String sa byte array
-function stringToBytes(text) {
-  return new TextEncoder().encode(text);
-}
-
-// Canonical forensics string generation (v1.0: fixed field order + UTF-8 + \n delimiter)
-// Nota sa Phase 2: lilipat sa canonical JSON gamit ang RFC 8785 (JCS)
-function canonicalForensics(forensicsData) {
-  return JSON.stringify({
-    ip_masked: forensicsData.ip_masked,
-    location: forensicsData.location,
-    device: forensicsData.device,
-    timestamp: forensicsData.timestamp
-  });
-}
-```
-
-### Proseso ng Produksyon ng NotarySeal (Ganap na Deterministic)
-
-```javascript
-// 1. Kalkulahin ang FileHash (client-side)
+// FileHash calculation (client-side)
 async function computeFileHash(file) {
   const fileBuffer = await file.arrayBuffer();
   const fileBytes = new Uint8Array(fileBuffer);
@@ -649,103 +534,60 @@ async function computeFileHash(file) {
   return { sha256, sha512 };
 }
 
-// 2. Kolektahin ang Forensic data (gumamit ng isang timestamp)
-async function collectForensics(visibilityMode) {
-  const timestamp = new Date().toISOString(); // Bumuo ng isang timestamp
-  const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
-  
-  let forensics = {
-    ip_masked: visibilityMode === 'masked' ? maskIP(ipData.ip) : ipData.ip,
-    location: visibilityMode === 'masked' 
-      ? `***/${ipData.country}` 
-      : `${ipData.city}, ${ipData.country_name || ipData.country}`,
-    device: navigator.userAgent,
-    timestamp: timestamp // parehong timestamp
-  };
-  
-  return { forensics, timestamp };
-}
-
-// 3. Buuin ang EvidenceRoot (gamit ang canonical encoding)
+// EvidenceRoot creation
 async function computeEvidenceRoot(fileHash512, forensicsData) {
   const canonicalPayload = `file_sha512:${fileHash512}\nforensics:${canonicalForensics(forensicsData)}`;
   return await digestToHex('SHA-512', stringToBytes(canonicalPayload));
 }
 
-// 4. Gumawa ng NotarySeal (gumamit ng parehong timestamp)
+// NotarySeal production
 async function computeNotarySeal(evidenceRoot, signerSignature, timestamp) {
   const sealPayload = `evidence_root:${evidenceRoot}\nsigner_sig:${signerSignature}\ntimestamp:${timestamp}`;
   return await digestToHex('SHA-512', stringToBytes(sealPayload));
 }
-
-// Helper functions para sa masking (sumusuporta sa IPv4 at IPv6)
-function maskIP(ip) {
-  if (!ip) return "***";
-  
-  // Suriin ang IPv4
-  if (ip.includes(".")) {
-    const parts = ip.split(".");
-    if (parts.length === 4) {
-      return `${parts[0]}.${parts[1]}.***.***`;
-    }
-  }
-  
-  // IPv6 o hindi kilalang format
-  return "***";
-}
 ```
 
-### Mga Hakbang sa Verification (Dalawang Antas)
+### Verification Flow (Two Levels)
 
-#### Quick Verify (Mabilis na Pagpapatunay)
+#### Quick Verify (Mabilis na Pag-verify)
 
 ```javascript
-// I-verify lang ang file hash (mabilis na red flag)
+// Check file hash lang (mabilis na pulang bandila)
 async function verifyQuick(file, certificateId) {
   const { sha512: userFileHash } = await computeFileHash(file);
   
-  // Kunin mula sa Registry
   const cert = await fetchFromRegistry(certificateId);
   const { sha512: originalHash } = cert.asset.fingerprints;
   
-  // Ihambing ang Hash
   if (userFileHash === originalHash) {
-    return {
-      valid: true,
-      message: "✅ Orihinal - Tumugma ang File hash"
-    };
+    return { valid: true, message: "✅ Original - File hash match" };
   } else {
-    return {
-      valid: false,
-      message: "❌ Peke - Binago ang file"
-    };
+    return { valid: false, message: "❌ Fake - File manipulated" };
   }
 }
 ```
 
-#### Full Verify (Buong Pagpapatunay)
+#### Full Verify (Kumpletong Pag-verify)
 
 ```javascript
-// Muling buuin ang EvidenceRoot at NotarySeal at i-verify
+// Muling gumawa ng EvidenceRoot at NotarySeal at i-verify
 async function verifyFull(file, certificateId) {
   const { sha512: userFileHash } = await computeFileHash(file);
-
-  // Kunin mula sa Registry
   const cert = await fetchFromRegistry(certificateId);
 
-  // 1) I-verify ang FileHash (mabilis na red flag)
+  // 1) FileHash check
   const originalHash = cert.asset.fingerprints.sha512;
   if (userFileHash !== originalHash) {
-    return { valid: false, message: "❌ Peke - Hindi tumugma ang File hash" };
+    return { valid: false, message: "❌ Fake - File hash mismatch" };
   }
 
-  // 2) Muling buuin ang EvidenceRoot (gamit ang forensics na naka-store sa registry)
+  // 2) Muling gumawa ng EvidenceRoot
   const evidenceRoot = await computeEvidenceRoot(userFileHash, cert.forensics);
   if (evidenceRoot !== cert.proof.evidence_root) {
-    return { valid: false, message: "❌ Hindi tumugma - Hindi valid ang EvidenceRoot" };
+    return { valid: false, message: "❌ Mismatch - EvidenceRoot" };
   }
 
-  // 3) Muling buuin ang NotarySeal (gamit ang parehong timestamp + signer_sig)
+  // 3) Muling gumawa ng NotarySeal
   const seal = await computeNotarySeal(
     evidenceRoot,
     cert.proof.signer_sig,
@@ -753,94 +595,64 @@ async function verifyFull(file, certificateId) {
   );
 
   if (seal !== cert.proof.notary_seal) {
-    return { valid: false, message: "❌ Hindi tumugma - Hindi valid ang NotarySeal" };
+    return { valid: false, message: "❌ Mismatch - NotarySeal" };
   }
 
-  // Opsyonal: Sa Phase 2, i-verify din ang signer_sig gamit ang attestation_pubkey
-  // const sigValid = await verifySig(cert.issuer.attestation_pubkey, cert.proof.signer_sig, evidenceRoot);
-  // if (!sigValid) return { valid: false, message: "❌ Hindi valid ang lagda" };
-
-  return { valid: true, message: "✅ Orihinal - Pumasa ang Full Verify" };
+  return { valid: true, message: "✅ Original - Full Verify passed" };
 }
 ```
 
-> **Mahahalagang Nota:**
-> - **Quick Verify:** I-verify lang ang file hash para sa mabilis na paggamit
-> - **Full Verify:** I-verify ang lahat ng layer ng protokol (EvidenceRoot + NotarySeal)
-> - Lahat ng hash operation ay ginagawa nang deterministic gamit ang fixed encoding at delimiters
-> - **v1.0 canonicalization standard:** Fixed field order + UTF-8 encoding + `\n` delimiter
-> - **Phase 2 plan:** Lilipat sa canonical JSON gamit ang RFC 8785 (JCS - JSON Canonicalization Scheme)
-> - Sa Masked mode, ang pagkalkula ng EvidenceRoot at NotarySeal ay ginagawa gamit ang masked forensics
-> - Isang timestamp lang ang ginagamit sa buong proseso (forensics + NotarySeal); ginagarantiya ang determinism
-> - **Mga pangalan ng Forensics field:** `ip_masked`, `location`, `device`, `timestamp` (ganap na tumutugma ang code at registry)
-> - **Registry path:** `certificate.asset.fingerprints` (ganap na tumutugma sa verify code)
-> - **signer_sig sa Registry:** Ang field na `proof.signer_sig` ay kinakailangan para sa Full Verify
-> - Ang mekanismo ng SignerSignature ay ia-activate sa Phase 2 gamit ang Solana Wallet Adapter; sa v1.0 ay maaaring i-verify gamit ang `attestation_pubkey`
-
 ---
 
-## 📈 Mga Istatistika ng Paggamit (Target Q1 2026)
+## 💬 Huling mga Tandaan
 
-| Metric | Target | Status |
-|--------|--------|--------|
-| **Kabuuang Sertipiko** | 1,000 | 🔄 Nagpapatuloy |
-| **Mga Aktibong User** | 500 | 🔄 Nagpapatuloy |
-| **Bilang ng Verification** | 5,000 | 🔄 Nagpapatuloy |
-| **Uptime** | 99.9% | ✅ Aktibo |
-| **Avg Response Time** | <200ms | ✅ Optimal |
+### Pump.fun at Katotohanan
 
----
+Ang proyektong ito ay sinimulan sa Pump.fun dahil:
+- ✅ Liquidity access (Raydium automatic migration)
+- ✅ Existing community access
+- ✅ Mababang initial cost
 
-## 🌍 Komunidad at Suporta
+Ngunit linawin natin:
+- **Ang token price** ay hindi sukatan ng artistic success
+- **Ang operational budget** token value ay mahalaga (gallery, exhibits, infrastructure)
+- **Success metrics:** Authenticated artworks + community engagement + physical visitors
 
-- **Twitter:** [@Galerilhan](https://twitter.com/Galerilhan)
-- **Web:** [ilhanart.org](https://ilhanart.org)
-- **Email:** galeri@ilhanart.org
+### Governance at Decentralization
 
----
+**v1.0 Reality (2026):**
+- Registry: Off-chain (PostgreSQL + IPFS backup)
+- Attestation: Gallery self-signed (centralized pero transparent)
+- Governance: Advisory only (curatorial final decision)
 
-## 🙏 Mga Contributor
+**v2.0+ Vision (2027+):**
+- Registry: On-chain (Solana)
+- Signatures: Wallet-based (decentralized)
+- Governance: Hybrid (community advisory + curatorial quality)
 
-Ang PoArt protocol ay patuloy na umuunlad sa kontribusyon ng open source community.
-
-**Para mag-contribute:**
-1. I-fork ang proyekto
-2. Gumawa ng feature branch (`git checkout -b feature/amazing-feature`)
-3. Mag-commit (`git commit -m 'Add amazing feature'`)
-4. Mag-push (`git push origin feature/amazing-feature`)
-5. Magbukas ng Pull Request
-
-### 🛠️ Ano ang Kailangan Namin Ngayon? (Panawagan para sa Tulong)
-
-Naghihintay kami ng kontribusyon mula sa mga may karanasang developer sa mga sumusunod na paksa para sa pagbuo ng **Phase 2** ng PoArt protocol:
-
-* **Supabase Edge Functions:** Paglipat ng spam protection sa server side
-* **Solana Web3.js:** Wallet Signing integration
-* **IPFS / Arweave:** Archiving at pinning service integration
-
-> Mangyaring magsimula ng talakayan sa "Issues" tab bago magdagdag ng feature
+Ang structure na ito ay nagbibigay ng **operational efficiency** at **quality control** sa early stage, habang nagbubukas ng daan para sa **community participation** sa hinaharap.
 
 ---
 
 **[PoArt] Proof of Art Protocol v1.0**  
-*"Culture > Capital" // Ang kultura ay mas malaki kaysa kapital*
+*"Culture > Capital" // Kultura, Mas Malaki kaysa Kapital*
 
-## 🧾 Lisensya
+## 🧾 License
 
 MIT License © 2026 İlhan Art Gallery Initiative
 
-Tingnan ang [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) para sa buong mga tuntunin
+## 💬 Credits
+
+![Version](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) 
+![Security](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) 
+![Platform](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) 
+![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
+
+**Ang proyektong ito ay binuo gamit ang [İlhan Art Gallery] initiative, ang source codes ay bukas sa publiko para sa transparency.**
+
+**PROTOCOL V1.0 // SEALED GAMIT ANG SHA-512**
+
+*© 2026 İLHAN ART | Nakalaan ang Lahat ng Karapatan sa Artworks, Visuals, at Ideas.*
 
 ---
 
-## 💬 Mga Kredito
-
-![Version](https://img.shields.io/badge/version-v1.0_Beta-blue?style=for-the-badge) ![Security](https://img.shields.io/badge/security-Forensic_Standard-success?style=for-the-badge) ![Platform](https://img.shields.io/badge/platform-Web_%2F_Serverless-orange?style=for-the-badge) ![License](https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge)
-
-**Ang proyektong ito ay binuo ng [İlhan Art Gallery] initiative at ang source code ay ibinubunyag sa publiko para sa transparency.**
-
-**PROTOCOL V1.0 // NA-SEAL GAMIT ANG SHA-512**
-
-*© 2026 İLHAN ART | Lahat ng karapatan ay nakalaan para sa mga gawa, imahe, at konsepto*
-
----
