@@ -235,7 +235,7 @@ Her [PoArt] sertifikalı eserin arkasında, yatırımcıların indirebileceği �
 
 ## d) Sonuç: Kumarhane Değil, Müze
 
-**Pump.fun ve Merkeziyetsiz Borsalar (DEX) şu an maalesef birer kumarhanedir; ışıklar yanıp söner, herkes hızlı kazanç peşindedir ve kasa (dolandırıcılar) her zaman kazanır. Projeyi burada başlatma sebebimiz aynı zamanda burayı iyileştirmeye çalışmamızdır ve mevcut datamız ile canlı yayınlar aracılıyğa mevcut kitleye ulaşacak çevremizin olmasından kaynaklıdır.**
+**Pump.fun ve Merkeziyetsiz Borsalar (DEX) şu an maalesef birer kumarhanedir; ışıklar yanıp söner, herkes hızlı kazanç peşindedir ve kasa (dolandırıcılar) her zaman kazanır. Projeyi burada başlatma sebebimiz aynı zamanda burayı iyileştirmeye çalışmamızdır ve mevcut datamız ile canlı yayınlar aracılıyğa mevcut kitleye ulaşacak çevremizin olmamasından kaynaklıdır.**
 
 **[PoArt], bu kumarhanenin ortasına inşa edilmiş bir kaledir.**
 
