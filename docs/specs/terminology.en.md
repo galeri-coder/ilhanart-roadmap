@@ -133,9 +133,9 @@ This theorem removes [PoArt]'s value claim from being a "like" or "market narrat
 
 ### 🏛️ Importance of the "Engine" Concept
 
-Tokens emerging from Pump.fun or similar platforms are often merely **"access tickets"**. **PoArt Forensic Engine (PFE)** is the **constitutional logic layer** that determines what rights that ticket protects, how labor will be recorded, and how art/science/technology will be perpetuated.
+Tokens emerging from Pump.fun or similar platforms are often seen as **"access tickets"**. **PoArt Forensic Engine (PFE)** is the **constitutional logic layer** that determines what rights that ticket protects, how labor will be recorded, and how art/science/technology will be perpetuated.
 
-> **Note:** The reason we launched this project on Pump.fun is that we did not have sufficient liquidity and follower count. Using existing data was strategically the most correct move, though not the highest quality. Regardless of budget and resources, defining this engine's logic on GitHub proves that the project is not just financial speculation, but a long-term **software infrastructure** and **digital national library** vision.
+> **Note:** We chose Pump.fun because we believe in its potential. A platform with this much reach and energy deserves projects that add lasting value — not just quick flips. Our mission is to remind people of what they've forgotten: culture, music, slowness, and the beauty of the creative process. Regardless of budget and resources, defining this engine's logic on GitHub proves that the project is not just financial speculation, but a long-term **software infrastructure** and **digital cultural archive** vision. We're here to make Pump.fun a better place.
 
 ---
 
