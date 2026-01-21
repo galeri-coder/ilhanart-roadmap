@@ -235,13 +235,13 @@ Behind each [PoArt] certified artwork is an encrypted and timestamped data packa
 
 ## d) Conclusion: Not a Casino, a Museum
 
-**Pump.fun and Decentralized Exchanges (DEX) are unfortunately casinos right now; lights flash, everyone chases quick gains, and the house (scammers) always wins. The reason we started the project here is lack of sufficient budget and having existing audience through live broadcasts.**
+**Pump.fun and Decentralized Exchanges (DEX) have incredible energy and reach — but they also have untapped potential for meaningful projects. We're here to help unlock that potential.**
 
-**[PoArt] is a fortress built in the middle of this casino.**
+**[PoArt] is a new kind of project built for this ecosystem.**
 
-- 🎰 Casino is based on card games; we are based on **physical reality**.
-- 🃏 Casino is open to cheating; we are open to **transparent evidence**.
-- ⏳ Casino is temporary; we focus on **infinity of art and science**.
+- 🎰 Where others chase quick gains, we build **lasting value**.
+- 🃏 Where others stay anonymous, we offer **transparent evidence**.
+- ⏳ Where others think in days, we think in **generations**.
 
 **A token using this protocol is not just a "coin"; it is a digital stock certificate containing sweat, paint, code, and philosophy behind it.**
 
@@ -943,6 +943,9 @@ This project was launched on Pump.fun because:
 - ✅ Liquidity access (Raydium automatic migration)
 - ✅ Existing community access
 - ✅ Low startup cost
+- ✅ **We believe Pump.fun deserves projects that add cultural value**
+
+We're not here despite Pump.fun — we're here **because of its potential**.
 
 However, let's clarify:
 - **Token price** is not an indicator of artistic success
