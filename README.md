@@ -234,7 +234,7 @@ All contributions must align with our **Culture > Capital** philosophy. We will 
 
 - **Website:** [ilhanart.org](https://ilhanart.org)
 - **Twitter:** [@Galerilhan](https://twitter.com/Galerilhan)
-- **Email:** contact@ilhanart.org
+- **Email:** galeri@ilhanart.org
 - **Gallery:** Ortaköy, Istanbul, Turkey
 
 ### Join the Movement
@@ -300,6 +300,6 @@ cat culture-over-capital.md
 
 *İlhan Art Studio • Ortaköy, Istanbul*
 
-[Website](https://ilhanart.org) • [Twitter](https://twitter.com/Galerilhan) • [GitHub](https://github.com/galeri-coder)
+[Website](https://www.ilhanart.org) • [Twitter](https://twitter.com/Galerilhan) • [GitHub](https://github.com/galeri-coder)
 
 </div>
