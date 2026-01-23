@@ -247,7 +247,7 @@ This isn't just a crypto project. It's a **civilizational bet** that culture out
 
 This project is licensed under the **Culture > Capital License** — a custom license that prioritizes cultural preservation over commercial exploitation.
 
-See [LICENSE.md](LICENSE.md) for details.
+See [LICENSE.md](https://github.com/galeri-coder/galeri-coder.github.io/blob/main/LICENSE) for details.
 
 ---
 
