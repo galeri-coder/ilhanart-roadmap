@@ -27,7 +27,8 @@
 16. Appeals / Mercii & İtiraz Mekanizması (Kurumsal Güven Katmanı)  
 17. Threat Model (Saldırı Kataloğu ve Karşı Katmanlar)  
 18. Final Word: A Blueprint for Global Governance (Manifesto)  
-19. Roadmap & Future Notes (Yol Haritası Notu)**
+19. PoArt-Only Boutique Exchange (Butik Borsa Mimarisi)  
+20. Roadmap & Future Notes (Yol Haritası Notu)**
 
 ---
 
@@ -48,9 +49,9 @@ Yeni katılan bir kullanıcı bu tablo üzerinden tüm protokol mimarisini 2 dak
 ## 🔐 Kriptografik Primitifler (v1.0 Sabitleri)
 
 - Bu dokümanda **Hash(x)** ifadesi **SHA-512(x)** anlamındadır.
-- **MerkleRoot(AllFiles):** Yaprak ve iç düğüm hash’leri **SHA-512** ile üretilir.
+- **MerkleRoot(AllFiles):** Yaprak ve iç düğüm hash'leri **SHA-512** ile üretilir.
 - **SignerSignature:** Bir cüzdanın özel anahtarıyla üretilen, doğrulamada kullanılan imzadır (hash değildir).
-- Tüm “seal / root / signature-ref” hesapları deterministik ve doğrulanabilir olacak şekilde tanımlanır.
+- Tüm "seal / root / signature-ref" hesapları deterministik ve doğrulanabilir olacak şekilde tanımlanır.
 
 - **SignatureScheme (v1.0): Ed25519 (RFC 8032)**
   - **SignerPublicKey:** 32-byte raw (hex string değil)
@@ -91,7 +92,7 @@ Yeni katılan bir kullanıcı bu tablo üzerinden tüm protokol mimarisini 2 dak
   - `ConsensusEnvelopeBytes = (`
     `ProposalRef || SnapshotTime || YesWeight || NoWeight || AbstainWeight ||`
     `QuorumWeight || VetoWeight || ResultCode || VoteSetRoot`
-    `)`  *(hepsi `||` = Canonical Encoding’e göre)*
+    `)`  *(hepsi `||` = Canonical Encoding'e göre)*
   - `VoterConsensusRoot = SHA-512( ConsensusEnvelopeBytes )`
   - **Alan tipleri:**
     - `ProposalRef` = bytes (değişken; `field(ProposalRef)` length-prefixed)
@@ -102,9 +103,9 @@ Yeni katılan bir kullanıcı bu tablo üzerinden tüm protokol mimarisini 2 dak
 
 ---
 
-## 🧩 Üyelik Seviyeleri — “Primer → Texture → Impasto” (TWAB Tier)
+## 🧩 Üyelik Seviyeleri — "Primer → Texture → Impasto" (TWAB Tier)
 
-Tier, yalnızca TWAB’dan türetilen **logaritmik skor** üzerinden belirlenir:
+Tier, yalnızca TWAB'dan türetilen **logaritmik skor** üzerinden belirlenir:
 
 $$
 \text{ScoreTWAB}=\log_{10}(\text{TWAB}_{30d}+1)
@@ -130,12 +131,12 @@ $$
 > **Cooldown kuralı (v1.0):** Adres `CooldownWindow` içindeyse Tier belirlemede
 > `ScoreTWAB = log10(EffectiveTWAB_{30d}+1)` kullanılır.
 
-> Not: ScoreTWAB, TWAB’dan deterministik türediği için Tier hâlâ “TWAB tabanlıdır”.  
+> Not: ScoreTWAB, TWAB'dan deterministik türediği için Tier hâlâ "TWAB tabanlıdır".  
 > Bu eşikler **Turnstile** gibi giriş barajlarıyla ölçek uyumunu korur.
 
 
 > **Not (isim çakışması giderildi):**  
-> “Primer/Texture/Impasto” **Üyelik Seviyesi (Tier)** olarak yalnızca **TWAB**’a göre belirlenir.  
+> "Primer/Texture/Impasto" **Üyelik Seviyesi (Tier)** olarak yalnızca **TWAB**'a göre belirlenir.  
 > **Rütbe Sınıfı (Rank)** ise **Pts** üzerinden belirlenir ve **Rank-I / Rank-II / Rank-III** olarak adlandırılır.  
 > **Pts**, TWAB + kültürel katkı + denetim/oylama katılımı gibi bileşenlerden türetilen birleşik bir skordur.
 
@@ -145,29 +146,29 @@ $$
 
 ### **[PoArt] Proof of Art (v1.0)**
 * **Tanım:** Bir sanat eserinin sadece nihai sonucunu değil, tüm **yaratım sürecini (process)** teknik verilerle doğrulayan ana protokoldür.  
-* **Çözdüğü Sorun:** Üretken yapay zeka (Generative AI) araçlarının artışıyla birlikte, gerçek insan emeğinin dijital ortamda kanıtlanamaz hale gelmesi ve sanatın “meta” değerinin düşmesi.  
+* **Çözdüğü Sorun:** Üretken yapay zeka (Generative AI) araçlarının artışıyla birlikte, gerçek insan emeğinin dijital ortamda kanıtlanamaz hale gelmesi ve sanatın "meta" değerinin düşmesi.  
 * **Nasıl Çalışır?** Sanatçı, eseri oluştururken her aşamayı kapsayan **Evidence Pack** (Kanıt Paketi) verilerini sisteme sunar. Protokol, bu verileri zaman damgalı olarak blokzincir üzerinde mühürler.  
-* **Örnek Senaryo:** Bir sanatçı 40 saatlik bir impasto tablo yapıyorsa, bu 40 saatin yayın logları, fırça darbelerinin timelapse kayıtları ve dijital parmak izleri [PoArt] filtresinden geçer. Sadece “bitmiş resim” değil, o resmin arkasındaki “40 saatlik insan emeği” tescillenir.
+* **Örnek Senaryo:** Bir sanatçı 40 saatlik bir impasto tablo yapıyorsa, bu 40 saatin yayın logları, fırça darbelerinin timelapse kayıtları ve dijital parmak izleri [PoArt] filtresinden geçer. Sadece "bitmiş resim" değil, o resmin arkasındaki "40 saatlik insan emeği" tescillenir.
 
 ---
 
 ### **[FPP] Foundational Pillar Protocol (v1.0)**
-* **Tanım:** Ekosistemin ekonomik, yönetimsel ve toplumsal “taşıyıcı kolonlarını” (pillars) inşa eden; sadakati, sürekliliği ve uzun vadeli katılımı ödüllendiren ana sistemdir.  
-* **Çözdüğü Sorun:** Kripto ekosistemindeki “parayı basan düdüğü çalar” mantığının yarattığı adaletsizlik ve projeyi terk eden spekülatörlerin ekosisteme zarar vermesi.  
-* **Nasıl Çalışır?** Kullanıcıların ekosistem içindeki karar verme ve yönetim ağırlığı, cüzdanlarındaki varlık miktarından ziyade, bu varlığı ne kadar “sağlam” (pillar) ve uzun süreli tuttuklarına göre belirlenir.  
-* **Örnek Senaryo:** Sisteme bugün 1 milyon token ile giren bir “balina”, 1 yıldır sistemde 100 token tutan sadık bir “patron”dan daha düşük bir yönetim ağırlığına (voting power) sahip olabilir.
+* **Tanım:** Ekosistemin ekonomik, yönetimsel ve toplumsal "taşıyıcı kolonlarını" (pillars) inşa eden; sadakati, sürekliliği ve uzun vadeli katılımı ödüllendiren ana sistemdir.  
+* **Çözdüğü Sorun:** Kripto ekosistemindeki "parayı basan düdüğü çalar" mantığının yarattığı adaletsizlik ve projeyi terk eden spekülatörlerin ekosisteme zarar vermesi.  
+* **Nasıl Çalışır?** Kullanıcıların ekosistem içindeki karar verme ve yönetim ağırlığı, cüzdanlarındaki varlık miktarından ziyade, bu varlığı ne kadar "sağlam" (pillar) ve uzun süreli tuttuklarına göre belirlenir.  
+* **Örnek Senaryo:** Sisteme bugün 1 milyon token ile giren bir "balina", 1 yıldır sistemde 100 token tutan sadık bir "patron"dan daha düşük bir yönetim ağırlığına (voting power) sahip olabilir.
 
 ---
 
 ## 👥 2) Roles & Entities (Roller ve Varlıklar)
 
-Bu protokol, “kim ne yapar, ne yapamaz?” sorusunu netleştirerek yanlış anlaşılmaları ve suistimali azaltır.
+Bu protokol, "kim ne yapar, ne yapamaz?" sorusunu netleştirerek yanlış anlaşılmaları ve suistimali azaltır.
 
 - **Artist (Sanatçı):** [PoArt] için Evidence Pack üretir, kayıt başlatır, yıllık yenileme için **Heartbeat Signature** imza atar.  
 - **Patron (Hami / Destekçi):** [FPP] içinde süreklilik ve katkı ile statü kazanır; veto, denetim ve kürasyon süreçlerinde ağırlık taşır.  
 - **Validator (Doğrulayıcı Topluluk):** Evidence Pack inceleme, tutarsızlık işaretleme, veto/itiraz süreçlerinde aktif rol alır.  
-- **Digital Notary (Dijital Noter / Self-Executing Contract):** Kanıt + konsensüs + zaman damgasını deterministik şekilde doğrular ve Public Registry’ye mühürler.  
-- **Public Registry (Kamu Arşivi):** “Onaylı kayıtların” kalıcı kimlik katmanı. Kayıt statüleri burada görünür (Verified/Legacy/Revoked vs).  
+- **Digital Notary (Dijital Noter / Self-Executing Contract):** Kanıt + konsensüs + zaman damgasını deterministik şekilde doğrular ve Public Registry'ye mühürler.  
+- **Public Registry (Kamu Arşivi):** "Onaylı kayıtların" kalıcı kimlik katmanı. Kayıt statüleri burada görünür (Verified/Legacy/Revoked vs).  
 - **Evidence Storage (IPFS/Arweave/Archive):** Ham verinin saklandığı zincir dışı katman; zincire yalnızca kriptografik kökler yazılır.
 
 ---
@@ -179,14 +180,14 @@ Amaç; sermaye ile anlık güç satın alma girişimlerini (**whale / flash-in /
 
 ---
 
-### 3.1) Time Windows (Zaman Pencereleri) ve “Epoch” Netliği
+### 3.1) Time Windows (Zaman Pencereleri) ve "Epoch" Netliği
 
-Bu protokolde **“epoch” terimi yalnızca Operational Epoch’u (7 gün)** ifade eder.  
+Bu protokolde **"epoch" terimi yalnızca Operational Epoch'u (7 gün)** ifade eder.  
 Diğer zaman parametreleri, amaçları karışmaması için **Guard Window (30 gün)** ve **Integrity Cycle (365 gün)** olarak ayrı isimlerle tanımlanır.
 
 > **Terminoloji Notu (v1.0):**  
-> **Evidence Pack** kayıt/doğrulama/itiraz süreçlerinde kullanılan “heavy proof” paketidir.  
-> **Heartbeat Signature** ise yalnızca **yıllık sahiplik/aktiflik yenilemesi** için kullanılan “light renewal” imzasıdır.
+> **Evidence Pack** kayıt/doğrulama/itiraz süreçlerinde kullanılan "heavy proof" paketidir.  
+> **Heartbeat Signature** ise yalnızca **yıllık sahiplik/aktiflik yenilemesi** için kullanılan "light renewal" imzasıdır.
 
 #### 3.1.1) Operational Epoch (Standart Operasyonel Döngü)
 Yönetim raporlarının, doğrulama loglarının ve rutin skor güncellemelerinin çalıştığı temel periyottur.
@@ -215,8 +216,8 @@ Kritik oylamalarda, oylama gücünün hangi geçmiş zaman aralığına bakılar
 
 TWAB, bir cüzdanın belirli bir **sabit lookback penceresi (W)** boyunca tuttuğu bakiyenin **zaman-ağırlıklı ortalamasıdır**.
 
-> **Kritik (v1.0):** TWAB hesabında payda, “cüzdanın aktif olduğu süre” değil, **sabit pencere uzunluğu W**’dur.  
-> Böylece yeni giren bir adres “ilk dakikadan” tam TWAB’a ulaşamaz; TWAB, pencere doldukça doğal olarak yükselir.
+> **Kritik (v1.0):** TWAB hesabında payda, "cüzdanın aktif olduğu süre" değil, **sabit pencere uzunluğu W**'dur.  
+> Böylece yeni giren bir adres "ilk dakikadan" tam TWAB'a ulaşamaz; TWAB, pencere doldukça doğal olarak yükselir.
 
 Sürekli zaman formu:
 
@@ -301,11 +302,11 @@ Her yıl (**Heartbeat Signature**) ile yenileme zorunludur.
 ## 🛡️ 4) Security & Validation (Güvenlik ve Doğrulama)
 
 ### 4.1) Foundational Vault (1-Year Lock Cycles)
-* **Tanım:** Varlıkların **1 yıllık kilit döngüleri** ile tutulduğu, ekosistemin en üst düzey “itibar kasası”.  
+* **Tanım:** Varlıkların **1 yıllık kilit döngüleri** ile tutulduğu, ekosistemin en üst düzey "itibar kasası".  
 * **Çözdüğü Sorun:** Kısa vadeli kâr hedefleyen spekülatörlerin 2025–3000 vizyona zarar vermesi.  
-* **Cevap:** En kritik kararları yalnızca varlığını **1 yıl** kilitleyen ve [FPP] içinde “Foundational Pillar” statüsü kazanan kişiler verebilir.
+* **Cevap:** En kritik kararları yalnızca varlığını **1 yıl** kilitleyen ve [FPP] içinde "Foundational Pillar" statüsü kazanan kişiler verebilir.
 
-> Not: Bu dokümanda “epoch” terimi yalnızca **Operational Epoch (7 gün)** için kullanılır. Vault kilitleri “Lock Cycle” olarak anılır.
+> Not: Bu dokümanda "epoch" terimi yalnızca **Operational Epoch (7 gün)** için kullanılır. Vault kilitleri "Lock Cycle" olarak anılır.
 
 ---
 
@@ -325,32 +326,32 @@ Bu modülü dökümantasyona ve sisteme şu teknik adımlarla entegre ediyoruz:
    > **Üretim Çıpası:** Kimlik, nihai esere değil; üretim anının gerçekliğine ve fiziksel dünyadaki varlığa çıpalanır.
 
 2) **Süreç ve Emek Kaydı (Labor & Process Proof)**  
-   “Üretim sancısı”: Saniyeler içinde üretilen yapay zekâ çıktılarının aksine, teknik kararlar ve emek (fırça darbeleri, teknik metadata) kayıt altına alınır.  
+   "Üretim sancısı": Saniyeler içinde üretilen yapay zekâ çıktılarının aksine, teknik kararlar ve emek (fırça darbeleri, teknik metadata) kayıt altına alınır.  
    > **Zaman Kümülatifi:** Değer, bitmiş görselden ziyade, o görsele ulaşmak için harcanan kümülatif zamanda gizlidir.
 
 3) **Kanıt Paketi (Evidence Pack) ve Mühürleme**  
    Video kayıtları, zaman damgaları ve teknik metadata bir araya getirilerek bir paket oluşturulur.  
-   > **SHA-512 Bütünlüğü:** AllFiles hash’leri alınır → MerkleRoot üretilir → EvidenceRoot zincire yazılır.  
-   > **Kamu Sicili:** Mühürlenen veriler Public Registry’ye işlenir; fiziksel varlık ile metadata senkronizasyonu sağlanır.
+   > **SHA-512 Bütünlüğü:** AllFiles hash'leri alınır → MerkleRoot üretilir → EvidenceRoot zincire yazılır.  
+   > **Kamu Sicili:** Mühürlenen veriler Public Registry'ye işlenir; fiziksel varlık ile metadata senkronizasyonu sağlanır.
 
 4) **İrade ve Anti-Sahtecilik Denetimi**  
    > **Algoritmik Olmayan İrade:** Otomasyonun kusursuzluğu yerine, insanın hata yapabilen ve risk alan özgün iradesi esas alınır.  
-   > **Kırmızı Bayrak (Red Flag):** Sahtecilik/yanıltıcı beyan şüphesinde sistem “Red Flag” üretir ve statüyü incelemeye alır.
+   > **Kırmızı Bayrak (Red Flag):** Sahtecilik/yanıltıcı beyan şüphesinde sistem "Red Flag" üretir ve statüyü incelemeye alır.
 
-> **⚠️ Önemli Not:** Bu “Live Identity Proof” modülü bir rütbe değildir.  
+> **⚠️ Önemli Not:** Bu "Live Identity Proof" modülü bir rütbe değildir.  
 > Yıllık sahiplik/aktiflik yenilemesi **Heartbeat Signature** ile yapılır ve 365 günlük döngüye tabidir.
 
 #### Zorunlu İçerik (Trinity of Proof)
 1. **Live Logs:** Üretim anındaki canlı yayın + platform/sunucu log uyumu  
 2. **Process Timelapse:** İlk darbeden son hale kadar hızlandırılmış süreç videosu  
-3. **Digital Fingerprint:** `SHA-512(EvidencePack)` hash’i + bu hash’in cüzdan tarafından imzalanmış hali (**SignerSignature**).
+3. **Digital Fingerprint:** `SHA-512(EvidencePack)` hash'i + bu hash'in cüzdan tarafından imzalanmış hali (**SignerSignature**).
 
 
 #### v1.0 Güçlendirmesi (Bütünlük Katmanı)
 Trinity tek başına yetmez; aralarındaki bağ da mühürlenmelidir:
 
 4. **Capture Manifest:**  
-   Kamera/cihaz bilgisi, çözünürlük, kare sayısı, süre, dosya listesi, checksum’lar.
+   Kamera/cihaz bilgisi, çözünürlük, kare sayısı, süre, dosya listesi, checksum'lar.
 
 5. **Merkle Root / Hash Chain:**  
 
@@ -358,23 +359,23 @@ $$
 \text{EvidenceRoot} = \text{MerkleRoot}(\text{AllFiles})
 $$
 
-Tüm kanıt dosyalarının tek kök değeri: zincire yazılan **“tek gerçek”**.
+Tüm kanıt dosyalarının tek kök değeri: zincire yazılan **"tek gerçek"**.
 
 6. **Random Challenge Frames (Opsiyonel ama güçlü):**  
-   Yayın sırasında rastgele anlarda düşük sürtünmeli “insan kanıtı” görevleri  
+   Yayın sırasında rastgele anlarda düşük sürtünmeli "insan kanıtı" görevleri  
    (ör: belirli kartı göster, belirli kelimeyi yaz, belirli nesneyi kadraja al).  
    Bu, AI reenact / deepfake taklit maliyetini dramatik şekilde yükseltir.
 
 ---
 
 **Çözdüğü Sorun:**  
-“Bu eser gerçekten insan eliyle mi yapıldı?” sorusuna reddedilemez teknik yanıt.
+"Bu eser gerçekten insan eliyle mi yapıldı?" sorusuna reddedilemez teknik yanıt.
 
 ---
 
 ### 4.3) Sybil & Flash-loan Protection
 * **Tanım:** Bot hesap (Sybil) ve anlık kredi (Flash-loan) saldırılarına karşı matematiksel barikat.  
-* **Cevap:** [FPP] içindeki TWAB + Guard Window, anlık sermaye hareketlerini “yönetim etkisi” açısından önemsizleştirir.
+* **Cevap:** [FPP] içindeki TWAB + Guard Window, anlık sermaye hareketlerini "yönetim etkisi" açısından önemsizleştirir.
 
 ---
 
@@ -383,9 +384,9 @@ Tüm kanıt dosyalarının tek kök değeri: zincire yazılan **“tek gerçek�
 * **Tanım:** [PoArt] ve [FPP] verilerini teknik süzgeçten geçiren, doğruluğunu matematiksel olarak onaylayan ve nihai veriyi **Public Registry** üzerine geri dönülemez şekilde mühürleyen self-executing mekanizma.
 
 #### Çözdüğü Sorunlar
-1) **Merkezi Otorite ve Bias:** Subjektif “elit onayı” riskini azaltır.  
+1) **Merkezi Otorite ve Bias:** Subjektif "elit onayı" riskini azaltır.  
 2) **Veri Manipülasyonu:** Onaylanmış kaydın geriye dönük değişmesini teknik olarak imkansızlaştırır.  
-3) **Gatekeeping:** Sanatçının küresel arşive girişi “zevk” ile değil “kanıt” ile olur.
+3) **Gatekeeping:** Sanatçının küresel arşive girişi "zevk" ile değil "kanıt" ile olur.
 
 #### Doğrulama Döngüsü (Üçlü Filtre)
 - **Evidence Pack Completeness:** Trinity + Manifest + EvidenceRoot  
@@ -408,7 +409,7 @@ Ardından oy veren, aşağıdaki mesajı imzalar:
 
 - `SignerSignature = Sign( SHA-512( 0x01 || VoteReceiptBody ) )`
 
-Son olarak kayıt bytes’ı:
+Son olarak kayıt bytes'ı:
 
 `VoteReceiptBytes = (`
 `VoteReceiptBody || SignerSignature`
@@ -450,7 +451,7 @@ $$
 #### Sonuç (2026–3000)
 Dijital Noter mührünü alan eser, tekil bir kurumun malı olmaktan çıkar;  
 insanlığın uzun vadeli kültürel mirasının bir parçası haline gelir.  
-Mühür; “kim, ne zaman, hangi emekle” sorusunu yüzyıllar sonra bile doğrulanabilir kılar.
+Mühür; "kim, ne zaman, hangi emekle" sorusunu yüzyıllar sonra bile doğrulanabilir kılar.
 
 ---
 
@@ -459,7 +460,7 @@ Mühür; “kim, ne zaman, hangi emekle” sorusunu yüzyıllar sonra bile doğr
 ### 5.1) 365 Günlük Kesintisiz Cold Wallet Doğrulaması
 
 **Tanım:**  
-Varlığın cold wallet’ta (Ledger/Trezor vb.) 365 gün boyunca **istikrarlı** tutulması.
+Varlığın cold wallet'ta (Ledger/Trezor vb.) 365 gün boyunca **istikrarlı** tutulması.
 
 **Çözdüğü Sorunlar:**
 1. Wash Trading  
@@ -468,7 +469,7 @@ Varlığın cold wallet’ta (Ledger/Trezor vb.) 365 gün boyunca **istikrarlı*
 
 ---
 
-#### v1.0 Güncellemesi: “Hard Reset” yerine “Penalty Ladder”
+#### v1.0 Güncellemesi: "Hard Reset" yerine "Penalty Ladder"
 
 > **Netlik (v1.0): Penalty Ladder neyi etkiler?**
 
@@ -480,23 +481,23 @@ Varlığın cold wallet’ta (Ledger/Trezor vb.) 365 gün boyunca **istikrarlı*
 
 > Cold-wallet bütünlüğü bozulduğunda iki ayrı şey vardır:
 > 1) **HoldingDays** doğal olarak sıfırlanır (zaman bileşeni kaybolur).
-> 2) **Penalty Ladder**, bunun üstüne “kalıcı” ikinci bir ceza bindirmemek için yalnızca
+> 2) **Penalty Ladder**, bunun üstüne "kalıcı" ikinci bir ceza bindirmemek için yalnızca
 >    **kısa süreli bir cooldown penceresinde** oy gücü / skor hesaplarında uygulanır.
 >
-> Bu nedenle v1.0’da Penalty çarpanı:
+> Bu nedenle v1.0'da Penalty çarpanı:
 > - **VotingPower** hesaplarında kullanılan `TWAB_{30d}` için,
 > - ve **Pts** içindeki `log10(TWAB_{30d}+1)` bileşeni için
 > **CooldownWindow = 30 gün** boyunca uygulanır.
 
 >
-> HoldingDays zaten sıfırlandığı için, Penalty’nin “kalıcı” olması **double slashing** yaratır.
+> HoldingDays zaten sıfırlandığı için, Penalty'nin "kalıcı" olması **double slashing** yaratır.
 > v1.0 standardı: **Penalti geçici, HoldingDays sıfırlaması kalıcıdır.**
 - Uygulama kuralı: Transfer olayından sonra `CooldownWindow` süresi bitince `EffectiveTWAB_{30d} = TWAB_{30d}` olur.
 
 
 
 Tek transfer ile her şeyi sıfırlamak çok güçlü ama insan hatasını da yakabilir.  
-Bu yüzden v1.0’da sistem hem sert hem yaşanabilir olmalı:
+Bu yüzden v1.0'da sistem hem sert hem yaşanabilir olmalı:
 
 **1. İhlal (365 dolmadan transfer):** *(CooldownWindow = 30 gün boyunca)*
 
@@ -513,7 +514,7 @@ $$
 **3. İhlal:**  
 Statü **Revoked** (iptal).
 
-> Bu merdiven: gerçek kullanıcıyı tamamen yakmadan “hızlı gir-çık” manipülasyonunu ekonomik olarak anlamsızlaştırır.
+> Bu merdiven: gerçek kullanıcıyı tamamen yakmadan "hızlı gir-çık" manipülasyonunu ekonomik olarak anlamsızlaştırır.
 
 ---
 
@@ -524,7 +525,7 @@ Cüzdan taşıma veya güvenlik upgrade gibi durumlar için:
 - **Move Permit** talebi açılır  
 - Kısa bir **time-lock** uygulanır  
 - Topluluk denetimi (Quorum + Veto) devrededir  
-- Zincire yalnızca “permit” kaydı ve yeni adres bağlanması yazılır
+- Zincire yalnızca "permit" kaydı ve yeni adres bağlanması yazılır
 
 ---
 
@@ -533,36 +534,36 @@ Cüzdan taşıma veya güvenlik upgrade gibi durumlar için:
 #### Zorunlu İçerik (Trinity of Proof)
 1) **Live Logs:** Canlı yayın + platform/sunucu log uyumu  
 2) **Process Timelapse:** Sürecin baştan sona hızlandırılmış kaydı  
-3) **Digital Fingerprint:** `SHA-512(EvidencePack)` hash’i + bu hash’in cüzdan tarafından imzalanmış hali (**SignerSignature**).
+3) **Digital Fingerprint:** `SHA-512(EvidencePack)` hash'i + bu hash'in cüzdan tarafından imzalanmış hali (**SignerSignature**).
 
-#### Bütünlük Katmanı (Trinity’yi güçlendirir)
+#### Bütünlük Katmanı (Trinity'yi güçlendirir)
 - **Capture Manifest** + **Technical Logs** + **EvidenceRoot**
 $$
 \text{EvidenceRoot}=\text{MerkleRoot}(\text{AllFiles})
 $$
 
-* **Çözdüğü Sorun:** AI taklidinin saniyeler içinde “sonuç” üretmesine karşı, insan emeğinin “süreç” kanıtını korur.
+* **Çözdüğü Sorun:** AI taklidinin saniyeler içinde "sonuç" üretmesine karşı, insan emeğinin "süreç" kanıtını korur.
 
 ---
 
 ### 5.3) Yıllık Yenileme Zorunluluğu (365-Day Heartbeat)
-* **Tanım:** Public Registry’deki her kaydın “aktif ve sahipli” kaldığını gösteren yıllık imza (**Heartbeat Signature**).  
+* **Tanım:** Public Registry'deki her kaydın "aktif ve sahipli" kaldığını gösteren yıllık imza (**Heartbeat Signature**).  
 * **Çözdüğü Sorunlar:** Ölü veri, terk edilmiş cüzdanlar, pasif koleksiyonculuk.
 
 * **Nasıl Çalışır?**
   - Her kaydın **Valid Until** tarihi vardır.  
   - Süre dolmadan **30 gün önce** uyarı.  
-  - Sahip, yeni imza ile “hala bende ve standartlara uyuyor” der.  
+  - Sahip, yeni imza ile "hala bende ve standartlara uyuyor" der.  
   - Aksi halde kayıt **Legacy Archive** statüsüne iner.
 
-> Opsiyonel hızlandırma: Eğer proje “yıllık arşiv + düzenli denetim” altyapısına daha önceden sahipse **365 günden 30 güne** teknik olarak indirilebilir.  
+> Opsiyonel hızlandırma: Eğer proje "yıllık arşiv + düzenli denetim" altyapısına daha önceden sahipse **365 günden 30 güne** teknik olarak indirilebilir.  
 > v1.0 varsayılanı 365 gündür.
 
 - **Heartbeat Light Proof (v1.0 — opsiyonel ama önerilir):**
-  - Sahip, Heartbeat Signature ile birlikte küçük bir “durum kanıtı” üretir:
+  - Sahip, Heartbeat Signature ile birlikte küçük bir "durum kanıtı" üretir:
     - `StateDigest = SHA-512( 0x48 || RecordId || TimeStamp || PhotoHash || NoteHash )`
   - `PhotoHash/NoteHash` zincire ham veri olarak yazılmaz; yalnızca hash yazılır (off-chain saklanır).
-  - Amaç: Heartbeat’i “sadece imza” olmaktan çıkarıp **Proof of Existence** seviyesine taşımak.
+  - Amaç: Heartbeat'i "sadece imza" olmaktan çıkarıp **Proof of Existence** seviyesine taşımak.
 
 
 ---
@@ -573,15 +574,15 @@ $$
 * **Tanım:** Yeni kayıt veya protokol değişikliğinin, nitelikli azınlık tarafından durdurulabilmesini sağlayan demokratik güvenlik bariyeri.
 
 **v1.0 Kuralı (Matematiksel olarak çalışır):**
-- **Quorum (Minimum Katılım):** Katılan oy ağırlığı ≥ toplam aktif oy ağırlığının **%25’i**  
-- **Veto Threshold:** Quorum sağlandıktan sonra, **katılan oy ağırlığının %40’ı** “veto” verirse öneri reddedilir.
+- **Quorum (Minimum Katılım):** Katılan oy ağırlığı ≥ toplam aktif oy ağırlığının **%25'i**  
+- **Veto Threshold:** Quorum sağlandıktan sonra, **katılan oy ağırlığının %40'ı** "veto" verirse öneri reddedilir.
 
 * **Çözdüğü Sorunlar:**
   1) Sybil Attacks  
   2) Collusion (anlaşmalı oylama)  
   3) Bribery (rüşvetle oylama satın alma)
 
-* **Örnek Senaryo:** AI ile üretilmiş bir görsel, “emeğim” diye başvurur.  
+* **Örnek Senaryo:** AI ile üretilmiş bir görsel, "emeğim" diye başvurur.  
 Evidence Pack tutarsızdır. Topluluk, logaritmik skorlama ve TWAB etkisi ile veto barajını geçerse kayıt asla mühürlenemez.
 
 ---
@@ -599,24 +600,24 @@ $$
 Durum `Deadlock = TRUE` olduğunda:
 
 1. **Fallback Council**, aşağıdaki hiyerarşik seçimle kurulur:
-   - (A) Eğer **Rank-III** havuzunda yeterli üye varsa: Rank-III ilk %10 (Pts’e göre)
-   - (B) Eğer Rank-III **boş** veya yetersizse: mevcut **en yüksek Rank-II** ilk %10 (Pts’e göre)
-   - (C) Eğer Rank-II de yetersizse: **Validator** havuzunda “minimum stake + minimum katılım” şartını geçen ilk %N
+   - (A) Eğer **Rank-III** havuzunda yeterli üye varsa: Rank-III ilk %10 (Pts'e göre)
+   - (B) Eğer Rank-III **boş** veya yetersizse: mevcut **en yüksek Rank-II** ilk %10 (Pts'e göre)
+   - (C) Eğer Rank-II de yetersizse: **Validator** havuzunda "minimum stake + minimum katılım" şartını geçen ilk %N
 
 
 Bu mekanizma, demokratik karar ilkesini bozmadan sistemin operasyonel sürekliliğini garanti eder.
 
 2. **Konsey kararı,** `CouncilConsensus ≥ ⅔` oranıyla alınır.  
 3. İlk fırsatta (≥30 gün) topluluk referandumu ile onaylanmazsa **otomatik** feshedilir.  
-4. Tüm karar kayıtları **`Emergency Ledger`** üzerinde SHA-512 hash’iyle mühürlenir.
+4. Tüm karar kayıtları **`Emergency Ledger`** üzerinde SHA-512 hash'iyle mühürlenir.
 
 ---
 
 ## ⚙️ 7) The Michelangelo Framework (Meritocracy Engine)
 
 ### 7.1) Michelangelo // The Meritocracy Philosophy
-* **Tanım:** Ekosistemin sıralama ve itibar motoru. “Zenginler listesi”ne dönüşmeyi engelleyen liyakat tabanlı hiyerarşi.  
-* **Slogan:** *“You cannot buy your way to the top.”*  
+* **Tanım:** Ekosistemin sıralama ve itibar motoru. "Zenginler listesi"ne dönüşmeyi engelleyen liyakat tabanlı hiyerarşi.  
+* **Slogan:** *"You cannot buy your way to the top."*  
 * **Örnek:** Milyonlarca dolarlık balina, sadece para koyduğu için 1 numara olamaz. Zirve; yıllarca kültürel katkı sunanlara aittir.
 
 ### 7.2) Status Formula: Time × Contribution
@@ -624,9 +625,9 @@ $$
 \text{Status}=\text{HoldingTime}\times\text{CulturalContribution}
 $$
 
-* **HoldingTime:** cold wallet’ta bozulmadan duran gün sayısı (örn. 1420 gün)  
+* **HoldingTime:** cold wallet'ta bozulmadan duran gün sayısı (örn. 1420 gün)  
 * **CulturalContribution:** çeviri, kürasyon, altyapı, sergi desteği vb. somut katkı  
-* **Çözdüğü Sorun:** Sadece token tutmanın pasif bir eylem olması. Sistem “hem tutan hem üreten”i ödüllendirir.
+* **Çözdüğü Sorun:** Sadece token tutmanın pasif bir eylem olması. Sistem "hem tutan hem üreten"i ödüllendirir.
 
 ---
 
@@ -666,12 +667,12 @@ $$
   - \(\beta = 10{,}000\)
 
 - `HoldingDays`: **kesintisiz** cold-wallet doğrulamasının bozulmadığı gün sayısı  
-  (Move Permit ile taşınan durumlar “kesinti” sayılmaz).
+  (Move Permit ile taşınan durumlar "kesinti" sayılmaz).
 
 Bu yapı ile:
-- Büyük bakiye **Pts’i** artırır ama **logaritmik** sınır içinde kalır.
-- Uzun süreli sadakat (HoldingDays) Pts’e gerçek ağırlık ekler.
-- CulturalPts/GovernancePts, “emek > sermaye” ilkesini pratikte taşır.
+- Büyük bakiye **Pts'i** artırır ama **logaritmik** sınır içinde kalır.
+- Uzun süreli sadakat (HoldingDays) Pts'e gerçek ağırlık ekler.
+- CulturalPts/GovernancePts, "emek > sermaye" ilkesini pratikte taşır.
 
 
 | Rütbe | Aralık / Puan | Rol & Yetkiler |
@@ -688,7 +689,7 @@ Bu yapı ile:
 ## 📈 9) Cut-off Thresholds & Network Metrics
 
 ### 9.1) Entry Thresholds (Giriş Barajları)
-Eşikler “stable” olduğunda tek olmalı:
+Eşikler "stable" olduğunda tek olmalı:
 
 - **Rank-III Threshold:** **≥ 100,000 Pts**  
 - **Top 100 Entry:** **≥ 45,000 Pts**
@@ -706,21 +707,21 @@ Eşikler “stable” olduğunda tek olmalı:
 
 ### 10.1) IPOW: Intellectual Proof of Work (Emek Stake Etme)
 * **Tanım:** Para tutmanın ötesinde yüksek nitelikli insan emeği (çeviri, sanat, eğitim, teknik) gerektiren itibar motoru.  
-* **Çözdüğü Sorun:** “Pasif stake” kültürü.  
+* **Çözdüğü Sorun:** "Pasif stake" kültürü.  
 * **Örnek:** 1M token tutup katkı yapmayan bir adres, 100 token tutup döküman çeviren bir emekçi tarafından yönetimde geriye düşebilir.
 
 ### 10.2) Intellectual Honesty Filter (Entelektüel Dürüstlük)
 * **Tanım:** Claim veya kritik oylamalarda, kullanıcının konuyu anlayıp anlamadığını ölçen aşama.  
-* **Çözdüğü Sorunlar:** copy-paste oylama, AI spam, “neyi oyladığını bilmeden” evet/hayır.
+* **Çözdüğü Sorunlar:** copy-paste oylama, AI spam, "neyi oyladığını bilmeden" evet/hayır.
 
-#### v1.0 Güncellemesi: Quiz yerine “Anlama Kanıtı” (Erişilebilir)
+#### v1.0 Güncellemesi: Quiz yerine "Anlama Kanıtı" (Erişilebilir)
 Klasik quiz, dil ve erişilebilirlik açısından kullanıcıyı yakabilir. Bu yüzden:
 
 **Seçenek A (Kısa Özet):** 100 kelime ile öneriyi özetle  
 **Seçenek B (Risk Seçimi):** 2 risk işaretle + 1 gerekçe yaz  
 **Seçenek C (İtiraz Girdisi):** Varsa 1 itiraz gerekçesi sun  
 
-Bu modüller, “ezberi” değil “anlamayı” ölçer ve bot otomasyonunu zorlaştırır.
+Bu modüller, "ezberi" değil "anlamayı" ölçer ve bot otomasyonunu zorlaştırır.
 
 ---
 
@@ -728,14 +729,14 @@ Bu modüller, “ezberi” değil “anlamayı” ölçer ve bot otomasyonunu zo
 
 ### 11.1) The Turnstile Mechanism (Turnike Sistemi)
 * **Tanım:** Ekosisteme giriş için minimum katılım eşiği (Örn: 250 ILHAN Token).  
-* **Felsefe:** “Duvar değil, turnike.”  
-* **Çözdüğü Sorun:** Milyonlarca boş cüzdan ile “zombi” doldurma.  
+* **Felsefe:** "Duvar değil, turnike."  
+* **Çözdüğü Sorun:** Milyonlarca boş cüzdan ile "zombi" doldurma.  
 * **Örnek:** 10,000 sahte hesap açmak isteyen bot, her birinde 250 token tutmak zorunda kalınca saldırı ekonomik olarak verimsizleşir.
 
 ### 11.2) Zombie Wallet Filter (Aktif Claim Zorunluluğu)
-* **Tanım:** Belirli periyotlarla cüzdanın “hayatta ve aktif” olduğunu kanıtlaması.  
-* **Kural:** Aktif claim yapmayan adresler, skorları yüksek olsa bile Public Registry’den düşer.  
-* **Amaç:** Sistem “yaşayan ve üreten” bireylerden oluşsun.
+* **Tanım:** Belirli periyotlarla cüzdanın "hayatta ve aktif" olduğunu kanıtlaması.  
+* **Kural:** Aktif claim yapmayan adresler, skorları yüksek olsa bile Public Registry'den düşer.  
+* **Amaç:** Sistem "yaşayan ve üreten" bireylerden oluşsun.
 
 ---
 
@@ -751,26 +752,26 @@ Impasto (Tier) statüsünü uzun süre koruyanların itibar ve haklarını varis
 2) **Rank-II (50k–99k Pts):** kürasyon, denetim, oylamalar  
 3) **Rank-I (<50k Pts):** öneriler, küçük ölçekli kararlar  
 
-* **Çözdüğü Sorun:** Kaotik oylamalar yerine “liyakate dayalı demokrasi”.
+* **Çözdüğü Sorun:** Kaotik oylamalar yerine "liyakate dayalı demokrasi".
 
 ---
 
 ## 🌍 13) Cultural Privilege Layers & Real-World Integration
 
-> Not: Bu bölümdeki ayrıcalıklar, 2026–2030 kapsamında kademeli uygulanacak “Future Roadmap” bileşenleridir.
+> Not: Bu bölümdeki ayrıcalıklar, 2026–2030 kapsamında kademeli uygulanacak "Future Roadmap" bileşenleridir.
 
 ### 13.1) The Annual Exhibition Right (Yıllık Galeri Hakkı)
-* **Tanım:** [PoArt] doğrulanmış yüksek skorlu sanatçı/patronların İlhan Art Gallery’de yılda 1 kez, 1 hafta sergileme hakkı.  
+* **Tanım:** [PoArt] doğrulanmış yüksek skorlu sanatçı/patronların İlhan Art Gallery'de yılda 1 kez, 1 hafta sergileme hakkı.  
 * **Çözdüğü Sorun:** Bağımsız sanatçının fiziksel alana erişim maliyeti.  
-* **Nasıl Çalışır?** Threshold geçenler takvim üzerinden rezervasyon yapar; galeri “itibar puanları” ile kullanılır.
+* **Nasıl Çalışır?** Threshold geçenler takvim üzerinden rezervasyon yapar; galeri "itibar puanları" ile kullanılır.
 
 ### 13.2) Dinamik Sanat Fiyatlandırması (JSON Bağlantılı İndirimler)
-* **Tanım:** Kültürel statüye göre indirim oranını belirleyen dinamik fiyatlandırma API’si.  
+* **Tanım:** Kültürel statüye göre indirim oranını belirleyen dinamik fiyatlandırma API'si.  
 * **Yapı:**  
   - **Rank-III (≥100k Pts)** → %50+ indirim  
   - **Rank-II (50k–99k Pts)** → %30 indirim  
   - **Rank-I (<50k Pts)** → %10 indirim  
-* **Felsefe:** “Pazarlık yok — yalnızca doğrulanmış emek değer belirler.”  
+* **Felsefe:** "Pazarlık yok — yalnızca doğrulanmış emek değer belirler."  
 * **Amaç:** Kültürel katkıyı ödüllendirirken, algoritmik şeffaflık ve adalet sağlamak.
 
 ### 13.3) Physical Ecosystem Integration (Partner Entegrasyonu)
@@ -788,7 +789,7 @@ $$
 \text{ClaimRight} \propto \text{CulturalScore} + \log_{10}(\text{Balance})
 $$
 
-Yani, bir kullanıcının “hak kazanımı” kültürel emeğiyle birlikte artar;  
+Yani, bir kullanıcının "hak kazanımı" kültürel emeğiyle birlikte artar;  
 varlık miktarı ise yalnızca logaritmik katkı sağlar — böylece **emek**, **sermayeden** baskın hale gelir.
 
 **Örnek:**  
@@ -810,7 +811,7 @@ Bir [PoArt] kaydı ve [FPP] statüsü aşağıdaki deterministik akıştan geçe
 7) **Legacy Archive** (yenilenmedi, pasif arşiv)  
 8) **Revoked** (ihlal/kanıt çökmesi/veto/çoklu ihlal)
 
-> Bu akış; “ne zaman hangi statüdeyim?” sorusunu tek bakışta çözer.
+> Bu akış; "ne zaman hangi statüdeyim?" sorusunu tek bakışta çözer.
 
 ---
 
@@ -837,14 +838,14 @@ Bir [PoArt] kaydı ve [FPP] statüsü aşağıdaki deterministik akıştan geçe
 
 ## 🏛️ 16) Appeals / Mercii & İtiraz Mekanizması (Kurumsal Güven Katmanı)
 
-İtiraz mekanizması “güvenin kurumsal teminatıdır”.
+İtiraz mekanizması "güvenin kurumsal teminatıdır".
 
-- **Strategic Filter:** İtirazlar “kanıt tabanlı” olmalı (sadece duygu/iftira değil).  
+- **Strategic Filter:** İtirazlar "kanıt tabanlı" olmalı (sadece duygu/iftira değil).  
 - **Community Veto (v1.0):**  
-  - **Quorum:** katılan ağırlık ≥ toplam aktif ağırlığın **%25’i**  
-  - **Veto:** quorum sağlandıktan sonra, **katılan ağırlığın %40’ı** “veto” verirse öneri reddedilir.  
+  - **Quorum:** katılan ağırlık ≥ toplam aktif ağırlığın **%25'i**  
+  - **Veto:** quorum sağlandıktan sonra, **katılan ağırlığın %40'ı** "veto" verirse öneri reddedilir.  
 - **Anti-Bot / Anti-Sybil:** (uygulama katmanı) stake-gated doğrulama  
-- **Evidence Pack Freezing:** İtiraz açıldığında ilgili kanıt paketi “freeze” olur (time-lock).  
+- **Evidence Pack Freezing:** İtiraz açıldığında ilgili kanıt paketi "freeze" olur (time-lock).  
 - **Transparency / Time-Lock:** Her itiraz olayı kamuya açık zaman çizelgesinde görünür; ani sansür veya manipülasyon engellenir.
 
 ---
@@ -866,11 +867,11 @@ Bir [PoArt] kaydı ve [FPP] statüsü aşağıdaki deterministik akıştan geçe
 
 ## ⚖️ 18) Final Word: A Blueprint for Global Governance (Manifesto)
 
-> **Vizyon Notu:** [FPP] ve [PoArt] tarafından inşa edilen bu matematiksel zırh, sadece bir sanat galerisini değil; yozlaşmış parlamenter sistemleri ve manipüle edilen seçimleri de iyileştirebilecek bir “yönetim modeli” sunar.
+> **Vizyon Notu:** [FPP] ve [PoArt] tarafından inşa edilen bu matematiksel zırh, sadece bir sanat galerisini değil; yozlaşmış parlamenter sistemleri ve manipüle edilen seçimleri de iyileştirebilecek bir "yönetim modeli" sunar.
 
 ### 18.1) The End of Plotokrasi (Sermaye Despotizminin Sonu)
 * **Tanım:** Plütokrasi — yönetimin en zengin azınlığın elinde olması.  
-* **Protokolün Yanıtı:** Logaritmik skorlama ile paranın gücü sınıra çekilir; “zaman” ve “emek” otorite olur.  
+* **Protokolün Yanıtı:** Logaritmik skorlama ile paranın gücü sınıra çekilir; "zaman" ve "emek" otorite olur.  
 * **Gerekçe:** Gelecek, cüzdanı şişkin olanın değil; entelektüel değer katanın elinde olmalıdır.
 
 ### 18.2) The Meritocratic Parliament (Liyakate Dayalı Parlamento)
@@ -882,14 +883,202 @@ Popülizm ve sermaye odaklı siyasetin yerine; dökümantasyonu özümsemiş, IP
 - **Quorum + Veto:** azınlığın sesini ezdirmeden denetim sağlar
 
 ### 18.4) The Conclusion: Saving the Future (Geleceği Kurtarmak)
-Bu sistem; hilenin değil kanıtlanmış emeğin, anlık heveslerin değil bin yıllık vizyonun kazandığı bir “yeni düzen” tasarımıdır.  
+Bu sistem; hilenin değil kanıtlanmış emeğin, anlık heveslerin değil bin yıllık vizyonun kazandığı bir "yeni düzen" tasarımıdır.  
 Yanlış yönetilmeye mahkum edilmiş bir toplumu kurtarmanın yolu; insan hatasını azaltan, matematiksel olarak adil olduğu ispatlanmış bir protokol mimarisi kurmaktır.
 
 ---
 
-## 📅 19) Roadmap & Future Notes
+## 🏦 19) PoArt-Only Boutique Exchange (Butik Borsa Mimarisi)
 
-Bu dökümantasyonda yer alan tüm maddeler, İlhan Art ekosisteminin 2026’dan 3000 yılına uzanan vizyonunun yapı taşlarıdır.  
+### 19.1) Vizyon: "Spekülatör Değil, Koleksiyoner Borsası"
+
+**Tanım:**  
+Yalnızca [PoArt] sertifikalı projelerin listelendiği, marjin/leverage içermeyen, spot-only bir kültürel varlık borsası.
+
+**Çözdüğü Sorunlar:**
+
+1. **Meme Coin Kaosu:** Herhangi bir token listelenmez; yalnızca "emek kanıtı" geçen projeler.
+2. **Leverage Manipülasyonu:** Marjin yok = yapay fiyat patlamaları yok.
+3. **Pump & Dump:** TWAB + Guard Window entegrasyonu ile ani hacim saldırıları etkisizleştirilir.
+4. **Bot Dominasyonu:** Turnstile + PoArt Verification = gerçek insanlar, gerçek eserler.
+
+---
+
+### 19.2) Listeleme Kriterleri (PoArt Certification Gate)
+
+| Kriter | Gereksinim |
+|:--|:--|
+| **Evidence Pack** | Trinity + Bütünlük Katmanı (zorunlu) |
+| **NotarySeal** | Dijital noter mühürlü (on-chain) |
+| **Heartbeat Status** | Aktif (Legacy Archive kabul edilmez) |
+| **Community Veto** | Son 90 günde veto ile düşürülmemiş |
+| **Minimum Cultural Score** | ≥ 10,000 Pts |
+
+> **Felsefe:** "Listelenmek bir hak değil, kanıtlanmış bir liyakattir."
+
+---
+
+### 19.3) Borsa Mekaniği (Spot-Only Architecture)
+
+#### Temel Kurallar
+
+**1. Marjin/Leverage: YOK**
+- Tüm işlemler 1:1 spot.
+- Borç alıp satış = imkansız.
+
+**2. Shorting: YOK**
+- Açığa satış mekanizması bulunmaz.
+- Fiyat yalnızca organik arz-talep ile belirlenir.
+
+**3. Funding Rate: YOK**
+- Perpetual kontrat yok = yapay faiz baskısı yok.
+
+**4. Wash Trading Koruması:**
+- Aynı cüzdandan aynı cüzdana işlem = geçersiz.
+- TWAB tabanlı hacim doğrulaması.
+
+---
+
+### 19.4) TWAB-Entegre Order Book (Zaman-Ağırlıklı Emir Defteri)
+
+$$
+\text{OrderWeight} = \text{OrderSize} \times \log_{10}(\text{TWAB}_{30d} + 1)
+$$
+
+**Sonuç:**
+- Yeni giren "flash" likidite, emir defterinde düşük önceliğe sahiptir.
+- Uzun süreli tutucuların emirleri öncelikli eşleşir.
+
+---
+
+### 19.5) Anti-Manipulation Layers (Manipülasyon Önleme Katmanları)
+
+| Tehdit | Karşı Mekanizma |
+|:--|:--|
+| **Flash Crash / Pump** | Guard Window (30 gün TWAB lookback) |
+| **Whale Domination** | Logaritmik emir ağırlığı |
+| **Bot Swarming** | Turnstile + PoArt Verification |
+| **Spoofing** | Emir iptali için minimum bekleme süresi (5 dakika) |
+| **Front-running** | Batch auction modeli (5 dakikalık emir havuzu) |
+
+---
+
+### 19.6) Batch Auction Modeli (Fair Price Discovery)
+
+**Tanım:**  
+Emirler anlık eşleşmez; 5 dakikalık "batch" periyotlarında toplanır ve tek bir denge fiyatından eşleştirilir.
+
+**Avantajlar:**
+
+1. **Front-running İmkansız:** Emir sırası değil, fiyat önceliği belirler.
+2. **Fair Discovery:** Tüm katılımcılar aynı fiyattan işlem görür.
+3. **MEV Koruması:** Madenci/validator manipülasyonu ortadan kalkar.
+
+$$
+\text{ClearingPrice} = \arg\max_p \left( \min(\text{BidVolume}(p), \text{AskVolume}(p)) \right)
+$$
+
+---
+
+### 19.7) Kültürel Likidite Teşviki (Cultural Liquidity Mining)
+
+**Tanım:**  
+Likidite sağlayıcıları, klasik APY yerine **Cultural Points (Pts)** kazanır.
+
+**Formül:**
+
+$$
+\text{LiquidityPts} = \text{LiquidityProvided} \times \text{Duration}_{days} \times 0.01
+$$
+
+**Sonuç:**
+- Spekülatif "farm and dump" değil, uzun vadeli likidite desteği.
+- Pts, Rank sistemine dahil olur = yönetişim hakkı.
+
+---
+
+### 19.8) Delisting Kriterleri (Çıkarılma Koşulları)
+
+Bir proje şu durumlarda otomatik olarak listeden çıkarılır:
+
+1. **Heartbeat Failure:** 365 gün içinde yenileme yapılmadı.
+2. **Veto Threshold:** Topluluk vetosu ile düşürüldü.
+3. **Evidence Revocation:** NotarySeal iptal edildi.
+4. **Cultural Score Drop:** Pts < 5,000'e düştü (90 gün boyunca).
+5. **Fraud Detection:** Sahtecilik kanıtı sunuldu ve onaylandı.
+
+> **Not:** Delisting, varlığı yok etmez; yalnızca borsa erişimini kapatır. On-chain kayıt kalıcıdır.
+
+---
+
+### 19.9) Governance Integration (Borsa Yönetişimi)
+
+#### Listeleme Önerisi
+
+- Herkes öneri sunabilir.
+- **Quorum:** %25 katılım
+- **Veto:** Katılımın %40'ı ret verirse listelenmez.
+
+#### Fee Yapısı
+
+- Rank-III önerileri ile belirlenir.
+- **Varsayılan:** %0.1 maker / %0.2 taker
+- **Fee Dağılımı:**
+  - %50 Treasury
+  - %30 Cultural Rewards Pool
+  - %20 Validator Incentives
+
+---
+
+### 19.10) Teknik Özet (Protocol Integration)
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                  PoArt Boutique Exchange                    │
+├─────────────────────────────────────────────────────────────┤
+│  Layer 1: PoArt Certification Gate                          │
+│  ├── Evidence Pack Verification                             │
+│  ├── NotarySeal Check                                       │
+│  └── Heartbeat Status Validation                            │
+├─────────────────────────────────────────────────────────────┤
+│  Layer 2: TWAB-Weighted Order Book                          │
+│  ├── OrderWeight = Size × log₁₀(TWAB₃₀ᵈ + 1)                │
+│  ├── Priority Queue (Long-term holders first)               │
+│  └── Anti-wash trading filters                              │
+├─────────────────────────────────────────────────────────────┤
+│  Layer 3: Batch Auction Engine                              │
+│  ├── 5-minute collection periods                            │
+│  ├── Single clearing price                                  │
+│  └── MEV-resistant execution                                │
+├─────────────────────────────────────────────────────────────┤
+│  Layer 4: Governance & Compliance                           │
+│  ├── Listing proposals (Quorum 25%, Veto 40%)               │
+│  ├── Delisting triggers (automated)                         │
+│  └── Fee distribution (Treasury/Rewards/Validators)         │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### 19.11) Borsa Roadmap Notu
+
+| Faz | Hedef | Tahmini Zaman |
+|:--|:--|:--|
+| **Faz 1** | Teknik mimari + smart contract audit | 2026 Q3-Q4 |
+| **Faz 2** | Testnet + ilk 5 PoArt projesi | 2027 Q1-Q2 |
+| **Faz 3** | Mainnet + topluluk yönetişimi | 2027 Q3 |
+| **Faz 4** | Fiziksel galeri entegrasyonu (QR checkout) | 2028+ |
+
+> **Manifesto Notu:**  
+> Bu borsa, "fiyat keşfi" değil "değer keşfi" için tasarlanmıştır.  
+> Spekülatörün değil, koleksiyonerin; algoritmanın değil, emeğin kazandığı bir pazar yeri.  
+> *"Culture > Capital"* felsefesinin ticaret katmanındaki somut ifadesidir.
+
+---
+
+## 📅 20) Roadmap & Future Notes (Yol Haritası Notu)
+
+Bu dökümantasyonda yer alan tüm maddeler, İlhan Art ekosisteminin 2026'dan 3000 yılına uzanan vizyonunun yapı taşlarıdır.  
 Her sürüm güncellemesi (v1.1, v1.2 vb.) bu ayrıcalıkların teknik entegrasyon süreçlerini (API bağlantıları, fiziksel POS entegrasyonları vb.) içerecektir.
 
 ---
@@ -899,7 +1088,7 @@ Her sürüm güncellemesi (v1.1, v1.2 vb.) bu ayrıcalıkların teknik entegrasy
 - **Hash Primitive:** SHA-512
 
 - **EvidenceRoot:** `MerkleRoot(AllFiles)` (SHA-512)
-  - `EvidenceRoot` çıktısı **64-byte raw** digest’tir (hex string değil).
+  - `EvidenceRoot` çıktısı **64-byte raw** digest'tir (hex string değil).
 
 - **VoterConsensusRoot:** `SHA-512(ConsensusEnvelopeBytes)` (64-byte raw)
   - Detaylar: **🔐 Kriptografik Primitifler** ve **4.4 Digital Notary / VoterConsensusRoot** bölümüne bakınız.
@@ -911,6 +1100,9 @@ Her sürüm güncellemesi (v1.1, v1.2 vb.) bu ayrıcalıkların teknik entegrasy
     - `VoterConsensusRoot` = 64-byte raw (length prefix yok)
     - `TimeStamp` = `u64be` (8 byte, UTC Unix seconds)
 
-DEMO*
+---
 
-
+> **Document Integrity Notice:**  
+> This document is **HARD_LOCKED** at Protocol Version 1.0  
+> Any modifications require governance approval via Rank-III consensus.  
+> SHA-512 verification ensures document authenticity across the 2025–3000 archive timeline.
